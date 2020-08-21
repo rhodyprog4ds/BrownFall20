@@ -1,0 +1,8 @@
+# Book settings
+title: Programming for Data Science at URI Fall 2020
+author: Professor Sarah M Brown
+logo: logo.png
+
+latex:
+  latex_documents:
+    targetname: book.tex
