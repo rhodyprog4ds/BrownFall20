@@ -1,7 +1,4 @@
-Welcome to your Jupyter Book
-============================
+Welcome to Programming for Data Science
+==========================================
 
-This is a small sample book to give you a feel for how book content is
-structured.
-
-Check out the content pages bundled with this sample book to get started.
+This book is the course manual for Dr. Brown's section of CSC/DSP310 for Fall 2020. 

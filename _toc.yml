@@ -1,5 +1,16 @@
-- file: intro
-- file: content
-  sections:
-    - file: markdown
-    - file: notebooks
+- file: welcome
+
+- part: Syllabus
+  chapters:
+    - file: syllabus/about-prof-brown
+    - file: syllabus/tools
+    - file: syllabus/grading
+
+
+# - part: Lecture Notes
+  # chapters:
+    # -file:
+
+# - part: Assignments
+  # chapters:
+    # - file:
