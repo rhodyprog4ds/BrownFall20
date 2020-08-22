@@ -34,6 +34,7 @@ jobs:
       run: |
         jupyter-book build .
         jupyter-book build . --builder pdfhtml
+        mv _build/pdf/book.pdf _build/html/coursemanual.pdf
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
