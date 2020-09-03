@@ -22,7 +22,7 @@ Basic programming skills (CSC201 or CSC211) are a prerequisite to this course an
 
 ### About this semester
 
-This semester is a lot of new things for all of us. We will be running this course completely online all semester, so we will get to use a single format all semester. I still recognize that the time after that break may be different for many of you. This course will not have a required final and all assignments after that point will help improve your grade, but if you cannot complete them, it will not hurt your grade.
+This semester is a lot of new things for all of us. We will be running this course completely online all semester, so we will get to use a single format all semester. I still recognize that the time after that break may be different for many of you. We will cover all of the most important things before that point and you will have the opportunity to achieve all of the course learning outcomes by then. The material after will be greatly useful, but if after that break the change in circumstance allows you to focus less on coursework that will not hurt your grade. 
 
 
 ### About this syllabus
