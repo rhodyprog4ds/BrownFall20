@@ -5,7 +5,7 @@
   sections:
     - file: syllabus/about-course
     - file: syllabus/tools
-    - file: syllabus/course-policies
+    - file: syllabus/course_policies
     - file: syllabus/course_map
     - file: syllabus/uri_resources
     - file: syllabus/uri_statements
