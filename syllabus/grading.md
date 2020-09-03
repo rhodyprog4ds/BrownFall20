@@ -13,7 +13,8 @@ kernelspec:
 
 ## Grading
 
-This course will be graded on a basis of a set of *skills* (described in detail the next section of the syllabus). This is in contrast to more common grading on a basis of points earned through assignments. This section of the syllabus describes the principles and mechanics of the grading for the course.
+This section of the syllabus describes the principles and mechanics of the grading for the course.
+This course will be graded on a basis of a set of *skills* (described in detail the next section of the syllabus). This is in contrast to more common grading on a basis of points earned through assignments.
 
 +++
 
@@ -21,15 +22,17 @@ This course will be graded on a basis of a set of *skills* (described in detail 
 
 Learning happens through practice and feedback. My goal as a teacher is for you to learn. The grading in this course is based on your learning of the material, rather than your completion of the activities that are assigned.
 
-Earning a C in this class is intended to be easier than typical grading. I expect everyone to get at least a C.
+
+This course is designed to encourage you to work steadily at learning the material and demonstrating your new knowledge. There are no single points of failure, where you lose points that cannot be recovered. Also, you cannot cram anything one time and then forget it. The material will build and you have to demonstrate that you retained things.
+
+- Earning a C in this class is intended to be easier than typical grading. I expect everyone to get at least a C.
 <!-- , which means you have a general understanding of Data Science and could have an educated conversation about all of the topics we cover. -->
-Earning a B in this class is intended to be very accessible, you can make a lot of mistakes along the way as you learn, as long as you learn by the end.
+- Earning a B in this class is intended to be very accessible, you can make a lot of mistakes along the way as you learn, as long as you learn by the end.
 <!-- Earning a B means that you could solve simple data science problems on your own and complete parts of more complex problems as instructed by, for example, a supervisor in an internship or entry level job.  -->
-Earning an A in this class will be challenging, but is possible even with making mistakes while you learn.
+- Earning an A in this class will be challenging, but is possible even with making mistakes while you learn.
 <!-- Earning an A means that you could solve moderately complex problems independently and discus the quality of others' data science solutions.  -->
 
 
-This course is designed to encourage you to work steadily at learning the material and demonstrating your new knowledge. There are no single points of failure, where you lose points that cannot be recovered. Also, you cannot cram anything one time and then forget it. The material will build and you have to demonstrate that you retained things
 
 Grading this way also is more amenable to the fact that there are correct and incorrect ways to do things, but there is not always a single correct answer to a realistic data science problem. Your work will be assessed on whether or not it demonstrates your learning of the targeted skills. You will also receive feedback on how to improve.
 
@@ -40,17 +43,24 @@ Grading this way also is more amenable to the fact that there are correct and in
 There are 15 skills that you will be graded on in this course.
 While learning these skills, you will work through a progression of learning.
 Your grade will be based on earning 45 achievements that are organized into 15 skill groups with 3 levels for each.
-That is,
-If you achieve level 1 in all of the skills, you will earn at least a C in the course. To earn level 1 achievements, you will need to demonstrate basic awareness of the required concepts and know approximately what to do, but you may need specific instructions of which things to do or to look up examples to modify every step of the way. You can earn level 1 achievements in class, assignments, or portfolio submissions.
-To earn a B, you must earn all of the level 1 and level 2 achievements. To earn level 2 achievements you will need to demonstrate understanding of the concepts and the ability to apply them with minimal instruction after earning the level 1 achievement for that skill. You can earn level 2 achievements in assignments or portfolio submissions.
-To get an A, you must earn all of the achievements. To do that you will be required to consistently execute each skill and demonstrate deep understanding of the course material, after achieving level 2 in that skill. You can earn level 3 achievements only through your portfolio submissions.
 
-
+These map onto letter grades roughly as follows:
+  - If you achieve level 1 in all of the skills, you will earn at least a C in the course.
+  - To earn a B, you must earn all of the level 1 and level 2 achievements.
+  - To earn an A, you must earn all of the achievements.
 
 You will have at least three opportunities to earn every level 2 achievement.
 You will have at least two opportunities to earn every level 3 achievement.
+You will have three *types* of opportunities to demonstrate your current skill level: participation, assignments, and a portfolio.
 
-You will have three *types* of opportunities to demonstrate your current skill level.
+
+Each level of achievement corresponds to a phase in your learning of the skill:
+  - To earn level 1 achievements, you will need to demonstrate basic awareness of the required concepts and know approximately what to do, but you may need specific instructions of which things to do or to look up examples to modify every step of the way. You can earn level 1 achievements in class, assignments, or portfolio submissions.
+  - To earn level 2 achievements you will need to demonstrate understanding of the concepts and the ability to apply them with instruction after earning the level 1 achievement for that skill. You can earn level 2 achievements in assignments or portfolio submissions.
+  - To earn level 3 achievements you will be required to consistently execute each skill and demonstrate deep understanding of the course material, after achieving level 2 in that skill. You can earn level 3 achievements only through your portfolio submissions.
+
+
+
 
 #### Participation
 

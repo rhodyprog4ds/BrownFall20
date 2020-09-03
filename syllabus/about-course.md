@@ -23,19 +23,30 @@ Basic programming skills (CSC201 or CSC211) are a prerequisite to this course. T
 
 ### About this semester
 
-This semester is a lot of new things for all of us. This course will be completely online all semester, so we will get to use a single format all semester. However, I recognize that the time after Thanksgiving break may be different for many of you. In light of that, we will cover all of the most important topics and you will have the opportunity to achieve all of the course learning outcomes before Thanksgiving. The material in the last two weeks of the semester will be more advanced, likely interesting and definitely useful material, but if your ability to participate in class is less at that time, it will not hurt your grade.
+This semester is a lot of new things for all of us. This course will be completely online all semester, so we will get to use a single instructional format all semester, including when all campus activities move remote after Thanksgiving. I recognize that those last two weeks of the semester may change your obligations with siblings, parents, work, etc. In light of that, we will cover all of the most important topics and you will have the opportunity to achieve all of the course learning outcomes before Thanksgiving. The material in the last two weeks of the semester will be more advanced, likely interesting and definitely useful material, but if your ability to participate in class is less at that time, it will not hurt your grade.
 <!-- if after that break the change in circumstance allows you to focus less on coursework that will not hurt your grade. -->
 
 
 ### About this syllabus
 
-This syllabus is a *living* document and available in multiple locations. If you choose to download a copy of it, note that it is only a copy.  You can view the date of changes and exactly what changes were made on Github.
+This syllabus is a *living*  document and accessible from BrightSpace, as a pdf for download directly online at [rhodyprog4ds.github.io/BrownFall20/syllabus](https://rhodyprog4ds.github.io/BrownFall20/syllabus/). If you choose to download a copy of it, note that it is only a copy. You can get notification of changes from GitHub by "watching" the [repository](https://github.com/rhodyprog4ds/BrownFall20) You can view the date of changes and exactly what changes were made on Github.
 
 
 ### About your instructor
 
 Name: Dr. Sarah Brown
-Office hours:  TBA via zoom, link in Brightspace
+Office hours:  TBA via zoom, link in BrightSpace
 
 
-Dr. Brown is a new Assistant Professor of Computer Science, who does research on how social context changes machine learning. Dr. Brown earned a PhD in Electrical Engineering from Northeastern University, completed a postdoctoral fellowship at University of California Berkeley, and worked as a postdoctoral research associate at Brown University before joining URI. At Brown university, Dr. Brown taught the Data and Society course for the Master's in Data Science Program.
+Dr. Brown is a new Assistant Professor of Computer Science, who does research on how social context changes machine learning. Dr. Brown earned a PhD in Electrical Engineering from Northeastern University, completed a postdoctoral fellowship at University of California Berkeley, and worked as a postdoctoral research associate at Brown University before joining URI. At Brown University, Dr. Brown taught the Data and Society course for the Master's in Data Science Program.
+
+````{margin}
+```{note}
+Whether you use CSC or DSP does not matter.  
+```
+````
+
+The best way to contact me is e-mail or by dropping into my office hours. Please include `[CSC310]` or `[DSP310]` in the subject line of your email along with the topic of your message. This is important, because your messages are important, but I also get a lot of e-mail. Consider these a cheat code to my inbox: I have setup a filter that will flag your e-mail if you use one of those in the subject to ensure that I see it. I rarely check e-mail between 6pm and 9am, on weekends or holidays. You might see me post or send things during these hours, but I will not reliably see emails that arrive during those hours.  
+
+
+<!-- ### About online interactions -->
