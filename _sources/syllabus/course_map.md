@@ -59,7 +59,6 @@ The course will meet MWF 1-1:50pm on Zoom. Every class will include participator
 
 Programming assignments that will be due each week Sunday by 11:59pm.
 
-For some assignments, I've been working out a sequence of tasks that have to be taught, and applied but not organized them into groups as assignments yet.
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -109,6 +108,8 @@ assignment_cols =  ['A'+ str(i) for i in range(1,14)] + ['# Assignments']
 portfolio_cols = [ 'Level 3'] + ['P' + str(i) for i in range(1,5)]
 ```
 
+### Assignments and Skills
+
 Using the keywords from the table above, this table shows which assignments you will be able to demonstrate which skills and the total number of assignments that assess each skill. This is the number of opportunities you have to earn Level 2 and still preserve 2 chances to earn Level 3 for each skill.
 
 ```{code-cell} ipython3
@@ -116,6 +117,8 @@ Using the keywords from the table above, this table shows which assignments you 
 
 rubric_df[assignment_cols]
 ```
+
+### Portfolios and Skills
 
 The objective of your portfolio submissions is to earn level 3 achievements. The following table shows what Level 3 looks like for each skill and identifies which portfolio submissions you can earn that Level 3 in that skill.
 

@@ -13,7 +13,7 @@ kernelspec:
 
 ## Grading
 
-This course will be graded on a basis of progression of mastery of a set of *skills*. This is in contrast to more common grading on a basis of points earned through assignments. This section of the syllabus describes the priniciples and mechanics of the grading for the course.
+This course will be graded on a basis of a set of *skills* (described in detail the next section of the syllabus). This is in contrast to more common grading on a basis of points earned through assignments. This section of the syllabus describes the principles and mechanics of the grading for the course.
 
 +++
 
@@ -28,7 +28,7 @@ Earning an A in this class will be challenging, but is possible even with making
 
 This course is designed to encourage you to work steadily at learning the material and demonstrating your new knowledge. There are no single points of failure, where you lose points that cannot be recovered. Also, you cannot cram anything one time and then forget it. The material will build and you have to demonstrate that you retained things
 
-Grading this way also is more ammenable to the fact that there are correct and incorrect ways to do things, but there is not always a single correct answer to a realistic data science problem. Your work will be assessed on the degree to which it demonstrates your learning and you will also receive feedback on how to improve.
+Grading this way also is more ammenable to the fact that there are correct and incorrect ways to do things, but there is not always a single correct answer to a realistic data science problem. Your work will be assessed on whether or not it demonstrates your learning of the targeted skills. You will also receive feedback on how to improve.
 
 +++
 
@@ -63,7 +63,7 @@ Assignments will each evaluate certain skills. After your assignment is reviewed
 
 #### Portfolio Checks
 
-To earn level 2 achievements, you will build a portfolio consisting of reflections, challenge problems, and longer analyses over the course of the semester.
+To earn level 3 achievements, you will build a portfolio consisting of reflections, challenge problems, and longer analyses over the course of the semester.
 You will submit your portfolio for review 4 times.
 The first two will cover the skills taught up until 1 week before the submission deadline.
 <!-- The first portfolio check will cover skills FIXME.
@@ -81,9 +81,8 @@ You *could* earn a C through in class participation alone, if you make nearly ze
 
 ### Detailed mechanics
 
-You will be able to check your progress by keeping a chart and monitoring the course rubric.
-
-To calculate final grades, you can consider each skill as an item, so there are FIXME equally weighted items in this course. The table below shows the minimum number of skills at each level (mastery, competency, awareness) to earn each letter grade equivalents.  
+On Brightspace there are 45 Grade items that you will get a 0 or a 1 grade for. These will be revealed, so that you can view them as you have an opportunity to demonstrate each one.
+The table below shows the minimum number of skills at each level to earn each letter grade.  
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -122,4 +121,11 @@ If you achieve level 3 on 14 of the skills, but only level 1 on one of the skill
 
 ### Late work
 
-No late work will be graded. You may visit office hours to discuss assignments that you did not complete on time to get feedback and check your own understanding, but they will not count toward skill demonstration. Every skill will be assessed through more than one assignment, so missing assignments occasionally *may* not hurt your grade. If you do not submit any assignments that cover a given skill, you may earn the level 2 achievement in that skill through a portfolio check, but you will not be able to earn the level 3 achievement in that skill.
+No late work will be graded.
+Every skill will be assessed through more than one assignment, so missing assignments occasionally *may* not hurt your grade. If you do not submit any assignments that cover a given skill, you may earn the level 2 achievement in that skill through a portfolio check, but you will not be able to earn the level 3 achievement in that skill.
+
+````{margin}
+```{note}
+You may visit office hours to discuss assignments that you did not complete on time to get feedback and check your own understanding, but they will not count toward skill demonstration.
+```
+````
