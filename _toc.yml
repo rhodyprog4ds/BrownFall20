@@ -1,16 +1,23 @@
 - file: intro
 
-- part: Syllabus
-  chapters:
-    - file: syllabus/about-prof-brown
+- file: syllabus/start
+  title: Syllabus
+  sections:
+    - file: syllabus/about-course
     - file: syllabus/tools
-    - file: syllabus/grading
+    - file: syllabus/course-policies
+    - file: syllabus/course_map
+    - file: syllabus/uri_resources
+    - file: syllabus/uri_statements
 
-
-# - part: Lecture Notes
+# - part: Class Notes
   # chapters:
     # -file:
 
 # - part: Assignments
+  # chapters:
+    # - file:
+
+# - part: Portfolio
   # chapters:
     # - file:
