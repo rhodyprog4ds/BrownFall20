@@ -45,7 +45,7 @@ Links to the course reference text and code documentation will also be included 
 ### GitHub Classroom
 
 You will need a GitHub Account. If you do not already have one, please create one by the first day of class.
-There
+There will be a link to our class GitHub Classroom on Brightspace. 
 
 <!-- ### GradeScope
 
