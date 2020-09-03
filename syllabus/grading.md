@@ -22,13 +22,16 @@ This course will be graded on a basis of a set of *skills* (described in detail 
 Learning happens through practice and feedback. My goal as a teacher is for you to learn. The grading in this course is based on your learning of the material, rather than your completion of the activities that are assigned.
 
 Earning a C in this class is intended to be easier than typical grading. I expect everyone to get at least a C.
-Earning a B in this class is intended to be very accessible, you can make a lot of mistakes along the way as you learn, but if you learn by the end.
+<!-- , which means you have a general understanding of Data Science and could have an educated conversation about all of the topics we cover. -->
+Earning a B in this class is intended to be very accessible, you can make a lot of mistakes along the way as you learn, as long as you learn by the end.
+<!-- Earning a B means that you could solve simple data science problems on your own and complete parts of more complex problems as instructed by, for example, a supervisor in an internship or entry level job.  -->
 Earning an A in this class will be challenging, but is possible even with making mistakes while you learn.
+<!-- Earning an A means that you could solve moderately complex problems independently and discus the quality of others' data science solutions.  -->
 
 
 This course is designed to encourage you to work steadily at learning the material and demonstrating your new knowledge. There are no single points of failure, where you lose points that cannot be recovered. Also, you cannot cram anything one time and then forget it. The material will build and you have to demonstrate that you retained things
 
-Grading this way also is more ammenable to the fact that there are correct and incorrect ways to do things, but there is not always a single correct answer to a realistic data science problem. Your work will be assessed on whether or not it demonstrates your learning of the targeted skills. You will also receive feedback on how to improve.
+Grading this way also is more amenable to the fact that there are correct and incorrect ways to do things, but there is not always a single correct answer to a realistic data science problem. Your work will be assessed on whether or not it demonstrates your learning of the targeted skills. You will also receive feedback on how to improve.
 
 +++
 

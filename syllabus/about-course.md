@@ -18,11 +18,13 @@ and databases; distributed data management. You will work on weekly substantial
 programming problems such as accessing data in database and visualize it or build
 machine learning models of a given data set.
 
-Basic programming skills (CSC201 or CSC211) are a prerequisite to this course and this course is a prerequisite course to machine learning. In this course, we will start with a very fast review of basic programming ideas, since you've already done that before. We will how to use machine learning algorithms to do data science, but not how to build machine learning algorithms, we'll use packages.
+
+Basic programming skills (CSC201 or CSC211) are a prerequisite to this course. This course is a prerequisite course to machine learning, where you learn how machine learning algorithms work. In this course, we will start with a very fast review of basic programming ideas, since you've already done that before. We will learn how to *use* machine learning algorithms to do data science, but not how to *build* machine learning algorithms, we'll use packages that implement the algorithms for us.
 
 ### About this semester
 
-This semester is a lot of new things for all of us. We will be running this course completely online all semester, so we will get to use a single format all semester. I still recognize that the time after that break may be different for many of you. We will cover all of the most important things before that point and you will have the opportunity to achieve all of the course learning outcomes by then. The material after will be greatly useful, but if after that break the change in circumstance allows you to focus less on coursework that will not hurt your grade. 
+This semester is a lot of new things for all of us. This course will be completely online all semester, so we will get to use a single format all semester. However, I recognize that the time after Thanksgiving break may be different for many of you. In light of that, we will cover all of the most important topics and you will have the opportunity to achieve all of the course learning outcomes before Thanksgiving. The material in the last two weeks of the semester will be more advanced, likely interesting and definitely useful material, but if your ability to participate in class is less at that time, it will not hurt your grade.
+<!-- if after that break the change in circumstance allows you to focus less on coursework that will not hurt your grade. -->
 
 
 ### About this syllabus
