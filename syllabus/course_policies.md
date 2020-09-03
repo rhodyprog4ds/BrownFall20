@@ -107,12 +107,13 @@ grade_df['letter grade'] = grades
 grade_df.set_index('letter grade')
 ```
 
-For example, if you achieve level 2 on all of the skills and level 3 on 7 skills, that will be a B+.
 ````{margin}
 ```{note}
 In this example, you will have also achieved level 1 on all of the skills, because it is a prerequisite to level 2.
 ```
 ````
+For example, if you achieve level 2 on all of the skills and level 3 on 7 skills, that will be a B+.
+
 
 If you achieve level 3 on 14 of the skills, but only level 1 on one of the skills, that will be a B-, because the minimum number of level 2 achievements for a B is 15.
 
@@ -121,11 +122,10 @@ If you achieve level 3 on 14 of the skills, but only level 1 on one of the skill
 
 ### Late work
 
-No late work will be graded.
-Every skill will be assessed through more than one assignment, so missing assignments occasionally *may* not hurt your grade. If you do not submit any assignments that cover a given skill, you may earn the level 2 achievement in that skill through a portfolio check, but you will not be able to earn the level 3 achievement in that skill.
-
 ````{margin}
 ```{note}
 You may visit office hours to discuss assignments that you did not complete on time to get feedback and check your own understanding, but they will not count toward skill demonstration.
 ```
 ````
+No late work will be graded.
+Every skill will be assessed through more than one assignment, so missing assignments occasionally *may* not hurt your grade. If you do not submit any assignments that cover a given skill, you may earn the level 2 achievement in that skill through a portfolio check, but you will not be able to earn the level 3 achievement in that skill.
