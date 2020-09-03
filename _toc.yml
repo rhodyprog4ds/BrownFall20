@@ -1,6 +1,6 @@
 - file: intro
 
-- file: syllabus/start
+- file: syllabus/index
   title: Syllabus
   sections:
     - file: syllabus/about-course
