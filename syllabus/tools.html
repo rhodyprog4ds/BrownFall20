@@ -2,10 +2,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Tools and References &#8212; Programming for Data Science at URI Fall 2020</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tools and Resources &#8212; Programming for Data Science at URI Fall 2020</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -14,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-dropdown.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -24,12 +25,10 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/mystnb.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -39,8 +38,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Grading" href="grading.html" />
-    <link rel="prev" title="About your instructor" href="about-prof-brown.html" />
+    <link rel="next" title="Learning Objective, Schedule, and Rubric" href="course_map.html" />
+    <link rel="prev" title="About" href="about-course.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -80,25 +79,30 @@
   </a>
  </li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  Syllabus
- </span>
-</p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="about-prof-brown.html">
-   About your instructor
+  <a class="reference internal" href="about-course.html">
+   About
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Tools and References
+   Tools and Resources
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="grading.html">
-   Grading
+  <a class="reference internal" href="course_map.html">
+   Learning Objective, Schedule, and Rubric
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="uri_resources.html">
+   Support
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="uri_statements.html">
+   Policy
   </a>
  </li>
 </ul>
@@ -177,11 +181,6 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#course-manual">
-   Course Manual
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#zoom">
    Zoom
   </a>
@@ -192,13 +191,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#github-classroom">
-   GitHub Classroom
+  <a class="reference internal nav-link" href="#course-manual">
+   Course Manual
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gradescope">
-   GradeScope
+  <a class="reference internal nav-link" href="#github-classroom">
+   GitHub Classroom
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -216,46 +215,73 @@
         
               <div>
                 
-  <div class="section" id="tools-and-references">
-<h1>Tools and References<a class="headerlink" href="#tools-and-references" title="Permalink to this headline">¶</a></h1>
-<p>We will use a variety of tools to conduct class online.</p>
+  <div class="section" id="tools-and-resources">
+<h1>Tools and Resources<a class="headerlink" href="#tools-and-resources" title="Permalink to this headline">¶</a></h1>
+<p>We will use a variety of tools to conduct class and to facilitate your programming.</p>
 <div class="section" id="brightspace">
 <h2>BrightSpace<a class="headerlink" href="#brightspace" title="Permalink to this headline">¶</a></h2>
-<p>This will be the central location from which you can access other materials. This is also where your grades will appear.</p>
-</div>
-<div class="section" id="course-manual">
-<h2>Course Manual<a class="headerlink" href="#course-manual" title="Permalink to this headline">¶</a></h2>
-<p>The course manual at FIXME will have content</p>
+<p>This will be the central location from which you can access all other materials.
+Any links that are for private discussion among those enrolled in the course will be available only from Brightspace
+This is also where your grades will appear.</p>
 </div>
 <div class="section" id="zoom">
 <h2>Zoom<a class="headerlink" href="#zoom" title="Permalink to this headline">¶</a></h2>
 <p>This is where we will meet for synchronous class sessions. You will find the link to class zoom sessions on Brightspace.</p>
+<p>URI provides all faculty, staff, and students with a paid Zoom account. It <em>can</em> run in your browser or on a mobible device, but you will be able to particpate in class best if you download the <a class="reference external" href="https://zoom.us/download">Zoom client</a> on your computer. Please <a class="reference external" href="https://uri-edu.zoom.us/">log in</a> and <a class="reference external" href="https://uri-edu.zoom.us/profile">configure your account</a>.  Especially if you will not want to have your camera on during class, please add a photo of yourself to your account so that we can still.</p>
+<p>For help, you can access the <a class="reference external" href="https://web.uri.edu/itservicedesk/zoom-at-uri/">instructions provided by IT</a>.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><strong>TL;DR</strong></p>
+<ul class="simple">
+<li><p>[ ] check Brightspace</p></li>
+<li><p>[ ] Install Zoom</p></li>
+<li><p>[ ] Setup your URI Zoom Account</p></li>
+<li><p>[ ] Log in to Prismia Chat</p></li>
+<li><p>[ ] Make a GitHub Account</p></li>
+<li><p>[ ] Install Python</p></li>
+<li><p>[ ] Install Git</p></li>
+</ul>
+</div>
 </div>
 <div class="section" id="prismia-chat">
 <h2>Prismia chat<a class="headerlink" href="#prismia-chat" title="Permalink to this headline">¶</a></h2>
-<p>Our class link:
+<p>Our class link for Prismia chat is available on Brightspace.
 We will use this for chatting and in-class understanding checks.</p>
+</div>
+<div class="section" id="course-manual">
+<h2>Course Manual<a class="headerlink" href="#course-manual" title="Permalink to this headline">¶</a></h2>
+<p>The course manual will have content including the class policies, scheduling, class notes, assignment information, and additional resources.
+This will be linked from Brightspace and available publicly online at <a class="reference external" href="https://rhodyprog4ds.github.io/BrownFall20/">rhodyprog4ds.github.io/BrownFall20/</a>.
+Links to the course reference text and code documentation will also be included here in the assignments and class notes.</p>
 </div>
 <div class="section" id="github-classroom">
 <h2>GitHub Classroom<a class="headerlink" href="#github-classroom" title="Permalink to this headline">¶</a></h2>
-<p>You will need a GitHub Account. If you do not already have one</p>
-</div>
-<div class="section" id="gradescope">
-<h2>GradeScope<a class="headerlink" href="#gradescope" title="Permalink to this headline">¶</a></h2>
+<p>You will need a GitHub Account. If you do not already have one, please create one by the first day of class.
+There</p>
+<!-- ### GradeScope
+
+Programming As -->
 </div>
 <div class="section" id="programming-environment">
 <h2>Programming Environment<a class="headerlink" href="#programming-environment" title="Permalink to this headline">¶</a></h2>
-<p>You will need:</p>
+<p>This a programming course, so you will need a programming environment. In order to complete assignments you need the items listed in the requirements list. The easiest way to meet these requirements is to follow the recommendations below. I will provide instruction assuming that you have followed the recommendations.</p>
+<p>Requirements:</p>
 <ul class="simple">
-<li><p>Python with scientific computing packages</p></li>
-<li><p>Access to Git</p></li>
-<li><p>Openrefine</p></li>
+<li><p>Python with scientific computing packages (numpy, scipy, jupyter, pandas, etc)</p></li>
+<li><p><a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git</a></p></li>
+<li><p>A web browser compatible with Jupyter Notebooks</p></li>
 </ul>
+<!-- - Openrefine -->
 <p>Recommendation:</p>
 <ul class="simple">
-<li><p>Install python via Anaconda and if you use Windows, install Git with GitBash.</p></li>
+<li><p>Install python via <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a></p></li>
+<li><p>if you use Windows, install Git with <a class="reference external" href="https://gitforwindows.org/">GitBash</a> (<a class="reference external" href="https://youtu.be/339AEqk9c-8">video instructions</a>).</p></li>
+<li><p>if you use MacOS, install Git with the Xcode Command Line Tools. On Mavericks (10.9) or above you can do this by trying to run git from the Terminal the very first time.<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code></p></li>
 </ul>
-<p>note: all git instructions will be given as instructions for the command line interface or via the web interface. You may choose to use GitHub desktop or built in IDE tools, but the instructional team may not be able to help.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>all Git instructions will be given as instructions for the command line interface and GitHub specific instructions via the web interface. You may choose to use GitHub desktop or built in IDE tools, but the instructional team may not be able to help.</p>
+</div>
 </div>
 </div>
 
@@ -287,8 +313,8 @@ We will use this for chatting and in-class understanding checks.</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="about-prof-brown.html" title="previous page">About your instructor</a>
-    <a class='right-next' id="next-link" href="grading.html" title="next page">Grading</a>
+    <a class='left-prev' id="prev-link" href="about-course.html" title="previous page">About</a>
+    <a class='right-next' id="next-link" href="course_map.html" title="next page">Learning Objective, Schedule, and Rubric</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -2,9 +2,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grading &#8212; Programming for Data Science at URI Fall 2020</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
@@ -14,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-dropdown.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -24,12 +25,10 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/mystnb.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -39,7 +38,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Tools and References" href="tools.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -79,25 +77,30 @@
   </a>
  </li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  Syllabus
- </span>
-</p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="about-prof-brown.html">
-   About your instructor
+  <a class="reference internal" href="about-course.html">
+   About
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tools.html">
-   Tools and References
+   Tools and Resources
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Grading
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_map.html">
+   Learning Objective, Schedule, and Rubric
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="uri_resources.html">
+   Support
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="uri_statements.html">
+   Policy
   </a>
  </li>
 </ul>
@@ -140,11 +143,14 @@
     
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/syllabus/grading.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+        <a class="dropdown-buttons"
+            href="../_sources/syllabus/course_policies.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/syllabus/course_policies.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -160,6 +166,23 @@
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/syllabus/course_policies.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
 
     </div>
 
@@ -207,6 +230,11 @@
    Detailed mechanics
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#late-work">
+   Late work
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -231,9 +259,10 @@ Earning an A in this class will be challenging, but is possible even with making
 </div>
 <div class="section" id="how-it-works">
 <h2>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
-<p>There are FIXME skills that we will cover in this course.
+<p>There are 15 skills that you will be graded on in this course.
 While learning these skills, you will work through a progression of learning.
-Your grade will be based on earning FIXME achievements that are organized into  XX skill groups with 3 levels for each.
+Your grade will be based on earning 45 achievements that are organized into 15 skill groups with 3 levels for each.
+That is,
 If you achieve level 1 in all of the skills, you will earn at least a C in the course. To earn level 1 achievements, you will need to demonstrate basic awareness of the required concepts and know approximately what to do, but you may need specific instructions of which things to do or to look up examples to modify every step of the way. You can earn level 1 achievements in class, assignments, or portfolio submissions.
 To earn a B, you must earn all of the level 1 and level 2 achievements. To earn level 2 achievements you will need to demonstrate understanding of the concepts and the ability to apply them with minimal instruction after earning the level 1 achievement for that skill. You can earn level 2 achievements in assignments or portfolio submissions.
 To get an A, you must earn all of the achievements. To do that you will be required to consistently execute each skill and demonstrate deep understanding of the course material, after achieving level 2 in that skill. You can earn level 3 achievements only through your portfolio submissions.</p>
@@ -243,7 +272,7 @@ You will have at least two opportunities to earn every level 3 achievement.</p>
 <div class="section" id="participation">
 <h3>Participation<a class="headerlink" href="#participation" title="Permalink to this headline">¶</a></h3>
 <p>While attending synchronous class sessions, there will be understanding checks and in class exercises.
-Completing all in class exercises and correctly answering questions in class can earn level 1 achievements.
+Completing in class exercises and correctly answering questions in class can earn level 1 achievements.
 In class questions will be administered through the classroom chat platform Prismia.chat; these records will be used to update your skill progression.</p>
 </div>
 <div class="section" id="assignments">
@@ -253,17 +282,18 @@ In class questions will be administered through the classroom chat platform Pris
 </div>
 <div class="section" id="portfolio-checks">
 <h3>Portfolio Checks<a class="headerlink" href="#portfolio-checks" title="Permalink to this headline">¶</a></h3>
-<p>To demonstrate mastery, you will build a portfolio consisting of reflections, challenge problems, and longer analyses over the course of the semester.
+<p>To earn level 2 achievements, you will build a portfolio consisting of reflections, challenge problems, and longer analyses over the course of the semester.
 You will submit your portfolio for review 4 times.
-The first portfolio check will cover skills FIXME.
-The second portfolio check will cover skills FIXME.
-The third and fourth portfolio checks will cover all of the skills.
-The third portfolio check will be due one week before the end of classes and the fourth will be due during finals. This means that, if you have achieved mastery of all of the skills by the 3rd portfolio check, you do not need to submit the fourth one.</p>
+The first two will cover the skills taught up until 1 week before the submission deadline.</p>
+<!-- The first portfolio check will cover skills FIXME.
+The second portfolio check will cover skills FIXME. -->
+<p>The third and fourth portfolio checks will cover all of the skills.
+The fourth will be due during finals. This means that, if you have achieved mastery of all of the skills by the 3rd portfolio check, you do not need to submit the fourth one.</p>
 <p>Portfolio prompts will be given throughout the class, some will be strucutred questions, others may be questions that arise in class, for which there is not time to answer.</p>
 </div>
 <div class="section" id="tldr">
 <h3>TLDR<a class="headerlink" href="#tldr" title="Permalink to this headline">¶</a></h3>
-<p>You <em>could</em> earn a C through in class participation alone, if you make nearly zero mistakes. To earn a B, you must complete assignments and participate in class. To earn an A you must participate, complete assignments, and submit a portfolio for review FIXME times.</p>
+<p>You <em>could</em> earn a C through in class participation alone, if you make nearly zero mistakes. To earn a B, you must complete assignments and participate in class. To earn an A you must participate, complete assignments, and build a portfolio.</p>
 </div>
 </div>
 <div class="section" id="detailed-mechanics">
@@ -366,7 +396,19 @@ The third portfolio check will be due one week before the end of classes and the
 </table>
 </div></div></div>
 </div>
-<p>For example, to get a B+ you must master at least 5 skills and achieve competency at at least 10, so if you reach mastery at 7 and competency at 8 that is still a B+ because mastery requires exceeding competency. An alternative way to account for these in-betweens is to assign points to the mastery levels as (mastery = 3; competency = 2; aware = 1) and compute the total points earned. The minimum skill points for each grade is also shown in the table. If you are monitoring your progress with points, it is important to remember that these points are cumulative; they will not be averaged. If an assignment only demonstrates awareness of a skill, that does not mean you have “lost” points, you can improve that to competent, or mastered.</p>
+<p>For example, if you achieve level 2 on all of the skills and level 3 on 7 skills, that will be a B+.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this example, you will have also achieved level 1 on all of the skills, because it is a prerequisite to level 2.</p>
+</div>
+</div>
+<p>If you achieve level 3 on 14 of the skills, but only level 1 on one of the skills, that will be a B-, because the minimum number of level 2 achievements for a B is 15.</p>
+</div>
+<div class="section" id="late-work">
+<h2>Late work<a class="headerlink" href="#late-work" title="Permalink to this headline">¶</a></h2>
+<p>No late work will be graded. You may visit office hours to discuss assignments that you did not complete on time to get feedback and check your own understanding, but they will not count toward skill demonstration. Every skill will be assessed through more than one assignment, so missing assignments occasionally <em>may</em> not hurt your grade. If you do not submit any assignments that cover a given skill, you may earn the level 2 achievement in that skill through a portfolio check, but you will not be able to earn the level 3 achievement in that skill.</p>
 </div>
 </div>
 
@@ -398,7 +440,6 @@ The third portfolio check will be due one week before the end of classes and the
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="tools.html" title="previous page">Tools and References</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
