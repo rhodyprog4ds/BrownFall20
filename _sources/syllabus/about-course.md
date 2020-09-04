@@ -31,6 +31,8 @@ This semester is a lot of new things for all of us. This course will be complete
 
 This syllabus is a *living*  document and accessible from BrightSpace, as a pdf for download directly online at [rhodyprog4ds.github.io/BrownFall20/syllabus](https://rhodyprog4ds.github.io/BrownFall20/syllabus/). If you choose to download a copy of it, note that it is only a copy. You can get notification of changes from GitHub by "watching" the [repository](https://github.com/rhodyprog4ds/BrownFall20) You can view the date of changes and exactly what changes were made on Github.
 
+Creating an [issue on the repository](https://github.com/rhodyprog4ds/BrownFall20/issues) is also a good way to ask questions about anything in the course it will prompt additions and expand the FAQ section. 
+
 
 ### About your instructor
 

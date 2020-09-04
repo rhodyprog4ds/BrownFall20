@@ -91,3 +91,10 @@ I use atom, but I decided to use it by downloading both Atom and Sublime and try
 ```
 ````
 - Text Editor: you may want a text editor outside of the Jupyter environment. Jupyter can edit markdown files (that you'll need for your portfolio), in browser, but it is more common to use a text editor like Atom or Sublime for this purpose.
+
+
+### Textbook
+
+The text for this class is a reference book and iwll not be a source of assignments. It will be a helpful reference and you may be directed there for answers to questions or alternate explanations ot topics.
+
+Python for Data Science is available free [online](https://jakevdp.github.io/PythonDataScienceHandbook/):
