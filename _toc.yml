@@ -22,4 +22,6 @@
   # chapters:
     # - file:
 
-- file: faq/syllabus
+- file: faq/index
+  sections:
+    -file: faq/syllabus
