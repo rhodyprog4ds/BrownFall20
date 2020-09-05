@@ -56,6 +56,11 @@ We will build your skill in the `process` and `communicate` outcomes over the wh
 
 ### Schedule
 
+````{margin}
+```{note}
+On the [BrightSpace calendar](https://brightspace.uri.edu/d2l/le/calendar/101136) page you can get a feed link to add to the calendar of your choice by clicking on the subscribe (star) button on the top right of the page. 
+```
+````
 
 The course will meet MWF 1-1:50pm on Zoom. Every class will include participatory live coding (instructor types, students follow along)) instruction and small exercises for you to progress toward level 1 achievements of the new skills introduced in class that day.
 
