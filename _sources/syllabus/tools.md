@@ -17,27 +17,30 @@ This is also where your grades will appear.
 
 ### Zoom
 
+````{margin}
+```{important}
+
+TL;DR [^tldr]
+
+  - check Brightspace
+  - Install Zoom
+  - Setup your URI Zoom Account
+  - Log in to Prismia Chat
+  - Make a GitHub Account
+  - Install Python
+  - Install Git
+```
+````
+[^tldr]: Too long; didn't read.
 
 This is where we will meet for synchronous class sessions. You will find the link to class zoom sessions on Brightspace.
 
-URI provides all faculty, staff, and students with a paid Zoom account. It *can* run in your browser or on a mobile device, but you will be able to participate in class best if you download the [Zoom client](https://zoom.us/download) on your computer. Please [log in](https://uri-edu.zoom.us/) and [configure your account](https://uri-edu.zoom.us/profile).  Please add a photo of yourself to your account so that we can still see your likeness ins some form, when your camera is off. You may also wish to use a virtual background and you are welcome to do so.  
+URI provides all faculty, staff, and students with a paid Zoom account. It *can* run in your browser or on a mobile device, but you will be able to participate in class best if you download the [Zoom client](https://zoom.us/download) on your computer. Please [log in](https://uri-edu.zoom.us/) and [configure your account](https://uri-edu.zoom.us/profile).  Please add a photo of yourself to your account so that we can still see your likeness in some form when your camera is off. You may also wish to use a virtual background and you are welcome to do so.  
 
 Class will be interactive, so if you cannot be in a quiet place at class time, headphones with a built in microphone are strongly recommended.
 
 For help, you can access the [instructions provided by IT](https://web.uri.edu/itservicedesk/zoom-at-uri/).
 
-```{margin}
-####TL;DR
-[^tldr]: Too long; didn't read.
-
-- [ ] check Brightspace
-- [ ] Install Zoom
-- [ ] Setup your URI Zoom Account
-- [ ] Log in to Prismia Chat
-- [ ] Make a GitHub Account
-- [ ] Install Python
-- [ ] Install Git
-```
 
 
 ### Prismia chat
