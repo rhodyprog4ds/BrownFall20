@@ -3,6 +3,9 @@ title: Programming for Data Science at URI Fall 2020
 author: Professor Sarah M Brown
 logo: logo.png
 
+parse:
+  myst_extended_syntax: true
+
 latex:
   latex_documents:
     targetname: book.tex
