@@ -24,4 +24,4 @@
 
 - file: faq/index
   sections:
-    -file: faq/syllabus
+    - file: faq/syllabus

@@ -58,7 +58,7 @@ We will build your skill in the `process` and `communicate` outcomes over the wh
 
 ````{margin}
 ```{note}
-On the [BrightSpace calendar](https://brightspace.uri.edu/d2l/le/calendar/101136) page you can get a feed link to add to the calendar of your choice by clicking on the subscribe (star) button on the top right of the page. Class is for 1 hour there because of Brightspace/zoom integration limitations, but that calendar includes the zoom link. 
+On the [BrightSpace calendar](https://brightspace.uri.edu/d2l/le/calendar/101136) page you can get a feed link to add to the calendar of your choice by clicking on the subscribe (star) button on the top right of the page. Class is for 1 hour there because of Brightspace/zoom integration limitations, but that calendar includes the zoom link.
 ```
 ````
 
@@ -75,7 +75,7 @@ schedule_df.replace({None:'TBD'})
 schedule_df[['topics','skills']]
 ```
 
-
+(skill-rubric)=
 ### Skill Rubric
 
 
@@ -115,6 +115,7 @@ assignment_cols =  ['A'+ str(i) for i in range(1,14)] + ['# Assignments']
 portfolio_cols = [ 'Level 3'] + ['P' + str(i) for i in range(1,5)]
 ```
 
+(assignment-skills)=
 ### Assignments and Skills
 
 Using the keywords from the table above, this table shows which assignments you will be able to demonstrate which skills and the total number of assignments that assess each skill. This is the number of opportunities you have to earn Level 2 and still preserve 2 chances to earn Level 3 for each skill.
