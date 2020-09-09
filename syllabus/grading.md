@@ -142,3 +142,41 @@ You may visit office hours to discuss assignments that you did not complete on t
 ````
 No late work will be graded.
 Every skill will be assessed through more than one assignment, so missing assignments occasionally *may* not hurt your grade. If you do not submit any assignments that cover a given skill, you may earn the level 2 achievement in that skill through a portfolio check, but you will not be able to earn the level 3 achievement in that skill.
+
+
+### Examples
+
+```{important}
+The following will make more sense after you read the next section of the syllabus and see the skills rubric sections.
+```
+
+If you always attend and get everything correct, you will earn and A and you won't need to submit the 4th portfolio check or assignment 13.
+
+#### Getting A Without Perfection
+
+
+![exampleA](../img/example_A.png)
+
+In this example the student made several mistakes, but still earned an A. This is the advantage to this grading scheme.
+For the `python`, `process`, and `classification` skills, the level 1 achievements were earned on assignments, not in class.
+For the `process` and `classification` skills, the level 2 achievements were not earned on assignments, only on portfolio checks, but they were earned on the first portfolio of those skills, so the level 3 achievements were earned on the second portfolio check for that skill.
+This student's fourth portfolio only demonstrated two skills: `optimize` and `unstructured`. It included only 1 analysis, a text analysis with optimizing the parameters of the model.
+Assignments 4 and 7 were both submitted, but didn't earn any achievements, the student got feedback though, that they were able to apply in later assignments to earn the achievements.
+The student missed class week 6 and chose to not submit assignment 6 and use week 7 to catch up.
+The student had too much work in another class and chose to skip assignment 8.
+The student tried assignment 12, but didn't finish it on time, so it was not graded, but the student visited office hours to understand and be sure to earn the level 2 `unstructured` achievement on assignment 13.
+
+
+#### Getting a B with minimal work
+
+![exampleBminimal](../img/example_B_easy.png)
+
+In this example, the student earned all level 1 achievements in class and all level 2 on assignments.
+This student was content with getting a B and chose to not submit a portfolio.
+
+#### Getting a B while having trouble
+
+![exampleBstruggle](../img/example_B_struggle.png)
+
+In this example, the student struggled to understand in class and on assignments. Assignments were submitted that showed some understanding, but all had some serious mistakes, so only level 1 achievements were earned from assignments.
+The student wanted to get a B and worked hard to get the level 2 achievements on the portfolio checks.
