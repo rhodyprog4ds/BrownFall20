@@ -9,7 +9,7 @@ Your task is to:
 1. Install required software
 1. Setup your portfolio, by [accepting the assignment](https://classroom.github.com/a/m-WYYP0Q) and following the instructions in the README file on your repository.
 1. Add your own definition of data science to the introduction of your portfolio, in `about/index.md`
-1. Add a Jupyter notebook called `grading` to the `about` folder and write a function that computes a grade for this course, with the following docstring. Include:
+1. Add a Jupyter notebook called `grading.ipynb` to the `about` folder and write a function that computes a grade for this course, with the following docstring. Include:
 -  a Markdown cell with a heading
 - your function called `compute_grade`
 - three calls to your function that verify it returns the correct value for different number of badges that produce at three different letter grades.
