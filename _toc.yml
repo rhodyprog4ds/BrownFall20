@@ -14,9 +14,9 @@
   # chapters:
     # -file:
 
-# - part: Assignments
-  # chapters:
-    # - file:
+- file: assignments/index
+  sections:
+    - file: assignments/01-python-syllabus
 
 # - part: Portfolio
   # chapters:
