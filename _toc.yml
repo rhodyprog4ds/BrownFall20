@@ -10,9 +10,9 @@
     - file: syllabus/uri_resources
     - file: syllabus/uri_statements
 
-# - part: Class Notes
-  # chapters:
-    # -file:
+- file: notes/index
+  sections:
+    - file: notes/class2notes
 
 - file: assignments/index
   sections:
