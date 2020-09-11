@@ -208,7 +208,29 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebooks">
+   Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-help-in-python-and-jupyter">
+   Getting Help in Python and Jupyter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-statements">
+   If Statements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -225,6 +247,24 @@
 <li><p>jupyter notebooks</p></li>
 <li><p>pyton: conditionals and fucntions</p></li>
 </ol>
+<div class="section" id="jupyter-notebooks">
+<h2>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
+<p>To launch a Jupyter notebook, in your anaconda prompt on Windows or terminal on Linux or Mac:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="nb">dir</span><span class="o">/</span><span class="n">you</span><span class="o">/</span><span class="n">want</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="ow">in</span>
+<span class="n">jupyter</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<p>A Jupyter notebook has two modes. When you first open, it is in command mode. The border is blue in command mode.</p>
+<p><img alt="screenshot of a code cell in command mode" src="../_images/command_mode.png" /></p>
+<p>When you press a key in command mode it works like a shortcut. For example <code class="docutils literal notranslate"><span class="pre">p</span></code> shows the command search menu.</p>
+<p><img alt="screenshot of the command menu" src="../_images/command_menu.png" /></p>
+<p>If you press <code class="docutils literal notranslate"><span class="pre">enter</span></code> (or <code class="docutils literal notranslate"><span class="pre">return</span></code>)  or click on the cell it changes to edit mode. The border is green in edit mode</p>
+<p><img alt="screenshot of a code cell in edit mode" src="../_images/code_cell.png" /></p>
+<p>Type code or markdown into boxes called cells. There are two type of cells that we will used: code and markdown. You can change that in command mode with <code class="docutils literal notranslate"><span class="pre">y</span></code> for code and <code class="docutils literal notranslate"><span class="pre">m</span></code> for markdown or on the cell type menu at the top of the notebook.</p>
+<p><img alt="screenshot of the cell type menu" src="../_images/cell_type_menu.png" /></p>
+<p>You can treat markdown cells like plain text, or use special formatting. Here is a <a class="reference external" href="https://www.markdownguide.org/cheat-sheet/">markdown cheatsheet</a></p>
+<p>Code cells can run like a calculator. If there is a value returned by the last
+line of a cell, it will be displayed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span><span class="o">+</span><span class="mi">5</span>
@@ -237,6 +277,7 @@
 </div>
 </div>
 </div>
+<p>For example, when we assign, python “returns” <code class="docutils literal notranslate"><span class="pre">None</span></code> so there is no output from this cell</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">9</span>
@@ -244,6 +285,7 @@
 </div>
 </div>
 </div>
+<p>But this one does display the value of the cell</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
@@ -269,6 +311,13 @@
 </div>
 </div>
 </div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here in class we changed the value of <code class="docutils literal notranslate"><span class="pre">a</span></code> above and noted that the new value is shows here, but not in the previous cell that had ouput the value of <code class="docutils literal notranslate"><span class="pre">a</span></code></p>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
@@ -280,6 +329,14 @@
 </pre></div>
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="getting-help-in-python-and-jupyter">
+<h2>Getting Help in Python and Jupyter<a class="headerlink" href="#getting-help-in-python-and-jupyter" title="Permalink to this headline">¶</a></h2>
+<p>The standard way to get help in the help function</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Note that these are green in the jupyter notebook because they’re python reserved words.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -303,6 +360,9 @@ print(...)
 </div>
 </div>
 </div>
+<p>There are two special ways to get help in Jupyter, one dynamically while you’re
+working and one that stays displayed for a while</p>
+<p>Python comments are indicated by the <code class="docutils literal notranslate"><span class="pre">#</span></code> symbol.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">()</span> <span class="c1"># shift +tab to view help</span>
@@ -315,6 +375,10 @@ print(...)
 </div>
 </div>
 </div>
+<p>That will look like this:
+<img alt="screenshot of the docstring from shift+tab help" src="../_images/shift_tab_help.png" /></p>
+<p>Press tab twice for the longer version.</p>
+<p>A Question mark puts it in a popup window that stays until you close it</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print<span class="o">?</span>
@@ -322,6 +386,8 @@ print(...)
 </div>
 </div>
 </div>
+<p><img alt="screenshot of the docstring from ? help" src="../_images/qmark_help.png" /></p>
+<p>This means you can then use the displayed help to remember how to call the function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
@@ -347,6 +413,16 @@ print(...)
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="if-statements">
+<h2>If Statements<a class="headerlink" href="#if-statements" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>if the <em>concept</em> of an <code class="docutils literal notranslate"><span class="pre">if</span></code> in programming is new to you, you should talk to Dr.
+Brown. Basic programming is a prerequisite to this course, we’re <em>reviewing</em>
+basic ideas but only at a level of detail to serve as a reminder.</p>
+</div>
+<p>The synta</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span><span class="n">b</span><span class="p">:</span>
@@ -368,9 +444,81 @@ print(...)
 </div>
 </div>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>this is updated to include things that were skipped in class and discussed after
+the breakouts</p>
+</div>
+<p>You can check the contents of a string with the <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code class="docutils literal notranslate"><span class="pre">in</span></code> works for all lists, we’ll learn more about that next week</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;sarah&#39;</span>
+<span class="k">if</span> <span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;has an a&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sarah has an a
+</pre></div>
+</div>
+</div>
+</div>
+<p>if we copy and change the name we get no output</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Beibhinn&#39;</span>
+<span class="k">if</span> <span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;has an a&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>this is also updated to include things that were skipped in class and discussed after
+the breakouts</p>
+</div>
+<p>How to write functions in python:</p>
+<ul class="simple">
+<li><p>the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword starts a function definition</p></li>
+<li><p>then the function name</p></li>
+<li><p>then the parameters it accepts in <code class="docutils literal notranslate"><span class="pre">()</span></code></p></li>
+<li><p>end that line with a <code class="docutils literal notranslate"><span class="pre">:</span></code></p></li>
+<li><p>the body of the function is spaced over one tab, but Jupyter will do it automatically for you. if it doesn’t you might have forgotten the <code class="docutils literal notranslate"><span class="pre">:</span></code></p></li>
+</ul>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>this is actually not a great function, because the printing is only a <em>side effect</em>. It’s better to return the output of the function</p>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greeting</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    a function that greets the person name by printing</span>
+
+<span class="sd">    parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name: string</span>
+<span class="sd">      a name to be greeeted</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    nothing</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -388,16 +536,97 @@ print(...)
 </div>
 </div>
 </div>
+<p>A better version of that function might be:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>you can append strings with <code class="docutils literal notranslate"><span class="pre">+</span></code></p>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_string</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greeting</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    this function checks for spaces</span>
+<span class="sd">    a function that greets the person name by printing</span>
+
+<span class="sd">    parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name: string</span>
+<span class="sd">      a name to be greeeted</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    nothing</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">if</span> <span class="s1">&#39; &#39;</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s1">&#39;hello &#39;</span> <span class="o">+</span> <span class="n">name</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-try-it-yourself admonition">
+<p class="admonition-title">Try it Yourself!</p>
+<p>Write a function that checks if a string has a space in it and returns “please rename” if there is a space.</p>
+<p>Remember a docstring.  Call your function a couple of times to confirm it works.</p>
+</div>
+<p>Unhide the cell below to see the answer.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_string</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    this function checks for spaces in text</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    text : string</span>
+<span class="sd">      the text to be checked</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None or &quot;please rename&quot;</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="s1">&#39; &#39;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
         <span class="k">return</span> <span class="s2">&quot;please rename&quot;</span>
 </pre></div>
 </div>
+</div>
+</div>
+<p>This is what some calls of the function look lik</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_string</span><span class="p">(</span><span class="s2">&quot;my data.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;please rename&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If there’s no string we see no output</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_string</span><span class="p">(</span><span class="s2">&quot;my_data.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What does python actually return?</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">check_string</span><span class="p">(</span><span class="s2">&quot;my_data.csv&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NoneType
+</pre></div>
+</div>
+</div>
+</div>
+<div class="toggle docutils container">
+<p>it returns <code class="docutils literal notranslate"><span class="pre">None</span></code>, which is the python empty/null data type</p>
 </div>
 </div>
 </div>
