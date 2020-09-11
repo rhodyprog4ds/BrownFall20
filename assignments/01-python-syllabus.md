@@ -5,6 +5,14 @@ This assignment is an opportunity to earn level 2 achievements for the `process`
 
 ## To Do
 
+````{margin}
+```{note}
+If you get stuck on any of this after accepting the assignment and creating a repository, you can create an issue on your repository, describing what you're stuck on and tag us with `@rhodyprog4ds/fall20instructors`.
+
+To do this click Issues at the top, the green "New Issue" button and then type away. 
+```
+````
+
 Your task is to:
 1. Install required software
 1. Setup your portfolio, by [accepting the assignment](https://classroom.github.com/a/m-WYYP0Q) and following the instructions in the README file on your repository.
@@ -13,7 +21,7 @@ Your task is to:
 -  a Markdown cell with a heading
 - your function called `compute_grade`
 - three calls to your function that verify it returns the correct value for different number of badges that produce at three different letter grades.
-1. Uncomment the line `#     - file: about/grading` in your `_toc.yml` file. 
+1. Uncomment the line `#     - file: about/grading` in your `_toc.yml` file.
 
 ```
 '''
