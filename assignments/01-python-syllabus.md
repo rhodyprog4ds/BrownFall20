@@ -13,7 +13,7 @@ Your task is to:
 -  a Markdown cell with a heading
 - your function called `compute_grade`
 - three calls to your function that verify it returns the correct value for different number of badges that produce at three different letter grades.
-
+1. Uncomment the line `#     - file: about/grading` in your `_toc.yml` file. 
 
 ```
 '''
