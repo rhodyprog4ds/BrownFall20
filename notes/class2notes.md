@@ -18,14 +18,54 @@ Agenda:
 1. jupyter notebooks
 1. pyton: conditionals and fucntions
 
++++
+## Jupyter Notebooks
+
+To launch a Jupyter notebook, in your anaconda prompt on Windows or terminal on Linux or Mac:
+
+```
+cd dir/you/want/to/work/in
+jupyter notebook
+```
+
+
+A Jupyter notebook has two modes. When you first open, it is in command mode. The border is blue in command mode.
+
+![screenshot of a code cell in command mode](../img/command_mode.png)
+
+When you press a key in command mode it works like a shortcut. For example `p` shows the command search menu.
+
+![screenshot of the command menu](../img/command_menu.png)
+
+
+
+
+If you press `enter` (or `return`)  or click on the cell it changes to edit mode. The border is green in edit mode
+
+![screenshot of a code cell in edit mode](../img/code_cell.png)
+
+
+Type code or markdown into boxes called cells. There are two type of cells that we will used: code and markdown. You can change that in command mode with `y` for code and `m` for markdown or on the cell type menu at the top of the notebook.
+
+![screenshot of the cell type menu](../img/cell_type_menu.png)
+
+You can treat markdown cells like plain text, or use special formatting. Here is a [markdown cheatsheet](https://www.markdownguide.org/cheat-sheet/)
+
++++
+
+Code cells can run like a calculator. If there is a value returned by the last
+line of a cell, it will be displayed.
+
 ```{code-cell} ipython3
 4+5
 ```
 
+For example, when we assign, python "returns" `None` so there is no output from this cell
+
 ```{code-cell} ipython3
 a = 9
 ```
-
+But this one does display the value of the cell
 ```{code-cell} ipython3
 a
 ```
@@ -35,21 +75,48 @@ b = 4
 b
 ```
 
+````{margin}
+```{note}
+Here in class we changed the value of `a` above and noted that the new value is shows here, but not in the previous cell that had ouput the value of `a`
+```
+
+````
+
 ```{code-cell} ipython3
 a
+```
+## Getting Help in Python and Jupyter
+
+The standard way to get help in the help function
+
+```{margin}
+Note that these are green in the jupyter notebook because they're python reserved words.
 ```
 
 ```{code-cell} ipython3
 help(print)
 ```
+There are two special ways to get help in Jupyter, one dynamically while you're
+working and one that stays displayed for a while
+
+Python comments are indicated by the `#` symbol.
 
 ```{code-cell} ipython3
 print() # shift +tab to view help
 ```
+That will look like this:
+![screenshot of the docstring from shift+tab help](../img/shift_tab_help.png)
+
+Press tab twice for the longer version.
+
+A Question mark puts it in a popup window that stays until you close it
 
 ```{code-cell} ipython3
 print?
 ```
+![screenshot of the docstring from ? help](../img/qmark_help.png)
+
+This means you can then use the displayed help to remember how to call the function
 
 ```{code-cell} ipython3
 print(a,b, 'hello',sep='-')
@@ -59,7 +126,15 @@ print(a,b, 'hello',sep='-')
 a
 b
 ```
+## If Statements
 
+:::{warning}
+if the _concept_ of an `if` in programming is new to you, you should talk to Dr.
+Brown. Basic programming is a prerequisite to this course, we're *reviewing*
+basic ideas but only at a level of detail to serve as a reminder.
+:::
+
+The synta
 ```{code-cell} ipython3
 if a >b:
     print('greater')
@@ -69,53 +144,147 @@ if a >b:
 if b > a:
     print('greater')
 ```
+```{tip}
+this is updated to include things that were skipped in class and discussed after
+the breakouts
+```
+You can check the contents of a string with the `in` keyword
+
+````{margin}
+```{tip}
+`in` works for all lists, we'll learn more about that next week
+```
+````
+
+```{code-cell} ipython3
+name = 'sarah'
+if 'a' in name:
+    print(name, 'has an a')
+```
+
+if we copy and change the name we get no output
+
+```{code-cell} ipython3
+name = 'Beibhinn'
+if 'a' in name:
+    print(name, 'has an a')
+```
+
+
+## Functions
+
+```{tip}
+this is also updated to include things that were skipped in class and discussed after
+the breakouts
+```
+How to write functions in python:
+- the `def` keyword starts a function definition
+- then the function name
+- then the parameters it accepts in `()`
+- end that line with a `:`
+- the body of the function is spaced over one tab, but Jupyter will do it automatically for you. if it doesn't you might have forgotten the `:`
+
+````{margin}
+```{warning}
+this is actually not a great function, because the printing is only a *side effect*. It's better to return the output of the function
+```
+````
 
 ```{code-cell} ipython3
 def greeting(name):
+    '''
+    a function that greets the person name by printing
+
+    parameters
+    ----------
+    name: string
+      a name to be greeeted
+
+    Returns
+    -------
+    nothing
+    '''
     print('hello', name)
 ```
+
 
 ```{code-cell} ipython3
 greeting('sarah')
 ```
 
+A better version of that function might be:
+
+````{margin}
+```{tip}
+you can append strings with `+`
+```
+````
 ```{code-cell} ipython3
-def check_string(word):
+def greeting(name):
     '''
-    this function checks for spaces
+    a function that greets the person name by printing
+
+    parameters
+    ----------
+    name: string
+      a name to be greeeted
+
+    Returns
+    -------
+    nothing
     '''
-    if ' ' in word:
+    return 'hello ' + name
+```
+
+
+```{admonition} Try it Yourself!
+Write a function that checks if a string has a space in it and returns "please rename" if there is a space.
+
+Remember a docstring.  Call your function a couple of times to confirm it works.
+```
+
+Unhide the cell below to see the answer.
+
+```{code-cell} ipython3
+:tags: [hide-input]
+
+def check_string(text):
+    '''
+    this function checks for spaces in text
+
+    Parameters
+    ----------
+    text : string
+      the text to be checked
+
+    Returns
+    -------
+    None or "please rename"
+    '''
+    if ' ' in text:
         return "please rename"
 ```
 
-```{code-cell} ipython3
+This is what some calls of the function look lik
 
+```{code-cell} ipython3
+check_string("my data.csv")
 ```
 
-```{code-cell} ipython3
+If there's no string we see no output
 
+```{code-cell} ipython3
+check_string("my_data.csv")
 ```
 
-```{code-cell} ipython3
+What does python actually return?
 
+```{code-cell} ipython3
+:tags: [hide-input]
+
+type(check_string("my_data.csv"))
 ```
 
-```{code-cell} ipython3
-
-```
-
-```{code-cell} ipython3
-
-```
-
-```{code-cell} ipython3
-
-```
-
-```{code-cell} ipython3
-
-```
-
-```{code-cell} ipython3
-
+```{toggle}
+it returns `None`, which is the python empty/null data type
 ```
