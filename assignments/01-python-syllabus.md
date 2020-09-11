@@ -1,3 +1,4 @@
+# Assignment 1: Portfolio Setup, Data Science, and Python
 
 ## Objective & Evaluation
 
@@ -9,7 +10,7 @@ This assignment is an opportunity to earn level 2 achievements for the `process`
 ```{note}
 If you get stuck on any of this after accepting the assignment and creating a repository, you can create an issue on your repository, describing what you're stuck on and tag us with `@rhodyprog4ds/fall20instructors`.
 
-To do this click Issues at the top, the green "New Issue" button and then type away. 
+To do this click Issues at the top, the green "New Issue" button and then type away.
 ```
 ````
 
