@@ -1,6 +1,6 @@
 # GitHub FAQ
 
-_Help! I accidentally merged the Feedback Pull Request before my assignment was graded_
+
 
 ````{dropdown} Help! I accidentally merged the Feedback Pull Request before my assignment was graded
 
