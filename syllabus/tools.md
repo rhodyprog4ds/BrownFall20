@@ -64,7 +64,7 @@ There will be a link to our class GitHub Classroom on Brightspace.
 <!-- ### GradeScope
 
 Programming As -->
-
+(prorgrammin-env)=
 ### Programming Environment
 
 This a programming course, so you will need a programming environment. In order to complete assignments you need the items listed in the requirements list. The easiest way to meet these requirements is to follow the recommendations below. I will provide instruction assuming that you have followed the recommendations.
