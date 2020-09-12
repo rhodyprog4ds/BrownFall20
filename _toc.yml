@@ -11,10 +11,12 @@
     - file: syllabus/uri_statements
 
 - file: notes/index
+  expand_sections: true
   sections:
-    - file: notes/class2notes
+    - file: notes/2020-09-11
 
 - file: assignments/index
+  expand_sections: true
   sections:
     - file: assignments/01-python-syllabus
 
