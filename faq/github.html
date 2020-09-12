@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub FAQ &#8212; Programming for Data Science at URI Fall 2020</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Syllabus FAQ" href="syllabus.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Programming for Data Science at URI Fall 2020</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to Programming for Data Science
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus/index.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notes/index.html">
+   Class Notes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/index.html">
+   Assignments
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="index.html">
+   FAQ
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="syllabus.html">
+     Syllabus FAQ
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     GitHub FAQ
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/faq/github.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        <a class="issues-button"
+            href="https://github.com/rhodyprog4ds/BrownFall20//issues/new?title=Issue%20on%20page%20%2Ffaq/github.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/rhodyprog4ds/BrownFall20/edit/main/faq/github.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="github-faq">
+<h1>GitHub FAQ<a class="headerlink" href="#github-faq" title="Permalink to this headline">¶</a></h1>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Help! I accidentally merged the Feedback Pull Request before my assignment was graded<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">That’s ok. You can fix it.</p>
+<p class="card-text">You’ll have to work offline and use GitHub in your browser together for this fix. The following instuctions will work in terminal on Mac or Linux or in GitBash for Windows. (see <span class="xref myst">Programming Environment section on the tools page</span>).</p>
+<p class="card-text">First get the url to clone your repository (unless you already have it cloned then skip ahead): on the main page for your repository, click the green “Code” button, then copy the url that’s show
+<img alt="screenshot of copying .git url" src="../_images/get_clone_url.png" /></p>
+<p class="card-text">Next open a terminal or GitBash and type the following.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span>
+</pre></div>
+</div>
+<p class="card-text">then past your url that you copied. It will look something like this, but the last part will be the current assignment repo and your username.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">rhodyprog4ds</span><span class="o">/</span><span class="n">portfolio</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p class="card-text">When you merged the Feedback pull request you advanced the <code class="docutils literal notranslate"><span class="pre">feedback</span></code> branch, so we need to hard reset it back to before you did any work. To do this, first check it out, by navigating into the folder for your repository (created when you cloned above) and then checking it out, and making sure it’s up to date with the <code class="docutils literal notranslate"><span class="pre">remote</span></code> (the copy on GitHub)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">portfolio</span><span class="o">-</span><span class="n">brownsarahm</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">feedback</span>
+<span class="n">git</span> <span class="n">pull</span>
+</pre></div>
+</div>
+<p class="card-text">Now, you have to figure out what commit to revert to, so go back to GitHub in your browser, and swithc to the feedback branch there. Click on where it says <code class="docutils literal notranslate"><span class="pre">main</span></code> on the top right next to the branch icon and choose feedback from the list.</p>
+<p class="card-text"><img alt="screenshot of switching to the feedback branch on github" src="../_images/switch_to_feedback.png" /></p>
+<p class="card-text">Now view the list of all of the commits to this branch, by clicking on the clock icon with a number of commits</p>
+<p class="card-text"><img alt="screenshot of clicking to view commits" src="../_images/view_commits.png" /></p>
+<p class="card-text">On the commits page scroll down and find the commit titled “Setting up GitHub Classroom Feedback” and copy its hash, by clicking on the clipboard icon next to the short version.</p>
+<p class="card-text"><img alt="screenshot copying hash" src="../_images/copy_hash.png" /></p>
+<p class="card-text">Now, back on your terminal, type the following</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">hard</span>
+</pre></div>
+</div>
+<p class="card-text">then paste the commit hash you copied, it will look something like the following, but your hash will be different.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">hard</span> <span class="mi">822</span><span class="n">cfe51a70d356d448bcaede5b15282838a5028</span>
+</pre></div>
+</div>
+<p class="card-text">If it works, your terminal will say something like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HEAD</span> <span class="ow">is</span> <span class="n">now</span> <span class="n">at</span> <span class="mi">822</span><span class="n">cfe5</span> <span class="n">Setting</span> <span class="n">up</span> <span class="n">GitHub</span> <span class="n">Classroom</span> <span class="n">Feedback</span>
+</pre></div>
+</div>
+<p class="card-text">but the number on yours will be different.</p>
+<p class="card-text">Now your local copy of the <code class="docutils literal notranslate"><span class="pre">feedback</span></code> branch is reverted back as if you had not merged the pull request and what’s left to do is to push those changes to GitHub. By default, GitHub won’t let you push changes unless you have all of the changes that have been made on their side, so we have to tell Git to force GitHub to do this.</p>
+<p class="card-text">Since we’re about to do something with forcing, we should first check that we’re doing the right thing.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<p class="card-text">and it should show something like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">feedback</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">behind</span> <span class="s1">&#39;origin/feedback&#39;</span> <span class="n">by</span> <span class="mi">12</span> <span class="n">commits</span><span class="p">,</span> <span class="ow">and</span> <span class="n">can</span> <span class="n">be</span> <span class="n">fast</span><span class="o">-</span><span class="n">forwarded</span><span class="o">.</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git pull&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">your</span> <span class="n">local</span> <span class="n">branch</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="card-text">Your number of commits will probably be different but the important things to see here is that it says <code class="docutils literal notranslate"><span class="pre">On</span> <span class="pre">branch</span> <span class="pre">feedback</span></code> so that you know you’re not deleting the <code class="docutils literal notranslate"><span class="pre">main</span></code> copy of your work and <code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">branch</span> <span class="pre">is</span> <span class="pre">behind</span> <span class="pre">origin/feedback</span></code> to know that reverting worked.</p>
+<p class="card-text">Now to make GitHub match your reverted local copy.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">-</span><span class="n">f</span>
+</pre></div>
+</div>
+<p class="card-text">and you’ll get something like this to know that it worked</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Total</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">To</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">rhodyprog4ds</span><span class="o">/</span><span class="n">portfolio</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
+ <span class="o">+</span> <span class="n">f301d90</span><span class="o">...</span><span class="mi">822</span><span class="n">cfe5</span> <span class="n">feedback</span> <span class="o">-&gt;</span> <span class="n">feedback</span> <span class="p">(</span><span class="n">forced</span> <span class="n">update</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="card-text">Again, the numbers will be different and it will be your url, not mine.</p>
+<p class="card-text">Now back on GitHub, in your browser, click on the code tab. It should look something like this now. Notice that it says, “This branch is 11 commits behind main” your number will be different but it should be 1 less than the number you had when you checked <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>. This is because we reverted the changes you made to main (11 for me) and the 1 commit for merging main into feedback. Also the last commit (at the top, should say “Setting up GitHub Classroom Feedback”).</p>
+<p class="card-text"><img alt="screenshot of feedback branch code tab after revert" src="../_images/code_tab_post_revert.png" /></p>
+<p class="card-text">Now, you need to recreate your Pull Request, click where it says pull request.</p>
+<p class="card-text"><img alt="screenshot of pull request link highlighted" src="../_images/pr_after_revert.png" /></p>
+<p class="card-text">It will say there isn’t anything to compare, but this is because it’s trying to use <code class="docutils literal notranslate"><span class="pre">feedback</span></code> to update <code class="docutils literal notranslate"><span class="pre">main</span></code>. We want to use <code class="docutils literal notranslate"><span class="pre">main</span></code> to update <code class="docutils literal notranslate"><span class="pre">feedback</span></code> for this PR. So we have to swap them. Change base from <code class="docutils literal notranslate"><span class="pre">main</span></code> to <code class="docutils literal notranslate"><span class="pre">feedback</span></code> by clicking on it and choosing <code class="docutils literal notranslate"><span class="pre">feedback</span></code> from the list.</p>
+<p class="card-text"><img alt="screenshot of changing pr base to feedback" src="../_images/pr_change_base.png" /></p>
+<p class="card-text">Then the change the compare <code class="docutils literal notranslate"><span class="pre">feedback</span></code> on the right to <code class="docutils literal notranslate"><span class="pre">main</span></code>. Once you do that the page will change to the “Open a Pull Request” interface.</p>
+<p class="card-text"><img alt="screenshot of making a pr" src="../_images/open_pr.png" /></p>
+<p class="card-text">Make the title “Feedback” put a note in the body and then click the green “Create Pull Request” button.</p>
+<p class="card-text">Now you’re done!</p>
+<p class="card-text">If you have trouble, create an issue and tag <code class="docutils literal notranslate"><span class="pre">&#64;&#64;rhodyprog4ds/fall20instructors</span></code> for help.</p>
+</div>
+</details></div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./faq"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="syllabus.html" title="previous page">Syllabus FAQ</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Professor Sarah M Brown<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
