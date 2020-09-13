@@ -44,6 +44,31 @@ letter_grade : string
 '''
 ```
 
+Here are some sample tests you could run to confirm that your function works correctly:
+````{margin}
+```{warning}
+your function can have a different name than `compute_grade`, but make sure it's your function name, with those parameter values in your tests.
+```
+
+```{note}
+when the value of the expression after `assert` is `True`, it will look like nothing happened. `assert` is used for testing
+```
+````
+
+```
+assert compute_grade(15,15,15) == 'A'
+
+assert compute_grade(15,15,13) == 'A-'
+
+assert compute_grade(15,14,14) == 'B-'
+
+assert compute_grade(14,14,14) == 'C-'
+
+assert compute_grade(4,3,1) == 'D'
+
+assert compute_grade(15,15,6) =='B+'
+```
+
 
 ## Submission Instructions
 

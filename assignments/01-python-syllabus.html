@@ -264,6 +264,31 @@
 <span class="sd">&#39;&#39;&#39;</span>
 </pre></div>
 </div>
+<p>Here are some sample tests you could run to confirm that your function works correctly:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>your function can have a different name than <code class="docutils literal notranslate"><span class="pre">compute_grade</span></code>, but make sure it’s your function name, with those parameter values in your tests.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>when the value of the expression after <code class="docutils literal notranslate"><span class="pre">assert</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, it will look like nothing happened. <code class="docutils literal notranslate"><span class="pre">assert</span></code> is used for testing</p>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">compute_grade</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span>
+
+<span class="k">assert</span> <span class="n">compute_grade</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">13</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;A-&#39;</span>
+
+<span class="k">assert</span> <span class="n">compute_grade</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;B-&#39;</span>
+
+<span class="k">assert</span> <span class="n">compute_grade</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;C-&#39;</span>
+
+<span class="k">assert</span> <span class="n">compute_grade</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;D&#39;</span>
+
+<span class="k">assert</span> <span class="n">compute_grade</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="o">==</span><span class="s1">&#39;B+&#39;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="submission-instructions">
 <h2>Submission Instructions<a class="headerlink" href="#submission-instructions" title="Permalink to this headline">¶</a></h2>
