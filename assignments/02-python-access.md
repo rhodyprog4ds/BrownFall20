@@ -1,0 +1,41 @@
+# Assignment 2: Practicing Python and Accessing Data
+
+
+## Objective & Evaluation
+
+This assignment is an opportunity to earn level 1 and 2 achievements in `python` and `access` and begin working toward level 1 in `summarize`.
+
+
+Accept the assignment on [GitHub Classroom](). It contains a notebook with some template structure (and will set you up for grading)
+
+Find 3 datasets of interest to you that are provided in different file formats. Choose datasets that are not too big, so that they do not take more than a few second to load. At least one dataset, must have non numerical (eg string or boolean) data in at least 1 column.
+Complete a dictionary for each with the url, a name, and what function should be used to load the data into a `pandas.DataFrame`.
+
+````{margin}
+```{tip}
+Urls are strings. The `string` class in python has a lot of helpful methods for manipulating strings, like [`split`](https://docs.python.org/3/library/stdtypes.html#str.split).
+```
+````
+
+Use a list of those dictionaries to iterate over the datasets and build a table that describes them, with the following columns `['name','source','num_rows', 'num_columns','source_file_name']`. The `source_file_name` should be the part of the url after the last `/`. Display that summary table as a dataframe and save it as a csv.
+
+
+
+For a dataset that includes nonnumerical data:
+- display the heading with the last seven rows
+- make and display a new data frame with only the non numerical columns
+- was the format that the data was provided in a good format? why or why not?
+
+
+For any other dataset:
+- display the heading and the first three rows
+- display the datatype for each column
+- Are there any variables where pandas may have read in the data as a datatype that's not what you expect (eg a numerical column mistaken for strings)
+
+For the third dataset:
+- display the first 5 even rows of the data for three columns of your choice
+
+
+
+For any dataset:
+- try reading it in with the wrong `read_` function and make notes about what happens
