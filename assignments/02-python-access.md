@@ -38,4 +38,4 @@ For the third dataset:
 
 
 For any dataset:
-- try reading it in with the wrong `read_` function and make notes about what happens
+- try reading it in with the wrong `read_` function. If you had done this by accident, how could you tell?
