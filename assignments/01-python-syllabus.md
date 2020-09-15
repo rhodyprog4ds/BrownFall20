@@ -25,23 +25,23 @@ Your task is to:
 1. Uncomment the line `#     - file: about/grading` in your `_toc.yml` file.
 
 ```
-'''
-Computes a grade for CSC/DSP310 from numbers of achievements at each level
+    '''
+    Computes a grade for CSC/DSP310 from numbers of achievements at each level
 
-Parameters:
-------------
-num_level1 : int
-  number of level 1 achievements earned
-num_level2 : int
-  number of level 2 achievements earned
-num_level3 : int
-  number of level 3 achievements earned
+    Parameters:
+    ------------
+    num_level1 : int
+      number of level 1 achievements earned
+    num_level2 : int
+      number of level 2 achievements earned
+    num_level3 : int
+      number of level 3 achievements earned
 
-Returns:
---------
-letter_grade : string
-  letter grade with possible modifier (+/-)
-'''
+    Returns:
+    --------
+    letter_grade : string
+      letter grade with possible modifier (+/-)
+    '''
 ```
 
 Here are some sample tests you could run to confirm that your function works correctly:
