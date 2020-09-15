@@ -3,4 +3,5 @@
 All assignments are due on Sunday at 11:59pm, via github unless otherwise noted.
 
 Assignment TOC:
-- [assignment 1](01-python-syllabus) Due September 13
+- [Assignment 1](01-python-syllabus) Due September 13
+- [Assignment 2](02-python-access) Due September 20
