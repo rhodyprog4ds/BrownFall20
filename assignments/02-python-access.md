@@ -53,4 +53,4 @@ For any dataset:
 ## Data Science Process
 (for the `process` skill)
 
-Make a list of a data science pipeline and denote which types of programming stuctures might be helpful at each staged. Include this in a markdown cell in the same notebook with your analysis
+Make a list of a data science pipeline and denote which types of programming might be helpful at each staged. Include this in a markdown cell in the same notebook with your analysis
