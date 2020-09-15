@@ -78,3 +78,7 @@ Add the notebook to your portfolio by uploading it to your repository, or adding
 View the `gh-pages` branch to see your compiled submission, as `portfolio.pdf` or by viewing your website.
 
 There will be a pull request on your repository that is made by GitHub classroom, [request a review](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/requesting-a-pull-request-review) from the team `rhodyprog4ds/Fall20instructors`.
+
+## Solutions
+
+One solution is added to the [Detailed Mechanics](grade:calculation) part of the Grading section of the syllabus.

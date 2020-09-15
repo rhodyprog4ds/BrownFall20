@@ -92,6 +92,7 @@ You *could* earn a C through in class participation alone, if you make nearly ze
 
 +++
 
+(grade:calculation)=
 ### Detailed mechanics
 
 On Brightspace there are 45 Grade items that you will get a 0 or a 1 grade for. These will be revealed, so that you can view them as you have an opportunity to demonstrate each one.
@@ -128,7 +129,77 @@ In this example, you will have also achieved level 1 on all of the skills, becau
 For example, if you achieve level 2 on all of the skills and level 3 on 7 skills, that will be a B+.
 
 
-If you achieve level 3 on 14 of the skills, but only level 1 on one of the skills, that will be a B-, because the minimum number of level 2 achievements for a B is 15. In this scenario the total number of achievements is 14 at level 3, 14 at level 2 and 15 at level 3, because you have to earn achievements within a skill in sequence. 
+If you achieve level 3 on 14 of the skills, but only level 1 on one of the skills, that will be a B-, because the minimum number of level 2 achievements for a B is 15. In this scenario the total number of achievements is 14 at level 3, 14 at level 2 and 15 at level 3, because you have to earn achievements within a skill in sequence.
+
+The letter grade can be computed as follows
+
+```{code-cell} ipython3
+def compute_grade(num_level1,num_level2,num_level3):
+    '''
+    Computes a grade for CSC/DSP310 from numbers of achievements at each level
+
+    Parameters:
+    ------------
+    num_level1 : int
+      number of level 1 achievements earned
+    num_level2 : int
+      number of level 2 achievements earned
+    num_level3 : int
+      number of level 3 achievements earned
+
+    Returns:
+    --------
+    letter_grade : string
+      letter grade with modifier (+/-)
+    '''
+    if num_level1 == 15:
+        if num_level2 == 15:
+            if num_level3 == 15:
+                grade = 'A'
+            elif num_level3 >= 10:
+                grade = 'A-'
+            elif num_level3 >=5:
+                grade = 'B+'
+            else:
+                grade = 'B'
+        elif num_level2 >=10:
+            grade = 'B-'
+        elif num_level2 >=5:
+            grade = 'C+'
+        else:
+            grade = 'C'
+    elif num_level1 >= 10:
+        grade = 'C-'
+    elif num_level1 >= 5:
+        grade = 'D+'
+    elif num_level1 >=3:
+        grade = 'D'
+    else:
+        grade = 'F'
+
+
+    return grade
+```
+
+```{code-cell} ipython3
+compute_grade(15,15,15)
+```
+
+```{code-cell} ipython3
+compute_grade(14,14,14)
+```
+
+```{code-cell} ipython3
+assert compute_grade(14,14,14) == 'C-'
+```
+
+```{code-cell} ipython3
+assert compute_grade(15,15,15) == 'A'
+```
+
+```{code-cell} ipython3
+assert compute_grade(15,15,11) == 'A-'
+```
 
 
 +++
