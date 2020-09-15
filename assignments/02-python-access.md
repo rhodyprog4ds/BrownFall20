@@ -3,10 +3,19 @@
 
 ## Objective & Evaluation
 
-This assignment is an opportunity to earn level 1 and 2 achievements in `python` and `access` and begin working toward level 1 in `summarize`.
+This assignment is an opportunity to earn level 1 or 2 achievements in `python`, `process` and `access` and begin working toward level 1 in `summarize`.
 
 
-Accept the assignment on [GitHub Classroom](). It contains a notebook with some template structure (and will set you up for grading)
+Accept the assignment on [GitHub Classroom](). It contains a notebook with some template structure (and will set you up for grading). The template will also convert notebooks that are added to markdown, which makes reading on GitHub for easier grading. If you want to incorporate feedback you receive back into a notebook file, [Jupytext](https://jupytext.readthedocs.io/en/latest/using-cli.html) can do that.  
+
+
+To work with this notebook you can either:
+- download the repository as .zip from the green code button, unzip, and re-upload, OR
+- clone the repository with git and the push your changes. See Git/GitHub help on cloning, committing, and pushing, for example this [tutorial on git](https://swcarpentry.github.io/git-novice/) to learn more about git.
+
+
+## Accessing Data with Python and pandas
+_(for python and access)_
 
 Find 3 datasets of interest to you that are provided in different file formats. Choose datasets that are not too big, so that they do not take more than a few second to load. At least one dataset, must have non numerical (eg string or boolean) data in at least 1 column.
 Complete a dictionary for each with the url, a name, and what function should be used to load the data into a `pandas.DataFrame`.
@@ -39,3 +48,9 @@ For the third dataset:
 
 For any dataset:
 - try reading it in with the wrong `read_` function. If you had done this by accident, how could you tell?
+
+
+## Data Science Process
+(for the `process` skill)
+
+Make a list of a data science pipeline and denote which types of programming stuctures might be helpful at each staged. Include this in a markdown cell in the same notebook with your analysis
