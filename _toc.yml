@@ -19,6 +19,7 @@
   expand_sections: true
   sections:
     - file: assignments/01-python-syllabus
+    - file: assignments/02-python-access
 
 # - part: Portfolio
   # chapters:
