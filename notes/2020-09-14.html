@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Iterables &#8212; Programming for Data Science at URI Fall 2020</title>
+    <title>Welcome to Week 2 &#8212; Programming for Data Science at URI Fall 2020</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -94,7 +94,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Iterables
+     Welcome to Week 2
     </a>
    </li>
   </ul>
@@ -213,7 +213,36 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grading-and-assignment-1">
+   Grading and Assignment 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterables">
+   Iterables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lists-and-list-comprehensions">
+     Lists and List Comprehensions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionaries">
+   Dictionaries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#libraries">
+   Libraries
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -222,8 +251,21 @@
         
               <div>
                 
-  <div class="section" id="iterables">
-<h1>Iterables<a class="headerlink" href="#iterables" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="welcome-to-week-2">
+<h1>Welcome to Week 2<a class="headerlink" href="#welcome-to-week-2" title="Permalink to this headline">¶</a></h1>
+<p>This week we will:</p>
+<ul class="simple">
+<li><p>clarify how this grading really works</p></li>
+<li><p>learn about accessing data</p></li>
+<li><p>use accessing data as motivation to review more python</p></li>
+</ul>
+<div class="section" id="grading-and-assignment-1">
+<h2>Grading and Assignment 1<a class="headerlink" href="#grading-and-assignment-1" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="iterables">
+<h2>Iterables<a class="headerlink" href="#iterables" title="Permalink to this headline">¶</a></h2>
+<p>Python has a general data type for objects that are designed to facilitate repetition of some sort, they’re called <code class="docutils literal notranslate"><span class="pre">iterable</span></code>s</p>
+<p>We’ve already seen one. Strings are <code class="docutils literal notranslate"><span class="pre">Iterable</span></code>s</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;sarah&#39;</span>
@@ -231,6 +273,14 @@
 </div>
 </div>
 </div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>remember python indexes from 0</p>
+</div>
+</div>
+<p>which means we can index them</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
@@ -243,6 +293,7 @@
 </div>
 </div>
 </div>
+<p>Indexing with a negative number counts from the end</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -255,6 +306,7 @@
 </div>
 </div>
 </div>
+<p>Loops in python have similar syntax to the <code class="docutils literal notranslate"><span class="pre">if</span></code> and functions we saw last week:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
@@ -272,6 +324,16 @@ hhh
 </div>
 </div>
 </div>
+<p>some notes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">char</span></code> is called the loop variable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> is called the collection- this can be any iterable type object in python</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print(char*3)</span></code> is called the loop body</p></li>
+<li><p>python lets us use mathematical operations on strings</p></li>
+</ul>
+<div class="section" id="lists-and-list-comprehensions">
+<h3>Lists and List Comprehensions<a class="headerlink" href="#lists-and-list-comprehensions" title="Permalink to this headline">¶</a></h3>
+<p>We make a list with square brackets</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sarah&#39;</span><span class="p">,</span> <span class="s1">&#39;Jose&#39;</span><span class="p">,</span> <span class="s1">&#39;Cam&#39;</span><span class="p">,</span> <span class="s1">&#39;Bri&#39;</span><span class="p">]</span>
@@ -279,6 +341,7 @@ hhh
 </div>
 </div>
 </div>
+<p>we can also build lists by folding a loop into the list construction</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;hello&#39;</span> <span class="o">+</span> <span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span>
@@ -291,6 +354,7 @@ hhh
 </div>
 </div>
 </div>
+<p>this is called a list comprehension</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greetings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hello &#39;</span> <span class="o">+</span> <span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span>
@@ -310,6 +374,11 @@ hhh
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="dictionaries">
+<h2>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h2>
+<p>Dictionaries are a useful datatype in python. It is denoted by <code class="docutils literal notranslate"><span class="pre">{}</span></code> and contains <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code> pairs separated by commas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gh_names</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;brownsarahm&#39;</span><span class="p">:</span><span class="s1">&#39;Sarah Brown&#39;</span><span class="p">,</span>
@@ -327,6 +396,7 @@ hhh
 </div>
 </div>
 </div>
+<p>You can think of it like a list of the values with a named index.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gh_names</span><span class="p">[</span><span class="s1">&#39;jdion62&#39;</span><span class="p">]</span>
@@ -339,6 +409,7 @@ hhh
 </div>
 </div>
 </div>
+<p>we can iterate over both the key and the value by using the <code class="docutils literal notranslate"><span class="pre">items</span></code> method on a dictionary. That makes another iterable object that can be used as a loop collection. It functions as a set of pairs now, so we get two loop variables:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">gh_names</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -354,6 +425,7 @@ Jacob Dion &#39;s username is  jdion62
 </div>
 </div>
 </div>
+<p>If we iterate over the dictionary without that method, we get the keys.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">gh_names</span><span class="p">:</span>
@@ -369,11 +441,31 @@ jdion62
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="libraries">
+<h2>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h2>
+<p>To use libraries in python we import them</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>note that <code class="docutils literal notranslate"><span class="pre">import</span></code> is a keyword and that in a Jupyter notebook, we can import anywhere and then the library can be used in any cell that is <em>run</em> after the import cell is <em>run</em>.  It’s good practice to put them at the top and make your notebook runnable in sequence, but Jupyter won’t force you to.</p>
+</div>
+</div>
+<p>We will use <a class="reference external" href="https://pandas.pydata.org/"><code class="docutils literal notranslate"><span class="pre">pandas</span></code></a> a lot in this class. It’s the Python Data Analysis Library.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
 </pre></div>
 </div>
+</div>
+</div>
+<p>Once we import we can use the functions, datatypes, and values a library provides by using a <code class="docutils literal notranslate"><span class="pre">.</span></code> after the name. In a notebook, pressing tab will show you the options.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For example if you don’t remember what kind of read functions there are in pandas, type <code class="docutils literal notranslate"><span class="pre">pandas.read</span></code> and then press tabb to see options.</p>
 </div>
 </div>
 <div class="cell docutils container">
@@ -393,6 +485,7 @@ jdion62
 </div>
 </div>
 </div>
+<p>We can also use an alias to give a library a nickname to make it easier to use. <code class="docutils literal notranslate"><span class="pre">pd</span></code> is the standard alias for <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -400,6 +493,7 @@ jdion62
 </div>
 </div>
 </div>
+<p>We can read in from a local path or a url. Let’s read in the course map page of our course website.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://rhodyprog4ds.github.io/BrownFall20/syllabus/course_map.html&#39;</span><span class="p">)</span>
@@ -407,6 +501,19 @@ jdion62
 </div>
 </div>
 </div>
+<p>This makes a <code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> objects. We can check that with the following</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This cell was added after class, but the explanation was given in class</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://rhodyprog4ds.github.io/BrownFall20/syllabus/course_map.html&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To work with it though, we should save to a variable, then we can index into that list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_list</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://rhodyprog4ds.github.io/BrownFall20/syllabus/course_map.html&#39;</span><span class="p">)</span>
@@ -415,6 +522,7 @@ jdion62
 </div>
 </div>
 </div>
+<p>When you display <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code> in jupyter, they get nice formatting.</p>
 <p>Today’s Review:</p>
 <ul class="simple">
 <li><p>strings are iterable</p></li>
@@ -422,6 +530,7 @@ jdion62
 <li><p>dictionaries</p></li>
 <li><p>imported pandas and read data</p></li>
 </ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

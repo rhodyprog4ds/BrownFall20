@@ -378,7 +378,7 @@ The fourth will be due during finals. This means that, if you have achieved mast
 </div>
 </div>
 <div class="section" id="detailed-mechanics">
-<h2>Detailed mechanics<a class="headerlink" href="#detailed-mechanics" title="Permalink to this headline">¶</a></h2>
+<span id="grade-calculation"></span><h2>Detailed mechanics<a class="headerlink" href="#detailed-mechanics" title="Permalink to this headline">¶</a></h2>
 <p>On Brightspace there are 45 Grade items that you will get a 0 or a 1 grade for. These will be revealed, so that you can view them as you have an opportunity to demonstrate each one.
 The table below shows the minimum number of skills at each level to earn each letter grade.</p>
 <div class="cell tag_remove-input docutils container">
@@ -486,6 +486,103 @@ The table below shows the minimum number of skills at each level to earn each le
 </div>
 <p>For example, if you achieve level 2 on all of the skills and level 3 on 7 skills, that will be a B+.</p>
 <p>If you achieve level 3 on 14 of the skills, but only level 1 on one of the skills, that will be a B-, because the minimum number of level 2 achievements for a B is 15. In this scenario the total number of achievements is 14 at level 3, 14 at level 2 and 15 at level 3, because you have to earn achievements within a skill in sequence.</p>
+<p>The letter grade can be computed as follows</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_grade</span><span class="p">(</span><span class="n">num_level1</span><span class="p">,</span><span class="n">num_level2</span><span class="p">,</span><span class="n">num_level3</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Computes a grade for CSC/DSP310 from numbers of achievements at each level</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    num_level1 : int</span>
+<span class="sd">      number of level 1 achievements earned</span>
+<span class="sd">    num_level2 : int</span>
+<span class="sd">      number of level 2 achievements earned</span>
+<span class="sd">    num_level3 : int</span>
+<span class="sd">      number of level 3 achievements earned</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    letter_grade : string</span>
+<span class="sd">      letter grade with modifier (+/-)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">num_level1</span> <span class="o">==</span> <span class="mi">15</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">num_level2</span> <span class="o">==</span> <span class="mi">15</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">num_level3</span> <span class="o">==</span> <span class="mi">15</span><span class="p">:</span>
+                <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
+            <span class="k">elif</span> <span class="n">num_level3</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+                <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;A-&#39;</span>
+            <span class="k">elif</span> <span class="n">num_level3</span> <span class="o">&gt;=</span><span class="mi">5</span><span class="p">:</span>
+                <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;B+&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span>
+        <span class="k">elif</span> <span class="n">num_level2</span> <span class="o">&gt;=</span><span class="mi">10</span><span class="p">:</span>
+            <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;B-&#39;</span>
+        <span class="k">elif</span> <span class="n">num_level2</span> <span class="o">&gt;=</span><span class="mi">5</span><span class="p">:</span>
+            <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;C+&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span>
+    <span class="k">elif</span> <span class="n">num_level1</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;C-&#39;</span>
+    <span class="k">elif</span> <span class="n">num_level1</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;D+&#39;</span>
+    <span class="k">elif</span> <span class="n">num_level1</span> <span class="o">&gt;=</span><span class="mi">3</span><span class="p">:</span>
+        <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;D&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;F&#39;</span>
+
+
+    <span class="k">return</span> <span class="n">grade</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compute_grade</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;A&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compute_grade</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;C-&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">compute_grade</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;C-&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">compute_grade</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">compute_grade</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;A-&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="late-work">
 <h2>Late work<a class="headerlink" href="#late-work" title="Permalink to this headline">¶</a></h2>
