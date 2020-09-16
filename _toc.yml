@@ -15,6 +15,7 @@
   sections:
     - file: notes/2020-09-11
     - file: notes/2020-09-14
+    - file: notes/2020-09-16
 
 - file: assignments/index
   expand_sections: true
