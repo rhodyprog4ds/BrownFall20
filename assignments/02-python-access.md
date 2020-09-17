@@ -30,16 +30,16 @@ Use a list of those dictionaries to iterate over the datasets and build a table 
 
 
 
-For a dataset that includes nonnumerical data:
+For one dataset (must include nonnumerical data):
 - display the heading with the last seven rows
 - make and display a new data frame with only the non numerical columns
 - was the format that the data was provided in a good format? why or why not?
 
 
-For any other dataset:
+For a second dataset:
 - display the heading and the first three rows
 - display the datatype for each column
-- Are there any variables where pandas may have read in the data as a datatype that's not what you expect (eg a numerical column mistaken for strings)
+- Are there any variables where pandas may have read in the data as a datatype that's not what you expect (eg a numerical column mistaken for strings)?
 
 For the third dataset:
 - display the first 5 even rows of the data for three columns of your choice
