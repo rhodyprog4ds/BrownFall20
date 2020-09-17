@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data in Pandas &#8212; Programming for Data Science at URI Fall 2020</title>
+    <title>Class 4: Pandas &#8212; Programming for Data Science at URI Fall 2020</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Assignments" href="../assignments/index.html" />
-    <link rel="prev" title="Welcome to Week 2" href="2020-09-14.html" />
+    <link rel="prev" title="Class 3: Welcome to Week 2" href="2020-09-14.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -94,12 +94,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2020-09-14.html">
-     Welcome to Week 2
+     Class 3: Welcome to Week 2
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Data in Pandas
+     Class 4: Pandas
     </a>
    </li>
   </ul>
@@ -218,7 +218,19 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#remember-programming-is-a-practice">
+   Remember, Programming is a Practice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-in-pandas">
+   Data in Pandas
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -227,25 +239,33 @@
         
               <div>
                 
-  <div class="cell docutils container">
+  <div class="section" id="class-4-pandas">
+<h1>Class 4: Pandas<a class="headerlink" href="#class-4-pandas" title="Permalink to this headline">¶</a></h1>
+<p>Today we will:</p>
+<div class="section" id="remember-programming-is-a-practice">
+<h2>Remember, Programming is a Practice<a class="headerlink" href="#remember-programming-is-a-practice" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>if you’re curious about something try it</p></li>
+<li><p>you don’t need me to give you answers about how code works, the interpreter will tell you</p></li>
+<li><p>if you don’t remember details, remember you can get help from Jupyter</p></li>
+</ul>
+<p>with a <code class="docutils literal notranslate"><span class="pre">?</span></code> after the function name withouth <code class="docutils literal notranslate"><span class="pre">()</span></code></p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print<span class="o">?</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<p>or using the <code class="docutils literal notranslate"><span class="pre">tab</span></code> key inside the <code class="docutils literal notranslate"><span class="pre">()</span></code> for a function</p>
+<div class="cell tag_raises-exception tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
-</div>
-</div>
+<p>or from the core python, with the <code class="docutils literal notranslate"><span class="pre">help</span></code> fucntion</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
@@ -268,8 +288,10 @@ print(...)
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="data-in-pandas">
-<h1>Data in Pandas<a class="headerlink" href="#data-in-pandas" title="Permalink to this headline">¶</a></h1>
+<h2>Data in Pandas<a class="headerlink" href="#data-in-pandas" title="Permalink to this headline">¶</a></h2>
+<p>We can import <code class="docutils literal notranslate"><span class="pre">pandas</span></code> again as before</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -277,7 +299,8 @@ print(...)
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<p>and we can read in data.</p>
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/brownsarahm/python-socialsci-files/master/data/SAFI_clean.csv&#39;</span><span class="p">)</span>
 </pre></div>
@@ -511,6 +534,7 @@ print(...)
 <p>131 rows × 14 columns</p>
 </div></div></div>
 </div>
+<p>to be able to use this, we need to save it to a variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/brownsarahm/python-socialsci-files/master/data/SAFI_clean.csv&#39;</span><span class="p">)</span>
@@ -518,6 +542,8 @@ print(...)
 </div>
 </div>
 </div>
+<p>This is an excerpt from the <a class="reference external" href="https://figshare.com/articles/SAFI_Survey_Results/6262019">SAFI dataset</a>.</p>
+<p>Another important thing to do is to check datatypes, this is how we know what things we can do with a variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">safi_df</span><span class="p">)</span>
@@ -530,6 +556,14 @@ print(...)
 </div>
 </div>
 </div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>we can also see the size when we print the whole dataset as in the first time we read the data in.</p>
+</div>
+</div>
+<p>An important thing to check is the size of the dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">shape</span>
@@ -542,6 +576,7 @@ print(...)
 </div>
 </div>
 </div>
+<p>Recall that you can also tab complete</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">shape</span>
@@ -554,6 +589,7 @@ print(...)
 </div>
 </div>
 </div>
+<p>To see the first 5 rows of the dataset, use the <code class="docutils literal notranslate"><span class="pre">head()</span></code> function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -685,6 +721,7 @@ print(...)
 </table>
 </div></div></div>
 </div>
+<p>We can call this function with a value to change how many rows are returned</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -782,13 +819,97 @@ print(...)
 </table>
 </div></div></div>
 </div>
+<p>To know how this works, we can view the documentation for the function</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>this was changed from using <code class="docutils literal notranslate"><span class="pre">?</span></code> for help in class so that the help is desplayed in the rendered website, but the pop up was fine in real time</p>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>safi_df.head<span class="o">?</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">safi_df</span><span class="o">.</span><span class="n">head</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on method head in module pandas.core.generic:
+
+head(n: int = 5) -&gt; ~FrameOrSeries method of pandas.core.frame.DataFrame instance
+    Return the first `n` rows.
+    
+    This function returns the first `n` rows for the object based
+    on position. It is useful for quickly testing if your object
+    has the right type of data in it.
+    
+    For negative values of `n`, this function returns all rows except
+    the last `n` rows, equivalent to ``df[:-n]``.
+    
+    Parameters
+    ----------
+    n : int, default 5
+        Number of rows to select.
+    
+    Returns
+    -------
+    same type as caller
+        The first `n` rows of the caller object.
+    
+    See Also
+    --------
+    DataFrame.tail: Returns the last `n` rows.
+    
+    Examples
+    --------
+    &gt;&gt;&gt; df = pd.DataFrame({&#39;animal&#39;: [&#39;alligator&#39;, &#39;bee&#39;, &#39;falcon&#39;, &#39;lion&#39;,
+    ...                    &#39;monkey&#39;, &#39;parrot&#39;, &#39;shark&#39;, &#39;whale&#39;, &#39;zebra&#39;]})
+    &gt;&gt;&gt; df
+          animal
+    0  alligator
+    1        bee
+    2     falcon
+    3       lion
+    4     monkey
+    5     parrot
+    6      shark
+    7      whale
+    8      zebra
+    
+    Viewing the first 5 lines
+    
+    &gt;&gt;&gt; df.head()
+          animal
+    0  alligator
+    1        bee
+    2     falcon
+    3       lion
+    4     monkey
+    
+    Viewing the first `n` lines (three in this case)
+    
+    &gt;&gt;&gt; df.head(3)
+          animal
+    0  alligator
+    1        bee
+    2     falcon
+    
+    For negative values of `n`
+    
+    &gt;&gt;&gt; df.head(-3)
+          animal
+    0  alligator
+    1        bee
+    2     falcon
+    3       lion
+    4     monkey
+    5     parrot
 </pre></div>
 </div>
 </div>
 </div>
+<p>Since it says <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=5</span></code> we know that the default value of the parameter <code class="docutils literal notranslate"><span class="pre">n</span></code> is 5. When a function has a default value, we can call the function without a value.</p>
+<p>To view the last few lines, we use <code class="docutils literal notranslate"><span class="pre">tail</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
@@ -920,6 +1041,11 @@ print(...)
 </table>
 </div></div></div>
 </div>
+<p>We can also get an <code class="docutils literal notranslate"><span class="pre">Index</span></code> for the columns of the DataFrame.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.html"><code class="docutils literal notranslate"><span class="pre">Index</span></code></a> is another data type that is defined by <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">columns</span>
@@ -936,7 +1062,13 @@ print(...)
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<p>an <code class="docutils literal notranslate"><span class="pre">Index</span></code> variable is iterable so we can index into it</p>
+<div class="admonition-try-it-yourself admonition">
+<p class="admonition-title">Try it Yourself</p>
+<p>How would you view the name of the 3rd column?</p>
+</div>
+<p>First the correct answer:</p>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
@@ -948,6 +1080,7 @@ print(...)
 </div>
 </div>
 </div>
+<p>Now some misconceptions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;interview_date&#39;</span><span class="p">]</span>
@@ -971,7 +1104,8 @@ Name: interview_date, Length: 131, dtype: object
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<p>Indexing with the column name) will return the <em>values</em> in the column</p>
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">columns</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
@@ -988,59 +1122,198 @@ Name: interview_date, Length: 131, dtype: object
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<p>Using <code class="docutils literal notranslate"><span class="pre">()</span></code> returns an error, because <code class="docutils literal notranslate"><span class="pre">columns</span></code> is a <em>property</em> which is referenced as is with no <code class="docutils literal notranslate"><span class="pre">()</span></code>. We get a type error  because functions in python are objects of type <code class="docutils literal notranslate"><span class="pre">callable</span></code> and properties are values not functions.</p>
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">columns</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="mf">40e277</span><span class="n">f3074e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="ne">TypeError</span>: &#39;pandas._libs.properties.AxisProperty&#39; object is not subscriptable
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>This doesn’t work because <code class="docutils literal notranslate"><span class="pre">columns</span></code> is a property of an object of type <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> not a property of the <code class="docutils literal notranslate"><span class="pre">type</span></code></p>
+<p>We can see what the type of pd.DataFrame is with the <code class="docutils literal notranslate"><span class="pre">type</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>type
+</pre></div>
 </div>
+</div>
+</div>
+<p>Knowing about types is helpful for the individual columns of a dataset as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">dtypes</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>key_ID                   int64
+village                 object
+interview_date          object
+no_membrs                int64
+years_liv                int64
+respondent_wall_type    object
+rooms                    int64
+memb_assoc              object
+affect_conflicts        object
+liv_count                int64
+items_owned             object
+no_meals                 int64
+months_lack_food        object
+instanceID              object
+dtype: object
+</pre></div>
 </div>
+</div>
+</div>
+<p>Note that it uses <code class="docutils literal notranslate"><span class="pre">int64</span></code> and <code class="docutils literal notranslate"><span class="pre">object</span></code> as the types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key_ID</th>
+      <th>village</th>
+      <th>interview_date</th>
+      <th>no_membrs</th>
+      <th>years_liv</th>
+      <th>respondent_wall_type</th>
+      <th>rooms</th>
+      <th>memb_assoc</th>
+      <th>affect_conflicts</th>
+      <th>liv_count</th>
+      <th>items_owned</th>
+      <th>no_meals</th>
+      <th>months_lack_food</th>
+      <th>instanceID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>3</td>
+      <td>4</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>bicycle;television;solar_panel;table</td>
+      <td>2</td>
+      <td>Jan</td>
+      <td>uuid:ec241f2c-0609-46ed-b5e8-fe575f6cefef</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>7</td>
+      <td>9</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>once</td>
+      <td>3</td>
+      <td>cow_cart;bicycle;radio;cow_plough;solar_panel;...</td>
+      <td>2</td>
+      <td>Jan;Sept;Oct;Nov;Dec</td>
+      <td>uuid:099de9c9-3e5e-427b-8452-26250e840d6e</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
+<p>We might want to look at what villages were included in the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;village&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;God&#39;, &#39;Chirodzo&#39;, &#39;Ruaca&#39;], dtype=object)
+</pre></div>
 </div>
+</div>
+</div>
+<p>We can also get  count of the number of of each value</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;village&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ruaca       49
+God         43
+Chirodzo    39
+Name: village, dtype: int64
+</pre></div>
 </div>
-<div class="cell docutils container">
+</div>
+</div>
+<div class="admonition-try-it-yourself admonition">
+<p class="admonition-title">Try it Yourself!</p>
+<p>how many surveyed farms have all type <code class="docutils literal notranslate"><span class="pre">mauddaub</span></code>?</p>
+<div class="toggle docutils container">
+<p>46 or 45 count as good answers.</p>
+</div>
+</div>
+<div class="cell tag_hide-input tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;respondent_wall_type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>burntbricks     65
+muddaub         45
+sunbricks       17
+ burntbricks     2
+ muddaub         1
+cement           1
+Name: respondent_wall_type, dtype: int64
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1074,7 +1347,7 @@ Name: interview_date, Length: 131, dtype: object
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="2020-09-14.html" title="previous page">Welcome to Week 2</a>
+    <a class='left-prev' id="prev-link" href="2020-09-14.html" title="previous page">Class 3: Welcome to Week 2</a>
     <a class='right-next' id="next-link" href="../assignments/index.html" title="next page">Assignments</a>
 
     </div>

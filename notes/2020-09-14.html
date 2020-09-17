@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to Week 2 &#8212; Programming for Data Science at URI Fall 2020</title>
+    <title>Class 3: Welcome to Week 2 &#8212; Programming for Data Science at URI Fall 2020</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -35,7 +35,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data in Pandas" href="2020-09-16.html" />
+    <link rel="next" title="Class 4: Pandas" href="2020-09-16.html" />
     <link rel="prev" title="Class 2: intro to notebooks and python" href="2020-09-11.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -94,12 +94,12 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Welcome to Week 2
+     Class 3: Welcome to Week 2
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2020-09-16.html">
-     Data in Pandas
+     Class 4: Pandas
     </a>
    </li>
   </ul>
@@ -256,8 +256,8 @@
         
               <div>
                 
-  <div class="section" id="welcome-to-week-2">
-<h1>Welcome to Week 2<a class="headerlink" href="#welcome-to-week-2" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="class-3-welcome-to-week-2">
+<h1>Class 3: Welcome to Week 2<a class="headerlink" href="#class-3-welcome-to-week-2" title="Permalink to this headline">¶</a></h1>
 <p>This week we will:</p>
 <ul class="simple">
 <li><p>clarify how this grading really works</p></li>
@@ -266,6 +266,19 @@
 </ul>
 <div class="section" id="grading-and-assignment-1">
 <h2>Grading and Assignment 1<a class="headerlink" href="#grading-and-assignment-1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Solution function posted.</p></li>
+<li><p>note: not a sum</p></li>
+<li><p>read the rubric</p></li>
+<li><p>Brightspace</p></li>
+<li><p>In class</p></li>
+<li><p>Portfolio</p>
+<ul>
+<li><p>will start posting prompts
+The docstring functions like a property of the function object. so it has to be inside.</p></li>
+</ul>
+</li>
+</ul>
 </div>
 <div class="section" id="iterables">
 <h2>Iterables<a class="headerlink" href="#iterables" title="Permalink to this headline">¶</a></h2>
@@ -470,10 +483,10 @@ jdion62
 <p class="sidebar-title"></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>For example if you don’t remember what kind of read functions there are in pandas, type <code class="docutils literal notranslate"><span class="pre">pandas.read</span></code> and then press tabb to see options.</p>
+<p>For example if you don’t remember what kind of read functions there are in pandas, type <code class="docutils literal notranslate"><span class="pre">pandas.read</span></code> and then press tab to see options.</p>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">()</span>
 </pre></div>
@@ -502,6 +515,43 @@ jdion62
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://rhodyprog4ds.github.io/BrownFall20/syllabus/course_map.html&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="n">a6f048ad97a0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://rhodyprog4ds.github.io/BrownFall20/syllabus/course_map.html&#39;</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span>                 <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">296</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span> 
+<span class="g g-Whitespace">    </span><span class="mi">298</span>         <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/html.py</span> in <span class="ni">read_html</span><span class="nt">(io, match, flavor, header, index_col, skiprows, attrs, parse_dates, thousands, encoding, decimal, converters, na_values, keep_default_na, displayed_only)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1099</span>         <span class="n">na_values</span><span class="o">=</span><span class="n">na_values</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1100</span>         <span class="n">keep_default_na</span><span class="o">=</span><span class="n">keep_default_na</span><span class="p">,</span>
+<span class="ne">-&gt; </span><span class="mi">1101</span>         <span class="n">displayed_only</span><span class="o">=</span><span class="n">displayed_only</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1102</span>     <span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/html.py</span> in <span class="ni">_parse</span><span class="nt">(flavor, io, match, attrs, encoding, displayed_only, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">892</span>     <span class="n">retained</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">893</span>     <span class="k">for</span> <span class="n">flav</span> <span class="ow">in</span> <span class="n">flavor</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">894</span>         <span class="n">parser</span> <span class="o">=</span> <span class="n">_parser_dispatch</span><span class="p">(</span><span class="n">flav</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">895</span>         <span class="n">p</span> <span class="o">=</span> <span class="n">parser</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">compiled_match</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">displayed_only</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">896</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/html.py</span> in <span class="ni">_parser_dispatch</span><span class="nt">(flavor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">849</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">850</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">_HAS_LXML</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">851</span>             <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;lxml not found, please install it&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">852</span>     <span class="k">return</span> <span class="n">_valid_parsers</span><span class="p">[</span><span class="n">flavor</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">853</span> 
+
+<span class="ne">ImportError</span>: lxml not found, please install it
 </pre></div>
 </div>
 </div>
@@ -567,7 +617,7 @@ jdion62
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="2020-09-11.html" title="previous page">Class 2: intro to notebooks and python</a>
-    <a class='right-next' id="next-link" href="2020-09-16.html" title="next page">Data in Pandas</a>
+    <a class='right-next' id="next-link" href="2020-09-16.html" title="next page">Class 4: Pandas</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
