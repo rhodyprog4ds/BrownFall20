@@ -1,5 +1,7 @@
 # Assignment 1: Portfolio Setup, Data Science, and Python
 
+__Due: 2020-09-13__
+
 ## Objective & Evaluation
 
 This assignment is an opportunity to earn level 2 achievements for the `process` and `python` and confirm that you have all of your tools setup, including your portfolio.
