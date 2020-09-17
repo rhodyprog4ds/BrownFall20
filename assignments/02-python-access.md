@@ -1,5 +1,6 @@
 # Assignment 2: Practicing Python and Accessing Data
 
+__Due: 2020-09-20__
 
 ## Objective & Evaluation
 
@@ -17,6 +18,9 @@ To work with this notebook you can either:
 ## Accessing Data with Python and pandas
 _(for python and access)_
 
+
+
+
 Find 3 datasets of interest to you that are provided in different file formats. Choose datasets that are not too big, so that they do not take more than a few second to load. At least one dataset, must have non numerical (eg string or boolean) data in at least 1 column.
 Complete a dictionary for each with the url, a name, and what function should be used to load the data into a `pandas.DataFrame`.
 
@@ -24,9 +28,14 @@ Complete a dictionary for each with the url, a name, and what function should be
 ```{tip}
 Urls are strings. The `string` class in python has a lot of helpful methods for manipulating strings, like [`split`](https://docs.python.org/3/library/stdtypes.html#str.split).
 ```
+
+```{note}
+If you download the datasets (or find them as .zip and need to) you can use the local path instead of the url, but include a markdown cell with links to where you got your data from.
+```
+
 ````
 
-Use a list of those dictionaries to iterate over the datasets and build a table that describes them, with the following columns `['name','source','num_rows', 'num_columns','source_file_name']`. The `source_file_name` should be the part of the url after the last `/`. Display that summary table as a dataframe and save it as a csv.
+Use a list of those dictionaries to iterate over the datasets and build a table that describes them, with the following columns `['name','source','num_rows', 'num_columns','source_file_name']`. The `source_file_name` should be the part of the url after the last `/`. Display that summary table as a dataframe and save it as a csv, named `dataset_summary.csv`.
 
 
 

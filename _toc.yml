@@ -31,3 +31,9 @@
   sections:
     - file: faq/syllabus
     - file: faq/github
+
+- file: resources/index
+  sections:
+    - file: resources/tips
+    - file: resources/python
+    - file: resources/datasets
