@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Support &#8212; Programming for Data Science at URI Fall 2020</title>
+    <title>Portfolio &#8212; Programming for Data Science at URI Fall 2020</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -35,8 +35,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Policies" href="uri_statements.html" />
-    <link rel="prev" title="Learning Objective, Schedule, and Rubric" href="course_map.html" />
+    <link rel="next" title="Formatting Tips" href="formatting.html" />
+    <link rel="prev" title="Assignment 2: Practicing Python and Accessing Data" href="../assignments/02-python-access.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -77,42 +77,10 @@
  </li>
 </ul>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="reference internal" href="index.html">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus/index.html">
    Syllabus
   </a>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="about-course.html">
-     About
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="tools.html">
-     Tools and Resources
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="grading.html">
-     Grading
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="course_map.html">
-     Learning Objective, Schedule, and Rubric
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Support
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="uri_statements.html">
-     Policies
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../notes/index.html">
@@ -124,10 +92,22 @@
    Assignments
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../portfolio/index.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Portfolio
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="formatting.html">
+     Formatting Tips
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="reflective.html">
+     Reflective Prompts
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../faq/index.html">
@@ -179,9 +159,12 @@
     
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../_sources/portfolio/index.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/syllabus/uri_resources.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/portfolio/index.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -198,10 +181,10 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/rhodyprog4ds/BrownFall20//issues/new?title=Issue%20on%20page%20%2Fsyllabus/uri_resources.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/rhodyprog4ds/BrownFall20//issues/new?title=Issue%20on%20page%20%2Fportfolio/index.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/rhodyprog4ds/BrownFall20/edit/main/syllabus/uri_resources.md"><button
+        <a class="edit-button" href="https://github.com/rhodyprog4ds/BrownFall20/edit/main/portfolio/index.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -215,6 +198,23 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rhodyprog4ds/BrownFall20/main?urlpath=tree/portfolio/index.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
@@ -223,14 +223,7 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#academic-enhancement-center">
-   Academic Enhancement Center
-  </a>
- </li>
-</ul>
-
+            
         </nav>
     </div>
 </div>
@@ -239,16 +232,73 @@
         
               <div>
                 
-  <div class="section" id="support">
-<h1>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="academic-enhancement-center">
-<h2>Academic Enhancement Center<a class="headerlink" href="#academic-enhancement-center" title="Permalink to this headline">¶</a></h2>
-<p>Located in Roosevelt Hall, the AEC offers free face to face and web-based services to undergraduate students seeking academic support. Peer tutoring is available for STEM-related courses through drop-in centers and small group tutoring. The Writing Center offers peer tutoring focused on supporting undergraduate writers at any stage of a writing assignment. The UCS160 course and academic skills consultations offer students strategies and activities aimed at improving their studying and test-taking skills. Complete details about each of these programs, up-to-date schedules, contact information and self-service study resources are all available on the <span class="xref myst">AEC website</span>.</p>
-<ul class="simple">
-<li><p><strong>STEM Tutoring</strong> helps students navigate 100 and 200 level math, chemistry, physics, biology, and other select STEM courses. The STEM Tutoring program offers free online and limited in-person peer-tutoring this fall. Undergraduates in introductory STEM courses have a variety of small group times to choose from and can select occasional or weekly appointments. Appointments and locations will be visible in the TutorTrac system on September 14th, 2020. The TutorTrac application is available through <a class="reference external" href="https://account.activedirectory.windowsazure.com/r#/applications">URI Microsoft 365 single sign-on</a> and by visiting aec.uri.edu. More detailed information and instructions can be found on the <span class="xref myst">AEC tutoring page</span>.</p></li>
-<li><p><strong>Academic Skills Development</strong> resources helps students plan work, manage time, and study more effectively. In Fall 2020, all Academic Skills and Strategies programming are offered both online and in-person. UCS160: Success in Higher Education is a one-credit course on developing a more effective approach to studying. Academic Consultations are 30-minute, 1 to 1 appointments that students can schedule on Starfish with Dr. David Hayes to address individual academic issues. Study Your Way to Success is a self-guided web portal connecting students to tips and strategies on studying and time management related topics. For more information on these programs, visit the <span class="xref myst">Academic Skills Page</span>  or contact Dr. Hayes directly at davidhayes&#64;uri.edu.</p></li>
-<li><p>The <strong>Undergraduate Writing Center</strong> provides free writing support to students in any class, at any stage of the writing process: from understanding an assignment and brainstorming ideas, to developing, organizing, and revising a draft. Fall 2020 services are offered through two online options: 1) real-time synchronous appointments with a peer consultant (25- and 50-minute slots, available Sunday - Friday), and 2) written asynchronous consultations with a 24-hour turn-around response time (available Monday - Friday). Synchronous appointments are video-based, with audio, chat, document-sharing, and live captioning capabilities, to meet a range of accessibility needs. View the synchronous and asynchronous schedules and book online, visit uri.mywconline.com.</p></li>
-</ul>
+  <div class="section" id="portfolio">
+<h1>Portfolio<a class="headerlink" href="#portfolio" title="Permalink to this headline">¶</a></h1>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>This section of the site has a set of portfolio prompts and this page has instructions for portfolio submissions.</p>
+<p>Starting in week 3 it is recommended that you spend some time each week working on items for your portfolio, that way when it’s time to submit you only have a little bit to add before submission.</p>
+<p>The portfolio is your only chance to earn Level 3 achievements, however, if you have not earned a level 2 for any of the skills in a given check, you could earn level 2 then instead. The prompts provide a starting point, but remember that to earn achievements, you’ll be evaluated by the rubric. You can see the full rubric for all portfolios in the <a class="reference internal" href="../syllabus/course_map.html#portfolioskills"><span class="std std-ref">syllabus</span></a>.</p>
+<p>Each submission should include an introduction and a number of ‘chapters’.  The grade will be based on both that you demonstrate skills through your chapters that are inspired by the prompts and your summary.</p>
+<p>The first submission will be graded on the following criteria and due on October 14:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Level 3</th>
+    </tr>
+    <tr>
+      <th>keyword</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>python</th>
+      <td>reliable, efficient, pythonic code that consistently adheres to pep8</td>
+    </tr>
+    <tr>
+      <th>access</th>
+      <td>access data from both common and uncommon formats and identify best practices for formats in different contexts</td>
+    </tr>
+    <tr>
+      <th>construct</th>
+      <td>merge data that is not automatically aligned</td>
+    </tr>
+    <tr>
+      <th>summarize</th>
+      <td>Compute summary statistics of subsets of data</td>
+    </tr>
+    <tr>
+      <th>visualize</th>
+      <td>generate complex plots with pandas and plotting libraries</td>
+    </tr>
+    <tr>
+      <th>prepare</th>
+      <td>apply data reshaping, cleaning, and filtering manipulations reliably and correctly by assessing data as received</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>On each chapter of your portfolio, you should identify which skills by their keyword, you are applying.</p>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -265,7 +315,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./syllabus"
+            path: "./portfolio"
         },
         predefinedOutput: true
     }
@@ -280,8 +330,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="course_map.html" title="previous page">Learning Objective, Schedule, and Rubric</a>
-    <a class='right-next' id="next-link" href="uri_statements.html" title="next page">Policies</a>
+    <a class='left-prev' id="prev-link" href="../assignments/02-python-access.html" title="previous page">Assignment 2: Practicing Python and Accessing Data</a>
+    <a class='right-next' id="next-link" href="formatting.html" title="next page">Formatting Tips</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

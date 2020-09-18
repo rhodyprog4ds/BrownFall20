@@ -1,0 +1,82 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.12
+    jupytext_version: 1.6.0
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+# Portfolio
+
+```{code-cell} ipython3
+:tags: [remove-input]
+
+
+import yaml as yml
+import pandas as pd
+import os
+pd.set_option('display.max_colwidth', None)
+
+
+def yml_df(file):
+    with open(file, 'r') as f:
+        file_unparsed = f.read()
+
+    file_dict = yml.safe_load(file_unparsed)
+    return pd.DataFrame(file_dict)
+
+outcomes_df = yml_df('../_data/learning_outcomes.yml')
+outcomes_df.set_index('keyword',inplace=True)
+schedule_df = yml_df('../_data/schedule.yml')
+schedule_df.set_index('week', inplace=True)
+# schedule_df = pd.merge(schedule_df,outcomes_df,right_on='keyword',  left_on= 'clo')
+rubric_df = yml_df('../_data/rubric.yml')
+rubric_df.set_index('keyword', inplace=True)
+rubric_df.replace({None:'TBD'},inplace=True)
+rubric_df.rename(columns={'mastery':'Level 3',
+              'compentent':'Level 2',
+              'aware':'Level 1'}, inplace=True)
+
+assignment_dummies  = pd.get_dummies(rubric_df['assignments'].apply(pd.Series).stack()).sum(level=0)
+assignment_dummies['# Assignments'] = assignment_dummies.sum(axis=1)
+col_rename = {float(i):'A' + str(i) for i in range(1,14)}
+assignment_dummies.rename(columns =col_rename,inplace=True)
+
+portfolio_dummies  = pd.get_dummies(rubric_df['portfolios'].apply(pd.Series).stack()).sum(level=0)
+col_rename = {float(i):'P' + str(i) for i in range(1,5)}
+portfolio_dummies.rename(columns =col_rename,inplace=True)
+
+
+rubric_df = pd.concat([rubric_df,
+                      assignment_dummies,
+                      portfolio_dummies],axis=1)
+
+assignment_cols =  ['A'+ str(i) for i in range(1,14)] + ['# Assignments']
+
+portfolio_cols = [ 'Level 3'] + ['P' + str(i) for i in range(1,5)]
+portfolio_df = rubric_df[portfolio_cols]
+```
+
+This section of the site has a set of portfolio prompts and this page has instructions for portfolio submissions.  
+
+Starting in week 3 it is recommended that you spend some time each week working on items for your portfolio, that way when it's time to submit you only have a little bit to add before submission.
+
+The portfolio is your only chance to earn Level 3 achievements, however, if you have not earned a level 2 for any of the skills in a given check, you could earn level 2 then instead. The prompts provide a starting point, but remember that to earn achievements, you'll be evaluated by the rubric. You can see the full rubric for all portfolios in the [syllabus](portfolioskills).
+
+Each submission should include an introduction and a number of 'chapters'.  The grade will be based on both that you demonstrate skills through your chapters that are inspired by the prompts and your summary.
+
+
+The first submission will be graded on the following criteria and due on October 14:
+
+```{code-cell} ipython3
+:tags: [remove-input]
+
+portfolio_df['Level 3'][portfolio_df['P1']==1].reset_index().set_index('keyword')
+```
+
+On each chapter of your portfolio, you should identify which skills by their keyword, you are applying.

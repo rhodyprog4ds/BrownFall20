@@ -20,6 +20,7 @@ kernelspec:
 import yaml as yml
 import pandas as pd
 import os
+from IPython.display import display, Markdown
 pd.set_option('display.max_colwidth', None)
 
 
@@ -31,7 +32,7 @@ def yml_df(file):
     return pd.DataFrame(file_dict)
 
 outcomes_df = yml_df('../_data/learning_outcomes.yml')
-outcomes_df.set_index('keyword',inplace=True)
+# outcomes_df.set_index('keyword',inplace=True)
 schedule_df = yml_df('../_data/schedule.yml')
 schedule_df.set_index('week', inplace=True)
 # schedule_df = pd.merge(schedule_df,outcomes_df,right_on='keyword',  left_on= 'clo')
@@ -48,9 +49,12 @@ There are five learning outcomes for this course.
 ```{code-cell} ipython3
 :tags: [remove-input]
 
-#[print(o + ' ('+ k +')') for o,k in zip(outcomes_df['outcome'], outcomes_df['keyword'])];
-outcomes_df['outcome']
+outcome_list = [ str(i+1) + '. ' + ' (' + k + ') '  + o  for i,(o,k) in enumerate(zip(outcomes_df['outcome'], outcomes_df['keyword']))]
+
+display(Markdown('  \n'.join(outcome_list)))
+#outcomes_df[['keyword','outcome']]
 ```
+
 
 We will build your skill in the `process` and `communicate` outcomes over the whole semester. The middle three skills will correspond roughly to the content taught for each of the first three portfolio checks.  
 
@@ -126,9 +130,10 @@ Using the keywords from the table above, this table shows which assignments you 
 rubric_df[assignment_cols]
 ```
 
+(portfolioskills)=
 ### Portfolios and Skills
 
-The objective of your portfolio submissions is to earn level 3 achievements. The following table shows what Level 3 looks like for each skill and identifies which portfolio submissions you can earn that Level 3 in that skill.
+The objective of your portfolio submissions is to earn Level 3 achievements. The following table shows what Level 3 looks like for each skill and identifies which portfolio submissions you can earn that Level 3 in that skill.
 
 
 ```{code-cell} ipython3
