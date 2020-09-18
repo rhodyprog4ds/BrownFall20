@@ -130,9 +130,10 @@ Using the keywords from the table above, this table shows which assignments you 
 rubric_df[assignment_cols]
 ```
 
+(portfolioskills)=
 ### Portfolios and Skills
 
-The objective of your portfolio submissions is to earn level 3 achievements. The following table shows what Level 3 looks like for each skill and identifies which portfolio submissions you can earn that Level 3 in that skill.
+The objective of your portfolio submissions is to earn Level 3 achievements. The following table shows what Level 3 looks like for each skill and identifies which portfolio submissions you can earn that Level 3 in that skill.
 
 
 ```{code-cell} ipython3
