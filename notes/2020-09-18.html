@@ -456,7 +456,6 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">syllabus_df_list</span><span class="p">:</span>
     <span class="n">num_row</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
     <span class="n">view_rows</span><span class="p">[</span><span class="n">num_row</span><span class="o">%</span><span class="k">2</span>](df)
-    
 </pre></div>
 </div>
 </div>
@@ -511,6 +510,47 @@
 </div>
 </div>
 </div>
+<div class="section" id="after-class-questions">
+<h2>After Class Questions<a class="headerlink" href="#after-class-questions" title="Permalink to this headline">¶</a></h2>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+How can we clean data? what other topics will we cover in this class?<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Great Question! We’ll get to data cleaning soon. See the <a class="reference internal" href="../syllabus/course_map.html#schedule"><span class="std std-ref">Schedule</span></a>.</p>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+How does the syntax on the question from prismia today work?<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The question was:</p>
+<blockquote>
+<div><p class="card-text">Read the tables off of the <span class="xref myst">syllabus course map</span> page with <code class="docutils literal notranslate"><span class="pre">read_html</span></code> and make a list of the shapes of all of the tables on the page. Save the output to a variable and paste the <em>value</em> of that variable as your answer to the question.</p>
+</div></blockquote>
+<p class="card-text">And the soluiton was:</p>
+<p class="card-text">This uses something called a <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions">list comprehension</a>, they are a way to make lists, that look a lot like putting a for loop in a list. There are two ways to use them under the hood, as in the linked documentation, the one above is considered more pythonic, because it is more concise.</p>
+<p class="card-text">The <code class="docutils literal notranslate"><span class="pre">[]</span></code> define a list, we can do that with anything, for example my zoom meetings today were:</p>
+<p class="card-text">Note that the last line is there to display what happened, but it would work without.</p>
+<p class="card-text">We could get the same output using <a class="reference external" href="https://docs.python.org/2/tutorial/datastructures.html#more-on-lists"><code class="docutils literal notranslate"><span class="pre">append</span></code></a> and a regular <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. That  syntax would look like:</p>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Where I can go to find a list of all the syntax.<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">A <em>list</em> of all the syntax might be hard to find, but the <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/">course textbook</a> is free online with a lot of reference material in it.</p>
+<p class="card-text">A lot of what we did today is in <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/03.02-data-indexing-and-selection.html">Data Indexing and Selection</a></p>
+<p class="card-text">Also, the class notes are listed after each class on this website.</p>
+<p class="card-text">Also, you can get help from within a notebook and the <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/index.html">pandas User guide</a> has full details.</p>
+</div>
+</details></div>
 </div>
 
     <script type="text/x-thebe-config">
