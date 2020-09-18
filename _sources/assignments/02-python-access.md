@@ -47,6 +47,16 @@ For one dataset (must include nonnumerical data):
 - make and display a new data frame with only the non numerical columns
 - was the format that the data was provided in a good format? why or why not?
 
+<!-- ```{tip} -->
+```{tip}
+:class: dropdown
+
+You can put an if statement in a list comprehension.
+
+Even more pythonic: you can index pandas objects (DataFrames, Series, and Index-- remember that's what the df.columns was--) with logical expressions. 
+
+```
+
 
 For a second dataset:
 - display the heading and the first three rows
