@@ -58,6 +58,7 @@ display(Markdown('  \n'.join(outcome_list)))
 
 We will build your skill in the `process` and `communicate` outcomes over the whole semester. The middle three skills will correspond roughly to the content taught for each of the first three portfolio checks.  
 
+(schedule)=
 ### Schedule
 
 ````{margin}
