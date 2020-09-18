@@ -333,10 +333,90 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">c8dec1e0d1b9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">safi_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/safi_clean.csv&#39;</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/core/generic.py</span> in <span class="ni">to_csv</span><span class="nt">(self, path_or_buf, sep, na_rep, float_format, columns, header, index, index_label, mode, encoding, compression, quoting, quotechar, line_terminator, chunksize, date_format, doublequote, escapechar, decimal, errors)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3165</span>             <span class="n">decimal</span><span class="o">=</span><span class="n">decimal</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3166</span>         <span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3167</span>         <span class="n">formatter</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">3168</span> 
+<span class="g g-Whitespace">   </span><span class="mi">3169</span>         <span class="k">if</span> <span class="n">path_or_buf</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/formats/csvs.py</span> in <span class="ni">save</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span>                 <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span>                 <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">errors</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">190</span>                 <span class="n">compression</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">compression_args</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">compression</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">191</span>             <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">192</span>             <span class="n">close</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors)</span>
+<span class="g g-Whitespace">    </span><span class="mi">491</span>         <span class="k">if</span> <span class="n">encoding</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span>             <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">493</span>             <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path_or_buf</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">494</span>         <span class="k">elif</span> <span class="n">is_text</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>             <span class="c1"># No explicit encoding</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data/safi_clean.csv&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df2</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/safi_clean.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">e632c85491a6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">safi_df2</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/safi_clean.csv&#39;</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)</span>
+<span class="g g-Whitespace">    </span><span class="mi">684</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">685</span> 
+<span class="ne">--&gt; </span><span class="mi">686</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">687</span> 
+<span class="g g-Whitespace">    </span><span class="mi">688</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">450</span> 
+<span class="g g-Whitespace">    </span><span class="mi">451</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">452</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">fp_or_buf</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">453</span> 
+<span class="g g-Whitespace">    </span><span class="mi">454</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">934</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">935</span> 
+<span class="ne">--&gt; </span><span class="mi">936</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">937</span> 
+<span class="g g-Whitespace">    </span><span class="mi">938</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1166</span>     <span class="k">def</span> <span class="nf">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1167</span>         <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1168</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="n">CParserWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1169</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1170</span>             <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;python&quot;</span><span class="p">:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1996</span>         <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;usecols&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">usecols</span>
+<span class="g g-Whitespace">   </span><span class="mi">1997</span> 
+<span class="ne">-&gt; </span><span class="mi">1998</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1999</span>         <span class="bp">self</span><span class="o">.</span><span class="n">unnamed_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">unnamed_cols</span>
+<span class="g g-Whitespace">   </span><span class="mi">2000</span> 
+
+<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader.__cinit__</span><span class="nt">()</span>
+
+<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader._setup_parser_source</span><span class="nt">()</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data/safi_clean.csv&#39;
 </pre></div>
 </div>
 </div>
@@ -347,6 +427,16 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">314725</span><span class="n">f53798</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">safi_df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;safi_df2&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -354,10 +444,268 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key_ID</th>
+      <th>village</th>
+      <th>interview_date</th>
+      <th>no_membrs</th>
+      <th>years_liv</th>
+      <th>respondent_wall_type</th>
+      <th>rooms</th>
+      <th>memb_assoc</th>
+      <th>affect_conflicts</th>
+      <th>liv_count</th>
+      <th>items_owned</th>
+      <th>no_meals</th>
+      <th>months_lack_food</th>
+      <th>instanceID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>3</td>
+      <td>4</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>bicycle;television;solar_panel;table</td>
+      <td>2</td>
+      <td>Jan</td>
+      <td>uuid:ec241f2c-0609-46ed-b5e8-fe575f6cefef</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>7</td>
+      <td>9</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>once</td>
+      <td>3</td>
+      <td>cow_cart;bicycle;radio;cow_plough;solar_panel;...</td>
+      <td>2</td>
+      <td>Jan;Sept;Oct;Nov;Dec</td>
+      <td>uuid:099de9c9-3e5e-427b-8452-26250e840d6e</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>10</td>
+      <td>15</td>
+      <td>burntbricks</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>solar_torch</td>
+      <td>2</td>
+      <td>Jan;Feb;Mar;Oct;Nov;Dec</td>
+      <td>uuid:193d7daf-9582-409b-bf09-027dd36f9007</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>7</td>
+      <td>6</td>
+      <td>burntbricks</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>bicycle;radio;cow_plough;solar_panel;mobile_phone</td>
+      <td>2</td>
+      <td>Sept;Oct;Nov;Dec</td>
+      <td>uuid:148d1105-778a-4755-aa71-281eadd4a973</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>7</td>
+      <td>40</td>
+      <td>burntbricks</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4</td>
+      <td>motorcyle;radio;cow_plough;mobile_phone</td>
+      <td>2</td>
+      <td>Aug;Sept;Oct;Nov</td>
+      <td>uuid:2c867811-9696-4966-9866-f35c3e97d02d</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>126</th>
+      <td>126</td>
+      <td>Ruaca</td>
+      <td>2017-05-18T00:00:00Z</td>
+      <td>3</td>
+      <td>7</td>
+      <td>burntbricks</td>
+      <td>1</td>
+      <td>no</td>
+      <td>more_once</td>
+      <td>3</td>
+      <td>motorcyle;radio;solar_panel</td>
+      <td>3</td>
+      <td>Oct;Nov;Dec</td>
+      <td>uuid:69caea81-a4e5-4e8d-83cd-9c18d8e8d965</td>
+    </tr>
+    <tr>
+      <th>127</th>
+      <td>193</td>
+      <td>Ruaca</td>
+      <td>2017-06-04T00:00:00Z</td>
+      <td>7</td>
+      <td>10</td>
+      <td>cement</td>
+      <td>3</td>
+      <td>no</td>
+      <td>more_once</td>
+      <td>3</td>
+      <td>car;lorry;television;radio;sterio;cow_plough;s...</td>
+      <td>3</td>
+      <td>none</td>
+      <td>uuid:5ccc2e5a-ea90-48b5-8542-69400d5334df</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>194</td>
+      <td>Ruaca</td>
+      <td>2017-06-04T00:00:00Z</td>
+      <td>4</td>
+      <td>5</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>no</td>
+      <td>more_once</td>
+      <td>1</td>
+      <td>radio;solar_panel;solar_torch;mobile_phone</td>
+      <td>3</td>
+      <td>Sept;Oct;Nov</td>
+      <td>uuid:95c11a30-d44f-40c4-8ea8-ec34fca6bbbf</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>199</td>
+      <td>Chirodzo</td>
+      <td>2017-06-04T00:00:00Z</td>
+      <td>7</td>
+      <td>17</td>
+      <td>burntbricks</td>
+      <td>2</td>
+      <td>yes</td>
+      <td>more_once</td>
+      <td>2</td>
+      <td>cow_cart;lorry;motorcyle;computer;television;r...</td>
+      <td>3</td>
+      <td>Nov;Dec</td>
+      <td>uuid:ffc83162-ff24-4a87-8709-eff17abc0b3b</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>200</td>
+      <td>Chirodzo</td>
+      <td>2017-06-04T00:00:00Z</td>
+      <td>8</td>
+      <td>20</td>
+      <td>burntbricks</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>radio;cow_plough;solar_panel;solar_torch;table...</td>
+      <td>3</td>
+      <td>Oct;Nov</td>
+      <td>uuid:aa77a0d7-7142-41c8-b494-483a5b68d8a7</td>
+    </tr>
+  </tbody>
+</table>
+<p>131 rows × 14 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/safi_clean.csv&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="mi">8</span><span class="n">c20409a7eec</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">safi_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/safi_clean.csv&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/core/generic.py</span> in <span class="ni">to_csv</span><span class="nt">(self, path_or_buf, sep, na_rep, float_format, columns, header, index, index_label, mode, encoding, compression, quoting, quotechar, line_terminator, chunksize, date_format, doublequote, escapechar, decimal, errors)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3165</span>             <span class="n">decimal</span><span class="o">=</span><span class="n">decimal</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3166</span>         <span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3167</span>         <span class="n">formatter</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">3168</span> 
+<span class="g g-Whitespace">   </span><span class="mi">3169</span>         <span class="k">if</span> <span class="n">path_or_buf</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/formats/csvs.py</span> in <span class="ni">save</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span>                 <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span>                 <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">errors</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">190</span>                 <span class="n">compression</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">compression_args</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">compression</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">191</span>             <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">192</span>             <span class="n">close</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors)</span>
+<span class="g g-Whitespace">    </span><span class="mi">491</span>         <span class="k">if</span> <span class="n">encoding</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span>             <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">493</span>             <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path_or_buf</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">494</span>         <span class="k">elif</span> <span class="n">is_text</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>             <span class="c1"># No explicit encoding</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data/safi_clean.csv&#39;
 </pre></div>
 </div>
 </div>
@@ -369,10 +717,76 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="n">a3ac1e5c7879</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">safi_df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/safi_clean.csv&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">safi_df3</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)</span>
+<span class="g g-Whitespace">    </span><span class="mi">684</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">685</span> 
+<span class="ne">--&gt; </span><span class="mi">686</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">687</span> 
+<span class="g g-Whitespace">    </span><span class="mi">688</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">450</span> 
+<span class="g g-Whitespace">    </span><span class="mi">451</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">452</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">fp_or_buf</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">453</span> 
+<span class="g g-Whitespace">    </span><span class="mi">454</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">934</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">935</span> 
+<span class="ne">--&gt; </span><span class="mi">936</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">937</span> 
+<span class="g g-Whitespace">    </span><span class="mi">938</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1166</span>     <span class="k">def</span> <span class="nf">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1167</span>         <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1168</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="n">CParserWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1169</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1170</span>             <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;python&quot;</span><span class="p">:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1996</span>         <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;usecols&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">usecols</span>
+<span class="g g-Whitespace">   </span><span class="mi">1997</span> 
+<span class="ne">-&gt; </span><span class="mi">1998</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1999</span>         <span class="bp">self</span><span class="o">.</span><span class="n">unnamed_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">unnamed_cols</span>
+<span class="g g-Whitespace">   </span><span class="mi">2000</span> 
+
+<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader.__cinit__</span><span class="nt">()</span>
+
+<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader._setup_parser_source</span><span class="nt">()</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data/safi_clean.csv&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;village&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0           God
+1           God
+2           God
+3           God
+4           God
+         ...   
+126       Ruaca
+127       Ruaca
+128       Ruaca
+129    Chirodzo
+130    Chirodzo
+Name: village, Length: 131, dtype: object
 </pre></div>
 </div>
 </div>
@@ -383,6 +797,25 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>key_ID                                                                  4
+village                                                               God
+interview_date                                       2016-11-17T00:00:00Z
+no_membrs                                                               7
+years_liv                                                               6
+respondent_wall_type                                          burntbricks
+rooms                                                                   1
+memb_assoc                                                            NaN
+affect_conflicts                                                      NaN
+liv_count                                                               2
+items_owned             bicycle;radio;cow_plough;solar_panel;mobile_phone
+no_meals                                                                2
+months_lack_food                                         Sept;Oct;Nov;Dec
+instanceID                      uuid:148d1105-778a-4755-aa71-281eadd4a973
+Name: 3, dtype: object
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -390,6 +823,96 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key_ID</th>
+      <th>village</th>
+      <th>interview_date</th>
+      <th>no_membrs</th>
+      <th>years_liv</th>
+      <th>respondent_wall_type</th>
+      <th>rooms</th>
+      <th>memb_assoc</th>
+      <th>affect_conflicts</th>
+      <th>liv_count</th>
+      <th>items_owned</th>
+      <th>no_meals</th>
+      <th>months_lack_food</th>
+      <th>instanceID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>7</td>
+      <td>6</td>
+      <td>burntbricks</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>bicycle;radio;cow_plough;solar_panel;mobile_phone</td>
+      <td>2</td>
+      <td>Sept;Oct;Nov;Dec</td>
+      <td>uuid:148d1105-778a-4755-aa71-281eadd4a973</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>7</td>
+      <td>40</td>
+      <td>burntbricks</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4</td>
+      <td>motorcyle;radio;cow_plough;mobile_phone</td>
+      <td>2</td>
+      <td>Aug;Sept;Oct;Nov</td>
+      <td>uuid:2c867811-9696-4966-9866-f35c3e97d02d</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>3</td>
+      <td>3</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>Aug;Sept;Oct</td>
+      <td>uuid:daa56c91-c8e3-44c3-a663-af6a49a2ca70</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -397,6 +920,130 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key_ID</th>
+      <th>village</th>
+      <th>interview_date</th>
+      <th>no_membrs</th>
+      <th>years_liv</th>
+      <th>respondent_wall_type</th>
+      <th>rooms</th>
+      <th>memb_assoc</th>
+      <th>affect_conflicts</th>
+      <th>liv_count</th>
+      <th>items_owned</th>
+      <th>no_meals</th>
+      <th>months_lack_food</th>
+      <th>instanceID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>3</td>
+      <td>4</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>bicycle;television;solar_panel;table</td>
+      <td>2</td>
+      <td>Jan</td>
+      <td>uuid:ec241f2c-0609-46ed-b5e8-fe575f6cefef</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>7</td>
+      <td>9</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>once</td>
+      <td>3</td>
+      <td>cow_cart;bicycle;radio;cow_plough;solar_panel;...</td>
+      <td>2</td>
+      <td>Jan;Sept;Oct;Nov;Dec</td>
+      <td>uuid:099de9c9-3e5e-427b-8452-26250e840d6e</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>10</td>
+      <td>15</td>
+      <td>burntbricks</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>solar_torch</td>
+      <td>2</td>
+      <td>Jan;Feb;Mar;Oct;Nov;Dec</td>
+      <td>uuid:193d7daf-9582-409b-bf09-027dd36f9007</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>7</td>
+      <td>6</td>
+      <td>burntbricks</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>bicycle;radio;cow_plough;solar_panel;mobile_phone</td>
+      <td>2</td>
+      <td>Sept;Oct;Nov;Dec</td>
+      <td>uuid:148d1105-778a-4755-aa71-281eadd4a973</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>7</td>
+      <td>40</td>
+      <td>burntbricks</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4</td>
+      <td>motorcyle;radio;cow_plough;mobile_phone</td>
+      <td>2</td>
+      <td>Aug;Sept;Oct;Nov</td>
+      <td>uuid:2c867811-9696-4966-9866-f35c3e97d02d</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -404,10 +1051,515 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key_ID</th>
+      <th>village</th>
+      <th>interview_date</th>
+      <th>no_membrs</th>
+      <th>years_liv</th>
+      <th>respondent_wall_type</th>
+      <th>rooms</th>
+      <th>memb_assoc</th>
+      <th>affect_conflicts</th>
+      <th>liv_count</th>
+      <th>items_owned</th>
+      <th>no_meals</th>
+      <th>months_lack_food</th>
+      <th>instanceID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>3</td>
+      <td>4</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>bicycle;television;solar_panel;table</td>
+      <td>2</td>
+      <td>Jan</td>
+      <td>uuid:ec241f2c-0609-46ed-b5e8-fe575f6cefef</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>3</td>
+      <td>3</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>Aug;Sept;Oct</td>
+      <td>uuid:daa56c91-c8e3-44c3-a663-af6a49a2ca70</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11</td>
+      <td>God</td>
+      <td>2016-11-21T00:00:00Z</td>
+      <td>6</td>
+      <td>20</td>
+      <td>sunbricks</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>radio;cow_plough</td>
+      <td>2</td>
+      <td>Oct;Nov</td>
+      <td>uuid:d29b44e3-3348-4afc-aa4d-9eb34c89d483</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>16</td>
+      <td>God</td>
+      <td>2016-11-24T00:00:00Z</td>
+      <td>6</td>
+      <td>47</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4</td>
+      <td>radio;cow_plough;solar_panel;solar_torch</td>
+      <td>3</td>
+      <td>Jan;Feb</td>
+      <td>uuid:d17db52f-4b87-4768-b534-ea8f9704c565</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>21</td>
+      <td>God</td>
+      <td>2016-11-21T00:00:00Z</td>
+      <td>8</td>
+      <td>20</td>
+      <td>burntbricks</td>
+      <td>1</td>
+      <td>no</td>
+      <td>never</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>Jan;Feb;Mar;Oct;Nov;Dec</td>
+      <td>uuid:6570a7d0-6a0b-452c-aa2e-922500e35749</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>26</td>
+      <td>Ruaca</td>
+      <td>2016-11-21T00:00:00Z</td>
+      <td>3</td>
+      <td>20</td>
+      <td>burntbricks</td>
+      <td>2</td>
+      <td>no</td>
+      <td>never</td>
+      <td>2</td>
+      <td>radio;cow_plough;table;mobile_phone</td>
+      <td>2</td>
+      <td>none</td>
+      <td>uuid:1c54ee24-22c4-4ee9-b1ad-42d483c08e2e</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>31</td>
+      <td>Ruaca</td>
+      <td>2016-11-21T00:00:00Z</td>
+      <td>3</td>
+      <td>2</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>none</td>
+      <td>uuid:cb06eb49-dd39-4150-8bbe-a599e074afe8</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>36</td>
+      <td>Chirodzo</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>6</td>
+      <td>23</td>
+      <td>sunbricks</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>once</td>
+      <td>3</td>
+      <td>cow_cart;bicycle;radio;cow_plough;solar_panel;...</td>
+      <td>3</td>
+      <td>none</td>
+      <td>uuid:c90eade0-1148-4a12-8c0e-6387a36f45b1</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>41</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>7</td>
+      <td>22</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>motorcyle;bicycle;radio;cow_plough;table</td>
+      <td>3</td>
+      <td>Oct;Nov</td>
+      <td>uuid:b3ba34d8-eea1-453d-bc73-c141bcbbc5e5</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>46</td>
+      <td>Chirodzo</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>10</td>
+      <td>42</td>
+      <td>burntbricks</td>
+      <td>2</td>
+      <td>no</td>
+      <td>once</td>
+      <td>2</td>
+      <td>motorcyle;computer;television;sterio;solar_pan...</td>
+      <td>2</td>
+      <td>Sept;Oct;Nov</td>
+      <td>uuid:35f297e0-aa5d-4149-9b7b-4965004cfc37</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>51</td>
+      <td>Chirodzo</td>
+      <td>2016-11-16T00:00:00Z</td>
+      <td>5</td>
+      <td>30</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>radio</td>
+      <td>3</td>
+      <td>Oct;Nov</td>
+      <td>uuid:18ac8e77-bdaf-47ab-85a2-e4c947c9d3ce</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>56</td>
+      <td>Chirodzo</td>
+      <td>2016-11-16T00:00:00Z</td>
+      <td>12</td>
+      <td>23</td>
+      <td>burntbricks</td>
+      <td>2</td>
+      <td>yes</td>
+      <td>never</td>
+      <td>2</td>
+      <td>motorcyle;bicycle;mobile_phone</td>
+      <td>3</td>
+      <td>none</td>
+      <td>uuid:973c4ac6-f887-48e7-aeaf-4476f2cfab76</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>61</td>
+      <td>Chirodzo</td>
+      <td>2016-11-16T00:00:00Z</td>
+      <td>10</td>
+      <td>14</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>more_once</td>
+      <td>3</td>
+      <td>cow_cart;motorcyle;bicycle;television;radio;co...</td>
+      <td>3</td>
+      <td>Jan;Feb;Dec</td>
+      <td>uuid:2401cf50-8859-44d9-bd14-1bf9128766f2</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>66</td>
+      <td>Chirodzo</td>
+      <td>2016-11-16T00:00:00Z</td>
+      <td>10</td>
+      <td>37</td>
+      <td>burntbricks</td>
+      <td>3</td>
+      <td>yes</td>
+      <td>frequently</td>
+      <td>4</td>
+      <td>cow_cart;motorcyle;bicycle;television;radio;co...</td>
+      <td>3</td>
+      <td>none</td>
+      <td>uuid:a457eab8-971b-4417-a971-2e55b8702816</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>71</td>
+      <td>Ruaca</td>
+      <td>2016-11-18T00:00:00Z</td>
+      <td>6</td>
+      <td>14</td>
+      <td>burntbricks</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>more_once</td>
+      <td>3</td>
+      <td>radio;cow_plough;mobile_phone</td>
+      <td>2</td>
+      <td>Aug;Sept;Oct;Nov</td>
+      <td>uuid:761f9c49-ec93-4932-ba4c-cc7b78dfcef1</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>155</td>
+      <td>God</td>
+      <td>2016-11-24T00:00:00Z</td>
+      <td>4</td>
+      <td>4</td>
+      <td>burntbricks</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>electricity</td>
+      <td>2</td>
+      <td>Jan;Sept;Oct;Nov;Dec</td>
+      <td>uuid:77b3021b-a9d6-4276-aaeb-5bfcfd413852</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>182</td>
+      <td>God</td>
+      <td>2016-11-25T00:00:00Z</td>
+      <td>7</td>
+      <td>21</td>
+      <td>muddaub</td>
+      <td>3</td>
+      <td>no</td>
+      <td>more_once</td>
+      <td>2</td>
+      <td>solar_panel</td>
+      <td>3</td>
+      <td>Jan;Feb;Nov;Dec</td>
+      <td>uuid:394033e8-a6e2-4e39-bfac-458753a1ed78</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>197</td>
+      <td>God</td>
+      <td>2016-11-28T00:00:00Z</td>
+      <td>5</td>
+      <td>19</td>
+      <td>burntbricks</td>
+      <td>2</td>
+      <td>no</td>
+      <td>more_once</td>
+      <td>3</td>
+      <td>bicycle;television;radio;cow_plough;solar_torc...</td>
+      <td>2</td>
+      <td>Nov</td>
+      <td>uuid:85c99fd2-775f-40c9-8654-68223f59d091</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>73</td>
+      <td>Ruaca</td>
+      <td>2017-04-26T00:00:00Z</td>
+      <td>7</td>
+      <td>9</td>
+      <td>burntbricks</td>
+      <td>2</td>
+      <td>yes</td>
+      <td>more_once</td>
+      <td>3</td>
+      <td>cow_cart;motorcyle;bicycle;television;radio;co...</td>
+      <td>3</td>
+      <td>Jan;Sept;Oct</td>
+      <td>uuid:ac3da862-9e6c-4962-94b6-f4c31624f207</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>101</td>
+      <td>God</td>
+      <td>2017-04-27T00:00:00Z</td>
+      <td>3</td>
+      <td>4</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>no</td>
+      <td>never</td>
+      <td>1</td>
+      <td>bicycle;solar_torch</td>
+      <td>3</td>
+      <td>Sept;Oct;Nov</td>
+      <td>uuid:3c174acd-e431-4523-9ad6-eb14cddca805</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>104</td>
+      <td>Ruaca</td>
+      <td>2017-04-28T00:00:00Z</td>
+      <td>14</td>
+      <td>52</td>
+      <td>sunbricks</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>never</td>
+      <td>4</td>
+      <td>cow_cart;bicycle;cow_plough</td>
+      <td>3</td>
+      <td>Jan;Feb;Dec</td>
+      <td>uuid:bb2bb365-7d7d-4fe9-9353-b21269676119</td>
+    </tr>
+    <tr>
+      <th>105</th>
+      <td>113</td>
+      <td>Ruaca</td>
+      <td>2017-05-03T00:00:00Z</td>
+      <td>11</td>
+      <td>26</td>
+      <td>burntbricks</td>
+      <td>3</td>
+      <td>no</td>
+      <td>never</td>
+      <td>4</td>
+      <td>cow_cart;motorcyle;bicycle;radio;cow_plough;so...</td>
+      <td>3</td>
+      <td>none</td>
+      <td>uuid:01210861-aba1-4268-98d0-0260e05f5155</td>
+    </tr>
+    <tr>
+      <th>110</th>
+      <td>108</td>
+      <td>God</td>
+      <td>2017-05-11T00:00:00Z</td>
+      <td>15</td>
+      <td>22</td>
+      <td>burntbricks</td>
+      <td>2</td>
+      <td>no</td>
+      <td>never</td>
+      <td>4</td>
+      <td>cow_cart;bicycle;radio;cow_plough;solar_panel;...</td>
+      <td>3</td>
+      <td>Aug;Sept;Oct;Nov</td>
+      <td>uuid:e4f4d6ba-e698-45a5-947f-ba6da88cc22b</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>150</td>
+      <td>Ruaca</td>
+      <td>2017-05-18T00:00:00Z</td>
+      <td>7</td>
+      <td>8</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>no</td>
+      <td>never</td>
+      <td>1</td>
+      <td>mobile_phone</td>
+      <td>3</td>
+      <td>Sept;Oct;Nov</td>
+      <td>uuid:92613d0d-e7b1-4d62-8ea4-451d7cd0a982</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>167</td>
+      <td>Ruaca</td>
+      <td>2017-06-03T00:00:00Z</td>
+      <td>8</td>
+      <td>24</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>no</td>
+      <td>never</td>
+      <td>3</td>
+      <td>motorcyle;radio;cow_plough;solar_panel;solar_t...</td>
+      <td>2</td>
+      <td>Jan;Nov;Dec</td>
+      <td>uuid:a9d1a013-043b-475d-a71b-77ed80abe970</td>
+    </tr>
+    <tr>
+      <th>125</th>
+      <td>192</td>
+      <td>Chirodzo</td>
+      <td>2017-06-03T00:00:00Z</td>
+      <td>9</td>
+      <td>20</td>
+      <td>burntbricks</td>
+      <td>1</td>
+      <td>no</td>
+      <td>once</td>
+      <td>1</td>
+      <td>bicycle;television;radio;sterio;solar_panel;so...</td>
+      <td>3</td>
+      <td>Jan;Nov;Dec</td>
+      <td>uuid:f94409a6-e461-4e4c-a6fb-0072d3d58b00</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>200</td>
+      <td>Chirodzo</td>
+      <td>2017-06-04T00:00:00Z</td>
+      <td>8</td>
+      <td>20</td>
+      <td>burntbricks</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>radio;cow_plough;solar_panel;solar_torch;table...</td>
+      <td>3</td>
+      <td>Oct;Nov</td>
+      <td>uuid:aa77a0d7-7142-41c8-b494-483a5b68d8a7</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;village&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    God
+1    God
+Name: village, dtype: object
 </pre></div>
 </div>
 </div>
@@ -418,6 +1570,13 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    God
+1    God
+Name: village, dtype: object
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -425,6 +1584,46 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>village</th>
+      <th>no_membrs</th>
+      <th>years_liv</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>God</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>God</td>
+      <td>7</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -433,12 +1632,89 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>village</th>
+      <th>no_membrs</th>
+      <th>years_liv</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>God</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>God</td>
+      <td>7</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="section" id="functions-are-objects">
 <h2>Functions are objects<a class="headerlink" href="#functions-are-objects" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">syllabus_df_list</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://rhodyprog4ds.github.io/BrownFall20/syllabus/course_map.html&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="n">fac0bcef288c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">syllabus_df_list</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://rhodyprog4ds.github.io/BrownFall20/syllabus/course_map.html&#39;</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span>                 <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">296</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span> 
+<span class="g g-Whitespace">    </span><span class="mi">298</span>         <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/html.py</span> in <span class="ni">read_html</span><span class="nt">(io, match, flavor, header, index_col, skiprows, attrs, parse_dates, thousands, encoding, decimal, converters, na_values, keep_default_na, displayed_only)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1099</span>         <span class="n">na_values</span><span class="o">=</span><span class="n">na_values</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1100</span>         <span class="n">keep_default_na</span><span class="o">=</span><span class="n">keep_default_na</span><span class="p">,</span>
+<span class="ne">-&gt; </span><span class="mi">1101</span>         <span class="n">displayed_only</span><span class="o">=</span><span class="n">displayed_only</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1102</span>     <span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/html.py</span> in <span class="ni">_parse</span><span class="nt">(flavor, io, match, attrs, encoding, displayed_only, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">892</span>     <span class="n">retained</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">893</span>     <span class="k">for</span> <span class="n">flav</span> <span class="ow">in</span> <span class="n">flavor</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">894</span>         <span class="n">parser</span> <span class="o">=</span> <span class="n">_parser_dispatch</span><span class="p">(</span><span class="n">flav</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">895</span>         <span class="n">p</span> <span class="o">=</span> <span class="n">parser</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">compiled_match</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">displayed_only</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">896</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/html.py</span> in <span class="ni">_parser_dispatch</span><span class="nt">(flavor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">849</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">850</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">_HAS_LXML</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">851</span>             <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;lxml not found, please install it&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">852</span>     <span class="k">return</span> <span class="n">_valid_parsers</span><span class="p">[</span><span class="n">flavor</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">853</span> 
+
+<span class="ne">ImportError</span>: lxml not found, please install it
 </pre></div>
 </div>
 </div>
@@ -459,6 +1735,18 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span><span class="n">dc0dd9137832</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">syllabus_df_list</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">num_row</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">view_rows</span><span class="p">[</span><span class="n">num_row</span><span class="o">%</span><span class="k">2</span>](df)
+
+<span class="ne">NameError</span>: name &#39;syllabus_df_list&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -466,6 +1754,109 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key_ID</th>
+      <th>no_membrs</th>
+      <th>years_liv</th>
+      <th>rooms</th>
+      <th>liv_count</th>
+      <th>no_meals</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>131.000000</td>
+      <td>131.00000</td>
+      <td>131.000000</td>
+      <td>131.000000</td>
+      <td>131.000000</td>
+      <td>131.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>85.473282</td>
+      <td>7.19084</td>
+      <td>23.053435</td>
+      <td>1.740458</td>
+      <td>2.366412</td>
+      <td>2.603053</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>63.151628</td>
+      <td>3.17227</td>
+      <td>16.913041</td>
+      <td>1.092547</td>
+      <td>1.082775</td>
+      <td>0.491143</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>2.00000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>32.500000</td>
+      <td>5.00000</td>
+      <td>12.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>66.000000</td>
+      <td>7.00000</td>
+      <td>20.000000</td>
+      <td>1.000000</td>
+      <td>2.000000</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>138.000000</td>
+      <td>9.00000</td>
+      <td>27.500000</td>
+      <td>2.000000</td>
+      <td>3.000000</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>202.000000</td>
+      <td>19.00000</td>
+      <td>96.000000</td>
+      <td>8.000000</td>
+      <td>5.000000</td>
+      <td>3.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -473,6 +1864,130 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key_ID</th>
+      <th>village</th>
+      <th>interview_date</th>
+      <th>no_membrs</th>
+      <th>years_liv</th>
+      <th>respondent_wall_type</th>
+      <th>rooms</th>
+      <th>memb_assoc</th>
+      <th>affect_conflicts</th>
+      <th>liv_count</th>
+      <th>items_owned</th>
+      <th>no_meals</th>
+      <th>months_lack_food</th>
+      <th>instanceID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>3</td>
+      <td>4</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>bicycle;television;solar_panel;table</td>
+      <td>2</td>
+      <td>Jan</td>
+      <td>uuid:ec241f2c-0609-46ed-b5e8-fe575f6cefef</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>7</td>
+      <td>9</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>once</td>
+      <td>3</td>
+      <td>cow_cart;bicycle;radio;cow_plough;solar_panel;...</td>
+      <td>2</td>
+      <td>Jan;Sept;Oct;Nov;Dec</td>
+      <td>uuid:099de9c9-3e5e-427b-8452-26250e840d6e</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>10</td>
+      <td>15</td>
+      <td>burntbricks</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>solar_torch</td>
+      <td>2</td>
+      <td>Jan;Feb;Mar;Oct;Nov;Dec</td>
+      <td>uuid:193d7daf-9582-409b-bf09-027dd36f9007</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>7</td>
+      <td>6</td>
+      <td>burntbricks</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>bicycle;radio;cow_plough;solar_panel;mobile_phone</td>
+      <td>2</td>
+      <td>Sept;Oct;Nov;Dec</td>
+      <td>uuid:148d1105-778a-4755-aa71-281eadd4a973</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>7</td>
+      <td>40</td>
+      <td>burntbricks</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4</td>
+      <td>motorcyle;radio;cow_plough;mobile_phone</td>
+      <td>2</td>
+      <td>Aug;Sept;Oct;Nov</td>
+      <td>uuid:2c867811-9696-4966-9866-f35c3e97d02d</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -487,6 +2002,92 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>village</th>
+      <th>interview_date</th>
+      <th>no_membrs</th>
+      <th>years_liv</th>
+      <th>respondent_wall_type</th>
+      <th>rooms</th>
+      <th>memb_assoc</th>
+      <th>affect_conflicts</th>
+      <th>liv_count</th>
+      <th>items_owned</th>
+      <th>no_meals</th>
+      <th>months_lack_food</th>
+      <th>instanceID</th>
+    </tr>
+    <tr>
+      <th>key_ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>3</td>
+      <td>4</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>bicycle;television;solar_panel;table</td>
+      <td>2</td>
+      <td>Jan</td>
+      <td>uuid:ec241f2c-0609-46ed-b5e8-fe575f6cefef</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>God</td>
+      <td>2016-11-17T00:00:00Z</td>
+      <td>7</td>
+      <td>9</td>
+      <td>muddaub</td>
+      <td>1</td>
+      <td>yes</td>
+      <td>once</td>
+      <td>3</td>
+      <td>cow_cart;bicycle;radio;cow_plough;solar_panel;...</td>
+      <td>2</td>
+      <td>Jan;Sept;Oct;Nov;Dec</td>
+      <td>uuid:099de9c9-3e5e-427b-8452-26250e840d6e</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -494,10 +2095,109 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>no_membrs</th>
+      <th>years_liv</th>
+      <th>rooms</th>
+      <th>liv_count</th>
+      <th>no_meals</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>131.00000</td>
+      <td>131.000000</td>
+      <td>131.000000</td>
+      <td>131.000000</td>
+      <td>131.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>7.19084</td>
+      <td>23.053435</td>
+      <td>1.740458</td>
+      <td>2.366412</td>
+      <td>2.603053</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>3.17227</td>
+      <td>16.913041</td>
+      <td>1.092547</td>
+      <td>1.082775</td>
+      <td>0.491143</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>2.00000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>5.00000</td>
+      <td>12.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>7.00000</td>
+      <td>20.000000</td>
+      <td>1.000000</td>
+      <td>2.000000</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>9.00000</td>
+      <td>27.500000</td>
+      <td>2.000000</td>
+      <td>3.000000</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>19.00000</td>
+      <td>96.000000</td>
+      <td>8.000000</td>
+      <td>5.000000</td>
+      <td>3.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;rooms&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.7404580152671756
 </pre></div>
 </div>
 </div>
@@ -507,6 +2207,12 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;no_membrs&#39;</span><span class="p">,</span><span class="s1">&#39;rooms&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;no_membrs&#39;, ylabel=&#39;rooms&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/2020-09-18_32_1.png" src="../_images/2020-09-18_32_1.png" />
 </div>
 </div>
 </div>

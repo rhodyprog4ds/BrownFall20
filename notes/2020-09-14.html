@@ -587,12 +587,87 @@ jdion62
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mf">650e2</span><span class="n">b275e4e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">type</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://rhodyprog4ds.github.io/BrownFall20/syllabus/course_map.html&#39;</span><span class="p">))</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span>                 <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">296</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span> 
+<span class="g g-Whitespace">    </span><span class="mi">298</span>         <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/html.py</span> in <span class="ni">read_html</span><span class="nt">(io, match, flavor, header, index_col, skiprows, attrs, parse_dates, thousands, encoding, decimal, converters, na_values, keep_default_na, displayed_only)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1099</span>         <span class="n">na_values</span><span class="o">=</span><span class="n">na_values</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1100</span>         <span class="n">keep_default_na</span><span class="o">=</span><span class="n">keep_default_na</span><span class="p">,</span>
+<span class="ne">-&gt; </span><span class="mi">1101</span>         <span class="n">displayed_only</span><span class="o">=</span><span class="n">displayed_only</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1102</span>     <span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/html.py</span> in <span class="ni">_parse</span><span class="nt">(flavor, io, match, attrs, encoding, displayed_only, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">892</span>     <span class="n">retained</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">893</span>     <span class="k">for</span> <span class="n">flav</span> <span class="ow">in</span> <span class="n">flavor</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">894</span>         <span class="n">parser</span> <span class="o">=</span> <span class="n">_parser_dispatch</span><span class="p">(</span><span class="n">flav</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">895</span>         <span class="n">p</span> <span class="o">=</span> <span class="n">parser</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">compiled_match</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">displayed_only</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">896</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/html.py</span> in <span class="ni">_parser_dispatch</span><span class="nt">(flavor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">849</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">850</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">_HAS_LXML</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">851</span>             <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;lxml not found, please install it&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">852</span>     <span class="k">return</span> <span class="n">_valid_parsers</span><span class="p">[</span><span class="n">flavor</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">853</span> 
+
+<span class="ne">ImportError</span>: lxml not found, please install it
+</pre></div>
+</div>
+</div>
 </div>
 <p>To work with it though, we should save to a variable, then we can index into that list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_list</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://rhodyprog4ds.github.io/BrownFall20/syllabus/course_map.html&#39;</span><span class="p">)</span>
 <span class="n">df_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="mi">16</span><span class="n">f4763c8ff6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_list</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://rhodyprog4ds.github.io/BrownFall20/syllabus/course_map.html&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span>                 <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">296</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span> 
+<span class="g g-Whitespace">    </span><span class="mi">298</span>         <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/html.py</span> in <span class="ni">read_html</span><span class="nt">(io, match, flavor, header, index_col, skiprows, attrs, parse_dates, thousands, encoding, decimal, converters, na_values, keep_default_na, displayed_only)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1099</span>         <span class="n">na_values</span><span class="o">=</span><span class="n">na_values</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1100</span>         <span class="n">keep_default_na</span><span class="o">=</span><span class="n">keep_default_na</span><span class="p">,</span>
+<span class="ne">-&gt; </span><span class="mi">1101</span>         <span class="n">displayed_only</span><span class="o">=</span><span class="n">displayed_only</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1102</span>     <span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/html.py</span> in <span class="ni">_parse</span><span class="nt">(flavor, io, match, attrs, encoding, displayed_only, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">892</span>     <span class="n">retained</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">893</span>     <span class="k">for</span> <span class="n">flav</span> <span class="ow">in</span> <span class="n">flavor</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">894</span>         <span class="n">parser</span> <span class="o">=</span> <span class="n">_parser_dispatch</span><span class="p">(</span><span class="n">flav</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">895</span>         <span class="n">p</span> <span class="o">=</span> <span class="n">parser</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">compiled_match</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">displayed_only</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">896</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/html.py</span> in <span class="ni">_parser_dispatch</span><span class="nt">(flavor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">849</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">850</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">_HAS_LXML</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">851</span>             <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;lxml not found, please install it&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">852</span>     <span class="k">return</span> <span class="n">_valid_parsers</span><span class="p">[</span><span class="n">flavor</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">853</span> 
+
+<span class="ne">ImportError</span>: lxml not found, please install it
 </pre></div>
 </div>
 </div>
