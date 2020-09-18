@@ -35,7 +35,7 @@ If you download the datasets (or find them as .zip and need to) you can use the 
 
 ````
 
-Use a list of those dictionaries to iterate over the datasets and build a table that describes them, with the following columns `['name','source','num_rows', 'num_columns','source_file_name']`. The `source_file_name` should be the part of the url after the last `/`. Display that summary table as a dataframe and save it as a csv, named `dataset_summary.csv`.
+Use a list of those dictionaries to iterate over the datasets and build a table that describes them, with the following columns `['name','source','num_rows', 'num_columns','source_file_name']`. The `source_file_name` should be the part of the url after the last `/`, you should extract this programmatically. Display that summary table as a dataframe and save it as a csv, named `dataset_summary.csv`.
 
 
 
