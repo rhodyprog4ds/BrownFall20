@@ -23,9 +23,10 @@
     - file: assignments/01-python-syllabus
     - file: assignments/02-python-access
 
-# - part: Portfolio
-  # chapters:
-    # - file:
+- file: portfolio/index
+  sections:
+    - file: portfolio/formatting
+    - file: portfolio/reflective
 
 - file: faq/index
   sections:
