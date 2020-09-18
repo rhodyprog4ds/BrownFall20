@@ -33,6 +33,9 @@ Urls are strings. The `string` class in python has a lot of helpful methods for 
 If you download the datasets (or find them as .zip and need to) you can use the local path instead of the url, but include a markdown cell with links to where you got your data from.
 ```
 
+```{tip}
+You can create a `pandas` `DataFrame` using the [constructor](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html)
+```
 ````
 
 Use a list of those dictionaries to iterate over the datasets and build a table that describes them, with the following columns `['name','source','num_rows', 'num_columns','source_file_name']`. The `source_file_name` should be the part of the url after the last `/`, you should extract this programmatically. Display that summary table as a dataframe and save it as a csv, named `dataset_summary.csv`.
