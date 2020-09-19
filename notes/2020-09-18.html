@@ -235,6 +235,11 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#announcements">
+   Announcements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#more-pandas">
    More Pandas
   </a>
@@ -291,43 +296,20 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mf">013e4411</span><span class="n">b1bb</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span> <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://rhodyprog4ds.github.io/BrownFall20/syllabus/course_map.html&#39;</span><span class="p">)]</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span>                 <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span>                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">296</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span> 
-<span class="g g-Whitespace">    </span><span class="mi">298</span>         <span class="k">return</span> <span class="n">wrapper</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/html.py</span> in <span class="ni">read_html</span><span class="nt">(io, match, flavor, header, index_col, skiprows, attrs, parse_dates, thousands, encoding, decimal, converters, na_values, keep_default_na, displayed_only)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1099</span>         <span class="n">na_values</span><span class="o">=</span><span class="n">na_values</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1100</span>         <span class="n">keep_default_na</span><span class="o">=</span><span class="n">keep_default_na</span><span class="p">,</span>
-<span class="ne">-&gt; </span><span class="mi">1101</span>         <span class="n">displayed_only</span><span class="o">=</span><span class="n">displayed_only</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1102</span>     <span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/html.py</span> in <span class="ni">_parse</span><span class="nt">(flavor, io, match, attrs, encoding, displayed_only, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">892</span>     <span class="n">retained</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">893</span>     <span class="k">for</span> <span class="n">flav</span> <span class="ow">in</span> <span class="n">flavor</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">894</span>         <span class="n">parser</span> <span class="o">=</span> <span class="n">_parser_dispatch</span><span class="p">(</span><span class="n">flav</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">895</span>         <span class="n">p</span> <span class="o">=</span> <span class="n">parser</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">compiled_match</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">displayed_only</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">896</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/html.py</span> in <span class="ni">_parser_dispatch</span><span class="nt">(flavor)</span>
-<span class="g g-Whitespace">    </span><span class="mi">849</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">850</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">_HAS_LXML</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">851</span>             <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;lxml not found, please install it&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">852</span>     <span class="k">return</span> <span class="n">_valid_parsers</span><span class="p">[</span><span class="n">flavor</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">853</span> 
-
-<span class="ne">ImportError</span>: lxml not found, please install it
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(14, 3), (15, 5), (15, 15), (15, 6)]
 </pre></div>
 </div>
 </div>
+</div>
+<div class="section" id="announcements">
+<h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>annotated notes are up</p></li>
+<li><p>beginning portfolio prompts and instructions are up</p></li>
+<li><p>Assignment due Sunday,</p></li>
+<li><p>office hours will remain Fridays</p></li>
+<li><p>TA office hours posted.</p></li>
+</ul>
 </div>
 <div class="section" id="more-pandas">
 <h2>More Pandas<a class="headerlink" href="#more-pandas" title="Permalink to this headline">¶</a></h2>
@@ -1570,43 +1552,6 @@ Name: village, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="n">fac0bcef288c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">syllabus_df_list</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://rhodyprog4ds.github.io/BrownFall20/syllabus/course_map.html&#39;</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span>                 <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span>                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">296</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span> 
-<span class="g g-Whitespace">    </span><span class="mi">298</span>         <span class="k">return</span> <span class="n">wrapper</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/html.py</span> in <span class="ni">read_html</span><span class="nt">(io, match, flavor, header, index_col, skiprows, attrs, parse_dates, thousands, encoding, decimal, converters, na_values, keep_default_na, displayed_only)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1099</span>         <span class="n">na_values</span><span class="o">=</span><span class="n">na_values</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1100</span>         <span class="n">keep_default_na</span><span class="o">=</span><span class="n">keep_default_na</span><span class="p">,</span>
-<span class="ne">-&gt; </span><span class="mi">1101</span>         <span class="n">displayed_only</span><span class="o">=</span><span class="n">displayed_only</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1102</span>     <span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/html.py</span> in <span class="ni">_parse</span><span class="nt">(flavor, io, match, attrs, encoding, displayed_only, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">892</span>     <span class="n">retained</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">893</span>     <span class="k">for</span> <span class="n">flav</span> <span class="ow">in</span> <span class="n">flavor</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">894</span>         <span class="n">parser</span> <span class="o">=</span> <span class="n">_parser_dispatch</span><span class="p">(</span><span class="n">flav</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">895</span>         <span class="n">p</span> <span class="o">=</span> <span class="n">parser</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">compiled_match</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">displayed_only</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">896</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/html.py</span> in <span class="ni">_parser_dispatch</span><span class="nt">(flavor)</span>
-<span class="g g-Whitespace">    </span><span class="mi">849</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">850</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">_HAS_LXML</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">851</span>             <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;lxml not found, please install it&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">852</span>     <span class="k">return</span> <span class="n">_valid_parsers</span><span class="p">[</span><span class="n">flavor</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">853</span> 
-
-<span class="ne">ImportError</span>: lxml not found, please install it
-</pre></div>
-</div>
-</div>
 </div>
 <p>And we can put them in a dictionary. <code class="docutils literal notranslate"><span class="pre">lambda</span></code> functions are special functions defined in a single line.</p>
 <div class="cell docutils container">
@@ -1676,14 +1621,106 @@ Name: village, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">23</span><span class="o">-</span><span class="n">dc0dd9137832</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">syllabus_df_list</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">num_row</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">view_rows</span><span class="p">[</span><span class="n">num_row</span><span class="o">%</span><span class="k">2</span>](df)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Unnamed: 0_level_0                         topics  \
+                week             Unnamed: 1_level_1   
+0                  1         [admin, python review]   
+1                  2    Loading data, Python review   
+2                  3      Exploratory Data Analysis   
+3                  4                  Data Cleaning   
+4                  5  Databases, Merging DataFrames   
 
-<span class="ne">NameError</span>: name &#39;syllabus_df_list&#39; is not defined
+                            skills  
+                Unnamed: 2_level_1  
+0                          process  
+1     [access, prepare, summarize]  
+2           [summarize, visualize]  
+3  [prepare, summarize, visualize]  
+4   [access, construct, summarize]  
+   Unnamed: 0_level_0                                              skill  \
+              keyword                                 Unnamed: 1_level_1   
+10           evaluate                         Evaluate model performance   
+11           optimize                          Optimize model parameters   
+12            compare                                     compare models   
+13       unstructured                            model unstructured data   
+14              tools  use industry standard data science tools and w...   
+
+                                              Level 1  \
+                                   Unnamed: 2_level_1   
+10  Explain basic performance metrics for differen...   
+11  Identify when model parameters need to be opti...   
+12                Qualitatively compare model classes   
+13  Identify options for representing text data an...   
+14  Solve well strucutred problems with a single t...   
+
+                                              Level 2  \
+                                   Unnamed: 3_level_1   
+10  Apply basic model evaluation metrics to a held...   
+11  Manually optimize basic model parameters such ...   
+12  Compare model classes in specific terms and fi...   
+13  Apply at least one representation to transform...   
+14  Solve semi-strucutred, completely specified pr...   
+
+                                              Level 3  
+                                   Unnamed: 4_level_1  
+10  Evaluate a model with multiple metrics and cro...  
+11  Select optimal parameters based of mutiple qua...  
+12  Evaluate tradeoffs between different model com...  
+13  apply mulitple representations and compare and...  
+14  Scope, choose an appropriate tool pipeline and...  
+   Unnamed: 0_level_0                 A1                 A2  \
+              keyword Unnamed: 1_level_1 Unnamed: 2_level_1   
+10           evaluate                  0                  0   
+11           optimize                  0                  0   
+12            compare                  0                  0   
+13       unstructured                  0                  0   
+14              tools                  0                  0   
+
+                   A3                 A4                 A5  \
+   Unnamed: 3_level_1 Unnamed: 4_level_1 Unnamed: 5_level_1   
+10                  0                  0                  0   
+11                  0                  0                  0   
+12                  0                  0                  0   
+13                  0                  0                  0   
+14                  0                  0                  0   
+
+                   A6                 A7                 A8  \
+   Unnamed: 6_level_1 Unnamed: 7_level_1 Unnamed: 8_level_1   
+10                  0                  0                  0   
+11                  0                  0                  0   
+12                  0                  0                  0   
+13                  0                  0                  0   
+14                  0                  0                  0   
+
+                   A9                 A10                 A11  \
+   Unnamed: 9_level_1 Unnamed: 10_level_1 Unnamed: 11_level_1   
+10                  0                   1                   1   
+11                  0                   1                   1   
+12                  0                   0                   1   
+13                  0                   0                   0   
+14                  0                   1                   1   
+
+                   A12                 A13       # Assignments  
+   Unnamed: 12_level_1 Unnamed: 13_level_1 Unnamed: 14_level_1  
+10                   0                   0                   2  
+11                   0                   0                   2  
+12                   0                   1                   2  
+13                   1                   1                   2  
+14                   1                   1                   4  
+   Unnamed: 0_level_0                                            Level 3  \
+              keyword                                 Unnamed: 1_level_1   
+10           evaluate  Evaluate a model with multiple metrics and cro...   
+11           optimize  Select optimal parameters based of mutiple qua...   
+12            compare  Evaluate tradeoffs between different model com...   
+13       unstructured  apply mulitple representations and compare and...   
+14              tools  Scope, choose an appropriate tool pipeline and...   
+
+                   P1                 P2                 P3                 P4  
+   Unnamed: 2_level_1 Unnamed: 3_level_1 Unnamed: 4_level_1 Unnamed: 5_level_1  
+10                  0                  1                  1                  0  
+11                  0                  0                  1                  1  
+12                  0                  0                  1                  1  
+13                  0                  0                  1                  1  
+14                  0                  0                  1                  1  
 </pre></div>
 </div>
 </div>
