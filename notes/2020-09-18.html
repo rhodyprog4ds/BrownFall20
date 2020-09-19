@@ -107,11 +107,6 @@
      Class 5: Accessing Data, continued
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="#warm-up">
-     Warm up
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -238,7 +233,34 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-pandas">
+   More Pandas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-are-objects">
+   Functions are objects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-beginning-of-exploratory-data-analysis">
+   The beginning of Exploratory Data Analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#after-class-questions">
+   After Class Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-practice">
+   More Practice
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -257,16 +279,10 @@
 <li><p>the power of functions as objects</p></li>
 <li><p>(maybe) exploratory data analysis</p></li>
 </ul>
-<!--  ```{admonition} Try it out -->
+<div class="admonition-try-it-out admonition">
+<p class="admonition-title">Try it out –&gt;</p>
+<p>Read the tables off of the <span class="xref myst">syllabus course map</span> page with <code class="docutils literal notranslate"><span class="pre">read_html</span></code> and make a list of the shapes of all of the tables on the page. Save the output to a variable and paste the <em>value</em> of that variable as your answer to the question.</p>
 </div>
-<div class="section" id="warm-up">
-<h1>Warm up<a class="headerlink" href="#warm-up" title="Permalink to this headline">¶</a></h1>
-<p>To do:</p>
-<ol class="simple">
-<li><p>start a jupyter notbeook</p></li>
-<li><p>check the questin on prismia chat</p></li>
-</ol>
-<!--  ``` --><p>Read the tables off of the <span class="xref myst">syllabus course map</span> page with <code class="docutils literal notranslate"><span class="pre">read_html</span></code> and make a list of the shapes of all of the tables on the page. Save the output to a variable and paste the <em>value</em> of that variable as your answer to the question.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -313,6 +329,9 @@
 </div>
 </div>
 </div>
+<div class="section" id="more-pandas">
+<h2>More Pandas<a class="headerlink" href="#more-pandas" title="Permalink to this headline">¶</a></h2>
+<p>We’ll go back to the SAFI dataset from Wednesday.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/brownsarahm/python-socialsci-files/master/data/SAFI_clean.csv&#39;</span><span class="p">)</span>
@@ -320,6 +339,7 @@
 </div>
 </div>
 </div>
+<p>We downloaded the data into memory, but we can also write it to disk.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;safi_clean.csv&#39;</span><span class="p">)</span>
@@ -327,6 +347,7 @@
 </div>
 </div>
 </div>
+<p>It will go to the same folder as the notebook, but we can also use a relative path.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/safi_clean.csv&#39;</span><span class="p">)</span>
@@ -365,6 +386,7 @@
 </div>
 </div>
 </div>
+<p>Now we can read it in using the same path</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df2</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/safi_clean.csv&#39;</span><span class="p">)</span>
@@ -421,17 +443,18 @@
 </div>
 </div>
 </div>
+<p>Note that now it has an extra column</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df2</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">314725</span><span class="n">f53798</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">safi_df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="n">c962ef13afab</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">safi_df2</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;safi_df2&#39; is not defined
 </pre></div>
@@ -440,7 +463,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -514,163 +537,17 @@
       <td>Jan;Sept;Oct;Nov;Dec</td>
       <td>uuid:099de9c9-3e5e-427b-8452-26250e840d6e</td>
     </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>God</td>
-      <td>2016-11-17T00:00:00Z</td>
-      <td>10</td>
-      <td>15</td>
-      <td>burntbricks</td>
-      <td>1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1</td>
-      <td>solar_torch</td>
-      <td>2</td>
-      <td>Jan;Feb;Mar;Oct;Nov;Dec</td>
-      <td>uuid:193d7daf-9582-409b-bf09-027dd36f9007</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>God</td>
-      <td>2016-11-17T00:00:00Z</td>
-      <td>7</td>
-      <td>6</td>
-      <td>burntbricks</td>
-      <td>1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2</td>
-      <td>bicycle;radio;cow_plough;solar_panel;mobile_phone</td>
-      <td>2</td>
-      <td>Sept;Oct;Nov;Dec</td>
-      <td>uuid:148d1105-778a-4755-aa71-281eadd4a973</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>God</td>
-      <td>2016-11-17T00:00:00Z</td>
-      <td>7</td>
-      <td>40</td>
-      <td>burntbricks</td>
-      <td>1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>4</td>
-      <td>motorcyle;radio;cow_plough;mobile_phone</td>
-      <td>2</td>
-      <td>Aug;Sept;Oct;Nov</td>
-      <td>uuid:2c867811-9696-4966-9866-f35c3e97d02d</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>126</th>
-      <td>126</td>
-      <td>Ruaca</td>
-      <td>2017-05-18T00:00:00Z</td>
-      <td>3</td>
-      <td>7</td>
-      <td>burntbricks</td>
-      <td>1</td>
-      <td>no</td>
-      <td>more_once</td>
-      <td>3</td>
-      <td>motorcyle;radio;solar_panel</td>
-      <td>3</td>
-      <td>Oct;Nov;Dec</td>
-      <td>uuid:69caea81-a4e5-4e8d-83cd-9c18d8e8d965</td>
-    </tr>
-    <tr>
-      <th>127</th>
-      <td>193</td>
-      <td>Ruaca</td>
-      <td>2017-06-04T00:00:00Z</td>
-      <td>7</td>
-      <td>10</td>
-      <td>cement</td>
-      <td>3</td>
-      <td>no</td>
-      <td>more_once</td>
-      <td>3</td>
-      <td>car;lorry;television;radio;sterio;cow_plough;s...</td>
-      <td>3</td>
-      <td>none</td>
-      <td>uuid:5ccc2e5a-ea90-48b5-8542-69400d5334df</td>
-    </tr>
-    <tr>
-      <th>128</th>
-      <td>194</td>
-      <td>Ruaca</td>
-      <td>2017-06-04T00:00:00Z</td>
-      <td>4</td>
-      <td>5</td>
-      <td>muddaub</td>
-      <td>1</td>
-      <td>no</td>
-      <td>more_once</td>
-      <td>1</td>
-      <td>radio;solar_panel;solar_torch;mobile_phone</td>
-      <td>3</td>
-      <td>Sept;Oct;Nov</td>
-      <td>uuid:95c11a30-d44f-40c4-8ea8-ec34fca6bbbf</td>
-    </tr>
-    <tr>
-      <th>129</th>
-      <td>199</td>
-      <td>Chirodzo</td>
-      <td>2017-06-04T00:00:00Z</td>
-      <td>7</td>
-      <td>17</td>
-      <td>burntbricks</td>
-      <td>2</td>
-      <td>yes</td>
-      <td>more_once</td>
-      <td>2</td>
-      <td>cow_cart;lorry;motorcyle;computer;television;r...</td>
-      <td>3</td>
-      <td>Nov;Dec</td>
-      <td>uuid:ffc83162-ff24-4a87-8709-eff17abc0b3b</td>
-    </tr>
-    <tr>
-      <th>130</th>
-      <td>200</td>
-      <td>Chirodzo</td>
-      <td>2017-06-04T00:00:00Z</td>
-      <td>8</td>
-      <td>20</td>
-      <td>burntbricks</td>
-      <td>2</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>3</td>
-      <td>radio;cow_plough;solar_panel;solar_torch;table...</td>
-      <td>3</td>
-      <td>Oct;Nov</td>
-      <td>uuid:aa77a0d7-7142-41c8-b494-483a5b68d8a7</td>
-    </tr>
   </tbody>
 </table>
-<p>131 rows × 14 columns</p>
 </div></div></div>
+</div>
+<p>We can prevent this by writing it out with the <code class="docutils literal notranslate"><span class="pre">index</span></code> parameter set to <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>False must be with a capital letter to be a boolean variable in python, as with True.  You’ll know if you did it right in your jupyter notebook, if the word terms bold and green.</p>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -710,6 +587,7 @@
 </div>
 </div>
 </div>
+<p>Now when we read it in, there’s no extra column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/safi_clean.csv&#39;</span><span class="p">)</span>
@@ -768,6 +646,7 @@
 </div>
 </div>
 </div>
+<p>Recall, we indexed a column with the name in square brackets</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;village&#39;</span><span class="p">]</span>
@@ -791,6 +670,7 @@ Name: village, Length: 131, dtype: object
 </div>
 </div>
 </div>
+<p>To index rows, we can use <code class="docutils literal notranslate"><span class="pre">loc</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
@@ -817,6 +697,7 @@ Name: 3, dtype: object
 </div>
 </div>
 </div>
+<p>To select a range, use <code class="docutils literal notranslate"><span class="pre">:</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
@@ -914,6 +795,7 @@ Name: 3, dtype: object
 </table>
 </div></div></div>
 </div>
+<p>You only have to have a number on one side of the colon, it will go from the beginnig up to that number  like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
@@ -1045,6 +927,7 @@ Name: 3, dtype: object
 </table>
 </div></div></div>
 </div>
+<p>With two <code class="docutils literal notranslate"><span class="pre">::</span></code> we can also set an increment</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[::</span><span class="mi">5</span><span class="p">]</span>
@@ -1550,6 +1433,8 @@ Name: 3, dtype: object
 </table>
 </div></div></div>
 </div>
+<p>These can be combined to index a subset at an increment.</p>
+<p>We can index columns in two ways, as we did on Wednesday</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;village&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -1564,6 +1449,7 @@ Name: village, dtype: object
 </div>
 </div>
 </div>
+<p>Or using a <code class="docutils literal notranslate"><span class="pre">.</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">village</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -1578,6 +1464,7 @@ Name: village, dtype: object
 </div>
 </div>
 </div>
+<p>We can select multiple columns, using a <code class="docutils literal notranslate"><span class="pre">list</span></code> of column names. We can define the list inline.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[[</span><span class="s1">&#39;village&#39;</span><span class="p">,</span><span class="s1">&#39;no_membrs&#39;</span><span class="p">,</span><span class="s1">&#39;years_liv&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -1625,6 +1512,7 @@ Name: village, dtype: object
 </table>
 </div></div></div>
 </div>
+<p>or in a separate variable</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns_of_interest</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;village&#39;</span><span class="p">,</span><span class="s1">&#39;no_membrs&#39;</span><span class="p">,</span><span class="s1">&#39;years_liv&#39;</span><span class="p">]</span>
@@ -1673,6 +1561,7 @@ Name: village, dtype: object
 </table>
 </div></div></div>
 </div>
+</div>
 <div class="section" id="functions-are-objects">
 <h2>Functions are objects<a class="headerlink" href="#functions-are-objects" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
@@ -1719,6 +1608,56 @@ Name: village, dtype: object
 </div>
 </div>
 </div>
+<p>And we can put them in a dictionary. <code class="docutils literal notranslate"><span class="pre">lambda</span></code> functions are special functions defined in a single line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greetingl</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;hello&#39;</span> <span class="o">+</span> <span class="n">name</span>
+<span class="n">greeting</span><span class="p">(</span><span class="n">lsarah</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">20</span><span class="o">-</span><span class="mi">5</span><span class="n">a270a2a3b36</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">greetingl</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;hello&#39;</span> <span class="o">+</span> <span class="n">name</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">greeting</span><span class="p">(</span><span class="n">lsarah</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;greeting&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>is the same as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greetingf</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">&#39;hello&#39;</span> <span class="o">+</span> <span class="n">name</span>
+<span class="n">greetingf</span><span class="p">(</span><span class="n">sarah</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span><span class="n">edf35b16851a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">greetingf</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="k">return</span> <span class="s1">&#39;hello&#39;</span> <span class="o">+</span> <span class="n">name</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">greetingf</span><span class="p">(</span><span class="n">sarah</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;sarah&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, we can define a function in a dictionary like this:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>this is how to do the equivalent of a switch or case in other languages in python</p>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">view_rows</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">df</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()),</span>
@@ -1727,6 +1666,7 @@ Name: village, dtype: object
 </div>
 </div>
 </div>
+<p>The <code class="docutils literal notranslate"><span class="pre">len</span></code> function works on all iterables</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">syllabus_df_list</span><span class="p">:</span>
@@ -1738,7 +1678,7 @@ Name: village, dtype: object
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span><span class="n">dc0dd9137832</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">23</span><span class="o">-</span><span class="n">dc0dd9137832</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">syllabus_df_list</span><span class="p">:</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">num_row</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">view_rows</span><span class="p">[</span><span class="n">num_row</span><span class="o">%</span><span class="k">2</span>](df)
@@ -1748,6 +1688,10 @@ Name: village, dtype: object
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="the-beginning-of-exploratory-data-analysis">
+<h2>The beginning of Exploratory Data Analysis<a class="headerlink" href="#the-beginning-of-exploratory-data-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Pandas will give us descriptive statistics</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -1858,6 +1802,7 @@ Name: village, dtype: object
 </table>
 </div></div></div>
 </div>
+<p>The statistics of the <code class="docutils literal notranslate"><span class="pre">key_ID</span></code> column don’t make a lot of sense. We can avoid that by making it the index</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -1989,16 +1934,11 @@ Name: village, dtype: object
 </table>
 </div></div></div>
 </div>
+<p>the <code class="docutils literal notranslate"><span class="pre">inplace</span></code> parameter of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> functions applies the operation to the DataFrame in memory, but then the function returns nothing, but if we display after that, we see that now the <code class="docutils literal notranslate"><span class="pre">key_ID</span></code> column is now the index.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;key_ID&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">safi_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2089,6 +2029,7 @@ Name: village, dtype: object
 </table>
 </div></div></div>
 </div>
+<p>and if we describe again, we see it doesn’t compute on that column</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -2190,6 +2131,7 @@ Name: village, dtype: object
 </table>
 </div></div></div>
 </div>
+<p>We can also call any of those on one column or one statistic.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;rooms&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -2202,6 +2144,7 @@ Name: village, dtype: object
 </div>
 </div>
 </div>
+<p>Pandas also has some built in plotting functions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;no_membrs&#39;</span><span class="p">,</span><span class="s1">&#39;rooms&#39;</span><span class="p">)</span>
@@ -2212,7 +2155,7 @@ Name: village, dtype: object
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;no_membrs&#39;, ylabel=&#39;rooms&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/2020-09-18_32_1.png" src="../_images/2020-09-18_32_1.png" />
+<img alt="../_images/2020-09-18_57_1.png" src="../_images/2020-09-18_57_1.png" />
 </div>
 </div>
 </div>
@@ -2257,6 +2200,116 @@ Where I can go to find a list of all the syntax.<div class="summary-down docutil
 <p class="card-text">Also, you can get help from within a notebook and the <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/index.html">pandas User guide</a> has full details.</p>
 </div>
 </details></div>
+<div class="section" id="more-practice">
+<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">¶</a></h2>
+<p>These additional questions are for if you want more practice with things we’ve done this week, before class next week.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Which of the following is a dictionary?<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Check using the <code class="docutils literal notranslate"><span class="pre">type</span></code> function. We can go further and build a list of them to display the one that’s a dictionary.</p>
+<p class="card-text">First, we can look at them</p>
+<p class="card-text">Then we can check the types and find the dictionary</p>
+</div>
+</details><p>````{dropdown} What <code class="docutils literal notranslate"><span class="pre">type</span></code> is the shape of a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>?</p>
+<p>We can find that by using the <code class="docutils literal notranslate"><span class="pre">type</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">safi_df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tuple
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">tuple</span></code> is another iterable type, so we can index them</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_shape</span> <span class="o">=</span> <span class="n">safi_df</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">safi_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>131
+</pre></div>
+</div>
+</div>
+</div>
+<p>Also, in python, we can assign to multiple values when it returns a tuple. We saw this before, when we used the <code class="docutils literal notranslate"><span class="pre">items()</span></code> method on a dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ex_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">char</span><span class="p">:</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">char</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;abcde&#39;</span><span class="p">)}</span>
+
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">ex_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39; is the &#39;</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="s1">&#39;th letter&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a  is the  0 th letter
+b  is the  1 th letter
+c  is the  2 th letter
+d  is the  3 th letter
+e  is the  4 th letter
+</pre></div>
+</div>
+</div>
+</div>
+<p>we can see that with the type function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">ex_dict</span> <span class="ow">in</span> <span class="n">d1</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">33</span><span class="o">-</span><span class="mi">3</span><span class="n">afa1379f425</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">[</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">ex_dict</span> <span class="ow">in</span> <span class="n">d1</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+
+<span class="ne">NameError</span>: name &#39;d1&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, with the shape property we could also return it to two values</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_rows</span><span class="p">,</span> <span class="n">n_cols</span> <span class="o">=</span> <span class="n">safi_df</span><span class="o">.</span><span class="n">shape</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;there are &#39;</span><span class="p">,</span><span class="n">n_rows</span><span class="p">,</span> <span class="s1">&#39; rows and &#39;</span><span class="p">,</span> <span class="n">n_cols</span><span class="p">,</span> <span class="s1">&#39; columns&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>there are  131  rows and  13  columns
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+````{dropdown} What does indexing with -1 do?
+
+It returns the last value, here&#39;s an example, using the `todays_meetings` variable defined above.
+
+```{code-cell} ipython3
+todays_meetings
+```
+
+
+```{code-cell} ipython3
+todays_meetings[-1]
+```
+</pre></div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
