@@ -43,17 +43,23 @@ You can create a `pandas` `DataFrame` using the [constructor](https://pandas.pyd
 Use a list of those dictionaries to iterate over the datasets and build a table that describes them, with the following columns `['name','source','num_rows', 'num_columns','source_file_name']`. The source column should be the url where you loaded the data from or the source if you downloaded it from a website first The `source_file_name` should be the part of the url after the last `/`, you should extract this programmatically. Display that summary table as a dataframe and save it as a csv, named `dataset_summary.csv`.
 
 ````{tip}
+:class: dropdown
+
 Your loop while building the DataFrame should be something like:
 
 ```
-
-# iterate over a list of the dictionaries of information about datasets 
+# iterate over a list of the dictionaries of information about datasets
 for d_info in datasets_info_list:
     # load the data and add it to the dictionary
     d_info['data'] = d_info['load_func'](d_info['url'])
 
     # analysis ....
+    num_rows, num_columns = d_info['data'].something
 ```
+
+Knowing this, make sure that your dictionaries are set up so that the `d_info['load_func'](d_info['url'])` will read in your data
+
+
 ````
 
 
