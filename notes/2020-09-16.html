@@ -245,6 +245,11 @@
    Data in Pandas
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review-and-further-reading">
+   Review and Further reading
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -1138,7 +1143,7 @@ Name: interview_date, Length: 131, dtype: object
 </div>
 </div>
 </div>
-<p>Using <code class="docutils literal notranslate"><span class="pre">()</span></code> returns an error, because <code class="docutils literal notranslate"><span class="pre">columns</span></code> is a <em>property</em> which is referenced as is with no <code class="docutils literal notranslate"><span class="pre">()</span></code>. We get a type error  because functions in python are objects of type <code class="docutils literal notranslate"><span class="pre">callable</span></code> and properties are values not functions.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">()</span></code> returns an error, because <code class="docutils literal notranslate"><span class="pre">columns</span></code> is an <em>attribute</em> which is referenced as is with no <code class="docutils literal notranslate"><span class="pre">()</span></code>. We get a type error  because functions in python are objects of type <code class="docutils literal notranslate"><span class="pre">callable</span></code> and properties are values not functions.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
@@ -1156,7 +1161,7 @@ Name: interview_date, Length: 131, dtype: object
 </div>
 </div>
 </div>
-<p>This doesn’t work because <code class="docutils literal notranslate"><span class="pre">columns</span></code> is a property of an object of type <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> not a property of the <code class="docutils literal notranslate"><span class="pre">type</span></code></p>
+<p>This doesn’t work because <code class="docutils literal notranslate"><span class="pre">columns</span></code> is an attribute of an object of type <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> and <code class="docutils literal notranslate"><span class="pre">pd.DataFrame.columns</span></code> is not an object.</p>
 <p>We can see what the type of pd.DataFrame is with the <code class="docutils literal notranslate"><span class="pre">type</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1332,6 +1337,15 @@ Name: respondent_wall_type, dtype: int64
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="review-and-further-reading">
+<h2>Review and Further reading<a class="headerlink" href="#review-and-further-reading" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://brownsarahm.github.io/python-socialsci/08-Pandas/index.html">reading data with pandas</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/functions.html">Python built in functions</a> and in particular the <a class="reference external" href="https://docs.python.org/3/library/functions.html#type"><code class="docutils literal notranslate"><span class="pre">type</span></code> function</a></p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/frame.html">Pandas DataFrames</a></p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.value_counts.html#pandas.Series.value_counts"><code class="docutils literal notranslate"><span class="pre">value_counts</span></code></a></p></li>
+</ul>
 </div>
 </div>
 
