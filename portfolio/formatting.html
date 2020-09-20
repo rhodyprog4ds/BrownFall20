@@ -206,6 +206,11 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#syncing-markdown-and-ipynb-files">
+   Syncing markdown and ipynb files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#file-naming">
    File Naming
   </a>
@@ -238,6 +243,24 @@
 <li><p>it will run and compile Jupyter notebooks</p></li>
 </ul>
 <p>This page will cover a few basic tips.</p>
+<div class="section" id="syncing-markdown-and-ipynb-files">
+<h2>Syncing markdown and ipynb files<a class="headerlink" href="#syncing-markdown-and-ipynb-files" title="Permalink to this headline">¶</a></h2>
+<p>To sync feedback received to your runnable notebook files, change the related GitHub Actions file: <code class="docutils literal notranslate"><span class="pre">.github/workflows/</span></code>
+In the step named convert that looks like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">convert</span>
+  <span class="n">run</span><span class="p">:</span> <span class="o">|</span>
+      <span class="n">jupytext</span> <span class="o">*/*.</span><span class="n">ipynb</span> <span class="o">--</span><span class="n">to</span> <span class="n">myst</span>
+</pre></div>
+</div>
+<p>change it to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">convert</span>
+  <span class="n">run</span><span class="p">:</span> <span class="o">|</span>
+      <span class="n">jupytext</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">formats</span> <span class="n">ipynb</span><span class="p">,</span><span class="n">md</span> <span class="o">*/*.</span><span class="n">ipynb</span>  <span class="c1"># Turn .ipynb into a paired ipynb/py notebook</span>
+      <span class="n">jupytext</span> <span class="o">--</span><span class="n">sync</span> <span class="o">*/*.</span><span class="n">ipynb</span>                  <span class="c1"># Update whichever of .ipynb/notebook.md is outdated</span>
+</pre></div>
+</div>
+<p>This means if you accept suggestion commits from the the <code class="docutils literal notranslate"><span class="pre">.md</span></code> file, the action will upate your <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file. If you update your <code class="docutils literal notranslate"><span class="pre">.ipynb</span> <span class="pre">file</span></code> the action will update the .md file.</p>
+</div>
 <div class="section" id="file-naming">
 <h2>File Naming<a class="headerlink" href="#file-naming" title="Permalink to this headline">¶</a></h2>
 <p>It is best practice to name files without spaces.</p>
