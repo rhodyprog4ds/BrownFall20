@@ -36,10 +36,25 @@ If you download the datasets (or find them as .zip and need to) you can use the 
 ```{tip}
 You can create a `pandas` `DataFrame` using the [constructor](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) and you can build lists (or lists of lists) using the [`append`](https://docs.python.org/2/tutorial/datastructures.html#more-on-lists) method
 ```
+
+
 ````
 
 Use a list of those dictionaries to iterate over the datasets and build a table that describes them, with the following columns `['name','source','num_rows', 'num_columns','source_file_name']`. The source column should be the url where you loaded the data from or the source if you downloaded it from a website first The `source_file_name` should be the part of the url after the last `/`, you should extract this programmatically. Display that summary table as a dataframe and save it as a csv, named `dataset_summary.csv`.
 
+````{tip}
+Your loop while building the DataFrame should be something like:
+
+```
+
+# iterate over a list of the dictionaries of information about datasets 
+for d_info in datasets_info_list:
+    # load the data and add it to the dictionary
+    d_info['data'] = d_info['load_func'](d_info['url'])
+
+    # analysis ....
+```
+````
 
 
 For one dataset (must include nonnumerical data):
@@ -53,7 +68,7 @@ For one dataset (must include nonnumerical data):
 
 You can put an if statement in a list comprehension.
 
-Even more pythonic: you can index pandas objects (DataFrames, Series, and Index-- remember that's what the df.columns was--) with logical expressions. 
+Even more pythonic: you can index pandas objects (DataFrames, Series, and Index-- remember that's what the df.columns was--) with logical expressions.
 
 ```
 

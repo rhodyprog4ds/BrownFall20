@@ -264,6 +264,19 @@ Complete a dictionary for each with the url, a name, and what function should be
 </div>
 </div>
 <p>Use a list of those dictionaries to iterate over the datasets and build a table that describes them, with the following columns <code class="docutils literal notranslate"><span class="pre">['name','source','num_rows',</span> <span class="pre">'num_columns','source_file_name']</span></code>. The source column should be the url where you loaded the data from or the source if you downloaded it from a website first The <code class="docutils literal notranslate"><span class="pre">source_file_name</span></code> should be the part of the url after the last <code class="docutils literal notranslate"><span class="pre">/</span></code>, you should extract this programmatically. Display that summary table as a dataframe and save it as a csv, named <code class="docutils literal notranslate"><span class="pre">dataset_summary.csv</span></code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Your loop while building the DataFrame should be something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># iterate over a list of the dictionaries of information about datasets </span>
+<span class="k">for</span> <span class="n">d_info</span> <span class="ow">in</span> <span class="n">datasets_info_list</span><span class="p">:</span>
+    <span class="c1"># load the data and add it to the dictionary</span>
+    <span class="n">d_info</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">d_info</span><span class="p">[</span><span class="s1">&#39;load_func&#39;</span><span class="p">](</span><span class="n">d_info</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">])</span>
+
+    <span class="c1"># analysis ....</span>
+</pre></div>
+</div>
+</div>
 <p>For one dataset (must include nonnumerical data):</p>
 <ul class="simple">
 <li><p>display the heading with the last seven rows</p></li>
