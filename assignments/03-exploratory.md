@@ -7,7 +7,7 @@ __Due: 2020-09-27__
 This assignment is an opportunity to earn level 1 or 2 achievements in `summarize`, `visualize`, or `access`. You can earn level 2 in `python`.
 
 
-Accept the assignment on [GitHub Classroom](). It contains a notebook with some template structure (and will set you up for grading). The template will also convert notebooks that are added to markdown, which makes reading on GitHub for easier grading. If you want to incorporate feedback you receive back into a notebook file, [Jupytext](https://jupytext.readthedocs.io/en/latest/using-cli.html) can do that.  
+Accept the assignment on [GitHub Classroom](https://classroom.github.com/a/t2NWi3KU).  The template will convert notebooks that are added to markdown, which makes reading on GitHub for easier grading. It will sync between .ipynb and .md style notebooks stored in your repository.  
 
 This week I encourage you to try working with git, but if you're not comfortable with that you can work via upload again.  
 
@@ -24,6 +24,7 @@ Use a separate notebook for each dataset, name them `dataset_01.ipynb` and `data
 
 
 For each dataset:
+1. Include a markdown header with a title for your analysis
 1. Load the data to a notebook as a `DataFrame` from url.
 1. Explore the dataset in a notebook enough to describe its structure
   - shape
