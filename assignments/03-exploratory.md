@@ -30,11 +30,11 @@ For each dataset:
   - columns
   - variable types
 1. Write a short description of what the data contains and what it could be used for
-1. complete one of the analyses below
-1. Describe what, if anything might need to be done to clean or prepare this data for analysis
+1. complete one of the analyses below, including markdown cells throughout your analysis describing the results you see
+
 
 For d1:
-1. Display overall summary statistics
+1. Display overall summary statistics for a subset of 5 of your choice or all variables if fewer than 5 numerical values
 1. Display overall summary statistics grouped by a categorical variable
 1. For two continuous variables make a scatter plot and color the points by a categorical variable
 1. Pose one question for this dataset that can be answered with summary statistics, compute a statistic and plot that help answer that exploratory question.
