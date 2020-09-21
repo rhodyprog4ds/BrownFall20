@@ -9,9 +9,8 @@ This assignment is an opportunity to earn level 1 or 2 achievements in `summariz
 
 Accept the assignment on [GitHub Classroom](). It contains a notebook with some template structure (and will set you up for grading). The template will also convert notebooks that are added to markdown, which makes reading on GitHub for easier grading. If you want to incorporate feedback you receive back into a notebook file, [Jupytext](https://jupytext.readthedocs.io/en/latest/using-cli.html) can do that.  
 
-This week I encourage you to try working with git, but if you're not comfortable with that you can work via upload again.  Git allows you to work
-1.
-clone the repository with git and the push your changes. See Git/GitHub help on cloning, committing, and pushing, for example this [tutorial on git](https://swcarpentry.github.io/git-novice/) to learn more about git.
+This week I encourage you to try working with git, but if you're not comfortable with that you can work via upload again.  
+
 
 
 ## Exploratory Data Analysis
@@ -45,4 +44,4 @@ For d2:
 1. Display two individual summary statistics for one variable
 1. Group the data by two categorical variables and display a table of one summary statistic
 1. Use a `FacetGrid` to make a plot that shows something informative about this data, using both categorical variables and at least one numerical value. Describe what this tells you about the data.
-1. Produce one additional plot that shows something about this data.
+1. Produce one additional plot of a different plot type that shows something about this data.
