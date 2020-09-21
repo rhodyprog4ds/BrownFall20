@@ -33,16 +33,16 @@
 - skill: Summarize and describe data
   keyword: summarize
   aware: Describe the shape and structure of a dataset in basic terms
-  compentent: compute summary statistics of a whole dataset
-  mastery: Compute summary statistics of subsets of data
+  compentent: compute summary statndard statistics of a whole dataset and grouped data
+  mastery: Compute and interpret various summary statistics of subsets of data
   portfolios: [1,2]
   clo: [exploratory]
   assignments: [3,4,5,6,7,8,9,10,11,12,13]
 - skill: Visualize data
   keyword: visualize
   aware: identify plot types, generate basic plots from pandas
-  compentent: generate multiple plot types with complete labeling with pandas and customize with matplotlib
-  mastery: generate complex plots with pandas and plotting libraries
+  compentent: generate multiple plot types with complete labeling with pandas and seaborn
+  mastery: generate complex plots with pandas and plotting libraries and customize with matplotlib
   portfolios: [1,2]
   clo: [exploratory]
   assignments: [3,6,7,8,9,10,11,12,13]
