@@ -30,6 +30,7 @@
   sections:
     - file: portfolio/formatting
     - file: portfolio/reflective
+    - file: portfolio/analyses
 
 - file: faq/index
   sections:

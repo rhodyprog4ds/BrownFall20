@@ -66,9 +66,13 @@ This section of the site has a set of portfolio prompts and this page has instru
 
 Starting in week 3 it is recommended that you spend some time each week working on items for your portfolio, that way when it's time to submit you only have a little bit to add before submission.
 
-The portfolio is your only chance to earn Level 3 achievements, however, if you have not earned a level 2 for any of the skills in a given check, you could earn level 2 then instead. The prompts provide a starting point, but remember that to earn achievements, you'll be evaluated by the rubric. You can see the full rubric for all portfolios in the [syllabus](portfolioskills).
+The portfolio is your only chance to earn Level 3 achievements, however, if you have not earned a level 2 for any of the skills in a given check, you could earn level 2 then instead.
+The prompts provide a starting point, but remember that to earn achievements, you'll be evaluated by the rubric.
+You can see the full rubric for all portfolios in the [syllabus](portfolioskills).
+Your portfolio is also an opportunity to be creative, explore things, and answer your own questions that we haven't answered in class to dig deeper on the topics we're covering.
+Use the feedback you get on assignments to inspire your portfolio. 
 
-Each submission should include an introduction and a number of 'chapters'.  The grade will be based on both that you demonstrate skills through your chapters that are inspired by the prompts and your summary.
+Each submission should include an introduction and a number of 'chapters'.  The grade will be based on both that you demonstrate skills through your chapters that are inspired by the prompts and that your summary demonstrates that you *know* you learned the skills.
 
 
 The first submission will be graded on the following criteria and due on October 14:
