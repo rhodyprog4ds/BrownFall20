@@ -2490,8 +2490,15 @@ rename(mapper=None, index=None, columns=None, axis=None, copy=True, inplace=Fals
 <div class="section" id="why-is-a-for-loop-slower-than-a-pandas-operation">
 <h3>Why is a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop slower than a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> operation?<a class="headerlink" href="#why-is-a-for-loop-slower-than-a-pandas-operation" title="Permalink to this headline">¶</a></h3>
 <p>TL;DR: for this example, it’s actually possible to relatively easily write a faster loop, but for other operations, it’s unlikely.</p>
-<p>Still, the pandas way is fewer lines, and can scale to larger datatypes quickly in ways we’ll see later.</p>
-<p>Basically, the advantage of using the library functions is that someone has already put a lot of though into the optimal way to implement things and it leverages core features of the data structure. Here is a <a class="reference external" href="https://engineering.upside.com/a-beginners-guide-to-optimizing-pandas-code-for-speed-c09ef2c6a4d6">blog post</a> about iterating and applying functions in pandas.  It covers topics we haven’t yet seen, but will.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For example using <a class="reference external" href="https://modin.readthedocs.io/en/latest/">modin</a> that allows you to change 1 line of code (<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code> to <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">modin.pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code>) to leverage parallelized computation. Base python loops won’t do that.</p>
+</div>
+</div>
+<p>Basically, the advantage of using the library functions is that someone has already put a lot of though into the optimal way to implement things and it leverages core features of the data structure. Here is a <a class="reference external" href="https://engineering.upside.com/a-beginners-guide-to-optimizing-pandas-code-for-speed-c09ef2c6a4d6">blog post</a> about iterating and applying functions in pandas.  It covers topics we haven’t yet seen, but will.<br />
+The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> implementation is also fewer lines and can scale for large datasets eaisly.</p>
 <p>To test, we can do an experiment.  Let’s take the last thing we covered in class today, finding the most common combination of floor and wall types.</p>
 <p>First we’ll look at two solutions and verify that they’re the same.</p>
 <p>First, how to do it with <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p>
@@ -2589,10 +2596,10 @@ Name: instanceID, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.42 ms ± 11.2 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.77 ms ± 52 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;TimeitResult : 2.42 ms ± 11.2 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;TimeitResult : 2.77 ms ± 52 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)&gt;
 </pre></div>
 </div>
 </div>
@@ -2623,10 +2630,10 @@ Name: instanceID, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>94.4 µs ± 733 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>91.1 µs ± 1.4 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;TimeitResult : 94.4 µs ± 733 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;TimeitResult : 91.1 µs ± 1.4 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)&gt;
 </pre></div>
 </div>
 </div>
@@ -2653,7 +2660,7 @@ Name: instanceID, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25.606560990881594
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30.44223348745034
 </pre></div>
 </div>
 </div>
@@ -2676,10 +2683,10 @@ Name: instanceID, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.62 ms ± 78.1 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.32 ms ± 137 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;TimeitResult : 9.62 ms ± 78.1 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;TimeitResult : 9.32 ms ± 137 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)&gt;
 </pre></div>
 </div>
 </div>
@@ -2699,7 +2706,7 @@ Name: instanceID, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>101.99738770979006
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>102.27340344215365
 </pre></div>
 </div>
 </div>
@@ -2712,7 +2719,7 @@ Name: instanceID, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.9832520948873604
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.3595893509034203
 </pre></div>
 </div>
 </div>
