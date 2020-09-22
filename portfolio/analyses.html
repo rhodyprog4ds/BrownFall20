@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio &#8212; Programming for Data Science at URI Fall 2020</title>
+    <title>Analysis Prompts &#8212; Programming for Data Science at URI Fall 2020</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -36,8 +36,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Formatting Tips" href="formatting.html" />
-    <link rel="prev" title="Assignment 3: Exploratory Data Analysis" href="../assignments/03-exploratory.html" />
+    <link rel="next" title="FAQ" href="../faq/index.html" />
+    <link rel="prev" title="Reflective Prompts" href="reflective.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -94,10 +94,10 @@
   </a>
  </li>
  <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="index.html">
    Portfolio
   </a>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="formatting.html">
      Formatting Tips
@@ -108,8 +108,8 @@
      Reflective Prompts
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="analyses.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Analysis Prompts
     </a>
    </li>
@@ -165,12 +165,9 @@
     
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../_sources/portfolio/index.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/portfolio/index.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/portfolio/analyses.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -187,10 +184,10 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/rhodyprog4ds/BrownFall20//issues/new?title=Issue%20on%20page%20%2Fportfolio/index.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/rhodyprog4ds/BrownFall20//issues/new?title=Issue%20on%20page%20%2Fportfolio/analyses.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/rhodyprog4ds/BrownFall20/edit/main/portfolio/index.md"><button
+        <a class="edit-button" href="https://github.com/rhodyprog4ds/BrownFall20/edit/main/portfolio/analyses.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -204,23 +201,6 @@
 
         <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/rhodyprog4ds/BrownFall20/main?urlpath=tree/portfolio/index.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
     </div>
 
     <!-- Table of contents -->
@@ -229,7 +209,19 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-data">
+   Loading Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cheatsheet">
+   CheatSheet
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -238,77 +230,21 @@
         
               <div>
                 
-  <div class="section" id="portfolio">
-<h1>Portfolio<a class="headerlink" href="#portfolio" title="Permalink to this headline">¶</a></h1>
-<div class="cell tag_remove-input docutils container">
+  <div class="section" id="analysis-prompts">
+<h1>Analysis Prompts<a class="headerlink" href="#analysis-prompts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="loading-data">
+<h2>Loading Data<a class="headerlink" href="#loading-data" title="Permalink to this headline">¶</a></h2>
+<p>Look at all of the different ways pandas can load data. Consider some of the questions below and add a notebook that’s styled like a report that answers a few of them with text and code.</p>
+<ul class="simple">
+<li><p>Which seem like  good idea? are any dangerous?</p></li>
+<li><p>Which seem more or less common?</p></li>
+<li><p>Can you compare them on speed? Is it ever worth trasforming a dataset before loading?</p></li>
+<li><p>How much can you repair a dataset using the parameters of the load functions?</p></li>
+</ul>
 </div>
-<p>This section of the site has a set of portfolio prompts and this page has instructions for portfolio submissions.</p>
-<p>Starting in week 3 it is recommended that you spend some time each week working on items for your portfolio, that way when it’s time to submit you only have a little bit to add before submission.</p>
-<p>The portfolio is your only chance to earn Level 3 achievements, however, if you have not earned a level 2 for any of the skills in a given check, you could earn level 2 then instead.
-The prompts provide a starting point, but remember that to earn achievements, you’ll be evaluated by the rubric.
-You can see the full rubric for all portfolios in the <a class="reference internal" href="../syllabus/course_map.html#portfolioskills"><span class="std std-ref">syllabus</span></a>.
-Your portfolio is also an opportunity to be creative, explore things, and answer your own questions that we haven’t answered in class to dig deeper on the topics we’re covering.
-Use the feedback you get on assignments to inspire your portfolio.</p>
-<p>Each submission should include an introduction and a number of ‘chapters’.  The grade will be based on both that you demonstrate skills through your chapters that are inspired by the prompts and that your summary demonstrates that you <em>know</em> you learned the skills.</p>
-<p>The first submission will be graded on the following criteria and due on October 14:</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Level 3</th>
-    </tr>
-    <tr>
-      <th>keyword</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>python</th>
-      <td>reliable, efficient, pythonic code that consistently adheres to pep8</td>
-    </tr>
-    <tr>
-      <th>access</th>
-      <td>access data from both common and uncommon formats and identify best practices for formats in different contexts</td>
-    </tr>
-    <tr>
-      <th>construct</th>
-      <td>merge data that is not automatically aligned</td>
-    </tr>
-    <tr>
-      <th>summarize</th>
-      <td>Compute and interpret various summary statistics of subsets of data</td>
-    </tr>
-    <tr>
-      <th>visualize</th>
-      <td>generate complex plots with pandas and plotting libraries and customize with matplotlib</td>
-    </tr>
-    <tr>
-      <th>prepare</th>
-      <td>apply data reshaping, cleaning, and filtering manipulations reliably and correctly by assessing data as received</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>On each chapter of your portfolio, you should identify which skills by their keyword, you are applying.</p>
-<div class="toctree-wrapper compound">
+<div class="section" id="cheatsheet">
+<h2>CheatSheet<a class="headerlink" href="#cheatsheet" title="Permalink to this headline">¶</a></h2>
+<p>Make a cheatsheet with examples of the several different parameter settings for common operations for one topic.</p>
 </div>
 </div>
 
@@ -340,8 +276,8 @@ Use the feedback you get on assignments to inspire your portfolio.</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../assignments/03-exploratory.html" title="previous page">Assignment 3: Exploratory Data Analysis</a>
-    <a class='right-next' id="next-link" href="formatting.html" title="next page">Formatting Tips</a>
+    <a class='left-prev' id="prev-link" href="reflective.html" title="previous page">Reflective Prompts</a>
+    <a class='right-next' id="next-link" href="../faq/index.html" title="next page">FAQ</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
