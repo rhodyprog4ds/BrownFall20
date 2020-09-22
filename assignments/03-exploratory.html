@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio &#8212; Programming for Data Science at URI Fall 2020</title>
+    <title>Assignment 3: Exploratory Data Analysis &#8212; Programming for Data Science at URI Fall 2020</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -36,8 +36,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Formatting Tips" href="formatting.html" />
-    <link rel="prev" title="Assignment 3: Exploratory Data Analysis" href="../assignments/03-exploratory.html" />
+    <link rel="next" title="Portfolio" href="../portfolio/index.html" />
+    <link rel="prev" title="Assignment 2: Practicing Python and Accessing Data" href="02-python-access.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -88,27 +88,32 @@
    Class Notes
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/index.html">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="index.html">
    Assignments
   </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Portfolio
-  </a>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="formatting.html">
-     Formatting Tips
+    <a class="reference internal" href="01-python-syllabus.html">
+     Assignment 1: Portfolio Setup, Data Science, and Python
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="reflective.html">
-     Reflective Prompts
+    <a class="reference internal" href="02-python-access.html">
+     Assignment 2: Practicing Python and Accessing Data
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Assignment 3: Exploratory Data Analysis
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portfolio/index.html">
+   Portfolio
+  </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../faq/index.html">
@@ -160,12 +165,9 @@
     
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../_sources/portfolio/index.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/portfolio/index.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/assignments/03-exploratory.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -182,10 +184,10 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/rhodyprog4ds/BrownFall20//issues/new?title=Issue%20on%20page%20%2Fportfolio/index.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/rhodyprog4ds/BrownFall20//issues/new?title=Issue%20on%20page%20%2Fassignments/03-exploratory.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/rhodyprog4ds/BrownFall20/edit/main/portfolio/index.md"><button
+        <a class="edit-button" href="https://github.com/rhodyprog4ds/BrownFall20/edit/main/assignments/03-exploratory.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -199,23 +201,6 @@
 
         <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/rhodyprog4ds/BrownFall20/main?urlpath=tree/portfolio/index.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
     </div>
 
     <!-- Table of contents -->
@@ -224,7 +209,19 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objective-evaluation">
+   Objective &amp; Evaluation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploratory-data-analysis">
+   Exploratory Data Analysis
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -233,73 +230,57 @@
         
               <div>
                 
-  <div class="section" id="portfolio">
-<h1>Portfolio<a class="headerlink" href="#portfolio" title="Permalink to this headline">¶</a></h1>
-<div class="cell tag_remove-input docutils container">
+  <div class="section" id="assignment-3-exploratory-data-analysis">
+<h1>Assignment 3: Exploratory Data Analysis<a class="headerlink" href="#assignment-3-exploratory-data-analysis" title="Permalink to this headline">¶</a></h1>
+<p><strong>Due: 2020-09-27</strong></p>
+<div class="section" id="objective-evaluation">
+<h2>Objective &amp; Evaluation<a class="headerlink" href="#objective-evaluation" title="Permalink to this headline">¶</a></h2>
+<p>This assignment is an opportunity to earn level 1 or 2 achievements in <code class="docutils literal notranslate"><span class="pre">summarize</span></code>, <code class="docutils literal notranslate"><span class="pre">visualize</span></code>, or <code class="docutils literal notranslate"><span class="pre">access</span></code>. You can earn level 2 in <code class="docutils literal notranslate"><span class="pre">python</span></code>.</p>
+<p>Accept the assignment on <a class="reference external" href="https://classroom.github.com/a/t2NWi3KU">GitHub Classroom</a>.  The template will convert notebooks that are added to markdown, which makes reading on GitHub for easier grading. It will sync between .ipynb and .md style notebooks stored in your repository.</p>
+<p>This week I encourage you to try working with git, but if you’re not comfortable with that you can work via upload again.</p>
 </div>
-<p>This section of the site has a set of portfolio prompts and this page has instructions for portfolio submissions.</p>
-<p>Starting in week 3 it is recommended that you spend some time each week working on items for your portfolio, that way when it’s time to submit you only have a little bit to add before submission.</p>
-<p>The portfolio is your only chance to earn Level 3 achievements, however, if you have not earned a level 2 for any of the skills in a given check, you could earn level 2 then instead. The prompts provide a starting point, but remember that to earn achievements, you’ll be evaluated by the rubric. You can see the full rubric for all portfolios in the <a class="reference internal" href="../syllabus/course_map.html#portfolioskills"><span class="std std-ref">syllabus</span></a>.</p>
-<p>Each submission should include an introduction and a number of ‘chapters’.  The grade will be based on both that you demonstrate skills through your chapters that are inspired by the prompts and your summary.</p>
-<p>The first submission will be graded on the following criteria and due on October 14:</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Level 3</th>
-    </tr>
-    <tr>
-      <th>keyword</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>python</th>
-      <td>reliable, efficient, pythonic code that consistently adheres to pep8</td>
-    </tr>
-    <tr>
-      <th>access</th>
-      <td>access data from both common and uncommon formats and identify best practices for formats in different contexts</td>
-    </tr>
-    <tr>
-      <th>construct</th>
-      <td>merge data that is not automatically aligned</td>
-    </tr>
-    <tr>
-      <th>summarize</th>
-      <td>Compute and interpret various summary statistics of subsets of data</td>
-    </tr>
-    <tr>
-      <th>visualize</th>
-      <td>generate complex plots with pandas and plotting libraries and customize with matplotlib</td>
-    </tr>
-    <tr>
-      <th>prepare</th>
-      <td>apply data reshaping, cleaning, and filtering manipulations reliably and correctly by assessing data as received</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="section" id="exploratory-data-analysis">
+<h2>Exploratory Data Analysis<a class="headerlink" href="#exploratory-data-analysis" title="Permalink to this headline">¶</a></h2>
+<p>This week your goal is to do a small exploratory data analysis for one or two datasets of your choice. One dataset must include at least two continuous valued variables and at least one categorical variable(d1). One dataset must include at least two categorical variables and at least one continuous valued variable(d2). If you find one dataset that has at least three continuous and three categorical variables, you can do the whole analysis on one dataset</p>
+<p>Use a separate notebook for each dataset, name them <code class="docutils literal notranslate"><span class="pre">dataset_01.ipynb</span></code> and <code class="docutils literal notranslate"><span class="pre">dataset_02.ipynb</span></code>.</p>
+<p>For each dataset:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>See the annotated class notes for a example of a narrative in an analysis.  You don’t need the margin notes or fancy formatting, but about the amount of explanation that’s in the body of the class notes.</p>
 </div>
-<p>On each chapter of your portfolio, you should identify which skills by their keyword, you are applying.</p>
-<div class="toctree-wrapper compound">
+</div>
+<ol class="simple">
+<li><p>Load the data to a notebook as a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> from url.</p></li>
+<li><p>Explore the dataset in a notebook enough to describe its structure</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>shape</p></li>
+<li><p>columns</p></li>
+<li><p>variable types</p></li>
+</ul>
+<ol class="simple">
+<li><p>Write a short description of what the data contains and what it could be used for</p></li>
+<li><p>complete one of the analyses below, including markdown cells throughout your analysis describing the results you see</p></li>
+</ol>
+<p>For d1:</p>
+<ol class="simple">
+<li><p>Display overall summary statistics for a subset of 5 variables of your choice or all variables if fewer than 5 numerical values</p></li>
+<li><p>Display overall summary statistics grouped by a categorical variable</p></li>
+<li><p>For two continuous variables make a scatter plot and color the points by a categorical variable</p></li>
+<li><p>Pose one question for this dataset that can be answered with summary statistics, compute a statistic and plot that help answer that exploratory question.</p></li>
+</ol>
+<p>For d2:</p>
+<ol class="simple">
+<li><p>Display two individual summary statistics for one variable</p></li>
+<li><p>Group the data by two categorical variables and display a table of one summary statistic</p></li>
+<li><p>Use a <code class="docutils literal notranslate"><span class="pre">FacetGrid</span></code> to make a plot that shows something informative about this data, using both categorical variables and at least one numerical value. Describe what this tells you about the data.</p></li>
+<li><p>Produce one additional plot of a different plot type that shows something about this data.</p></li>
+</ol>
 </div>
 </div>
 
@@ -316,7 +297,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./portfolio"
+            path: "./assignments"
         },
         predefinedOutput: true
     }
@@ -331,8 +312,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../assignments/03-exploratory.html" title="previous page">Assignment 3: Exploratory Data Analysis</a>
-    <a class='right-next' id="next-link" href="formatting.html" title="next page">Formatting Tips</a>
+    <a class='left-prev' id="prev-link" href="02-python-access.html" title="previous page">Assignment 2: Practicing Python and Accessing Data</a>
+    <a class='right-next' id="next-link" href="../portfolio/index.html" title="next page">Portfolio</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
