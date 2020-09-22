@@ -27,6 +27,8 @@ For each dataset:
 ````{margin}
 ```{tip}
 See the annotated class notes for a example of a narrative in an analysis.  You don't need the margin notes or fancy formatting, but about the amount of explanation that's in the body of the class notes. 
+```
+````
 1. Load the data to a notebook as a `DataFrame` from url.
 1. Explore the dataset in a notebook enough to describe its structure
 ```
