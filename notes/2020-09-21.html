@@ -36,6 +36,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignments" href="../assignments/index.html" />
+    <link rel="prev" title="Class 5: Accessing Data, continued" href="2020-09-18.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -75,16 +77,43 @@
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../syllabus/index.html">
    Syllabus
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active">
   <a class="reference internal" href="index.html">
    Class Notes
   </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-11.html">
+     Class 2: intro to notebooks and python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-14.html">
+     Class 3: Welcome to Week 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-16.html">
+     Class 4: Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-18.html">
+     Class 5: Accessing Data, continued
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Class 6: Exploratory Data Analysis
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../assignments/index.html">
@@ -210,7 +239,58 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#warmup">
+   Warmup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#announcements">
+   Announcements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-exploratory-data-analysis-eda-before-cleaning">
+   Why Exploratory Data Analysis (EDA) before cleaning?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#split-apply-combine">
+   Split - Apply - Combine
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions-after-class">
+   Questions After Class
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-does-the-inplace-parameter-do">
+     What does the inplace parameter do?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-is-a-for-loop-slower-than-a-pandas-operation">
+     Why is a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     loop slower than a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pandas
+      </span>
+     </code>
+     operation?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -219,16 +299,14 @@
         
               <div>
                 
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topics</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;what is data science&#39;</span><span class="p">,</span> <span class="s1">&#39;jupyter&#39;</span><span class="p">,</span> <span class="s1">&#39;conditional&#39;</span><span class="p">,</span><span class="s1">&#39;functions&#39;</span><span class="p">,</span> <span class="s1">&#39;lists&#39;</span><span class="p">,</span> <span class="s1">&#39;dictionaries&#39;</span><span class="p">,</span><span class="s1">&#39;pandas&#39;</span> <span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
+  <div class="section" id="class-6-exploratory-data-analysis">
+<h1>Class 6: Exploratory Data Analysis<a class="headerlink" href="#class-6-exploratory-data-analysis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="warmup">
+<h2>Warmup<a class="headerlink" href="#warmup" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topics</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topics</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;what is data science&#39;</span><span class="p">,</span> <span class="s1">&#39;jupyter&#39;</span><span class="p">,</span> <span class="s1">&#39;conditional&#39;</span><span class="p">,</span><span class="s1">&#39;functions&#39;</span><span class="p">,</span> <span class="s1">&#39;lists&#39;</span><span class="p">,</span> <span class="s1">&#39;dictionaries&#39;</span><span class="p">,</span><span class="s1">&#39;pandas&#39;</span> <span class="p">]</span>
+<span class="n">topics</span>
 </pre></div>
 </div>
 </div>
@@ -244,6 +322,7 @@
 </div>
 </div>
 </div>
+<p>What happens when we index with <code class="docutils literal notranslate"><span class="pre">-1</span></code>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topics</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -256,6 +335,8 @@
 </div>
 </div>
 </div>
+<p>We get the last value.</p>
+<p>Recall last class we used <code class="docutils literal notranslate"><span class="pre">:</span></code> to index <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code> with <code class="docutils literal notranslate"><span class="pre">.loc</span></code>, we can do that with lists too:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topics</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
@@ -268,18 +349,37 @@
 </div>
 </div>
 </div>
-<div class="section" id="class-6-exploratory-data-analysis">
-<h1>Class 6: Exploratory Data Analysis<a class="headerlink" href="#class-6-exploratory-data-analysis" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="announcements">
+<h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>next assignment will go up today</p></li>
+<li><p>try  practingin throughout the week</p></li>
+<li><p>Check Brightspace for TA office hours</p></li>
+</ul>
+</div>
+<div class="section" id="why-exploratory-data-analysis-eda-before-cleaning">
+<h2>Why Exploratory Data Analysis (EDA) before cleaning?<a class="headerlink" href="#why-exploratory-data-analysis-eda-before-cleaning" title="Permalink to this headline">¶</a></h2>
+<p>Typically a Data process looks like one of these figures:</p>
 <p><img alt="dsprocess osem" src="https://miro.medium.com/max/1200/1*eE8DP4biqtaIK3aIy1S2zA.png" /></p>
 <p><img alt="ds process roles" src="https://miro.medium.com/max/4360/1*PzzcJA-cwXQ8hwlpM4DwbA&#64;2x.jpeg" /></p>
+<p>Data cleaning, which some of you asked about on Friday, would typically, <em>happen</em> before EDA, but it’s hard to know what good data looks like, until you’re used to manipulating it. Also, it’s hard to check if data is good (and your cleaning worked) without some EDA.  So, I’m choosing to <em>teach</em> EDA first. We’ll do data cleaning next, with these tools from EDA available as options for checking and determining what cleaning to do.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In class, we used <code class="docutils literal notranslate"><span class="pre">%load</span> <span class="pre">http://drsmb.co/310</span></code> to pull in the url for the data. <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load">Load</a> is an ipython (ther kernel thta Jupyter uses) magic function.  It allows us to read in data from another place. I’ve set that short url to link to the download url for <a class="reference external" href="https://hackmd.io/ue6vbZIEQRenmXclpVuXpA?edit">this hackmd</a> as markdown(plain text). That way I can paste things and you can pull them directly into your notebook. We’ll use it like a shared copy-paste.</p>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load http://drsmb.co/310</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a version of the SAFI data with more columns</span>
 <span class="n">data_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/brownsarahm/python-socialsci-files/master/data/SAFI_full_shortname.csv&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>As usual, we import <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -287,6 +387,7 @@
 </div>
 </div>
 </div>
+<p>and pull in the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">)</span>
@@ -390,6 +491,7 @@
 <p>2 rows × 65 columns</p>
 </div></div></div>
 </div>
+<p>Recall on Friday, we can use <code class="docutils literal notranslate"><span class="pre">describe</span></code> to see several common descriptive statistics</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -636,6 +738,7 @@
 <p>8 rows × 25 columns</p>
 </div></div></div>
 </div>
+<p>Then we remember that this includes <code class="docutils literal notranslate"><span class="pre">key_id</span></code> as a variable tht we don’t actually want to treat as a variable, it’s an index. We can change that with <code class="docutils literal notranslate"><span class="pre">set_index</span></code> and we can do it in memory (without assignment) using the <code class="docutils literal notranslate"><span class="pre">inplace</span></code> keyword.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;key_id&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -883,6 +986,11 @@
 <p>8 rows × 24 columns</p>
 </div></div></div>
 </div>
+<div class="admonition-try-it-yourself admonition">
+<p class="admonition-title">Try it yourself!</p>
+<p>You can use settings on <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> to set the index when the data is read in instead of doing this after the fact</p>
+</div>
+<p>We can also use the descriptive statistics on a single variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;years_farm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -903,18 +1011,7 @@ Name: years_farm, dtype: float64
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">safi_df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
-</pre></div>
-</div>
-</div>
-</div>
+<p>Note however that this is not well formatted, that’s because it’s a <code class="docutils literal notranslate"><span class="pre">Series</span></code> instead of a DataFrame</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;years_farm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
@@ -927,6 +1024,7 @@ Name: years_farm, dtype: float64
 </div>
 </div>
 </div>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">reset_index()</span></code> to make it back into a dataframe</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;years_farm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -1001,6 +1099,7 @@ Name: years_farm, dtype: float64
 </table>
 </div></div></div>
 </div>
+<p>And we can drop the added index:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;years_farm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
@@ -1070,6 +1169,19 @@ Name: years_farm, dtype: float64
 </table>
 </div></div></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See that we can chain operations together. This is a helpful feature, but to be used with care.
+<a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#maximum-line-length">Pep8</a>, the style conventions for python, recommends no more than 79 characters per line. A <a class="reference external" href="https://development.robinwinslow.uk/2014/01/05/summary-of-python-code-style-conventions/">summary</a> and <a class="reference external" href="https://pybit.es/pep8.html">another summary</a></p>
+</div>
+<p>We can also use individual summary statistics on <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> or <code class="docutils literal notranslate"><span class="pre">Series</span></code> objects</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>one column of a <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> is a <code class="docutils literal notranslate"><span class="pre">pd.Series</span></code></p>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;no_membrs&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
@@ -1082,14 +1194,27 @@ Name: years_farm, dtype: float64
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load http://drsmb.co/310</span>
+</div>
+<div class="section" id="split-apply-combine">
+<h2>Split - Apply - Combine<a class="headerlink" href="#split-apply-combine" title="Permalink to this headline">¶</a></h2>
+<p>A powerful tool in pandas (and data analysis in general) is the ability to apply functions to subsets of the data.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In class, we used the load magic again here to get this url. Then split the cell, changed the second one to markdown with the code for the image</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To include an image in a notebook, use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>![alt text here](url/or/path/to/image)
 </pre></div>
 </div>
+<p>in a markdown cell</p>
 </div>
 </div>
 <p><img alt="split-apply-combine" src="https://jakevdp.github.io/PythonDataScienceHandbook/figures/03.08-split-apply-combine.png" /></p>
+<p>For example, we can get descriptive statistics per village</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;village&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -1252,6 +1377,7 @@ Name: years_farm, dtype: float64
 <p>3 rows × 192 columns</p>
 </div></div></div>
 </div>
+<p>We can also rearrange this into a more usable format than this very wide format:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;village&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -1366,12 +1492,145 @@ Name: years_farm, dtype: float64
 <p>576 rows × 4 columns</p>
 </div></div></div>
 </div>
+<p>This, however, gives some funny variable names, to fix that, we first save it to a variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">village_summary_df</span> <span class="o">=</span> <span class="n">safi_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;village&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+</div>
+<p>Now we can use the rename function</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Rename is also one thing you might do in cleaning a dataset.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">village_summary_df</span><span class="o">.</span><span class="n">rename</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on method rename in module pandas.core.frame:
+
+rename(mapper=None, index=None, columns=None, axis=None, copy=True, inplace=False, level=None, errors=&#39;ignore&#39;) method of pandas.core.frame.DataFrame instance
+    Alter axes labels.
+    
+    Function / dict values must be unique (1-to-1). Labels not contained in
+    a dict / Series will be left as-is. Extra labels listed don&#39;t throw an
+    error.
+    
+    See the :ref:`user guide &lt;basics.rename&gt;` for more.
+    
+    Parameters
+    ----------
+    mapper : dict-like or function
+        Dict-like or functions transformations to apply to
+        that axis&#39; values. Use either ``mapper`` and ``axis`` to
+        specify the axis to target with ``mapper``, or ``index`` and
+        ``columns``.
+    index : dict-like or function
+        Alternative to specifying axis (``mapper, axis=0``
+        is equivalent to ``index=mapper``).
+    columns : dict-like or function
+        Alternative to specifying axis (``mapper, axis=1``
+        is equivalent to ``columns=mapper``).
+    axis : {0 or &#39;index&#39;, 1 or &#39;columns&#39;}, default 0
+        Axis to target with ``mapper``. Can be either the axis name
+        (&#39;index&#39;, &#39;columns&#39;) or number (0, 1). The default is &#39;index&#39;.
+    copy : bool, default True
+        Also copy underlying data.
+    inplace : bool, default False
+        Whether to return a new DataFrame. If True then value of copy is
+        ignored.
+    level : int or level name, default None
+        In case of a MultiIndex, only rename labels in the specified
+        level.
+    errors : {&#39;ignore&#39;, &#39;raise&#39;}, default &#39;ignore&#39;
+        If &#39;raise&#39;, raise a `KeyError` when a dict-like `mapper`, `index`,
+        or `columns` contains labels that are not present in the Index
+        being transformed.
+        If &#39;ignore&#39;, existing keys will be renamed and extra keys will be
+        ignored.
+    
+    Returns
+    -------
+    DataFrame
+        DataFrame with the renamed axis labels.
+    
+    Raises
+    ------
+    KeyError
+        If any of the labels is not found in the selected axis and
+        &quot;errors=&#39;raise&#39;&quot;.
+    
+    See Also
+    --------
+    DataFrame.rename_axis : Set the name of the axis.
+    
+    Examples
+    --------
+    ``DataFrame.rename`` supports two calling conventions
+    
+    * ``(index=index_mapper, columns=columns_mapper, ...)``
+    * ``(mapper, axis={&#39;index&#39;, &#39;columns&#39;}, ...)``
+    
+    We *highly* recommend using keyword arguments to clarify your
+    intent.
+    
+    Rename columns using a mapping:
+    
+    &gt;&gt;&gt; df = pd.DataFrame({&quot;A&quot;: [1, 2, 3], &quot;B&quot;: [4, 5, 6]})
+    &gt;&gt;&gt; df.rename(columns={&quot;A&quot;: &quot;a&quot;, &quot;B&quot;: &quot;c&quot;})
+       a  c
+    0  1  4
+    1  2  5
+    2  3  6
+    
+    Rename index using a mapping:
+    
+    &gt;&gt;&gt; df.rename(index={0: &quot;x&quot;, 1: &quot;y&quot;, 2: &quot;z&quot;})
+       A  B
+    x  1  4
+    y  2  5
+    z  3  6
+    
+    Cast index labels to a different type:
+    
+    &gt;&gt;&gt; df.index
+    RangeIndex(start=0, stop=3, step=1)
+    &gt;&gt;&gt; df.rename(index=str).index
+    Index([&#39;0&#39;, &#39;1&#39;, &#39;2&#39;], dtype=&#39;object&#39;)
+    
+    &gt;&gt;&gt; df.rename(columns={&quot;A&quot;: &quot;a&quot;, &quot;B&quot;: &quot;b&quot;, &quot;C&quot;: &quot;c&quot;}, errors=&quot;raise&quot;)
+    Traceback (most recent call last):
+    KeyError: [&#39;C&#39;] not found in axis
+    
+    Using axis-style parameters
+    
+    &gt;&gt;&gt; df.rename(str.lower, axis=&#39;columns&#39;)
+       a  b
+    0  1  4
+    1  2  5
+    2  3  6
+    
+    &gt;&gt;&gt; df.rename({1: 2, 2: 4}, axis=&#39;index&#39;)
+       A  B
+    0  1  4
+    2  2  5
+    4  3  6
+</pre></div>
+</div>
+</div>
+</div>
+<p>Rename takes a dict-like or function that maps from what’s there to what to change it to. We can either provide the mapper and an axis or pass the mapper as the columns parameter. The columns parameter makes it more human readable, and explicit what we’re doing.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><code class="docutils literal notranslate"><span class="pre">inplace</span></code> again. See questions at the bottom for more on what it does</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1383,6 +1642,7 @@ Name: years_farm, dtype: float64
 </div>
 </div>
 </div>
+<p>Now we have a much better summary table. This is in what’s called tidy format. Each colum</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">village_summary_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -1454,6 +1714,12 @@ Name: years_farm, dtype: float64
 </table>
 </div></div></div>
 </div>
+<p>How could we use this to compute the average across villages for each statistic of each variable?</p>
+<div class="admonition-try-it-yourself admonition">
+<p class="admonition-title">Try it yourself!</p>
+<p>What would it look like to do this from the first result of <code class="docutils literal notranslate"><span class="pre">describe()</span></code> on the <code class="docutils literal notranslate"><span class="pre">groupby</span></code>, instead of with the <code class="docutils literal notranslate"><span class="pre">unstack</span></code> and <code class="docutils literal notranslate"><span class="pre">reset_index</span></code>?</p>
+</div>
+<p>We <em>do</em> need to <code class="docutils literal notranslate"><span class="pre">groupby</span></code> <code class="docutils literal notranslate"><span class="pre">'statistic'</span></code> and use <code class="docutils literal notranslate"><span class="pre">mean</span></code>, but that’s not enough:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">village_summary_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;statistic&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -1523,6 +1789,7 @@ Name: years_farm, dtype: float64
 </table>
 </div></div></div>
 </div>
+<p>This averages across all of the variables, too. So instead we need to groupby two variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">village_summary_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;statistic&#39;</span><span class="p">,</span><span class="s1">&#39;variable&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -1641,6 +1908,84 @@ Name: years_farm, dtype: float64
 <p>What is the most common combination of <code class="docutils literal notranslate"><span class="pre">respondent_wall_type</span></code> and <code class="docutils literal notranslate"><span class="pre">respondent_floor_type</span></code>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;respondent_wall_type&#39;</span><span class="p">,</span><span class="s1">&#39;respondent_floor_type&#39;</span><span class="p">])[</span><span class="s1">&#39;instanceID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>respondent_wall_type</th>
+      <th>respondent_floor_type</th>
+      <th>instanceID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>burntbricks</td>
+      <td>cement</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>burntbricks</td>
+      <td>earth</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>cement</td>
+      <td>cement</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>muddaub</td>
+      <td>cement</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>muddaub</td>
+      <td>earth</td>
+      <td>43</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>sunbricks</td>
+      <td>cement</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>sunbricks</td>
+      <td>earth</td>
+      <td>13</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can read this table to see the result. Or we might want it in a different way</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;respondent_wall_type&#39;</span><span class="p">,</span><span class="s1">&#39;respondent_floor_type&#39;</span><span class="p">])[</span><span class="s1">&#39;instanceID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1699,6 +2044,681 @@ Name: years_farm, dtype: float64
 </div></div></div>
 </div>
 </div>
+<div class="section" id="questions-after-class">
+<h2>Questions After Class<a class="headerlink" href="#questions-after-class" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-does-the-inplace-parameter-do">
+<h3>What does the inplace parameter do?<a class="headerlink" href="#what-does-the-inplace-parameter-do" title="Permalink to this headline">¶</a></h3>
+<p>We used inplace for the first time today right after we read in the data. Let’s make a new DataFrame and compare what happens with and without.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>I’m surprised I’ve remembered it repeatedly in class. I usually forget <code class="docutils literal notranslate"><span class="pre">inplace</span></code> don’t get the output I want and then go back and add it. That’s a normal part of programming.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df_noinplace</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">)</span>
+<span class="n">safi_df_inplace</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">safi_df_noinplace</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;key_id&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df_noinplace</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key_id</th>
+      <th>interview_date</th>
+      <th>quest_no</th>
+      <th>start</th>
+      <th>end</th>
+      <th>province</th>
+      <th>district</th>
+      <th>ward</th>
+      <th>village</th>
+      <th>years_farm</th>
+      <th>...</th>
+      <th>items_owned</th>
+      <th>items_owned_other</th>
+      <th>no_meals</th>
+      <th>months_lack_food</th>
+      <th>no_food_mitigation</th>
+      <th>gps_Latitude</th>
+      <th>gps_Longitude</th>
+      <th>gps_Altitude</th>
+      <th>gps_Accuracy</th>
+      <th>instanceID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>17 November 2016</td>
+      <td>1</td>
+      <td>2017-03-23T09:49:57.000Z</td>
+      <td>2017-04-02T17:29:08.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>11</td>
+      <td>...</td>
+      <td>['bicycle' ;  'television' ;  'solar_panel' ; ...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Jan']</td>
+      <td>['na' ;  'rely_less_food' ;  'reduce_meals' ; ...</td>
+      <td>-19.112259</td>
+      <td>33.483456</td>
+      <td>698</td>
+      <td>14.0</td>
+      <td>uuid:ec241f2c-0609-46ed-b5e8-fe575f6cefef</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>17 November 2016</td>
+      <td>1</td>
+      <td>2017-04-02T09:48:16.000Z</td>
+      <td>2017-04-02T17:26:19.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>2</td>
+      <td>...</td>
+      <td>['cow_cart' ;  'bicycle' ;  'radio' ;  'cow_pl...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Jan' ;  'Sept' ;  'Oct' ;  'Nov' ;  'Dec']</td>
+      <td>['na' ;  'reduce_meals' ;  'restrict_adults' ;...</td>
+      <td>-19.112477</td>
+      <td>33.483416</td>
+      <td>690</td>
+      <td>19.0</td>
+      <td>uuid:099de9c9-3e5e-427b-8452-26250e840d6e</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>17 November 2016</td>
+      <td>3</td>
+      <td>2017-04-02T14:35:26.000Z</td>
+      <td>2017-04-02T17:26:53.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>40</td>
+      <td>...</td>
+      <td>['solar_torch']</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Jan' ;  'Feb' ;  'Mar' ;  'Oct' ;  'Nov' ;  ...</td>
+      <td>['na' ;  'restrict_adults' ;  'lab_ex_food']</td>
+      <td>-19.112108</td>
+      <td>33.483450</td>
+      <td>674</td>
+      <td>13.0</td>
+      <td>uuid:193d7daf-9582-409b-bf09-027dd36f9007</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>17 November 2016</td>
+      <td>4</td>
+      <td>2017-04-02T14:55:18.000Z</td>
+      <td>2017-04-02T17:27:16.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>6</td>
+      <td>...</td>
+      <td>['bicycle' ;  'radio' ;  'cow_plough' ;  'sola...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Sept' ;  'Oct' ;  'Nov' ;  'Dec']</td>
+      <td>['na' ;  'reduce_meals' ;  'restrict_adults' ;...</td>
+      <td>-19.112229</td>
+      <td>33.483424</td>
+      <td>679</td>
+      <td>5.0</td>
+      <td>uuid:148d1105-778a-4755-aa71-281eadd4a973</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>17 November 2016</td>
+      <td>5</td>
+      <td>2017-04-02T15:10:35.000Z</td>
+      <td>2017-04-02T17:27:35.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>18</td>
+      <td>...</td>
+      <td>['motorcyle' ;  'radio' ;  'cow_plough' ;  'mo...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Aug' ;  'Sept' ;  'Oct' ;  'Nov']</td>
+      <td>['na' ;  'go_forest' ;  'migrate']</td>
+      <td>-19.112217</td>
+      <td>33.483425</td>
+      <td>689</td>
+      <td>10.0</td>
+      <td>uuid:2c867811-9696-4966-9866-f35c3e97d02d</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 65 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">safi_df_inplace</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;key_id&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NoneType
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df_inplace</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>interview_date</th>
+      <th>quest_no</th>
+      <th>start</th>
+      <th>end</th>
+      <th>province</th>
+      <th>district</th>
+      <th>ward</th>
+      <th>village</th>
+      <th>years_farm</th>
+      <th>agr_assoc</th>
+      <th>...</th>
+      <th>items_owned</th>
+      <th>items_owned_other</th>
+      <th>no_meals</th>
+      <th>months_lack_food</th>
+      <th>no_food_mitigation</th>
+      <th>gps_Latitude</th>
+      <th>gps_Longitude</th>
+      <th>gps_Altitude</th>
+      <th>gps_Accuracy</th>
+      <th>instanceID</th>
+    </tr>
+    <tr>
+      <th>key_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>17 November 2016</td>
+      <td>1</td>
+      <td>2017-03-23T09:49:57.000Z</td>
+      <td>2017-04-02T17:29:08.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>11</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['bicycle' ;  'television' ;  'solar_panel' ; ...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Jan']</td>
+      <td>['na' ;  'rely_less_food' ;  'reduce_meals' ; ...</td>
+      <td>-19.112259</td>
+      <td>33.483456</td>
+      <td>698</td>
+      <td>14.0</td>
+      <td>uuid:ec241f2c-0609-46ed-b5e8-fe575f6cefef</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>17 November 2016</td>
+      <td>1</td>
+      <td>2017-04-02T09:48:16.000Z</td>
+      <td>2017-04-02T17:26:19.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>2</td>
+      <td>yes</td>
+      <td>...</td>
+      <td>['cow_cart' ;  'bicycle' ;  'radio' ;  'cow_pl...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Jan' ;  'Sept' ;  'Oct' ;  'Nov' ;  'Dec']</td>
+      <td>['na' ;  'reduce_meals' ;  'restrict_adults' ;...</td>
+      <td>-19.112477</td>
+      <td>33.483416</td>
+      <td>690</td>
+      <td>19.0</td>
+      <td>uuid:099de9c9-3e5e-427b-8452-26250e840d6e</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>17 November 2016</td>
+      <td>3</td>
+      <td>2017-04-02T14:35:26.000Z</td>
+      <td>2017-04-02T17:26:53.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>40</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['solar_torch']</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Jan' ;  'Feb' ;  'Mar' ;  'Oct' ;  'Nov' ;  ...</td>
+      <td>['na' ;  'restrict_adults' ;  'lab_ex_food']</td>
+      <td>-19.112108</td>
+      <td>33.483450</td>
+      <td>674</td>
+      <td>13.0</td>
+      <td>uuid:193d7daf-9582-409b-bf09-027dd36f9007</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>17 November 2016</td>
+      <td>4</td>
+      <td>2017-04-02T14:55:18.000Z</td>
+      <td>2017-04-02T17:27:16.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>6</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['bicycle' ;  'radio' ;  'cow_plough' ;  'sola...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Sept' ;  'Oct' ;  'Nov' ;  'Dec']</td>
+      <td>['na' ;  'reduce_meals' ;  'restrict_adults' ;...</td>
+      <td>-19.112229</td>
+      <td>33.483424</td>
+      <td>679</td>
+      <td>5.0</td>
+      <td>uuid:148d1105-778a-4755-aa71-281eadd4a973</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>17 November 2016</td>
+      <td>5</td>
+      <td>2017-04-02T15:10:35.000Z</td>
+      <td>2017-04-02T17:27:35.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>18</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['motorcyle' ;  'radio' ;  'cow_plough' ;  'mo...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Aug' ;  'Sept' ;  'Oct' ;  'Nov']</td>
+      <td>['na' ;  'go_forest' ;  'migrate']</td>
+      <td>-19.112217</td>
+      <td>33.483425</td>
+      <td>689</td>
+      <td>10.0</td>
+      <td>uuid:2c867811-9696-4966-9866-f35c3e97d02d</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 64 columns</p>
+</div></div></div>
+</div>
+<p>Without <code class="docutils literal notranslate"><span class="pre">inplace</span></code>, <code class="docutils literal notranslate"><span class="pre">set_index</span></code> returns a dataframe, with the index changed, with <code class="docutils literal notranslate"><span class="pre">inplace</span></code> it returns <code class="docutils literal notranslate"><span class="pre">None</span></code>. But, without <code class="docutils literal notranslate"><span class="pre">inplace</span></code>, we don’t see the desired effect when we do our next step, but with <code class="docutils literal notranslate"><span class="pre">inplace</span></code> the index is changed.</p>
+<p>Without the inplace, to save the changes you need to use an assignment. The following is equivalent to using <code class="docutils literal notranslate"><span class="pre">inplace</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df_noinplace</span><span class="o">=</span> <span class="n">safi_df_noinplace</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;key_id&#39;</span><span class="p">))</span>
+<span class="n">safi_df_noinplace</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-30-1a84c65392b3&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="n">safi_df_noinplace</span><span class="o">=</span> <span class="n">safi_df_noinplace</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;key_id&#39;</span><span class="p">))</span>
+                                                            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="why-is-a-for-loop-slower-than-a-pandas-operation">
+<h3>Why is a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop slower than a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> operation?<a class="headerlink" href="#why-is-a-for-loop-slower-than-a-pandas-operation" title="Permalink to this headline">¶</a></h3>
+<p>TL;DR: for this example, it’s actually possible to relatively easily write a faster loop, but for other operations, it’s unlikely.</p>
+<p>Still, the pandas way is fewer lines, and can scale to larger datatypes quickly in ways we’ll see later.</p>
+<p>Basically, the advantage of using the library functions is that someone has already put a lot of though into the optimal way to implement things and it leverages core features of the data structure. Here is a <a class="reference external" href="https://engineering.upside.com/a-beginners-guide-to-optimizing-pandas-code-for-speed-c09ef2c6a4d6">blog post</a> about iterating and applying functions in pandas.  It covers topics we haven’t yet seen, but will.</p>
+<p>To test, we can do an experiment.  Let’s take the last thing we covered in class today, finding the most common combination of floor and wall types.</p>
+<p>First we’ll look at two solutions and verify that they’re the same.</p>
+<p>First, how to do it with <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wall_floor_df</span> <span class="o">=</span> <span class="n">safi_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;respondent_wall_type&#39;</span><span class="p">,</span><span class="s1">&#39;respondent_floor_type&#39;</span><span class="p">])[</span><span class="s1">&#39;instanceID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">wall_floor_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>respondent_wall_type  respondent_floor_type
+burntbricks           cement                   30
+                      earth                    37
+cement                cement                    1
+muddaub               cement                    3
+                      earth                    43
+sunbricks             cement                    4
+                      earth                    13
+Name: instanceID, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can read the answer off of that table, but let’s get it programmatically:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wall_floor_df</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;muddaub&#39;, &#39;earth&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, how to do it with a for loop (if you have a better for loop, make a PR so share it).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wall_floor_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">wall</span><span class="p">,</span><span class="n">floor</span>  <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;respondent_wall_type&#39;</span><span class="p">],</span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;respondent_floor_type&#39;</span><span class="p">]):</span>
+    <span class="n">wf_key</span> <span class="o">=</span> <span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">wall</span><span class="p">,</span><span class="n">floor</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">wf_key</span> <span class="ow">in</span> <span class="n">wall_floor_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">wall_floor_dict</span><span class="p">[</span><span class="n">wf_key</span><span class="p">]</span> <span class="o">+=</span><span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">wall_floor_dict</span><span class="p">[</span><span class="n">wf_key</span><span class="p">]</span> <span class="o">=</span><span class="mi">1</span>
+
+<span class="n">wall_floor_dict</span>      
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;muddaub_earth&#39;: 43,
+ &#39;burntbricks_cement&#39;: 30,
+ &#39;burntbricks_earth&#39;: 37,
+ &#39;sunbricks_earth&#39;: 13,
+ &#39;muddaub_cement&#39;: 3,
+ &#39;sunbricks_cement&#39;: 4,
+ &#39;cement_cement&#39;: 1}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again, we can read from the dict, but lets find it</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="n">wall_floor_dict</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">wall_floor_dict</span><span class="o">.</span><span class="n">get</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;muddaub&#39;, &#39;earth&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can use a special feature of Jupyter notebooks to time them and see which is faster, called the <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit"><code class="docutils literal notranslate"><span class="pre">%timeit</span></code></a> magic. Displaying visual things is always slow, so we’ll take the line that would display out of both options.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This timing can be good when you have a large dataset, you can load a small part and and compare two ways of doing something you want to do with that. Then use only the faster on the whole dataset.</p>
+<p>More detail on timing and profiling from the <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/01.07-timing-and-profiling.html">text book</a></p>
+</div>
+</div>
+<p>Now timing the pandas way, with a human deciding</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span> <span class="n">timeit</span> <span class="o">-</span><span class="n">o</span>
+
+<span class="n">wall_floor_df</span> <span class="o">=</span> <span class="n">safi_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;respondent_wall_type&#39;</span><span class="p">,</span><span class="s1">&#39;respondent_floor_type&#39;</span><span class="p">])[</span><span class="s1">&#39;instanceID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UsageError: Cell magic `%%` not found.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_pandas</span> <span class="o">=</span> <span class="n">_</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And capture the time by using the <code class="docutils literal notranslate"><span class="pre">_</span></code> it gets the std out from the previous cell.</p>
+<p>For loop with required interpretation</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span> <span class="n">timeit</span> <span class="o">-</span><span class="n">o</span>
+<span class="n">wall_floor_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">wall</span><span class="p">,</span><span class="n">floor</span>  <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;respondent_wall_type&#39;</span><span class="p">],</span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;respondent_floor_type&#39;</span><span class="p">]):</span>
+    <span class="n">wf_key</span> <span class="o">=</span> <span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">wall</span><span class="p">,</span><span class="n">floor</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">wf_key</span> <span class="ow">in</span> <span class="n">wall_floor_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">wall_floor_dict</span><span class="p">[</span><span class="n">wf_key</span><span class="p">]</span> <span class="o">+=</span><span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">wall_floor_dict</span><span class="p">[</span><span class="n">wf_key</span><span class="p">]</span> <span class="o">=</span><span class="mi">1</span>
+
+<span class="nb">max</span><span class="p">(</span><span class="n">wall_floor_dict</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">wall_floor_dict</span><span class="o">.</span><span class="n">get</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UsageError: Cell magic `%%` not found.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_loop</span> <span class="o">=</span> <span class="n">_</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>On my local computer it was about 12x faster with that loop. Here, we’ll calculate it for the GitHub servers that host the course manual.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>You can also try it on your computer and see how it compares. Or try other loops/ways of doing it in pandas.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_pandas</span><span class="o">.</span><span class="n">average</span><span class="o">/</span><span class="n">t_loop</span><span class="o">.</span><span class="n">average</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">39</span><span class="o">-</span><span class="mi">6</span><span class="n">f5071a185e2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">t_pandas</span><span class="o">.</span><span class="n">average</span><span class="o">/</span><span class="n">t_loop</span><span class="o">.</span><span class="n">average</span>
+
+<span class="ne">AttributeError</span>: &#39;list&#39; object has no attribute &#39;average&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note, that the above was a relatively thoughtful attempt to make a fast loop.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it -o
+
+<span class="n">wall_floor_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">wall</span>  <span class="ow">in</span> <span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;respondent_wall_type&#39;</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">floor</span> <span class="ow">in</span> <span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;respondent_floor_type&#39;</span><span class="p">]:</span>
+        <span class="n">wf_key</span> <span class="o">=</span> <span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">wall</span><span class="p">,</span><span class="n">floor</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">wf_key</span> <span class="ow">in</span> <span class="n">wall_floor_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">wall_floor_dict</span><span class="p">[</span><span class="n">wf_key</span><span class="p">]</span> <span class="o">+=</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">wall_floor_dict</span><span class="p">[</span><span class="n">wf_key</span><span class="p">]</span> <span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.33 ms ± 84.2 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;TimeitResult : 9.33 ms ± 84.2 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_loop_nozip</span> <span class="o">=</span> <span class="n">_</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using  <code class="docutils literal notranslate"><span class="pre">zip</span></code> (which we haven’t talked about in class, but is a very handy <a class="reference external" href="https://docs.python.org/3.3/library/functions.html#zip">built in function</a>) made it about 100x faster than using 2 for loops on my local machine.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_loop_nozip</span><span class="o">.</span><span class="n">average</span><span class="o">/</span><span class="n">t_loop</span><span class="o">.</span><span class="n">average</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">42</span><span class="o">-</span><span class="n">de3b109bab71</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">t_loop_nozip</span><span class="o">.</span><span class="n">average</span><span class="o">/</span><span class="n">t_loop</span><span class="o">.</span><span class="n">average</span>
+
+<span class="ne">AttributeError</span>: &#39;list&#39; object has no attribute &#39;average&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Also the pandas version is about 8x faster locally (see below for GH server) than the nested loop version.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_loop_nozip</span><span class="o">.</span><span class="n">average</span><span class="o">/</span><span class="n">t_pandas</span><span class="o">.</span><span class="n">average</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">43</span><span class="o">-</span><span class="n">dfdf354d02b8</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">t_loop_nozip</span><span class="o">.</span><span class="n">average</span><span class="o">/</span><span class="n">t_pandas</span><span class="o">.</span><span class="n">average</span>
+
+<span class="ne">AttributeError</span>: &#39;list&#39; object has no attribute &#39;average&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>For a more a complex question (say we wanted to know a statistic more complicated than the count) the loop gets harder (and probably slower), but the pandas operation stays about the same.</p>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1728,6 +2748,8 @@ Name: years_farm, dtype: float64
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="2020-09-18.html" title="previous page">Class 5: Accessing Data, continued</a>
+    <a class='right-next' id="next-link" href="../assignments/index.html" title="next page">Assignments</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
