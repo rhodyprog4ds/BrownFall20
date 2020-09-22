@@ -17,7 +17,7 @@ This week I encourage you to try working with git, but if you're not comfortable
 
 
 
-This week your goal is to do a small exploratory data analysis for two datasets of your choice. One dataset must include at least two continuous valued variables and at least one categorical variable(d1). One dataset must include at least two categorical variables and at least one continuous valued variable(d2).
+This week your goal is to do a small exploratory data analysis for one or two datasets of your choice. One dataset must include at least two continuous valued variables and at least one categorical variable(d1). One dataset must include at least two categorical variables and at least one continuous valued variable(d2). If you find one dataset that has at least three continuous and three categorical variables, you can do the whole analysis on one adataset
 
 
 Use a separate notebook for each dataset, name them `dataset_01.ipynb` and `dataset_02.ipynb`.
