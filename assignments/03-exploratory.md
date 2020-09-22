@@ -17,22 +17,16 @@ This week I encourage you to try working with git, but if you're not comfortable
 
 
 
-This week your goal is to do a small exploratory data analysis for one or two datasets of your choice. One dataset must include at least two continuous valued variables and at least one categorical variable(d1). One dataset must include at least two categorical variables and at least one continuous valued variable(d2). If you find one dataset that has at least three continuous and three categorical variables, you can do the whole analysis on one dataset
+This week your goal is to do a small exploratory data analysis for two datasets of your choice. One dataset must include at least two continuous valued variables and at least one categorical variable(d1). One dataset must include at least two categorical variables and at least one continuous valued variable(d2).
 
 
 Use a separate notebook for each dataset, name them `dataset_01.ipynb` and `dataset_02.ipynb`.
 
 
 For each dataset:
-````{margin}
-```{tip}
-See the annotated class notes for a example of a narrative in an analysis.  You don't need the margin notes or fancy formatting, but about the amount of explanation that's in the body of the class notes. 
-```
-````
+1. Include a markdown header with a title for your analysis
 1. Load the data to a notebook as a `DataFrame` from url.
 1. Explore the dataset in a notebook enough to describe its structure
-```
-````
   - shape
   - columns
   - variable types
@@ -41,7 +35,7 @@ See the annotated class notes for a example of a narrative in an analysis.  You 
 
 
 For d1:
-1. Display overall summary statistics for a subset of 5 variables of your choice or all variables if fewer than 5 numerical values
+1. Display overall summary statistics for a subset of 5 of your choice or all variables if fewer than 5 numerical values
 1. Display overall summary statistics grouped by a categorical variable
 1. For two continuous variables make a scatter plot and color the points by a categorical variable
 1. Pose one question for this dataset that can be answered with summary statistics, compute a statistic and plot that help answer that exploratory question.
@@ -50,5 +44,5 @@ For d1:
 For d2:
 1. Display two individual summary statistics for one variable
 1. Group the data by two categorical variables and display a table of one summary statistic
-1. Use a `FacetGrid` to make a plot that shows something informative about this data, using both categorical variables and at least one numerical value. Describe what this tells you about the data.
+1. Use a seaborn plotting function with the `col` parameter or a `FacetGrid` to make a plot that shows something informative about this data, using both categorical variables and at least one numerical value. Describe what this tells you about the data.
 1. Produce one additional plot of a different plot type that shows something about this data.
