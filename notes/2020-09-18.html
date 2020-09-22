@@ -1572,19 +1572,13 @@ Name: village, dtype: object
 <p>And we can put them in a dictionary. <code class="docutils literal notranslate"><span class="pre">lambda</span></code> functions are special functions defined in a single line.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greetingl</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;hello&#39;</span> <span class="o">+</span> <span class="n">name</span>
-<span class="n">greeting</span><span class="p">(</span><span class="n">lsarah</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greetingl</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;hello &#39;</span> <span class="o">+</span> <span class="n">name</span>
+<span class="n">greetingl</span><span class="p">(</span><span class="s1">&#39;sarah&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span><span class="mi">5</span><span class="n">a270a2a3b36</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">greetingl</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;hello&#39;</span> <span class="o">+</span> <span class="n">name</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">greeting</span><span class="p">(</span><span class="n">lsarah</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;greeting&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hello sarah&#39;
 </pre></div>
 </div>
 </div>
@@ -1593,20 +1587,13 @@ Name: village, dtype: object
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greetingf</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="k">return</span> <span class="s1">&#39;hello&#39;</span> <span class="o">+</span> <span class="n">name</span>
-<span class="n">greetingf</span><span class="p">(</span><span class="n">sarah</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39;hello &#39;</span> <span class="o">+</span> <span class="n">name</span>
+<span class="n">greetingf</span><span class="p">(</span><span class="s1">&#39;sarah&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">22</span><span class="o">-</span><span class="n">edf35b16851a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">greetingf</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="k">return</span> <span class="s1">&#39;hello&#39;</span> <span class="o">+</span> <span class="n">name</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">greetingf</span><span class="p">(</span><span class="n">sarah</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;sarah&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hello sarah&#39;
 </pre></div>
 </div>
 </div>
@@ -2234,7 +2221,7 @@ How does the syntax on the question from prismia today work?<div class="summary-
 <blockquote>
 <div><p class="card-text">Read the tables off of the <span class="xref myst">syllabus course map</span> page with <code class="docutils literal notranslate"><span class="pre">read_html</span></code> and make a list of the shapes of all of the tables on the page. Save the output to a variable and paste the <em>value</em> of that variable as your answer to the question.</p>
 </div></blockquote>
-<p class="card-text">And the soluiton was:</p>
+<p class="card-text">And the solution was:</p>
 <p class="card-text">This uses something called a <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions">list comprehension</a>, they are a way to make lists, that look a lot like putting a for loop in a list. There are two ways to use them under the hood, as in the linked documentation, the one above is considered more pythonic, because it is more concise.</p>
 <p class="card-text">The <code class="docutils literal notranslate"><span class="pre">[]</span></code> define a list, we can do that with anything, for example my zoom meetings today were:</p>
 <p class="card-text">Note that the last line is there to display what happened, but it would work without.</p>
@@ -2267,102 +2254,29 @@ Which of the following is a dictionary?<div class="summary-down docutils">
 <p class="card-text">First, we can look at them</p>
 <p class="card-text">Then we can check the types and find the dictionary</p>
 </div>
-</details><p>````{dropdown} What <code class="docutils literal notranslate"><span class="pre">type</span></code> is the shape of a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>?</p>
-<p>We can find that by using the <code class="docutils literal notranslate"><span class="pre">type</span></code> function:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">safi_df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-</pre></div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+What type is the shape of a pandas DataFrame?<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">We can find that by using the <code class="docutils literal notranslate"><span class="pre">type</span></code> function:</p>
+<p class="card-text"><code class="docutils literal notranslate"><span class="pre">tuple</span></code> is another iterable type, so we can index them</p>
+<p class="card-text">Also, in python, we can assign to multiple values when it returns a tuple. We saw this before, when we used the <code class="docutils literal notranslate"><span class="pre">items()</span></code> method on a dictionary.</p>
+<p class="card-text">we can see that with the type function</p>
+<p class="card-text">So, with the shape property we could also return it to two values</p>
 </div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+What does indexing with -1 do?<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">It returns the last value, here’s an example, using the <code class="docutils literal notranslate"><span class="pre">todays_meetings</span></code> variable defined above.</p>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tuple
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">tuple</span></code> is another iterable type, so we can index them</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_shape</span> <span class="o">=</span> <span class="n">safi_df</span><span class="o">.</span><span class="n">shape</span>
-<span class="n">safi_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>131
-</pre></div>
-</div>
-</div>
-</div>
-<p>Also, in python, we can assign to multiple values when it returns a tuple. We saw this before, when we used the <code class="docutils literal notranslate"><span class="pre">items()</span></code> method on a dictionary.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ex_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">char</span><span class="p">:</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">char</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;abcde&#39;</span><span class="p">)}</span>
-
-<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">ex_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39; is the &#39;</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="s1">&#39;th letter&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a  is the  0 th letter
-b  is the  1 th letter
-c  is the  2 th letter
-d  is the  3 th letter
-e  is the  4 th letter
-</pre></div>
-</div>
-</div>
-</div>
-<p>we can see that with the type function</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">ex_dict</span> <span class="ow">in</span> <span class="n">d1</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">34</span><span class="o">-</span><span class="mi">3</span><span class="n">afa1379f425</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">[</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">ex_dict</span> <span class="ow">in</span> <span class="n">d1</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
-
-<span class="ne">NameError</span>: name &#39;d1&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<p>So, with the shape property we could also return it to two values</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_rows</span><span class="p">,</span> <span class="n">n_cols</span> <span class="o">=</span> <span class="n">safi_df</span><span class="o">.</span><span class="n">shape</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;there are &#39;</span><span class="p">,</span><span class="n">n_rows</span><span class="p">,</span> <span class="s1">&#39; rows and &#39;</span><span class="p">,</span> <span class="n">n_cols</span><span class="p">,</span> <span class="s1">&#39; columns&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>there are  131  rows and  13  columns
-</pre></div>
-</div>
-</div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-````{dropdown} What does indexing with -1 do?
-
-It returns the last value, here&#39;s an example, using the `todays_meetings` variable defined above.
-
-```{code-cell} ipython3
-todays_meetings
-```
-
-
-```{code-cell} ipython3
-todays_meetings[-1]
-```
-</pre></div>
-</div>
-</div>
+</details></div>
 </div>
 
     <script type="text/x-thebe-config">

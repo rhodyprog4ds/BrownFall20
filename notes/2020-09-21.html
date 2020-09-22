@@ -2582,14 +2582,17 @@ Name: instanceID, dtype: int64
 <p>Now timing the pandas way, with a human deciding</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span> <span class="n">timeit</span> <span class="o">-</span><span class="n">o</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it -o
 
 <span class="n">wall_floor_df</span> <span class="o">=</span> <span class="n">safi_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;respondent_wall_type&#39;</span><span class="p">,</span><span class="s1">&#39;respondent_floor_type&#39;</span><span class="p">])[</span><span class="s1">&#39;instanceID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UsageError: Cell magic `%%` not found.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.92 ms ± 175 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;TimeitResult : 2.92 ms ± 175 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)&gt;
 </pre></div>
 </div>
 </div>
@@ -2605,7 +2608,7 @@ Name: instanceID, dtype: int64
 <p>For loop with required interpretation</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span> <span class="n">timeit</span> <span class="o">-</span><span class="n">o</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it -o
 <span class="n">wall_floor_dict</span> <span class="o">=</span> <span class="p">{}</span>
 
 <span class="k">for</span> <span class="n">wall</span><span class="p">,</span><span class="n">floor</span>  <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;respondent_wall_type&#39;</span><span class="p">],</span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;respondent_floor_type&#39;</span><span class="p">]):</span>
@@ -2620,7 +2623,10 @@ Name: instanceID, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UsageError: Cell magic `%%` not found.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>96.9 µs ± 2.03 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;TimeitResult : 96.9 µs ± 2.03 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)&gt;
 </pre></div>
 </div>
 </div>
@@ -2635,7 +2641,10 @@ Name: instanceID, dtype: int64
 <p>On my local computer it was about 12x faster with that loop. Here, we’ll calculate it for the GitHub servers that host the course manual.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>You can also try it on your computer and see how it compares. Or try other loops/ways of doing it in pandas.</p>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2644,12 +2653,7 @@ Name: instanceID, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">39</span><span class="o">-</span><span class="mi">6</span><span class="n">f5071a185e2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">t_pandas</span><span class="o">.</span><span class="n">average</span><span class="o">/</span><span class="n">t_loop</span><span class="o">.</span><span class="n">average</span>
-
-<span class="ne">AttributeError</span>: &#39;list&#39; object has no attribute &#39;average&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30.134535660581083
 </pre></div>
 </div>
 </div>
@@ -2672,10 +2676,10 @@ Name: instanceID, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.4 ms ± 198 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.4 ms ± 220 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;TimeitResult : 10.4 ms ± 198 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;TimeitResult : 10.4 ms ± 220 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)&gt;
 </pre></div>
 </div>
 </div>
@@ -2695,12 +2699,7 @@ Name: instanceID, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">42</span><span class="o">-</span><span class="n">de3b109bab71</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">t_loop_nozip</span><span class="o">.</span><span class="n">average</span><span class="o">/</span><span class="n">t_loop</span><span class="o">.</span><span class="n">average</span>
-
-<span class="ne">AttributeError</span>: &#39;list&#39; object has no attribute &#39;average&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>107.17581775363364
 </pre></div>
 </div>
 </div>
@@ -2713,12 +2712,7 @@ Name: instanceID, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">43</span><span class="o">-</span><span class="n">dfdf354d02b8</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">t_loop_nozip</span><span class="o">.</span><span class="n">average</span><span class="o">/</span><span class="n">t_pandas</span><span class="o">.</span><span class="n">average</span>
-
-<span class="ne">AttributeError</span>: &#39;list&#39; object has no attribute &#39;average&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.556577707411967
 </pre></div>
 </div>
 </div>
