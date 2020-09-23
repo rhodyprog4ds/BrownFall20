@@ -15,7 +15,16 @@ This week I encourage you to try working with git, but if you're not comfortable
 
 ## Exploratory Data Analysis
 
-
+````{margin}
+```{tip}
+A continuous valued variable is one that can take on infinitely many values.
+Examples include temperatue, length, age, etc.
+A categorical value is one that can only take on one of a subset of specific values.
+These require a bit more context to define often.
+For example color could be recorded in a basically continuous way as RGB values in HEX, but color of the stoplight will only be red, green, or yellow.
+Town of birth in a dataset of celebrities would not be a good categorical variable, there might not be many duplicates to do analysis with, but metro area of current residence for celebrities would be because we'd see mostly major cities and could do analyses.
+```
+```` 
 
 This week your goal is to do a small exploratory data analysis for two datasets of your choice. One dataset must include at least two continuous valued variables and at least one categorical variable(d1). One dataset must include at least two categorical variables and at least one continuous valued variable(d2).
 
