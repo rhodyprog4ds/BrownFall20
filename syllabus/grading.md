@@ -72,7 +72,14 @@ In class questions will be administered through the classroom chat platform Pris
 
 For your learning to progress and earn level 2 achievements, you must practice with the skills outside of class time.
 
+````{margin}
+```{warning}
+If you will skip an assignment, please accept the GitHub assignment and then close the Feedback pull request with a comment. This way we can make sure that you have support you need. 
+```
+````
+
 Assignments will each evaluate certain skills. After your assignment is reviewed, you will get qualitative feedback on your work, and an assessment of your demonstration of the targeted skills.
+
 
 #### Portfolio Checks
 
