@@ -2596,10 +2596,10 @@ Name: instanceID, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.55 ms ± 37.5 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.24 ms ± 64.5 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;TimeitResult : 2.55 ms ± 37.5 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;TimeitResult : 3.24 ms ± 64.5 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)&gt;
 </pre></div>
 </div>
 </div>
@@ -2630,10 +2630,10 @@ Name: instanceID, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>99.5 µs ± 584 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>104 µs ± 1.3 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;TimeitResult : 99.5 µs ± 584 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;TimeitResult : 104 µs ± 1.3 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)&gt;
 </pre></div>
 </div>
 </div>
@@ -2660,70 +2660,43 @@ Name: instanceID, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25.65722103331622
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31.286436666632106
 </pre></div>
 </div>
 </div>
 </div>
-<p>Note, that the above was a relatively thoughtful attempt to make a fast loop.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it -o
+<!-- Note, that the above was a relatively thoughtful attempt to make a fast loop.
 
-<span class="n">wall_floor_dict</span> <span class="o">=</span> <span class="p">{}</span>
+```{code-cell} ipython3
 
-<span class="k">for</span> <span class="n">wall</span>  <span class="ow">in</span> <span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;respondent_wall_type&#39;</span><span class="p">]:</span>
-    <span class="k">for</span> <span class="n">floor</span> <span class="ow">in</span> <span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;respondent_floor_type&#39;</span><span class="p">]:</span>
-        <span class="n">wf_key</span> <span class="o">=</span> <span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">wall</span><span class="p">,</span><span class="n">floor</span><span class="p">])</span>
-        <span class="k">if</span> <span class="n">wf_key</span> <span class="ow">in</span> <span class="n">wall_floor_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-            <span class="n">wall_floor_dict</span><span class="p">[</span><span class="n">wf_key</span><span class="p">]</span> <span class="o">+=</span><span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">wall_floor_dict</span><span class="p">[</span><span class="n">wf_key</span><span class="p">]</span> <span class="o">=</span><span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.3 ms ± 60.5 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;TimeitResult : 10.3 ms ± 60.5 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_loop_nozip</span> <span class="o">=</span> <span class="n">_</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Using  <code class="docutils literal notranslate"><span class="pre">zip</span></code> (which we haven’t talked about in class, but is a very handy <a class="reference external" href="https://docs.python.org/3.3/library/functions.html#zip">built in function</a>) made it about 100x faster than using 2 for loops on my local machine.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_loop_nozip</span><span class="o">.</span><span class="n">average</span><span class="o">/</span><span class="n">t_loop</span><span class="o">.</span><span class="n">average</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>103.13230413462166
-</pre></div>
-</div>
-</div>
-</div>
-<p>Also the pandas version is about 8x faster locally (see below for GH server) than the nested loop version.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_loop_nozip</span><span class="o">.</span><span class="n">average</span><span class="o">/</span><span class="n">t_pandas</span><span class="o">.</span><span class="n">average</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.019620987039208
-</pre></div>
-</div>
-</div>
-</div>
+%%timeit -o
+
+wall_floor_dict = {}
+
+for wall  in safi_df['respondent_wall_type']:
+    for floor in safi_df['respondent_floor_type']:
+        wf_key = '_'.join([wall,floor])
+        if wf_key in wall_floor_dict.keys():
+            wall_floor_dict[wf_key] +=1
+        else:
+            wall_floor_dict[wf_key] =1
+```
+
+```{code-cell} ipython3
+t_loop_nozip = _
+```
+
+Using  `zip` (which we haven't talked about in class, but is a very handy [built in function](https://docs.python.org/3.3/library/functions.html#zip)) made it about 100x faster than using 2 for loops on my local machine.
+
+```{code-cell} ipython3
+t_loop_nozip.average/t_loop.average
+```
+
+Also the pandas version is about 8x faster locally (see below for GH server) than the nested loop version.
+
+```{code-cell} ipython3
+t_loop_nozip.average/t_pandas.average
+``` -->
 <p>For a more a complex question (say we wanted to know a statistic more complicated than the count) the loop gets harder (and probably slower), but the pandas operation stays about the same.</p>
 <p>If you’ve made it this far, <a class="reference external" href="https://forms.gle/PDATAmuRS5tAHiiZ8">let me know</a> how you found these notes.</p>
 </div>
