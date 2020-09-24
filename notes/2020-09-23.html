@@ -1,0 +1,794 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualization for EDA &#8212; Programming for Data Science at URI Fall 2020</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignments" href="../assignments/index.html" />
+    <link rel="prev" title="Class 6: Exploratory Data Analysis" href="2020-09-21.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Programming for Data Science at URI Fall 2020</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to Programming for Data Science
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus/index.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="index.html">
+   Class Notes
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-11.html">
+     Class 2: intro to notebooks and python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-14.html">
+     Class 3: Welcome to Week 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-16.html">
+     Class 4: Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-18.html">
+     Class 5: Accessing Data, continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-21.html">
+     Class 6: Exploratory Data Analysis
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Visualization for EDA
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/index.html">
+   Assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portfolio/index.html">
+   Portfolio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../faq/index.html">
+   FAQ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../resources/index.html">
+   Resources
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/notes/2020-09-23.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notes/2020-09-23.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        <a class="issues-button"
+            href="https://github.com/rhodyprog4ds/BrownFall20//issues/new?title=Issue%20on%20page%20%2Fnotes/2020-09-23.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/rhodyprog4ds/BrownFall20/edit/main/notes/2020-09-23.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rhodyprog4ds/BrownFall20/main?urlpath=tree/notes/2020-09-23.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#announcements">
+   Announcements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-data">
+   Loading Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#updating-seaborn">
+   Updating Seaborn
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regression-plots">
+   Regression plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions-after-class">
+   Questions after class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-practice">
+   More practice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-reading">
+   Further Reading
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="visualization-for-eda">
+<h1>Visualization for EDA<a class="headerlink" href="#visualization-for-eda" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="announcements">
+<h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this headline">¶</a></h2>
+<p>Syllabus updated</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://github.com/rhodyprog4ds/BrownFall20/commit/315ce164bc4bd4b7d5ee321afd9143e08f05c07b#diff-1e595cb12e4db779fb0c857562c1e0dd">rubric</a> for summarize and visualize are slightly changed</p></li>
+<li><p><a class="reference external" href="https://github.com/rhodyprog4ds/BrownFall20/commit/f459e8b04dc0b09d2dadba10464f49b25de57190">Please accept assignments</a> if you plan to not complete for any reason</p></li>
+</ol>
+<p>Assignment updated to <a class="reference external" href="https://github.com/rhodyprog4ds/BrownFall20/commit/f719a92c4d5dd00cbe8bf646d9d63280fb4b1e50">clarify continuous and categorical variables</a></p>
+</div>
+<div class="section" id="loading-data">
+<h2>Loading Data<a class="headerlink" href="#loading-data" title="Permalink to this headline">¶</a></h2>
+<p>Importing the libraries for today. We’ll continue plotting with pandas and we’ll use  <a class="reference external" href="https://seaborn.pydata.org/introduction.html"><code class="docutils literal notranslate"><span class="pre">seaborn</span></code></a> as well. Seaborn provides higher level plotting functions and <a class="reference external" href="https://seaborn.pydata.org/examples/index.html">better formatting</a>.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>The alias for <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> is <code class="docutils literal notranslate"><span class="pre">sns</span></code> the result of an <a class="reference external" href="https://github.com/mwaskom/seaborn/issues/229">inside joke</a> among the developers in reference so <a class="reference external" href="https://en.wikipedia.org/wiki/Sam_Seaborn">Samuel Norman Seaborn</a> on The West Wing, per <a class="reference external" href="https://stackoverflow.com/questions/41499857/seaborn-why-import-as-sns">stackexchange</a></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mf">61e0</span><span class="n">adcaee13</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>loading the data as usual</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/brownsarahm/python-socialsci-files/master/data/SAFI_full_shortname.csv&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We know that the <code class="docutils literal notranslate"><span class="pre">key_id</span></code> column should be used as an index, not as data, so we’ll use the <code class="docutils literal notranslate"><span class="pre">index_col</span></code> parameter t do that from the beginning.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;key_id&#39;</span><span class="p">)</span>
+<span class="n">safi_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>interview_date</th>
+      <th>quest_no</th>
+      <th>start</th>
+      <th>end</th>
+      <th>province</th>
+      <th>district</th>
+      <th>ward</th>
+      <th>village</th>
+      <th>years_farm</th>
+      <th>agr_assoc</th>
+      <th>...</th>
+      <th>items_owned</th>
+      <th>items_owned_other</th>
+      <th>no_meals</th>
+      <th>months_lack_food</th>
+      <th>no_food_mitigation</th>
+      <th>gps_Latitude</th>
+      <th>gps_Longitude</th>
+      <th>gps_Altitude</th>
+      <th>gps_Accuracy</th>
+      <th>instanceID</th>
+    </tr>
+    <tr>
+      <th>key_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>17 November 2016</td>
+      <td>1</td>
+      <td>2017-03-23T09:49:57.000Z</td>
+      <td>2017-04-02T17:29:08.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>11</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['bicycle' ;  'television' ;  'solar_panel' ; ...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Jan']</td>
+      <td>['na' ;  'rely_less_food' ;  'reduce_meals' ; ...</td>
+      <td>-19.112259</td>
+      <td>33.483456</td>
+      <td>698</td>
+      <td>14.0</td>
+      <td>uuid:ec241f2c-0609-46ed-b5e8-fe575f6cefef</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>17 November 2016</td>
+      <td>1</td>
+      <td>2017-04-02T09:48:16.000Z</td>
+      <td>2017-04-02T17:26:19.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>2</td>
+      <td>yes</td>
+      <td>...</td>
+      <td>['cow_cart' ;  'bicycle' ;  'radio' ;  'cow_pl...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Jan' ;  'Sept' ;  'Oct' ;  'Nov' ;  'Dec']</td>
+      <td>['na' ;  'reduce_meals' ;  'restrict_adults' ;...</td>
+      <td>-19.112477</td>
+      <td>33.483416</td>
+      <td>690</td>
+      <td>19.0</td>
+      <td>uuid:099de9c9-3e5e-427b-8452-26250e840d6e</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>17 November 2016</td>
+      <td>3</td>
+      <td>2017-04-02T14:35:26.000Z</td>
+      <td>2017-04-02T17:26:53.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>40</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['solar_torch']</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Jan' ;  'Feb' ;  'Mar' ;  'Oct' ;  'Nov' ;  ...</td>
+      <td>['na' ;  'restrict_adults' ;  'lab_ex_food']</td>
+      <td>-19.112108</td>
+      <td>33.483450</td>
+      <td>674</td>
+      <td>13.0</td>
+      <td>uuid:193d7daf-9582-409b-bf09-027dd36f9007</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>17 November 2016</td>
+      <td>4</td>
+      <td>2017-04-02T14:55:18.000Z</td>
+      <td>2017-04-02T17:27:16.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>6</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['bicycle' ;  'radio' ;  'cow_plough' ;  'sola...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Sept' ;  'Oct' ;  'Nov' ;  'Dec']</td>
+      <td>['na' ;  'reduce_meals' ;  'restrict_adults' ;...</td>
+      <td>-19.112229</td>
+      <td>33.483424</td>
+      <td>679</td>
+      <td>5.0</td>
+      <td>uuid:148d1105-778a-4755-aa71-281eadd4a973</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>17 November 2016</td>
+      <td>5</td>
+      <td>2017-04-02T15:10:35.000Z</td>
+      <td>2017-04-02T17:27:35.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>18</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['motorcyle' ;  'radio' ;  'cow_plough' ;  'mo...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Aug' ;  'Sept' ;  'Oct' ;  'Nov']</td>
+      <td>['na' ;  'go_forest' ;  'migrate']</td>
+      <td>-19.112217</td>
+      <td>33.483425</td>
+      <td>689</td>
+      <td>10.0</td>
+      <td>uuid:2c867811-9696-4966-9866-f35c3e97d02d</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 64 columns</p>
+</div></div></div>
+</div>
+<p>We can make scatter plots as we saw Friday.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;gps_Latitude&#39;</span><span class="p">,</span><span class="s1">&#39;gps_Longitude&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;gps_Latitude&#39;, ylabel=&#39;gps_Longitude&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/2020-09-23_7_1.png" src="../_images/2020-09-23_7_1.png" />
+</div>
+</div>
+<p>With seaborn, however, we can control it more, changing the color of the points based on a column of the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span> <span class="s1">&#39;gps_Latitude&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;gps_Longitude&#39;</span><span class="p">,</span>
+           <span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mf">656822e1</span><span class="n">da8a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span> <span class="s1">&#39;gps_Latitude&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;gps_Longitude&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>            <span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also plot a single variable to see the quantiles (the box is 25%-50%) and see if there are outliers (the points outside the box).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="s1">&#39;years_farm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/2020-09-23_11_1.png" src="../_images/2020-09-23_11_1.png" />
+</div>
+</div>
+<p>We can do some more conditiioning, even with only pandas. Using the <code class="docutils literal notranslate"><span class="pre">by</span></code> parameter will do a <code class="docutils literal notranslate"><span class="pre">groupby</span></code> operation first and then make the plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="s1">&#39;years_farm&#39;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;years_farm&#39;}, xlabel=&#39;village&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/2020-09-23_13_1.png" src="../_images/2020-09-23_13_1.png" />
+</div>
+</div>
+<p>We can also make the figure larger</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="s1">&#39;years_farm&#39;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;years_farm&#39;}, xlabel=&#39;village&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/2020-09-23_15_1.png" src="../_images/2020-09-23_15_1.png" />
+</div>
+</div>
+<p>We can see how a single variable is distributed in more detail with the <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.displot.html#seaborn.displot">seaborn displot</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;years_farm&#39;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="n">b6111069f3f7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;years_farm&#39;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;years_farm&#39;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="n">daeba54c6e9a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;years_farm&#39;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="updating-seaborn">
+<h2>Updating Seaborn<a class="headerlink" href="#updating-seaborn" title="Permalink to this headline">¶</a></h2>
+<p>the <code class="docutils literal notranslate"><span class="pre">displot</span></code> is new in seaborn 0.11, on your terminal (mac, linux) or anaconda prompt(Windows):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">update</span> <span class="n">seaborn</span>
+</pre></div>
+</div>
+<p>Then restart your notebook’s kernel and re-run all cells</p>
+<p>or, in a notebook, you can update with</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>This is set to not run on the served site</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install seaborn==0.11.0
+</pre></div>
+</div>
+</div>
+<div class="section" id="regression-plots">
+<h2>Regression plots<a class="headerlink" href="#regression-plots" title="Permalink to this headline">¶</a></h2>
+<p>We can also plot with some calculations done for us already.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;years_farm&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;years_liv&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span>
+           <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">3</span><span class="n">dac5b918d01</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;years_farm&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;years_liv&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>            <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>And we can make grids of plots with the <code class="docutils literal notranslate"><span class="pre">row</span></code> and <code class="docutils literal notranslate"><span class="pre">col</span></code> parameters. We can turn off the regression lines with the <code class="docutils literal notranslate"><span class="pre">fit_reg</span></code> parameter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;years_farm&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;years_liv&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span>
+           <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">,</span>  <span class="n">col</span><span class="o">=</span><span class="s1">&#39;respondent_wall_type&#39;</span><span class="p">,</span><span class="n">row</span><span class="o">=</span><span class="s1">&#39;respondent_floor_type&#39;</span><span class="p">,</span>
+           <span class="n">fit_reg</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="n">b98c76efaf40</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;years_farm&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;years_liv&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>            <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">,</span>  <span class="n">col</span><span class="o">=</span><span class="s1">&#39;respondent_wall_type&#39;</span><span class="p">,</span><span class="n">row</span><span class="o">=</span><span class="s1">&#39;respondent_floor_type&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>            <span class="n">fit_reg</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;poultry&#39;</span><span class="p">)[</span><span class="s1">&#39;members_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poultry
+no     5.894737
+yes    7.720430
+Name: members_count, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="questions-after-class">
+<h2>Questions after class<a class="headerlink" href="#questions-after-class" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="more-practice">
+<h2>More practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">¶</a></h2>
+<p>Test out the parameters of the plotting functions to see what they do.</p>
+</div>
+<div class="section" id="further-reading">
+<h2>Further Reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pandas.pydata.org/docs/user_guide/visualization.html">Pandas Plotting</a></p></li>
+<li><p><a class="reference external" href="https://seaborn.pydata.org/examples/index.html">Seaborn Gallery</a></p></li>
+<li><p><a class="reference external" href="https://seaborn.pydata.org/tutorial.html">Seaborn Tutorial</a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="2020-09-21.html" title="previous page">Class 6: Exploratory Data Analysis</a>
+    <a class='right-next' id="next-link" href="../assignments/index.html" title="next page">Assignments</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Professor Sarah M Brown<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
