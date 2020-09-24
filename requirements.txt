@@ -4,3 +4,4 @@ numpy
 pyppeteer
 pandas
 lxml
+seaborn
