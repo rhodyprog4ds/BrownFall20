@@ -67,6 +67,7 @@ Each level of achievement corresponds to a phase in your learning of the skill:
 While attending synchronous class sessions, there will be understanding checks and in class exercises.
 Completing in class exercises and correctly answering questions in class can earn level 1 achievements.
 In class questions will be administered through the classroom chat platform Prismia.chat; these records will be used to update your skill progression.
+You can also earn level 1 achievements from adding annotation to a section of the class notes. 
 
 #### Assignments
 
@@ -74,7 +75,7 @@ For your learning to progress and earn level 2 achievements, you must practice w
 
 ````{margin}
 ```{warning}
-If you will skip an assignment, please accept the GitHub assignment and then close the Feedback pull request with a comment. This way we can make sure that you have support you need. 
+If you will skip an assignment, please accept the GitHub assignment and then close the Feedback pull request with a comment. This way we can make sure that you have support you need.
 ```
 ````
 
