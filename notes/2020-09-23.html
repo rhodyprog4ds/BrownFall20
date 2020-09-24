@@ -315,17 +315,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mf">61e0</span><span class="n">adcaee13</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>loading the data as usual</p>
 <div class="cell docutils container">
@@ -558,15 +547,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mf">656822e1</span><span class="n">da8a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span> <span class="s1">&#39;gps_Latitude&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;gps_Longitude&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>            <span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fa2d0dee210&gt;
 </pre></div>
 </div>
+<img alt="../_images/2020-09-23_9_1.png" src="../_images/2020-09-23_9_1.png" />
 </div>
 </div>
 <p>We can also plot a single variable to see the quantiles (the box is 25%-50%) and see if there are outliers (the points outside the box).</p>
@@ -619,14 +603,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="n">b6111069f3f7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;years_farm&#39;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fa2cdcbf150&gt;
 </pre></div>
 </div>
+<img alt="../_images/2020-09-23_17_1.png" src="../_images/2020-09-23_17_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -636,14 +616,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="n">daeba54c6e9a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;years_farm&#39;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fa2cdb38d90&gt;
 </pre></div>
 </div>
+<img alt="../_images/2020-09-23_18_1.png" src="../_images/2020-09-23_18_1.png" />
 </div>
 </div>
 </div>
@@ -674,15 +650,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">3</span><span class="n">dac5b918d01</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;years_farm&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;years_liv&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>            <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fa2cb6bcc90&gt;
 </pre></div>
 </div>
+<img alt="../_images/2020-09-23_20_1.png" src="../_images/2020-09-23_20_1.png" />
 </div>
 </div>
 <p>And we can make grids of plots with the <code class="docutils literal notranslate"><span class="pre">row</span></code> and <code class="docutils literal notranslate"><span class="pre">col</span></code> parameters. We can turn off the regression lines with the <code class="docutils literal notranslate"><span class="pre">fit_reg</span></code> parameter.</p>
@@ -695,16 +666,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="n">b98c76efaf40</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;years_farm&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;years_liv&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>            <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">,</span>  <span class="n">col</span><span class="o">=</span><span class="s1">&#39;respondent_wall_type&#39;</span><span class="p">,</span><span class="n">row</span><span class="o">=</span><span class="s1">&#39;respondent_floor_type&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>            <span class="n">fit_reg</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fa2cb61a4d0&gt;
 </pre></div>
 </div>
+<img alt="../_images/2020-09-23_22_1.png" src="../_images/2020-09-23_22_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
