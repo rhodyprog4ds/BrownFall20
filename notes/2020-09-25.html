@@ -1,0 +1,1928 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class 8: &#8212; Programming for Data Science at URI Fall 2020</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignments" href="../assignments/index.html" />
+    <link rel="prev" title="Class 7: Visualization for EDA" href="2020-09-23.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Programming for Data Science at URI Fall 2020</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to Programming for Data Science
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus/index.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="index.html">
+   Class Notes
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-11.html">
+     Class 2: intro to notebooks and python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-14.html">
+     Class 3: Welcome to Week 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-16.html">
+     Class 4: Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-18.html">
+     Class 5: Accessing Data, continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-21.html">
+     Class 6: Exploratory Data Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-23.html">
+     Class 7: Visualization for EDA
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Class 8:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/index.html">
+   Assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portfolio/index.html">
+   Portfolio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../faq/index.html">
+   FAQ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../resources/index.html">
+   Resources
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/notes/2020-09-25.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notes/2020-09-25.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        <a class="issues-button"
+            href="https://github.com/rhodyprog4ds/BrownFall20//issues/new?title=Issue%20on%20page%20%2Fnotes/2020-09-25.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/rhodyprog4ds/BrownFall20/edit/main/notes/2020-09-25.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rhodyprog4ds/BrownFall20/main?urlpath=tree/notes/2020-09-25.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#announcemetns">
+   Announcemetns
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preparing-data-for-analysis">
+   Preparing Data for analysis
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="class-8">
+<h1>Class 8:<a class="headerlink" href="#class-8" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="announcemetns">
+<h2>Announcemetns<a class="headerlink" href="#announcemetns" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>closing notebooks</p></li>
+<li><p>retart adn rerun</p></li>
+<li><p>say hello on zoom for attendanxe</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load http://drsmb.co/310</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">data_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/brownsarahm/python-socialsci-files/master/data/SAFI_full_shortname.csv&#39;</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">font_scale</span><span class="o">=</span><span class="mf">1.25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="image to copy" src="https://github.com/rhodyprog4ds/BrownFall20/blob/main/img/class8.png?raw=true" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;members_count&#39;</span><span class="p">,</span><span class="n">row</span><span class="o">=</span><span class="s1">&#39;parents_liv&#39;</span><span class="p">,</span> 
+            <span class="n">col</span> <span class="o">=</span> <span class="s1">&#39;sp_parents_liv&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f2b18d6d510&gt;
+</pre></div>
+</div>
+<img alt="../_images/2020-09-25_5_1.png" src="../_images/2020-09-25_5_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;members_count&#39;</span><span class="p">,</span><span class="n">row</span><span class="o">=</span><span class="s1">&#39;parents_liv&#39;</span><span class="p">,</span> 
+            <span class="n">col</span> <span class="o">=</span> <span class="s1">&#39;sp_parents_liv&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f2b13a139d0&gt;
+</pre></div>
+</div>
+<img alt="../_images/2020-09-25_6_1.png" src="../_images/2020-09-25_6_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="preparing-data-for-analysis">
+<h2>Preparing Data for analysis<a class="headerlink" href="#preparing-data-for-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;key_id&#39;, &#39;interview_date&#39;, &#39;quest_no&#39;, &#39;start&#39;, &#39;end&#39;, &#39;province&#39;,
+       &#39;district&#39;, &#39;ward&#39;, &#39;village&#39;, &#39;years_farm&#39;, &#39;agr_assoc&#39;, &#39;note2&#39;,
+       &#39;no_membrs&#39;, &#39;members_count&#39;, &#39;remittance_money&#39;, &#39;years_liv&#39;,
+       &#39;parents_liv&#39;, &#39;sp_parents_liv&#39;, &#39;grand_liv&#39;, &#39;sp_grand_liv&#39;,
+       &#39;respondent_roof_type&#39;, &#39;respondent_wall_type&#39;,
+       &#39;respondent_wall_type_other&#39;, &#39;respondent_floor_type&#39;, &#39;window_type&#39;,
+       &#39;buildings_in_compound&#39;, &#39;rooms&#39;, &#39;other_buildings&#39;, &#39;no_plots&#39;,
+       &#39;plots_count&#39;, &#39;water_use&#39;, &#39;no_group_count&#39;, &#39;yes_group_count&#39;,
+       &#39;no_enough_water&#39;, &#39;months_no_water&#39;, &#39;period_use&#39;, &#39;exper_other&#39;,
+       &#39;other_meth&#39;, &#39;res_change&#39;, &#39;memb_assoc&#39;, &#39;resp_assoc&#39;, &#39;fees_water&#39;,
+       &#39;affect_conflicts&#39;, &#39;note&#39;, &#39;need_money&#39;, &#39;money_source&#39;,
+       &#39;money_source_other&#39;, &#39;crops_contr&#39;, &#39;emply_lab&#39;, &#39;du_labour&#39;,
+       &#39;liv_owned&#39;, &#39;liv_owned_other&#39;, &#39;liv_count&#39;, &#39;poultry&#39;,
+       &#39;du_look_aftr_cows&#39;, &#39;items_owned&#39;, &#39;items_owned_other&#39;, &#39;no_meals&#39;,
+       &#39;months_lack_food&#39;, &#39;no_food_mitigation&#39;, &#39;gps_Latitude&#39;,
+       &#39;gps_Longitude&#39;, &#39;gps_Altitude&#39;, &#39;gps_Accuracy&#39;, &#39;instanceID&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key_id</th>
+      <th>interview_date</th>
+      <th>quest_no</th>
+      <th>start</th>
+      <th>end</th>
+      <th>province</th>
+      <th>district</th>
+      <th>ward</th>
+      <th>village</th>
+      <th>years_farm</th>
+      <th>...</th>
+      <th>items_owned</th>
+      <th>items_owned_other</th>
+      <th>no_meals</th>
+      <th>months_lack_food</th>
+      <th>no_food_mitigation</th>
+      <th>gps_Latitude</th>
+      <th>gps_Longitude</th>
+      <th>gps_Altitude</th>
+      <th>gps_Accuracy</th>
+      <th>instanceID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>17 November 2016</td>
+      <td>1</td>
+      <td>2017-03-23T09:49:57.000Z</td>
+      <td>2017-04-02T17:29:08.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>11</td>
+      <td>...</td>
+      <td>['bicycle' ;  'television' ;  'solar_panel' ; ...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Jan']</td>
+      <td>['na' ;  'rely_less_food' ;  'reduce_meals' ; ...</td>
+      <td>-19.112259</td>
+      <td>33.483456</td>
+      <td>698</td>
+      <td>14.0</td>
+      <td>uuid:ec241f2c-0609-46ed-b5e8-fe575f6cefef</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>17 November 2016</td>
+      <td>1</td>
+      <td>2017-04-02T09:48:16.000Z</td>
+      <td>2017-04-02T17:26:19.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>2</td>
+      <td>...</td>
+      <td>['cow_cart' ;  'bicycle' ;  'radio' ;  'cow_pl...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Jan' ;  'Sept' ;  'Oct' ;  'Nov' ;  'Dec']</td>
+      <td>['na' ;  'reduce_meals' ;  'restrict_adults' ;...</td>
+      <td>-19.112477</td>
+      <td>33.483416</td>
+      <td>690</td>
+      <td>19.0</td>
+      <td>uuid:099de9c9-3e5e-427b-8452-26250e840d6e</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>17 November 2016</td>
+      <td>3</td>
+      <td>2017-04-02T14:35:26.000Z</td>
+      <td>2017-04-02T17:26:53.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>40</td>
+      <td>...</td>
+      <td>['solar_torch']</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Jan' ;  'Feb' ;  'Mar' ;  'Oct' ;  'Nov' ;  ...</td>
+      <td>['na' ;  'restrict_adults' ;  'lab_ex_food']</td>
+      <td>-19.112108</td>
+      <td>33.483450</td>
+      <td>674</td>
+      <td>13.0</td>
+      <td>uuid:193d7daf-9582-409b-bf09-027dd36f9007</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>17 November 2016</td>
+      <td>4</td>
+      <td>2017-04-02T14:55:18.000Z</td>
+      <td>2017-04-02T17:27:16.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>6</td>
+      <td>...</td>
+      <td>['bicycle' ;  'radio' ;  'cow_plough' ;  'sola...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Sept' ;  'Oct' ;  'Nov' ;  'Dec']</td>
+      <td>['na' ;  'reduce_meals' ;  'restrict_adults' ;...</td>
+      <td>-19.112229</td>
+      <td>33.483424</td>
+      <td>679</td>
+      <td>5.0</td>
+      <td>uuid:148d1105-778a-4755-aa71-281eadd4a973</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>17 November 2016</td>
+      <td>5</td>
+      <td>2017-04-02T15:10:35.000Z</td>
+      <td>2017-04-02T17:27:35.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>18</td>
+      <td>...</td>
+      <td>['motorcyle' ;  'radio' ;  'cow_plough' ;  'mo...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Aug' ;  'Sept' ;  'Oct' ;  'Nov']</td>
+      <td>['na' ;  'go_forest' ;  'migrate']</td>
+      <td>-19.112217</td>
+      <td>33.483425</td>
+      <td>689</td>
+      <td>10.0</td>
+      <td>uuid:2c867811-9696-4966-9866-f35c3e97d02d</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 65 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mobile_phone&#39;]                                                                                                          4
+[&#39;radio&#39;]                                                                                                                 4
+[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;table&#39; ;  &#39;mobile_phone&#39;]                                      3
+[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;mobile_phone&#39;]                                3
+[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;mobile_phone&#39;]                                                                                  3
+                                                                                                                         ..
+[&#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;table&#39; ;  &#39;mobile_phone&#39;]                                  1
+[&#39;television&#39; ;  &#39;cow_plough&#39; ;  &#39;mobile_phone&#39;]                                                                          1
+[&#39;cow_cart&#39; ;  &#39;motorcyle&#39; ;  &#39;bicycle&#39; ;  &#39;television&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;mobile_phone&#39;]    1
+[&#39;motorcyle&#39; ;  &#39;computer&#39; ;  &#39;television&#39; ;  &#39;sterio&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;table&#39; ;  &#39;mobile_phone&#39;]    1
+[&#39;radio&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39;]                                                                               1
+Name: items_owned, Length: 95, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">data</span><span class="o">=</span> <span class="n">safi_df</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;village&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key_id</th>
+      <th>interview_date</th>
+      <th>quest_no</th>
+      <th>start</th>
+      <th>end</th>
+      <th>province</th>
+      <th>district</th>
+      <th>ward</th>
+      <th>years_farm</th>
+      <th>agr_assoc</th>
+      <th>...</th>
+      <th>months_lack_food</th>
+      <th>no_food_mitigation</th>
+      <th>gps_Latitude</th>
+      <th>gps_Longitude</th>
+      <th>gps_Altitude</th>
+      <th>gps_Accuracy</th>
+      <th>instanceID</th>
+      <th>village_Chirodzo</th>
+      <th>village_God</th>
+      <th>village_Ruaca</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>17 November 2016</td>
+      <td>1</td>
+      <td>2017-03-23T09:49:57.000Z</td>
+      <td>2017-04-02T17:29:08.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>11</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['Jan']</td>
+      <td>['na' ;  'rely_less_food' ;  'reduce_meals' ; ...</td>
+      <td>-19.112259</td>
+      <td>33.483456</td>
+      <td>698</td>
+      <td>14.0</td>
+      <td>uuid:ec241f2c-0609-46ed-b5e8-fe575f6cefef</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>17 November 2016</td>
+      <td>1</td>
+      <td>2017-04-02T09:48:16.000Z</td>
+      <td>2017-04-02T17:26:19.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>2</td>
+      <td>yes</td>
+      <td>...</td>
+      <td>['Jan' ;  'Sept' ;  'Oct' ;  'Nov' ;  'Dec']</td>
+      <td>['na' ;  'reduce_meals' ;  'restrict_adults' ;...</td>
+      <td>-19.112477</td>
+      <td>33.483416</td>
+      <td>690</td>
+      <td>19.0</td>
+      <td>uuid:099de9c9-3e5e-427b-8452-26250e840d6e</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>17 November 2016</td>
+      <td>3</td>
+      <td>2017-04-02T14:35:26.000Z</td>
+      <td>2017-04-02T17:26:53.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>40</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['Jan' ;  'Feb' ;  'Mar' ;  'Oct' ;  'Nov' ;  ...</td>
+      <td>['na' ;  'restrict_adults' ;  'lab_ex_food']</td>
+      <td>-19.112108</td>
+      <td>33.483450</td>
+      <td>674</td>
+      <td>13.0</td>
+      <td>uuid:193d7daf-9582-409b-bf09-027dd36f9007</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>17 November 2016</td>
+      <td>4</td>
+      <td>2017-04-02T14:55:18.000Z</td>
+      <td>2017-04-02T17:27:16.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>6</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['Sept' ;  'Oct' ;  'Nov' ;  'Dec']</td>
+      <td>['na' ;  'reduce_meals' ;  'restrict_adults' ;...</td>
+      <td>-19.112229</td>
+      <td>33.483424</td>
+      <td>679</td>
+      <td>5.0</td>
+      <td>uuid:148d1105-778a-4755-aa71-281eadd4a973</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>17 November 2016</td>
+      <td>5</td>
+      <td>2017-04-02T15:10:35.000Z</td>
+      <td>2017-04-02T17:27:35.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>18</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['Aug' ;  'Sept' ;  'Oct' ;  'Nov']</td>
+      <td>['na' ;  'go_forest' ;  'migrate']</td>
+      <td>-19.112217</td>
+      <td>33.483425</td>
+      <td>689</td>
+      <td>10.0</td>
+      <td>uuid:2c867811-9696-4966-9866-f35c3e97d02d</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>126</th>
+      <td>127</td>
+      <td>18 May 2017</td>
+      <td>126</td>
+      <td>2017-05-18T04:13:37.000Z</td>
+      <td>2017-05-18T04:35:47.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>5</td>
+      <td>yes</td>
+      <td>...</td>
+      <td>['Oct' ;  'Nov' ;  'Dec']</td>
+      <td>['rely_less_food' ;  'lab_ex_food']</td>
+      <td>-19.112194</td>
+      <td>33.483379</td>
+      <td>700</td>
+      <td>7.0</td>
+      <td>uuid:69caea81-a4e5-4e8d-83cd-9c18d8e8d965</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>127</th>
+      <td>128</td>
+      <td>04 June 2017</td>
+      <td>193</td>
+      <td>2017-06-04T09:36:20.000Z</td>
+      <td>2017-06-04T10:13:32.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>10</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['none']</td>
+      <td>['na']</td>
+      <td>-19.112157</td>
+      <td>33.483390</td>
+      <td>720</td>
+      <td>9.0</td>
+      <td>uuid:5ccc2e5a-ea90-48b5-8542-69400d5334df</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>129</td>
+      <td>04 June 2017</td>
+      <td>194</td>
+      <td>2017-06-04T10:13:36.000Z</td>
+      <td>2017-06-04T10:32:06.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>5</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['Sept' ;  'Oct' ;  'Nov']</td>
+      <td>['lab_ex_food']</td>
+      <td>-19.112271</td>
+      <td>33.483471</td>
+      <td>719</td>
+      <td>10.0</td>
+      <td>uuid:95c11a30-d44f-40c4-8ea8-ec34fca6bbbf</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>130</td>
+      <td>04 June 2017</td>
+      <td>199</td>
+      <td>2017-06-04T10:33:55.000Z</td>
+      <td>2017-06-04T10:52:22.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>17</td>
+      <td>yes</td>
+      <td>...</td>
+      <td>['Nov' ;  'Dec']</td>
+      <td>['rely_less_food' ;  'limit_variety' ;  'reduc...</td>
+      <td>-19.112278</td>
+      <td>33.483390</td>
+      <td>711</td>
+      <td>5.0</td>
+      <td>uuid:ffc83162-ff24-4a87-8709-eff17abc0b3b</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>131</td>
+      <td>04 June 2017</td>
+      <td>200</td>
+      <td>2017-06-04T10:52:46.000Z</td>
+      <td>2017-06-04T11:08:13.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>20</td>
+      <td>yes</td>
+      <td>...</td>
+      <td>['Oct' ;  'Nov']</td>
+      <td>['rely_less_food' ;  'restrict_adults' ;  'bor...</td>
+      <td>-19.112183</td>
+      <td>33.483372</td>
+      <td>681</td>
+      <td>20.0</td>
+      <td>uuid:aa77a0d7-7142-41c8-b494-483a5b68d8a7</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>131 rows × 67 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">data</span><span class="o">=</span> <span class="n">safi_df</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key_id</th>
+      <th>interview_date</th>
+      <th>quest_no</th>
+      <th>start</th>
+      <th>end</th>
+      <th>province</th>
+      <th>district</th>
+      <th>ward</th>
+      <th>village</th>
+      <th>years_farm</th>
+      <th>...</th>
+      <th>items_owned_['radio' ;  'solar_torch' ;  'mobile_phone']</th>
+      <th>items_owned_['radio' ;  'solar_torch']</th>
+      <th>items_owned_['radio' ;  'table' ;  'sofa_set' ;  'mobile_phone']</th>
+      <th>items_owned_['radio']</th>
+      <th>items_owned_['solar_panel']</th>
+      <th>items_owned_['solar_torch' ;  'mobile_phone']</th>
+      <th>items_owned_['solar_torch']</th>
+      <th>items_owned_['television' ;  'cow_plough' ;  'mobile_phone']</th>
+      <th>items_owned_['television' ;  'radio' ;  'cow_plough' ;  'solar_panel' ;  'solar_torch' ;  'table' ;  'mobile_phone']</th>
+      <th>items_owned_['television' ;  'solar_panel' ;  'solar_torch']</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>17 November 2016</td>
+      <td>1</td>
+      <td>2017-03-23T09:49:57.000Z</td>
+      <td>2017-04-02T17:29:08.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>11</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>17 November 2016</td>
+      <td>1</td>
+      <td>2017-04-02T09:48:16.000Z</td>
+      <td>2017-04-02T17:26:19.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>2</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>17 November 2016</td>
+      <td>3</td>
+      <td>2017-04-02T14:35:26.000Z</td>
+      <td>2017-04-02T17:26:53.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>40</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>17 November 2016</td>
+      <td>4</td>
+      <td>2017-04-02T14:55:18.000Z</td>
+      <td>2017-04-02T17:27:16.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>6</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>17 November 2016</td>
+      <td>5</td>
+      <td>2017-04-02T15:10:35.000Z</td>
+      <td>2017-04-02T17:27:35.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>18</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>126</th>
+      <td>127</td>
+      <td>18 May 2017</td>
+      <td>126</td>
+      <td>2017-05-18T04:13:37.000Z</td>
+      <td>2017-05-18T04:35:47.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>Ruaca</td>
+      <td>5</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>127</th>
+      <td>128</td>
+      <td>04 June 2017</td>
+      <td>193</td>
+      <td>2017-06-04T09:36:20.000Z</td>
+      <td>2017-06-04T10:13:32.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>Ruaca</td>
+      <td>10</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>129</td>
+      <td>04 June 2017</td>
+      <td>194</td>
+      <td>2017-06-04T10:13:36.000Z</td>
+      <td>2017-06-04T10:32:06.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>Ruaca</td>
+      <td>5</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>130</td>
+      <td>04 June 2017</td>
+      <td>199</td>
+      <td>2017-06-04T10:33:55.000Z</td>
+      <td>2017-06-04T10:52:22.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>Chirodzo</td>
+      <td>17</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>131</td>
+      <td>04 June 2017</td>
+      <td>200</td>
+      <td>2017-06-04T10:52:46.000Z</td>
+      <td>2017-06-04T11:08:13.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>Chirodzo</td>
+      <td>20</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>131 rows × 159 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;village&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0           God
+1           God
+2           God
+3           God
+4           God
+         ...   
+126       Ruaca
+127       Ruaca
+128       Ruaca
+129    Chirodzo
+130    Chirodzo
+Name: village, Length: 131, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">data</span><span class="o">=</span> <span class="n">safi_df</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;village&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key_id</th>
+      <th>interview_date</th>
+      <th>quest_no</th>
+      <th>start</th>
+      <th>end</th>
+      <th>province</th>
+      <th>district</th>
+      <th>ward</th>
+      <th>years_farm</th>
+      <th>agr_assoc</th>
+      <th>...</th>
+      <th>months_lack_food</th>
+      <th>no_food_mitigation</th>
+      <th>gps_Latitude</th>
+      <th>gps_Longitude</th>
+      <th>gps_Altitude</th>
+      <th>gps_Accuracy</th>
+      <th>instanceID</th>
+      <th>village_Chirodzo</th>
+      <th>village_God</th>
+      <th>village_Ruaca</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>17 November 2016</td>
+      <td>1</td>
+      <td>2017-03-23T09:49:57.000Z</td>
+      <td>2017-04-02T17:29:08.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>11</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['Jan']</td>
+      <td>['na' ;  'rely_less_food' ;  'reduce_meals' ; ...</td>
+      <td>-19.112259</td>
+      <td>33.483456</td>
+      <td>698</td>
+      <td>14.0</td>
+      <td>uuid:ec241f2c-0609-46ed-b5e8-fe575f6cefef</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>17 November 2016</td>
+      <td>1</td>
+      <td>2017-04-02T09:48:16.000Z</td>
+      <td>2017-04-02T17:26:19.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>2</td>
+      <td>yes</td>
+      <td>...</td>
+      <td>['Jan' ;  'Sept' ;  'Oct' ;  'Nov' ;  'Dec']</td>
+      <td>['na' ;  'reduce_meals' ;  'restrict_adults' ;...</td>
+      <td>-19.112477</td>
+      <td>33.483416</td>
+      <td>690</td>
+      <td>19.0</td>
+      <td>uuid:099de9c9-3e5e-427b-8452-26250e840d6e</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>17 November 2016</td>
+      <td>3</td>
+      <td>2017-04-02T14:35:26.000Z</td>
+      <td>2017-04-02T17:26:53.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>40</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['Jan' ;  'Feb' ;  'Mar' ;  'Oct' ;  'Nov' ;  ...</td>
+      <td>['na' ;  'restrict_adults' ;  'lab_ex_food']</td>
+      <td>-19.112108</td>
+      <td>33.483450</td>
+      <td>674</td>
+      <td>13.0</td>
+      <td>uuid:193d7daf-9582-409b-bf09-027dd36f9007</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>17 November 2016</td>
+      <td>4</td>
+      <td>2017-04-02T14:55:18.000Z</td>
+      <td>2017-04-02T17:27:16.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>6</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['Sept' ;  'Oct' ;  'Nov' ;  'Dec']</td>
+      <td>['na' ;  'reduce_meals' ;  'restrict_adults' ;...</td>
+      <td>-19.112229</td>
+      <td>33.483424</td>
+      <td>679</td>
+      <td>5.0</td>
+      <td>uuid:148d1105-778a-4755-aa71-281eadd4a973</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>17 November 2016</td>
+      <td>5</td>
+      <td>2017-04-02T15:10:35.000Z</td>
+      <td>2017-04-02T17:27:35.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>18</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['Aug' ;  'Sept' ;  'Oct' ;  'Nov']</td>
+      <td>['na' ;  'go_forest' ;  'migrate']</td>
+      <td>-19.112217</td>
+      <td>33.483425</td>
+      <td>689</td>
+      <td>10.0</td>
+      <td>uuid:2c867811-9696-4966-9866-f35c3e97d02d</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>126</th>
+      <td>127</td>
+      <td>18 May 2017</td>
+      <td>126</td>
+      <td>2017-05-18T04:13:37.000Z</td>
+      <td>2017-05-18T04:35:47.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>5</td>
+      <td>yes</td>
+      <td>...</td>
+      <td>['Oct' ;  'Nov' ;  'Dec']</td>
+      <td>['rely_less_food' ;  'lab_ex_food']</td>
+      <td>-19.112194</td>
+      <td>33.483379</td>
+      <td>700</td>
+      <td>7.0</td>
+      <td>uuid:69caea81-a4e5-4e8d-83cd-9c18d8e8d965</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>127</th>
+      <td>128</td>
+      <td>04 June 2017</td>
+      <td>193</td>
+      <td>2017-06-04T09:36:20.000Z</td>
+      <td>2017-06-04T10:13:32.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>10</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['none']</td>
+      <td>['na']</td>
+      <td>-19.112157</td>
+      <td>33.483390</td>
+      <td>720</td>
+      <td>9.0</td>
+      <td>uuid:5ccc2e5a-ea90-48b5-8542-69400d5334df</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>129</td>
+      <td>04 June 2017</td>
+      <td>194</td>
+      <td>2017-06-04T10:13:36.000Z</td>
+      <td>2017-06-04T10:32:06.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>5</td>
+      <td>no</td>
+      <td>...</td>
+      <td>['Sept' ;  'Oct' ;  'Nov']</td>
+      <td>['lab_ex_food']</td>
+      <td>-19.112271</td>
+      <td>33.483471</td>
+      <td>719</td>
+      <td>10.0</td>
+      <td>uuid:95c11a30-d44f-40c4-8ea8-ec34fca6bbbf</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>130</td>
+      <td>04 June 2017</td>
+      <td>199</td>
+      <td>2017-06-04T10:33:55.000Z</td>
+      <td>2017-06-04T10:52:22.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>17</td>
+      <td>yes</td>
+      <td>...</td>
+      <td>['Nov' ;  'Dec']</td>
+      <td>['rely_less_food' ;  'limit_variety' ;  'reduc...</td>
+      <td>-19.112278</td>
+      <td>33.483390</td>
+      <td>711</td>
+      <td>5.0</td>
+      <td>uuid:ffc83162-ff24-4a87-8709-eff17abc0b3b</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>131</td>
+      <td>04 June 2017</td>
+      <td>200</td>
+      <td>2017-06-04T10:52:46.000Z</td>
+      <td>2017-06-04T11:08:13.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>20</td>
+      <td>yes</td>
+      <td>...</td>
+      <td>['Oct' ;  'Nov']</td>
+      <td>['rely_less_food' ;  'restrict_adults' ;  'bor...</td>
+      <td>-19.112183</td>
+      <td>33.483372</td>
+      <td>681</td>
+      <td>20.0</td>
+      <td>uuid:aa77a0d7-7142-41c8-b494-483a5b68d8a7</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>131 rows × 67 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">farm1_items</span> <span class="o">=</span> <span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">farm1_items</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;[&#39;bicycle&#39; ;  &#39;television&#39; ;  &#39;solar_panel&#39; ;  &#39;table&#39;]&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">farm1_items</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">farm1_items</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;[&#39;,
+ &quot;&#39;&quot;,
+ &#39;b&#39;,
+ &#39;i&#39;,
+ &#39;c&#39;,
+ &#39;y&#39;,
+ &#39;c&#39;,
+ &#39;l&#39;,
+ &#39;e&#39;,
+ &quot;&#39;&quot;,
+ &#39; &#39;,
+ &#39;;&#39;,
+ &#39; &#39;,
+ &#39; &#39;,
+ &quot;&#39;&quot;,
+ &#39;t&#39;,
+ &#39;e&#39;,
+ &#39;l&#39;,
+ &#39;e&#39;,
+ &#39;v&#39;,
+ &#39;i&#39;,
+ &#39;s&#39;,
+ &#39;i&#39;,
+ &#39;o&#39;,
+ &#39;n&#39;,
+ &quot;&#39;&quot;,
+ &#39; &#39;,
+ &#39;;&#39;,
+ &#39; &#39;,
+ &#39; &#39;,
+ &quot;&#39;&quot;,
+ &#39;s&#39;,
+ &#39;o&#39;,
+ &#39;l&#39;,
+ &#39;a&#39;,
+ &#39;r&#39;,
+ &#39;_&#39;,
+ &#39;p&#39;,
+ &#39;a&#39;,
+ &#39;n&#39;,
+ &#39;e&#39;,
+ &#39;l&#39;,
+ &quot;&#39;&quot;,
+ &#39; &#39;,
+ &#39;;&#39;,
+ &#39; &#39;,
+ &#39; &#39;,
+ &quot;&#39;&quot;,
+ &#39;t&#39;,
+ &#39;a&#39;,
+ &#39;b&#39;,
+ &#39;l&#39;,
+ &#39;e&#39;,
+ &quot;&#39;&quot;,
+ &#39;]&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">farm1_items</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;[&#39;bicycle&#39; ;  &#39;television&#39; ;  &#39;solar_panel&#39; ;  &#39;table&#39;]&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">farm1_items</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&quot;[&#39;bicycle&#39; &quot;, &quot;  &#39;television&#39; &quot;, &quot;  &#39;solar_panel&#39; &quot;, &quot;  &#39;table&#39;]&quot;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">farm1_items</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;bicycle &#39;, &#39;  television &#39;, &#39;  solar_panel &#39;, &#39;  table&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span>  <span class="n">farm1_items</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;bicycle&#39;, &#39;television&#39;, &#39;solar_panel&#39;, &#39;table&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">separate_items</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">])</span><span class="o">==</span><span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span>  <span class="n">row</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;items_owned_clean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">safi_df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">separate_items</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key_id</th>
+      <th>interview_date</th>
+      <th>quest_no</th>
+      <th>start</th>
+      <th>end</th>
+      <th>province</th>
+      <th>district</th>
+      <th>ward</th>
+      <th>village</th>
+      <th>years_farm</th>
+      <th>...</th>
+      <th>items_owned_other</th>
+      <th>no_meals</th>
+      <th>months_lack_food</th>
+      <th>no_food_mitigation</th>
+      <th>gps_Latitude</th>
+      <th>gps_Longitude</th>
+      <th>gps_Altitude</th>
+      <th>gps_Accuracy</th>
+      <th>instanceID</th>
+      <th>items_owned_clean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>17 November 2016</td>
+      <td>1</td>
+      <td>2017-03-23T09:49:57.000Z</td>
+      <td>2017-04-02T17:29:08.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>11</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Jan']</td>
+      <td>['na' ;  'rely_less_food' ;  'reduce_meals' ; ...</td>
+      <td>-19.112259</td>
+      <td>33.483456</td>
+      <td>698</td>
+      <td>14.0</td>
+      <td>uuid:ec241f2c-0609-46ed-b5e8-fe575f6cefef</td>
+      <td>[bicycle, television, solar_panel, table]</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>17 November 2016</td>
+      <td>1</td>
+      <td>2017-04-02T09:48:16.000Z</td>
+      <td>2017-04-02T17:26:19.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>2</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Jan' ;  'Sept' ;  'Oct' ;  'Nov' ;  'Dec']</td>
+      <td>['na' ;  'reduce_meals' ;  'restrict_adults' ;...</td>
+      <td>-19.112477</td>
+      <td>33.483416</td>
+      <td>690</td>
+      <td>19.0</td>
+      <td>uuid:099de9c9-3e5e-427b-8452-26250e840d6e</td>
+      <td>[cow_cart, bicycle, radio, cow_plough, solar_p...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>17 November 2016</td>
+      <td>3</td>
+      <td>2017-04-02T14:35:26.000Z</td>
+      <td>2017-04-02T17:26:53.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>40</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Jan' ;  'Feb' ;  'Mar' ;  'Oct' ;  'Nov' ;  ...</td>
+      <td>['na' ;  'restrict_adults' ;  'lab_ex_food']</td>
+      <td>-19.112108</td>
+      <td>33.483450</td>
+      <td>674</td>
+      <td>13.0</td>
+      <td>uuid:193d7daf-9582-409b-bf09-027dd36f9007</td>
+      <td>[solar_torch]</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>17 November 2016</td>
+      <td>4</td>
+      <td>2017-04-02T14:55:18.000Z</td>
+      <td>2017-04-02T17:27:16.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>6</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Sept' ;  'Oct' ;  'Nov' ;  'Dec']</td>
+      <td>['na' ;  'reduce_meals' ;  'restrict_adults' ;...</td>
+      <td>-19.112229</td>
+      <td>33.483424</td>
+      <td>679</td>
+      <td>5.0</td>
+      <td>uuid:148d1105-778a-4755-aa71-281eadd4a973</td>
+      <td>[bicycle, radio, cow_plough, solar_panel, mobi...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>17 November 2016</td>
+      <td>5</td>
+      <td>2017-04-02T15:10:35.000Z</td>
+      <td>2017-04-02T17:27:35.000Z</td>
+      <td>Manica</td>
+      <td>Manica</td>
+      <td>Bandula</td>
+      <td>God</td>
+      <td>18</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>['Aug' ;  'Sept' ;  'Oct' ;  'Nov']</td>
+      <td>['na' ;  'go_forest' ;  'migrate']</td>
+      <td>-19.112217</td>
+      <td>33.483425</td>
+      <td>689</td>
+      <td>10.0</td>
+      <td>uuid:2c867811-9696-4966-9866-f35c3e97d02d</td>
+      <td>[motorcyle, radio, cow_plough, mobile_phone]</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 66 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="2020-09-23.html" title="previous page">Class 7: Visualization for EDA</a>
+    <a class='right-next' id="next-link" href="../assignments/index.html" title="next page">Assignments</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Professor Sarah M Brown<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
