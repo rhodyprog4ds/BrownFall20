@@ -34,7 +34,9 @@ Use a separate notebook for each dataset, name them `dataset_01.ipynb` and `data
 
 For each dataset:
 ````{margin}
-if you use a local copa
+```{tip}
+if you use a local copy of the dataset you can load from a [relative path](https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths) instead of a url. Please include the data in a data folder that's in the folder where your notebook is so that the path is something like: `data/best-dataset-ever.csv` and upload the data to your assignment repository as well. 
+```
 ````
 
 1. Include a markdown header with a title for your analysis
@@ -54,7 +56,7 @@ For dataset 2, you can make your own combination of summary statistics with [`pa
 ````
 
 For d1:
-1. Display all of the summary statistics for a subset of 5 of your choice or all variables if fewer than 5 numerical values
+1. Display all of the summary statistics for a subset of 5 of your choice or all variables if there are fewer than 5 numerical values
 1. Display all of summary statistics grouped by a categorical variable
 1. For two continuous variables make a scatter plot and color the points by a categorical variable
 1. Pose one question for this dataset that can be answered with summary statistics, compute a statistic and plot that help answer that exploratory question.
