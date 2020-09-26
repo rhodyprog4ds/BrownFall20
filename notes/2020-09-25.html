@@ -251,18 +251,38 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#announcemetns">
-   Announcemetns
+  <a class="reference internal nav-link" href="#announcements">
+   Announcements
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loading-data">
-   Loading data
+  <a class="reference internal nav-link" href="#setup">
+   Setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preparing-data-for-analysis">
-   Preparing Data for analysis
+  <a class="reference internal nav-link" href="#warmup-activity">
+   Warmup Activity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-about-the-rest-of-the-columns">
+   What about the rest of the columns?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-dummy-variables">
+   Using Dummy Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cleaning-one-cell-of-data">
+   Cleaning One Cell of Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#applying-this-to-the-rest-of-the-data">
+   Applying this to the rest of the data
   </a>
  </li>
 </ul>
@@ -277,35 +297,34 @@
                 
   <div class="section" id="class-8">
 <h1>Class 8:<a class="headerlink" href="#class-8" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="announcemetns">
-<h2>Announcemetns<a class="headerlink" href="#announcemetns" title="Permalink to this headline">¶</a></h2>
+<!-- annotate: Announcements -->
+<div class="section" id="announcements">
+<h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>closing notebooks</p></li>
 <li><p>retart adn rerun</p></li>
 <li><p>say hello on zoom for attendanxe</p></li>
 </ul>
-<!-- annotate:  Loading data
--->
+<!-- annotate: Setup -->
 </div>
-<div class="section" id="loading-data">
-<h2>Loading data<a class="headerlink" href="#loading-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load http://drsmb.co/310</span>
-
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
-
-
 <span class="n">data_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/brownsarahm/python-socialsci-files/master/data/SAFI_full_shortname.csv&#39;</span>
-
 <span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">font_scale</span><span class="o">=</span><span class="mf">1.25</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+<!-- annotate: Warmup Activity -->
+</div>
+<div class="section" id="warmup-activity">
+<h2>Warmup Activity<a class="headerlink" href="#warmup-activity" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">)</span>
@@ -316,37 +335,36 @@
 <p><img alt="image to copy" src="https://github.com/rhodyprog4ds/BrownFall20/blob/main/img/class8.png?raw=true" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;members_count&#39;</span><span class="p">,</span><span class="n">row</span><span class="o">=</span><span class="s1">&#39;parents_liv&#39;</span><span class="p">,</span> 
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;members_count&#39;</span><span class="p">,</span><span class="n">row</span><span class="o">=</span><span class="s1">&#39;parents_liv&#39;</span><span class="p">,</span>
             <span class="n">col</span> <span class="o">=</span> <span class="s1">&#39;sp_parents_liv&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f6b96e80bd0&gt;
-</pre></div>
-</div>
-<img alt="../_images/2020-09-25_6_1.png" src="../_images/2020-09-25_6_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;members_count&#39;</span><span class="p">,</span><span class="n">row</span><span class="o">=</span><span class="s1">&#39;parents_liv&#39;</span><span class="p">,</span> 
-
-            <span class="n">col</span> <span class="o">=</span> <span class="s1">&#39;sp_parents_liv&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f6b93b40610&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f44032edc90&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-09-25_7_1.png" src="../_images/2020-09-25_7_1.png" />
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;members_count&#39;</span><span class="p">,</span><span class="n">row</span><span class="o">=</span><span class="s1">&#39;parents_liv&#39;</span><span class="p">,</span>
+            <span class="n">col</span> <span class="o">=</span> <span class="s1">&#39;sp_parents_liv&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;village&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="preparing-data-for-analysis">
-<h2>Preparing Data for analysis<a class="headerlink" href="#preparing-data-for-analysis" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f43c6be44d0&gt;
+</pre></div>
+</div>
+<img alt="../_images/2020-09-25_8_1.png" src="../_images/2020-09-25_8_1.png" />
+</div>
+</div>
+<!-- annotate: What about the rest of the columns? -->
+</div>
+<div class="section" id="what-about-the-rest-of-the-columns">
+<h2>What about the rest of the columns?<a class="headerlink" href="#what-about-the-rest-of-the-columns" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">columns</span>
@@ -556,22 +574,26 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mobile_phone&#39;]                                                                                                                                                     4
-[&#39;radio&#39;]                                                                                                                                                            4
-[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;table&#39; ;  &#39;mobile_phone&#39;]                                                                                 3
-[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;mobile_phone&#39;]                                                                                                                             3
-[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;mobile_phone&#39;]                                                                           3
-                                                                                                                                                                    ..
-[&#39;bicycle&#39; ;  &#39;solar_torch&#39;]                                                                                                                                         1
-[&#39;cow_cart&#39; ;  &#39;bicycle&#39; ;  &#39;television&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;electricity&#39; ;  &#39;mobile_phone&#39;]                                             1
-[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;table&#39;]                                                                                                   1
-[&#39;car&#39; ;  &#39;lorry&#39; ;  &#39;motorcyle&#39; ;  &#39;radio&#39; ;  &#39;sterio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;table&#39; ;  &#39;sofa_set&#39; ;  &#39;mobile_phone&#39; ;  &#39;fridge&#39;]    1
-[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39;]                                                                                                                               1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mobile_phone&#39;]                                                                                                                                                                    4
+[&#39;radio&#39;]                                                                                                                                                                           4
+[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;mobile_phone&#39;]                                                                                                                                            3
+[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;table&#39; ;  &#39;mobile_phone&#39;]                                                                                                3
+[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;mobile_phone&#39;]                                                                                          3
+                                                                                                                                                                                   ..
+[&#39;cow_cart&#39; ;  &#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;table&#39; ;  &#39;mobile_phone&#39;]                                                                                  1
+[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39;]                                                                                                                                              1
+[&#39;cow_cart&#39; ;  &#39;lorry&#39; ;  &#39;motorcyle&#39; ;  &#39;computer&#39; ;  &#39;television&#39; ;  &#39;radio&#39; ;  &#39;sterio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;electricity&#39; ;  &#39;mobile_phone&#39;]    1
+[&#39;cow_cart&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_torch&#39; ;  &#39;mobile_phone&#39;]                                                                                                                     1
+[&#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;mobile_phone&#39;]                                                                                                       1
 Name: items_owned, Length: 95, dtype: int64
 </pre></div>
 </div>
 </div>
 </div>
+<!-- annotate: Using Dummy Variables -->
+</div>
+<div class="section" id="using-dummy-variables">
+<h2>Using Dummy Variables<a class="headerlink" href="#using-dummy-variables" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">data</span><span class="o">=</span> <span class="n">safi_df</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;village&#39;</span><span class="p">])</span>
@@ -1549,6 +1571,10 @@ Name: village, Length: 131, dtype: object
 <p>131 rows × 67 columns</p>
 </div></div></div>
 </div>
+<!-- annotate: Cleaning One Cell of Data -->
+</div>
+<div class="section" id="cleaning-one-cell-of-data">
+<h2>Cleaning One Cell of Data<a class="headerlink" href="#cleaning-one-cell-of-data" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">farm1_items</span> <span class="o">=</span> <span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -1694,20 +1720,18 @@ Name: village, Length: 131, dtype: object
 </div>
 </div>
 </div>
+<!-- annotate: Applying this to the rest of the data -->
+</div>
+<div class="section" id="applying-this-to-the-rest-of-the-data">
+<h2>Applying this to the rest of the data<a class="headerlink" href="#applying-this-to-the-rest-of-the-data" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">separate_items</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
-
     <span class="sd">&#39;&#39;&#39;</span>
-
 <span class="sd">    &#39;&#39;&#39;</span>
-
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">])</span><span class="o">==</span><span class="nb">str</span><span class="p">:</span>
-
         <span class="k">return</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span>  <span class="n">row</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)]</span>
-
     <span class="k">else</span><span class="p">:</span>
-
         <span class="k">return</span> <span class="p">[]</span>
 </pre></div>
 </div>
@@ -1893,322 +1917,6 @@ Name: village, Length: 131, dtype: object
 </table>
 <p>5 rows × 66 columns</p>
 </div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;items_owned_clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span><span class="o">.</span><span class="n">stack</span><span class="p">())</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>bicycle</th>
-      <th>car</th>
-      <th>computer</th>
-      <th>cow_cart</th>
-      <th>cow_plough</th>
-      <th>electricity</th>
-      <th>fridge</th>
-      <th>lorry</th>
-      <th>mobile_phone</th>
-      <th>motorcyle</th>
-      <th>radio</th>
-      <th>sofa_set</th>
-      <th>solar_panel</th>
-      <th>solar_torch</th>
-      <th>sterio</th>
-      <th>table</th>
-      <th>television</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>126</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>127</th>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>128</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>129</th>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>130</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-<p>121 rows × 17 columns</p>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">separate_items_s</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
-
-    <span class="sd">&#39;&#39;&#39;</span>
-
-<span class="sd">    &#39;&#39;&#39;</span>
-
-    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">])</span><span class="o">==</span><span class="nb">str</span><span class="p">:</span>
-
-        <span class="n">item_list</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
-
-        
-
-        <span class="k">return</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span>  <span class="n">item_list</span><span class="p">]</span>
-
-    <span class="k">else</span><span class="p">:</span>
-
-        <span class="k">return</span> <span class="p">[]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">separate_items</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0              [bicycle, television, solar_panel, table]
-1      [cow_cart, bicycle, radio, cow_plough, solar_p...
-2                                          [solar_torch]
-3      [bicycle, radio, cow_plough, solar_panel, mobi...
-4           [motorcyle, radio, cow_plough, mobile_phone]
-                             ...                        
-126                      [motorcyle, radio, solar_panel]
-127    [car, lorry, television, radio, sterio, cow_pl...
-128      [radio, solar_panel, solar_torch, mobile_phone]
-129    [cow_cart, lorry, motorcyle, computer, televis...
-130    [radio, cow_plough, solar_panel, solar_torch, ...
-Length: 131, dtype: object
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 </div>
