@@ -35,20 +35,22 @@ Use a separate notebook for each dataset, name them `dataset_01.ipynb` and `data
 For each dataset:
 ````{margin}
 ```{tip}
-if you use a local copy of the dataset you can load from a [relative path](https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths) instead of a url. Please include the data in a data folder that's in the folder where your notebook is so that the path is something like: `data/best-dataset-ever.csv` and upload the data to your assignment repository as well. 
+if you use a local copy of the dataset you can load from a [relative path](https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths) instead of a url. Please include the data in a data folder that's in the folder where your notebook is so that the path is something like: `data/best-dataset-ever.csv` and upload the data to your assignment repository as well.
 ```
 ````
 
 1. Include a markdown header with a title for your analysis
 1. Load the data to a notebook as a `DataFrame` from url.
 1. Explore the dataset in a notebook enough to describe its structure
-  - shape
-  - columns
-  - variable types
+
+    - shape
+    - columns
+    - variable types
+
 1. Write a short description of what the data contains and what it could be used for
 1. Complete an exploratory analysis with statistics and plots. Your analysis should include markdown cells  describing the results you see, not only what you did.  Your analysis should be structured to follow the steps below, for the corresponding dataset.
 
-```{margin}
+````{margin}
 ```{tip}
 Recall how we used a single function to see many statistics in class, use that for dataset 1.
 For dataset 2, you can make your own combination of summary statistics with [`pandas.DataFrame.agg`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.aggregate.html)
