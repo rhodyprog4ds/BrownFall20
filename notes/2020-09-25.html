@@ -297,22 +297,32 @@
                 
   <div class="section" id="class-8">
 <h1>Class 8:<a class="headerlink" href="#class-8" title="Permalink to this headline">¶</a></h1>
-<!-- annotate: Announcements -->
 <div class="section" id="announcements">
 <h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>closing notebooks</p>
 <ul class="simple">
-<li><p>closing notebooks</p></li>
-<li><p>retart adn rerun</p></li>
-<li><p>say hello on zoom for attendanxe</p></li>
+<li><p>recall that they don’t stop when you close the tabs</p></li>
+<li><p>you need to stop it at the terminal it launched from</p></li>
+<li><p>with: ctr + c as it says when you first <a class="reference external" href="https://jupyter.readthedocs.io/en/latest/running.html#starting-the-notebook-server">launch a notebook</a></p></li>
 </ul>
-<!-- annotate: Setup -->
+</li>
+<li><p>restart and rerun notebooks</p>
+<ul class="simple">
+<li><p>notebooks are a continuous REPL as long as you have it open</p></li>
+<li><p>if you change code, you could have, for example a variable that is no longer defined in the notebook as written, but that still exists in memory, so code that depends on it will still run, for now, but not after you restart next (eg if we run it while grading)</p></li>
+<li><p>to check, <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Running%20Code.html#Restarting-the-kernels">restart and rerun</a> your notebook</p></li>
+</ul>
+</li>
+<li><p>say hello on zoom for attendance</p></li>
+</ol>
 </div>
 <div class="section" id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>First we <code class="docutils literal notranslate"><span class="pre">import</span></code> packages and load data as normal.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load http://drsmb.co/310</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
 <span class="n">data_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/brownsarahm/python-socialsci-files/master/data/SAFI_full_shortname.csv&#39;</span>
@@ -321,10 +331,13 @@
 </div>
 </div>
 </div>
-<!-- annotate: Warmup Activity -->
+<p>I’ve added one new command here, Seaborn’s []<code class="docutils literal notranslate"><span class="pre">set</span></code> function](https://seaborn.pydata.org/generated/seaborn.set.html). It sets a bunch of theme aspects for plotting, here I used it to increase the font size.</p>
 </div>
 <div class="section" id="warmup-activity">
 <h2>Warmup Activity<a class="headerlink" href="#warmup-activity" title="Permalink to this headline">¶</a></h2>
+<p>How recreate this plot?</p>
+<p><img alt="image to copy" src="https://github.com/rhodyprog4ds/BrownFall20/blob/main/img/class8.png?raw=true" /></p>
+<p>First, load the data</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">)</span>
@@ -332,7 +345,7 @@
 </div>
 </div>
 </div>
-<p><img alt="image to copy" src="https://github.com/rhodyprog4ds/BrownFall20/blob/main/img/class8.png?raw=true" /></p>
+<p>This is a <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.displot.html#seaborn.displot"><code class="docutils literal notranslate"><span class="pre">displot</span></code></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;members_count&#39;</span><span class="p">,</span><span class="n">row</span><span class="o">=</span><span class="s1">&#39;parents_liv&#39;</span><span class="p">,</span>
@@ -341,12 +354,21 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f44032edc90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f9746e86750&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-09-25_7_1.png" src="../_images/2020-09-25_7_1.png" />
 </div>
 </div>
+<p>This allows comparisons of how the village, respondent’s parents living (<code class="docutils literal notranslate"><span class="pre">parents_liv</span></code>), and the spouse’s (<code class="docutils literal notranslate"><span class="pre">sp_parents_liv</span></code>) influence the number of members of the household (<code class="docutils literal notranslate"><span class="pre">members_count</span></code>). The <code class="docutils literal notranslate"><span class="pre">kind='kde'</span></code> parameter uses the underlying <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.kdeplot.html#seaborn.kdeplot"><code class="docutils literal notranslate"><span class="pre">kdeplot</span></code></a> to apply <a class="reference external" href="https://en.wikipedia.org/wiki/Kernel_density_estimation">kernel density estimation</a></p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This is a general strategy. Testing out parameters with different values is a valuable way to learn what they do, and to build intuition about what they do.  The documentation also has demos of a lot of values.</p>
+</div>
+</div>
+<p>We can understand better what this does, by comparing what happens when we take it out.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">safi_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;members_count&#39;</span><span class="p">,</span><span class="n">row</span><span class="o">=</span><span class="s1">&#39;parents_liv&#39;</span><span class="p">,</span>
@@ -355,10 +377,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f43c6be44d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f970a748d90&gt;
 </pre></div>
 </div>
-<img alt="../_images/2020-09-25_8_1.png" src="../_images/2020-09-25_8_1.png" />
+<img alt="../_images/2020-09-25_9_1.png" src="../_images/2020-09-25_9_1.png" />
 </div>
 </div>
 <!-- annotate: What about the rest of the columns? -->
@@ -574,17 +596,17 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mobile_phone&#39;]                                                                                                                                                                    4
-[&#39;radio&#39;]                                                                                                                                                                           4
-[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;mobile_phone&#39;]                                                                                                                                            3
-[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;table&#39; ;  &#39;mobile_phone&#39;]                                                                                                3
-[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;mobile_phone&#39;]                                                                                          3
-                                                                                                                                                                                   ..
-[&#39;cow_cart&#39; ;  &#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;table&#39; ;  &#39;mobile_phone&#39;]                                                                                  1
-[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39;]                                                                                                                                              1
-[&#39;cow_cart&#39; ;  &#39;lorry&#39; ;  &#39;motorcyle&#39; ;  &#39;computer&#39; ;  &#39;television&#39; ;  &#39;radio&#39; ;  &#39;sterio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;electricity&#39; ;  &#39;mobile_phone&#39;]    1
-[&#39;cow_cart&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_torch&#39; ;  &#39;mobile_phone&#39;]                                                                                                                     1
-[&#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;mobile_phone&#39;]                                                                                                       1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mobile_phone&#39;]                                                                                                                                  4
+[&#39;radio&#39;]                                                                                                                                         4
+[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;table&#39; ;  &#39;mobile_phone&#39;]                                                              3
+[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;mobile_phone&#39;]                                                        3
+[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;mobile_phone&#39;]                                                                                                          3
+                                                                                                                                                 ..
+[&#39;electricity&#39;]                                                                                                                                   1
+[&#39;motorcyle&#39; ;  &#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;table&#39;]                                                                                  1
+[&#39;television&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39;]                                                                                                  1
+[&#39;cow_cart&#39; ;  &#39;motorcyle&#39; ;  &#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;sterio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;table&#39; ;  &#39;mobile_phone&#39;]    1
+[&#39;bicycle&#39; ;  &#39;television&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_torch&#39; ;  &#39;table&#39; ;  &#39;mobile_phone&#39;]                                              1
 Name: items_owned, Length: 95, dtype: int64
 </pre></div>
 </div>
