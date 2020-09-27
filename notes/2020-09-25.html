@@ -354,7 +354,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f9746e86750&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f5db6b9e290&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-09-25_7_1.png" src="../_images/2020-09-25_7_1.png" />
@@ -377,16 +377,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f970a748d90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f5db16aa890&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-09-25_9_1.png" src="../_images/2020-09-25_9_1.png" />
 </div>
 </div>
-<!-- annotate: What about the rest of the columns? -->
 </div>
 <div class="section" id="what-about-the-rest-of-the-columns">
 <h2>What about the rest of the columns?<a class="headerlink" href="#what-about-the-rest-of-the-columns" title="Permalink to this headline">¶</a></h2>
+<p>We’ve used this SAFI dataset a lot, but we’ve only used a few of the many columns.  Let’s look at all of them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">columns</span>
@@ -415,6 +415,7 @@
 </div>
 </div>
 </div>
+<p>We can look at the first few row to recall what sort of data are available in each column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -589,6 +590,8 @@
 <p>5 rows × 65 columns</p>
 </div></div></div>
 </div>
+<p>It might be interesting to use the <code class="docutils literal notranslate"><span class="pre">items_owned</span></code> column to compare find out if there are differences between farms based on what items they have.</p>
+<p>Maybe we’d want to see how many farms own each item, maybe we want to know how many farms own bicycle. Let’s try <code class="docutils literal notranslate"><span class="pre">value_counts</span></code> out like we used before.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -596,26 +599,28 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mobile_phone&#39;]                                                                                                                                  4
-[&#39;radio&#39;]                                                                                                                                         4
-[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;table&#39; ;  &#39;mobile_phone&#39;]                                                              3
-[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;mobile_phone&#39;]                                                        3
-[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;mobile_phone&#39;]                                                                                                          3
-                                                                                                                                                 ..
-[&#39;electricity&#39;]                                                                                                                                   1
-[&#39;motorcyle&#39; ;  &#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;table&#39;]                                                                                  1
-[&#39;television&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39;]                                                                                                  1
-[&#39;cow_cart&#39; ;  &#39;motorcyle&#39; ;  &#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;sterio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;table&#39; ;  &#39;mobile_phone&#39;]    1
-[&#39;bicycle&#39; ;  &#39;television&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_torch&#39; ;  &#39;table&#39; ;  &#39;mobile_phone&#39;]                                              1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mobile_phone&#39;]                                                                                                                                                     4
+[&#39;radio&#39;]                                                                                                                                                            4
+[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;table&#39; ;  &#39;mobile_phone&#39;]                                                                                 3
+[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;mobile_phone&#39;]                                                                           3
+[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;mobile_phone&#39;]                                                                                                                             3
+                                                                                                                                                                    ..
+[&#39;electricity&#39;]                                                                                                                                                      1
+[&#39;car&#39; ;  &#39;lorry&#39; ;  &#39;motorcyle&#39; ;  &#39;radio&#39; ;  &#39;sterio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;table&#39; ;  &#39;sofa_set&#39; ;  &#39;mobile_phone&#39; ;  &#39;fridge&#39;]    1
+[&#39;motorcyle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;mobile_phone&#39;]                                                                                                           1
+[&#39;cow_cart&#39; ;  &#39;bicycle&#39; ;  &#39;cow_plough&#39;]                                                                                                                            1
+[&#39;solar_torch&#39; ;  &#39;mobile_phone&#39;]                                                                                                                                    1
 Name: items_owned, Length: 95, dtype: int64
 </pre></div>
 </div>
 </div>
 </div>
+<p>The problem is this gives the count of each <em>list</em> of items instead of each item.  What we’d want instead is one column for each item, where the values in the column are 1 when the farm owns that item and 0 when they don’t. This representation is sometimes called 1 hot encoding and other times (including in pandas) it’s called dummy variables.</p>
 <!-- annotate: Using Dummy Variables -->
 </div>
 <div class="section" id="using-dummy-variables">
 <h2>Using Dummy Variables<a class="headerlink" href="#using-dummy-variables" title="Permalink to this headline">¶</a></h2>
+<p>Let’s try this function out, first on the <code class="docutils literal notranslate"><span class="pre">village</span></code> column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">data</span><span class="o">=</span> <span class="n">safi_df</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;village&#39;</span><span class="p">])</span>
@@ -934,9 +939,12 @@ Name: items_owned, Length: 95, dtype: int64
 <p>131 rows × 67 columns</p>
 </div></div></div>
 </div>
+<p>Instead of scrolling, we can isolate the new columns we just created.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">data</span><span class="o">=</span> <span class="n">safi_df</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df_villages</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">data</span><span class="o">=</span> <span class="n">safi_df</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;village&#39;</span><span class="p">])</span>
+<span class="n">keep_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">safi_df_villages</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s1">&#39;village_&#39;</span> <span class="ow">in</span> <span class="n">col</span><span class="p">]</span>
+<span class="n">safi_df_villages</span><span class="p">[</span><span class="n">keep_cols</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -959,365 +967,6 @@ Name: items_owned, Length: 95, dtype: int64
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>key_id</th>
-      <th>interview_date</th>
-      <th>quest_no</th>
-      <th>start</th>
-      <th>end</th>
-      <th>province</th>
-      <th>district</th>
-      <th>ward</th>
-      <th>village</th>
-      <th>years_farm</th>
-      <th>...</th>
-      <th>items_owned_['radio' ;  'solar_torch' ;  'mobile_phone']</th>
-      <th>items_owned_['radio' ;  'solar_torch']</th>
-      <th>items_owned_['radio' ;  'table' ;  'sofa_set' ;  'mobile_phone']</th>
-      <th>items_owned_['radio']</th>
-      <th>items_owned_['solar_panel']</th>
-      <th>items_owned_['solar_torch' ;  'mobile_phone']</th>
-      <th>items_owned_['solar_torch']</th>
-      <th>items_owned_['television' ;  'cow_plough' ;  'mobile_phone']</th>
-      <th>items_owned_['television' ;  'radio' ;  'cow_plough' ;  'solar_panel' ;  'solar_torch' ;  'table' ;  'mobile_phone']</th>
-      <th>items_owned_['television' ;  'solar_panel' ;  'solar_torch']</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>17 November 2016</td>
-      <td>1</td>
-      <td>2017-03-23T09:49:57.000Z</td>
-      <td>2017-04-02T17:29:08.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>God</td>
-      <td>11</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>17 November 2016</td>
-      <td>1</td>
-      <td>2017-04-02T09:48:16.000Z</td>
-      <td>2017-04-02T17:26:19.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>God</td>
-      <td>2</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>17 November 2016</td>
-      <td>3</td>
-      <td>2017-04-02T14:35:26.000Z</td>
-      <td>2017-04-02T17:26:53.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>God</td>
-      <td>40</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>17 November 2016</td>
-      <td>4</td>
-      <td>2017-04-02T14:55:18.000Z</td>
-      <td>2017-04-02T17:27:16.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>God</td>
-      <td>6</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>17 November 2016</td>
-      <td>5</td>
-      <td>2017-04-02T15:10:35.000Z</td>
-      <td>2017-04-02T17:27:35.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>God</td>
-      <td>18</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>126</th>
-      <td>127</td>
-      <td>18 May 2017</td>
-      <td>126</td>
-      <td>2017-05-18T04:13:37.000Z</td>
-      <td>2017-05-18T04:35:47.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>Ruaca</td>
-      <td>5</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>127</th>
-      <td>128</td>
-      <td>04 June 2017</td>
-      <td>193</td>
-      <td>2017-06-04T09:36:20.000Z</td>
-      <td>2017-06-04T10:13:32.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>Ruaca</td>
-      <td>10</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>128</th>
-      <td>129</td>
-      <td>04 June 2017</td>
-      <td>194</td>
-      <td>2017-06-04T10:13:36.000Z</td>
-      <td>2017-06-04T10:32:06.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>Ruaca</td>
-      <td>5</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>129</th>
-      <td>130</td>
-      <td>04 June 2017</td>
-      <td>199</td>
-      <td>2017-06-04T10:33:55.000Z</td>
-      <td>2017-06-04T10:52:22.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>Chirodzo</td>
-      <td>17</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>130</th>
-      <td>131</td>
-      <td>04 June 2017</td>
-      <td>200</td>
-      <td>2017-06-04T10:52:46.000Z</td>
-      <td>2017-06-04T11:08:13.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>Chirodzo</td>
-      <td>20</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-<p>131 rows × 159 columns</p>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;village&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0           God
-1           God
-2           God
-3           God
-4           God
-         ...   
-126       Ruaca
-127       Ruaca
-128       Ruaca
-129    Chirodzo
-130    Chirodzo
-Name: village, Length: 131, dtype: object
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">data</span><span class="o">=</span> <span class="n">safi_df</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;village&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>key_id</th>
-      <th>interview_date</th>
-      <th>quest_no</th>
-      <th>start</th>
-      <th>end</th>
-      <th>province</th>
-      <th>district</th>
-      <th>ward</th>
-      <th>years_farm</th>
-      <th>agr_assoc</th>
-      <th>...</th>
-      <th>months_lack_food</th>
-      <th>no_food_mitigation</th>
-      <th>gps_Latitude</th>
-      <th>gps_Longitude</th>
-      <th>gps_Altitude</th>
-      <th>gps_Accuracy</th>
-      <th>instanceID</th>
       <th>village_Chirodzo</th>
       <th>village_God</th>
       <th>village_Ruaca</th>
@@ -1326,120 +975,30 @@ Name: village, Length: 131, dtype: object
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>17 November 2016</td>
-      <td>1</td>
-      <td>2017-03-23T09:49:57.000Z</td>
-      <td>2017-04-02T17:29:08.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>11</td>
-      <td>no</td>
-      <td>...</td>
-      <td>['Jan']</td>
-      <td>['na' ;  'rely_less_food' ;  'reduce_meals' ; ...</td>
-      <td>-19.112259</td>
-      <td>33.483456</td>
-      <td>698</td>
-      <td>14.0</td>
-      <td>uuid:ec241f2c-0609-46ed-b5e8-fe575f6cefef</td>
       <td>0</td>
       <td>1</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>17 November 2016</td>
-      <td>1</td>
-      <td>2017-04-02T09:48:16.000Z</td>
-      <td>2017-04-02T17:26:19.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>2</td>
-      <td>yes</td>
-      <td>...</td>
-      <td>['Jan' ;  'Sept' ;  'Oct' ;  'Nov' ;  'Dec']</td>
-      <td>['na' ;  'reduce_meals' ;  'restrict_adults' ;...</td>
-      <td>-19.112477</td>
-      <td>33.483416</td>
-      <td>690</td>
-      <td>19.0</td>
-      <td>uuid:099de9c9-3e5e-427b-8452-26250e840d6e</td>
       <td>0</td>
       <td>1</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
-      <td>17 November 2016</td>
-      <td>3</td>
-      <td>2017-04-02T14:35:26.000Z</td>
-      <td>2017-04-02T17:26:53.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>40</td>
-      <td>no</td>
-      <td>...</td>
-      <td>['Jan' ;  'Feb' ;  'Mar' ;  'Oct' ;  'Nov' ;  ...</td>
-      <td>['na' ;  'restrict_adults' ;  'lab_ex_food']</td>
-      <td>-19.112108</td>
-      <td>33.483450</td>
-      <td>674</td>
-      <td>13.0</td>
-      <td>uuid:193d7daf-9582-409b-bf09-027dd36f9007</td>
       <td>0</td>
       <td>1</td>
       <td>0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
-      <td>17 November 2016</td>
-      <td>4</td>
-      <td>2017-04-02T14:55:18.000Z</td>
-      <td>2017-04-02T17:27:16.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>6</td>
-      <td>no</td>
-      <td>...</td>
-      <td>['Sept' ;  'Oct' ;  'Nov' ;  'Dec']</td>
-      <td>['na' ;  'reduce_meals' ;  'restrict_adults' ;...</td>
-      <td>-19.112229</td>
-      <td>33.483424</td>
-      <td>679</td>
-      <td>5.0</td>
-      <td>uuid:148d1105-778a-4755-aa71-281eadd4a973</td>
       <td>0</td>
       <td>1</td>
       <td>0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>17 November 2016</td>
-      <td>5</td>
-      <td>2017-04-02T15:10:35.000Z</td>
-      <td>2017-04-02T17:27:35.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>18</td>
-      <td>no</td>
-      <td>...</td>
-      <td>['Aug' ;  'Sept' ;  'Oct' ;  'Nov']</td>
-      <td>['na' ;  'go_forest' ;  'migrate']</td>
-      <td>-19.112217</td>
-      <td>33.483425</td>
-      <td>689</td>
-      <td>10.0</td>
-      <td>uuid:2c867811-9696-4966-9866-f35c3e97d02d</td>
       <td>0</td>
       <td>1</td>
       <td>0</td>
@@ -1449,149 +1008,129 @@ Name: village, Length: 131, dtype: object
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>126</th>
-      <td>127</td>
-      <td>18 May 2017</td>
-      <td>126</td>
-      <td>2017-05-18T04:13:37.000Z</td>
-      <td>2017-05-18T04:35:47.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>5</td>
-      <td>yes</td>
-      <td>...</td>
-      <td>['Oct' ;  'Nov' ;  'Dec']</td>
-      <td>['rely_less_food' ;  'lab_ex_food']</td>
-      <td>-19.112194</td>
-      <td>33.483379</td>
-      <td>700</td>
-      <td>7.0</td>
-      <td>uuid:69caea81-a4e5-4e8d-83cd-9c18d8e8d965</td>
       <td>0</td>
       <td>0</td>
       <td>1</td>
     </tr>
     <tr>
       <th>127</th>
-      <td>128</td>
-      <td>04 June 2017</td>
-      <td>193</td>
-      <td>2017-06-04T09:36:20.000Z</td>
-      <td>2017-06-04T10:13:32.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>10</td>
-      <td>no</td>
-      <td>...</td>
-      <td>['none']</td>
-      <td>['na']</td>
-      <td>-19.112157</td>
-      <td>33.483390</td>
-      <td>720</td>
-      <td>9.0</td>
-      <td>uuid:5ccc2e5a-ea90-48b5-8542-69400d5334df</td>
       <td>0</td>
       <td>0</td>
       <td>1</td>
     </tr>
     <tr>
       <th>128</th>
-      <td>129</td>
-      <td>04 June 2017</td>
-      <td>194</td>
-      <td>2017-06-04T10:13:36.000Z</td>
-      <td>2017-06-04T10:32:06.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>5</td>
-      <td>no</td>
-      <td>...</td>
-      <td>['Sept' ;  'Oct' ;  'Nov']</td>
-      <td>['lab_ex_food']</td>
-      <td>-19.112271</td>
-      <td>33.483471</td>
-      <td>719</td>
-      <td>10.0</td>
-      <td>uuid:95c11a30-d44f-40c4-8ea8-ec34fca6bbbf</td>
       <td>0</td>
       <td>0</td>
       <td>1</td>
     </tr>
     <tr>
       <th>129</th>
-      <td>130</td>
-      <td>04 June 2017</td>
-      <td>199</td>
-      <td>2017-06-04T10:33:55.000Z</td>
-      <td>2017-06-04T10:52:22.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>17</td>
-      <td>yes</td>
-      <td>...</td>
-      <td>['Nov' ;  'Dec']</td>
-      <td>['rely_less_food' ;  'limit_variety' ;  'reduc...</td>
-      <td>-19.112278</td>
-      <td>33.483390</td>
-      <td>711</td>
-      <td>5.0</td>
-      <td>uuid:ffc83162-ff24-4a87-8709-eff17abc0b3b</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
     </tr>
     <tr>
       <th>130</th>
-      <td>131</td>
-      <td>04 June 2017</td>
-      <td>200</td>
-      <td>2017-06-04T10:52:46.000Z</td>
-      <td>2017-06-04T11:08:13.000Z</td>
-      <td>Manica</td>
-      <td>Manica</td>
-      <td>Bandula</td>
-      <td>20</td>
-      <td>yes</td>
-      <td>...</td>
-      <td>['Oct' ;  'Nov']</td>
-      <td>['rely_less_food' ;  'restrict_adults' ;  'bor...</td>
-      <td>-19.112183</td>
-      <td>33.483372</td>
-      <td>681</td>
-      <td>20.0</td>
-      <td>uuid:aa77a0d7-7142-41c8-b494-483a5b68d8a7</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
     </tr>
   </tbody>
 </table>
-<p>131 rows × 67 columns</p>
+<p>131 rows × 3 columns</p>
 </div></div></div>
+</div>
+<p>Note that now we have 3 columns, one for each village. This column was already usable, but it was well formatted an useful to illustrate what <code class="docutils literal notranslate"><span class="pre">get_dummies</span></code> does.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>try this out and compare the two, test out <code class="docutils literal notranslate"><span class="pre">get_dummies</span></code> on another column to be sure you know what it does.</p>
+</div>
+<p>Now, we can try it on <code class="docutils literal notranslate"><span class="pre">items_owned</span></code>.
+_this time we’ll filter the columns for display and inspection right away</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df_items</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">data</span><span class="o">=</span> <span class="n">safi_df</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">])</span>
+<span class="n">keep_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">safi_df_items</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s1">&#39;village_&#39;</span> <span class="ow">in</span> <span class="n">col</span><span class="p">]</span>
+<span class="n">safi_df_items</span><span class="p">[</span><span class="n">keep_cols</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+    </tr>
+    <tr>
+      <th>1</th>
+    </tr>
+    <tr>
+      <th>2</th>
+    </tr>
+    <tr>
+      <th>3</th>
+    </tr>
+    <tr>
+      <th>4</th>
+    </tr>
+    <tr>
+      <th>...</th>
+    </tr>
+    <tr>
+      <th>126</th>
+    </tr>
+    <tr>
+      <th>127</th>
+    </tr>
+    <tr>
+      <th>128</th>
+    </tr>
+    <tr>
+      <th>129</th>
+    </tr>
+    <tr>
+      <th>130</th>
+    </tr>
+  </tbody>
+</table>
+<p>131 rows × 0 columns</p>
+</div></div></div>
+</div>
+<p>This still isn’t quite what we want, because each value in the <code class="docutils literal notranslate"><span class="pre">items_owned</span></code> column <em>looks</em> like a list but it’s actually a string, we can check that with the <code class="docutils literal notranslate"><span class="pre">type</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
 </div>
 <!-- annotate: Cleaning One Cell of Data -->
 </div>
