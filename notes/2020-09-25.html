@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Class 8: &#8212; Programming for Data Science at URI Fall 2020</title>
+    <title>Class 8: Visualization and Starting to Clean Data &#8212; Programming for Data Science at URI Fall 2020</title>
     
   <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
 
@@ -55,7 +55,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Assignments" href="../assignments/index.html" />
+    <link rel="next" title="Class 9: Preparing Data For Analysis" href="2020-09-28.html" />
     <link rel="prev" title="Class 7: Visualization for EDA" href="2020-09-23.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -139,7 +139,12 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Class 8:
+     Class 8: Visualization and Starting to Clean Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-28.html">
+     Class 9: Preparing Data For Analysis
     </a>
    </li>
   </ul>
@@ -316,8 +321,8 @@
         
               <div>
                 
-  <div class="section" id="class-8">
-<h1>Class 8:<a class="headerlink" href="#class-8" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="class-8-visualization-and-starting-to-clean-data">
+<h1>Class 8: Visualization and Starting to Clean Data<a class="headerlink" href="#class-8-visualization-and-starting-to-clean-data" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="announcements">
 <h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
@@ -375,7 +380,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f374eb6c250&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f3a95a7d410&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-09-25_7_1.png" src="../_images/2020-09-25_7_1.png" />
@@ -398,7 +403,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f3784186250&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f3a903d5790&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-09-25_9_1.png" src="../_images/2020-09-25_9_1.png" />
@@ -620,17 +625,17 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;radio&#39;]                                                                                                                                                             4
-[&#39;mobile_phone&#39;]                                                                                                                                                      4
-[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;table&#39; ;  &#39;mobile_phone&#39;]                                                                                  3
-[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;mobile_phone&#39;]                                                                                                                              3
-[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;mobile_phone&#39;]                                                                            3
-                                                                                                                                                                     ..
-[&#39;car&#39; ;  &#39;lorry&#39; ;  &#39;television&#39; ;  &#39;radio&#39; ;  &#39;sterio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_torch&#39; ;  &#39;electricity&#39; ;  &#39;table&#39; ;  &#39;sofa_set&#39; ;  &#39;mobile_phone&#39; ;  &#39;fridge&#39;]    1
-[&#39;motorcyle&#39; ;  &#39;bicycle&#39; ;  &#39;television&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;mobile_phone&#39;]                                                              1
-[&#39;motorcyle&#39; ;  &#39;radio&#39; ;  &#39;sterio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;table&#39; ;  &#39;mobile_phone&#39;]                                                                    1
-[&#39;cow_cart&#39; ;  &#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_torch&#39;]                                                                                                 1
-[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;mobile_phone&#39;]                                                                                                              1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mobile_phone&#39;]                                                                                                                                       4
+[&#39;radio&#39;]                                                                                                                                              4
+[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;table&#39; ;  &#39;mobile_phone&#39;]                                                                   3
+[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;mobile_phone&#39;]                                                             3
+[&#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;mobile_phone&#39;]                                                                                                               3
+                                                                                                                                                      ..
+[&#39;bicycle&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;mobile_phone&#39;]                                                                                         1
+[&#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_torch&#39;]                                                                                                             1
+[&#39;cow_cart&#39; ;  &#39;motorcyle&#39; ;  &#39;television&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_panel&#39; ;  &#39;solar_torch&#39; ;  &#39;table&#39; ;  &#39;sofa_set&#39; ;  &#39;mobile_phone&#39;]    1
+[&#39;motorcyle&#39; ;  &#39;bicycle&#39; ;  &#39;radio&#39; ;  &#39;cow_plough&#39; ;  &#39;table&#39;]                                                                                       1
+[&#39;cow_cart&#39; ;  &#39;cow_plough&#39; ;  &#39;solar_torch&#39; ;  &#39;mobile_phone&#39;]                                                                                        1
 Name: items_owned, Length: 95, dtype: int64
 </pre></div>
 </div>
@@ -1493,7 +1498,7 @@ _this time we’ll filter the columns for display and inspection right away</p>
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="2020-09-23.html" title="previous page">Class 7: Visualization for EDA</a>
-    <a class='right-next' id="next-link" href="../assignments/index.html" title="next page">Assignments</a>
+    <a class='right-next' id="next-link" href="2020-09-28.html" title="next page">Class 9: Preparing Data For Analysis</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

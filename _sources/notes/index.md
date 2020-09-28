@@ -8,3 +8,5 @@ Class notes will get posted here day by day
 - [2020-09-18](2020-09-18): Pandas, Functions as Object, Dictionaries
 - [2020-09-21](2020-09-21): Exploratory Data Analysis, Split, apply, Combine
 - [2020-09-23](2020-09-23): Visualization for EDA
+- [2020-09-25](2020-09-25): Viz & Cleaning
+- [2020-09-28](2020-09-28): Preparing data for analysis
