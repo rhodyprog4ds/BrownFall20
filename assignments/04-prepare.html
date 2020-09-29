@@ -257,6 +257,11 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tips-and-hints">
+   Tips and hints
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -345,6 +350,23 @@
 <li><p>Upload only the files you changed into the repository to replace their previous versions with the add file via upload button on GitHub.  Put the notebooks at the top level and the data files in the data folder.</p></li>
 </ol>
 </div>
+</div>
+<div class="section" id="tips-and-hints">
+<h2>Tips and hints<a class="headerlink" href="#tips-and-hints" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Pandas can <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html">convert string to dates</a> to be able to work with them more flexibly</p></li>
+<li><p>With python <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.date.fromisoformat">date</a> objects you can get the <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.date.weekday">day of the week</a> from a date</p></li>
+<li><p>Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html"><code class="docutils literal notranslate"><span class="pre">read_excel</span></code></a> has:</p>
+<ul>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">header</span></code> parameter can take a list as its value</p></li>
+<li><p>two parameters that allow you to skip rows when you read in the data</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list(range(7))</span></code> check out what this line does</p></li>
+<li></li>
+</ul>
+<p>The goal of the plot for the CS degrees dataset is:
+<img alt="plots of degrees by level from 1971-11 by gender" src="../_images/cs_degree_target.png" /></p>
 </div>
 </div>
 
