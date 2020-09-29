@@ -6,6 +6,30 @@ Your portfolio is a [jupyter book](https://jupyterbook.org/intro.html). This mea
 
 This page will cover a few basic tips.
 
+## Organization
+
+The summary of for the `part` or whole submission, should match the skills to the chapters.  Which prompt you're addressing is not important, the  prompts are a *starting point* not the end goal of your portfolio. 
+
+
+## Structure of plain markdown
+
+Use a heading like this:
+
+```
+# Heading of page
+```
+
+in the file and it will appear in the sidebar.
+
+
+## File Naming
+
+It is best practice to name files without spaces.
+Each `chapter` or file should have a descriptive file name (`with_no_spaces`) and descriptive title for it.
+
+
+
+
 ## Syncing markdown and ipynb files
 
 To sync feedback received to your runnable notebook files, change the related GitHub Actions file: `.github/workflows/`
@@ -25,11 +49,9 @@ change it to:
       jupytext --sync */*.ipynb                  # Update whichever of .ipynb/notebook.md is outdated
 ```
 
-This means if you accept suggestion commits from the the `.md` file, the action will upate your `.ipynb` file. If you update your `.ipynb file` the action will update the .md file. 
+This means if you accept suggestion commits from the the `.md` file, the action will upate your `.ipynb` file. If you update your `.ipynb file` the action will update the .md file.
 
-## File Naming
 
-It is best practice to name files without spaces.
 
 
 ## Configurations

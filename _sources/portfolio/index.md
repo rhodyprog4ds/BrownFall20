@@ -70,9 +70,9 @@ The portfolio is your only chance to earn Level 3 achievements, however, if you 
 The prompts provide a starting point, but remember that to earn achievements, you'll be evaluated by the rubric.
 You can see the full rubric for all portfolios in the [syllabus](portfolioskills).
 Your portfolio is also an opportunity to be creative, explore things, and answer your own questions that we haven't answered in class to dig deeper on the topics we're covering.
-Use the feedback you get on assignments to inspire your portfolio. 
+Use the feedback you get on assignments to inspire your portfolio.
 
-Each submission should include an introduction and a number of 'chapters'.  The grade will be based on both that you demonstrate skills through your chapters that are inspired by the prompts and that your summary demonstrates that you *know* you learned the skills.
+Each submission should include an introduction and a number of 'chapters'.  The grade will be based on both that you demonstrate skills through your chapters that are inspired by the prompts and that your summary demonstrates that you *know* you learned the skills. See the [formatting tips](formatting) for advice on how to structure files. 
 
 
 The first submission will be graded on the following criteria and due on October 14:

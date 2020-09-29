@@ -231,13 +231,23 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#syncing-markdown-and-ipynb-files">
-   Syncing markdown and ipynb files
+  <a class="reference internal nav-link" href="#organization">
+   Organization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structure-of-plain-markdown">
+   Structure of plain markdown
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#file-naming">
    File Naming
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#syncing-markdown-and-ipynb-files">
+   Syncing markdown and ipynb files
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -269,6 +279,23 @@
 <li><p>it will run and compile Jupyter notebooks</p></li>
 </ul>
 <p>This page will cover a few basic tips.</p>
+<div class="section" id="organization">
+<h2>Organization<a class="headerlink" href="#organization" title="Permalink to this headline">¶</a></h2>
+<p>The summary of for the <code class="docutils literal notranslate"><span class="pre">part</span></code> or whole submission, should match the skills to the chapters.  Which prompt you’re addressing is not important, the  prompts are a <em>starting point</em> not the end goal of your portfolio.</p>
+</div>
+<div class="section" id="structure-of-plain-markdown">
+<h2>Structure of plain markdown<a class="headerlink" href="#structure-of-plain-markdown" title="Permalink to this headline">¶</a></h2>
+<p>Use a heading like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Heading of page</span>
+</pre></div>
+</div>
+<p>in the file and it will appear in the sidebar.</p>
+</div>
+<div class="section" id="file-naming">
+<h2>File Naming<a class="headerlink" href="#file-naming" title="Permalink to this headline">¶</a></h2>
+<p>It is best practice to name files without spaces.
+Each <code class="docutils literal notranslate"><span class="pre">chapter</span></code> or file should have a descriptive file name (<code class="docutils literal notranslate"><span class="pre">with_no_spaces</span></code>) and descriptive title for it.</p>
+</div>
 <div class="section" id="syncing-markdown-and-ipynb-files">
 <h2>Syncing markdown and ipynb files<a class="headerlink" href="#syncing-markdown-and-ipynb-files" title="Permalink to this headline">¶</a></h2>
 <p>To sync feedback received to your runnable notebook files, change the related GitHub Actions file: <code class="docutils literal notranslate"><span class="pre">.github/workflows/</span></code>
@@ -286,10 +313,6 @@ In the step named convert that looks like:</p>
 </pre></div>
 </div>
 <p>This means if you accept suggestion commits from the the <code class="docutils literal notranslate"><span class="pre">.md</span></code> file, the action will upate your <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file. If you update your <code class="docutils literal notranslate"><span class="pre">.ipynb</span> <span class="pre">file</span></code> the action will update the .md file.</p>
-</div>
-<div class="section" id="file-naming">
-<h2>File Naming<a class="headerlink" href="#file-naming" title="Permalink to this headline">¶</a></h2>
-<p>It is best practice to name files without spaces.</p>
 </div>
 <div class="section" id="configurations">
 <h2>Configurations<a class="headerlink" href="#configurations" title="Permalink to this headline">¶</a></h2>
