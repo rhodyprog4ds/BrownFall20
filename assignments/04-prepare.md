@@ -83,3 +83,17 @@ You can work with this assignment in 2 ways:
 1. unzip
 1. launch a notebook in the folder where you unzipped
 1. Upload only the files you changed into the repository to replace their previous versions with the add file via upload button on GitHub.  Put the notebooks at the top level and the data files in the data folder.
+
+
+## Tips and hints
+
+- Pandas can [convert string to dates](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html) to be able to work with them more flexibly
+- With python [date](https://docs.python.org/3/library/datetime.html#datetime.date.fromisoformat) objects you can get the [day of the week](https://docs.python.org/3/library/datetime.html#datetime.date.weekday) from a date
+- Pandas [`read_excel`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html) has:
+  - a `header` parameter can take a list as its value
+  - two parameters that allow you to skip rows when you read in the data
+- `list(range(7))` check out what this line does
+-
+
+The goal of the plot for the CS degrees dataset is:
+![plots of degrees by level from 1971-11 by gender](../img/cs_degree_target.png)
