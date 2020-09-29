@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 3: Exploratory Data Analysis &#8212; Programming for Data Science at URI Fall 2020</title>
+    <title>Assignment 4: &#8212; Programming for Data Science at URI Fall 2020</title>
     
   <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
 
@@ -55,8 +55,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Assignment 4:" href="04-prepare.html" />
-    <link rel="prev" title="Assignment 2: Practicing Python and Accessing Data" href="02-python-access.html" />
+    <link rel="next" title="Portfolio" href="../portfolio/index.html" />
+    <link rel="prev" title="Assignment 3: Exploratory Data Analysis" href="03-exploratory.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -122,13 +122,13 @@
      Assignment 2: Practicing Python and Accessing Data
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-exploratory.html">
      Assignment 3: Exploratory Data Analysis
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04-prepare.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Assignment 4:
     </a>
    </li>
@@ -191,7 +191,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/assignments/03-exploratory.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/assignments/04-prepare.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -208,10 +208,10 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/rhodyprog4ds/BrownFall20//issues/new?title=Issue%20on%20page%20%2Fassignments/03-exploratory.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/rhodyprog4ds/BrownFall20//issues/new?title=Issue%20on%20page%20%2Fassignments/04-prepare.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/rhodyprog4ds/BrownFall20/edit/main/assignments/03-exploratory.md"><button
+        <a class="edit-button" href="https://github.com/rhodyprog4ds/BrownFall20/edit/main/assignments/04-prepare.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -241,9 +241,21 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exploratory-data-analysis">
-   Exploratory Data Analysis
+  <a class="reference internal nav-link" href="#instructions">
+   Instructions
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#git-workflow">
+     Git Workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-and-upload-workflow">
+     Download and upload workflow
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -256,81 +268,83 @@
         
               <div>
                 
-  <div class="section" id="assignment-3-exploratory-data-analysis">
-<h1>Assignment 3: Exploratory Data Analysis<a class="headerlink" href="#assignment-3-exploratory-data-analysis" title="Permalink to this headline">¶</a></h1>
-<p><strong>Due: 2020-09-27</strong></p>
+  <div class="section" id="assignment-4">
+<h1>Assignment 4:<a class="headerlink" href="#assignment-4" title="Permalink to this headline">¶</a></h1>
+<p><strong>Due: 2020-10-04</strong></p>
 <div class="section" id="objective-evaluation">
 <h2>Objective &amp; Evaluation<a class="headerlink" href="#objective-evaluation" title="Permalink to this headline">¶</a></h2>
-<p>This assignment is an opportunity to earn level 1 or 2 achievements in <code class="docutils literal notranslate"><span class="pre">summarize</span></code>, <code class="docutils literal notranslate"><span class="pre">visualize</span></code>, or <code class="docutils literal notranslate"><span class="pre">access</span></code>. You can earn level 2 in <code class="docutils literal notranslate"><span class="pre">python</span></code>.</p>
-<p>Accept the assignment on <a class="reference external" href="https://classroom.github.com/a/t2NWi3KU">GitHub Classroom</a>.  The template will convert notebooks that are added to markdown, which makes reading on GitHub for easier grading. It will sync between .ipynb and .md style notebooks stored in your repository.</p>
-<p>This week I encourage you to try working with git, but if you’re not comfortable with that you can work via upload again.</p>
+<p>You can earn prepare level 2 and by completing the <code class="docutils literal notranslate"><span class="pre">cs_degrees.ipynb</span></code> and <code class="docutils literal notranslate"><span class="pre">travel_time.ipynb</span></code> analyses.</p>
+<p>To earn access level 2 you must also do <code class="docutils literal notranslate"><span class="pre">airlines.ipynb</span></code> or <code class="docutils literal notranslate"><span class="pre">safi_full.ipynb</span></code> note that this is the SAFI dataset we’ve been working with in class, but a messier version of it. You know what some of the fixes are because they’re in the notes and some of what it will look like when it’s done.</p>
+<p>To earn python level 2, you must complete <code class="docutils literal notranslate"><span class="pre">safi_full.ipynb</span></code>, if you successfully use list or dictionary comprehensions and conditional statements, beyond those provided as hints.</p>
+<p>To earn level 2 for summarize and visualize, include additional analyses after cleaning the datasets. You’ll need at least two types of plots and two different ways of using summary statistics and to interpret the results.</p>
 </div>
-<div class="section" id="exploratory-data-analysis">
-<h2>Exploratory Data Analysis<a class="headerlink" href="#exploratory-data-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="instructions">
+<h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
+<p>For this assignment, your assignment is to clean datasets in notebooks and include narrative description of how you’re making decisions about the data cleaning. At the end of each cleaning, save the cleaned dataset to the data folder with an informative file name.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>A continuous valued variable is one that can take on infinitely many values.
-Examples include temperatue, length, age, etc.
-A categorical value is one that can only take on one of a subset of specific values.
-These require a bit more context to define often.
-For example color could be recorded in a basically continuous way as RGB values in HEX, but color of the stoplight will only be red, green, or yellow.
-Town of birth in a dataset of celebrities would not be a good categorical variable, there might not be many duplicates to do analysis with, but metro area of current residence for celebrities would be because we’d see mostly major cities and could do analyses.</p>
+<p>You can download any of the files and open them with another program if you need to by pasting the url in your browser. You’ll need to display relevant parts in a notebook for grading, but if looking another way helps, you can try that.</p>
 </div>
 </div>
-<p>This week your goal is to do a small exploratory data analysis for two datasets of your choice. One dataset must include at least two continuous valued variables and at least one categorical variable(d1). One dataset must include at least two categorical variables and at least one continuous valued variable(d2).</p>
-<p>Use a separate notebook for each dataset, name them <code class="docutils literal notranslate"><span class="pre">dataset_01.ipynb</span></code> and <code class="docutils literal notranslate"><span class="pre">dataset_02.ipynb</span></code>.</p>
-<p>For each dataset:</p>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>if you use a local copy of the dataset you can load from a <a class="reference external" href="https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths">relative path</a> instead of a url. Please include the data in a data folder that’s in the folder where your notebook is so that the path is something like: <code class="docutils literal notranslate"><span class="pre">data/best-dataset-ever.csv</span></code> and upload the data to your assignment repository as well.</p>
-</div>
+<p>When you <a class="reference external" href="https://classroom.github.com/a/y723c6qi">accept the assignment</a>, there will be template notebooks in the repository. These have significant hints to guide your efforts.</p>
+<p>There is an issue type with a todo list, try that out to plan and track questions you have.</p>
+<p>You can work with this assignment in 2 ways:</p>
+<div class="section" id="git-workflow">
+<h3>Git Workflow<a class="headerlink" href="#git-workflow" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Click the green code button and copy the url.</p></li>
+<li><p>clone the repository as below where th eurl is the one you copied from GitHub. In your terminal on Linux or Mac or on the GitBash on Windows (<a class="reference internal" href="../syllabus/tools.html#prorgrammin-env"><span class="std std-ref">install instructions on tools section of syllabus</span></a> )</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">path</span><span class="o">/</span><span class="n">where</span><span class="o">/</span><span class="n">you</span><span class="o">/</span><span class="n">want</span><span class="o">/</span><span class="n">a</span><span class="o">/</span><span class="n">new</span><span class="o">/</span><span class="n">folder</span><span class="o">/</span><span class="k">for</span><span class="o">/</span><span class="n">this</span><span class="o">/</span><span class="n">assignment</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">rhodyprog4ds</span><span class="o">/</span><span class="mi">04</span><span class="o">-</span><span class="n">prepare</span><span class="o">-</span><span class="n">username</span>
+</pre></div>
 </div>
 <ol class="simple">
-<li><p>Include a markdown header with a title for your analysis</p></li>
-<li><p>Load the data to a notebook as a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> from url.</p></li>
-<li><p>Explore the dataset in a notebook enough to describe its structure</p>
-<ul class="simple">
-<li><p>shape</p></li>
-<li><p>columns</p></li>
-<li><p>variable types</p></li>
-</ul>
-</li>
-<li><p>Write a short description of what the data contains and what it could be used for</p></li>
-<li><p>Complete an exploratory analysis with statistics and plots. Your analysis should include markdown cells  describing the results you see, not only what you did.  Your analysis should be structured to follow the steps below, for the corresponding dataset.</p></li>
+<li><p>then launch your notebook from the newly created folder.</p></li>
 </ol>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Recall how we used a single function to see many statistics in class, use that for dataset 1.
-For dataset 2, you can make your own combination of summary statistics with <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.aggregate.html"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.agg</span></code></a></p>
+<p>on Linux or Mac, in the same terminal (remember you can use tab complete)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="mi">04</span><span class="o">-</span><span class="n">prepare</span><span class="o">-</span><span class="n">username</span>
+<span class="n">jupyter</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<p>or on windows, in your anaconda prompt</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">path</span><span class="o">/</span><span class="n">where</span><span class="o">/</span><span class="n">you</span><span class="o">/</span><span class="n">want</span><span class="o">/</span><span class="n">a</span><span class="o">/</span><span class="n">new</span><span class="o">/</span><span class="n">folder</span><span class="o">/</span><span class="k">for</span><span class="o">/</span><span class="n">this</span><span class="o">/</span><span class="n">assignment</span><span class="o">/</span><span class="mi">04</span><span class="o">-</span><span class="n">prepare</span><span class="o">-</span><span class="n">username</span>
+<span class="n">jupyter</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>work on your assignment, by opening the notebooks there and editing them.</p></li>
+<li><p>commit your changes when you want to save a point in your progress. Either you have part workign and want to save that, or you want feedback, or you’re done. On whichever terminal you used for the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> command above</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;description of current status of project&#39;</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>push your changes when you want to share them on GitHub, (eg need help, want feedback or complete)</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>if you will keep working after pushing, first pull down the .md conversion that was added by github actions.  If you don’t you’ll have to merge, it should be fine, but ask if you’re not sure.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
+</pre></div>
 </div>
 </div>
-<p>For d1:</p>
+<div class="section" id="download-and-upload-workflow">
+<h3>Download and upload workflow<a class="headerlink" href="#download-and-upload-workflow" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
-<li><p>Display all of the summary statistics for a subset of 5 of your choice or all variables if there are fewer than 5 numerical values</p></li>
-<li><p>Display all of summary statistics grouped by a categorical variable</p></li>
-<li><p>For two continuous variables make a scatter plot and color the points by a categorical variable</p></li>
-<li><p>Pose one question for this dataset that can be answered with summary statistics, compute a statistic and plot that help answer that exploratory question.</p></li>
+<li><p>Click the green code button</p></li>
+<li><p>choose the download via zip option</p></li>
+<li><p>unzip</p></li>
+<li><p>launch a notebook in the folder where you unzipped</p></li>
+<li><p>Upload only the files you changed into the repository to replace their previous versions with the add file via upload button on GitHub.  Put the notebooks at the top level and the data files in the data folder.</p></li>
 </ol>
-<p>For d2:</p>
-<ol class="simple">
-<li><p>Display two individual summary statistics for one variable</p></li>
-<li><p>Group the data by two categorical variables and display a table of one summary statistic</p></li>
-<li><p>Use a seaborn plotting function with the <code class="docutils literal notranslate"><span class="pre">col</span></code> parameter or a <code class="docutils literal notranslate"><span class="pre">FacetGrid</span></code> to make a plot that shows something informative about this data, using both categorical variables and at least one numerical value. Describe what this tells you about the data.</p></li>
-<li><p>Produce one additional plot of a different plot type that shows something about this data.</p></li>
-</ol>
-<p>In total, in each of your notebooks you will have:</p>
-<ul class="simple">
-<li><p>a loaded dataset</p></li>
-<li><p>a basic description</p></li>
-<li><p>at least two summary statistic calculations</p></li>
-<li><p>at least two plots</p></li>
-</ul>
+</div>
 </div>
 </div>
 
@@ -362,8 +376,8 @@ For dataset 2, you can make your own combination of summary statistics with <a c
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="02-python-access.html" title="previous page">Assignment 2: Practicing Python and Accessing Data</a>
-    <a class='right-next' id="next-link" href="04-prepare.html" title="next page">Assignment 4:</a>
+    <a class='left-prev' id="prev-link" href="03-exploratory.html" title="previous page">Assignment 3: Exploratory Data Analysis</a>
+    <a class='right-next' id="next-link" href="../portfolio/index.html" title="next page">Portfolio</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
