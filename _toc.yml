@@ -28,6 +28,7 @@
     - file: assignments/01-python-syllabus
     - file: assignments/02-python-access
     - file: assignments/03-exploratory
+    - file: assignments/04-prepare
 
 - file: portfolio/index
   sections:
