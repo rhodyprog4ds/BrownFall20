@@ -337,50 +337,227 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">cb7bb7f4d96e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">data_url</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span>                 <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span>                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">296</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span> 
-<span class="g g-Whitespace">    </span><span class="mi">298</span>         <span class="k">return</span> <span class="n">wrapper</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/excel/_base.py</span> in <span class="ni">read_excel</span><span class="nt">(io, sheet_name, header, names, index_col, usecols, squeeze, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, thousands, comment, skipfooter, convert_float, mangle_dupe_cols)</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span> 
-<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">ExcelFile</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">304</span>         <span class="n">io</span> <span class="o">=</span> <span class="n">ExcelFile</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">305</span>     <span class="k">elif</span> <span class="n">engine</span> <span class="ow">and</span> <span class="n">engine</span> <span class="o">!=</span> <span class="n">io</span><span class="o">.</span><span class="n">engine</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">306</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/excel/_base.py</span> in <span class="ni">__init__</span><span class="nt">(self, path_or_buffer, engine)</span>
-<span class="g g-Whitespace">    </span><span class="mi">865</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_io</span> <span class="o">=</span> <span class="n">stringify_path</span><span class="p">(</span><span class="n">path_or_buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">866</span> 
-<span class="ne">--&gt; </span><span class="mi">867</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engines</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">_io</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">868</span> 
-<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="k">def</span> <span class="nf">__fspath__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/excel/_xlrd.py</span> in <span class="ni">__init__</span><span class="nt">(self, filepath_or_buffer)</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span><span class="s2">         err_msg = &quot;Install xlrd &gt;= 1.0.0 for Excel support&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">21</span><span class="s2">         import_optional_dependency(&quot;xlrd&quot;, extra=err_msg)</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span><span class="s2">         super().__init__(filepath_or_buffer)</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span><span class="s2"> </span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/compat/_optional.py</span> in <span class="ni">import_optional_dependency</span><span class="nt">(name, extra, raise_on_missing, on_version)</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span><span class="s2">     except ImportError:</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span><span class="s2">         if raise_on_missing:</span>
-<span class="ne">--&gt; </span><span class="mi">110</span><span class="s2">             raise ImportError(msg) from None</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span><span class="s2">         else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span><span class="s2">             return None</span>
-
-<span class="ne">ImportError</span>: Missing optional dependency &#39;xlrd&#39;. Install xlrd &gt;= 1.0.0 for Excel support Use pip or conda to install xlrd.
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Ethnicity</th>
+      <th>Asian</th>
+      <th>Unnamed: 2</th>
+      <th>Unnamed: 3</th>
+      <th>Unnamed: 4</th>
+      <th>Black</th>
+      <th>Unnamed: 6</th>
+      <th>Unnamed: 7</th>
+      <th>Unnamed: 8</th>
+      <th>Hispanic</th>
+      <th>Unnamed: 10</th>
+      <th>Unnamed: 11</th>
+      <th>Unnamed: 12</th>
+      <th>White not Hispanic</th>
+      <th>Unnamed: 14</th>
+      <th>Unnamed: 15</th>
+      <th>Unnamed: 16</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Gender</td>
+      <td>Female</td>
+      <td>NaN</td>
+      <td>Male</td>
+      <td>NaN</td>
+      <td>Female</td>
+      <td>NaN</td>
+      <td>Male</td>
+      <td>NaN</td>
+      <td>Female</td>
+      <td>NaN</td>
+      <td>Male</td>
+      <td>NaN</td>
+      <td>Female</td>
+      <td>NaN</td>
+      <td>Male</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>count</td>
+      <td>mean</td>
+      <td>count</td>
+      <td>mean</td>
+      <td>count</td>
+      <td>mean</td>
+      <td>count</td>
+      <td>mean</td>
+      <td>count</td>
+      <td>mean</td>
+      <td>count</td>
+      <td>mean</td>
+      <td>count</td>
+      <td>mean</td>
+      <td>count</td>
+      <td>mean</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Age Cohort</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0 - 5</td>
+      <td>6</td>
+      <td>1544.33</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18</td>
+      <td>1431.33</td>
+      <td>26</td>
+      <td>1366.81</td>
+      <td>11</td>
+      <td>1316.82</td>
+      <td>9</td>
+      <td>1428.11</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>51 +</td>
+      <td>9</td>
+      <td>56577.7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12</td>
+      <td>53019</td>
+      <td>37</td>
+      <td>53449.5</td>
+      <td>29</td>
+      <td>51676.4</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>13-17</td>
+      <td>10</td>
+      <td>3385.7</td>
+      <td>10</td>
+      <td>3632.5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8</td>
+      <td>4367.25</td>
+      <td>50</td>
+      <td>4043.72</td>
+      <td>53</td>
+      <td>3871.85</td>
+      <td>37</td>
+      <td>3818.81</td>
+      <td>30</td>
+      <td>4009.87</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>18-21</td>
+      <td>18</td>
+      <td>10083.3</td>
+      <td>23</td>
+      <td>9218.52</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>7</td>
+      <td>9119.43</td>
+      <td>41</td>
+      <td>10199.4</td>
+      <td>37</td>
+      <td>9694.41</td>
+      <td>36</td>
+      <td>10452.9</td>
+      <td>33</td>
+      <td>9784.09</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>22-50</td>
+      <td>12</td>
+      <td>39470.9</td>
+      <td>17</td>
+      <td>39657.9</td>
+      <td>8</td>
+      <td>41284.1</td>
+      <td>9</td>
+      <td>39941</td>
+      <td>24</td>
+      <td>41005.5</td>
+      <td>19</td>
+      <td>40821.3</td>
+      <td>60</td>
+      <td>42113.8</td>
+      <td>73</td>
+      <td>38604.5</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>6-12</td>
+      <td>6</td>
+      <td>2165.33</td>
+      <td>12</td>
+      <td>2164.17</td>
+      <td>7</td>
+      <td>2566.57</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>54</td>
+      <td>2443.78</td>
+      <td>37</td>
+      <td>2120.14</td>
+      <td>24</td>
+      <td>2112.75</td>
+      <td>22</td>
+      <td>1986.27</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -389,99 +566,211 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">aeb280e6386d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)))</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span>                 <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span>                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">296</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span> 
-<span class="g g-Whitespace">    </span><span class="mi">298</span>         <span class="k">return</span> <span class="n">wrapper</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/excel/_base.py</span> in <span class="ni">read_excel</span><span class="nt">(io, sheet_name, header, names, index_col, usecols, squeeze, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, thousands, comment, skipfooter, convert_float, mangle_dupe_cols)</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span> 
-<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">ExcelFile</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">304</span>         <span class="n">io</span> <span class="o">=</span> <span class="n">ExcelFile</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">305</span>     <span class="k">elif</span> <span class="n">engine</span> <span class="ow">and</span> <span class="n">engine</span> <span class="o">!=</span> <span class="n">io</span><span class="o">.</span><span class="n">engine</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">306</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/excel/_base.py</span> in <span class="ni">__init__</span><span class="nt">(self, path_or_buffer, engine)</span>
-<span class="g g-Whitespace">    </span><span class="mi">865</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_io</span> <span class="o">=</span> <span class="n">stringify_path</span><span class="p">(</span><span class="n">path_or_buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">866</span> 
-<span class="ne">--&gt; </span><span class="mi">867</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engines</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">_io</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">868</span> 
-<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="k">def</span> <span class="nf">__fspath__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/excel/_xlrd.py</span> in <span class="ni">__init__</span><span class="nt">(self, filepath_or_buffer)</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span><span class="s2">         err_msg = &quot;Install xlrd &gt;= 1.0.0 for Excel support&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">21</span><span class="s2">         import_optional_dependency(&quot;xlrd&quot;, extra=err_msg)</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span><span class="s2">         super().__init__(filepath_or_buffer)</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span><span class="s2"> </span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/compat/_optional.py</span> in <span class="ni">import_optional_dependency</span><span class="nt">(name, extra, raise_on_missing, on_version)</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span><span class="s2">     except ImportError:</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span><span class="s2">         if raise_on_missing:</span>
-<span class="ne">--&gt; </span><span class="mi">110</span><span class="s2">             raise ImportError(msg) from None</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span><span class="s2">         else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span><span class="s2">             return None</span>
-
-<span class="ne">ImportError</span>: Missing optional dependency &#39;xlrd&#39;. Install xlrd &gt;= 1.0.0 for Excel support Use pip or conda to install xlrd.
-</pre></div>
-</div>
-</div>
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Ethnicity</th>
+      <th colspan="4" halign="left">Asian</th>
+      <th colspan="4" halign="left">Black</th>
+      <th colspan="4" halign="left">Hispanic</th>
+      <th colspan="4" halign="left">White not Hispanic</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Gender</th>
+      <th colspan="2" halign="left">Female</th>
+      <th colspan="2" halign="left">Male</th>
+      <th colspan="2" halign="left">Female</th>
+      <th colspan="2" halign="left">Male</th>
+      <th colspan="2" halign="left">Female</th>
+      <th colspan="2" halign="left">Male</th>
+      <th colspan="2" halign="left">Female</th>
+      <th colspan="2" halign="left">Male</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Unnamed: 0_level_2</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Age Cohort</th>
+      <th>Unnamed: 1_level_3</th>
+      <th>Unnamed: 2_level_3</th>
+      <th>Unnamed: 3_level_3</th>
+      <th>Unnamed: 4_level_3</th>
+      <th>Unnamed: 5_level_3</th>
+      <th>Unnamed: 6_level_3</th>
+      <th>Unnamed: 7_level_3</th>
+      <th>Unnamed: 8_level_3</th>
+      <th>Unnamed: 9_level_3</th>
+      <th>Unnamed: 10_level_3</th>
+      <th>Unnamed: 11_level_3</th>
+      <th>Unnamed: 12_level_3</th>
+      <th>Unnamed: 13_level_3</th>
+      <th>Unnamed: 14_level_3</th>
+      <th>Unnamed: 15_level_3</th>
+      <th>Unnamed: 16_level_3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0 - 5</td>
+      <td>6</td>
+      <td>1544.333333</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.0</td>
+      <td>1431.333333</td>
+      <td>26</td>
+      <td>1366.807692</td>
+      <td>11</td>
+      <td>1316.818182</td>
+      <td>9</td>
+      <td>1428.111111</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>51 +</td>
+      <td>9</td>
+      <td>56577.666667</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12</td>
+      <td>53019.000000</td>
+      <td>37</td>
+      <td>53449.486486</td>
+      <td>29</td>
+      <td>51676.448276</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>13-17</td>
+      <td>10</td>
+      <td>3385.700000</td>
+      <td>10.0</td>
+      <td>3632.500000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8.0</td>
+      <td>4367.250000</td>
+      <td>50.0</td>
+      <td>4043.720000</td>
+      <td>53</td>
+      <td>3871.849057</td>
+      <td>37</td>
+      <td>3818.810811</td>
+      <td>30</td>
+      <td>4009.866667</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>18-21</td>
+      <td>18</td>
+      <td>10083.277778</td>
+      <td>23.0</td>
+      <td>9218.521739</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>7.0</td>
+      <td>9119.428571</td>
+      <td>41.0</td>
+      <td>10199.390244</td>
+      <td>37</td>
+      <td>9694.405405</td>
+      <td>36</td>
+      <td>10452.944444</td>
+      <td>33</td>
+      <td>9784.090909</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>22-50</td>
+      <td>12</td>
+      <td>39470.916667</td>
+      <td>17.0</td>
+      <td>39657.882353</td>
+      <td>8.0</td>
+      <td>41284.125000</td>
+      <td>9.0</td>
+      <td>39941.000000</td>
+      <td>24.0</td>
+      <td>41005.541667</td>
+      <td>19</td>
+      <td>40821.263158</td>
+      <td>60</td>
+      <td>42113.816667</td>
+      <td>73</td>
+      <td>38604.452055</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6-12</td>
+      <td>6</td>
+      <td>2165.333333</td>
+      <td>12.0</td>
+      <td>2164.166667</td>
+      <td>7.0</td>
+      <td>2566.571429</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>54.0</td>
+      <td>2443.777778</td>
+      <td>37</td>
+      <td>2120.135135</td>
+      <td>24</td>
+      <td>2112.750000</td>
+      <td>22</td>
+      <td>1986.272727</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">627</span><span class="n">b4cbdff1b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ca_dds_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)))</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span>                 <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span>                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">296</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span> 
-<span class="g g-Whitespace">    </span><span class="mi">298</span>         <span class="k">return</span> <span class="n">wrapper</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/excel/_base.py</span> in <span class="ni">read_excel</span><span class="nt">(io, sheet_name, header, names, index_col, usecols, squeeze, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, thousands, comment, skipfooter, convert_float, mangle_dupe_cols)</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span> 
-<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">ExcelFile</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">304</span>         <span class="n">io</span> <span class="o">=</span> <span class="n">ExcelFile</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">305</span>     <span class="k">elif</span> <span class="n">engine</span> <span class="ow">and</span> <span class="n">engine</span> <span class="o">!=</span> <span class="n">io</span><span class="o">.</span><span class="n">engine</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">306</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/excel/_base.py</span> in <span class="ni">__init__</span><span class="nt">(self, path_or_buffer, engine)</span>
-<span class="g g-Whitespace">    </span><span class="mi">865</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_io</span> <span class="o">=</span> <span class="n">stringify_path</span><span class="p">(</span><span class="n">path_or_buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">866</span> 
-<span class="ne">--&gt; </span><span class="mi">867</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engines</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">_io</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">868</span> 
-<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="k">def</span> <span class="nf">__fspath__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/excel/_xlrd.py</span> in <span class="ni">__init__</span><span class="nt">(self, filepath_or_buffer)</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span><span class="s2">         err_msg = &quot;Install xlrd &gt;= 1.0.0 for Excel support&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">21</span><span class="s2">         import_optional_dependency(&quot;xlrd&quot;, extra=err_msg)</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span><span class="s2">         super().__init__(filepath_or_buffer)</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span><span class="s2"> </span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/compat/_optional.py</span> in <span class="ni">import_optional_dependency</span><span class="nt">(name, extra, raise_on_missing, on_version)</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span><span class="s2">     except ImportError:</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span><span class="s2">         if raise_on_missing:</span>
-<span class="ne">--&gt; </span><span class="mi">110</span><span class="s2">             raise ImportError(msg) from None</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span><span class="s2">         else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span><span class="s2">             return None</span>
-
-<span class="ne">ImportError</span>: Missing optional dependency &#39;xlrd&#39;. Install xlrd &gt;= 1.0.0 for Excel support Use pip or conda to install xlrd.
 </pre></div>
 </div>
 </div>
@@ -493,15 +782,187 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">8</span><span class="n">d811b295c4b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ca_dds_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;ca_dds_df&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Ethnicity</th>
+      <th colspan="4" halign="left">Asian</th>
+      <th colspan="4" halign="left">Black</th>
+      <th colspan="4" halign="left">Hispanic</th>
+      <th colspan="4" halign="left">White not Hispanic</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Gender</th>
+      <th colspan="2" halign="left">Female</th>
+      <th colspan="2" halign="left">Male</th>
+      <th colspan="2" halign="left">Female</th>
+      <th colspan="2" halign="left">Male</th>
+      <th colspan="2" halign="left">Female</th>
+      <th colspan="2" halign="left">Male</th>
+      <th colspan="2" halign="left">Female</th>
+      <th colspan="2" halign="left">Male</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Unnamed: 0_level_2</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Age Cohort</th>
+      <th>Unnamed: 1_level_3</th>
+      <th>Unnamed: 2_level_3</th>
+      <th>Unnamed: 3_level_3</th>
+      <th>Unnamed: 4_level_3</th>
+      <th>Unnamed: 5_level_3</th>
+      <th>Unnamed: 6_level_3</th>
+      <th>Unnamed: 7_level_3</th>
+      <th>Unnamed: 8_level_3</th>
+      <th>Unnamed: 9_level_3</th>
+      <th>Unnamed: 10_level_3</th>
+      <th>Unnamed: 11_level_3</th>
+      <th>Unnamed: 12_level_3</th>
+      <th>Unnamed: 13_level_3</th>
+      <th>Unnamed: 14_level_3</th>
+      <th>Unnamed: 15_level_3</th>
+      <th>Unnamed: 16_level_3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0 - 5</td>
+      <td>6</td>
+      <td>1544.333333</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.0</td>
+      <td>1431.333333</td>
+      <td>26</td>
+      <td>1366.807692</td>
+      <td>11</td>
+      <td>1316.818182</td>
+      <td>9</td>
+      <td>1428.111111</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>51 +</td>
+      <td>9</td>
+      <td>56577.666667</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12</td>
+      <td>53019.000000</td>
+      <td>37</td>
+      <td>53449.486486</td>
+      <td>29</td>
+      <td>51676.448276</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>13-17</td>
+      <td>10</td>
+      <td>3385.700000</td>
+      <td>10.0</td>
+      <td>3632.500000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8.0</td>
+      <td>4367.250000</td>
+      <td>50.0</td>
+      <td>4043.720000</td>
+      <td>53</td>
+      <td>3871.849057</td>
+      <td>37</td>
+      <td>3818.810811</td>
+      <td>30</td>
+      <td>4009.866667</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>18-21</td>
+      <td>18</td>
+      <td>10083.277778</td>
+      <td>23.0</td>
+      <td>9218.521739</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>7.0</td>
+      <td>9119.428571</td>
+      <td>41.0</td>
+      <td>10199.390244</td>
+      <td>37</td>
+      <td>9694.405405</td>
+      <td>36</td>
+      <td>10452.944444</td>
+      <td>33</td>
+      <td>9784.090909</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>22-50</td>
+      <td>12</td>
+      <td>39470.916667</td>
+      <td>17.0</td>
+      <td>39657.882353</td>
+      <td>8.0</td>
+      <td>41284.125</td>
+      <td>9.0</td>
+      <td>39941.000000</td>
+      <td>24.0</td>
+      <td>41005.541667</td>
+      <td>19</td>
+      <td>40821.263158</td>
+      <td>60</td>
+      <td>42113.816667</td>
+      <td>73</td>
+      <td>38604.452055</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -510,12 +971,24 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">2</span><span class="n">f51e10b6c51</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ca_dds_df</span><span class="o">.</span><span class="n">columns</span>
-
-<span class="ne">NameError</span>: name &#39;ca_dds_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndex([(         &#39;Ethnicity&#39;, &#39;Gender&#39;, &#39;Unnamed: 0_level_2&#39;, ...),
+            (             &#39;Asian&#39;, &#39;Female&#39;,              &#39;count&#39;, ...),
+            (             &#39;Asian&#39;, &#39;Female&#39;,               &#39;mean&#39;, ...),
+            (             &#39;Asian&#39;,   &#39;Male&#39;,              &#39;count&#39;, ...),
+            (             &#39;Asian&#39;,   &#39;Male&#39;,               &#39;mean&#39;, ...),
+            (             &#39;Black&#39;, &#39;Female&#39;,              &#39;count&#39;, ...),
+            (             &#39;Black&#39;, &#39;Female&#39;,               &#39;mean&#39;, ...),
+            (             &#39;Black&#39;,   &#39;Male&#39;,              &#39;count&#39;, ...),
+            (             &#39;Black&#39;,   &#39;Male&#39;,               &#39;mean&#39;, ...),
+            (          &#39;Hispanic&#39;, &#39;Female&#39;,              &#39;count&#39;, ...),
+            (          &#39;Hispanic&#39;, &#39;Female&#39;,               &#39;mean&#39;, ...),
+            (          &#39;Hispanic&#39;,   &#39;Male&#39;,              &#39;count&#39;, ...),
+            (          &#39;Hispanic&#39;,   &#39;Male&#39;,               &#39;mean&#39;, ...),
+            (&#39;White not Hispanic&#39;, &#39;Female&#39;,              &#39;count&#39;, ...),
+            (&#39;White not Hispanic&#39;, &#39;Female&#39;,               &#39;mean&#39;, ...),
+            (&#39;White not Hispanic&#39;,   &#39;Male&#39;,              &#39;count&#39;, ...),
+            (&#39;White not Hispanic&#39;,   &#39;Male&#39;,               &#39;mean&#39;, ...)],
+           )
 </pre></div>
 </div>
 </div>
