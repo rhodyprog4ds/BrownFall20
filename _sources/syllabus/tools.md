@@ -86,7 +86,7 @@ Recommendation:
 - if you use Windows, install Git with [GitBash](https://gitforwindows.org/) ([video instructions](https://youtu.be/339AEqk9c-8)).
 - if you use MacOS, install Git with the Xcode Command Line Tools. On Mavericks (10.9) or above you can do this by trying to run git from the Terminal the very first time.`git --version`
 
-
+(texteditor)=
 Optional:
 ````{margin}
 ```{note}

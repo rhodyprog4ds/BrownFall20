@@ -1,6 +1,13 @@
 # GitHub FAQ
 
 
+````{dropdown} My portfolio won't compile
+
+If there's an error your notebook it can't complete running. You can allow it to run if the error is on purpose by changing settings as mentioned on the [formatting](portfolio/formatting) page. 
+
+````
+
+
 
 ````{dropdown} Help! I accidentally merged the Feedback Pull Request before my assignment was graded
 

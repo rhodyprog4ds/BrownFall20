@@ -251,6 +251,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-annotations-with-formatting-or-margin-notes">
+   Adding annotations with formatting or margin notes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#configurations">
    Configurations
   </a>
@@ -320,6 +325,33 @@ In the step named convert that looks like:</p>
 </pre></div>
 </div>
 <p>This means if you accept suggestion commits from the the <code class="docutils literal notranslate"><span class="pre">.md</span></code> file, the action will upate your <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file. If you update your <code class="docutils literal notranslate"><span class="pre">.ipynb</span> <span class="pre">file</span></code> the action will update the .md file.</p>
+</div>
+<div class="section" id="adding-annotations-with-formatting-or-margin-notes">
+<h2>Adding annotations with formatting or margin notes<a class="headerlink" href="#adding-annotations-with-formatting-or-margin-notes" title="Permalink to this headline">¶</a></h2>
+<p>You can either install <a class="reference external" href="https://jupytext.readthedocs.io/en/latest/install.html">jupytext</a> and convert locally or upload /push a notebook to your repository and let GitHub convert.<br />
+Then edit the .md file with a <a class="reference internal" href="../syllabus/tools.html#texteditor"><span class="std std-ref">text editor</span></a> of your choice. You can run by uploading if you don’t have jupytext installed, or locally if you have installed jupytext or jupyterbook.</p>
+<p>In your .md file use backticks to mark <a class="reference external" href="https://jupyterbook.org/content/content-blocks.html">special content blocks</a></p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{note}
+Here is a note!
+```
+</pre></div>
+</div>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{warning}
+Here is a warning!
+```
+</pre></div>
+</div>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{tip}
+Here is a tip!
+```
+</pre></div>
+</div>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{margin}
+Here is a margin note!
+```
+</pre></div>
+</div>
+<p>For a complete list of options, see <a class="reference external" href="https://sphinx-book-theme.readthedocs.io/en/latest/reference/demo.html#admonitions">the <code class="docutils literal notranslate"><span class="pre">sphinx-book-theme</span></code> documentation</a>.</p>
 </div>
 <div class="section" id="configurations">
 <h2>Configurations<a class="headerlink" href="#configurations" title="Permalink to this headline">¶</a></h2>
