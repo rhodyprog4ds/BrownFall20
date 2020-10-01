@@ -8,7 +8,7 @@ This page will cover a few basic tips.
 
 ## Organization
 
-The summary of for the `part` or whole submission, should match the skills to the chapters.  Which prompt you're addressing is not important, the  prompts are a *starting point* not the end goal of your portfolio. 
+The summary of for the `part` or whole submission, should match the skills to the chapters.  Which prompt you're addressing is not important, the  prompts are a *starting point* not the end goal of your portfolio.
 
 
 ## Structure of plain markdown
@@ -57,6 +57,17 @@ This means if you accept suggestion commits from the the `.md` file, the action 
 ## Configurations
 
 Things like the menus and links at the top are controlled as [settings](https://jupyterbook.org/customize/config.html), in `_config.yml`
+
+(keeperrors)=
+### Show errors and continue
+
+To show errors and continue running the rest, add the following:
+
+```
+# Execution settings
+execute:
+  allow_errors              : true
+```
 
 ## Links
 

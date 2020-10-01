@@ -254,6 +254,13 @@
   <a class="reference internal nav-link" href="#configurations">
    Configurations
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#show-errors-and-continue">
+     Show errors and continue
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#links">
@@ -317,6 +324,15 @@ In the step named convert that looks like:</p>
 <div class="section" id="configurations">
 <h2>Configurations<a class="headerlink" href="#configurations" title="Permalink to this headline">¶</a></h2>
 <p>Things like the menus and links at the top are controlled as <a class="reference external" href="https://jupyterbook.org/customize/config.html">settings</a>, in <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code></p>
+<div class="section" id="show-errors-and-continue">
+<span id="keeperrors"></span><h3>Show errors and continue<a class="headerlink" href="#show-errors-and-continue" title="Permalink to this headline">¶</a></h3>
+<p>To show errors and continue running the rest, add the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Execution settings</span>
+<span class="n">execute</span><span class="p">:</span>
+  <span class="n">allow_errors</span>              <span class="p">:</span> <span class="n">true</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="links">
 <h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
