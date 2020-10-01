@@ -310,6 +310,24 @@
    Working with Dummy Variables
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions-after-class">
+   Questions after class
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-does-the-get-dummies-function-do">
+     What does the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       get_dummies
+      </span>
+     </code>
+     function do?
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -327,9 +345,12 @@
 <li><p>Say hello in the zoom chat</p></li>
 <li><p>join Prismia</p></li>
 </ul>
-<!-- annotate: Warmup: type review --> 
+<p>Checking types is an important part of cleaning data, we need to figure out what is wrong with data before we can fix it.</p>
+<p>Remember that data cleaning is a lot of exploration and iteration in the data.
+Let’s review a few data types we’ve seen.</p>
 <div class="section" id="warmup-type-review">
 <h2>Warmup: type review<a class="headerlink" href="#warmup-type-review" title="Permalink to this headline">¶</a></h2>
+<p>Lists are enclosed by square brackets(<code class="docutils literal notranslate"><span class="pre">[]</span></code>), they’re ordered and iterable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">([</span><span class="n">char</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="s1">&#39;abcde&#39;</span><span class="p">])</span>
@@ -342,6 +363,7 @@
 </div>
 </div>
 </div>
+<p>Dictionaries are comprised of <code class="docutils literal notranslate"><span class="pre">key:value</span></code> pairs and enclosed in curly brackets (<code class="docutils literal notranslate"><span class="pre">{}</span></code>) they’re iterable and indexable by the keys.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">({</span><span class="n">char</span><span class="p">:</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">char</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;abcde&#39;</span><span class="p">)})</span>
@@ -354,7 +376,8 @@
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<p>This is a tuple, this data type is used to tie together items, but not usually to iterate over.  It’s used for pairs of things often or groups to iterate over multiple things at once.  For example with the zip function.</p>
+<!-- annotate: links to zip function and an example --><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">((</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">))</span>
 </pre></div>
@@ -366,6 +389,7 @@
 </div>
 </div>
 </div>
+<p>Splitting a string makes a list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="nb">type</span><span class="p">(</span><span class="s1">&#39;a b c d e&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">))</span>
@@ -378,10 +402,10 @@
 </div>
 </div>
 </div>
-<!-- annotate: Loading Data --> 
 </div>
 <div class="section" id="loading-data">
 <h2>Loading Data<a class="headerlink" href="#loading-data" title="Permalink to this headline">¶</a></h2>
+<p>Loading the data and packages as normal.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load http://drsmb.co/310</span>
@@ -399,10 +423,11 @@
 </div>
 </div>
 </div>
-<!-- annotate: Exploring Types --> 
+<!-- annotate: Exploring Types -->
 </div>
 <div class="section" id="exploring-types">
 <h2>Exploring Types<a class="headerlink" href="#exploring-types" title="Permalink to this headline">¶</a></h2>
+<p>On Friday we figured out that the following function would clean one cell of the <code class="docutils literal notranslate"><span class="pre">safi_df['items_owned']</span></code> column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">separate_items</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
@@ -414,6 +439,7 @@
 </div>
 </div>
 </div>
+<p>But when we applied it, we got an error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">separate_items</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -464,6 +490,7 @@
 </div>
 </div>
 </div>
+<p>Let’s figure out why. First we’ll look at the data again to remember what we expected.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">]</span>
@@ -487,6 +514,7 @@ Name: items_owned, Length: 131, dtype: object
 </div>
 </div>
 </div>
+<p>The error says that some item is a float, let’s look at the value of only the ones that are <code class="docutils literal notranslate"><span class="pre">float</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">item_list</span> <span class="k">for</span> <span class="n">item_list</span> <span class="ow">in</span>  <span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">item_list</span><span class="p">)</span><span class="o">==</span><span class="nb">float</span><span class="p">]</span>
@@ -499,6 +527,7 @@ Name: items_owned, Length: 131, dtype: object
 </div>
 </div>
 </div>
+<p>Now we can modify the cleaning function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">separate_items</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
@@ -506,16 +535,13 @@ Name: items_owned, Length: 131, dtype: object
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">])</span><span class="o">==</span><span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span>  <span class="n">row</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)]</span>
-    <span class="k">else</span><span class="p">:</span> 
+    <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">[]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<!-- annotate: Dummies From Lists --> 
-</div>
-<div class="section" id="dummies-from-lists">
-<h2>Dummies From Lists<a class="headerlink" href="#dummies-from-lists" title="Permalink to this headline">¶</a></h2>
+<p>and apply it again, to see if it works now.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">separate_items</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -539,6 +565,10 @@ Length: 131, dtype: object
 </div>
 </div>
 </div>
+<!-- annotate: Dummies From Lists -->
+</div>
+<div class="section" id="dummies-from-lists">
+<h2>Dummies From Lists<a class="headerlink" href="#dummies-from-lists" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">safi_df</span><span class="p">[</span><span class="s1">&#39;items_owned&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">safi_df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">separate_items</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1160,7 +1190,7 @@ Name: items_owned, dtype: object
 </div>
 </div>
 </div>
-<!-- annotate: Pandas concat --> 
+<!-- annotate: Pandas concat -->
 </div>
 <div class="section" id="pandas-concat">
 <h2>Pandas concat<a class="headerlink" href="#pandas-concat" title="Permalink to this headline">¶</a></h2>
@@ -1357,7 +1387,7 @@ Name: items_owned, dtype: object
 <p>5 rows × 82 columns</p>
 </div></div></div>
 </div>
-<!-- annotate: Working with Dummy Variables --> 
+<!-- annotate: Working with Dummy Variables -->
 </div>
 <div class="section" id="working-with-dummy-variables">
 <h2>Working with Dummy Variables<a class="headerlink" href="#working-with-dummy-variables" title="Permalink to this headline">¶</a></h2>
@@ -1442,6 +1472,393 @@ Name: bicycle, Length: 131, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(252, 82)
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="section" id="questions-after-class">
+<h2>Questions after class<a class="headerlink" href="#questions-after-class" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-does-the-get-dummies-function-do">
+<h3>What does the <code class="docutils literal notranslate"><span class="pre">get_dummies</span></code> function do?<a class="headerlink" href="#what-does-the-get-dummies-function-do" title="Permalink to this headline">¶</a></h3>
+<p>To illustrate, let’s first make a small dataframe to look at it</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ex_data</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">],[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">],[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">],[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">],[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">]]</span>
+<span class="n">ex_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span><span class="n">ex_data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;char&#39;</span><span class="p">,</span><span class="s1">&#39;num&#39;</span><span class="p">,</span><span class="s1">&#39;symbol&#39;</span><span class="p">])</span>
+<span class="n">ex_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>char</th>
+      <th>num</th>
+      <th>symbol</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>a</td>
+      <td>2</td>
+      <td>x</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>b</td>
+      <td>5</td>
+      <td>o</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>a</td>
+      <td>4</td>
+      <td>o</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>c</td>
+      <td>2</td>
+      <td>x</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>b</td>
+      <td>3</td>
+      <td>x</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>When we apply <code class="docutils literal notranslate"><span class="pre">get_dummies</span></code> to one column (a <code class="docutils literal notranslate"><span class="pre">pd.Series</span></code>) it makes a column for each value of that column.
+First we look at that column to focus on what it looks like. Note that there are 3 different values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ex_df</span><span class="p">[</span><span class="s1">&#39;char&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    a
+1    b
+2    a
+3    c
+4    b
+Name: char, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now conver it to dummy variables, now we have 3 columns. For each row there is a 1 in the column corresponding to the value and zeros elsewhere.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">ex_df</span><span class="p">[</span><span class="s1">&#39;char&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can confirm by summing across the rows, it’s all ones.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">ex_df</span><span class="p">[</span><span class="s1">&#39;char&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1
+1    1
+2    1
+3    1
+4    1
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we sum down the columns, we get the count of each value</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">ex_df</span><span class="p">[</span><span class="s1">&#39;char&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a    2
+b    2
+c    1
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>it’s the same thing as <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ex_df</span><span class="p">[</span><span class="s1">&#39;char&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a    2
+b    2
+c    1
+Name: char, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also apply it one column, but append it to the whole dataset this way.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">ex_df</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;char&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>num</th>
+      <th>symbol</th>
+      <th>char_a</th>
+      <th>char_b</th>
+      <th>char_c</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>x</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>o</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>o</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>x</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3</td>
+      <td>x</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>This way, it prepends the column values with the original column name. This way concatenates on it’s own and we don’t have to do it separately.</p>
+<p>When we apply <code class="docutils literal notranslate"><span class="pre">get_dummies</span></code> on a whole DataFrame, without indicating a column it converts  all of the columns of pandas type <code class="docutils literal notranslate"><span class="pre">object</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ex_df</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>char      object
+num        int64
+symbol    object
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">ex_df</span><span class="p">,)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>num</th>
+      <th>char_a</th>
+      <th>char_b</th>
+      <th>char_c</th>
+      <th>symbol_o</th>
+      <th>symbol_x</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 </div>
