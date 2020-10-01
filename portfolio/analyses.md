@@ -13,7 +13,7 @@
 Look at all of the different ways pandas can load data. Consider some of the questions below and add a notebook that's styled like a report that answers a few of them with text and code.
 - Which seem like  good idea? are any dangerous?
 - Which seem more or less common?
-- Can you compare them on speed? Is it ever worth trasforming a dataset before loading?
+- Can you compare them on speed? Is it ever worth transforming a dataset before loading?
 - How much can you repair a dataset using the parameters of the load functions?
 
 ## CheatSheet
@@ -22,8 +22,22 @@ Look at all of the different ways pandas can load data. Consider some of the que
 :header-rows: 1
 
 * - Skills:
-    access, summarize, visualize
+    access, summarize, visualize, prepare
 
 ```
 
 Make a cheatsheet with examples of the several different parameter settings for common operations for one topic.
+
+This [cheatsheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf) is an example, it's too broad, but it's the same idea.  Yours should
+
+## Deeper Analysis
+
+```{list-table} Eligible Skills
+:header-rows: 1
+
+* - Skills:
+    summarize, visualize, prepare
+
+```
+
+For one of the assignments, if there was something you were curious about. Try it out and investigate how to answer it.  Vary parameters and document your investigation.  

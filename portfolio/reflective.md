@@ -56,7 +56,7 @@ Approved Podcasts:
 
 ```
 
-Annotate class notes by submitting a PR to this repository. This applies after Dr. Brown's notes are uploaded, but not annotated. Use previously annotated notes as an example of what content should be added. 
+Annotate a whole session of class notes by submitting a PR to this repository. This applies after Dr. Brown's notes are uploaded, but not annotated. Use previously annotated notes as an example of what content should be added. 
 In your portfolio, include a 1 paragraph reflection on what you learned by contributing the annotation and a link to your pull request.
 
 
