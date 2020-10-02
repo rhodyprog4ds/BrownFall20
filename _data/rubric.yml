@@ -45,7 +45,7 @@
   mastery: generate complex plots with pandas and plotting libraries and customize with matplotlib
   portfolios: [1,2]
   clo: [exploratory]
-  assignments: [3,6,7,8,9,10,11,12,13]
+  assignments: [3,4,6,7,8,9,10,11,12,13]
 - skill: prepare data for analysis
   keyword: prepare
   aware: identify if data is or is not ready for analysis, potential problems with data

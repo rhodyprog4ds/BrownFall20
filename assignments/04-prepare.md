@@ -69,7 +69,7 @@ You can work with this assignment in 2 ways:
   git push
   ```
 
-1. if you will keep working after pushing, first pull down the .md conversion that was added by github actions.  If you don't you'll have to merge, it should be fine, but ask if you're not sure.
+1. if you will keep working after pushing, first pull down the .md conversion that was added by GitHub actions.  If you don't you'll have to merge, it should be fine, but ask if you're not sure.
 
   ```
   git pull
@@ -93,7 +93,8 @@ You can work with this assignment in 2 ways:
   - a `header` parameter can take a list as its value
   - two parameters that allow you to skip rows when you read in the data
 - `list(range(7))` check out what this line does
--
+- Pandas [drop](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html) can work a lot of different ways
+
 
 The goal of the plot for the CS degrees dataset is:
 ![plots of degrees by level from 1971-11 by gender](../img/cs_degree_target.png)
