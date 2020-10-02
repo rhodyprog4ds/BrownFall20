@@ -11,3 +11,4 @@ Class notes will get posted here day by day
 - [2020-09-25](2020-09-25): Viz & Cleaning
 - [2020-09-28](2020-09-28): Preparing data for analysis
 - [2020-09-30](2020-09-30): Reading complex data and Ray Summit
+- [2020-10-02](2020-10-02): Cleaning Data

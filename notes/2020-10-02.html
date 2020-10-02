@@ -1,0 +1,2044 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class 11: Cleaning Data &#8212; Programming for Data Science at URI Fall 2020</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignments" href="../assignments/index.html" />
+    <link rel="prev" title="Class 10: Cleaning review and Ray Summit Keynotes" href="2020-09-30.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Programming for Data Science at URI Fall 2020</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to Programming for Data Science
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus/index.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="index.html">
+   Class Notes
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-11.html">
+     Class 2: intro to notebooks and python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-14.html">
+     Class 3: Welcome to Week 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-16.html">
+     Class 4: Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-18.html">
+     Class 5: Accessing Data, continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-21.html">
+     Class 6: Exploratory Data Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-23.html">
+     Class 7: Visualization for EDA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-25.html">
+     Class 8: Visualization and Starting to Clean Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-28.html">
+     Class 9: Preparing Data For Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-30.html">
+     Class 10: Cleaning review and Ray Summit Keynotes
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Class 11: Cleaning Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/index.html">
+   Assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portfolio/index.html">
+   Portfolio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../faq/index.html">
+   FAQ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../resources/index.html">
+   Resources
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/notes/2020-10-02.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notes/2020-10-02.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        <a class="issues-button"
+            href="https://github.com/rhodyprog4ds/BrownFall20//issues/new?title=Issue%20on%20page%20%2Fnotes/2020-10-02.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/rhodyprog4ds/BrownFall20/edit/main/notes/2020-10-02.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rhodyprog4ds/BrownFall20/main?urlpath=tree/notes/2020-10-02.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="class-11-cleaning-data">
+<h1>Class 11: Cleaning Data<a class="headerlink" href="#class-11-cleaning-data" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load http://drsmb.co/310</span>
+<span class="n">data_url</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/rhodyprog4ds/inclass-data/raw/main/ca_dds_summary.xlsx&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
+<span class="n">ca_dds_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Ethnicity</th>
+      <th colspan="4" halign="left">Asian</th>
+      <th colspan="4" halign="left">Black</th>
+      <th colspan="4" halign="left">Hispanic</th>
+      <th colspan="4" halign="left">White not Hispanic</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Gender</th>
+      <th colspan="2" halign="left">Female</th>
+      <th colspan="2" halign="left">Male</th>
+      <th colspan="2" halign="left">Female</th>
+      <th colspan="2" halign="left">Male</th>
+      <th colspan="2" halign="left">Female</th>
+      <th colspan="2" halign="left">Male</th>
+      <th colspan="2" halign="left">Female</th>
+      <th colspan="2" halign="left">Male</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Unnamed: 0_level_2</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Age Cohort</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0 - 5</td>
+      <td>6.0</td>
+      <td>1544.333333</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.0</td>
+      <td>1431.333333</td>
+      <td>26.0</td>
+      <td>1366.807692</td>
+      <td>11.0</td>
+      <td>1316.818182</td>
+      <td>9.0</td>
+      <td>1428.111111</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>51 +</td>
+      <td>9.0</td>
+      <td>56577.666667</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12.0</td>
+      <td>53019.000000</td>
+      <td>37.0</td>
+      <td>53449.486486</td>
+      <td>29.0</td>
+      <td>51676.448276</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>13-17</td>
+      <td>10.0</td>
+      <td>3385.700000</td>
+      <td>10.0</td>
+      <td>3632.500000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8.0</td>
+      <td>4367.250000</td>
+      <td>50.0</td>
+      <td>4043.720000</td>
+      <td>53.0</td>
+      <td>3871.849057</td>
+      <td>37.0</td>
+      <td>3818.810811</td>
+      <td>30.0</td>
+      <td>4009.866667</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>18-21</td>
+      <td>18.0</td>
+      <td>10083.277778</td>
+      <td>23.0</td>
+      <td>9218.521739</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>7.0</td>
+      <td>9119.428571</td>
+      <td>41.0</td>
+      <td>10199.390244</td>
+      <td>37.0</td>
+      <td>9694.405405</td>
+      <td>36.0</td>
+      <td>10452.944444</td>
+      <td>33.0</td>
+      <td>9784.090909</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>22-50</td>
+      <td>12.0</td>
+      <td>39470.916667</td>
+      <td>17.0</td>
+      <td>39657.882353</td>
+      <td>8.0</td>
+      <td>41284.125000</td>
+      <td>9.0</td>
+      <td>39941.000000</td>
+      <td>24.0</td>
+      <td>41005.541667</td>
+      <td>19.0</td>
+      <td>40821.263158</td>
+      <td>60.0</td>
+      <td>42113.816667</td>
+      <td>73.0</td>
+      <td>38604.452055</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6-12</td>
+      <td>6.0</td>
+      <td>2165.333333</td>
+      <td>12.0</td>
+      <td>2164.166667</td>
+      <td>7.0</td>
+      <td>2566.571429</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>54.0</td>
+      <td>2443.777778</td>
+      <td>37.0</td>
+      <td>2120.135135</td>
+      <td>24.0</td>
+      <td>2112.750000</td>
+      <td>22.0</td>
+      <td>1986.272727</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ca_dds_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           Ethnicity  Asian                                    Black  \
+              Gender Female                Male               Female   
+  Unnamed: 0_level_2  count          mean count          mean  count   
+0         Age Cohort    NaN           NaN   NaN           NaN    NaN   
+1              0 - 5    6.0   1544.333333   NaN           NaN    NaN   
+2               51 +    9.0  56577.666667   NaN           NaN    NaN   
+3              13-17   10.0   3385.700000  10.0   3632.500000    NaN   
+4              18-21   18.0  10083.277778  23.0   9218.521739    NaN   
+5              22-50   12.0  39470.916667  17.0  39657.882353    8.0   
+6               6-12    6.0   2165.333333  12.0   2164.166667    7.0   
+
+                                    Hispanic                      \
+                 Male                 Female                Male   
+           mean count          mean    count          mean count   
+0           NaN   NaN           NaN      NaN           NaN   NaN   
+1           NaN   NaN           NaN     18.0   1431.333333  26.0   
+2           NaN   NaN           NaN      NaN           NaN  12.0   
+3           NaN   8.0   4367.250000     50.0   4043.720000  53.0   
+4           NaN   7.0   9119.428571     41.0  10199.390244  37.0   
+5  41284.125000   9.0  39941.000000     24.0  41005.541667  19.0   
+6   2566.571429   NaN           NaN     54.0   2443.777778  37.0   
+
+                White not Hispanic                                    
+                            Female                Male                
+           mean              count          mean count          mean  
+0           NaN                NaN           NaN   NaN           NaN  
+1   1366.807692               11.0   1316.818182   9.0   1428.111111  
+2  53019.000000               37.0  53449.486486  29.0  51676.448276  
+3   3871.849057               37.0   3818.810811  30.0   4009.866667  
+4   9694.405405               36.0  10452.944444  33.0   9784.090909  
+5  40821.263158               60.0  42113.816667  73.0  38604.452055  
+6   2120.135135               24.0   2112.750000  22.0   1986.272727  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RangeIndex(start=0, stop=7, step=1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Ethnicity&#39;, &#39;Gender&#39;, &#39;Unnamed: 0_level_2&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="4" halign="left">Asian</th>
+      <th colspan="4" halign="left">Black</th>
+      <th colspan="4" halign="left">Hispanic</th>
+      <th colspan="4" halign="left">White not Hispanic</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" halign="left">Female</th>
+      <th colspan="2" halign="left">Male</th>
+      <th colspan="2" halign="left">Female</th>
+      <th colspan="2" halign="left">Male</th>
+      <th colspan="2" halign="left">Female</th>
+      <th colspan="2" halign="left">Male</th>
+      <th colspan="2" halign="left">Female</th>
+      <th colspan="2" halign="left">Male</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>count</th>
+      <th>mean</th>
+    </tr>
+    <tr>
+      <th>(Ethnicity, Gender, Unnamed: 0_level_2)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Age Cohort</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>0 - 5</th>
+      <td>6.0</td>
+      <td>1544.333333</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.0</td>
+      <td>1431.333333</td>
+      <td>26.0</td>
+      <td>1366.807692</td>
+      <td>11.0</td>
+      <td>1316.818182</td>
+      <td>9.0</td>
+      <td>1428.111111</td>
+    </tr>
+    <tr>
+      <th>51 +</th>
+      <td>9.0</td>
+      <td>56577.666667</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12.0</td>
+      <td>53019.000000</td>
+      <td>37.0</td>
+      <td>53449.486486</td>
+      <td>29.0</td>
+      <td>51676.448276</td>
+    </tr>
+    <tr>
+      <th>13-17</th>
+      <td>10.0</td>
+      <td>3385.700000</td>
+      <td>10.0</td>
+      <td>3632.500000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8.0</td>
+      <td>4367.250000</td>
+      <td>50.0</td>
+      <td>4043.720000</td>
+      <td>53.0</td>
+      <td>3871.849057</td>
+      <td>37.0</td>
+      <td>3818.810811</td>
+      <td>30.0</td>
+      <td>4009.866667</td>
+    </tr>
+    <tr>
+      <th>18-21</th>
+      <td>18.0</td>
+      <td>10083.277778</td>
+      <td>23.0</td>
+      <td>9218.521739</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>7.0</td>
+      <td>9119.428571</td>
+      <td>41.0</td>
+      <td>10199.390244</td>
+      <td>37.0</td>
+      <td>9694.405405</td>
+      <td>36.0</td>
+      <td>10452.944444</td>
+      <td>33.0</td>
+      <td>9784.090909</td>
+    </tr>
+    <tr>
+      <th>22-50</th>
+      <td>12.0</td>
+      <td>39470.916667</td>
+      <td>17.0</td>
+      <td>39657.882353</td>
+      <td>8.0</td>
+      <td>41284.125000</td>
+      <td>9.0</td>
+      <td>39941.000000</td>
+      <td>24.0</td>
+      <td>41005.541667</td>
+      <td>19.0</td>
+      <td>40821.263158</td>
+      <td>60.0</td>
+      <td>42113.816667</td>
+      <td>73.0</td>
+      <td>38604.452055</td>
+    </tr>
+    <tr>
+      <th>6-12</th>
+      <td>6.0</td>
+      <td>2165.333333</td>
+      <td>12.0</td>
+      <td>2164.166667</td>
+      <td>7.0</td>
+      <td>2566.571429</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>54.0</td>
+      <td>2443.777778</td>
+      <td>37.0</td>
+      <td>2120.135135</td>
+      <td>24.0</td>
+      <td>2112.750000</td>
+      <td>22.0</td>
+      <td>1986.272727</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39; 0 - 5&#39;, &#39; 51 +&#39;, &#39;13-17&#39;, &#39;18-21&#39;, &#39;22-50&#39;, &#39;6-12&#39;], dtype=&#39;object&#39;, name=(&#39;Ethnicity&#39;, &#39;Gender&#39;, &#39;Unnamed: 0_level_2&#39;))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;Age Cohort&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Age Cohort</th>
+      <th>level_1</th>
+      <th>level_2</th>
+      <th>count</th>
+      <th>mean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0 - 5</td>
+      <td>Asian</td>
+      <td>Female</td>
+      <td>6.0</td>
+      <td>1544.333333</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0 - 5</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0 - 5</td>
+      <td>Black</td>
+      <td>Female</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0 - 5</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0 - 5</td>
+      <td>Hispanic</td>
+      <td>Female</td>
+      <td>18.0</td>
+      <td>1431.333333</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0 - 5</td>
+      <td>Hispanic</td>
+      <td>Male</td>
+      <td>26.0</td>
+      <td>1366.807692</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0 - 5</td>
+      <td>White not Hispanic</td>
+      <td>Female</td>
+      <td>11.0</td>
+      <td>1316.818182</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0 - 5</td>
+      <td>White not Hispanic</td>
+      <td>Male</td>
+      <td>9.0</td>
+      <td>1428.111111</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>51 +</td>
+      <td>Asian</td>
+      <td>Female</td>
+      <td>9.0</td>
+      <td>56577.666667</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>51 +</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>51 +</td>
+      <td>Black</td>
+      <td>Female</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>51 +</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>51 +</td>
+      <td>Hispanic</td>
+      <td>Female</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>51 +</td>
+      <td>Hispanic</td>
+      <td>Male</td>
+      <td>12.0</td>
+      <td>53019.000000</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>51 +</td>
+      <td>White not Hispanic</td>
+      <td>Female</td>
+      <td>37.0</td>
+      <td>53449.486486</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>51 +</td>
+      <td>White not Hispanic</td>
+      <td>Male</td>
+      <td>29.0</td>
+      <td>51676.448276</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>13-17</td>
+      <td>Asian</td>
+      <td>Female</td>
+      <td>10.0</td>
+      <td>3385.700000</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>13-17</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>10.0</td>
+      <td>3632.500000</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>13-17</td>
+      <td>Black</td>
+      <td>Female</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>13-17</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>8.0</td>
+      <td>4367.250000</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>13-17</td>
+      <td>Hispanic</td>
+      <td>Female</td>
+      <td>50.0</td>
+      <td>4043.720000</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>13-17</td>
+      <td>Hispanic</td>
+      <td>Male</td>
+      <td>53.0</td>
+      <td>3871.849057</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>13-17</td>
+      <td>White not Hispanic</td>
+      <td>Female</td>
+      <td>37.0</td>
+      <td>3818.810811</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>13-17</td>
+      <td>White not Hispanic</td>
+      <td>Male</td>
+      <td>30.0</td>
+      <td>4009.866667</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>18-21</td>
+      <td>Asian</td>
+      <td>Female</td>
+      <td>18.0</td>
+      <td>10083.277778</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>18-21</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>23.0</td>
+      <td>9218.521739</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>18-21</td>
+      <td>Black</td>
+      <td>Female</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>18-21</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>7.0</td>
+      <td>9119.428571</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>18-21</td>
+      <td>Hispanic</td>
+      <td>Female</td>
+      <td>41.0</td>
+      <td>10199.390244</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>18-21</td>
+      <td>Hispanic</td>
+      <td>Male</td>
+      <td>37.0</td>
+      <td>9694.405405</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>18-21</td>
+      <td>White not Hispanic</td>
+      <td>Female</td>
+      <td>36.0</td>
+      <td>10452.944444</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>18-21</td>
+      <td>White not Hispanic</td>
+      <td>Male</td>
+      <td>33.0</td>
+      <td>9784.090909</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>22-50</td>
+      <td>Asian</td>
+      <td>Female</td>
+      <td>12.0</td>
+      <td>39470.916667</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>22-50</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>17.0</td>
+      <td>39657.882353</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>22-50</td>
+      <td>Black</td>
+      <td>Female</td>
+      <td>8.0</td>
+      <td>41284.125000</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>22-50</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>9.0</td>
+      <td>39941.000000</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>22-50</td>
+      <td>Hispanic</td>
+      <td>Female</td>
+      <td>24.0</td>
+      <td>41005.541667</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>22-50</td>
+      <td>Hispanic</td>
+      <td>Male</td>
+      <td>19.0</td>
+      <td>40821.263158</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>22-50</td>
+      <td>White not Hispanic</td>
+      <td>Female</td>
+      <td>60.0</td>
+      <td>42113.816667</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>22-50</td>
+      <td>White not Hispanic</td>
+      <td>Male</td>
+      <td>73.0</td>
+      <td>38604.452055</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>6-12</td>
+      <td>Asian</td>
+      <td>Female</td>
+      <td>6.0</td>
+      <td>2165.333333</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>6-12</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>12.0</td>
+      <td>2164.166667</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>6-12</td>
+      <td>Black</td>
+      <td>Female</td>
+      <td>7.0</td>
+      <td>2566.571429</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>6-12</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>6-12</td>
+      <td>Hispanic</td>
+      <td>Female</td>
+      <td>54.0</td>
+      <td>2443.777778</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>6-12</td>
+      <td>Hispanic</td>
+      <td>Male</td>
+      <td>37.0</td>
+      <td>2120.135135</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>6-12</td>
+      <td>White not Hispanic</td>
+      <td>Female</td>
+      <td>24.0</td>
+      <td>2112.750000</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>6-12</td>
+      <td>White not Hispanic</td>
+      <td>Male</td>
+      <td>22.0</td>
+      <td>1986.272727</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_clean</span> <span class="o">=</span> <span class="n">ca_dds_df</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">ca_dds_clean</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Age Cohort</th>
+      <th>level_1</th>
+      <th>level_2</th>
+      <th>count</th>
+      <th>mean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0 - 5</td>
+      <td>Asian</td>
+      <td>Female</td>
+      <td>6.0</td>
+      <td>1544.333333</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0 - 5</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0 - 5</td>
+      <td>Black</td>
+      <td>Female</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0 - 5</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0 - 5</td>
+      <td>Hispanic</td>
+      <td>Female</td>
+      <td>18.0</td>
+      <td>1431.333333</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_clean</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Race&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="n">f771ccd0e865</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ca_dds_clean</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Race&#39;</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/core/indexes/base.py</span> in <span class="ni">__setitem__</span><span class="nt">(self, key, value)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4075</span> 
+<span class="g g-Whitespace">   </span><span class="mi">4076</span>     <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">4077</span>         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Index does not support mutable operations&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4078</span> 
+<span class="g g-Whitespace">   </span><span class="mi">4079</span>     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+
+<span class="ne">TypeError</span>: Index does not support mutable operations
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">ca_dds_clean</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.indexes.base.Index
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_clean</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_1&#39;</span><span class="p">:</span><span class="s1">&#39;Race&#39;</span><span class="p">,</span> <span class="s1">&#39;level_2&#39;</span><span class="p">:</span><span class="s1">&#39;Gender&#39;</span><span class="p">},</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ca_dds_clean</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Age Cohort</th>
+      <th>Race</th>
+      <th>Gender</th>
+      <th>count</th>
+      <th>mean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0 - 5</td>
+      <td>Asian</td>
+      <td>Female</td>
+      <td>6.0</td>
+      <td>1544.333333</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0 - 5</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0 - 5</td>
+      <td>Black</td>
+      <td>Female</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0 - 5</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0 - 5</td>
+      <td>Hispanic</td>
+      <td>Female</td>
+      <td>18.0</td>
+      <td>1431.333333</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_clean</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_clean</span><span class="o">.</span><span class="n">Gender</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Female&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_clean</span><span class="o">.</span><span class="n">Gender</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;female&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clean_cols</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="p">:</span><span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;_&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">ca_dds_clean</span><span class="o">.</span><span class="n">columns</span><span class="p">}</span>
+<span class="n">ca_dds_clean</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">clean_cols</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ca_dds_clean</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age_cohort</th>
+      <th>race</th>
+      <th>gender</th>
+      <th>count</th>
+      <th>mean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0 - 5</td>
+      <td>Asian</td>
+      <td>Female</td>
+      <td>6.0</td>
+      <td>1544.333333</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0 - 5</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0 - 5</td>
+      <td>Black</td>
+      <td>Female</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0 - 5</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0 - 5</td>
+      <td>Hispanic</td>
+      <td>Female</td>
+      <td>18.0</td>
+      <td>1431.333333</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_clean</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age_cohort</th>
+      <th>race</th>
+      <th>gender</th>
+      <th>count</th>
+      <th>mean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0 - 5</td>
+      <td>Asian</td>
+      <td>Female</td>
+      <td>6</td>
+      <td>1544.33</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0 - 5</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>*</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0 - 5</td>
+      <td>Black</td>
+      <td>Female</td>
+      <td>*</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0 - 5</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>*</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0 - 5</td>
+      <td>Hispanic</td>
+      <td>Female</td>
+      <td>18</td>
+      <td>1431.33</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0 - 5</td>
+      <td>Hispanic</td>
+      <td>Male</td>
+      <td>26</td>
+      <td>1366.81</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0 - 5</td>
+      <td>White not Hispanic</td>
+      <td>Female</td>
+      <td>11</td>
+      <td>1316.82</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0 - 5</td>
+      <td>White not Hispanic</td>
+      <td>Male</td>
+      <td>9</td>
+      <td>1428.11</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>51 +</td>
+      <td>Asian</td>
+      <td>Female</td>
+      <td>9</td>
+      <td>56577.7</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>51 +</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>*</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>51 +</td>
+      <td>Black</td>
+      <td>Female</td>
+      <td>*</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>51 +</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>*</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>51 +</td>
+      <td>Hispanic</td>
+      <td>Female</td>
+      <td>*</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>51 +</td>
+      <td>Hispanic</td>
+      <td>Male</td>
+      <td>12</td>
+      <td>53019</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>51 +</td>
+      <td>White not Hispanic</td>
+      <td>Female</td>
+      <td>37</td>
+      <td>53449.5</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>51 +</td>
+      <td>White not Hispanic</td>
+      <td>Male</td>
+      <td>29</td>
+      <td>51676.4</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>13-17</td>
+      <td>Asian</td>
+      <td>Female</td>
+      <td>10</td>
+      <td>3385.7</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>13-17</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>10</td>
+      <td>3632.5</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>13-17</td>
+      <td>Black</td>
+      <td>Female</td>
+      <td>*</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>13-17</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>8</td>
+      <td>4367.25</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>13-17</td>
+      <td>Hispanic</td>
+      <td>Female</td>
+      <td>50</td>
+      <td>4043.72</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>13-17</td>
+      <td>Hispanic</td>
+      <td>Male</td>
+      <td>53</td>
+      <td>3871.85</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>13-17</td>
+      <td>White not Hispanic</td>
+      <td>Female</td>
+      <td>37</td>
+      <td>3818.81</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>13-17</td>
+      <td>White not Hispanic</td>
+      <td>Male</td>
+      <td>30</td>
+      <td>4009.87</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>18-21</td>
+      <td>Asian</td>
+      <td>Female</td>
+      <td>18</td>
+      <td>10083.3</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>18-21</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>23</td>
+      <td>9218.52</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>18-21</td>
+      <td>Black</td>
+      <td>Female</td>
+      <td>*</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>18-21</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>7</td>
+      <td>9119.43</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>18-21</td>
+      <td>Hispanic</td>
+      <td>Female</td>
+      <td>41</td>
+      <td>10199.4</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>18-21</td>
+      <td>Hispanic</td>
+      <td>Male</td>
+      <td>37</td>
+      <td>9694.41</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>18-21</td>
+      <td>White not Hispanic</td>
+      <td>Female</td>
+      <td>36</td>
+      <td>10452.9</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>18-21</td>
+      <td>White not Hispanic</td>
+      <td>Male</td>
+      <td>33</td>
+      <td>9784.09</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>22-50</td>
+      <td>Asian</td>
+      <td>Female</td>
+      <td>12</td>
+      <td>39470.9</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>22-50</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>17</td>
+      <td>39657.9</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>22-50</td>
+      <td>Black</td>
+      <td>Female</td>
+      <td>8</td>
+      <td>41284.1</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>22-50</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>9</td>
+      <td>39941</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>22-50</td>
+      <td>Hispanic</td>
+      <td>Female</td>
+      <td>24</td>
+      <td>41005.5</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>22-50</td>
+      <td>Hispanic</td>
+      <td>Male</td>
+      <td>19</td>
+      <td>40821.3</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>22-50</td>
+      <td>White not Hispanic</td>
+      <td>Female</td>
+      <td>60</td>
+      <td>42113.8</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>22-50</td>
+      <td>White not Hispanic</td>
+      <td>Male</td>
+      <td>73</td>
+      <td>38604.5</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>6-12</td>
+      <td>Asian</td>
+      <td>Female</td>
+      <td>6</td>
+      <td>2165.33</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>6-12</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>12</td>
+      <td>2164.17</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>6-12</td>
+      <td>Black</td>
+      <td>Female</td>
+      <td>7</td>
+      <td>2566.57</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>6-12</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>*</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>6-12</td>
+      <td>Hispanic</td>
+      <td>Female</td>
+      <td>54</td>
+      <td>2443.78</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>6-12</td>
+      <td>Hispanic</td>
+      <td>Male</td>
+      <td>37</td>
+      <td>2120.14</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>6-12</td>
+      <td>White not Hispanic</td>
+      <td>Female</td>
+      <td>24</td>
+      <td>2112.75</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>6-12</td>
+      <td>White not Hispanic</td>
+      <td>Male</td>
+      <td>22</td>
+      <td>1986.27</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="2020-09-30.html" title="previous page">Class 10: Cleaning review and Ray Summit Keynotes</a>
+    <a class='right-next' id="next-link" href="../assignments/index.html" title="next page">Assignments</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Professor Sarah M Brown<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
+    
+  </body>
+</html>
