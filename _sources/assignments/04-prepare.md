@@ -4,11 +4,11 @@ __Due: 2020-10-04__
 
 ## Objective & Evaluation
 
-You can earn prepare level 2 and by completing the `cs_degrees.ipynb` and `travel_time.ipynb` analyses.
+You can earn prepare level 2 by cleaning two datasets as outlined in the `cs_degrees.ipynb` and `travel_time.ipynb` notebooks.
 
-To earn access level 2 you must also do `airlines.ipynb` or `safi_full.ipynb` note that this is the SAFI dataset we've been working with in class, but a messier version of it. You know what some of the fixes are because they're in the notes and some of what it will look like when it's done.  
+To earn access level 2 you must clean a third dataset, following the `airlines.ipynb` or `safi_full.ipynb` notebooks. Note that this is the SAFI dataset we've been working with in class, but a messier version of it. You know what some of the fixes are because they're in the notes and some of what it will look like when it's done.  
 
-To earn python level 2, you must complete `safi_full.ipynb`, if you successfully use list or dictionary comprehensions and conditional statements, beyond those provided as hints.
+To earn python level 2, you must complete `safi_full.ipynb`. Specifically, you must successfully use list or dictionary comprehensions and conditional statements, beyond those provided as hints.
 
 To earn level 2 for summarize and visualize, include additional analyses after cleaning the datasets. You'll need at least two types of plots and two different ways of using summary statistics and to interpret the results.
 
