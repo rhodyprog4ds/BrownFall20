@@ -330,61 +330,11 @@
 </div>
 </div>
 </div>
-<p>Download data from <a class="reference external" href="https://github.com/rhodyprog4ds/inclass-data">this GitHub repo</a> by clicking on the green code button and choosing .zip. Then unzip the data and save it in a data folder in the same folder as the notebook.</p>
+<p>To use relative paths as in class (<code class="docutils literal notranslate"><span class="pre">data/2018-games.csv</span></code>) instead of a full url <code class="docutils literal notranslate"><span class="pre">https://raw.githubusercontent.com/rhodyprog4ds/inclass-data/main/2018-games.csv</span></code>, download data from <a class="reference external" href="https://github.com/rhodyprog4ds/inclass-data">this GitHub repo</a> by clicking on the green code button and choosing .zip. Then unzip the data and save it in a data folder in the same folder as the notebook. For the class notes, the urls make it so that the notebook can run without having to store the data in another place.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">games_df18</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/2018-games.csv&#39;</span><span class="p">)</span>
-<span class="n">games_df19</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/2019-games.csv&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">18</span><span class="n">b4ae53633a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">games_df18</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/2018-games.csv&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">games_df19</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/2019-games.csv&#39;</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)</span>
-<span class="g g-Whitespace">    </span><span class="mi">684</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">685</span> 
-<span class="ne">--&gt; </span><span class="mi">686</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">687</span> 
-<span class="g g-Whitespace">    </span><span class="mi">688</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">450</span> 
-<span class="g g-Whitespace">    </span><span class="mi">451</span>     <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">452</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">fp_or_buf</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">453</span> 
-<span class="g g-Whitespace">    </span><span class="mi">454</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">944</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">945</span> 
-<span class="ne">--&gt; </span><span class="mi">946</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">947</span> 
-<span class="g g-Whitespace">    </span><span class="mi">948</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1176</span>     <span class="k">def</span> <span class="nf">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1177</span>         <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1178</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="n">CParserWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1179</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1180</span>             <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;python&quot;</span><span class="p">:</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2006</span>         <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;usecols&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">usecols</span>
-<span class="g g-Whitespace">   </span><span class="mi">2007</span> 
-<span class="ne">-&gt; </span><span class="mi">2008</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2009</span>         <span class="bp">self</span><span class="o">.</span><span class="n">unnamed_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">unnamed_cols</span>
-<span class="g g-Whitespace">   </span><span class="mi">2010</span> 
-
-<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader.__cinit__</span><span class="nt">()</span>
-
-<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader._setup_parser_source</span><span class="nt">()</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data/2018-games.csv&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">games_df18</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/rhodyprog4ds/inclass-data/main/2018-games.csv&#39;</span><span class="p">)</span>
+<span class="n">games_df19</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/rhodyprog4ds/inclass-data/main/2019-games.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -399,15 +349,100 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">65</span><span class="n">ad12dc380b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">games_df18</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;games_df18&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>GAME_DATE_EST</th>
+      <th>GAME_ID</th>
+      <th>GAME_STATUS_TEXT</th>
+      <th>HOME_TEAM_ID</th>
+      <th>VISITOR_TEAM_ID</th>
+      <th>SEASON</th>
+      <th>TEAM_ID_home</th>
+      <th>PTS_home</th>
+      <th>FG_PCT_home</th>
+      <th>...</th>
+      <th>AST_home</th>
+      <th>REB_home</th>
+      <th>TEAM_ID_away</th>
+      <th>PTS_away</th>
+      <th>FG_PCT_away</th>
+      <th>FT_PCT_away</th>
+      <th>FG3_PCT_away</th>
+      <th>AST_away</th>
+      <th>REB_away</th>
+      <th>HOME_TEAM_WINS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16196</td>
+      <td>2019-06-13</td>
+      <td>41800406</td>
+      <td>Final</td>
+      <td>1610612744</td>
+      <td>1610612761</td>
+      <td>2018</td>
+      <td>1610612744</td>
+      <td>110.0</td>
+      <td>0.488</td>
+      <td>...</td>
+      <td>28.0</td>
+      <td>42.0</td>
+      <td>1610612761</td>
+      <td>114.0</td>
+      <td>0.476</td>
+      <td>0.793</td>
+      <td>0.394</td>
+      <td>25.0</td>
+      <td>39.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>16197</td>
+      <td>2019-06-10</td>
+      <td>41800405</td>
+      <td>Final</td>
+      <td>1610612761</td>
+      <td>1610612744</td>
+      <td>2018</td>
+      <td>1610612761</td>
+      <td>105.0</td>
+      <td>0.447</td>
+      <td>...</td>
+      <td>19.0</td>
+      <td>43.0</td>
+      <td>1610612744</td>
+      <td>106.0</td>
+      <td>0.463</td>
+      <td>0.714</td>
+      <td>0.476</td>
+      <td>27.0</td>
+      <td>37.0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>2 rows × 22 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -416,15 +451,100 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">8</span><span class="n">ae55f8cb5a3</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">games_df19</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;games_df19&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>GAME_DATE_EST</th>
+      <th>GAME_ID</th>
+      <th>GAME_STATUS_TEXT</th>
+      <th>HOME_TEAM_ID</th>
+      <th>VISITOR_TEAM_ID</th>
+      <th>SEASON</th>
+      <th>TEAM_ID_home</th>
+      <th>PTS_home</th>
+      <th>FG_PCT_home</th>
+      <th>...</th>
+      <th>AST_home</th>
+      <th>REB_home</th>
+      <th>TEAM_ID_away</th>
+      <th>PTS_away</th>
+      <th>FG_PCT_away</th>
+      <th>FT_PCT_away</th>
+      <th>FG3_PCT_away</th>
+      <th>AST_away</th>
+      <th>REB_away</th>
+      <th>HOME_TEAM_WINS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>2020-03-01</td>
+      <td>21900895</td>
+      <td>Final</td>
+      <td>1610612766</td>
+      <td>1610612749</td>
+      <td>2019</td>
+      <td>1610612766</td>
+      <td>85.0</td>
+      <td>0.354</td>
+      <td>...</td>
+      <td>22.0</td>
+      <td>47.0</td>
+      <td>1610612749</td>
+      <td>93.0</td>
+      <td>0.402</td>
+      <td>0.762</td>
+      <td>0.226</td>
+      <td>20.0</td>
+      <td>61.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>2020-03-01</td>
+      <td>21900896</td>
+      <td>Final</td>
+      <td>1610612750</td>
+      <td>1610612742</td>
+      <td>2019</td>
+      <td>1610612750</td>
+      <td>91.0</td>
+      <td>0.364</td>
+      <td>...</td>
+      <td>19.0</td>
+      <td>57.0</td>
+      <td>1610612742</td>
+      <td>111.0</td>
+      <td>0.468</td>
+      <td>0.632</td>
+      <td>0.275</td>
+      <td>28.0</td>
+      <td>56.0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>2 rows × 22 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -433,12 +553,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">a880ab059e10</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">games_df18</span><span class="o">.</span><span class="n">shape</span>
-
-<span class="ne">NameError</span>: name &#39;games_df18&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1378, 22)
 </pre></div>
 </div>
 </div>
@@ -450,12 +565,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">8032438</span><span class="n">ee122</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">games_df19</span><span class="o">.</span><span class="n">shape</span>
-
-<span class="ne">NameError</span>: name &#39;games_df19&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(965, 22)
 </pre></div>
 </div>
 </div>
@@ -468,13 +578,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">014396</span><span class="n">dbc67d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">games_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">games_df18</span><span class="p">,</span><span class="n">games_df19</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">games_df</span><span class="o">.</span><span class="n">shape</span>
-
-<span class="ne">NameError</span>: name &#39;games_df18&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2343, 22)
 </pre></div>
 </div>
 </div>
@@ -486,12 +590,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="mi">44</span><span class="n">d754e83082</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">games_df</span><span class="o">.</span><span class="n">columns</span>
-
-<span class="ne">NameError</span>: name &#39;games_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Unnamed: 0&#39;, &#39;GAME_DATE_EST&#39;, &#39;GAME_ID&#39;, &#39;GAME_STATUS_TEXT&#39;,
+       &#39;HOME_TEAM_ID&#39;, &#39;VISITOR_TEAM_ID&#39;, &#39;SEASON&#39;, &#39;TEAM_ID_home&#39;, &#39;PTS_home&#39;,
+       &#39;FG_PCT_home&#39;, &#39;FT_PCT_home&#39;, &#39;FG3_PCT_home&#39;, &#39;AST_home&#39;, &#39;REB_home&#39;,
+       &#39;TEAM_ID_away&#39;, &#39;PTS_away&#39;, &#39;FG_PCT_away&#39;, &#39;FT_PCT_away&#39;,
+       &#39;FG3_PCT_away&#39;, &#39;AST_away&#39;, &#39;REB_away&#39;, &#39;HOME_TEAM_WINS&#39;],
+      dtype=&#39;object&#39;)
 </pre></div>
 </div>
 </div>
@@ -504,16 +608,100 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="n">da1e93ab088b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">games_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span> <span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">games_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;games_df&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GAME_DATE_EST</th>
+      <th>GAME_ID</th>
+      <th>GAME_STATUS_TEXT</th>
+      <th>HOME_TEAM_ID</th>
+      <th>VISITOR_TEAM_ID</th>
+      <th>SEASON</th>
+      <th>TEAM_ID_home</th>
+      <th>PTS_home</th>
+      <th>FG_PCT_home</th>
+      <th>FT_PCT_home</th>
+      <th>...</th>
+      <th>AST_home</th>
+      <th>REB_home</th>
+      <th>TEAM_ID_away</th>
+      <th>PTS_away</th>
+      <th>FG_PCT_away</th>
+      <th>FT_PCT_away</th>
+      <th>FG3_PCT_away</th>
+      <th>AST_away</th>
+      <th>REB_away</th>
+      <th>HOME_TEAM_WINS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-06-13</td>
+      <td>41800406</td>
+      <td>Final</td>
+      <td>1610612744</td>
+      <td>1610612761</td>
+      <td>2018</td>
+      <td>1610612744</td>
+      <td>110.0</td>
+      <td>0.488</td>
+      <td>0.700</td>
+      <td>...</td>
+      <td>28.0</td>
+      <td>42.0</td>
+      <td>1610612761</td>
+      <td>114.0</td>
+      <td>0.476</td>
+      <td>0.793</td>
+      <td>0.394</td>
+      <td>25.0</td>
+      <td>39.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-06-10</td>
+      <td>41800405</td>
+      <td>Final</td>
+      <td>1610612761</td>
+      <td>1610612744</td>
+      <td>2018</td>
+      <td>1610612761</td>
+      <td>105.0</td>
+      <td>0.447</td>
+      <td>0.778</td>
+      <td>...</td>
+      <td>19.0</td>
+      <td>43.0</td>
+      <td>1610612744</td>
+      <td>106.0</td>
+      <td>0.463</td>
+      <td>0.714</td>
+      <td>0.476</td>
+      <td>27.0</td>
+      <td>37.0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>2 rows × 21 columns</p>
+</div></div></div>
 </div>
 <!-- annotate: Merging Data Frames -->
 </div>
@@ -521,61 +709,84 @@
 <h2>Merging Data Frames<a class="headerlink" href="#merging-data-frames" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teams_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/teams.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teams_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/rhodyprog4ds/inclass-data/main/teams.csv&#39;</span><span class="p">)</span>
 <span class="n">teams_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mf">30e77</span><span class="n">b0ae13d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">teams_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/teams.csv&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">teams_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)</span>
-<span class="g g-Whitespace">    </span><span class="mi">684</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">685</span> 
-<span class="ne">--&gt; </span><span class="mi">686</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">687</span> 
-<span class="g g-Whitespace">    </span><span class="mi">688</span> 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">450</span> 
-<span class="g g-Whitespace">    </span><span class="mi">451</span>     <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">452</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">fp_or_buf</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">453</span> 
-<span class="g g-Whitespace">    </span><span class="mi">454</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">944</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">945</span> 
-<span class="ne">--&gt; </span><span class="mi">946</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">947</span> 
-<span class="g g-Whitespace">    </span><span class="mi">948</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1176</span>     <span class="k">def</span> <span class="nf">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1177</span>         <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1178</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="n">CParserWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1179</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1180</span>             <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;python&quot;</span><span class="p">:</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2006</span>         <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;usecols&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">usecols</span>
-<span class="g g-Whitespace">   </span><span class="mi">2007</span> 
-<span class="ne">-&gt; </span><span class="mi">2008</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2009</span>         <span class="bp">self</span><span class="o">.</span><span class="n">unnamed_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">unnamed_cols</span>
-<span class="g g-Whitespace">   </span><span class="mi">2010</span> 
-
-<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader.__cinit__</span><span class="nt">()</span>
-
-<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader._setup_parser_source</span><span class="nt">()</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data/teams.csv&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>LEAGUE_ID</th>
+      <th>TEAM_ID</th>
+      <th>MIN_YEAR</th>
+      <th>MAX_YEAR</th>
+      <th>ABBREVIATION</th>
+      <th>NICKNAME</th>
+      <th>YEARFOUNDED</th>
+      <th>CITY</th>
+      <th>ARENA</th>
+      <th>ARENACAPACITY</th>
+      <th>OWNER</th>
+      <th>GENERALMANAGER</th>
+      <th>HEADCOACH</th>
+      <th>DLEAGUEAFFILIATION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1610612737</td>
+      <td>1949</td>
+      <td>2019</td>
+      <td>ATL</td>
+      <td>Hawks</td>
+      <td>1949</td>
+      <td>Atlanta</td>
+      <td>State Farm Arena</td>
+      <td>18729.0</td>
+      <td>Tony Ressler</td>
+      <td>Travis Schlenk</td>
+      <td>Lloyd Pierce</td>
+      <td>Erie Bayhawks</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>1610612738</td>
+      <td>1946</td>
+      <td>2019</td>
+      <td>BOS</td>
+      <td>Celtics</td>
+      <td>1946</td>
+      <td>Boston</td>
+      <td>TD Garden</td>
+      <td>18624.0</td>
+      <td>Wyc Grousbeck</td>
+      <td>Danny Ainge</td>
+      <td>Brad Stevens</td>
+      <td>Maine Red Claws</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -585,16 +796,100 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="n">b39014a06b02</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">merge1_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">teams_df</span><span class="p">,</span><span class="n">games_df</span><span class="p">,</span><span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;TEAM_ID&#39;</span><span class="p">,</span> <span class="n">right_on</span> <span class="o">=</span> <span class="s1">&#39;HOME_TEAM_ID&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">merge1_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;teams_df&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>LEAGUE_ID</th>
+      <th>TEAM_ID</th>
+      <th>MIN_YEAR</th>
+      <th>MAX_YEAR</th>
+      <th>ABBREVIATION</th>
+      <th>NICKNAME</th>
+      <th>YEARFOUNDED</th>
+      <th>CITY</th>
+      <th>ARENA</th>
+      <th>ARENACAPACITY</th>
+      <th>...</th>
+      <th>AST_home</th>
+      <th>REB_home</th>
+      <th>TEAM_ID_away</th>
+      <th>PTS_away</th>
+      <th>FG_PCT_away</th>
+      <th>FT_PCT_away</th>
+      <th>FG3_PCT_away</th>
+      <th>AST_away</th>
+      <th>REB_away</th>
+      <th>HOME_TEAM_WINS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1610612737</td>
+      <td>1949</td>
+      <td>2019</td>
+      <td>ATL</td>
+      <td>Hawks</td>
+      <td>1949</td>
+      <td>Atlanta</td>
+      <td>State Farm Arena</td>
+      <td>18729.0</td>
+      <td>...</td>
+      <td>29.0</td>
+      <td>61.0</td>
+      <td>1610612754</td>
+      <td>135.0</td>
+      <td>0.459</td>
+      <td>0.846</td>
+      <td>0.400</td>
+      <td>22.0</td>
+      <td>43.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>1610612737</td>
+      <td>1949</td>
+      <td>2019</td>
+      <td>ATL</td>
+      <td>Hawks</td>
+      <td>1949</td>
+      <td>Atlanta</td>
+      <td>State Farm Arena</td>
+      <td>18729.0</td>
+      <td>...</td>
+      <td>29.0</td>
+      <td>44.0</td>
+      <td>1610612755</td>
+      <td>122.0</td>
+      <td>0.459</td>
+      <td>0.579</td>
+      <td>0.323</td>
+      <td>27.0</td>
+      <td>57.0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>2 rows × 35 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -603,12 +898,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="n">a60486402e49</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">merge1_df</span><span class="o">.</span><span class="n">shape</span>
-
-<span class="ne">NameError</span>: name &#39;merge1_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2343, 35)
 </pre></div>
 </div>
 </div>
@@ -616,16 +906,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merge2_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">teams_df</span><span class="p">,</span> <span class="n">games_df</span><span class="p">,</span><span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;TEAM_ID&#39;</span><span class="p">,</span> <span class="n">right_on</span> <span class="o">=</span> <span class="s1">&#39;HOME_TEAM_ID&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="mi">58</span><span class="n">f54be9dc40</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">merge2_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">teams_df</span><span class="p">,</span> <span class="n">games_df</span><span class="p">,</span><span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;TEAM_ID&#39;</span><span class="p">,</span> <span class="n">right_on</span> <span class="o">=</span> <span class="s1">&#39;HOME_TEAM_ID&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;teams_df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -637,15 +917,100 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="mi">0493272</span><span class="n">c2479</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">merge2_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;merge2_df&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>LEAGUE_ID</th>
+      <th>TEAM_ID</th>
+      <th>MIN_YEAR</th>
+      <th>MAX_YEAR</th>
+      <th>ABBREVIATION</th>
+      <th>NICKNAME</th>
+      <th>YEARFOUNDED</th>
+      <th>CITY</th>
+      <th>ARENA</th>
+      <th>ARENACAPACITY</th>
+      <th>...</th>
+      <th>AST_home</th>
+      <th>REB_home</th>
+      <th>TEAM_ID_away</th>
+      <th>PTS_away</th>
+      <th>FG_PCT_away</th>
+      <th>FT_PCT_away</th>
+      <th>FG3_PCT_away</th>
+      <th>AST_away</th>
+      <th>REB_away</th>
+      <th>HOME_TEAM_WINS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1610612737</td>
+      <td>1949</td>
+      <td>2019</td>
+      <td>ATL</td>
+      <td>Hawks</td>
+      <td>1949</td>
+      <td>Atlanta</td>
+      <td>State Farm Arena</td>
+      <td>18729.0</td>
+      <td>...</td>
+      <td>29.0</td>
+      <td>61.0</td>
+      <td>1610612754</td>
+      <td>135.0</td>
+      <td>0.459</td>
+      <td>0.846</td>
+      <td>0.400</td>
+      <td>22.0</td>
+      <td>43.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>1610612737</td>
+      <td>1949</td>
+      <td>2019</td>
+      <td>ATL</td>
+      <td>Hawks</td>
+      <td>1949</td>
+      <td>Atlanta</td>
+      <td>State Farm Arena</td>
+      <td>18729.0</td>
+      <td>...</td>
+      <td>29.0</td>
+      <td>44.0</td>
+      <td>1610612755</td>
+      <td>122.0</td>
+      <td>0.459</td>
+      <td>0.579</td>
+      <td>0.323</td>
+      <td>27.0</td>
+      <td>57.0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>2 rows × 35 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -654,12 +1019,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mi">7</span><span class="n">d0eac36174c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">merge2_df</span><span class="o">.</span><span class="n">shape</span>
-
-<span class="ne">NameError</span>: name &#39;merge2_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2343, 35)
 </pre></div>
 </div>
 </div>
@@ -671,15 +1031,772 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="n">a78fdd90b85c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">merge1_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;ARENA&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;merge1_df&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>LEAGUE_ID</th>
+      <th>TEAM_ID</th>
+      <th>MIN_YEAR</th>
+      <th>MAX_YEAR</th>
+      <th>YEARFOUNDED</th>
+      <th>ARENACAPACITY</th>
+      <th>GAME_ID</th>
+      <th>HOME_TEAM_ID</th>
+      <th>VISITOR_TEAM_ID</th>
+      <th>SEASON</th>
+      <th>...</th>
+      <th>AST_home</th>
+      <th>REB_home</th>
+      <th>TEAM_ID_away</th>
+      <th>PTS_away</th>
+      <th>FG_PCT_away</th>
+      <th>FT_PCT_away</th>
+      <th>FG3_PCT_away</th>
+      <th>AST_away</th>
+      <th>REB_away</th>
+      <th>HOME_TEAM_WINS</th>
+    </tr>
+    <tr>
+      <th>ARENA</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AT&amp;T Center</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1976.000000</td>
+      <td>2019.0</td>
+      <td>1976.000000</td>
+      <td>18694.0</td>
+      <td>2.184021e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.397436</td>
+      <td>...</td>
+      <td>25.141026</td>
+      <td>45.782051</td>
+      <td>1.610613e+09</td>
+      <td>108.448718</td>
+      <td>0.449333</td>
+      <td>0.770808</td>
+      <td>0.348231</td>
+      <td>23.987179</td>
+      <td>43.833333</td>
+      <td>0.666667</td>
+    </tr>
+    <tr>
+      <th>American Airlines Center</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1980.000000</td>
+      <td>2019.0</td>
+      <td>1980.000000</td>
+      <td>19200.0</td>
+      <td>2.130985e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.426667</td>
+      <td>...</td>
+      <td>23.920000</td>
+      <td>46.093333</td>
+      <td>1.610613e+09</td>
+      <td>108.960000</td>
+      <td>0.456093</td>
+      <td>0.777320</td>
+      <td>0.347707</td>
+      <td>22.960000</td>
+      <td>43.720000</td>
+      <td>0.546667</td>
+    </tr>
+    <tr>
+      <th>AmericanAirlines Arena</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1988.000000</td>
+      <td>2019.0</td>
+      <td>1988.000000</td>
+      <td>19600.0</td>
+      <td>2.105314e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.421053</td>
+      <td>...</td>
+      <td>25.039474</td>
+      <td>46.276316</td>
+      <td>1.610613e+09</td>
+      <td>106.618421</td>
+      <td>0.442684</td>
+      <td>0.771987</td>
+      <td>0.344250</td>
+      <td>23.157895</td>
+      <td>42.131579</td>
+      <td>0.644737</td>
+    </tr>
+    <tr>
+      <th>Amway Center</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1989.000000</td>
+      <td>2019.0</td>
+      <td>1989.000000</td>
+      <td>0.0</td>
+      <td>2.171458e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.423077</td>
+      <td>...</td>
+      <td>24.525641</td>
+      <td>45.935897</td>
+      <td>1.610613e+09</td>
+      <td>105.538462</td>
+      <td>0.454372</td>
+      <td>0.772487</td>
+      <td>0.359962</td>
+      <td>22.987179</td>
+      <td>44.769231</td>
+      <td>0.538462</td>
+    </tr>
+    <tr>
+      <th>Bankers Life Fieldhouse</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1976.000000</td>
+      <td>2019.0</td>
+      <td>1976.000000</td>
+      <td>18345.0</td>
+      <td>2.197454e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.441558</td>
+      <td>...</td>
+      <td>26.363636</td>
+      <td>44.597403</td>
+      <td>1.610613e+09</td>
+      <td>103.051948</td>
+      <td>0.435494</td>
+      <td>0.761805</td>
+      <td>0.329442</td>
+      <td>23.272727</td>
+      <td>44.662338</td>
+      <td>0.675325</td>
+    </tr>
+    <tr>
+      <th>Barclays Center</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1976.000000</td>
+      <td>2019.0</td>
+      <td>1976.000000</td>
+      <td>NaN</td>
+      <td>2.197516e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.413333</td>
+      <td>...</td>
+      <td>23.880000</td>
+      <td>48.000000</td>
+      <td>1.610613e+09</td>
+      <td>110.293333</td>
+      <td>0.448133</td>
+      <td>0.773533</td>
+      <td>0.338547</td>
+      <td>22.640000</td>
+      <td>45.000000</td>
+      <td>0.533333</td>
+    </tr>
+    <tr>
+      <th>Capital One Arena</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1961.000000</td>
+      <td>2019.0</td>
+      <td>1961.000000</td>
+      <td>20647.0</td>
+      <td>2.130190e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.418919</td>
+      <td>...</td>
+      <td>25.891892</td>
+      <td>43.932432</td>
+      <td>1.610613e+09</td>
+      <td>115.310811</td>
+      <td>0.472041</td>
+      <td>0.765959</td>
+      <td>0.353324</td>
+      <td>24.554054</td>
+      <td>46.121622</td>
+      <td>0.500000</td>
+    </tr>
+    <tr>
+      <th>Chase Center</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1946.000000</td>
+      <td>2019.0</td>
+      <td>1946.000000</td>
+      <td>19596.0</td>
+      <td>2.350492e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.377778</td>
+      <td>...</td>
+      <td>28.444444</td>
+      <td>44.722222</td>
+      <td>1.610613e+09</td>
+      <td>112.833333</td>
+      <td>0.461144</td>
+      <td>0.782122</td>
+      <td>0.374233</td>
+      <td>25.377778</td>
+      <td>43.900000</td>
+      <td>0.511111</td>
+    </tr>
+    <tr>
+      <th>Chesapeake Energy Arena</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1967.000000</td>
+      <td>2019.0</td>
+      <td>1967.000000</td>
+      <td>19163.0</td>
+      <td>2.171802e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.425000</td>
+      <td>...</td>
+      <td>23.450000</td>
+      <td>45.387500</td>
+      <td>1.610613e+09</td>
+      <td>109.250000</td>
+      <td>0.455088</td>
+      <td>0.772437</td>
+      <td>0.351600</td>
+      <td>23.175000</td>
+      <td>44.700000</td>
+      <td>0.637500</td>
+    </tr>
+    <tr>
+      <th>FedExForum</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1995.000000</td>
+      <td>2019.0</td>
+      <td>1995.000000</td>
+      <td>18119.0</td>
+      <td>2.131630e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.421053</td>
+      <td>...</td>
+      <td>25.394737</td>
+      <td>44.578947</td>
+      <td>1.610613e+09</td>
+      <td>108.236842</td>
+      <td>0.445092</td>
+      <td>0.786355</td>
+      <td>0.362816</td>
+      <td>23.473684</td>
+      <td>44.986842</td>
+      <td>0.526316</td>
+    </tr>
+    <tr>
+      <th>Fiserv Forum</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1968.000000</td>
+      <td>2019.0</td>
+      <td>1968.000000</td>
+      <td>17500.0</td>
+      <td>2.328482e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.385542</td>
+      <td>...</td>
+      <td>26.819277</td>
+      <td>51.590361</td>
+      <td>1.610613e+09</td>
+      <td>106.421687</td>
+      <td>0.417289</td>
+      <td>0.758819</td>
+      <td>0.347325</td>
+      <td>23.253012</td>
+      <td>44.385542</td>
+      <td>0.843373</td>
+    </tr>
+    <tr>
+      <th>Golden 1 Center</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1948.000000</td>
+      <td>2019.0</td>
+      <td>1948.000000</td>
+      <td>17500.0</td>
+      <td>2.142553e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.416667</td>
+      <td>...</td>
+      <td>24.125000</td>
+      <td>45.208333</td>
+      <td>1.610613e+09</td>
+      <td>112.361111</td>
+      <td>0.459417</td>
+      <td>0.772444</td>
+      <td>0.349514</td>
+      <td>23.805556</td>
+      <td>46.708333</td>
+      <td>0.527778</td>
+    </tr>
+    <tr>
+      <th>Little Caesars Arena</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1948.000000</td>
+      <td>2019.0</td>
+      <td>1948.000000</td>
+      <td>21000.0</td>
+      <td>2.171695e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.430380</td>
+      <td>...</td>
+      <td>23.974684</td>
+      <td>44.670886</td>
+      <td>1.610613e+09</td>
+      <td>108.797468</td>
+      <td>0.469127</td>
+      <td>0.767203</td>
+      <td>0.348127</td>
+      <td>24.151899</td>
+      <td>43.417722</td>
+      <td>0.493671</td>
+    </tr>
+    <tr>
+      <th>Madison Square Garden</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1946.000000</td>
+      <td>2019.0</td>
+      <td>1946.000000</td>
+      <td>19763.0</td>
+      <td>2.105316e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.421053</td>
+      <td>...</td>
+      <td>21.500000</td>
+      <td>45.447368</td>
+      <td>1.610613e+09</td>
+      <td>112.105263</td>
+      <td>0.463842</td>
+      <td>0.756461</td>
+      <td>0.365237</td>
+      <td>24.263158</td>
+      <td>45.263158</td>
+      <td>0.250000</td>
+    </tr>
+    <tr>
+      <th>Moda Center</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1970.000000</td>
+      <td>2019.0</td>
+      <td>1970.000000</td>
+      <td>19980.0</td>
+      <td>2.316313e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.373494</td>
+      <td>...</td>
+      <td>22.361446</td>
+      <td>47.831325</td>
+      <td>1.610613e+09</td>
+      <td>112.060241</td>
+      <td>0.448145</td>
+      <td>0.793880</td>
+      <td>0.371578</td>
+      <td>22.939759</td>
+      <td>44.048193</td>
+      <td>0.662651</td>
+    </tr>
+    <tr>
+      <th>Pepsi Center</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1976.000000</td>
+      <td>2019.0</td>
+      <td>1976.000000</td>
+      <td>19099.0</td>
+      <td>2.369186e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.395062</td>
+      <td>...</td>
+      <td>27.419753</td>
+      <td>46.419753</td>
+      <td>1.610613e+09</td>
+      <td>103.777778</td>
+      <td>0.448531</td>
+      <td>0.742173</td>
+      <td>0.323988</td>
+      <td>23.320988</td>
+      <td>42.172840</td>
+      <td>0.790123</td>
+    </tr>
+    <tr>
+      <th>Quicken Loans Arena</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1970.000000</td>
+      <td>2019.0</td>
+      <td>1970.000000</td>
+      <td>20562.0</td>
+      <td>2.132390e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.428571</td>
+      <td>...</td>
+      <td>22.038961</td>
+      <td>44.025974</td>
+      <td>1.610613e+09</td>
+      <td>113.584416</td>
+      <td>0.489766</td>
+      <td>0.776896</td>
+      <td>0.384247</td>
+      <td>25.584416</td>
+      <td>42.597403</td>
+      <td>0.298701</td>
+    </tr>
+    <tr>
+      <th>Scotiabank Arena</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1995.000000</td>
+      <td>2019.0</td>
+      <td>1995.000000</td>
+      <td>19800.0</td>
+      <td>2.428270e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.377778</td>
+      <td>...</td>
+      <td>25.433333</td>
+      <td>45.100000</td>
+      <td>1.610613e+09</td>
+      <td>106.144444</td>
+      <td>0.432111</td>
+      <td>0.770211</td>
+      <td>0.347544</td>
+      <td>24.155556</td>
+      <td>45.300000</td>
+      <td>0.744444</td>
+    </tr>
+    <tr>
+      <th>Smoothie King Center</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>2002.000000</td>
+      <td>2019.0</td>
+      <td>2002.000000</td>
+      <td>NaN</td>
+      <td>2.156903e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.424658</td>
+      <td>...</td>
+      <td>27.232877</td>
+      <td>46.945205</td>
+      <td>1.610613e+09</td>
+      <td>116.808219</td>
+      <td>0.474096</td>
+      <td>0.771562</td>
+      <td>0.362822</td>
+      <td>25.109589</td>
+      <td>44.561644</td>
+      <td>0.438356</td>
+    </tr>
+    <tr>
+      <th>Spectrum Center</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1988.000000</td>
+      <td>2019.0</td>
+      <td>1988.000000</td>
+      <td>19026.0</td>
+      <td>2.104182e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.413333</td>
+      <td>...</td>
+      <td>23.746667</td>
+      <td>44.293333</td>
+      <td>1.610613e+09</td>
+      <td>109.386667</td>
+      <td>0.463920</td>
+      <td>0.761573</td>
+      <td>0.350853</td>
+      <td>25.066667</td>
+      <td>45.266667</td>
+      <td>0.493333</td>
+    </tr>
+    <tr>
+      <th>Staples Center</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1959.210191</td>
+      <td>2019.0</td>
+      <td>1959.210191</td>
+      <td>19060.0</td>
+      <td>2.139604e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.414013</td>
+      <td>...</td>
+      <td>25.942675</td>
+      <td>47.286624</td>
+      <td>1.610613e+09</td>
+      <td>110.477707</td>
+      <td>0.443783</td>
+      <td>0.775064</td>
+      <td>0.338796</td>
+      <td>24.095541</td>
+      <td>45.133758</td>
+      <td>0.636943</td>
+    </tr>
+    <tr>
+      <th>State Farm Arena</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1949.000000</td>
+      <td>2019.0</td>
+      <td>1949.000000</td>
+      <td>18729.0</td>
+      <td>2.131766e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.434211</td>
+      <td>...</td>
+      <td>25.736842</td>
+      <td>45.960526</td>
+      <td>1.610613e+09</td>
+      <td>117.894737</td>
+      <td>0.463447</td>
+      <td>0.767184</td>
+      <td>0.343553</td>
+      <td>25.500000</td>
+      <td>46.276316</td>
+      <td>0.421053</td>
+    </tr>
+    <tr>
+      <th>TD Garden</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1946.000000</td>
+      <td>2019.0</td>
+      <td>1946.000000</td>
+      <td>18624.0</td>
+      <td>2.235308e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.397436</td>
+      <td>...</td>
+      <td>25.717949</td>
+      <td>45.974359</td>
+      <td>1.610613e+09</td>
+      <td>106.358974</td>
+      <td>0.442769</td>
+      <td>0.743064</td>
+      <td>0.335808</td>
+      <td>23.282051</td>
+      <td>44.153846</td>
+      <td>0.717949</td>
+    </tr>
+    <tr>
+      <th>Talking Stick Resort Arena</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1968.000000</td>
+      <td>2019.0</td>
+      <td>1968.000000</td>
+      <td>NaN</td>
+      <td>2.132518e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.441558</td>
+      <td>...</td>
+      <td>25.298701</td>
+      <td>41.519481</td>
+      <td>1.610613e+09</td>
+      <td>113.064935</td>
+      <td>0.474922</td>
+      <td>0.762377</td>
+      <td>0.363143</td>
+      <td>24.285714</td>
+      <td>45.000000</td>
+      <td>0.311688</td>
+    </tr>
+    <tr>
+      <th>Target Center</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1989.000000</td>
+      <td>2019.0</td>
+      <td>1989.000000</td>
+      <td>19356.0</td>
+      <td>2.156304e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.402778</td>
+      <td>...</td>
+      <td>24.458333</td>
+      <td>46.583333</td>
+      <td>1.610613e+09</td>
+      <td>113.208333</td>
+      <td>0.462306</td>
+      <td>0.763181</td>
+      <td>0.363625</td>
+      <td>24.402778</td>
+      <td>46.500000</td>
+      <td>0.444444</td>
+    </tr>
+    <tr>
+      <th>Toyota Center</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1967.000000</td>
+      <td>2019.0</td>
+      <td>1967.000000</td>
+      <td>18104.0</td>
+      <td>2.283925e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.387500</td>
+      <td>...</td>
+      <td>21.712500</td>
+      <td>44.850000</td>
+      <td>1.610613e+09</td>
+      <td>110.275000</td>
+      <td>0.454438</td>
+      <td>0.759188</td>
+      <td>0.339250</td>
+      <td>24.200000</td>
+      <td>45.700000</td>
+      <td>0.737500</td>
+    </tr>
+    <tr>
+      <th>United Center</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1966.000000</td>
+      <td>2019.0</td>
+      <td>1966.000000</td>
+      <td>21711.0</td>
+      <td>2.107486e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.435897</td>
+      <td>...</td>
+      <td>22.987179</td>
+      <td>43.512821</td>
+      <td>1.610613e+09</td>
+      <td>110.705128</td>
+      <td>0.475372</td>
+      <td>0.750628</td>
+      <td>0.355808</td>
+      <td>25.602564</td>
+      <td>46.192308</td>
+      <td>0.307692</td>
+    </tr>
+    <tr>
+      <th>Vivint Smart Home Arena</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1974.000000</td>
+      <td>2019.0</td>
+      <td>1974.000000</td>
+      <td>20148.0</td>
+      <td>2.197424e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.421053</td>
+      <td>...</td>
+      <td>24.526316</td>
+      <td>47.592105</td>
+      <td>1.610613e+09</td>
+      <td>105.723684</td>
+      <td>0.443618</td>
+      <td>0.767803</td>
+      <td>0.351961</td>
+      <td>20.539474</td>
+      <td>42.276316</td>
+      <td>0.684211</td>
+    </tr>
+    <tr>
+      <th>Wells Fargo Center</th>
+      <td>0.0</td>
+      <td>1.610613e+09</td>
+      <td>1949.000000</td>
+      <td>2019.0</td>
+      <td>1949.000000</td>
+      <td>NaN</td>
+      <td>2.282764e+07</td>
+      <td>1.610613e+09</td>
+      <td>1.610613e+09</td>
+      <td>2018.395062</td>
+      <td>...</td>
+      <td>27.395062</td>
+      <td>47.617284</td>
+      <td>1.610613e+09</td>
+      <td>106.753086</td>
+      <td>0.445346</td>
+      <td>0.757247</td>
+      <td>0.343272</td>
+      <td>22.086420</td>
+      <td>41.160494</td>
+      <td>0.802469</td>
+    </tr>
+  </tbody>
+</table>
+<p>29 rows × 25 columns</p>
+</div></div></div>
 </div>
 <!-- annotate: How to combine the same data for different outcomes -->
 </div>
@@ -687,63 +1804,82 @@
 <h2>How to combine the same data for different outcomes<a class="headerlink" href="#how-to-combine-the-same-data-for-different-outcomes" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">players18</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/2018-players.csv&#39;</span><span class="p">)</span>
-<span class="n">players19</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/2019-players.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">players18</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/rhodyprog4ds/inclass-data/main/2018-players.csv&#39;</span><span class="p">)</span>
+<span class="n">players19</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/rhodyprog4ds/inclass-data/main/2019-players.csv&#39;</span><span class="p">)</span>
 <span class="n">players18</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">4</span><span class="n">cdd7f94a131</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">players18</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/2018-players.csv&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">players19</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/2019-players.csv&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">players18</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)</span>
-<span class="g g-Whitespace">    </span><span class="mi">684</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">685</span> 
-<span class="ne">--&gt; </span><span class="mi">686</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">687</span> 
-<span class="g g-Whitespace">    </span><span class="mi">688</span> 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">450</span> 
-<span class="g g-Whitespace">    </span><span class="mi">451</span>     <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">452</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">fp_or_buf</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">453</span> 
-<span class="g g-Whitespace">    </span><span class="mi">454</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">944</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">945</span> 
-<span class="ne">--&gt; </span><span class="mi">946</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">947</span> 
-<span class="g g-Whitespace">    </span><span class="mi">948</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1176</span>     <span class="k">def</span> <span class="nf">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1177</span>         <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1178</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="n">CParserWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1179</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1180</span>             <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;python&quot;</span><span class="p">:</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2006</span>         <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;usecols&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">usecols</span>
-<span class="g g-Whitespace">   </span><span class="mi">2007</span> 
-<span class="ne">-&gt; </span><span class="mi">2008</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2009</span>         <span class="bp">self</span><span class="o">.</span><span class="n">unnamed_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">unnamed_cols</span>
-<span class="g g-Whitespace">   </span><span class="mi">2010</span> 
-
-<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader.__cinit__</span><span class="nt">()</span>
-
-<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader._setup_parser_source</span><span class="nt">()</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data/2018-players.csv&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>PLAYER_NAME</th>
+      <th>TEAM_ID</th>
+      <th>PLAYER_ID</th>
+      <th>SEASON</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>626</td>
+      <td>Kawhi Leonard</td>
+      <td>1610612761</td>
+      <td>202695</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>627</td>
+      <td>Pascal Siakam</td>
+      <td>1610612761</td>
+      <td>1627783</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>628</td>
+      <td>Marc Gasol</td>
+      <td>1610612761</td>
+      <td>201188</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>629</td>
+      <td>Danny Green</td>
+      <td>1610612761</td>
+      <td>201980</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>630</td>
+      <td>Kyle Lowry</td>
+      <td>1610612761</td>
+      <td>200768</td>
+      <td>2018</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -752,12 +1888,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="mi">05</span><span class="n">d8287ab9cf</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">players18</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">players19</span><span class="o">.</span><span class="n">shape</span>
-
-<span class="ne">NameError</span>: name &#39;players18&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((748, 5), (626, 5))
 </pre></div>
 </div>
 </div>
@@ -769,12 +1900,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="mi">460</span><span class="n">d08023773</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">players18</span><span class="p">,</span><span class="n">players19</span><span class="p">])</span><span class="o">.</span><span class="n">shape</span>
-
-<span class="ne">NameError</span>: name &#39;players18&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1374, 5)
 </pre></div>
 </div>
 </div>
@@ -786,15 +1912,35 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">20</span><span class="o">-</span><span class="mi">800</span><span class="n">c845fb080</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">players18</span><span class="p">,</span><span class="n">players19</span><span class="p">,)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;players18&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>PLAYER_NAME</th>
+      <th>TEAM_ID</th>
+      <th>PLAYER_ID</th>
+      <th>SEASON</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -803,15 +1949,172 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span><span class="n">e77e757d923f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">players18</span><span class="p">,</span><span class="n">players19</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;PLAYER_ID&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;players18&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0_x</th>
+      <th>PLAYER_NAME_x</th>
+      <th>TEAM_ID_x</th>
+      <th>PLAYER_ID</th>
+      <th>SEASON_x</th>
+      <th>Unnamed: 0_y</th>
+      <th>PLAYER_NAME_y</th>
+      <th>TEAM_ID_y</th>
+      <th>SEASON_y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>626</td>
+      <td>Kawhi Leonard</td>
+      <td>1610612761</td>
+      <td>202695</td>
+      <td>2018</td>
+      <td>299</td>
+      <td>Kawhi Leonard</td>
+      <td>1610612746</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>627</td>
+      <td>Pascal Siakam</td>
+      <td>1610612761</td>
+      <td>1627783</td>
+      <td>2018</td>
+      <td>275</td>
+      <td>Pascal Siakam</td>
+      <td>1610612761</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>628</td>
+      <td>Marc Gasol</td>
+      <td>1610612761</td>
+      <td>201188</td>
+      <td>2018</td>
+      <td>276</td>
+      <td>Marc Gasol</td>
+      <td>1610612761</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1157</td>
+      <td>Marc Gasol</td>
+      <td>1610612763</td>
+      <td>201188</td>
+      <td>2018</td>
+      <td>276</td>
+      <td>Marc Gasol</td>
+      <td>1610612761</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>629</td>
+      <td>Danny Green</td>
+      <td>1610612761</td>
+      <td>201980</td>
+      <td>2018</td>
+      <td>202</td>
+      <td>Danny Green</td>
+      <td>1610612747</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>533</th>
+      <td>1339</td>
+      <td>Abdul Gaddy</td>
+      <td>1610612760</td>
+      <td>203583</td>
+      <td>2018</td>
+      <td>561</td>
+      <td>Abdul Gaddy</td>
+      <td>1610612760</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>534</th>
+      <td>1342</td>
+      <td>Andre Roberson</td>
+      <td>1610612760</td>
+      <td>203460</td>
+      <td>2018</td>
+      <td>566</td>
+      <td>Andre Roberson</td>
+      <td>1610612760</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>535</th>
+      <td>1348</td>
+      <td>Norvel Pelle</td>
+      <td>1610612755</td>
+      <td>203658</td>
+      <td>2018</td>
+      <td>24</td>
+      <td>Norvel Pelle</td>
+      <td>1610612755</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>536</th>
+      <td>1350</td>
+      <td>Denzel Valentine</td>
+      <td>1610612741</td>
+      <td>1627756</td>
+      <td>2018</td>
+      <td>58</td>
+      <td>Denzel Valentine</td>
+      <td>1610612741</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>537</th>
+      <td>1353</td>
+      <td>C.J. Wilcox</td>
+      <td>1610612754</td>
+      <td>203912</td>
+      <td>2018</td>
+      <td>573</td>
+      <td>C.J. Wilcox</td>
+      <td>1610612754</td>
+      <td>2019</td>
+    </tr>
+  </tbody>
+</table>
+<p>538 rows × 9 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -820,15 +2123,172 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">22</span><span class="o">-</span><span class="mi">29</span><span class="n">c2b2eb1763</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">players18</span><span class="p">,</span><span class="n">players19</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;PLAYER_ID&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;players18&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0_x</th>
+      <th>PLAYER_NAME_x</th>
+      <th>TEAM_ID_x</th>
+      <th>PLAYER_ID</th>
+      <th>SEASON_x</th>
+      <th>Unnamed: 0_y</th>
+      <th>PLAYER_NAME_y</th>
+      <th>TEAM_ID_y</th>
+      <th>SEASON_y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>626.0</td>
+      <td>Kawhi Leonard</td>
+      <td>1.610613e+09</td>
+      <td>202695</td>
+      <td>2018.0</td>
+      <td>299.0</td>
+      <td>Kawhi Leonard</td>
+      <td>1.610613e+09</td>
+      <td>2019.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>627.0</td>
+      <td>Pascal Siakam</td>
+      <td>1.610613e+09</td>
+      <td>1627783</td>
+      <td>2018.0</td>
+      <td>275.0</td>
+      <td>Pascal Siakam</td>
+      <td>1.610613e+09</td>
+      <td>2019.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>628.0</td>
+      <td>Marc Gasol</td>
+      <td>1.610613e+09</td>
+      <td>201188</td>
+      <td>2018.0</td>
+      <td>276.0</td>
+      <td>Marc Gasol</td>
+      <td>1.610613e+09</td>
+      <td>2019.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1157.0</td>
+      <td>Marc Gasol</td>
+      <td>1.610613e+09</td>
+      <td>201188</td>
+      <td>2018.0</td>
+      <td>276.0</td>
+      <td>Marc Gasol</td>
+      <td>1.610613e+09</td>
+      <td>2019.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>629.0</td>
+      <td>Danny Green</td>
+      <td>1.610613e+09</td>
+      <td>201980</td>
+      <td>2018.0</td>
+      <td>202.0</td>
+      <td>Danny Green</td>
+      <td>1.610613e+09</td>
+      <td>2019.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>922</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1629097</td>
+      <td>NaN</td>
+      <td>619.0</td>
+      <td>Terry Larrier</td>
+      <td>1.610613e+09</td>
+      <td>2019.0</td>
+    </tr>
+    <tr>
+      <th>923</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>203461</td>
+      <td>NaN</td>
+      <td>621.0</td>
+      <td>Anthony Bennett</td>
+      <td>1.610613e+09</td>
+      <td>2019.0</td>
+    </tr>
+    <tr>
+      <th>924</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>203906</td>
+      <td>NaN</td>
+      <td>623.0</td>
+      <td>Devyn Marble</td>
+      <td>1.610613e+09</td>
+      <td>2019.0</td>
+    </tr>
+    <tr>
+      <th>925</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1629755</td>
+      <td>NaN</td>
+      <td>624.0</td>
+      <td>Hassani Gravett</td>
+      <td>1.610613e+09</td>
+      <td>2019.0</td>
+    </tr>
+    <tr>
+      <th>926</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1629721</td>
+      <td>NaN</td>
+      <td>625.0</td>
+      <td>JaKeenan Gant</td>
+      <td>1.610613e+09</td>
+      <td>2019.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>927 rows × 9 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -837,15 +2297,172 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">23</span><span class="o">-</span><span class="mi">49234742</span><span class="n">c89f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">players18</span><span class="p">,</span><span class="n">players19</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;PLAYER_ID&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;players18&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0_x</th>
+      <th>PLAYER_NAME_x</th>
+      <th>TEAM_ID_x</th>
+      <th>PLAYER_ID</th>
+      <th>SEASON_x</th>
+      <th>Unnamed: 0_y</th>
+      <th>PLAYER_NAME_y</th>
+      <th>TEAM_ID_y</th>
+      <th>SEASON_y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>626</td>
+      <td>Kawhi Leonard</td>
+      <td>1610612761</td>
+      <td>202695</td>
+      <td>2018</td>
+      <td>299.0</td>
+      <td>Kawhi Leonard</td>
+      <td>1.610613e+09</td>
+      <td>2019.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>627</td>
+      <td>Pascal Siakam</td>
+      <td>1610612761</td>
+      <td>1627783</td>
+      <td>2018</td>
+      <td>275.0</td>
+      <td>Pascal Siakam</td>
+      <td>1.610613e+09</td>
+      <td>2019.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>628</td>
+      <td>Marc Gasol</td>
+      <td>1610612761</td>
+      <td>201188</td>
+      <td>2018</td>
+      <td>276.0</td>
+      <td>Marc Gasol</td>
+      <td>1.610613e+09</td>
+      <td>2019.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>629</td>
+      <td>Danny Green</td>
+      <td>1610612761</td>
+      <td>201980</td>
+      <td>2018</td>
+      <td>202.0</td>
+      <td>Danny Green</td>
+      <td>1.610613e+09</td>
+      <td>2019.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>630</td>
+      <td>Kyle Lowry</td>
+      <td>1610612761</td>
+      <td>200768</td>
+      <td>2018</td>
+      <td>451.0</td>
+      <td>Kyle Lowry</td>
+      <td>1.610613e+09</td>
+      <td>2019.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>749</th>
+      <td>1369</td>
+      <td>Tyrius Walker</td>
+      <td>1610612752</td>
+      <td>1629246</td>
+      <td>2018</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>750</th>
+      <td>1370</td>
+      <td>Marcus Lee</td>
+      <td>1610612748</td>
+      <td>1629159</td>
+      <td>2018</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>751</th>
+      <td>1371</td>
+      <td>Trey Lewis</td>
+      <td>1610612762</td>
+      <td>1629163</td>
+      <td>2018</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>752</th>
+      <td>1372</td>
+      <td>Emanuel Terry</td>
+      <td>1610612743</td>
+      <td>1629150</td>
+      <td>2018</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>753</th>
+      <td>1373</td>
+      <td>Justin Bibbs</td>
+      <td>1610612738</td>
+      <td>1629167</td>
+      <td>2018</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>754 rows × 9 columns</p>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="try-it-yourself">
