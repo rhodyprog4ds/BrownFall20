@@ -3,7 +3,11 @@
 
 __Due: 2020-10-11__
 
-_there will be no tolerance of late submissions on this assignment because it will be graded Monday, so that you can use that feedback to finish up your portfolio.
+_there will be no tolerance of late submissions on this assignment because it will be graded Monday, so that you can use that feedback to finish up your portfolio._
+
+
+
+Accept the [assignment](https://classroom.github.com/a/LCmnlOxo)
 
 ## Instructions
 _this will earn level 2 for construct_
@@ -20,6 +24,8 @@ Your completed datasets should have:
 
 For each dataset, pose one question that could not be answered from the input data files as provided and demonstrate how to answer it with the dataset you built. This could be something that can be answered with using only `shape` of the merged data, but if you need summarize and visualize level 2 achievements, you should use more statistics and plots.
 
+
+Your notebooks must be in the top level of the repository, not in a subfolder.
 
 ## Additional Achievements:
 
