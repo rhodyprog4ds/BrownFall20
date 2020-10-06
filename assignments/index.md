@@ -7,3 +7,4 @@ Assignment TOC:
 - [Assignment 2](02-python-access) Due September 20
 - [Assignment 3](03-exploratory) Due September 29
 - [Assignment 4](04-prepare) Due October 4
+- [Assignment 5](05-construct) Due October 11
