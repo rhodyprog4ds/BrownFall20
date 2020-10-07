@@ -45,6 +45,7 @@
   sections:
     - file: faq/syllabus
     - file: faq/github
+    - file: faq/debugging
 
 - file: resources/index
   sections:
