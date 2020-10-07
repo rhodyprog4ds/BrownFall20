@@ -15,7 +15,7 @@ _this will earn level 2 for construct_
 Your goal is to build and prepare two ready to analyze datasets. You will submit a notebook that describes how you built and prepared each dataset.
 - Each finished dataset must be produced from two or more tables.
 - At least one must come from an sqlite database, either by merging results from multiple queries or multiple tables.
-- You should use at least three different merges and one concatenate
+- You should use at least two different merges and one concatenate
 
 Your completed datasets should have:
 - column names that are well formatted (only lowercase letters, numbers and `_`)
@@ -35,7 +35,6 @@ To earn level 2 for prepare, one of your analyses must use datasets with missing
 For the merged column data, either before or after merging, you must additionally:
 - create separate separate tables for original and aggregate values (eg percentages or sums that can be recovered from the other columns)
 - unstack all levels of the data to create a single level index over the columns
-- create a database with the tables
 
 
 
