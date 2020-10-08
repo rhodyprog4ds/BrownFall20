@@ -13,4 +13,4 @@ Class notes will get posted here day by day
 - [2020-09-30](2020-09-30): Reading complex data and Ray Summit
 - [2020-10-02](2020-10-02): Cleaning Data
 - [2020-10-05](2020-10-05): Merging DataFrames
-- [2020-10-05](2020-10-07): Merging & Databases
+- [2020-10-07](2020-10-07): Merging & Databases
