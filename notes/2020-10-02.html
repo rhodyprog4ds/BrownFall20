@@ -568,6 +568,7 @@
 </div>
 </div>
 </div>
+<p>we can do df.index to look at what the index is in our dataframe</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">index</span>
@@ -580,25 +581,26 @@
 </div>
 </div>
 </div>
+<p>Next, we can look at the columns, first we can index to the first column as below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ca_dds_df.columns[0]
+We can use this to set the first column as the index of original DataFrame, without having to copy that whole long name manually. The default of `set_index` method is to modify a copy of the DataFrame and return that because `inplace = False`. We want to change our existing DataFrame so we use `inplace=True`
+```{code-cell} ipython3
+ca_dds_df.set_index(ca_dds_df.columns[0],inplace=True)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Ethnicity&#39;, &#39;Gender&#39;, &#39;Unnamed: 0_level_2&#39;)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  File &quot;&lt;ipython-input-6-e3216f084910&gt;&quot;, line 2
+    We can use this to set the first column as the index of original DataFrame, without having to copy that whole long name manually. The default of `set_index` method is to modify a copy of the DataFrame and return that because `inplace = False`. We want to change our existing DataFrame so we use `inplace=True`
+         ^
+SyntaxError: invalid syntax
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>The updated dataframe looks like below. The name of index is still not informative and there are empty rows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span>
@@ -619,15 +621,12 @@
     .dataframe thead tr th {
         text-align: left;
     }
-
-    .dataframe thead tr:last-of-type th {
-        text-align: right;
-    }
 </style>
 <table border="1" class="dataframe">
   <thead>
     <tr>
       <th></th>
+      <th>Ethnicity</th>
       <th colspan="4" halign="left">Asian</th>
       <th colspan="4" halign="left">Black</th>
       <th colspan="4" halign="left">Hispanic</th>
@@ -635,6 +634,7 @@
     </tr>
     <tr>
       <th></th>
+      <th>Gender</th>
       <th colspan="2" halign="left">Female</th>
       <th colspan="2" halign="left">Male</th>
       <th colspan="2" halign="left">Female</th>
@@ -646,6 +646,7 @@
     </tr>
     <tr>
       <th></th>
+      <th>Unnamed: 0_level_2</th>
       <th>count</th>
       <th>mean</th>
       <th>count</th>
@@ -662,30 +663,12 @@
       <th>mean</th>
       <th>count</th>
       <th>mean</th>
-    </tr>
-    <tr>
-      <th>(Ethnicity, Gender, Unnamed: 0_level_2)</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Age Cohort</th>
+      <th>0</th>
+      <td>Age Cohort</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -704,7 +687,8 @@
       <td>NaN</td>
     </tr>
     <tr>
-      <th>0 - 5</th>
+      <th>1</th>
+      <td>0 - 5</td>
       <td>6.0</td>
       <td>1544.333333</td>
       <td>NaN</td>
@@ -723,7 +707,8 @@
       <td>1428.111111</td>
     </tr>
     <tr>
-      <th>51 +</th>
+      <th>2</th>
+      <td>51 +</td>
       <td>9.0</td>
       <td>56577.666667</td>
       <td>NaN</td>
@@ -742,7 +727,8 @@
       <td>51676.448276</td>
     </tr>
     <tr>
-      <th>13-17</th>
+      <th>3</th>
+      <td>13-17</td>
       <td>10.0</td>
       <td>3385.700000</td>
       <td>10.0</td>
@@ -761,7 +747,8 @@
       <td>4009.866667</td>
     </tr>
     <tr>
-      <th>18-21</th>
+      <th>4</th>
+      <td>18-21</td>
       <td>18.0</td>
       <td>10083.277778</td>
       <td>23.0</td>
@@ -780,7 +767,8 @@
       <td>9784.090909</td>
     </tr>
     <tr>
-      <th>22-50</th>
+      <th>5</th>
+      <td>22-50</td>
       <td>12.0</td>
       <td>39470.916667</td>
       <td>17.0</td>
@@ -799,7 +787,8 @@
       <td>38604.452055</td>
     </tr>
     <tr>
-      <th>6-12</th>
+      <th>6</th>
+      <td>6-12</td>
       <td>6.0</td>
       <td>2165.333333</td>
       <td>12.0</td>
@@ -821,6 +810,7 @@
 </table>
 </div></div></div>
 </div>
+<p>we can drop rows with rows or columns with <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values in two ways: “all” or “any”. The default is <code class="docutils literal notranslate"><span class="pre">any</span></code> which will drop a row if it has <em>any</em> values that are <code class="docutils literal notranslate"><span class="pre">NaN</span></code>. We will use “all” instead, because we only want to drop the rows with no data in them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -828,6 +818,7 @@
 </div>
 </div>
 </div>
+<p>We can view the index by the following code. Remember that this is not a regular column anymore since we assigned it to be the index of our DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">index</span>
@@ -835,11 +826,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39; 0 - 5&#39;, &#39; 51 +&#39;, &#39;13-17&#39;, &#39;18-21&#39;, &#39;22-50&#39;, &#39;6-12&#39;], dtype=&#39;object&#39;, name=(&#39;Ethnicity&#39;, &#39;Gender&#39;, &#39;Unnamed: 0_level_2&#39;))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([0, 1, 2, 3, 4, 5, 6], dtype=&#39;int64&#39;)
 </pre></div>
 </div>
 </div>
 </div>
+<p>Now lets rename the index to a more meaningful name as below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;Age Cohort&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -847,6 +839,385 @@
 </div>
 </div>
 </div>
+<p>But we still have multi-row headers which should get corrected. We also want to have columns for “Age”, “Race”, “Gender”, “Mean” and “Count”.</p>
+<p>Let’s flip the dataframe</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Age Cohort</th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Ethnicity</th>
+      <th>Gender</th>
+      <th>Unnamed: 0_level_2</th>
+      <td>Age Cohort</td>
+      <td>0 - 5</td>
+      <td>51 +</td>
+      <td>13-17</td>
+      <td>18-21</td>
+      <td>22-50</td>
+      <td>6-12</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">Asian</th>
+      <th rowspan="2" valign="top">Female</th>
+      <th>count</th>
+      <td>NaN</td>
+      <td>6</td>
+      <td>9</td>
+      <td>10</td>
+      <td>18</td>
+      <td>12</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>NaN</td>
+      <td>1544.33</td>
+      <td>56577.7</td>
+      <td>3385.7</td>
+      <td>10083.3</td>
+      <td>39470.9</td>
+      <td>2165.33</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Male</th>
+      <th>count</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>10</td>
+      <td>23</td>
+      <td>17</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3632.5</td>
+      <td>9218.52</td>
+      <td>39657.9</td>
+      <td>2164.17</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">Black</th>
+      <th rowspan="2" valign="top">Female</th>
+      <th>count</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>41284.1</td>
+      <td>2566.57</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Male</th>
+      <th>count</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8</td>
+      <td>7</td>
+      <td>9</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4367.25</td>
+      <td>9119.43</td>
+      <td>39941</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">Hispanic</th>
+      <th rowspan="2" valign="top">Female</th>
+      <th>count</th>
+      <td>NaN</td>
+      <td>18</td>
+      <td>NaN</td>
+      <td>50</td>
+      <td>41</td>
+      <td>24</td>
+      <td>54</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>NaN</td>
+      <td>1431.33</td>
+      <td>NaN</td>
+      <td>4043.72</td>
+      <td>10199.4</td>
+      <td>41005.5</td>
+      <td>2443.78</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Male</th>
+      <th>count</th>
+      <td>NaN</td>
+      <td>26</td>
+      <td>12</td>
+      <td>53</td>
+      <td>37</td>
+      <td>19</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>NaN</td>
+      <td>1366.81</td>
+      <td>53019</td>
+      <td>3871.85</td>
+      <td>9694.41</td>
+      <td>40821.3</td>
+      <td>2120.14</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">White not Hispanic</th>
+      <th rowspan="2" valign="top">Female</th>
+      <th>count</th>
+      <td>NaN</td>
+      <td>11</td>
+      <td>37</td>
+      <td>37</td>
+      <td>36</td>
+      <td>60</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>NaN</td>
+      <td>1316.82</td>
+      <td>53449.5</td>
+      <td>3818.81</td>
+      <td>10452.9</td>
+      <td>42113.8</td>
+      <td>2112.75</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Male</th>
+      <th>count</th>
+      <td>NaN</td>
+      <td>9</td>
+      <td>29</td>
+      <td>30</td>
+      <td>33</td>
+      <td>73</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>NaN</td>
+      <td>1428.11</td>
+      <td>51676.4</td>
+      <td>4009.87</td>
+      <td>9784.09</td>
+      <td>38604.5</td>
+      <td>1986.27</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>unstack the index. For this purpose, we should unstack it in two levels of “Race” and “Gender”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Age Cohort</th>
+      <th colspan="9" halign="left">0</th>
+      <th>1</th>
+      <th>...</th>
+      <th>5</th>
+      <th colspan="9" halign="left">6</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Ethnicity</th>
+      <th colspan="2" halign="left">Asian</th>
+      <th colspan="2" halign="left">Black</th>
+      <th colspan="2" halign="left">Hispanic</th>
+      <th colspan="2" halign="left">White not Hispanic</th>
+      <th>Ethnicity</th>
+      <th>...</th>
+      <th>White not Hispanic</th>
+      <th>Ethnicity</th>
+      <th colspan="2" halign="left">Asian</th>
+      <th colspan="2" halign="left">Black</th>
+      <th colspan="2" halign="left">Hispanic</th>
+      <th colspan="2" halign="left">White not Hispanic</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Gender</th>
+      <th>Female</th>
+      <th>Male</th>
+      <th>Female</th>
+      <th>Male</th>
+      <th>Female</th>
+      <th>Male</th>
+      <th>Female</th>
+      <th>Male</th>
+      <th>Gender</th>
+      <th>...</th>
+      <th>Male</th>
+      <th>Gender</th>
+      <th>Female</th>
+      <th>Male</th>
+      <th>Female</th>
+      <th>Male</th>
+      <th>Female</th>
+      <th>Male</th>
+      <th>Female</th>
+      <th>Male</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Unnamed: 0_level_2</th>
+      <td>Age Cohort</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0 - 5</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>6-12</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>count</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>73</td>
+      <td>NaN</td>
+      <td>6</td>
+      <td>12</td>
+      <td>7</td>
+      <td>NaN</td>
+      <td>54</td>
+      <td>37</td>
+      <td>24</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>38604.5</td>
+      <td>NaN</td>
+      <td>2165.33</td>
+      <td>2164.17</td>
+      <td>2566.57</td>
+      <td>NaN</td>
+      <td>2443.78</td>
+      <td>2120.14</td>
+      <td>2112.75</td>
+      <td>1986.27</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 63 columns</p>
+</div></div></div>
+</div>
+<p>After unstacking we want to flip it again and finally reset the index.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -875,6 +1246,7 @@
       <th>Age Cohort</th>
       <th>level_1</th>
       <th>level_2</th>
+      <th>Unnamed: 0_level_2</th>
       <th>count</th>
       <th>mean</th>
     </tr>
@@ -882,392 +1254,116 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>0 - 5</td>
-      <td>Asian</td>
-      <td>Female</td>
-      <td>6.0</td>
-      <td>1544.333333</td>
+      <td>0</td>
+      <td>Ethnicity</td>
+      <td>Gender</td>
+      <td>Age Cohort</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0 - 5</td>
+      <td>0</td>
       <td>Asian</td>
-      <td>Male</td>
+      <td>Female</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0 - 5</td>
-      <td>Black</td>
-      <td>Female</td>
+      <td>0</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0 - 5</td>
+      <td>0</td>
       <td>Black</td>
-      <td>Male</td>
+      <td>Female</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0 - 5</td>
-      <td>Hispanic</td>
-      <td>Female</td>
-      <td>18.0</td>
-      <td>1431.333333</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>0 - 5</td>
-      <td>Hispanic</td>
-      <td>Male</td>
-      <td>26.0</td>
-      <td>1366.807692</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>0 - 5</td>
-      <td>White not Hispanic</td>
-      <td>Female</td>
-      <td>11.0</td>
-      <td>1316.818182</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>0 - 5</td>
-      <td>White not Hispanic</td>
-      <td>Male</td>
-      <td>9.0</td>
-      <td>1428.111111</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>51 +</td>
-      <td>Asian</td>
-      <td>Female</td>
-      <td>9.0</td>
-      <td>56577.666667</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>51 +</td>
-      <td>Asian</td>
-      <td>Male</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>51 +</td>
-      <td>Black</td>
-      <td>Female</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>51 +</td>
+      <td>0</td>
       <td>Black</td>
       <td>Male</td>
       <td>NaN</td>
       <td>NaN</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>51 +</td>
-      <td>Hispanic</td>
-      <td>Female</td>
-      <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>13</th>
-      <td>51 +</td>
-      <td>Hispanic</td>
-      <td>Male</td>
-      <td>12.0</td>
-      <td>53019.000000</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>14</th>
-      <td>51 +</td>
-      <td>White not Hispanic</td>
-      <td>Female</td>
-      <td>37.0</td>
-      <td>53449.486486</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>51 +</td>
-      <td>White not Hispanic</td>
-      <td>Male</td>
-      <td>29.0</td>
-      <td>51676.448276</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>13-17</td>
-      <td>Asian</td>
-      <td>Female</td>
-      <td>10.0</td>
-      <td>3385.700000</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>13-17</td>
-      <td>Asian</td>
-      <td>Male</td>
-      <td>10.0</td>
-      <td>3632.500000</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>13-17</td>
-      <td>Black</td>
-      <td>Female</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>13-17</td>
-      <td>Black</td>
-      <td>Male</td>
-      <td>8.0</td>
-      <td>4367.250000</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>13-17</td>
-      <td>Hispanic</td>
-      <td>Female</td>
-      <td>50.0</td>
-      <td>4043.720000</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>13-17</td>
-      <td>Hispanic</td>
-      <td>Male</td>
-      <td>53.0</td>
-      <td>3871.849057</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>13-17</td>
-      <td>White not Hispanic</td>
-      <td>Female</td>
-      <td>37.0</td>
-      <td>3818.810811</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>13-17</td>
-      <td>White not Hispanic</td>
-      <td>Male</td>
-      <td>30.0</td>
-      <td>4009.866667</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>18-21</td>
-      <td>Asian</td>
-      <td>Female</td>
-      <td>18.0</td>
-      <td>10083.277778</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>18-21</td>
-      <td>Asian</td>
-      <td>Male</td>
-      <td>23.0</td>
-      <td>9218.521739</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>18-21</td>
-      <td>Black</td>
-      <td>Female</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>18-21</td>
-      <td>Black</td>
-      <td>Male</td>
-      <td>7.0</td>
-      <td>9119.428571</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>18-21</td>
-      <td>Hispanic</td>
-      <td>Female</td>
-      <td>41.0</td>
-      <td>10199.390244</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>18-21</td>
-      <td>Hispanic</td>
-      <td>Male</td>
-      <td>37.0</td>
-      <td>9694.405405</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>18-21</td>
-      <td>White not Hispanic</td>
-      <td>Female</td>
-      <td>36.0</td>
-      <td>10452.944444</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>18-21</td>
-      <td>White not Hispanic</td>
-      <td>Male</td>
-      <td>33.0</td>
-      <td>9784.090909</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>22-50</td>
-      <td>Asian</td>
-      <td>Female</td>
-      <td>12.0</td>
-      <td>39470.916667</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>22-50</td>
-      <td>Asian</td>
-      <td>Male</td>
-      <td>17.0</td>
-      <td>39657.882353</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>22-50</td>
-      <td>Black</td>
-      <td>Female</td>
-      <td>8.0</td>
-      <td>41284.125000</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>22-50</td>
-      <td>Black</td>
-      <td>Male</td>
-      <td>9.0</td>
-      <td>39941.000000</td>
-    </tr>
-    <tr>
-      <th>36</th>
-      <td>22-50</td>
-      <td>Hispanic</td>
-      <td>Female</td>
-      <td>24.0</td>
-      <td>41005.541667</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>22-50</td>
-      <td>Hispanic</td>
-      <td>Male</td>
-      <td>19.0</td>
-      <td>40821.263158</td>
-    </tr>
-    <tr>
-      <th>38</th>
-      <td>22-50</td>
-      <td>White not Hispanic</td>
-      <td>Female</td>
-      <td>60.0</td>
-      <td>42113.816667</td>
-    </tr>
-    <tr>
-      <th>39</th>
-      <td>22-50</td>
-      <td>White not Hispanic</td>
-      <td>Male</td>
-      <td>73.0</td>
-      <td>38604.452055</td>
-    </tr>
-    <tr>
-      <th>40</th>
-      <td>6-12</td>
-      <td>Asian</td>
-      <td>Female</td>
-      <td>6.0</td>
-      <td>2165.333333</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>6-12</td>
-      <td>Asian</td>
-      <td>Male</td>
-      <td>12.0</td>
-      <td>2164.166667</td>
-    </tr>
-    <tr>
-      <th>42</th>
-      <td>6-12</td>
-      <td>Black</td>
-      <td>Female</td>
-      <td>7.0</td>
-      <td>2566.571429</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>6-12</td>
+      <th>58</th>
+      <td>6</td>
       <td>Black</td>
       <td>Male</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>44</th>
-      <td>6-12</td>
+      <th>59</th>
+      <td>6</td>
       <td>Hispanic</td>
       <td>Female</td>
-      <td>54.0</td>
-      <td>2443.777778</td>
+      <td>NaN</td>
+      <td>54</td>
+      <td>2443.78</td>
     </tr>
     <tr>
-      <th>45</th>
-      <td>6-12</td>
+      <th>60</th>
+      <td>6</td>
       <td>Hispanic</td>
       <td>Male</td>
-      <td>37.0</td>
-      <td>2120.135135</td>
+      <td>NaN</td>
+      <td>37</td>
+      <td>2120.14</td>
     </tr>
     <tr>
-      <th>46</th>
-      <td>6-12</td>
+      <th>61</th>
+      <td>6</td>
       <td>White not Hispanic</td>
       <td>Female</td>
-      <td>24.0</td>
-      <td>2112.750000</td>
+      <td>NaN</td>
+      <td>24</td>
+      <td>2112.75</td>
     </tr>
     <tr>
-      <th>47</th>
-      <td>6-12</td>
+      <th>62</th>
+      <td>6</td>
       <td>White not Hispanic</td>
       <td>Male</td>
-      <td>22.0</td>
-      <td>1986.272727</td>
+      <td>NaN</td>
+      <td>22</td>
+      <td>1986.27</td>
     </tr>
   </tbody>
 </table>
+<p>63 rows × 6 columns</p>
 </div></div></div>
 </div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>we worked without saving our changes to view what happened at each step. Now, we’ll ave them to a new DataFrame since this is a big change and doing all of those operations again in place would be more lines than just assigning to a new variable</p>
+</div>
+</div>
+<p>All these changes will be saved into a new dataframe named “ca_dds_clean”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_clean</span> <span class="o">=</span> <span class="n">ca_dds_df</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -1297,6 +1393,7 @@
       <th>Age Cohort</th>
       <th>level_1</th>
       <th>level_2</th>
+      <th>Unnamed: 0_level_2</th>
       <th>count</th>
       <th>mean</th>
     </tr>
@@ -1304,72 +1401,55 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>0 - 5</td>
-      <td>Asian</td>
-      <td>Female</td>
-      <td>6.0</td>
-      <td>1544.333333</td>
+      <td>0</td>
+      <td>Ethnicity</td>
+      <td>Gender</td>
+      <td>Age Cohort</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0 - 5</td>
+      <td>0</td>
       <td>Asian</td>
-      <td>Male</td>
+      <td>Female</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0 - 5</td>
-      <td>Black</td>
-      <td>Female</td>
+      <td>0</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0 - 5</td>
+      <td>0</td>
       <td>Black</td>
-      <td>Male</td>
+      <td>Female</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0 - 5</td>
-      <td>Hispanic</td>
-      <td>Female</td>
-      <td>18.0</td>
-      <td>1431.333333</td>
+      <td>0</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_clean</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Race&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="n">f771ccd0e865</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ca_dds_clean</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Race&#39;</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/core/indexes/base.py</span> in <span class="ni">__setitem__</span><span class="nt">(self, key, value)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4079</span> 
-<span class="g g-Whitespace">   </span><span class="mi">4080</span>     <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">4081</span>         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Index does not support mutable operations&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4082</span> 
-<span class="g g-Whitespace">   </span><span class="mi">4083</span>     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-
-<span class="ne">TypeError</span>: Index does not support mutable operations
-</pre></div>
-</div>
-</div>
-</div>
+<p>As we can see here, we can not change elements of an index. Instead we should reassign the whole column names.
+The reason is that index variable’s type is type <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">Index</span></code> not a regular python based datatype.  Index has special properties and python does not allow mutable operations, such as assigning it a new value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">ca_dds_clean</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
@@ -1382,6 +1462,7 @@
 </div>
 </div>
 </div>
+<p>The way we can rename index by using “.rename()”  method with a dictionary that maps new names (as the values) to the current names (the keys of the dictionary). We can either tell <code class="docutils literal notranslate"><span class="pre">rename</span></code> what <code class="docutils literal notranslate"><span class="pre">axis</span></code> of the DataFrame to work on or pass our mapper to the <code class="docutils literal notranslate"><span class="pre">columns</span></code> keyword.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_clean</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_1&#39;</span><span class="p">:</span><span class="s1">&#39;Race&#39;</span><span class="p">,</span> <span class="s1">&#39;level_2&#39;</span><span class="p">:</span><span class="s1">&#39;Gender&#39;</span><span class="p">},</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1411,6 +1492,7 @@
       <th>Age Cohort</th>
       <th>Race</th>
       <th>Gender</th>
+      <th>Unnamed: 0_level_2</th>
       <th>count</th>
       <th>mean</th>
     </tr>
@@ -1418,43 +1500,48 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>0 - 5</td>
-      <td>Asian</td>
-      <td>Female</td>
-      <td>6.0</td>
-      <td>1544.333333</td>
+      <td>0</td>
+      <td>Ethnicity</td>
+      <td>Gender</td>
+      <td>Age Cohort</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0 - 5</td>
+      <td>0</td>
       <td>Asian</td>
-      <td>Male</td>
+      <td>Female</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0 - 5</td>
-      <td>Black</td>
-      <td>Female</td>
+      <td>0</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0 - 5</td>
+      <td>0</td>
       <td>Black</td>
-      <td>Male</td>
+      <td>Female</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0 - 5</td>
-      <td>Hispanic</td>
-      <td>Female</td>
-      <td>18.0</td>
-      <td>1431.333333</td>
+      <td>0</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
@@ -1467,7 +1554,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nan
 </pre></div>
 </div>
 </div>
@@ -1479,7 +1566,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Female&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Gender&#39;
 </pre></div>
 </div>
 </div>
@@ -1491,7 +1578,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;female&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;gender&#39;
 </pre></div>
 </div>
 </div>
@@ -1526,6 +1613,7 @@
       <th>age_cohort</th>
       <th>race</th>
       <th>gender</th>
+      <th>unnamed:_0_level_2</th>
       <th>count</th>
       <th>mean</th>
     </tr>
@@ -1533,43 +1621,48 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>0 - 5</td>
-      <td>Asian</td>
-      <td>Female</td>
-      <td>6.0</td>
-      <td>1544.333333</td>
+      <td>0</td>
+      <td>Ethnicity</td>
+      <td>Gender</td>
+      <td>Age Cohort</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0 - 5</td>
+      <td>0</td>
       <td>Asian</td>
-      <td>Male</td>
+      <td>Female</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0 - 5</td>
-      <td>Black</td>
-      <td>Female</td>
+      <td>0</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0 - 5</td>
+      <td>0</td>
       <td>Black</td>
-      <td>Male</td>
+      <td>Female</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0 - 5</td>
-      <td>Hispanic</td>
-      <td>Female</td>
-      <td>18.0</td>
-      <td>1431.333333</td>
+      <td>0</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
@@ -1603,6 +1696,7 @@
       <th>age_cohort</th>
       <th>race</th>
       <th>gender</th>
+      <th>unnamed:_0_level_2</th>
       <th>count</th>
       <th>mean</th>
     </tr>
@@ -1610,390 +1704,106 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>0 - 5</td>
-      <td>Asian</td>
-      <td>Female</td>
-      <td>6</td>
-      <td>1544.33</td>
+      <td>0</td>
+      <td>Ethnicity</td>
+      <td>Gender</td>
+      <td>Age Cohort</td>
+      <td>*</td>
+      <td>*</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0 - 5</td>
+      <td>0</td>
       <td>Asian</td>
-      <td>Male</td>
+      <td>Female</td>
+      <td>*</td>
       <td>*</td>
       <td>*</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0 - 5</td>
-      <td>Black</td>
-      <td>Female</td>
+      <td>0</td>
+      <td>Asian</td>
+      <td>Male</td>
+      <td>*</td>
       <td>*</td>
       <td>*</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0 - 5</td>
+      <td>0</td>
       <td>Black</td>
-      <td>Male</td>
+      <td>Female</td>
+      <td>*</td>
       <td>*</td>
       <td>*</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0 - 5</td>
-      <td>Hispanic</td>
-      <td>Female</td>
-      <td>18</td>
-      <td>1431.33</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>0 - 5</td>
-      <td>Hispanic</td>
-      <td>Male</td>
-      <td>26</td>
-      <td>1366.81</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>0 - 5</td>
-      <td>White not Hispanic</td>
-      <td>Female</td>
-      <td>11</td>
-      <td>1316.82</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>0 - 5</td>
-      <td>White not Hispanic</td>
-      <td>Male</td>
-      <td>9</td>
-      <td>1428.11</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>51 +</td>
-      <td>Asian</td>
-      <td>Female</td>
-      <td>9</td>
-      <td>56577.7</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>51 +</td>
-      <td>Asian</td>
-      <td>Male</td>
-      <td>*</td>
-      <td>*</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>51 +</td>
-      <td>Black</td>
-      <td>Female</td>
-      <td>*</td>
-      <td>*</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>51 +</td>
+      <td>0</td>
       <td>Black</td>
       <td>Male</td>
       <td>*</td>
       <td>*</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>51 +</td>
-      <td>Hispanic</td>
-      <td>Female</td>
-      <td>*</td>
       <td>*</td>
     </tr>
     <tr>
-      <th>13</th>
-      <td>51 +</td>
-      <td>Hispanic</td>
-      <td>Male</td>
-      <td>12</td>
-      <td>53019</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>14</th>
-      <td>51 +</td>
-      <td>White not Hispanic</td>
-      <td>Female</td>
-      <td>37</td>
-      <td>53449.5</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>51 +</td>
-      <td>White not Hispanic</td>
-      <td>Male</td>
-      <td>29</td>
-      <td>51676.4</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>13-17</td>
-      <td>Asian</td>
-      <td>Female</td>
-      <td>10</td>
-      <td>3385.7</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>13-17</td>
-      <td>Asian</td>
-      <td>Male</td>
-      <td>10</td>
-      <td>3632.5</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>13-17</td>
-      <td>Black</td>
-      <td>Female</td>
-      <td>*</td>
-      <td>*</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>13-17</td>
-      <td>Black</td>
-      <td>Male</td>
-      <td>8</td>
-      <td>4367.25</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>13-17</td>
-      <td>Hispanic</td>
-      <td>Female</td>
-      <td>50</td>
-      <td>4043.72</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>13-17</td>
-      <td>Hispanic</td>
-      <td>Male</td>
-      <td>53</td>
-      <td>3871.85</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>13-17</td>
-      <td>White not Hispanic</td>
-      <td>Female</td>
-      <td>37</td>
-      <td>3818.81</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>13-17</td>
-      <td>White not Hispanic</td>
-      <td>Male</td>
-      <td>30</td>
-      <td>4009.87</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>18-21</td>
-      <td>Asian</td>
-      <td>Female</td>
-      <td>18</td>
-      <td>10083.3</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>18-21</td>
-      <td>Asian</td>
-      <td>Male</td>
-      <td>23</td>
-      <td>9218.52</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>18-21</td>
-      <td>Black</td>
-      <td>Female</td>
-      <td>*</td>
-      <td>*</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>18-21</td>
-      <td>Black</td>
-      <td>Male</td>
-      <td>7</td>
-      <td>9119.43</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>18-21</td>
-      <td>Hispanic</td>
-      <td>Female</td>
-      <td>41</td>
-      <td>10199.4</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>18-21</td>
-      <td>Hispanic</td>
-      <td>Male</td>
-      <td>37</td>
-      <td>9694.41</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>18-21</td>
-      <td>White not Hispanic</td>
-      <td>Female</td>
-      <td>36</td>
-      <td>10452.9</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>18-21</td>
-      <td>White not Hispanic</td>
-      <td>Male</td>
-      <td>33</td>
-      <td>9784.09</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>22-50</td>
-      <td>Asian</td>
-      <td>Female</td>
-      <td>12</td>
-      <td>39470.9</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>22-50</td>
-      <td>Asian</td>
-      <td>Male</td>
-      <td>17</td>
-      <td>39657.9</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>22-50</td>
-      <td>Black</td>
-      <td>Female</td>
-      <td>8</td>
-      <td>41284.1</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>22-50</td>
-      <td>Black</td>
-      <td>Male</td>
-      <td>9</td>
-      <td>39941</td>
-    </tr>
-    <tr>
-      <th>36</th>
-      <td>22-50</td>
-      <td>Hispanic</td>
-      <td>Female</td>
-      <td>24</td>
-      <td>41005.5</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>22-50</td>
-      <td>Hispanic</td>
-      <td>Male</td>
-      <td>19</td>
-      <td>40821.3</td>
-    </tr>
-    <tr>
-      <th>38</th>
-      <td>22-50</td>
-      <td>White not Hispanic</td>
-      <td>Female</td>
-      <td>60</td>
-      <td>42113.8</td>
-    </tr>
-    <tr>
-      <th>39</th>
-      <td>22-50</td>
-      <td>White not Hispanic</td>
-      <td>Male</td>
-      <td>73</td>
-      <td>38604.5</td>
-    </tr>
-    <tr>
-      <th>40</th>
-      <td>6-12</td>
-      <td>Asian</td>
-      <td>Female</td>
+      <th>58</th>
       <td>6</td>
-      <td>2165.33</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>6-12</td>
-      <td>Asian</td>
-      <td>Male</td>
-      <td>12</td>
-      <td>2164.17</td>
-    </tr>
-    <tr>
-      <th>42</th>
-      <td>6-12</td>
-      <td>Black</td>
-      <td>Female</td>
-      <td>7</td>
-      <td>2566.57</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>6-12</td>
       <td>Black</td>
       <td>Male</td>
       <td>*</td>
       <td>*</td>
+      <td>*</td>
     </tr>
     <tr>
-      <th>44</th>
-      <td>6-12</td>
+      <th>59</th>
+      <td>6</td>
       <td>Hispanic</td>
       <td>Female</td>
+      <td>*</td>
       <td>54</td>
       <td>2443.78</td>
     </tr>
     <tr>
-      <th>45</th>
-      <td>6-12</td>
+      <th>60</th>
+      <td>6</td>
       <td>Hispanic</td>
       <td>Male</td>
+      <td>*</td>
       <td>37</td>
       <td>2120.14</td>
     </tr>
     <tr>
-      <th>46</th>
-      <td>6-12</td>
+      <th>61</th>
+      <td>6</td>
       <td>White not Hispanic</td>
       <td>Female</td>
+      <td>*</td>
       <td>24</td>
       <td>2112.75</td>
     </tr>
     <tr>
-      <th>47</th>
-      <td>6-12</td>
+      <th>62</th>
+      <td>6</td>
       <td>White not Hispanic</td>
       <td>Male</td>
+      <td>*</td>
       <td>22</td>
       <td>1986.27</td>
     </tr>
   </tbody>
 </table>
+<p>63 rows × 6 columns</p>
 </div></div></div>
 </div>
 </div>
