@@ -9,7 +9,6 @@ These prompts are more reflective to help demonstrate your understanding of skil
 
 * - Skills:
     any
-
 ```
 
 Choose an assignment that you did not achieve the target level for. Write a blog style notebook analysis that corrects what you could have done better, what you learned, and addresses the misconception if applicable.
@@ -22,7 +21,6 @@ Choose an assignment that you did not achieve the target level for. Write a blog
 
 * - Skills:
     process
-
 ```
 
 Like the day 1 activity, find two different sources that describe the data science pipeline or lifecycle. Write a blog style post that discusses their differences and hypothesizes about why they may be different? Are they for different audiences? Is one domain specific.
@@ -56,7 +54,7 @@ Approved Podcasts:
 
 ```
 
-Annotate a whole session of class notes by submitting a PR to this repository. This applies after Dr. Brown's notes are uploaded, but not annotated. Use previously annotated notes as an example of what content should be added. 
+Annotate a whole session of class notes by submitting a PR to this repository. This applies after Dr. Brown's notes are uploaded, but not annotated. Use previously annotated notes as an example of what content should be added.
 In your portfolio, include a 1 paragraph reflection on what you learned by contributing the annotation and a link to your pull request.
 
 

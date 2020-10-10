@@ -1,6 +1,5 @@
 ---
 jupytext:
-  formats: ipynb,md:myst
   text_representation:
     extension: .md
     format_name: myst
@@ -14,7 +13,7 @@ kernelspec:
 
 # Cheatsheet
 
-examples and facts
+Patterns and examples of how to use common tips in class
 
 ## Axes
 
