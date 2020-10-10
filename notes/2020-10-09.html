@@ -341,7 +341,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sqlite3.Cursor at 0x7f96e0e55ea0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sqlite3.Cursor at 0x7f5063a8ae30&gt;
 </pre></div>
 </div>
 </div>
@@ -991,7 +991,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sqlite3.Connection at 0x7f96e0aab030&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sqlite3.Connection at 0x7f50636df030&gt;
 </pre></div>
 </div>
 </div>
@@ -2105,67 +2105,6 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;God&#39;], dtype=object)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;.tables&#39;</span><span class="p">,</span> <span class="n">con</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">OperationalError</span><span class="g g-Whitespace">                          </span>Traceback (most recent call last)
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/sql.py</span> in <span class="ni">execute</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1680</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1681</span>             <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1682</span>             <span class="k">return</span> <span class="n">cur</span>
-
-<span class="ne">OperationalError</span>: near &quot;.&quot;: syntax error
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">DatabaseError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="n">b1c598875d22</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;.tables&#39;</span><span class="p">,</span> <span class="n">con</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/sql.py</span> in <span class="ni">read_sql</span><span class="nt">(sql, con, index_col, coerce_float, params, parse_dates, columns, chunksize)</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span>             <span class="n">coerce_float</span><span class="o">=</span><span class="n">coerce_float</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">488</span>             <span class="n">parse_dates</span><span class="o">=</span><span class="n">parse_dates</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">489</span>             <span class="n">chunksize</span><span class="o">=</span><span class="n">chunksize</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">490</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/sql.py</span> in <span class="ni">read_query</span><span class="nt">(self, sql, index_col, coerce_float, params, parse_dates, chunksize)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1725</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1726</span>         <span class="n">args</span> <span class="o">=</span> <span class="n">_convert_params</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1727</span>         <span class="n">cursor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1728</span>         <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">col_desc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">col_desc</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">description</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1729</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/io/sql.py</span> in <span class="ni">execute</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1691</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1692</span>             <span class="n">ex</span> <span class="o">=</span> <span class="n">DatabaseError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Execution failed on sql &#39;</span><span class="si">{</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">exc</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1693</span>             <span class="k">raise</span> <span class="n">ex</span> <span class="kn">from</span> <span class="nn">exc</span>
-<span class="g g-Whitespace">   </span><span class="mi">1694</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1695</span>     <span class="nd">@staticmethod</span>
-
-<span class="ne">DatabaseError</span>: Execution failed on sql &#39;.tables&#39;: near &quot;.&quot;: syntax error
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nan
 </pre></div>
 </div>
 </div>
