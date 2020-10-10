@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Reflective Prompts
 
 These prompts are more reflective to help demonstrate your understanding of skills. These are more writing than new coding.
@@ -7,8 +19,20 @@ These prompts are more reflective to help demonstrate your understanding of skil
 ```{list-table} Eligible Skills
 :header-rows: 1
 
-* - Skills:
-    any
+* - Python
+  - Process
+  - Access
+  - Summarize
+  - Visualize
+  - Prepare
+  - Construct
+* - Yes
+  - No
+  - Yes
+  - Yes
+  - Yes
+  - Yes
+  - Yes
 ```
 
 Choose an assignment that you did not achieve the target level for. Write a blog style notebook analysis that corrects what you could have done better, what you learned, and addresses the misconception if applicable.
@@ -19,8 +43,21 @@ Choose an assignment that you did not achieve the target level for. Write a blog
 ```{list-table} Eligible Skills
 :header-rows: 1
 
-* - Skills:
-    process
+
+* - Python
+  - Process
+  - Access
+  - Summarize
+  - Visualize
+  - Prepare
+  - Construct
+* - No
+  - Yes, L2
+  - No
+  - No
+  - No
+  - No
+  - No
 ```
 
 Like the day 1 activity, find two different sources that describe the data science pipeline or lifecycle. Write a blog style post that discusses their differences and hypothesizes about why they may be different? Are they for different audiences? Is one domain specific.
@@ -31,8 +68,20 @@ Like the day 1 activity, find two different sources that describe the data scien
 ```{list-table} Eligible Skills
 :header-rows: 1
 
-* - Skills:
-    process
+* - Python
+  - Process
+  - Access
+  - Summarize
+  - Visualize
+  - Prepare
+  - Construct
+* - No
+  - Yes, L2
+  - No
+  - No
+  - No
+  - No
+  - No
 
 ```
 
@@ -48,9 +97,20 @@ Approved Podcasts:
 
 ```{list-table} Eligible Skills
 :header-rows: 1
+:widths: 80
 
-* - Skills:
-    any
+* - Python
+    Access
+    Summarize
+    Visualize
+    Prepare
+    Construct
+* - Yes
+    Yes
+    Yes
+    Yes
+    Yes
+    Yes
 
 ```
 
