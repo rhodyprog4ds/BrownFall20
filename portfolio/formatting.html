@@ -257,6 +257,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#links">
+   Links
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#configurations">
    Configurations
   </a>
@@ -267,11 +272,6 @@
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#links">
-   Links
-  </a>
  </li>
 </ul>
 
@@ -354,24 +354,24 @@ Here is a margin note!
 </div>
 <p>For a complete list of options, see <a class="reference external" href="https://sphinx-book-theme.readthedocs.io/en/latest/reference/demo.html#admonitions">the <code class="docutils literal notranslate"><span class="pre">sphinx-book-theme</span></code> documentation</a>.</p>
 </div>
-<div class="section" id="configurations">
-<h2>Configurations<a class="headerlink" href="#configurations" title="Permalink to this headline">¶</a></h2>
-<p>Things like the menus and links at the top are controlled as <a class="reference external" href="https://jupyterbook.org/customize/config.html">settings</a>, in <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code></p>
-<div class="section" id="show-errors-and-continue">
-<span id="keeperrors"></span><h3>Show errors and continue<a class="headerlink" href="#show-errors-and-continue" title="Permalink to this headline">¶</a></h3>
-<p>To show errors and continue running the rest, add the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Execution settings</span>
-<span class="n">execute</span><span class="p">:</span>
-  <span class="n">allow_errors</span>              <span class="p">:</span> <span class="n">true</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="section" id="links">
 <h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
 <p>Markdown syntax for links</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">text</span> <span class="n">to</span> <span class="n">show</span><span class="p">](</span><span class="n">path</span><span class="o">/</span><span class="ow">or</span><span class="o">/</span><span class="n">url</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="configurations">
+<h2>Configurations<a class="headerlink" href="#configurations" title="Permalink to this headline">¶</a></h2>
+<p>Things like the menus and links at the top are controlled as <a class="reference external" href="https://jupyterbook.org/customize/config.html">settings</a>, in <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>. The following are some things that you might change in your configuration file.</p>
+<div class="section" id="show-errors-and-continue">
+<span id="keeperrors"></span><h3>Show errors and continue<a class="headerlink" href="#show-errors-and-continue" title="Permalink to this headline">¶</a></h3>
+<p>To show errors and continue running the rest, add the following to your configuration file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Execution settings</span>
+<span class="n">execute</span><span class="p">:</span>
+  <span class="n">allow_errors</span>              <span class="p">:</span> <span class="n">true</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>

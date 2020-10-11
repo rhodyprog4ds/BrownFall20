@@ -86,29 +86,27 @@ Here is a margin note!
 
 For a complete list of options, see [the `sphinx-book-theme` documentation](https://sphinx-book-theme.readthedocs.io/en/latest/reference/demo.html#admonitions).
 
-
-
-
-
-## Configurations
-
-Things like the menus and links at the top are controlled as [settings](https://jupyterbook.org/customize/config.html), in `_config.yml`
-
-(keeperrors)=
-### Show errors and continue
-
-To show errors and continue running the rest, add the following:
-
-```
-# Execution settings
-execute:
-  allow_errors              : true
-```
-
 ## Links
 
 Markdown syntax for links
 
 ```
 [text to show](path/or/url)
+```
+
+
+
+## Configurations
+
+Things like the menus and links at the top are controlled as [settings](https://jupyterbook.org/customize/config.html), in `_config.yml`. The following are some things that you might change in your configuration file.
+
+(keeperrors)=
+### Show errors and continue
+
+To show errors and continue running the rest, add the following to your configuration file:
+
+```
+# Execution settings
+execute:
+  allow_errors              : true
 ```
