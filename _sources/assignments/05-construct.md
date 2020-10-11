@@ -13,7 +13,7 @@ Accept the [assignment](https://classroom.github.com/a/LCmnlOxo)
 _this will earn level 2 for construct_
 
 Your goal is to build and prepare two ready to analyze datasets. You will submit a notebook that describes how you built and prepared each dataset.
-- Each finished dataset must be produced from two or more tables.
+- Each finished dataset must be produced from two or more DataFrames.
 - At least one must come from an sqlite database, either by merging results from multiple queries or multiple tables.
 - You should use at least two different merges and one concatenate
 
@@ -22,7 +22,7 @@ Your completed datasets should have:
 - an added column that is derived from one or more other columns (string operation or calculation)
 
 
-For each dataset, pose one question that could not be answered from the input data files as provided and demonstrate how to answer it with the dataset you built. This could be something that can be answered with using only `shape` of the merged data, but if you need summarize and visualize level 2 achievements, you should use more statistics and plots.
+For each dataset, pose one question that could not be directly answered from the input data files as provided and demonstrate how to answer it with the dataset you built. This could be something that can be answered with using only `shape` of the merged data, but if you need summarize and visualize level 2 achievements, you should use more statistics and plots.
 
 
 Your notebooks must be in the top level of the repository, not in a subfolder.
