@@ -85,7 +85,7 @@ Like the day 1 activity, find two different sources that describe the data scien
 
 ```
 
-Watch an episode of a high quality[^hq] podcast and write a blog style summary and review of the episode. Highlight what you learned and how it relates to things
+Watch an episode of a high quality[^hq] podcast and write a blog style summary and review of the episode. Highlight what you learned and how it relates to topics covered in class. 
 
 Approved Podcasts:
 - [Pod of Asclepius, Fall Series: The Philosophy of Data Science](https://www.podofasclepius.com/philosophy-of-data-science)
@@ -97,7 +97,6 @@ Approved Podcasts:
 
 ```{list-table} Eligible Skills
 :header-rows: 1
-:widths: 80
 
 * - Python
     Access
