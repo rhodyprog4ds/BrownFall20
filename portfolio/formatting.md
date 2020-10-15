@@ -10,6 +10,13 @@ This page will cover a few basic tips.
 
 The summary of for the `part` or whole submission, should match the skills to the chapters.  Which prompt you're addressing is not important, the  prompts are a *starting point* not the end goal of your portfolio.
 
+## Data Files
+
+Also note that for your portfolio to build, you will have to:
+-  include the data files in the repository and use a relative path OR
+-  load via url
+
+using a full local path **will not work** and will render your portfolio unreadable.
 
 ## Structure of plain markdown
 
