@@ -24,6 +24,10 @@
     - file: notes/2020-09-30
     - file: notes/2020-10-02
     - file: notes/2020-10-05
+    - file: notes/2020-10-07
+    - file: notes/2020-10-09
+    - file: notes/2020-10-12
+    - file: notes/2020-10-14
 
 - file: assignments/index
   expand_sections: true
@@ -32,6 +36,7 @@
     - file: assignments/02-python-access
     - file: assignments/03-exploratory
     - file: assignments/04-prepare
+    - file: assignments/05-construct
 
 - file: portfolio/index
   sections:
@@ -43,6 +48,7 @@
   sections:
     - file: faq/syllabus
     - file: faq/github
+    - file: faq/debugging
 
 - file: resources/index
   sections:

@@ -1,3 +1,16 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+
 # Analysis Prompts
 
 ## Loading Data
@@ -5,8 +18,20 @@
 ```{list-table} Eligible Skills
 :header-rows: 1
 
-* - Skills:
-    access
+* - Python
+  - Process
+  - Access
+  - Summarize
+  - Visualize
+  - Prepare
+  - Construct
+* - No
+  - No
+  - Yes
+  - No
+  - No
+  - No
+  - No
 
 ```
 
@@ -21,9 +46,20 @@ Look at all of the different ways pandas can load data. Consider some of the que
 ```{list-table} Eligible Skills
 :header-rows: 1
 
-* - Skills:
-    access, summarize, visualize, prepare
-
+* - Python
+  - Process
+  - Access
+  - Summarize
+  - Visualize
+  - Prepare
+  - Construct
+* - No
+  - No
+  - Yes
+  - Yes
+  - Yes
+  - Yes
+  - Yes
 ```
 
 Make a cheatsheet with examples of the several different parameter settings for common operations for one topic.
@@ -35,8 +71,20 @@ This [cheatsheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf) is an exampl
 ```{list-table} Eligible Skills
 :header-rows: 1
 
-* - Skills:
-    summarize, visualize, prepare
+* - Python
+  - Process
+  - Access
+  - Summarize
+  - Visualize
+  - Prepare
+  - Construct
+* - No
+  - No
+  - Yes
+  - Yes
+  - Yes
+  - Yes
+  - Yes
 
 ```
 
