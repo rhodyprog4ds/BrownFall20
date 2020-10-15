@@ -312,6 +312,11 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stacking-dataframes">
    Stacking DataFrames
   </a>
@@ -351,6 +356,11 @@
 </div>
 </div>
 </div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes we use data from multiple sources. For example data may be provided across a bunch of tables and we want to put them together. Or we may want to build our own dataset to answer the questions that we want to ask.
+For example we have a dataset of drivers who have been pulled over by the police, and need to compare distribution of them between day and night times. If we only have time of being pulled over without mentioning day/night, we can use another dataset including time of sunset for every day and build our own dataset out of these two dataset to find the answer.
+Later we will also learn about getting data out of databses with some small database operations through SQLite and some python libararies.</p>
 <p>To use relative paths as in class (<code class="docutils literal notranslate"><span class="pre">data/2018-games.csv</span></code>) instead of a full url <code class="docutils literal notranslate"><span class="pre">https://raw.githubusercontent.com/rhodyprog4ds/inclass-data/main/2018-games.csv</span></code>, download data from <a class="reference external" href="https://github.com/rhodyprog4ds/inclass-data">this GitHub repo</a> by clicking on the green code button and choosing .zip. Then unzip the data and save it in a data folder in the same folder as the notebook. For the class notes, the urls make it so that the notebook can run without having to store the data in another place.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -361,8 +371,10 @@
 </div>
 </div>
 <!-- annotate: Stacking DataFrames -->
+</div>
 <div class="section" id="stacking-dataframes">
 <h2>Stacking DataFrames<a class="headerlink" href="#stacking-dataframes" title="Permalink to this headline">¶</a></h2>
+<p>Let’s look at the first couple of rows to see how the configuration of data is.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">games_df18</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -567,6 +579,7 @@
 <p>2 rows × 22 columns</p>
 </div></div></div>
 </div>
+<p>As we can see, both datasets have the same columns, and just for two different years.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">games_df18</span><span class="o">.</span><span class="n">shape</span>
@@ -591,6 +604,7 @@
 </div>
 </div>
 </div>
+<p>Let’s concatenate two dataframes to make one dataframe out of them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">games_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">games_df18</span><span class="p">,</span><span class="n">games_df19</span><span class="p">])</span>
@@ -604,6 +618,7 @@
 </div>
 </div>
 </div>
+<p>As we can see rows are added up but we have the same numbe of rcolums.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">games_df</span><span class="o">.</span><span class="n">columns</span>
@@ -621,6 +636,7 @@
 </div>
 </div>
 </div>
+<p>Let’s drop the column we do not need.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">games_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span> <span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,)</span>
@@ -728,6 +744,7 @@
 </div>
 <div class="section" id="merging-data-frames">
 <h2>Merging Data Frames<a class="headerlink" href="#merging-data-frames" title="Permalink to this headline">¶</a></h2>
+<p>Now we read another dataset which some of its columns are the same as dataframe “games_df” and some are different.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teams_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/rhodyprog4ds/inclass-data/main/teams.csv&#39;</span><span class="p">)</span>
@@ -809,6 +826,7 @@
 </table>
 </div></div></div>
 </div>
+<p>We use left_on=’TEAM_ID’ and right_on = ‘HOME_TEAM_ID’ to match two dataframes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merge1_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">teams_df</span><span class="p">,</span><span class="n">games_df</span><span class="p">,</span><span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;TEAM_ID&#39;</span><span class="p">,</span> <span class="n">right_on</span> <span class="o">=</span> <span class="s1">&#39;HOME_TEAM_ID&#39;</span><span class="p">)</span>
@@ -912,6 +930,7 @@
 <p>2 rows × 35 columns</p>
 </div></div></div>
 </div>
+<p>We want information for each game and append the team info onto that. So, lets try another settings in our mergging.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merge1_df</span><span class="o">.</span><span class="n">shape</span>
@@ -1045,6 +1064,7 @@
 </div>
 </div>
 </div>
+<p>We can group by “ARENA” and then look at the “mean” statistics.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merge1_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;ARENA&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -1819,10 +1839,11 @@
 <p>29 rows × 25 columns</p>
 </div></div></div>
 </div>
-<!-- annotate: How to combine the same data for different outcomes -->
 </div>
 <div class="section" id="how-to-combine-the-same-data-for-different-outcomes">
 <h2>How to combine the same data for different outcomes<a class="headerlink" href="#how-to-combine-the-same-data-for-different-outcomes" title="Permalink to this headline">¶</a></h2>
+<p>We can combine datasets in different ways to learn different things about the data.
+Let’s now read info about the players.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">players18</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/rhodyprog4ds/inclass-data/main/2018-players.csv&#39;</span><span class="p">)</span>
@@ -1902,6 +1923,7 @@
 </table>
 </div></div></div>
 </div>
+<p>First let’s look at the shape of each of them to have a reference for what happens when we try different merges.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">players18</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">players19</span><span class="o">.</span><span class="n">shape</span>
@@ -1914,6 +1936,135 @@
 </div>
 </div>
 </div>
+<p>One thing we might want to do is to put all of the information into one long DataFrame. We can do this with <code class="docutils literal notranslate"><span class="pre">concat</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">players18</span><span class="p">,</span><span class="n">players19</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>PLAYER_NAME</th>
+      <th>TEAM_ID</th>
+      <th>PLAYER_ID</th>
+      <th>SEASON</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>626</td>
+      <td>Kawhi Leonard</td>
+      <td>1610612761</td>
+      <td>202695</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>627</td>
+      <td>Pascal Siakam</td>
+      <td>1610612761</td>
+      <td>1627783</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>628</td>
+      <td>Marc Gasol</td>
+      <td>1610612761</td>
+      <td>201188</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>629</td>
+      <td>Danny Green</td>
+      <td>1610612761</td>
+      <td>201980</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>630</td>
+      <td>Kyle Lowry</td>
+      <td>1610612761</td>
+      <td>200768</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>621</th>
+      <td>621</td>
+      <td>Anthony Bennett</td>
+      <td>1610612745</td>
+      <td>203461</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>622</th>
+      <td>622</td>
+      <td>Ray Spalding</td>
+      <td>1610612737</td>
+      <td>1629034</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>623</th>
+      <td>623</td>
+      <td>Devyn Marble</td>
+      <td>1610612744</td>
+      <td>203906</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>624</th>
+      <td>624</td>
+      <td>Hassani Gravett</td>
+      <td>1610612753</td>
+      <td>1629755</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>625</th>
+      <td>625</td>
+      <td>JaKeenan Gant</td>
+      <td>1610612754</td>
+      <td>1629721</td>
+      <td>2019</td>
+    </tr>
+  </tbody>
+</table>
+<p>1374 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>This allows us to see all the players for each year, we could do groupby and count to see how many players played each year for example.</p>
+<p>We can check that this is the size we expected.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">players18</span><span class="p">,</span><span class="n">players19</span><span class="p">])</span><span class="o">.</span><span class="n">shape</span>
@@ -1926,6 +2077,7 @@
 </div>
 </div>
 </div>
+<p>If we use the default merge settings we get an empty result because the two DataFrames have the same columns so pandas tries to merge <code class="docutils literal notranslate"><span class="pre">on</span></code> all of the columns, but there are no rows that have the same value in all of the columns, so there’s nothing left.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">players18</span><span class="p">,</span><span class="n">players19</span><span class="p">,)</span>
@@ -1963,7 +2115,7 @@
 </table>
 </div></div></div>
 </div>
-<p>Using <code class="docutils literal notranslate"><span class="pre">how='inner'</span></code> gives us only the <code class="docutils literal notranslate"><span class="pre">'PLAYER_ID'</span></code> that are in both DataFrames</p>
+<p>If we merge with on=’PLAYER_ID’, it only requires that one column to be the same to match rows from the two DataFrames together.  With the default value for <code class="docutils literal notranslate"><span class="pre">how</span></code> or explicitly setting <code class="docutils literal notranslate"><span class="pre">how='inner'</span></code> we get the info of players who played both seasons.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">players18</span><span class="p">,</span><span class="n">players19</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;PLAYER_ID&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
@@ -2138,7 +2290,7 @@
 <p>538 rows × 9 columns</p>
 </div></div></div>
 </div>
-<p>Using <code class="docutils literal notranslate"><span class="pre">outer</span></code> gives us the <code class="docutils literal notranslate"><span class="pre">'PLAYER_ID'</span></code> that are in one or both of the DataFrame</p>
+<p>When we use <code class="docutils literal notranslate"><span class="pre">outer</span></code> we get one row for each player who played in either season or both seasons.  From this we can for example see who changed teams, who are the rookies in 2019 and who retired or was unsigned in 2019.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">players18</span><span class="p">,</span><span class="n">players19</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;PLAYER_ID&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
@@ -2314,7 +2466,7 @@
 </div></div></div>
 </div>
 <p>Using  <code class="docutils literal notranslate"><span class="pre">left</span></code> gives us the <code class="docutils literal notranslate"><span class="pre">'PLAYER_ID'</span></code> that are in the left(<code class="docutils literal notranslate"><span class="pre">players18</span></code>) DataFrame, including those that are in both DataFrame
-<code class="docutils literal notranslate"><span class="pre">right</span></code> would give players in the <code class="docutils literal notranslate"><span class="pre">players19</span></code> DataFrame or both DataFrames</p>
+<code class="docutils literal notranslate"><span class="pre">right</span></code> would give players in the <code class="docutils literal notranslate"><span class="pre">players19</span></code> DataFrame or both DataFrames. With this result, we can see who retired, but not the 2019 rookies.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">players18</span><span class="p">,</span><span class="n">players19</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;PLAYER_ID&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
