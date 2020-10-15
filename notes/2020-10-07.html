@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Class 13: Data from mulitple sources and Databases &#8212; Programming for Data Science at URI Fall 2020</title>
+    <title>Class 13: Data from multiple sources and Databases &#8212; Programming for Data Science at URI Fall 2020</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -164,7 +164,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Class 13: Data from mulitple sources and Databases
+     Class 13: Data from multiple sources and Databases
     </a>
    </li>
    <li class="toctree-l2">
@@ -322,6 +322,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-specific-queries">
+   More Specific Queries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#try-it-yourself">
    Try it yourself
   </a>
@@ -337,13 +342,13 @@
         
               <div>
                 
-  <div class="section" id="class-13-data-from-mulitple-sources-and-databases">
-<h1>Class 13: Data from mulitple sources and Databases<a class="headerlink" href="#class-13-data-from-mulitple-sources-and-databases" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="class-13-data-from-multiple-sources-and-databases">
+<h1>Class 13: Data from multiple sources and Databases<a class="headerlink" href="#class-13-data-from-multiple-sources-and-databases" title="Permalink to this headline">¶</a></h1>
 <p>Welcome:</p>
 <ol class="simple">
 <li><p>Say hello on zoom</p></li>
-<li><p>Download data from Mondays’ notes if you dont have it already</p></li>
-<li><p>log onto prismiaa</p></li>
+<li><p>Download data from Mondays’ notes if you don’t have it already</p></li>
+<li><p>log onto Prismia.chat</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1080,10 +1085,16 @@
 <p>5 rows × 22 columns</p>
 </div></div></div>
 </div>
-<!-- annotate: Data -->
 </div>
 <div class="section" id="data">
 <h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
+<p>In order to work with large dataset, one option is to use a computer that has more memory, such as an HPC system. An easier option is to load data from a database instead of loading all data into memory. One way of working with databases is to use a Python library named <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> which allows us to create a connection between the database and Python so that we can pull data into Python to work with it.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>To work with a database it needs to be downloaded, we can’t load it via url like we did with the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files that we’ve been using, because when we need to make a connection to the database that can dynamically interact with the database.</p>
+</div>
+<p>Today, we’ll work with a <a class="reference external" href="https://datacarpentry.org/sql-socialsci/data/SQL_SAFI.sqlite">database version</a> of the same SAFI dataset we’ve been working with. Download it and put it in a <code class="docutils literal notranslate"><span class="pre">data</span></code> folder that’s in the same folder as your notebook.</p>
+<p>First we’ll import the needed library, this one doesn’t have a standard alias, so we’ll use it by referring to the whole name.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
@@ -1091,7 +1102,7 @@
 </div>
 </div>
 </div>
-<p>Down oad <a class="reference external" href="https://datacarpentry.org/sql-socialsci/data/SQL_SAFI.sqlite">data</a></p>
+<p>First we’ll connect to the database</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;data/SQL_SAFI.sqlite&#39;</span><span class="p">)</span>
@@ -1099,6 +1110,7 @@
 </div>
 </div>
 </div>
+<p>Next we establish a cursor with the connection and then run a query.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cur</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
@@ -1107,11 +1119,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sqlite3.Cursor at 0x7f776b5f6a40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sqlite3.Cursor at 0x7f31382c9c00&gt;
 </pre></div>
 </div>
 </div>
 </div>
+<p>Here, “SELECT * FROM Farms” is a query we made into the cursor. It does not return the data, it just says what data to get ready, this is another opportunity to get the data in smaller chunks, we can choose in the next step to bring all or only some of the data from the query’s result into Python.</p>
+<p>This query says to get all (<code class="docutils literal notranslate"><span class="pre">*</span></code>) the data from the <code class="docutils literal notranslate"><span class="pre">Farms</span></code> table.</p>
+<p>Now, we can use this cursor to pull all of the results from that query into our notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rows</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
@@ -22474,6 +22489,7 @@
 </div>
 </div>
 </div>
+<p>We can see it returns the data without much structure</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
@@ -22486,6 +22502,7 @@
 </div>
 </div>
 </div>
+<p>and examine the type of one element of it as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -22498,16 +22515,12 @@
 </div>
 </div>
 </div>
+<p>we can also combine use of this library (to access databases) with <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> functions to pull data from databases directly into a datagrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM Farms&quot;</span><span class="p">,</span><span class="n">con</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -22679,6 +22692,13 @@
 <p>5 rows × 61 columns</p>
 </div></div></div>
 </div>
+<p>This is the familiar SAFI data that we’ve been working with</p>
+</div>
+<div class="section" id="more-specific-queries">
+<h2>More Specific Queries<a class="headerlink" href="#more-specific-queries" title="Permalink to this headline">¶</a></h2>
+<p>There are several ways that we can make our queries return only subsets of the data, this is where the database can start to provide real advantages, we can do sophisticated subsetting of our dataset in the database, which is optimized for performance at exactly these tasks, instead of in Python which is a general purpose programming language.</p>
+<p>Strucutred Query Langauge  (SQL) is a powerful way of working with databases. We’ll use it only through pandas going forward so that we can also use the nice visualizations from the notebook, but there are many other ways to use SQL.</p>
+<p>For example we might only be interested in the location of the farms that were surveyed, so we can choose only those columns, by putting the column names in place of the <code class="docutils literal notranslate"><span class="pre">*</span></code> in the query.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">location_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="s2">&quot;SELECT Country, A06_Province, A07_district, A08_ward, A09_village FROM Farms&quot;</span><span class="p">,</span><span class="n">con</span><span class="p">)</span>
@@ -22757,6 +22777,7 @@
 </table>
 </div></div></div>
 </div>
+<p>We can limit for the number of rows we get by using “LIMIT” keyword in the query.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM Farms LIMIT 10&quot;</span><span class="p">,</span><span class="n">con</span><span class="p">)</span>
@@ -23051,78 +23072,11 @@
 <p>10 rows × 61 columns</p>
 </div></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">food_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="s2">&quot;SELECT G01_no_meals, G02_months_lack_food, G03_no_food_mitigation FROM Farms LIMIT 5&quot;</span><span class="p">,</span><span class="n">con</span><span class="p">)</span>
-</pre></div>
+<div class="admonition-try-it-yourself admonition">
+<p class="admonition-title">Try it Yourself!</p>
+<p>How would you return only the first 5 rows of the columns about food?</p>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">food_df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>G01_no_meals</th>
-      <th>G02_months_lack_food</th>
-      <th>G03_no_food_mitigation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2</td>
-      <td>['Jan']</td>
-      <td>['na', 'rely_less_food', 'reduce_meals', 'day_...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>['Jan', 'Sept', 'Oct', 'Nov', 'Dec']</td>
-      <td>['na', 'reduce_meals', 'restrict_adults', 'bor...</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>['Jan', 'Feb', 'Mar', 'Oct', 'Nov', 'Dec']</td>
-      <td>['na', 'restrict_adults', 'lab_ex_food']</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2</td>
-      <td>['Sept', 'Oct', 'Nov', 'Dec']</td>
-      <td>['na', 'reduce_meals', 'restrict_adults', 'lab...</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2</td>
-      <td>['Aug', 'Sept', 'Oct', 'Nov']</td>
-      <td>['na', 'go_forest', 'migrate']</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
+<p>We can use a “where” keyword to filter and only choose a subset of the rows conditionally, based on <em>values</em> of the data. For example, we can look only at the farms that have living parents.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parents_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="s2">&quot;SELECT Id, B17_parents_liv FROM Farms WHERE B17_parents_liv = &#39;yes&#39;&quot;</span><span class="p">,</span><span class="n">con</span><span class="p">)</span>
