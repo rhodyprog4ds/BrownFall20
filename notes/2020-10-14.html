@@ -303,6 +303,37 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions-after-class">
+   Questions after class
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-m-curious-about-other-classifiers">
+     I’m curious about other classifiers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-could-this-be-related-to-nlp">
+     How could this be related to NLP?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-we-got-the-values-from-the-dataframe">
+   How we got the values from the DataFrame
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -468,7 +499,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f56c3ebcfd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f612c263f10&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-10-14_7_1.png" src="../_images/2020-10-14_7_1.png" />
@@ -779,6 +810,22 @@
 </div>
 </div>
 </div>
+<div class="section" id="questions-after-class">
+<h2>Questions after class<a class="headerlink" href="#questions-after-class" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="i-m-curious-about-other-classifiers">
+<h3>I’m curious about other classifiers<a class="headerlink" href="#i-m-curious-about-other-classifiers" title="Permalink to this headline">¶</a></h3>
+<p>Great! We’ll see more Friday, next week, and next month.  You’re also encouraged to try out others and experiment with sci-kit learn.</p>
+</div>
+<div class="section" id="how-could-this-be-related-to-nlp">
+<h3>How could this be related to NLP?<a class="headerlink" href="#how-could-this-be-related-to-nlp" title="Permalink to this headline">¶</a></h3>
+<p>Naive Bayes isn’t a good classifier for NLP most of the time because word are not independent, but for very coarse distinctions it can be applied. The <em>Gaussian</em> naive Bayes we used today doesn’t apply to NLP without a lot of transformation because in general, words are more like categorical (or binary/dummies) variables than continuous valued.</p>
+<p>We’ll work with text data toward the end of the semester.</p>
+</div>
+</div>
+<div class="section" id="how-we-got-the-values-from-the-dataframe">
+<h2>How we got the values from the DataFrame<a class="headerlink" href="#how-we-got-the-values-from-the-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>A DataFrame is an object and one of the attributes is <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.values.html#pandas.DataFrame.values"><code class="docutils literal notranslate"><span class="pre">values</span></code></a>, we accessed that directly. However, there is a new, safer way through the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_numpy.html#pandas.DataFrame.to_numpy"><code class="docutils literal notranslate"><span class="pre">to_numpy</span></code> method</a>.</p>
+<!-- Why is this algorithm fast? --></div>
 </div>
 
     <script type="text/x-thebe-config">
