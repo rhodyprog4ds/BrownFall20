@@ -348,6 +348,7 @@
 </div>
 </div>
 </div>
+<p>Recall from Wednesday</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
@@ -601,6 +602,7 @@
 </div>
 </div>
 </div>
+<p>First we can look at the index</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">index</span>
@@ -613,6 +615,7 @@
 </div>
 </div>
 </div>
+<p>then the first’s name</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -625,16 +628,12 @@
 </div>
 </div>
 </div>
+<p>For this we want to se that as the index</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span>
+
+<span class="n">ca_dds_df</span>
 </pre></div>
 </div>
 </div>
@@ -854,6 +853,7 @@
 </table>
 </div></div></div>
 </div>
+<p>We can get rid of rows that are all <code class="docutils literal notranslate"><span class="pre">nan</span></code>, that have no data in them, using <code class="docutils literal notranslate"><span class="pre">dropna</span></code> with <code class="docutils literal notranslate"><span class="pre">how='all'</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -873,6 +873,7 @@
 </div>
 </div>
 </div>
+<p>We want to still rename this, we we’ll fill that in manually</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;Age Cohort&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -880,6 +881,68 @@
 </div>
 </div>
 </div>
+<p>Now we want to unstack,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">06</span><span class="n">d6e6545889</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ca_dds_df</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/core/frame.py</span> in <span class="ni">unstack</span><span class="nt">(self, level, fill_value)</span>
+<span class="g g-Whitespace">   </span><span class="mi">7140</span>         <span class="kn">from</span> <span class="nn">pandas.core.reshape.reshape</span> <span class="kn">import</span> <span class="n">unstack</span>
+<span class="g g-Whitespace">   </span><span class="mi">7141</span> 
+<span class="ne">-&gt; </span><span class="mi">7142</span>         <span class="k">return</span> <span class="n">unstack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">7143</span> 
+<span class="g g-Whitespace">   </span><span class="mi">7144</span>     <span class="nd">@Appender</span><span class="p">(</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/core/reshape/reshape.py</span> in <span class="ni">unstack</span><span class="nt">(obj, level, fill_value)</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span>             <span class="c1"># _unstack_multiple only handles MultiIndexes,</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span>             <span class="c1"># and isn&#39;t needed for a single level</span>
+<span class="ne">--&gt; </span><span class="mi">408</span>             <span class="k">return</span> <span class="n">_unstack_multiple</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">409</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">410</span>             <span class="n">level</span> <span class="o">=</span> <span class="n">level</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/core/reshape/reshape.py</span> in <span class="ni">_unstack_multiple</span><span class="nt">(data, clocs, fill_value)</span>
+<span class="g g-Whitespace">    </span><span class="mi">327</span>     <span class="k">if</span> <span class="n">clocs</span> <span class="ow">in</span> <span class="n">index</span><span class="o">.</span><span class="n">names</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">328</span>         <span class="n">clocs</span> <span class="o">=</span> <span class="p">[</span><span class="n">clocs</span><span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">329</span>     <span class="n">clocs</span> <span class="o">=</span> <span class="p">[</span><span class="n">index</span><span class="o">.</span><span class="n">_get_level_number</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">clocs</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">330</span> 
+<span class="g g-Whitespace">    </span><span class="mi">331</span>     <span class="n">rlocs</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">index</span><span class="o">.</span><span class="n">nlevels</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">clocs</span><span class="p">]</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/core/reshape/reshape.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">327</span>     <span class="k">if</span> <span class="n">clocs</span> <span class="ow">in</span> <span class="n">index</span><span class="o">.</span><span class="n">names</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">328</span>         <span class="n">clocs</span> <span class="o">=</span> <span class="p">[</span><span class="n">clocs</span><span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">329</span>     <span class="n">clocs</span> <span class="o">=</span> <span class="p">[</span><span class="n">index</span><span class="o">.</span><span class="n">_get_level_number</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">clocs</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">330</span> 
+<span class="g g-Whitespace">    </span><span class="mi">331</span>     <span class="n">rlocs</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">index</span><span class="o">.</span><span class="n">nlevels</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">clocs</span><span class="p">]</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/core/indexes/base.py</span> in <span class="ni">_get_level_number</span><span class="nt">(self, level)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1413</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1414</span>     <span class="k">def</span> <span class="nf">_get_level_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1415</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_validate_index_level</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1416</span>         <span class="k">return</span> <span class="mi">0</span>
+<span class="g g-Whitespace">   </span><span class="mi">1417</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/pandas/core/indexes/base.py</span> in <span class="ni">_validate_index_level</span><span class="nt">(self, level)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1405</span>             <span class="k">elif</span> <span class="n">level</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1406</span>                 <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span>
+<span class="ne">-&gt; </span><span class="mi">1407</span>                     <span class="sa">f</span><span class="s2">&quot;Too many levels: Index has only 1 level, not </span><span class="si">{</span><span class="n">level</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1408</span>                 <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1409</span>         <span class="k">elif</span> <span class="n">level</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+
+<span class="ne">IndexError</span>: Too many levels: Index has only 1 level, not 2
+</pre></div>
+</div>
+</div>
+</div>
+<p>but this doesn’t quite get what we want, instead we can</p>
+<p>We can rotate  (transpose <code class="docutils literal notranslate"><span class="pre">.T</span></code> )this, then unstack and rotate it back to get the outcome we want here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -1301,6 +1364,7 @@
 </table>
 </div></div></div>
 </div>
+<p>This looks good, so we’ll save it to a new DataFrame</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_clean</span> <span class="o">=</span> <span class="n">ca_dds_df</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -1379,6 +1443,7 @@
 </table>
 </div></div></div>
 </div>
+<p>We want to rename the two with nondescript names, but the index is not mutable</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_clean</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Race&#39;</span>
@@ -1415,6 +1480,7 @@
 </div>
 </div>
 </div>
+<p>Instead we can use rename with a dictionary, this way is good also because it’s explicit and readable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_clean</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_1&#39;</span><span class="p">:</span><span class="s1">&#39;Race&#39;</span><span class="p">,</span> <span class="s1">&#39;level_2&#39;</span><span class="p">:</span><span class="s1">&#39;Gender&#39;</span><span class="p">},</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
