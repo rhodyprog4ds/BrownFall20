@@ -72,10 +72,10 @@ You can see the full rubric for all portfolios in the [syllabus](portfolioskills
 Your portfolio is also an opportunity to be creative, explore things, and answer your own questions that we haven't answered in class to dig deeper on the topics we're covering.
 Use the feedback you get on assignments to inspire your portfolio.
 
-Each submission should include an introduction and a number of 'chapters'.  The grade will be based on both that you demonstrate skills through your chapters that are inspired by the prompts and that your summary demonstrates that you *know* you learned the skills. See the [formatting tips](formatting) for advice on how to structure files. 
+Each submission should include an introduction and a number of 'chapters'.  The grade will be based on both that you demonstrate skills through your chapters that are inspired by the prompts and that your summary demonstrates that you *know* you learned the skills. See the [formatting tips](formatting) for advice on how to structure files.
 
 
-The first submission will be graded on the following criteria and due on October 14:
+The first submission will be graded on the following criteria and due on October 16:
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -83,4 +83,6 @@ The first submission will be graded on the following criteria and due on October
 portfolio_df['Level 3'][portfolio_df['P1']==1].reset_index().set_index('keyword')
 ```
 
-On each chapter of your portfolio, you should identify which skills by their keyword, you are applying.
+On each chapter(for a file) of your portfolio, you should identify which skills by their keyword, you are applying.
+
+You can view a (fake) example [in this repository](https://github.com/rhodyprog4ds/portfolio-brownsarahm) as a [pdf](https://github.com/rhodyprog4ds/portfolio-brownsarahm/blob/gh-pages/portfolio.pdf) or as a [rendered website](https://rhodyprog4ds.github.io/portfolio-brownsarahm/intro.html)
