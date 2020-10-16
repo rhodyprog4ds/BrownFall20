@@ -309,6 +309,21 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#naive-bayes-with-sci-kit-learn">
+   Naive Bayes with Sci-kit Learn
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#naive-bayes">
+   Naive Bayes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training-a-model">
+   Training a Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#questions-after-class">
    Questions after class
   </a>
@@ -349,6 +364,17 @@
 <li><p>sample-wise: test and train</p></li>
 <li><p>variable-wise: features and target</p></li>
 </ul>
+<div class="section" id="naive-bayes-with-sci-kit-learn">
+<h2>Naive Bayes with Sci-kit Learn<a class="headerlink" href="#naive-bayes-with-sci-kit-learn" title="Permalink to this headline">¶</a></h2>
+<p>We will use a new package today, <a class="reference external" href="https://scikit-learn.org/stable/index.html">Scikit-Learn</a>. Its package name for importing is <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> but we don’t import it with an alias, in general.  It’s a large module and we most often import just the parts we need.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Recall when a word turns green &amp; bold in a notebook, it’s a python keyword, or reserved word.</p>
+</div>
+</div>
+<p>To do that we use a new Python keyword <code class="docutils literal notranslate"><span class="pre">from</span></code>.  We can identify a package and then import a submodule or a package and submodule with <code class="docutils literal notranslate"><span class="pre">.</span></code> and then import specific functions or classes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -358,20 +384,36 @@
 </pre></div>
 </div>
 </div>
+</div>
+<p>We can tell from this code that <code class="docutils literal notranslate"><span class="pre">test_train_split</span></code> is probably a function because it’s in lowercase and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> follows <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a> the Python Style Guide pretty strictly.  We can also check with type</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">train_test_split</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">7</span><span class="n">ddeeae90809</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>function
 </pre></div>
 </div>
 </div>
 </div>
+<p>We can tell <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html#sklearn.naive_bayes.GaussianNB"><code class="docutils literal notranslate"><span class="pre">GaussianNB</span></code></a> is probably a class because it’s in <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#class-names">CapWords</a>, also known as <a class="reference external" href="https://en.wikipedia.org/wiki/Camel_case">camel case</a>.</p>
+<p>Again we can check.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">GaussianNB</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abc.ABCMeta
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s an abstract base class.</p>
+<p>Today we’ll work with the <a class="reference external" href="https://archive.ics.uci.edu/ml/datasets/iris">iris</a> dataset, which has been used for demonstrating statistical analyses since 1936.  It contains 4 measurements of flowers from 3 different species.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris_df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;iris&#39;</span><span class="p">)</span>
@@ -379,42 +421,7 @@
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">56</span><span class="n">d11ecab3a7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris_df</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">(</span><span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_X_y</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">iris_df</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">(</span><span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_X_y</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">bffaa5e2a34f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">iris_df</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">(</span><span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_X_y</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">iris_df</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">(</span><span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_X_y</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;load_iris&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
+<p>As usual, we look at the structure.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -492,6 +499,7 @@
 </table>
 </div></div></div>
 </div>
+<p>Next we examine the data litle further to consider what the structure is like for classification purposes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span> <span class="n">iris_df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;species&#39;</span><span class="p">)</span>
@@ -499,29 +507,26 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fd20af7fc10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fe7b5d151d0&gt;
 </pre></div>
 </div>
-<img alt="../_images/2020-10-14_7_1.png" src="../_images/2020-10-14_7_1.png" />
+<img alt="../_images/2020-10-14_12_1.png" src="../_images/2020-10-14_12_1.png" />
 </div>
 </div>
+<p>In order for classification to work, we’re looking to see that the groups of samples of different classes (here, species) do not overlap too much.  We’re also looking at the shape of the groups of samples of each class.</p>
+</div>
+<div class="section" id="naive-bayes">
+<h2>Naive Bayes<a class="headerlink" href="#naive-bayes" title="Permalink to this headline">¶</a></h2>
+<p>Naive Bayes assumes that the features are uncorrelated (Naive) and that we can pick the most probable class.  It can assume different distributions of the features conditioned on the class, though.  We’ll use Gaussian Naive Bayes.  Gaussian distributed samples in the plot above would be roughly ovals with more points at the center and uncorrelated Gaussian data would be distributed in circles, not ovals.  We have some ovals and some overlap, but enough we can expect this classifier to work pretty well.</p>
+<p>First we instantiate the classifier object with the constructor method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gnb</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">425147</span><span class="n">eef853</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gnb</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;GaussianNB&#39; is not defined
-</pre></div>
 </div>
-</div>
-</div>
+<p>We just made it exist so far, nothing more, so we can check its type.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">gnb</span><span class="p">)</span>
@@ -529,177 +534,190 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">d213595fdc6d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">type</span><span class="p">(</span><span class="n">gnb</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;gnb&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sklearn.naive_bayes.GaussianNB
 </pre></div>
 </div>
 </div>
 </div>
+<p>We can also use the <code class="docutils literal notranslate"><span class="pre">get_params</span></code> method to see what it looks like.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris_df</span><span class="o">.</span><span class="n">values</span><span class="p">[:,:</span><span class="mi">4</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gnb</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5.1, 3.5, 1.4, 0.2],
-       [4.9, 3.0, 1.4, 0.2],
-       [4.7, 3.2, 1.3, 0.2],
-       [4.6, 3.1, 1.5, 0.2],
-       [5.0, 3.6, 1.4, 0.2],
-       [5.4, 3.9, 1.7, 0.4],
-       [4.6, 3.4, 1.4, 0.3],
-       [5.0, 3.4, 1.5, 0.2],
-       [4.4, 2.9, 1.4, 0.2],
-       [4.9, 3.1, 1.5, 0.1],
-       [5.4, 3.7, 1.5, 0.2],
-       [4.8, 3.4, 1.6, 0.2],
-       [4.8, 3.0, 1.4, 0.1],
-       [4.3, 3.0, 1.1, 0.1],
-       [5.8, 4.0, 1.2, 0.2],
-       [5.7, 4.4, 1.5, 0.4],
-       [5.4, 3.9, 1.3, 0.4],
-       [5.1, 3.5, 1.4, 0.3],
-       [5.7, 3.8, 1.7, 0.3],
-       [5.1, 3.8, 1.5, 0.3],
-       [5.4, 3.4, 1.7, 0.2],
-       [5.1, 3.7, 1.5, 0.4],
-       [4.6, 3.6, 1.0, 0.2],
-       [5.1, 3.3, 1.7, 0.5],
-       [4.8, 3.4, 1.9, 0.2],
-       [5.0, 3.0, 1.6, 0.2],
-       [5.0, 3.4, 1.6, 0.4],
-       [5.2, 3.5, 1.5, 0.2],
-       [5.2, 3.4, 1.4, 0.2],
-       [4.7, 3.2, 1.6, 0.2],
-       [4.8, 3.1, 1.6, 0.2],
-       [5.4, 3.4, 1.5, 0.4],
-       [5.2, 4.1, 1.5, 0.1],
-       [5.5, 4.2, 1.4, 0.2],
-       [4.9, 3.1, 1.5, 0.2],
-       [5.0, 3.2, 1.2, 0.2],
-       [5.5, 3.5, 1.3, 0.2],
-       [4.9, 3.6, 1.4, 0.1],
-       [4.4, 3.0, 1.3, 0.2],
-       [5.1, 3.4, 1.5, 0.2],
-       [5.0, 3.5, 1.3, 0.3],
-       [4.5, 2.3, 1.3, 0.3],
-       [4.4, 3.2, 1.3, 0.2],
-       [5.0, 3.5, 1.6, 0.6],
-       [5.1, 3.8, 1.9, 0.4],
-       [4.8, 3.0, 1.4, 0.3],
-       [5.1, 3.8, 1.6, 0.2],
-       [4.6, 3.2, 1.4, 0.2],
-       [5.3, 3.7, 1.5, 0.2],
-       [5.0, 3.3, 1.4, 0.2],
-       [7.0, 3.2, 4.7, 1.4],
-       [6.4, 3.2, 4.5, 1.5],
-       [6.9, 3.1, 4.9, 1.5],
-       [5.5, 2.3, 4.0, 1.3],
-       [6.5, 2.8, 4.6, 1.5],
-       [5.7, 2.8, 4.5, 1.3],
-       [6.3, 3.3, 4.7, 1.6],
-       [4.9, 2.4, 3.3, 1.0],
-       [6.6, 2.9, 4.6, 1.3],
-       [5.2, 2.7, 3.9, 1.4],
-       [5.0, 2.0, 3.5, 1.0],
-       [5.9, 3.0, 4.2, 1.5],
-       [6.0, 2.2, 4.0, 1.0],
-       [6.1, 2.9, 4.7, 1.4],
-       [5.6, 2.9, 3.6, 1.3],
-       [6.7, 3.1, 4.4, 1.4],
-       [5.6, 3.0, 4.5, 1.5],
-       [5.8, 2.7, 4.1, 1.0],
-       [6.2, 2.2, 4.5, 1.5],
-       [5.6, 2.5, 3.9, 1.1],
-       [5.9, 3.2, 4.8, 1.8],
-       [6.1, 2.8, 4.0, 1.3],
-       [6.3, 2.5, 4.9, 1.5],
-       [6.1, 2.8, 4.7, 1.2],
-       [6.4, 2.9, 4.3, 1.3],
-       [6.6, 3.0, 4.4, 1.4],
-       [6.8, 2.8, 4.8, 1.4],
-       [6.7, 3.0, 5.0, 1.7],
-       [6.0, 2.9, 4.5, 1.5],
-       [5.7, 2.6, 3.5, 1.0],
-       [5.5, 2.4, 3.8, 1.1],
-       [5.5, 2.4, 3.7, 1.0],
-       [5.8, 2.7, 3.9, 1.2],
-       [6.0, 2.7, 5.1, 1.6],
-       [5.4, 3.0, 4.5, 1.5],
-       [6.0, 3.4, 4.5, 1.6],
-       [6.7, 3.1, 4.7, 1.5],
-       [6.3, 2.3, 4.4, 1.3],
-       [5.6, 3.0, 4.1, 1.3],
-       [5.5, 2.5, 4.0, 1.3],
-       [5.5, 2.6, 4.4, 1.2],
-       [6.1, 3.0, 4.6, 1.4],
-       [5.8, 2.6, 4.0, 1.2],
-       [5.0, 2.3, 3.3, 1.0],
-       [5.6, 2.7, 4.2, 1.3],
-       [5.7, 3.0, 4.2, 1.2],
-       [5.7, 2.9, 4.2, 1.3],
-       [6.2, 2.9, 4.3, 1.3],
-       [5.1, 2.5, 3.0, 1.1],
-       [5.7, 2.8, 4.1, 1.3],
-       [6.3, 3.3, 6.0, 2.5],
-       [5.8, 2.7, 5.1, 1.9],
-       [7.1, 3.0, 5.9, 2.1],
-       [6.3, 2.9, 5.6, 1.8],
-       [6.5, 3.0, 5.8, 2.2],
-       [7.6, 3.0, 6.6, 2.1],
-       [4.9, 2.5, 4.5, 1.7],
-       [7.3, 2.9, 6.3, 1.8],
-       [6.7, 2.5, 5.8, 1.8],
-       [7.2, 3.6, 6.1, 2.5],
-       [6.5, 3.2, 5.1, 2.0],
-       [6.4, 2.7, 5.3, 1.9],
-       [6.8, 3.0, 5.5, 2.1],
-       [5.7, 2.5, 5.0, 2.0],
-       [5.8, 2.8, 5.1, 2.4],
-       [6.4, 3.2, 5.3, 2.3],
-       [6.5, 3.0, 5.5, 1.8],
-       [7.7, 3.8, 6.7, 2.2],
-       [7.7, 2.6, 6.9, 2.3],
-       [6.0, 2.2, 5.0, 1.5],
-       [6.9, 3.2, 5.7, 2.3],
-       [5.6, 2.8, 4.9, 2.0],
-       [7.7, 2.8, 6.7, 2.0],
-       [6.3, 2.7, 4.9, 1.8],
-       [6.7, 3.3, 5.7, 2.1],
-       [7.2, 3.2, 6.0, 1.8],
-       [6.2, 2.8, 4.8, 1.8],
-       [6.1, 3.0, 4.9, 1.8],
-       [6.4, 2.8, 5.6, 2.1],
-       [7.2, 3.0, 5.8, 1.6],
-       [7.4, 2.8, 6.1, 1.9],
-       [7.9, 3.8, 6.4, 2.0],
-       [6.4, 2.8, 5.6, 2.2],
-       [6.3, 2.8, 5.1, 1.5],
-       [6.1, 2.6, 5.6, 1.4],
-       [7.7, 3.0, 6.1, 2.3],
-       [6.3, 3.4, 5.6, 2.4],
-       [6.4, 3.1, 5.5, 1.8],
-       [6.0, 3.0, 4.8, 1.8],
-       [6.9, 3.1, 5.4, 2.1],
-       [6.7, 3.1, 5.6, 2.4],
-       [6.9, 3.1, 5.1, 2.3],
-       [5.8, 2.7, 5.1, 1.9],
-       [6.8, 3.2, 5.9, 2.3],
-       [6.7, 3.3, 5.7, 2.5],
-       [6.7, 3.0, 5.2, 2.3],
-       [6.3, 2.5, 5.0, 1.9],
-       [6.5, 3.0, 5.2, 2.0],
-       [6.2, 3.4, 5.4, 2.3],
-       [5.9, 3.0, 5.1, 1.8]], dtype=object)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;priors&#39;: None, &#39;var_smoothing&#39;: 1e-09}
 </pre></div>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="training-a-model">
+<h2>Training a Model<a class="headerlink" href="#training-a-model" title="Permalink to this headline">¶</a></h2>
+<p>Before we trian the model, we have to get our data out of the DataFrame, because our <code class="docutils literal notranslate"><span class="pre">gnb.fit</span></code> method takes arrays. We can use the <code class="docutils literal notranslate"><span class="pre">values</span></code> attribute</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris_df</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5.1, 3.5, 1.4, 0.2, &#39;setosa&#39;],
+       [4.9, 3.0, 1.4, 0.2, &#39;setosa&#39;],
+       [4.7, 3.2, 1.3, 0.2, &#39;setosa&#39;],
+       [4.6, 3.1, 1.5, 0.2, &#39;setosa&#39;],
+       [5.0, 3.6, 1.4, 0.2, &#39;setosa&#39;],
+       [5.4, 3.9, 1.7, 0.4, &#39;setosa&#39;],
+       [4.6, 3.4, 1.4, 0.3, &#39;setosa&#39;],
+       [5.0, 3.4, 1.5, 0.2, &#39;setosa&#39;],
+       [4.4, 2.9, 1.4, 0.2, &#39;setosa&#39;],
+       [4.9, 3.1, 1.5, 0.1, &#39;setosa&#39;],
+       [5.4, 3.7, 1.5, 0.2, &#39;setosa&#39;],
+       [4.8, 3.4, 1.6, 0.2, &#39;setosa&#39;],
+       [4.8, 3.0, 1.4, 0.1, &#39;setosa&#39;],
+       [4.3, 3.0, 1.1, 0.1, &#39;setosa&#39;],
+       [5.8, 4.0, 1.2, 0.2, &#39;setosa&#39;],
+       [5.7, 4.4, 1.5, 0.4, &#39;setosa&#39;],
+       [5.4, 3.9, 1.3, 0.4, &#39;setosa&#39;],
+       [5.1, 3.5, 1.4, 0.3, &#39;setosa&#39;],
+       [5.7, 3.8, 1.7, 0.3, &#39;setosa&#39;],
+       [5.1, 3.8, 1.5, 0.3, &#39;setosa&#39;],
+       [5.4, 3.4, 1.7, 0.2, &#39;setosa&#39;],
+       [5.1, 3.7, 1.5, 0.4, &#39;setosa&#39;],
+       [4.6, 3.6, 1.0, 0.2, &#39;setosa&#39;],
+       [5.1, 3.3, 1.7, 0.5, &#39;setosa&#39;],
+       [4.8, 3.4, 1.9, 0.2, &#39;setosa&#39;],
+       [5.0, 3.0, 1.6, 0.2, &#39;setosa&#39;],
+       [5.0, 3.4, 1.6, 0.4, &#39;setosa&#39;],
+       [5.2, 3.5, 1.5, 0.2, &#39;setosa&#39;],
+       [5.2, 3.4, 1.4, 0.2, &#39;setosa&#39;],
+       [4.7, 3.2, 1.6, 0.2, &#39;setosa&#39;],
+       [4.8, 3.1, 1.6, 0.2, &#39;setosa&#39;],
+       [5.4, 3.4, 1.5, 0.4, &#39;setosa&#39;],
+       [5.2, 4.1, 1.5, 0.1, &#39;setosa&#39;],
+       [5.5, 4.2, 1.4, 0.2, &#39;setosa&#39;],
+       [4.9, 3.1, 1.5, 0.2, &#39;setosa&#39;],
+       [5.0, 3.2, 1.2, 0.2, &#39;setosa&#39;],
+       [5.5, 3.5, 1.3, 0.2, &#39;setosa&#39;],
+       [4.9, 3.6, 1.4, 0.1, &#39;setosa&#39;],
+       [4.4, 3.0, 1.3, 0.2, &#39;setosa&#39;],
+       [5.1, 3.4, 1.5, 0.2, &#39;setosa&#39;],
+       [5.0, 3.5, 1.3, 0.3, &#39;setosa&#39;],
+       [4.5, 2.3, 1.3, 0.3, &#39;setosa&#39;],
+       [4.4, 3.2, 1.3, 0.2, &#39;setosa&#39;],
+       [5.0, 3.5, 1.6, 0.6, &#39;setosa&#39;],
+       [5.1, 3.8, 1.9, 0.4, &#39;setosa&#39;],
+       [4.8, 3.0, 1.4, 0.3, &#39;setosa&#39;],
+       [5.1, 3.8, 1.6, 0.2, &#39;setosa&#39;],
+       [4.6, 3.2, 1.4, 0.2, &#39;setosa&#39;],
+       [5.3, 3.7, 1.5, 0.2, &#39;setosa&#39;],
+       [5.0, 3.3, 1.4, 0.2, &#39;setosa&#39;],
+       [7.0, 3.2, 4.7, 1.4, &#39;versicolor&#39;],
+       [6.4, 3.2, 4.5, 1.5, &#39;versicolor&#39;],
+       [6.9, 3.1, 4.9, 1.5, &#39;versicolor&#39;],
+       [5.5, 2.3, 4.0, 1.3, &#39;versicolor&#39;],
+       [6.5, 2.8, 4.6, 1.5, &#39;versicolor&#39;],
+       [5.7, 2.8, 4.5, 1.3, &#39;versicolor&#39;],
+       [6.3, 3.3, 4.7, 1.6, &#39;versicolor&#39;],
+       [4.9, 2.4, 3.3, 1.0, &#39;versicolor&#39;],
+       [6.6, 2.9, 4.6, 1.3, &#39;versicolor&#39;],
+       [5.2, 2.7, 3.9, 1.4, &#39;versicolor&#39;],
+       [5.0, 2.0, 3.5, 1.0, &#39;versicolor&#39;],
+       [5.9, 3.0, 4.2, 1.5, &#39;versicolor&#39;],
+       [6.0, 2.2, 4.0, 1.0, &#39;versicolor&#39;],
+       [6.1, 2.9, 4.7, 1.4, &#39;versicolor&#39;],
+       [5.6, 2.9, 3.6, 1.3, &#39;versicolor&#39;],
+       [6.7, 3.1, 4.4, 1.4, &#39;versicolor&#39;],
+       [5.6, 3.0, 4.5, 1.5, &#39;versicolor&#39;],
+       [5.8, 2.7, 4.1, 1.0, &#39;versicolor&#39;],
+       [6.2, 2.2, 4.5, 1.5, &#39;versicolor&#39;],
+       [5.6, 2.5, 3.9, 1.1, &#39;versicolor&#39;],
+       [5.9, 3.2, 4.8, 1.8, &#39;versicolor&#39;],
+       [6.1, 2.8, 4.0, 1.3, &#39;versicolor&#39;],
+       [6.3, 2.5, 4.9, 1.5, &#39;versicolor&#39;],
+       [6.1, 2.8, 4.7, 1.2, &#39;versicolor&#39;],
+       [6.4, 2.9, 4.3, 1.3, &#39;versicolor&#39;],
+       [6.6, 3.0, 4.4, 1.4, &#39;versicolor&#39;],
+       [6.8, 2.8, 4.8, 1.4, &#39;versicolor&#39;],
+       [6.7, 3.0, 5.0, 1.7, &#39;versicolor&#39;],
+       [6.0, 2.9, 4.5, 1.5, &#39;versicolor&#39;],
+       [5.7, 2.6, 3.5, 1.0, &#39;versicolor&#39;],
+       [5.5, 2.4, 3.8, 1.1, &#39;versicolor&#39;],
+       [5.5, 2.4, 3.7, 1.0, &#39;versicolor&#39;],
+       [5.8, 2.7, 3.9, 1.2, &#39;versicolor&#39;],
+       [6.0, 2.7, 5.1, 1.6, &#39;versicolor&#39;],
+       [5.4, 3.0, 4.5, 1.5, &#39;versicolor&#39;],
+       [6.0, 3.4, 4.5, 1.6, &#39;versicolor&#39;],
+       [6.7, 3.1, 4.7, 1.5, &#39;versicolor&#39;],
+       [6.3, 2.3, 4.4, 1.3, &#39;versicolor&#39;],
+       [5.6, 3.0, 4.1, 1.3, &#39;versicolor&#39;],
+       [5.5, 2.5, 4.0, 1.3, &#39;versicolor&#39;],
+       [5.5, 2.6, 4.4, 1.2, &#39;versicolor&#39;],
+       [6.1, 3.0, 4.6, 1.4, &#39;versicolor&#39;],
+       [5.8, 2.6, 4.0, 1.2, &#39;versicolor&#39;],
+       [5.0, 2.3, 3.3, 1.0, &#39;versicolor&#39;],
+       [5.6, 2.7, 4.2, 1.3, &#39;versicolor&#39;],
+       [5.7, 3.0, 4.2, 1.2, &#39;versicolor&#39;],
+       [5.7, 2.9, 4.2, 1.3, &#39;versicolor&#39;],
+       [6.2, 2.9, 4.3, 1.3, &#39;versicolor&#39;],
+       [5.1, 2.5, 3.0, 1.1, &#39;versicolor&#39;],
+       [5.7, 2.8, 4.1, 1.3, &#39;versicolor&#39;],
+       [6.3, 3.3, 6.0, 2.5, &#39;virginica&#39;],
+       [5.8, 2.7, 5.1, 1.9, &#39;virginica&#39;],
+       [7.1, 3.0, 5.9, 2.1, &#39;virginica&#39;],
+       [6.3, 2.9, 5.6, 1.8, &#39;virginica&#39;],
+       [6.5, 3.0, 5.8, 2.2, &#39;virginica&#39;],
+       [7.6, 3.0, 6.6, 2.1, &#39;virginica&#39;],
+       [4.9, 2.5, 4.5, 1.7, &#39;virginica&#39;],
+       [7.3, 2.9, 6.3, 1.8, &#39;virginica&#39;],
+       [6.7, 2.5, 5.8, 1.8, &#39;virginica&#39;],
+       [7.2, 3.6, 6.1, 2.5, &#39;virginica&#39;],
+       [6.5, 3.2, 5.1, 2.0, &#39;virginica&#39;],
+       [6.4, 2.7, 5.3, 1.9, &#39;virginica&#39;],
+       [6.8, 3.0, 5.5, 2.1, &#39;virginica&#39;],
+       [5.7, 2.5, 5.0, 2.0, &#39;virginica&#39;],
+       [5.8, 2.8, 5.1, 2.4, &#39;virginica&#39;],
+       [6.4, 3.2, 5.3, 2.3, &#39;virginica&#39;],
+       [6.5, 3.0, 5.5, 1.8, &#39;virginica&#39;],
+       [7.7, 3.8, 6.7, 2.2, &#39;virginica&#39;],
+       [7.7, 2.6, 6.9, 2.3, &#39;virginica&#39;],
+       [6.0, 2.2, 5.0, 1.5, &#39;virginica&#39;],
+       [6.9, 3.2, 5.7, 2.3, &#39;virginica&#39;],
+       [5.6, 2.8, 4.9, 2.0, &#39;virginica&#39;],
+       [7.7, 2.8, 6.7, 2.0, &#39;virginica&#39;],
+       [6.3, 2.7, 4.9, 1.8, &#39;virginica&#39;],
+       [6.7, 3.3, 5.7, 2.1, &#39;virginica&#39;],
+       [7.2, 3.2, 6.0, 1.8, &#39;virginica&#39;],
+       [6.2, 2.8, 4.8, 1.8, &#39;virginica&#39;],
+       [6.1, 3.0, 4.9, 1.8, &#39;virginica&#39;],
+       [6.4, 2.8, 5.6, 2.1, &#39;virginica&#39;],
+       [7.2, 3.0, 5.8, 1.6, &#39;virginica&#39;],
+       [7.4, 2.8, 6.1, 1.9, &#39;virginica&#39;],
+       [7.9, 3.8, 6.4, 2.0, &#39;virginica&#39;],
+       [6.4, 2.8, 5.6, 2.2, &#39;virginica&#39;],
+       [6.3, 2.8, 5.1, 1.5, &#39;virginica&#39;],
+       [6.1, 2.6, 5.6, 1.4, &#39;virginica&#39;],
+       [7.7, 3.0, 6.1, 2.3, &#39;virginica&#39;],
+       [6.3, 3.4, 5.6, 2.4, &#39;virginica&#39;],
+       [6.4, 3.1, 5.5, 1.8, &#39;virginica&#39;],
+       [6.0, 3.0, 4.8, 1.8, &#39;virginica&#39;],
+       [6.9, 3.1, 5.4, 2.1, &#39;virginica&#39;],
+       [6.7, 3.1, 5.6, 2.4, &#39;virginica&#39;],
+       [6.9, 3.1, 5.1, 2.3, &#39;virginica&#39;],
+       [5.8, 2.7, 5.1, 1.9, &#39;virginica&#39;],
+       [6.8, 3.2, 5.9, 2.3, &#39;virginica&#39;],
+       [6.7, 3.3, 5.7, 2.5, &#39;virginica&#39;],
+       [6.7, 3.0, 5.2, 2.3, &#39;virginica&#39;],
+       [6.3, 2.5, 5.0, 1.9, &#39;virginica&#39;],
+       [6.5, 3.0, 5.2, 2.0, &#39;virginica&#39;],
+       [6.2, 3.4, 5.4, 2.3, &#39;virginica&#39;],
+       [5.9, 3.0, 5.1, 1.8, &#39;virginica&#39;]], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then we create test an train splits of our data.  we’ll to equal parts (<code class="docutils literal notranslate"><span class="pre">test_size</span> <span class="pre">=</span> <span class="pre">.5</span></code>) and set the random state so that we call get the same result</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span>  <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">iris_df</span><span class="o">.</span><span class="n">values</span><span class="p">[:,:</span><span class="mi">4</span><span class="p">],</span>
@@ -709,20 +727,15 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">6</span><span class="n">d11643981d4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span>  <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">iris_df</span><span class="o">.</span><span class="n">values</span><span class="p">[:,:</span><span class="mi">4</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                                                      <span class="n">iris_df</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                                                     <span class="n">test_size</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                                                     <span class="n">random_state</span> <span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;train_test_split&#39; is not defined
-</pre></div>
 </div>
+<div class="admonition-try-it-yourself admonition">
+<p class="admonition-title">try it yourself!</p>
+<ol class="simple">
+<li><p>rerun the test <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> without random state, to see how it’s different</p></li>
+<li><p>change the <code class="docutils literal notranslate"><span class="pre">test_size</span></code> to different sizes and see what happens.</p></li>
+</ol>
 </div>
-</div>
+<p>Now we use the <em>training</em> data to fit our model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gnb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -730,16 +743,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">771</span><span class="n">fd66f3a85</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gnb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;gnb&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GaussianNB()
 </pre></div>
 </div>
 </div>
 </div>
+<p>Now we can predict using the <em>test</em> data’s features only.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">gnb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -748,17 +757,27 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="n">fe0d29dc67bc</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">y_pred</span> <span class="o">=</span> <span class="n">gnb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">y_pred</span>
-
-<span class="ne">NameError</span>: name &#39;gnb&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;setosa&#39;,
+       &#39;virginica&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;,
+       &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;,
+       &#39;versicolor&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;setosa&#39;,
+       &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;,
+       &#39;virginica&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;,
+       &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;,
+       &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;,
+       &#39;versicolor&#39;, &#39;virginica&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;setosa&#39;,
+       &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;virginica&#39;, &#39;versicolor&#39;,
+       &#39;virginica&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;,
+       &#39;virginica&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;versicolor&#39;,
+       &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;,
+       &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;setosa&#39;,
+       &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;,
+       &#39;versicolor&#39;], dtype=&#39;&lt;U10&#39;)
 </pre></div>
 </div>
 </div>
 </div>
+<p>We can compare this to the y_test to see how well our classifier works.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_test</span>
@@ -766,16 +785,27 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="mi">27</span><span class="n">d3425f7a85</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">y_test</span>
-
-<span class="ne">NameError</span>: name &#39;y_test&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;setosa&#39;,
+       &#39;virginica&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;,
+       &#39;virginica&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;,
+       &#39;versicolor&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;setosa&#39;,
+       &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;,
+       &#39;virginica&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;,
+       &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;,
+       &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;,
+       &#39;versicolor&#39;, &#39;virginica&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;setosa&#39;,
+       &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;virginica&#39;, &#39;virginica&#39;,
+       &#39;virginica&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;,
+       &#39;virginica&#39;, &#39;virginica&#39;, &#39;virginica&#39;, &#39;virginica&#39;, &#39;versicolor&#39;,
+       &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;,
+       &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;setosa&#39;,
+       &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;,
+       &#39;versicolor&#39;], dtype=object)
 </pre></div>
 </div>
 </div>
 </div>
+<p>We can simply use base python to get the number correct with a boolean and sum since <code class="docutils literal notranslate"><span class="pre">False</span></code> turns to 0 and <code class="docutils literal notranslate"><span class="pre">True</span></code> to 1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">y_pred</span> <span class="o">==</span> <span class="n">y_test</span><span class="p">)</span>
@@ -783,16 +813,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="mi">8</span><span class="n">a03aca2c1c2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">sum</span><span class="p">(</span><span class="n">y_pred</span> <span class="o">==</span> <span class="n">y_test</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;y_pred&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>71
 </pre></div>
 </div>
 </div>
 </div>
+<p>and compare that with the total</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
@@ -800,13 +826,22 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mi">98</span><span class="n">f3d842b84c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;y_pred&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>75
 </pre></div>
+</div>
+</div>
+</div>
+<p>or compute accuracy</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">y_pred</span> <span class="o">==</span> <span class="n">y_test</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9466666666666667
+</pre></div>
+</div>
 </div>
 </div>
 </div>
