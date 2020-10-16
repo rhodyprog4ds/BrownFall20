@@ -42,7 +42,7 @@
   keyword: visualize
   aware: identify plot types, generate basic plots from pandas
   compentent: generate multiple plot types with complete labeling with pandas and seaborn
-  mastery: generate complex plots with pandas and plotting libraries and customize with matplotlib
+  mastery: generate complex plots with pandas and plotting libraries and customize with matplotlib or additional parameters
   portfolios: [1,2]
   clo: [exploratory]
   assignments: [3,4,6,7,8,9,10,11,12,13]
