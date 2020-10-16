@@ -117,3 +117,7 @@ To show errors and continue running the rest, add the following to your configur
 execute:
   allow_errors              : true
 ```
+
+## Using additional packages
+
+You'll have to add any additional packages you use (beyond pandas and seaborn) to the `requirements.txt` file in your portfolio. 
