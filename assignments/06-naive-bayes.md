@@ -8,32 +8,27 @@ Remember, even if you aren't sure how to do every part of the assignment, submit
 
 ## For Classification Level 2:
 
-[Submission template](https://classroom.github.com/a/fojgz8Cc)
+[Acccept the Assignment](https://classroom.github.com/a/fojgz8Cc)
 
-You're going to train a Gaussian Naive Bayes classifier five total times in this assignment in two notebooks.
 
-1. Create one notebook where you load and answer the following for each of the four provided datasets with exploratory data analysis. Then fit and evaluate a Gaussian Naive Bayes classifier.  
-  - Does it meet the assumptions for Gaussian Naive Bayes?
-  - If not which assumptions does it break?
-  - Do you expect Gaussian Naive Bayes to work well on this dataset, why or why not?
-1. Create a second notebook where you evaluated a dataset of your choice with continuous valued features and a categorical target value save them to the data folder. Include a description of the data, including its source, with a link. We recommend the [UCI Data Repository](https://archive.ics.uci.edu/ml/index.php)
-1. Load the data using the relative path.
-1. Use exploratory data analysis to evaluate if Gaussian Naive Bayes is a good fit, based on its core assumptions
-1. Confirm your predictions by fitting the classifier and evaluating its performance.
+
+Create one notebook where you load examine each of the provided datasets for for suitability to use with Gaussian Naive Bayes. Label the sections `Dataset #`. Use exploratory data analysis (visualisation and statistics) in pandas and Gaussian Naive Bayes from scikit learn to answer the following for each dataset:
+
+
+1. Do you expect Gaussian Naive Bayes to work well on this dataset, why or why not? (think about the assumptions of naive bayes and classification in general) _explanation is essential here, because you can actually use the classifier to check_
+1. How well does a Gaussian Niave Bayes classifier work on this dataset? Do you think a different classifier might work better or do you think this data cannot be predicted any better than this?
+1. How does the actual performance compare to your prediction?  If it performs much better or much worse than you expected, what might you use to figure out why? (_you do not have to figure out why your predictions were not correct, just list tools you've learned in class that might help you figure that out_)
 
 
 Include explanatory text at each step of your analysis.
 
 
 
-
-_if you have dataset that you're  interested in that's got categorical or binary features only, you can try a different naive Bayes classifier. You still need to assess if the naive bayes assumption holds or not. Look into mutual information_
-
 ## For construct level 2
 
-1. As your chosen dataset, build your own dataset for classification by merging two data  files  that you're interested in or querying a database.
+Build your own dataset for classification by merging data from separate sources that you're interested in.
 
 
 ## Summarize and Viz level 2
 
-Show some extra summary stats or plots
+Show some extra summary stats and plots
