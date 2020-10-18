@@ -8,3 +8,4 @@ Assignment TOC:
 - [Assignment 3](03-exploratory) Due September 29
 - [Assignment 4](04-prepare) Due October 4
 - [Assignment 5](05-construct) Due October 11
+- [Assignment 6](06-naive-bayes) Due October 20
