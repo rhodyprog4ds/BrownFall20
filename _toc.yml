@@ -37,6 +37,7 @@
     - file: assignments/03-exploratory
     - file: assignments/04-prepare
     - file: assignments/05-construct
+    - file: assignments/06-naive-bayes
 
 - file: portfolio/index
   sections:
