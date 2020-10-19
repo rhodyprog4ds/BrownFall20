@@ -240,8 +240,23 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reminder-to-stop-early-for-feedback-survey">
-   Reminder to Stop Early for feedback survey
+  <a class="reference internal nav-link" href="#evaluating-classification">
+   Evaluating Classification
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inspecting-a-classifier">
+   Inspecting a classifier
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feedback">
+   Feedback
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-practice">
+   More practice
   </a>
  </li>
 </ul>
@@ -261,7 +276,7 @@
 <li><p>share your favorite rainy day activity (or just say hi) in the zoom chat for attendance</p></li>
 <li><p>log onto prismia</p></li>
 </ol>
-<!-- annotate: Naive Bayes Review --> 
+<!-- annotate: Naive Bayes Review -->
 <div class="section" id="naive-bayes-review">
 <h2>Naive Bayes Review<a class="headerlink" href="#naive-bayes-review" title="Permalink to this headline">¶</a></h2>
 <p>Main assumptions:</p>
@@ -274,6 +289,7 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load http://drsmb.co/310</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 <span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
 </pre></div>
@@ -361,7 +377,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">values</span><span class="p">[:,:</span><span class="mi">4</span><span class="p">],</span>
-                                                    <span class="n">iris</span><span class="o">.</span><span class="n">species</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> 
+                                                    <span class="n">iris</span><span class="o">.</span><span class="n">species</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
                                                     <span class="n">test_size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -453,6 +469,10 @@
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="evaluating-classification">
+<h2>Evaluating Classification<a class="headerlink" href="#evaluating-classification" title="Permalink to this headline">¶</a></h2>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">score</span></code> method to compute accuracy by providing both features and target for the test set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gnb</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
@@ -465,9 +485,10 @@
 </div>
 </div>
 </div>
+<p>Which is the same as the manual way we did before</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">71</span><span class="o">/</span><span class="mi">75</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">y_pred</span> <span class="o">==</span> <span class="n">y_test</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -477,6 +498,7 @@
 </div>
 </div>
 </div>
+<p>Scikit learn also provides a whole metrics module. We’ll look at two functions from it today.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">classification_report</span>
@@ -484,6 +506,7 @@
 </div>
 </div>
 </div>
+<p>First a Confusion matrix, which is the basic table of how the decisions were made. It counts how many from each true class were predicted to be in each class.  My favorite refernce on these is the table on the <a class="reference external" href="https://en.wikipedia.org/wiki/Confusion_matrix">wikipedia article</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred</span><span class="p">,)</span>
@@ -498,6 +521,7 @@
 </div>
 </div>
 </div>
+<p>We can see this makes sense from looking at the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span><span class="n">iris</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;species&#39;</span><span class="p">)</span>
@@ -505,12 +529,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7efe6dd0d5d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f749ac3bc10&gt;
 </pre></div>
 </div>
-<img alt="../_images/2020-10-16_14_1.png" src="../_images/2020-10-16_14_1.png" />
+<img alt="../_images/2020-10-16_19_1.png" src="../_images/2020-10-16_19_1.png" />
 </div>
 </div>
+<p>We can also get a formatted report that uses the confusion matrix to compute multiple metrics</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred</span><span class="p">))</span>
@@ -531,6 +556,10 @@ weighted avg       0.95      0.95      0.95        75
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="inspecting-a-classifier">
+<h2>Inspecting a classifier<a class="headerlink" href="#inspecting-a-classifier" title="Permalink to this headline">¶</a></h2>
+<p>We can serialize any python object to inspect it with <code class="docutils literal notranslate"><span class="pre">__dict__</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gnb</span><span class="o">.</span><span class="vm">__dict__</span>
@@ -555,34 +584,35 @@ weighted avg       0.95      0.95      0.95        75
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>It includes attributes <code class="docutils literal notranslate"><span class="pre">theta_</span></code> and <code class="docutils literal notranslate"><span class="pre">sigma_</span></code> these characterize the mean and the variance of each class. Naive Bayes is a generative classifier, since we’re using the Guassian NB, it means it assumes that the data are Gaussian in each class. For a generative classifier, we can draw synthetic data from the model it learned.  We can use this to decide if what it learned makes sense by comparing it qualitatively (or statistically) to the real data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load http://drsmb.co/310</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sig</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">gnb_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sig</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span><span class="mi">20</span><span class="p">)</span>
                                   <span class="k">for</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sig</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">gnb</span><span class="o">.</span><span class="n">theta_</span><span class="p">,</span><span class="n">gnb</span><span class="o">.</span><span class="n">sigma_</span><span class="p">)]))</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">ci</span> <span class="k">for</span> <span class="n">cl</span> <span class="ow">in</span> <span class="p">[[</span><span class="n">c</span><span class="p">]</span><span class="o">*</span><span class="mi">20</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">gnb</span><span class="o">.</span><span class="n">classes_</span><span class="p">]</span> <span class="k">for</span> <span class="n">ci</span> <span class="ow">in</span> <span class="n">cl</span><span class="p">]</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;species&#39;</span><span class="p">)</span>
+<span class="n">gnb_df</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">ci</span> <span class="k">for</span> <span class="n">cl</span> <span class="ow">in</span> <span class="p">[[</span><span class="n">c</span><span class="p">]</span><span class="o">*</span><span class="mi">20</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">gnb</span><span class="o">.</span><span class="n">classes_</span><span class="p">]</span> <span class="k">for</span> <span class="n">ci</span> <span class="ow">in</span> <span class="n">cl</span><span class="p">]</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span><span class="n">gnb_df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;species&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7efe692d3dd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f7495adfb50&gt;
 </pre></div>
 </div>
-<img alt="../_images/2020-10-16_18_1.png" src="../_images/2020-10-16_18_1.png" />
+<img alt="../_images/2020-10-16_25_1.png" src="../_images/2020-10-16_25_1.png" />
 </div>
 </div>
-<!-- annotate: Reminder to Stop Early for [feedback survey](https://forms.gle/yqWEPGJjFXDczuDv7) --> 
 </div>
-<div class="section" id="reminder-to-stop-early-for-feedback-survey">
-<h2>Reminder to Stop Early for <a class="reference external" href="https://forms.gle/yqWEPGJjFXDczuDv7">feedback survey</a><a class="headerlink" href="#reminder-to-stop-early-for-feedback-survey" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="feedback">
+<h2>Feedback<a class="headerlink" href="#feedback" title="Permalink to this headline">¶</a></h2>
+<p>Please complete this <a class="reference external" href="https://forms.gle/yqWEPGJjFXDczuDv7">feedback survey</a> to provide input on how the semester is going for you so far.</p>
+</div>
+<div class="section" id="more-practice">
+<h2>More practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Try breaking down all the steps that are in the last cell one by one to understand them.</p></li>
+<li><p>Read the documentation for naive bayes, how does it use the model parameters to make a prediction?</p></li>
+</ol>
 </div>
 </div>
 
