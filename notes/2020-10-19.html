@@ -1,0 +1,920 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class 18: Mid Semester Checkin, Git, &amp; How GNB makes decisions &#8212; Programming for Data Science at URI Fall 2020</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Programming for Data Science at URI Fall 2020</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to Programming for Data Science
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus/index.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Class Notes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/index.html">
+   Assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portfolio/index.html">
+   Portfolio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../faq/index.html">
+   FAQ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../resources/index.html">
+   Resources
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/notes/2020-10-19.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notes/2020-10-19.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        <a class="issues-button"
+            href="https://github.com/rhodyprog4ds/BrownFall20//issues/new?title=Issue%20on%20page%20%2Fnotes/2020-10-19.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/rhodyprog4ds/BrownFall20/edit/main/notes/2020-10-19.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rhodyprog4ds/BrownFall20/main?urlpath=tree/notes/2020-10-19.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feedback-review">
+   Feedback Review
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#changes-based-on-your-feedback-for-the-rest-of-the-semester">
+   Changes based on your feedback for the rest of the semester
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment">
+   Assignment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-on-naive-bayes">
+   More on Naive Bayes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#try-it-yourself">
+   Try it yourself
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="class-18-mid-semester-checkin-git-how-gnb-makes-decisions">
+<h1>Class 18: Mid Semester Checkin, Git, &amp; How GNB makes decisions<a class="headerlink" href="#class-18-mid-semester-checkin-git-how-gnb-makes-decisions" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Share your favorite thing about fall (or just say hi) in the zoom chat for attendance</p></li>
+<li><p>log onto Prismia</p></li>
+<li><p>accept Assignment 6</p></li>
+<li><p>install git or GitBash if needed</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">font_scale</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="feedback-review">
+<h2>Feedback Review<a class="headerlink" href="#feedback-review" title="Permalink to this headline">¶</a></h2>
+<p>Thank you for the feedback. You can add more on Friday’s notes if you did not give any yet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feedback_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/feedback_structured.csv&#39;</span><span class="p">)</span>
+<span class="n">feedback_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>How much do you think you've learned so far this semester?</th>
+      <th>How much of the material that's been taught do you feel you understand?</th>
+      <th>How do you think the achievements you've earned so far align with your understanding?</th>
+      <th>Rank the following as what you feel the grading (when you do/not earn achievements) so far actually reflects about your performance in the class [How well I follow instructions]</th>
+      <th>Rank the following as what you feel the grading (when you do/not earn achievements) so far actually reflects about your performance in the class [What I understand about the material]</th>
+      <th>Rank the following as what you feel the grading (when you do/not earn achievements) so far actually reflects about your performance in the class [How much effort I put into assignments]</th>
+      <th>How fair do you think the amount each of the following is reflected in the grading [How well I follow instructions]</th>
+      <th>How fair do you think the amount each of the following is reflected in the grading [What I understand about the material]</th>
+      <th>How fair do you think the amount each of the following is reflected in the grading [How much effort I put into assignments]</th>
+      <th>Which of the following have you done to support your learning outside of class?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>3</td>
+      <td>I think they reflect my understanding well</td>
+      <td>Reflected moderately in the grading</td>
+      <td>Reflected strongly in the grading</td>
+      <td>Reflected perfectly in the grading</td>
+      <td>Is fairly reflected in the grading</td>
+      <td>Should be reflected more in the grading</td>
+      <td>Should be reflected more in the grading</td>
+      <td>read the notes online, download and run the notes</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>4</td>
+      <td>I think the achievements underestimate what I ...</td>
+      <td>Reflected strongly in the grading</td>
+      <td>Reflected strongly in the grading</td>
+      <td>Reflected moderately in the grading</td>
+      <td>Is fairly reflected in the grading</td>
+      <td>Is fairly reflected in the grading</td>
+      <td>Should be reflected more in the grading</td>
+      <td>read the notes online, download and run the no...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>3</td>
+      <td>I think they reflect my understanding well</td>
+      <td>Reflected moderately in the grading</td>
+      <td>Reflected moderately in the grading</td>
+      <td>Reflected moderately in the grading</td>
+      <td>Is fairly reflected in the grading</td>
+      <td>Is fairly reflected in the grading</td>
+      <td>Is fairly reflected in the grading</td>
+      <td>read the notes online, experimenting with the ...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>3</td>
+      <td>I think they reflect my understanding well</td>
+      <td>Reflected moderately in the grading</td>
+      <td>Reflected moderately in the grading</td>
+      <td>Reflected moderately in the grading</td>
+      <td>Is fairly reflected in the grading</td>
+      <td>Is fairly reflected in the grading</td>
+      <td>Is fairly reflected in the grading</td>
+      <td>read the notes online, download and run the no...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3</td>
+      <td>3</td>
+      <td>I think they reflect my understanding well</td>
+      <td>Reflected strongly in the grading</td>
+      <td>Reflected moderately in the grading</td>
+      <td>Reflected strongly in the grading</td>
+      <td>Is fairly reflected in the grading</td>
+      <td>Is fairly reflected in the grading</td>
+      <td>Is fairly reflected in the grading</td>
+      <td>read the notes online, experimenting with the ...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">el_meaning</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;much less&#39;</span><span class="p">,</span>
+ <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;a little less&#39;</span><span class="p">,</span>
+ <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;about right&#39;</span><span class="p">,</span>
+ <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;a little more &#39;</span><span class="p">,</span>
+ <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;much more&#39;</span><span class="p">}</span>
+
+<span class="n">expected_learning</span> <span class="o">=</span> <span class="n">feedback_df</span><span class="p">[</span><span class="n">feedback_df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="n">el_counts</span><span class="p">,</span><span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">expected_learning</span><span class="p">,</span><span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">+.</span><span class="mi">5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)])</span>
+<span class="n">el_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">el_counts</span><span class="p">,</span><span class="n">index</span> <span class="o">=</span> <span class="n">el_meaning</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span><span class="n">columns</span><span class="o">=</span> <span class="p">[</span><span class="n">expected_learning</span><span class="o">.</span><span class="n">_name</span><span class="p">],)</span>
+<span class="c1"># el_df.reset_index(inplace=True)</span>
+<span class="c1"># el_df = el_df.rename(columns= {&#39;index&#39;:&#39;amount&#39;}).set_index(&#39;amount&#39;)</span>
+<span class="n">el_df</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;amount relative to expectations&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">el_df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="n">expected_learning</span><span class="o">.</span><span class="n">_name</span><span class="p">,);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2020-10-19_4_0.png" src="../_images/2020-10-19_4_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_meaning</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="s1">&#39;A little&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span><span class="s1">&#39;Half&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span><span class="s1">&#39;Almost all&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">:</span><span class="s1">&#39;All&#39;</span><span class="p">}</span>
+<span class="n">u_col</span> <span class="o">=</span> <span class="n">feedback_df</span><span class="p">[</span><span class="n">feedback_df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">u_counts</span><span class="p">,</span><span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">u_col</span><span class="p">,</span><span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">+.</span><span class="mi">5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)])</span>
+<span class="n">understanding_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">u_counts</span><span class="p">,</span><span class="n">index</span> <span class="o">=</span> <span class="n">u_meaning</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span><span class="n">columns</span><span class="o">=</span> <span class="p">[</span><span class="n">u_col</span><span class="o">.</span><span class="n">_name</span><span class="p">],)</span>
+
+<span class="n">understanding_df</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;amount of material&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">understanding_df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="n">u_col</span><span class="o">.</span><span class="n">_name</span><span class="p">,);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2020-10-19_5_0.png" src="../_images/2020-10-19_5_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">align</span> <span class="o">=</span> <span class="p">[</span><span class="n">c_name</span> <span class="k">for</span> <span class="n">c_name</span> <span class="ow">in</span> <span class="n">feedback_df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s1">&#39;align&#39;</span> <span class="ow">in</span> <span class="n">c_name</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">align_df</span> <span class="o">=</span> <span class="n">feedback_df</span><span class="p">[</span><span class="n">align</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">align_counts</span> <span class="o">=</span> <span class="n">align_df</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">align_kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;well&#39;</span><span class="p">:</span><span class="s1">&#39;well aligned&#39;</span><span class="p">,</span><span class="s1">&#39;more&#39;</span><span class="p">:</span><span class="s1">&#39;I know more&#39;</span><span class="p">,</span><span class="s1">&#39;less&#39;</span><span class="p">:</span><span class="s1">&#39;I know less&#39;</span><span class="p">}</span>
+<span class="c1"># # kw_replace =</span>
+<span class="n">align_counts</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">{</span><span class="n">s</span><span class="p">:</span> <span class="p">[</span><span class="n">align_kw</span><span class="p">[</span><span class="n">kw</span><span class="p">]</span> <span class="k">for</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">align_kw</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">s</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">align_counts</span><span class="o">.</span><span class="n">index</span><span class="p">},</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">align_counts</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">align_counts</span><span class="o">.</span><span class="n">_name</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2020-10-19_6_0.png" src="../_images/2020-10-19_6_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reflect_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">c_name</span> <span class="k">for</span> <span class="n">c_name</span> <span class="ow">in</span> <span class="n">feedback_df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s1">&#39;reflects&#39;</span> <span class="ow">in</span> <span class="n">c_name</span><span class="p">]</span>
+<span class="n">reflect_df</span> <span class="o">=</span> <span class="n">feedback_df</span><span class="p">[</span><span class="n">reflect_cols</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">reflect_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">),</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">reflect_df</span> <span class="o">=</span> <span class="n">reflect_df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;factor&#39;</span><span class="p">,</span><span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;grading reflection&#39;</span><span class="p">)</span>
+<span class="n">reflect_df</span><span class="p">[</span><span class="s1">&#39;grading reflection&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reflect_df</span><span class="p">[</span><span class="s1">&#39;grading reflection&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; in the grading&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">reflect_df</span><span class="p">[</span><span class="s1">&#39;grading reflection&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reflect_df</span><span class="p">[</span><span class="s1">&#39;grading reflection&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Reflected&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">factor_kw</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;follow instructions&#39;</span><span class="p">,</span><span class="s1">&#39;understand&#39;</span><span class="p">,</span><span class="s1">&#39;effort&#39;</span><span class="p">]</span>
+<span class="c1"># kw_replace =</span>
+<span class="n">reflect_df</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="n">s</span><span class="p">:</span> <span class="p">[</span><span class="n">kw</span> <span class="k">for</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">factor_kw</span> <span class="k">if</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">s</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">reflect_df</span><span class="p">[</span><span class="s1">&#39;factor&#39;</span><span class="p">]},</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">reflect_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;grading reflection&#39;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s1">&#39;factor&#39;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;grading reflection&#39;</span><span class="p">,)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xticklabels</span><span class="o">=</span><span class="p">[]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2020-10-19_7_0.png" src="../_images/2020-10-19_7_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fair_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">c_name</span> <span class="k">for</span> <span class="n">c_name</span> <span class="ow">in</span> <span class="n">feedback_df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s1">&#39;fair&#39;</span> <span class="ow">in</span> <span class="n">c_name</span><span class="p">]</span>
+<span class="n">fair_df</span> <span class="o">=</span> <span class="n">feedback_df</span><span class="p">[</span><span class="n">fair_cols</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">fair_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">),</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fair_df</span> <span class="o">=</span> <span class="n">fair_df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;factor&#39;</span><span class="p">,</span><span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;fairness&#39;</span><span class="p">)</span>
+<span class="n">fair_df</span><span class="p">[</span><span class="s1">&#39;fairness&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fair_df</span><span class="p">[</span><span class="s1">&#39;fairness&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; in the grading&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="c1"># reflect_df[&#39;grading reflection&#39;] = reflect_df[&#39;grading reflection&#39;].str.replace(&#39;Reflected&#39;,&#39;&#39;)</span>
+
+<span class="n">factor_kw</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;follow instructions&#39;</span><span class="p">,</span><span class="s1">&#39;understand&#39;</span><span class="p">,</span><span class="s1">&#39;effort&#39;</span><span class="p">]</span>
+<span class="c1"># # kw_replace =</span>
+<span class="n">fair_df</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="n">s</span><span class="p">:</span> <span class="p">[</span><span class="n">kw</span> <span class="k">for</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">factor_kw</span> <span class="k">if</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">s</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">fair_df</span><span class="p">[</span><span class="s1">&#39;factor&#39;</span><span class="p">]},</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">reflect_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;grading reflection&#39;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s1">&#39;factor&#39;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;grading reflection&#39;</span><span class="p">,)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xticklabels</span><span class="o">=</span><span class="p">[]);</span>
+<span class="c1"># fair_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2020-10-19_8_0.png" src="../_images/2020-10-19_8_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">activity_col</span> <span class="o">=</span> <span class="p">[</span><span class="n">cname</span> <span class="k">for</span> <span class="n">cname</span> <span class="ow">in</span> <span class="n">feedback_df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s1">&#39;outside&#39;</span> <span class="ow">in</span> <span class="n">cname</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">activity_counts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">feedback_df</span><span class="p">[</span><span class="n">activity_col</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span><span class="o">.</span><span class="n">stack</span><span class="p">())</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">activity_counts</span> <span class="o">=</span> <span class="n">activity_counts</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;activites outside of class&#39;</span><span class="p">)</span>
+<span class="c1"># activity_counts.plot.bar()</span>
+<span class="n">ac_clean</span> <span class="o">=</span> <span class="n">activity_counts</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s1">&#39;students&#39;</span><span class="p">})</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">ac_clean</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;activites outside of class&#39;</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;students&#39;</span><span class="p">,);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2020-10-19_9_0.png" src="../_images/2020-10-19_9_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="changes-based-on-your-feedback-for-the-rest-of-the-semester">
+<h2>Changes based on your feedback for the rest of the semester<a class="headerlink" href="#changes-based-on-your-feedback-for-the-rest-of-the-semester" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Assignments posted by Wed, due Tuesday (after this one, but I’m giving class time for it)</p></li>
+<li><p>Assignments will have a bit more detail or advice (this one is very structured because of the short time, but not all will be this closed).</p></li>
+<li><p>Office hours will stay the same, but deadlines moved</p></li>
+<li><p>Will collect descriptions of any <a class="reference external" href="https://forms.gle/L1n6iSTtUZe6mMeBA">issued with Prismia.chat</a> to pass on to the developers</p></li>
+</ul>
+</div>
+<div class="section" id="assignment">
+<h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Accept</p></li>
+<li><p>Git demo</p></li>
+<li><p>Read &amp; make notes of a plan (what do you need to do? what methods will you use?)</p></li>
+<li><p>Discuss your plan in a breakout room</p></li>
+</ul>
+<p>Questions:</p>
+<ol class="simple">
+<li><p>Errors means misclassifications, samples where the classifier’s prediction is not correct.</p></li>
+</ol>
+</div>
+<div class="section" id="more-on-naive-bayes">
+<h2>More on Naive Bayes<a class="headerlink" href="#more-on-naive-bayes" title="Permalink to this headline">¶</a></h2>
+<p>From last week:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load http://drsmb.co/310</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;iris&quot;</span><span class="p">)</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">values</span><span class="p">[:,:</span><span class="mi">4</span><span class="p">],</span>
+                                                    <span class="n">iris</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+                                                    <span class="n">test_size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+
+<span class="n">gnb</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">gnb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remember we can check accuracy with the score method</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gnb</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9466666666666667
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can inspect the trained classifier</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gnb</span><span class="o">.</span><span class="vm">__dict__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;priors&#39;: None,
+ &#39;var_smoothing&#39;: 1e-09,
+ &#39;n_features_in_&#39;: 4,
+ &#39;epsilon_&#39;: 3.3870506666666674e-09,
+ &#39;classes_&#39;: array([&#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39;], dtype=&#39;&lt;U10&#39;),
+ &#39;theta_&#39;: array([[4.98571429, 3.40714286, 1.47142857, 0.23214286],
+        [5.96190476, 2.76666667, 4.34285714, 1.31904762],
+        [6.61923077, 2.95384615, 5.59230769, 2.01153846]]),
+ &#39;sigma_&#39;: array([[0.15551021, 0.17709184, 0.03275511, 0.00718113],
+        [0.23188209, 0.0984127 , 0.15482994, 0.03392291],
+        [0.48232249, 0.1071006 , 0.34686391, 0.06948225]]),
+ &#39;class_count_&#39;: array([28., 21., 26.]),
+ &#39;class_prior_&#39;: array([0.37333333, 0.28      , 0.34666667])}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Gaussian Niave Bayes learns the mean and variance for each feature in each class.  We can use that to generate synthetic data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sig</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span><span class="mi">20</span><span class="p">)</span>
+                                  <span class="k">for</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sig</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">gnb</span><span class="o">.</span><span class="n">theta_</span><span class="p">,</span><span class="n">gnb</span><span class="o">.</span><span class="n">sigma_</span><span class="p">)]))</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">ci</span> <span class="k">for</span> <span class="n">cl</span> <span class="ow">in</span> <span class="p">[[</span><span class="n">c</span><span class="p">]</span><span class="o">*</span><span class="mi">20</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">gnb</span><span class="o">.</span><span class="n">classes_</span><span class="p">]</span> <span class="k">for</span> <span class="n">ci</span> <span class="ow">in</span> <span class="n">cl</span><span class="p">]</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;species&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fb37ca9f190&gt;
+</pre></div>
+</div>
+<img alt="../_images/2020-10-19_20_1.png" src="../_images/2020-10-19_20_1.png" />
+</div>
+</div>
+<p>It decides for it’s predictions by computing probabilities and predicting the highest probability one.  We can have it return these probabilities directly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>gnb.predict_proba(X_test)`
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  File &quot;&lt;ipython-input-14-e6a42f6fa178&gt;&quot;, line 1
+    gnb.predict_proba(X_test)`
+                             ^
+SyntaxError: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use these to see how confident it is on each point.  First, we’ll get the probability of the predicted class (the max in each row of the matrix).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pob_ypred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">gnb</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">pob_ypred</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.9999498 , 0.70485761, 0.99999988, 1.        , 1.        ,
+       0.99999528, 1.        , 0.88532403, 1.        , 0.98995685,
+       0.98928212, 0.69406879, 0.99999999, 0.99999997, 1.        ,
+       1.        , 0.90927501, 0.99999997, 1.        , 1.        ,
+       0.99972898, 0.99999839, 1.        , 0.92449508, 0.99970908,
+       0.99999997, 0.99857943, 0.99965594, 0.98844145, 0.99999983,
+       1.        , 0.99993213, 0.9999939 , 1.        , 0.80885454,
+       1.        , 1.        , 1.        , 1.        , 0.99999993,
+       0.98915134, 0.99998516, 1.        , 1.        , 0.95513579,
+       0.85016072, 0.99525954, 0.99999988, 1.        , 1.        ,
+       0.98735446, 1.        , 1.        , 1.        , 1.        ,
+       0.99906987, 0.67288225, 0.99999514, 0.9999897 , 0.96679497,
+       0.99999729, 0.99986416, 0.99999998, 0.55849652, 1.        ,
+       0.98840745, 1.        , 0.94307153, 0.99999991, 0.99990409,
+       1.        , 0.99977424, 0.92205013, 0.99937796, 0.99994699])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we’ll put the test data into a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> so we can use high level plotting functions from <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>.  We could use the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> data structures that scikit learn uses directly with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> plotting and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> statistics, but this is a little more compact and readable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris_test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">iris_test_df</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_test</span>
+<span class="n">iris_test_df</span><span class="p">[</span><span class="s1">&#39;species_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_pred</span>
+<span class="n">iris_test_df</span><span class="p">[</span><span class="s1">&#39;pob_ypred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pob_ypred</span>
+<span class="n">iris_test_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+      <th>species_pred</th>
+      <th>pob_ypred</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.8</td>
+      <td>2.7</td>
+      <td>3.9</td>
+      <td>1.2</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>0.999950</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6.1</td>
+      <td>2.6</td>
+      <td>5.6</td>
+      <td>1.4</td>
+      <td>virginica</td>
+      <td>virginica</td>
+      <td>0.704858</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5.8</td>
+      <td>2.8</td>
+      <td>5.1</td>
+      <td>2.4</td>
+      <td>virginica</td>
+      <td>virginica</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.4</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7.2</td>
+      <td>3.6</td>
+      <td>6.1</td>
+      <td>2.5</td>
+      <td>virginica</td>
+      <td>virginica</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>First we’ll look at the one pairwise view of the data that was the most visually separate, <code class="docutils literal notranslate"><span class="pre">'petal_width'</span></code> vs <code class="docutils literal notranslate"><span class="pre">'petal_length'</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris_test_df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;petal_width&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;petal_length&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;pob_ypred&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;petal_width&#39;, ylabel=&#39;petal_length&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/2020-10-19_28_1.png" src="../_images/2020-10-19_28_1.png" />
+</div>
+</div>
+<p>Notice that the points near the boundary are the lowest probability. We can inspect further by adding a <code class="docutils literal notranslate"><span class="pre">'correct'</span></code> column with boolean values</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris_test_df</span><span class="p">[</span><span class="s1">&#39;correct&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">iris_test_df</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">iris_test_df</span><span class="p">[</span><span class="s1">&#39;species_pred&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can use EDA (exploratory data analysis) to further examine.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris_test_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;correct&#39;</span><span class="p">)[</span><span class="s1">&#39;pob_ypred&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>correct</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>False</th>
+      <td>4.0</td>
+      <td>0.770240</td>
+      <td>0.176779</td>
+      <td>0.558497</td>
+      <td>0.660176</td>
+      <td>0.789696</td>
+      <td>0.899761</td>
+      <td>0.943072</td>
+    </tr>
+    <tr>
+      <th>True</th>
+      <td>71.0</td>
+      <td>0.980814</td>
+      <td>0.059866</td>
+      <td>0.672882</td>
+      <td>0.999224</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The incorrectly (<code class="docutils literal notranslate"><span class="pre">False</span></code>) predicted samples were much lower confidence and higher variance in confidence. This suggests that the classifier is a good fit for the data, though it’s imperfect on the test set, and that we should trust how it’s working.</p>
+</div>
+<div class="section" id="try-it-yourself">
+<h2>Try it yourself<a class="headerlink" href="#try-it-yourself" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Can any of these things help with Assignment 6?</p></li>
+<li><p>Review the datasets you’ve used for prior analyses, can they be used for any classification?</p></li>
+<li><p>What kinds of data would be needed to train a classifier for some ML systems that you interact with?</p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Professor Sarah M Brown<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
