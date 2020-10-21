@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 2: Practicing Python and Accessing Data &#8212; Programming for Data Science at URI Fall 2020</title>
+    <title>Assignment 7 &#8212; Programming for Data Science at URI Fall 2020</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -57,8 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Assignment 3: Exploratory Data Analysis" href="03-exploratory.html" />
-    <link rel="prev" title="Assignment 1: Portfolio Setup, Data Science, and Python" href="01-python-syllabus.html" />
+    <link rel="next" title="Portfolio" href="../portfolio/index.html" />
+    <link rel="prev" title="Assignment 6" href="06-naive-bayes.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -119,8 +119,8 @@
      Assignment 1: Portfolio Setup, Data Science, and Python
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-python-access.html">
      Assignment 2: Practicing Python and Accessing Data
     </a>
    </li>
@@ -144,8 +144,8 @@
      Assignment 6
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="07-decision-tree.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Assignment 7
     </a>
    </li>
@@ -208,7 +208,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/assignments/02-python-access.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/assignments/07-decision-tree.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -225,10 +225,10 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/rhodyprog4ds/BrownFall20//issues/new?title=Issue%20on%20page%20%2Fassignments/02-python-access.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/rhodyprog4ds/BrownFall20//issues/new?title=Issue%20on%20page%20%2Fassignments/07-decision-tree.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/rhodyprog4ds/BrownFall20/edit/main/assignments/02-python-access.md"><button
+        <a class="edit-button" href="https://github.com/rhodyprog4ds/BrownFall20/edit/main/assignments/07-decision-tree.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -254,18 +254,13 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objective-evaluation">
-   Objective &amp; Evaluation
+  <a class="reference internal nav-link" href="#decision-trees">
+   Decision Trees
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#accessing-data-with-python-and-pandas">
-   Accessing Data with Python and pandas
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-science-process">
-   Data Science Process
+  <a class="reference internal nav-link" href="#evaluation">
+   Evaluation
   </a>
  </li>
 </ul>
@@ -279,93 +274,70 @@
         
               <div>
                 
-  <div class="section" id="assignment-2-practicing-python-and-accessing-data">
-<h1>Assignment 2: Practicing Python and Accessing Data<a class="headerlink" href="#assignment-2-practicing-python-and-accessing-data" title="Permalink to this headline">¶</a></h1>
-<p><strong>Due: 2020-09-20</strong></p>
-<div class="section" id="objective-evaluation">
-<h2>Objective &amp; Evaluation<a class="headerlink" href="#objective-evaluation" title="Permalink to this headline">¶</a></h2>
-<p>This assignment is an opportunity to earn level 1 or 2 achievements in <code class="docutils literal notranslate"><span class="pre">python</span></code>, <code class="docutils literal notranslate"><span class="pre">process</span></code> and <code class="docutils literal notranslate"><span class="pre">access</span></code> and begin working toward level 1 in <code class="docutils literal notranslate"><span class="pre">summarize</span></code>.</p>
-<p>Accept the assignment on <a class="reference external" href="https://classroom.github.com/a/cQB0hMj5">GitHub Classroom</a>. It contains a notebook with some template structure (and will set you up for grading). The template will also convert notebooks that are added to markdown, which makes reading on GitHub for easier grading. If you want to incorporate feedback you receive back into a notebook file, <a class="reference external" href="https://jupytext.readthedocs.io/en/latest/using-cli.html">Jupytext</a> can do that.</p>
-<p>To work with this notebook you can either:</p>
+  <div class="section" id="assignment-7">
+<h1>Assignment 7<a class="headerlink" href="#assignment-7" title="Permalink to this headline">¶</a></h1>
+<p><strong>Due: 2020-10-27</strong></p>
+<div class="section" id="decision-trees">
+<h2>Decision Trees<a class="headerlink" href="#decision-trees" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://classroom.github.com/a/-ERfym5d">Accept this repo for submission</a></p>
+<p>Choose a datasets that is well suited for classification and that has all numerical features. (eg the Wisconsin Breast Cancer data from UCI)</p>
+<p><strong>Part 1: DT Basics</strong></p>
+<ol class="simple">
+<li><p>Include a basic description of the data(what the features are)</p></li>
+<li><p>Write  your own description of what the classification task is and why a decision tree is a reasonable model to try for this data.</p></li>
+<li><p>Include one summary visualization of the data.</p></li>
+<li><p>Fit a decision tree with the default parameters on 50% of the data</p></li>
+<li><p>Test it on 50% held out data and generate a classification report</p></li>
+<li><p>Inspect the model by visualizing and interpreting the results</p></li>
+</ol>
 <ul class="simple">
-<li><p>download the repository as .zip from the green code button, unzip, and re-upload, OR</p></li>
-<li><p>clone the repository with git and the push your changes. See Git/GitHub help on cloning, committing, and pushing, for example this <a class="reference external" href="https://swcarpentry.github.io/git-novice/">tutorial on git</a> to learn more about git.</p></li>
+<li><p>Does this model make sense?</p></li>
+<li><p>Are there any leaves that are vey small?</p></li>
+<li><p>Is this an interpretable number of levels?</p></li>
 </ul>
-</div>
-<div class="section" id="accessing-data-with-python-and-pandas">
-<h2>Accessing Data with Python and pandas<a class="headerlink" href="#accessing-data-with-python-and-pandas" title="Permalink to this headline">¶</a></h2>
-<p><em>(for python and access)</em></p>
-<p>Find 3 datasets of interest to you that are provided in different file formats. Choose datasets that are not too big, so that they do not take more than a few second to load. At least one dataset, must have non numerical (eg string or boolean) data in at least 1 column.
-Complete a dictionary for each with the url, a name, and what function should be used to load the data into a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>.</p>
+<ol class="simple">
+<li><p>Repeat with the entropy criterion. Does using the entropy criterion make a big difference or small difference in the overall classifier?</p></li>
+</ol>
+<p><strong>Part 2: DT parameters</strong></p>
+<p>Do an experiment to see how <code class="docutils literal notranslate"><span class="pre">max_depth</span></code>, <code class="docutils literal notranslate"><span class="pre">min_values_split</span></code>, or <code class="docutils literal notranslate"><span class="pre">min_values_leaf</span></code> impacts the model.</p>
+<ol class="simple">
+<li><p>Choose one of these and say explain why and how you hypothesize it will impact the performance</p></li>
+<li><p>Use the model you fit above and EDA to choose minimum and maximum values for your parameter.</p></li>
+<li><p>Retrain the model for each value of the parameter</p></li>
+<li><p>Test and use at least 3 metrics to describe the performance, compiling your results into a dataframe</p></li>
+<li><p>Plot and interpret your results</p></li>
+</ol>
+<p><em>you should use a loop for this part</em></p>
+<p><strong>Part 3: Test and Train Sizes</strong></p>
+<p>Do an experiment to compare test set size vs performance:</p>
+<ol class="simple">
+<li><p>Train a decision tree on 20%, 30%, … , 80% of the data, using one of the training parameter combinations you tried above and explain why you chose the one you chose.</p></li>
+<li><p>Save the results of both test and train accuracy for each size training data in a DataFrame with columns [‘train_pct’,’n_train_samples’,’n_test_samples’,’train_acc’,’test_acc’]</p></li>
+<li><p>Plot the accuracies vs training percentage.</p></li>
+<li><p>Explain these results. What is the best test/train split. Why?</p></li>
+</ol>
+<p><em>you should use a loop for this part</em></p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Urls are strings. The <code class="docutils literal notranslate"><span class="pre">string</span></code> class in python has a lot of helpful methods for manipulating strings, like <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.split"><code class="docutils literal notranslate"><span class="pre">split</span></code></a>.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you download the datasets (or find them as .zip and need to) you can use the local path instead of the url, but include a markdown cell with links to where you got your data from.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>You can create a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> using the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html">constructor</a> and you can build lists (or lists of lists) using the <a class="reference external" href="https://docs.python.org/2/tutorial/datastructures.html#more-on-lists"><code class="docutils literal notranslate"><span class="pre">append</span></code></a> method</p>
+<p>Start thinking about level 3 for evaluate by trying this experiment with cross validation.</p>
 </div>
 </div>
-<p>Use a list of those dictionaries to iterate over the datasets and build a table that describes them, with the following columns <code class="docutils literal notranslate"><span class="pre">['name','source','num_rows',</span> <span class="pre">'num_columns','source_file_name']</span></code>. The source column should be the url where you loaded the data from or the source if you downloaded it from a website first The <code class="docutils literal notranslate"><span class="pre">source_file_name</span></code> should be the part of the url after the last <code class="docutils literal notranslate"><span class="pre">/</span></code>, you should extract this programmatically. Display that summary table as a dataframe and save it as a csv, named <code class="docutils literal notranslate"><span class="pre">dataset_summary.csv</span></code>.</p>
-<div class="dropdown admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Your loop while building the DataFrame should be something like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># iterate over a list of the dictionaries of information about datasets</span>
-<span class="k">for</span> <span class="n">d_info</span> <span class="ow">in</span> <span class="n">datasets_info_list</span><span class="p">:</span>
-    <span class="c1"># load the data and add it to the dictionary</span>
-    <span class="n">d_info</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">d_info</span><span class="p">[</span><span class="s1">&#39;load_func&#39;</span><span class="p">](</span><span class="n">d_info</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">])</span>
-
-    <span class="c1"># analysis ....</span>
-    <span class="n">num_rows</span><span class="p">,</span> <span class="n">num_columns</span> <span class="o">=</span> <span class="n">d_info</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">something</span>
-</pre></div>
 </div>
-<p>Knowing this, make sure that your dictionaries are set up so that the <code class="docutils literal notranslate"><span class="pre">d_info['load_func'](d_info['url'])</span></code> will read in your data</p>
-</div>
-<p>For one dataset (must include nonnumerical data):</p>
+<div class="section" id="evaluation">
+<h2>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">¶</a></h2>
+<p>This assignment’s focus is Classification and Evaluation:</p>
 <ul class="simple">
-<li><p>display the heading with the last seven rows</p></li>
-<li><p>make and display a new data frame with only the non numerical columns</p></li>
-<li><p>was the format that the data was provided in a good format? why or why not?</p></li>
+<li><p>part 1 will show that you understand classification and can apply it for level 2</p></li>
+<li><p>parts 2 &amp; 3 are opportunities to earn level 2 for evaluation.</p></li>
+<li><p>If you don’t successfully complete the whole assignment, pseudocode or partial answers to the questions could earn you level 1 for either skill.</p></li>
 </ul>
-<!-- ```{tip} -->
-<div class="dropdown admonition tip">
-<p class="admonition-title">Tip</p>
-<p>You can put an if statement in a list comprehension.</p>
-<p>Even more pythonic: you can index pandas objects (DataFrames, Series, and Index– remember that’s what the df.columns was–) with logical expressions.</p>
-</div>
-<p>For a second dataset:</p>
+<p>Additionally:</p>
 <ul class="simple">
-<li><p>display the heading and the first three rows</p></li>
-<li><p>display the datatype for each column</p></li>
-<li><p>Are there any variables where pandas may have read in the data as a datatype that’s not what you expect (eg a numerical column mistaken for strings)?</p></li>
+<li><p>Using functions, loops, and conditionals appropriately while completing those tasks could earn level 2 for python if needed.</p></li>
+<li><p>You can earn level 2 for viz, summarize, prepare, or construct by choosing a messy dataset and/or including extra exploratory data analysis.</p></li>
 </ul>
-<p>For the third dataset:</p>
-<ul class="simple">
-<li><p>display the first 5 even rows of the data for three columns of your choice</p></li>
-</ul>
-<p>For any dataset:</p>
-<ul class="simple">
-<li><p>try reading it in with the wrong <code class="docutils literal notranslate"><span class="pre">read_</span></code> function. If you had done this by accident, how could you tell?</p></li>
-</ul>
-</div>
-<div class="section" id="data-science-process">
-<h2>Data Science Process<a class="headerlink" href="#data-science-process" title="Permalink to this headline">¶</a></h2>
-<p>(for the <code class="docutils literal notranslate"><span class="pre">process</span></code> skill)</p>
-<p>Make a list of a data science pipeline and denote which types of programming might be helpful at each staged. Include this in a markdown cell in the same notebook with your analysis.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Remember that this will be graded based on the rubric and that it should reflect your understanding, not be simply copied from a source. Also, always cite your sources, informal linking is ok.</p>
-<p>To make a  link in markdown</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">text</span> <span class="n">to</span> <span class="n">display</span><span class="p">](</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">url</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">of</span><span class="o">/</span><span class="n">the</span><span class="o">/</span><span class="n">site</span><span class="o">/</span><span class="n">your</span><span class="o">/</span><span class="n">are</span><span class="o">/</span><span class="n">linking</span><span class="o">/</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 
@@ -397,8 +369,8 @@ Complete a dictionary for each with the url, a name, and what function should be
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="01-python-syllabus.html" title="previous page">Assignment 1: Portfolio Setup, Data Science, and Python</a>
-    <a class='right-next' id="next-link" href="03-exploratory.html" title="next page">Assignment 3: Exploratory Data Analysis</a>
+    <a class='left-prev' id="prev-link" href="06-naive-bayes.html" title="previous page">Assignment 6</a>
+    <a class='right-next' id="next-link" href="../portfolio/index.html" title="next page">Portfolio</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

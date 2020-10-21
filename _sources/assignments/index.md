@@ -9,3 +9,4 @@ Assignment TOC:
 - [Assignment 4](04-prepare) Due October 4
 - [Assignment 5](05-construct) Due October 11
 - [Assignment 6](06-naive-bayes) Due October 20
+- [Assignment 7](07-decision-tree) Due October 27
