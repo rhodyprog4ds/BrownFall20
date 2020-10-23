@@ -263,6 +263,18 @@
    Evaluation
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#faq">
+   FAQ
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-do-i-find-a-good-dataset">
+     How do I find a good dataset?
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -302,9 +314,9 @@
 <p>Do an experiment to see how <code class="docutils literal notranslate"><span class="pre">max_depth</span></code>, <code class="docutils literal notranslate"><span class="pre">min_values_split</span></code>, or <code class="docutils literal notranslate"><span class="pre">min_values_leaf</span></code> impacts the model.</p>
 <ol class="simple">
 <li><p>Choose one of these and say explain why and how you hypothesize it will impact the performance</p></li>
-<li><p>Use the model you fit above and EDA to choose minimum and maximum values for your parameter.</p></li>
+<li><p>Use the model you fit above and EDA to choose minimum and maximum values for your parameter. Choose a total of 3 values for the parameter.</p></li>
 <li><p>Retrain the model for each value of the parameter</p></li>
-<li><p>Test and use at least 3 metrics to describe the performance, compiling your results into a dataframe</p></li>
+<li><p>Test and use at least 3 metrics to describe the performance, compiling your results into a DataFrame</p></li>
 <li><p>Plot and interpret your results</p></li>
 </ol>
 <p><em>you should use a loop for this part</em></p>
@@ -338,6 +350,14 @@
 <li><p>Using functions, loops, and conditionals appropriately while completing those tasks could earn level 2 for python if needed.</p></li>
 <li><p>You can earn level 2 for viz, summarize, prepare, or construct by choosing a messy dataset and/or including extra exploratory data analysis.</p></li>
 </ul>
+</div>
+<div class="section" id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-do-i-find-a-good-dataset">
+<h3>How do I find a good dataset?<a class="headerlink" href="#how-do-i-find-a-good-dataset" title="Permalink to this headline">¶</a></h3>
+<p>Look for a dataset with numerical features and a categorical target variable.</p>
+<p>If you look at the <a class="reference external" href="https://archive.ics.uci.edu/ml/datasets.php?format=&amp;task=cla&amp;att=num&amp;area=&amp;numAtt=&amp;numIns=&amp;type=&amp;sort=nameUp&amp;view=table">UCI website</a> you can search for datasets for Classification and numerical and look through what those search filters give you some options.  You might want to choose a dataset with less than about 10 attributes to make your decision tree readable.  To make the training fast, try to find a dataset with 1000 samples or less.</p>
+</div>
 </div>
 </div>
 

@@ -356,12 +356,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;seaborn.axisgrid.PairGrid at 0x7fbaae979090&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7fbaa766a4d0&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7fbaa6a74c10&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7fbaa5a6d690&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7fbaa5606790&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7fbaa4ba35d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;seaborn.axisgrid.PairGrid at 0x7fbae8085490&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7fbadaaba950&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7fbad9e46c10&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7fbad9e42110&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7fbad8837910&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7fbad7ec6f50&gt;]
 </pre></div>
 </div>
 <img alt="../_images/2020-10-21_3_1.png" src="../_images/2020-10-21_3_1.png" />
@@ -375,36 +375,75 @@
 <p>Now we’re looking at dataset 6 more deeply.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df6</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_urls</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],,</span><span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df6</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_urls</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
 <span class="n">df6</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-3-f8a99e700072&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
-    <span class="n">df6</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_urls</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],,</span><span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
-                                   <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x0</th>
+      <th>x1</th>
+      <th>char</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6.14</td>
+      <td>2.10</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.22</td>
+      <td>2.39</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2.27</td>
+      <td>5.44</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.03</td>
+      <td>3.19</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2.25</td>
+      <td>1.71</td>
+      <td>A</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>This one Naive Bayes does poorly on, even though the classes are separable because each class is not defined by a single region.  Since each class has two noncontinuous resions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span>  <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df6</span><span class="o">.</span><span class="n">values</span><span class="p">[:,:</span><span class="mi">2</span><span class="p">],</span><span class="n">df6</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">db0d8fe4088b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span>  <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df6</span><span class="o">.</span><span class="n">values</span><span class="p">[:,:</span><span class="mi">2</span><span class="p">],</span><span class="n">df6</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;df6&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -416,12 +455,18 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">f56205002e60</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">y_train</span>
-
-<span class="ne">NameError</span>: name &#39;y_train&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;,
+       &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;,
+       &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;,
+       &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;,
+       &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;,
+       &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;,
+       &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;,
+       &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;,
+       &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;,
+       &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;,
+       &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;,
+       &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;], dtype=object)
 </pre></div>
 </div>
 </div>
@@ -433,29 +478,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">9</span><span class="n">fb826d2822f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;X_train&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">graphviz</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">f7133d3517ab</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">graphviz</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;graphviz&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier()
 </pre></div>
 </div>
 </div>
@@ -467,89 +490,28 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NotFittedError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="mi">65</span><span class="n">b93ac9eb72</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span>                           <span class="ne">FutureWarning</span><span class="p">)</span>
-<span class="nn">     71         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
-<span class="ne">---&gt; </span><span class="mi">72</span>         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">return</span> <span class="n">inner_f</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/tree/_export.py</span> in <span class="ni">plot_tree</span><span class="nt">(decision_tree, max_depth, feature_names, class_names, label, filled, impurity, node_ids, proportion, rotate, rounded, precision, ax, fontsize)</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span>     <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span><span class="s2"> </span>
-<span class="ne">--&gt; </span><span class="mi">180</span><span class="s2">     check_is_fitted(decision_tree)</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span><span class="s2">     if rotate != &#39;deprecated&#39;:</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span><span class="s2">                           FutureWarning)</span>
-<span class="nn">     71         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
-<span class="ne">---&gt; </span><span class="mi">72</span><span class="s2">         return f(**kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span><span class="s2">     return inner_f</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span><span class="s2"> </span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">check_is_fitted</span><span class="nt">(estimator, attributes, msg, all_or_any)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1017</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1018</span><span class="s2">     if not attrs:</span>
-<span class="ne">-&gt; </span><span class="mi">1019</span><span class="s2">         raise NotFittedError(msg % {&#39;name&#39;: type(estimator).__name__})</span>
-<span class="g g-Whitespace">   </span><span class="mi">1020</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1021</span><span class="s2"> </span>
-
-<span class="ne">NotFittedError</span>: This DecisionTreeClassifier instance is not fitted yet. Call &#39;fit&#39; with appropriate arguments before using this estimator.
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(238.79117647058825, 199.32, &#39;X[0] &lt;= 5.88\ngini = 0.5\nsamples = 150\nvalue = [77, 73]&#39;),
+ Text(182.17058823529413, 163.07999999999998, &#39;X[1] &lt;= 5.51\ngini = 0.486\nsamples = 106\nvalue = [62, 44]&#39;),
+ Text(128.01176470588237, 126.83999999999999, &#39;X[0] &lt;= 5.375\ngini = 0.375\nsamples = 56\nvalue = [42, 14]&#39;),
+ Text(78.7764705882353, 90.6, &#39;X[1] &lt;= 4.0\ngini = 0.165\nsamples = 44\nvalue = [40, 4]&#39;),
+ Text(39.38823529411765, 54.359999999999985, &#39;X[0] &lt;= 4.125\ngini = 0.051\nsamples = 38\nvalue = [37, 1]&#39;),
+ Text(19.694117647058825, 18.119999999999976, &#39;gini = 0.0\nsamples = 37\nvalue = [37, 0]&#39;),
+ Text(59.082352941176474, 18.119999999999976, &#39;gini = 0.0\nsamples = 1\nvalue = [0, 1]&#39;),
+ Text(118.16470588235295, 54.359999999999985, &#39;X[1] &lt;= 5.03\ngini = 0.5\nsamples = 6\nvalue = [3, 3]&#39;),
+ Text(98.47058823529412, 18.119999999999976, &#39;gini = 0.0\nsamples = 3\nvalue = [0, 3]&#39;),
+ Text(137.85882352941178, 18.119999999999976, &#39;gini = 0.0\nsamples = 3\nvalue = [3, 0]&#39;),
+ Text(177.24705882352941, 90.6, &#39;X[1] &lt;= 3.94\ngini = 0.278\nsamples = 12\nvalue = [2, 10]&#39;),
+ Text(157.5529411764706, 54.359999999999985, &#39;gini = 0.0\nsamples = 10\nvalue = [0, 10]&#39;),
+ Text(196.94117647058823, 54.359999999999985, &#39;gini = 0.0\nsamples = 2\nvalue = [2, 0]&#39;),
+ Text(236.3294117647059, 126.83999999999999, &#39;X[0] &lt;= 4.085\ngini = 0.48\nsamples = 50\nvalue = [20, 30]&#39;),
+ Text(216.63529411764708, 90.6, &#39;gini = 0.0\nsamples = 30\nvalue = [0, 30]&#39;),
+ Text(256.02352941176474, 90.6, &#39;gini = 0.0\nsamples = 20\nvalue = [20, 0]&#39;),
+ Text(295.4117647058824, 163.07999999999998, &#39;X[1] &lt;= 4.04\ngini = 0.449\nsamples = 44\nvalue = [15, 29]&#39;),
+ Text(275.71764705882356, 126.83999999999999, &#39;gini = 0.0\nsamples = 29\nvalue = [0, 29]&#39;),
+ Text(315.1058823529412, 126.83999999999999, &#39;gini = 0.0\nsamples = 15\nvalue = [15, 0]&#39;)]
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dot_data</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">export_graphviz</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span><span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="n">graph</span> <span class="o">=</span> <span class="n">graphviz</span><span class="o">.</span><span class="n">Source</span><span class="p">(</span><span class="n">dot_data</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NotFittedError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="n">e2ef940d8b56</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dot_data</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">export_graphviz</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span><span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">graph</span> <span class="o">=</span> <span class="n">graphviz</span><span class="o">.</span><span class="n">Source</span><span class="p">(</span><span class="n">dot_data</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span>                           <span class="ne">FutureWarning</span><span class="p">)</span>
-<span class="nn">     71         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
-<span class="ne">---&gt; </span><span class="mi">72</span>         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">return</span> <span class="n">inner_f</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/tree/_export.py</span> in <span class="ni">export_graphviz</span><span class="nt">(decision_tree, out_file, max_depth, feature_names, class_names, label, filled, leaves_parallel, impurity, node_ids, proportion, rotate, rounded, special_characters, precision)</span>
-<span class="g g-Whitespace">    </span><span class="mi">762</span>     <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">763</span><span class="s2"> </span>
-<span class="ne">--&gt; </span><span class="mi">764</span><span class="s2">     check_is_fitted(decision_tree)</span>
-<span class="g g-Whitespace">    </span><span class="mi">765</span><span class="s2">     own_file = False</span>
-<span class="g g-Whitespace">    </span><span class="mi">766</span><span class="s2">     return_string = False</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span><span class="s2">                           FutureWarning)</span>
-<span class="nn">     71         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
-<span class="ne">---&gt; </span><span class="mi">72</span><span class="s2">         return f(**kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span><span class="s2">     return inner_f</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span><span class="s2"> </span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">check_is_fitted</span><span class="nt">(estimator, attributes, msg, all_or_any)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1017</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1018</span><span class="s2">     if not attrs:</span>
-<span class="ne">-&gt; </span><span class="mi">1019</span><span class="s2">         raise NotFittedError(msg % {&#39;name&#39;: type(estimator).__name__})</span>
-<span class="g g-Whitespace">   </span><span class="mi">1020</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1021</span><span class="s2"> </span>
-
-<span class="ne">NotFittedError</span>: This DecisionTreeClassifier instance is not fitted yet. Call &#39;fit&#39; with appropriate arguments before using this estimator.
-</pre></div>
-</div>
+<img alt="../_images/2020-10-21_10_1.png" src="../_images/2020-10-21_10_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -559,40 +521,34 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NotFittedError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="n">b72d4df3e4ba</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">export_text</span><span class="p">(</span><span class="n">dt</span><span class="p">))</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span>                           <span class="ne">FutureWarning</span><span class="p">)</span>
-<span class="nn">     71         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
-<span class="ne">---&gt; </span><span class="mi">72</span>         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">return</span> <span class="n">inner_f</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/tree/_export.py</span> in <span class="ni">export_text</span><span class="nt">(decision_tree, feature_names, max_depth, spacing, decimals, show_weights)</span>
-<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="o">|</span>   <span class="o">|</span>   <span class="o">|---</span> <span class="n">class</span><span class="p">:</span> <span class="mi">2</span>
-<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">871</span><span class="s2">     check_is_fitted(decision_tree)</span>
-<span class="g g-Whitespace">    </span><span class="mi">872</span><span class="s2">     tree_ = decision_tree.tree_</span>
-<span class="g g-Whitespace">    </span><span class="mi">873</span><span class="s2">     if is_classifier(decision_tree):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span><span class="s2">                           FutureWarning)</span>
-<span class="nn">     71         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
-<span class="ne">---&gt; </span><span class="mi">72</span><span class="s2">         return f(**kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span><span class="s2">     return inner_f</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span><span class="s2"> </span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">check_is_fitted</span><span class="nt">(estimator, attributes, msg, all_or_any)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1017</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1018</span><span class="s2">     if not attrs:</span>
-<span class="ne">-&gt; </span><span class="mi">1019</span><span class="s2">         raise NotFittedError(msg % {&#39;name&#39;: type(estimator).__name__})</span>
-<span class="g g-Whitespace">   </span><span class="mi">1020</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1021</span><span class="s2"> </span>
-
-<span class="ne">NotFittedError</span>: This DecisionTreeClassifier instance is not fitted yet. Call &#39;fit&#39; with appropriate arguments before using this estimator.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_0 &lt;= 5.88
+|   |--- feature_1 &lt;= 5.51
+|   |   |--- feature_0 &lt;= 5.38
+|   |   |   |--- feature_1 &lt;= 4.00
+|   |   |   |   |--- feature_0 &lt;= 4.13
+|   |   |   |   |   |--- class: A
+|   |   |   |   |--- feature_0 &gt;  4.13
+|   |   |   |   |   |--- class: B
+|   |   |   |--- feature_1 &gt;  4.00
+|   |   |   |   |--- feature_1 &lt;= 5.03
+|   |   |   |   |   |--- class: B
+|   |   |   |   |--- feature_1 &gt;  5.03
+|   |   |   |   |   |--- class: A
+|   |   |--- feature_0 &gt;  5.38
+|   |   |   |--- feature_1 &lt;= 3.94
+|   |   |   |   |--- class: B
+|   |   |   |--- feature_1 &gt;  3.94
+|   |   |   |   |--- class: A
+|   |--- feature_1 &gt;  5.51
+|   |   |--- feature_0 &lt;= 4.09
+|   |   |   |--- class: B
+|   |   |--- feature_0 &gt;  4.09
+|   |   |   |--- class: A
+|--- feature_0 &gt;  5.88
+|   |--- feature_1 &lt;= 4.04
+|   |   |--- class: B
+|   |--- feature_1 &gt;  4.04
+|   |   |--- class: A
 </pre></div>
 </div>
 </div>
@@ -604,12 +560,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">671</span><span class="n">bbe68a3fc</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dt</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;X_test&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.96
 </pre></div>
 </div>
 </div>
@@ -621,33 +572,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NotFittedError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">1</span><span class="n">d1031f1244e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dt</span><span class="o">.</span><span class="n">get_depth</span><span class="p">()</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/tree/_classes.py</span> in <span class="ni">get_depth</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span>             <span class="n">The</span> <span class="n">maximum</span> <span class="n">depth</span> <span class="n">of</span> <span class="n">the</span> <span class="n">tree</span><span class="o">.</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">128</span><span class="s2">         check_is_fitted(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span><span class="s2">         return self.tree_.max_depth</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span><span class="s2"> </span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span><span class="s2">                           FutureWarning)</span>
-<span class="nn">     71         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
-<span class="ne">---&gt; </span><span class="mi">72</span><span class="s2">         return f(**kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span><span class="s2">     return inner_f</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span><span class="s2"> </span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">check_is_fitted</span><span class="nt">(estimator, attributes, msg, all_or_any)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1017</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1018</span><span class="s2">     if not attrs:</span>
-<span class="ne">-&gt; </span><span class="mi">1019</span><span class="s2">         raise NotFittedError(msg % {&#39;name&#39;: type(estimator).__name__})</span>
-<span class="g g-Whitespace">   </span><span class="mi">1020</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1021</span><span class="s2"> </span>
-
-<span class="ne">NotFittedError</span>: This DecisionTreeClassifier instance is not fitted yet. Call &#39;fit&#39; with appropriate arguments before using this estimator.
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
 </div>
@@ -666,12 +591,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="n">c7fd6a36b924</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dt2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,)</span>
-
-<span class="ne">NameError</span>: name &#39;X_train&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier(max_depth=2)
 </pre></div>
 </div>
 </div>
@@ -683,12 +603,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mi">187</span><span class="n">ee3699472</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dt2</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;X_test&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.78
 </pre></div>
 </div>
 </div>
@@ -700,40 +615,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NotFittedError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="mf">9255e32</span><span class="n">da435</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">export_text</span><span class="p">(</span><span class="n">dt2</span><span class="p">))</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span>                           <span class="ne">FutureWarning</span><span class="p">)</span>
-<span class="nn">     71         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
-<span class="ne">---&gt; </span><span class="mi">72</span>         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">return</span> <span class="n">inner_f</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/tree/_export.py</span> in <span class="ni">export_text</span><span class="nt">(decision_tree, feature_names, max_depth, spacing, decimals, show_weights)</span>
-<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="o">|</span>   <span class="o">|</span>   <span class="o">|---</span> <span class="n">class</span><span class="p">:</span> <span class="mi">2</span>
-<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">871</span><span class="s2">     check_is_fitted(decision_tree)</span>
-<span class="g g-Whitespace">    </span><span class="mi">872</span><span class="s2">     tree_ = decision_tree.tree_</span>
-<span class="g g-Whitespace">    </span><span class="mi">873</span><span class="s2">     if is_classifier(decision_tree):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span><span class="s2">                           FutureWarning)</span>
-<span class="nn">     71         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
-<span class="ne">---&gt; </span><span class="mi">72</span><span class="s2">         return f(**kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span><span class="s2">     return inner_f</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span><span class="s2"> </span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">check_is_fitted</span><span class="nt">(estimator, attributes, msg, all_or_any)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1017</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1018</span><span class="s2">     if not attrs:</span>
-<span class="ne">-&gt; </span><span class="mi">1019</span><span class="s2">         raise NotFittedError(msg % {&#39;name&#39;: type(estimator).__name__})</span>
-<span class="g g-Whitespace">   </span><span class="mi">1020</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1021</span><span class="s2"> </span>
-
-<span class="ne">NotFittedError</span>: This DecisionTreeClassifier instance is not fitted yet. Call &#39;fit&#39; with appropriate arguments before using this estimator.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_0 &lt;= 5.88
+|   |--- feature_1 &lt;= 5.51
+|   |   |--- class: A
+|   |--- feature_1 &gt;  5.51
+|   |   |--- class: B
+|--- feature_0 &gt;  5.88
+|   |--- feature_1 &lt;= 4.04
+|   |   |--- class: B
+|   |--- feature_1 &gt;  4.04
+|   |   |--- class: A
 </pre></div>
 </div>
 </div>
@@ -745,37 +636,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">7399</span><span class="n">dfb5910f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dt2</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;X_train&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install graphviz
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting graphviz
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading graphviz-0.14.2-py2.py3-none-any.whl (18 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: graphviz
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed graphviz-0.14.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: You are using pip version 20.2.3; however, version 20.2.4 is available.</span>
-<span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;/opt/hostedtoolcache/Python/3.7.9/x64/bin/python -m pip install --upgrade pip&#39; command.</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7733333333333333
 </pre></div>
 </div>
 </div>

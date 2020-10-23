@@ -24,9 +24,9 @@ __Part 2: DT parameters__
 
 Do an experiment to see how `max_depth`, `min_values_split`, or `min_values_leaf` impacts the model.
 1. Choose one of these and say explain why and how you hypothesize it will impact the performance
-1. Use the model you fit above and EDA to choose minimum and maximum values for your parameter.
+1. Use the model you fit above and EDA to choose minimum and maximum values for your parameter. Choose a total of 3 values for the parameter.
 1. Retrain the model for each value of the parameter
-1. Test and use at least 3 metrics to describe the performance, compiling your results into a dataframe
+1. Test and use at least 3 metrics to describe the performance, compiling your results into a DataFrame
 1. Plot and interpret your results
 
 _you should use a loop for this part_
@@ -62,3 +62,12 @@ This assignment's focus is Classification and Evaluation:
 Additionally:
 - Using functions, loops, and conditionals appropriately while completing those tasks could earn level 2 for python if needed.
 - You can earn level 2 for viz, summarize, prepare, or construct by choosing a messy dataset and/or including extra exploratory data analysis.  
+
+
+## FAQ
+
+### How do I find a good dataset?
+
+Look for a dataset with numerical features and a categorical target variable.
+
+If you look at the [UCI website](https://archive.ics.uci.edu/ml/datasets.php?format=&task=cla&att=num&area=&numAtt=&numIns=&type=&sort=nameUp&view=table ) you can search for datasets for Classification and numerical and look through what those search filters give you some options.  You might want to choose a dataset with less than about 10 attributes to make your decision tree readable.  To make the training fast, try to find a dataset with 1000 samples or less.  
