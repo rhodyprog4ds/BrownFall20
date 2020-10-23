@@ -19,3 +19,4 @@ Class notes will get posted here day by day
 - [2020-10-16](2020-10-16): Classification Metrics
 - [2020-10-19](2020-10-19): Mid-Semester Feedback & Naive Bayes Decision rules
 - [2020-10-21](2020-10-21): Decision Trees
+- [2020-10-23](2020-10-23): Decision Trees & Cross validation
