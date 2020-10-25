@@ -20,6 +20,10 @@ __Part 1: DT Basics__
   - Is this an interpretable number of levels?
 1. Repeat with the entropy criterion. Does using the entropy criterion make a big difference or small difference in the overall classifier?
 
+```{tip}
+See the documentation for the [sklearn `DecisionTreeClassifier`](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html). One of the parameters is called `criterion`
+```
+
 __Part 2: DT parameters__
 
 Do an experiment to see how `max_depth`, `min_values_split`, or `min_values_leaf` impacts the model.
