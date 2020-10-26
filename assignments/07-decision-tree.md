@@ -1,4 +1,4 @@
-# Assignment 7
+# Assignment 7: Decision Trees
 
 __Due: 2020-10-27__
 
