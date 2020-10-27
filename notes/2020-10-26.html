@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignments" href="../assignments/index.html" />
+    <link rel="prev" title="Class 20: Decision Trees and Cross Validation" href="2020-10-23.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -96,16 +98,113 @@
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../syllabus/index.html">
    Syllabus
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active">
   <a class="reference internal" href="index.html">
    Class Notes
   </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-11.html">
+     Class 2: intro to notebooks and python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-14.html">
+     Class 3: Welcome to Week 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-16.html">
+     Class 4: Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-18.html">
+     Class 5: Accessing Data, continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-21.html">
+     Class 6: Exploratory Data Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-23.html">
+     Class 7: Visualization for EDA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-25.html">
+     Class 8: Visualization and Starting to Clean Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-28.html">
+     Class 9: Preparing Data For Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-30.html">
+     Class 10: Cleaning review and Ray Summit Keynotes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-02.html">
+     Class 11: Cleaning Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-05.html">
+     Class 12: Constructing Datasets from Multiple Sources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-07.html">
+     Class 13: Data from multiple sources and Databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-12.html">
+     Class 15: Intro to ML &amp; Modeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-14.html">
+     Class 16: Naive Bayes Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-16.html">
+     Class 17: Evaluating Classification and Midsemester Feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-19.html">
+     Class 18: Mid Semester Checkin, Git, &amp; How GNB makes decisions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-21.html">
+     Class 19: Decision Trees
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-23.html">
+     Class 20: Decision Trees and Cross Validation
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Class 21: Regression
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../assignments/index.html">
@@ -229,6 +328,73 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regression-introduction">
+   Regression Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-practice">
+   More practice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions-after-class">
+   Questions After class
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-considered-a-good-r2-value">
+     What is considered a good r2 value?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-some-of-the-methods-applied-in-regression-can-be-used-in-the-same-format-in-classification">
+     Can some of the methods applied in regression can be used in the same format in classification?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-couldn-t-we-use-train-test-split-for-this-classifier">
+     why couldn’t we use train_test_split for this classifier?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-am-still-confused-about-machine-learning">
+     I am still confused about machine learning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-difference-between-test-and-train-data">
+     What is the difference between test and train data?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-does-cross-validation-mean">
+     What does cross validation mean?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-does-mean-squared-error-do">
+     What does
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       mean_squared_error
+      </span>
+     </code>
+     do?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -242,18 +408,28 @@
 <li><p>Log onto prismia</p></li>
 <li><p>Share a topic you’re most interested in applying data science to in the zoom chat</p></li>
 </ol>
+<div class="section" id="regression-introduction">
+<h2>Regression Introduction<a class="headerlink" href="#regression-introduction" title="Permalink to this headline">¶</a></h2>
+<p>What is the difference in data that’s well suited for regression vs classification</p>
+<ul class="simple">
+<li><p>[ ] regression is better for more features</p></li>
+<li><p>[ ] regression can work with categorical features</p></li>
+<li><p>[x] regression uses a continuous target variable</p></li>
+</ul>
+<p>Explanation: the difference is that for regression we can use continuous target variables.  Either classification or regression can work with high dimensional data (dimension refers to the number of features). Either can also work with a mixture of categorical or continuous valued features.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load http://drsmb.co/310</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">linear_model</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">font_scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><a class="reference external" href="https://scikit-learn.org/stable/datasets/index.html#diabetes-dataset">diabetes dataset</a></p>
+<p>Today we will work with the <a class="reference external" href="https://scikit-learn.org/stable/datasets/index.html#diabetes-dataset">diabetes dataset</a> and we’ll use the <code class="docutils literal notranslate"><span class="pre">sklearn.datasets</span></code> module to load it.  When we load data this way, it gets loaded as a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diabetes_X</span><span class="p">,</span> <span class="n">diabetes_y</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_diabetes</span><span class="p">(</span><span class="n">return_X_y</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
@@ -261,6 +437,7 @@
 </div>
 </div>
 </div>
+<p>Since it’s not a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> we don’t have the head method, but we can index using square brackets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diabetes_X</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
@@ -282,6 +459,7 @@
 </div>
 </div>
 </div>
+<p>and the same for the labels.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diabetes_y</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
@@ -294,16 +472,160 @@
 </div>
 </div>
 </div>
+<p>Since this data is not in any sorted order, we can split into test and train using indexing instead of the <code class="docutils literal notranslate"><span class="pre">test_train_split</span></code> function.  This way we all get the same split, without setting the <code class="docutils literal notranslate"><span class="pre">ranomd_seed</span></code> parameter.  In most cases, it’s best to use the function, but it’s good to know different ways to do things.</p>
+<p>We’ll start by using only one feature, the one in column 8.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diabetes_X_train</span> <span class="o">=</span> <span class="n">diabetes_X</span><span class="p">[:</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
-<span class="n">diabetes_X_test</span> <span class="o">=</span> <span class="n">diabetes_X</span><span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diabetes_X_train</span> <span class="o">=</span> <span class="n">diabetes_X</span><span class="p">[:</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">diabetes_X_test</span> <span class="o">=</span> <span class="n">diabetes_X</span><span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:,</span><span class="mi">8</span><span class="p">]</span>
 <span class="n">diabetes_y_train</span> <span class="o">=</span> <span class="n">diabetes_y</span><span class="p">[:</span><span class="o">-</span><span class="mi">20</span><span class="p">]</span>
 <span class="n">diabetes_y_test</span> <span class="o">=</span> <span class="n">diabetes_y</span><span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:]</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Now we can instantiate the object</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regr</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>All <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> estimators have the same methods, and all take any specialized parameters in the constructor.  We’ve used the default values here, but this is an important design feature of scikit learn, because it makes their pipeline infrastructure and functions for cross validation work.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">diabetes_X_train</span><span class="p">,</span><span class="n">diabetes_y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">7563</span><span class="n">ebc7151a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">regr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">diabetes_X_train</span><span class="p">,</span><span class="n">diabetes_y_train</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/linear_model/_base.py</span> in <span class="ni">fit</span><span class="nt">(self, X, y, sample_weight)</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span>         <span class="n">n_jobs_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_jobs</span>
+<span class="g g-Whitespace">    </span><span class="mi">505</span>         <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;csr&#39;</span><span class="p">,</span> <span class="s1">&#39;csc&#39;</span><span class="p">,</span> <span class="s1">&#39;coo&#39;</span><span class="p">],</span>
+<span class="ne">--&gt; </span><span class="mi">506</span>                                    <span class="n">y_numeric</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">multi_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">507</span> 
+<span class="g g-Whitespace">    </span><span class="mi">508</span>         <span class="k">if</span> <span class="n">sample_weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/base.py</span> in <span class="ni">_validate_data</span><span class="nt">(self, X, y, reset, validate_separately, **check_params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span>                 <span class="n">y</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">check_y_params</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">431</span>             <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">432</span>                 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">check_X_y</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">check_params</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">433</span>             <span class="n">out</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span>
+<span class="g g-Whitespace">    </span><span class="mi">434</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>                           <span class="ne">FutureWarning</span><span class="p">)</span>
+<span class="nn">     71         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
+<span class="ne">---&gt; </span><span class="mi">72</span>         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">return</span> <span class="n">inner_f</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">check_X_y</span><span class="nt">(X, y, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, multi_output, ensure_min_samples, ensure_min_features, y_numeric, estimator)</span>
+<span class="g g-Whitespace">    </span><span class="mi">800</span>                     <span class="n">ensure_min_samples</span><span class="o">=</span><span class="n">ensure_min_samples</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">801</span>                     <span class="n">ensure_min_features</span><span class="o">=</span><span class="n">ensure_min_features</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">802</span>                     <span class="n">estimator</span><span class="o">=</span><span class="n">estimator</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">803</span>     <span class="k">if</span> <span class="n">multi_output</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">804</span>         <span class="n">y</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="s1">&#39;csr&#39;</span><span class="p">,</span> <span class="n">force_all_finite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>                           <span class="ne">FutureWarning</span><span class="p">)</span>
+<span class="nn">     71         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
+<span class="ne">---&gt; </span><span class="mi">72</span>         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">return</span> <span class="n">inner_f</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">check_array</span><span class="nt">(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator)</span>
+<span class="g g-Whitespace">    </span><span class="mi">621</span>                     <span class="s2">&quot;Reshape your data either using array.reshape(-1, 1) if &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">622</span>                     <span class="s2">&quot;your data has a single feature or array.reshape(1, -1) &quot;</span>
+<span class="ne">--&gt; </span><span class="mi">623</span>                     <span class="s2">&quot;if it contains a single sample.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">array</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">624</span> 
+<span class="g g-Whitespace">    </span><span class="mi">625</span>         <span class="c1"># in the future np.flexible dtypes will be handled like object dtypes</span>
+
+<span class="ne">ValueError</span>: Expected 2D array, got 1D array instead:
+<span class="n">array</span><span class="o">=</span><span class="p">[</span> <span class="mf">0.01990842</span> <span class="o">-</span><span class="mf">0.06832974</span>  <span class="mf">0.00286377</span>  <span class="mf">0.02269202</span> <span class="o">-</span><span class="mf">0.03199144</span> <span class="o">-</span><span class="mf">0.04118039</span>
+ <span class="o">-</span><span class="mf">0.06291295</span> <span class="o">-</span><span class="mf">0.03581673</span> <span class="o">-</span><span class="mf">0.01495648</span>  <span class="mf">0.06773633</span> <span class="o">-</span><span class="mf">0.06291295</span> <span class="o">-</span><span class="mf">0.09643322</span>
+ <span class="o">-</span><span class="mf">0.03075121</span>  <span class="mf">0.03839325</span> <span class="o">-</span><span class="mf">0.03199144</span>  <span class="mf">0.03605579</span>  <span class="mf">0.05228</span>     <span class="mf">0.02736771</span>
+ <span class="o">-</span><span class="mf">0.01811827</span> <span class="o">-</span><span class="mf">0.00894402</span> <span class="o">-</span><span class="mf">0.01190068</span> <span class="o">-</span><span class="mf">0.07212845</span> <span class="o">-</span><span class="mf">0.0611766</span>   <span class="mf">0.13359898</span>
+ <span class="o">-</span><span class="mf">0.02595242</span>  <span class="mf">0.01919903</span> <span class="o">-</span><span class="mf">0.0425721</span>  <span class="o">-</span><span class="mf">0.01599827</span> <span class="o">-</span><span class="mf">0.00060925</span>  <span class="mf">0.0594238</span>
+ <span class="o">-</span><span class="mf">0.02712865</span> <span class="o">-</span><span class="mf">0.03712835</span>  <span class="mf">0.00027149</span> <span class="o">-</span><span class="mf">0.01811827</span> <span class="o">-</span><span class="mf">0.0594727</span>   <span class="mf">0.02131085</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">054724</span>    <span class="mf">0.01703713</span>  <span class="mf">0.07142403</span>  <span class="mf">0.01919903</span>  <span class="mf">0.01255315</span> <span class="o">-</span><span class="mf">0.04986847</span>
+ <span class="o">-</span><span class="mf">0.00991896</span> <span class="o">-</span><span class="mf">0.0425721</span>   <span class="mf">0.03243323</span> <span class="o">-</span><span class="mf">0.01495648</span> <span class="o">-</span><span class="mf">0.0079794</span>  <span class="o">-</span><span class="mf">0.01811827</span>
+ <span class="o">-</span><span class="mf">0.0594727</span>   <span class="mf">0.03546194</span> <span class="o">-</span><span class="mf">0.02139368</span> <span class="o">-</span><span class="mf">0.00239668</span> <span class="o">-</span><span class="mf">0.01811827</span> <span class="o">-</span><span class="mf">0.03324879</span>
+ <span class="o">-</span><span class="mf">0.04118039</span> <span class="o">-</span><span class="mf">0.06648815</span>  <span class="mf">0.03365681</span> <span class="o">-</span><span class="mf">0.05615757</span> <span class="o">-</span><span class="mf">0.00060925</span>  <span class="mf">0.03839325</span>
+ <span class="o">-</span><span class="mf">0.05140054</span>  <span class="mf">0.0366458</span>  <span class="o">-</span><span class="mf">0.08238148</span> <span class="o">-</span><span class="mf">0.03075121</span> <span class="o">-</span><span class="mf">0.01919705</span>  <span class="mf">0.0423449</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">00027149</span> <span class="o">-</span><span class="mf">0.01190068</span> <span class="o">-</span><span class="mf">0.01290794</span> <span class="o">-</span><span class="mf">0.05140054</span> <span class="o">-</span><span class="mf">0.06291295</span>  <span class="mf">0.02671426</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">08449528</span> <span class="o">-</span><span class="mf">0.00514531</span>  <span class="mf">0.00371174</span>  <span class="mf">0.00620932</span> <span class="o">-</span><span class="mf">0.03075121</span> <span class="o">-</span><span class="mf">0.07408887</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">04289569</span> <span class="o">-</span><span class="mf">0.06832974</span>  <span class="mf">0.02539313</span> <span class="o">-</span><span class="mf">0.00608025</span> <span class="o">-</span><span class="mf">0.07020931</span> <span class="o">-</span><span class="mf">0.01599827</span>
+ <span class="o">-</span><span class="mf">0.06832974</span> <span class="o">-</span><span class="mf">0.04118039</span> <span class="o">-</span><span class="mf">0.09643322</span>  <span class="mf">0.04289569</span> <span class="o">-</span><span class="mf">0.03452372</span> <span class="o">-</span><span class="mf">0.02479119</span>
+ <span class="o">-</span><span class="mf">0.07212845</span>  <span class="mf">0.03723201</span>  <span class="mf">0.01255315</span> <span class="o">-</span><span class="mf">0.03324879</span> <span class="o">-</span><span class="mf">0.04118039</span>  <span class="mf">0.0011438</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">06078775</span>  <span class="mf">0.00286377</span> <span class="o">-</span><span class="mf">0.00608025</span>  <span class="mf">0.0117839</span>   <span class="mf">0.03723201</span> <span class="o">-</span><span class="mf">0.03075121</span>
+ <span class="o">-</span><span class="mf">0.00514531</span> <span class="o">-</span><span class="mf">0.01090444</span> <span class="o">-</span><span class="mf">0.0611766</span>  <span class="o">-</span><span class="mf">0.01090444</span> <span class="o">-</span><span class="mf">0.0594727</span>  <span class="o">-</span><span class="mf">0.05295879</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">04560081</span> <span class="o">-</span><span class="mf">0.02595242</span> <span class="o">-</span><span class="mf">0.12609739</span> <span class="o">-</span><span class="mf">0.02364456</span> <span class="o">-</span><span class="mf">0.02364456</span>  <span class="mf">0.04666077</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">09924023</span>  <span class="mf">0.08379677</span>  <span class="mf">0.02200405</span>  <span class="mf">0.07912108</span>  <span class="mf">0.02061233</span>  <span class="mf">0.02736771</span>
+ <span class="o">-</span><span class="mf">0.03980959</span>  <span class="mf">0.01990842</span>  <span class="mf">0.03243323</span>  <span class="mf">0.01556684</span> <span class="o">-</span><span class="mf">0.01599827</span>  <span class="mf">0.08058546</span>
+ <span class="o">-</span><span class="mf">0.09393565</span>  <span class="mf">0.00455189</span> <span class="o">-</span><span class="mf">0.03075121</span>  <span class="mf">0.03896837</span>  <span class="mf">0.02269202</span> <span class="o">-</span><span class="mf">0.04687948</span>
+ <span class="o">-</span><span class="mf">0.01290794</span> <span class="o">-</span><span class="mf">0.07212845</span> <span class="o">-</span><span class="mf">0.02712865</span>  <span class="mf">0.05078151</span> <span class="o">-</span><span class="mf">0.06648815</span>  <span class="mf">0.01703713</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">02801651</span>  <span class="mf">0.054724</span>   <span class="o">-</span><span class="mf">0.03324879</span>  <span class="mf">0.04506617</span>  <span class="mf">0.04560081</span> <span class="o">-</span><span class="mf">0.04118039</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">00620932</span> <span class="o">-</span><span class="mf">0.01599827</span>  <span class="mf">0.01482271</span>  <span class="mf">0.02605609</span> <span class="o">-</span><span class="mf">0.03075121</span>  <span class="mf">0.06123791</span>
+ <span class="o">-</span><span class="mf">0.01919705</span> <span class="o">-</span><span class="mf">0.00894402</span>  <span class="mf">0.02671426</span> <span class="o">-</span><span class="mf">0.03452372</span>  <span class="mf">0.00864028</span>  <span class="mf">0.03781448</span>
+ <span class="o">-</span><span class="mf">0.02139368</span>  <span class="mf">0.01022564</span> <span class="o">-</span><span class="mf">0.03075121</span>  <span class="mf">0.0423449</span>  <span class="o">-</span><span class="mf">0.03581673</span>  <span class="mf">0.07573759</span>
+ <span class="o">-</span><span class="mf">0.03075121</span> <span class="o">-</span><span class="mf">0.02364456</span>  <span class="mf">0.01776348</span> <span class="o">-</span><span class="mf">0.05615757</span> <span class="o">-</span><span class="mf">0.07814091</span>  <span class="mf">0.07763279</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">06898221</span>  <span class="mf">0.13359898</span> <span class="o">-</span><span class="mf">0.09643322</span> <span class="o">-</span><span class="mf">0.05140054</span>  <span class="mf">0.07341008</span> <span class="o">-</span><span class="mf">0.01811827</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">01703713</span> <span class="o">-</span><span class="mf">0.02712865</span> <span class="o">-</span><span class="mf">0.00330371</span>  <span class="mf">0.07222365</span> <span class="o">-</span><span class="mf">0.04836172</span>  <span class="mf">0.01407245</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">01630495</span> <span class="o">-</span><span class="mf">0.02595242</span>  <span class="mf">0.01556684</span>  <span class="mf">0.01556684</span>  <span class="mf">0.03723201</span>  <span class="mf">0.06731722</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">04718617</span> <span class="o">-</span><span class="mf">0.08682899</span> <span class="o">-</span><span class="mf">0.00149859</span> <span class="o">-</span><span class="mf">0.02028875</span>  <span class="mf">0.02337484</span>  <span class="mf">0.01022564</span>
+ <span class="o">-</span><span class="mf">0.02952762</span>  <span class="mf">0.03953988</span>  <span class="mf">0.00200784</span>  <span class="mf">0.00783714</span> <span class="o">-</span><span class="mf">0.03324879</span>  <span class="mf">0.01331597</span>
+ <span class="o">-</span><span class="mf">0.07408887</span>  <span class="mf">0.08989869</span> <span class="o">-</span><span class="mf">0.02832024</span> <span class="o">-</span><span class="mf">0.05295879</span>  <span class="mf">0.08449528</span>  <span class="mf">0.02539313</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">00200784</span>  <span class="mf">0.06345592</span>  <span class="mf">0.00943641</span>  <span class="mf">0.04613233</span> <span class="o">-</span><span class="mf">0.00149859</span> <span class="o">-</span><span class="mf">0.01190068</span>
+ <span class="o">-</span><span class="mf">0.03324879</span> <span class="o">-</span><span class="mf">0.02251217</span> <span class="o">-</span><span class="mf">0.00060925</span> <span class="o">-</span><span class="mf">0.02251217</span> <span class="o">-</span><span class="mf">0.03980959</span>  <span class="mf">0.0366458</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">04560081</span>  <span class="mf">0.03365681</span>  <span class="mf">0.00702686</span>  <span class="mf">0.0011438</span>  <span class="o">-</span><span class="mf">0.10164355</span>  <span class="mf">0.0011438</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">0011438</span>  <span class="o">-</span><span class="mf">0.01811827</span> <span class="o">-</span><span class="mf">0.03581673</span>  <span class="mf">0.06301662</span> <span class="o">-</span><span class="mf">0.03980959</span> <span class="o">-</span><span class="mf">0.03845911</span>
+ <span class="o">-</span><span class="mf">0.02712865</span> <span class="o">-</span><span class="mf">0.02364456</span>  <span class="mf">0.05027649</span>  <span class="mf">0.00943641</span>  <span class="mf">0.02405258</span> <span class="o">-</span><span class="mf">0.02595242</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">06432823</span> <span class="o">-</span><span class="mf">0.00514531</span>  <span class="mf">0.04067226</span> <span class="o">-</span><span class="mf">0.04836172</span>  <span class="mf">0.0110081</span>   <span class="mf">0.06604821</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">03365681</span> <span class="o">-</span><span class="mf">0.02952762</span> <span class="o">-</span><span class="mf">0.07814091</span> <span class="o">-</span><span class="mf">0.0439854</span>  <span class="o">-</span><span class="mf">0.0439854</span>  <span class="o">-</span><span class="mf">0.04986847</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">04506617</span> <span class="o">-</span><span class="mf">0.01090444</span>  <span class="mf">0.06389312</span>  <span class="mf">0.0702113</span>   <span class="mf">0.07573759</span>  <span class="mf">0.08449528</span>
+ <span class="o">-</span><span class="mf">0.00421986</span>  <span class="mf">0.03486419</span>  <span class="mf">0.12005338</span> <span class="o">-</span><span class="mf">0.00330371</span>  <span class="mf">0.02801651</span> <span class="o">-</span><span class="mf">0.00514531</span>
+ <span class="o">-</span><span class="mf">0.03712835</span> <span class="o">-</span><span class="mf">0.0439854</span>  <span class="o">-</span><span class="mf">0.08023654</span> <span class="o">-</span><span class="mf">0.01290794</span>  <span class="mf">0.03486419</span> <span class="o">-</span><span class="mf">0.07212845</span>
+ <span class="o">-</span><span class="mf">0.0594727</span>   <span class="mf">0.01482271</span> <span class="o">-</span><span class="mf">0.08682899</span>  <span class="mf">0.02337484</span>  <span class="mf">0.02930041</span> <span class="o">-</span><span class="mf">0.01190068</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">00864028</span> <span class="o">-</span><span class="mf">0.01811827</span> <span class="o">-</span><span class="mf">0.01811827</span>  <span class="mf">0.10635428</span>  <span class="mf">0.01556684</span>  <span class="mf">0.0110081</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">05757286</span> <span class="o">-</span><span class="mf">0.02139368</span>  <span class="mf">0.0011438</span>  <span class="o">-</span><span class="mf">0.01599827</span>  <span class="mf">0.01630495</span>  <span class="mf">0.02405258</span>
+ <span class="o">-</span><span class="mf">0.00894402</span> <span class="o">-</span><span class="mf">0.06832974</span>  <span class="mf">0.00286377</span>  <span class="mf">0.05988072</span> <span class="o">-</span><span class="mf">0.01919705</span>  <span class="mf">0.03243323</span>
+ <span class="o">-</span><span class="mf">0.07020931</span>  <span class="mf">0.06123791</span>  <span class="mf">0.02993565</span>  <span class="mf">0.05803913</span> <span class="o">-</span><span class="mf">0.06291295</span> <span class="o">-</span><span class="mf">0.05454415</span>
+ <span class="o">-</span><span class="mf">0.07408887</span>  <span class="mf">0.01630495</span> <span class="o">-</span><span class="mf">0.05615757</span> <span class="o">-</span><span class="mf">0.06468302</span> <span class="o">-</span><span class="mf">0.03075121</span> <span class="o">-</span><span class="mf">0.02595242</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">04289569</span> <span class="o">-</span><span class="mf">0.02139368</span>  <span class="mf">0.03119299</span>  <span class="mf">0.07380215</span> <span class="o">-</span><span class="mf">0.02251217</span>  <span class="mf">0.01776348</span>
+ <span class="o">-</span><span class="mf">0.03980959</span>  <span class="mf">0.02337484</span> <span class="o">-</span><span class="mf">0.0611766</span>   <span class="mf">0.02671426</span> <span class="o">-</span><span class="mf">0.01811827</span>  <span class="mf">0.01255315</span>
+ <span class="o">-</span><span class="mf">0.03845911</span>  <span class="mf">0.05520504</span> <span class="o">-</span><span class="mf">0.01190068</span> <span class="o">-</span><span class="mf">0.01090444</span>  <span class="mf">0.07496834</span>  <span class="mf">0.02472532</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">00943641</span>  <span class="mf">0.02866072</span>  <span class="mf">0.03304707</span>  <span class="mf">0.09864637</span>  <span class="mf">0.13339573</span>  <span class="mf">0.12901941</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">06604821</span>  <span class="mf">0.08449528</span>  <span class="mf">0.02993565</span> <span class="o">-</span><span class="mf">0.00060925</span> <span class="o">-</span><span class="mf">0.00149859</span> <span class="o">-</span><span class="mf">0.0170521</span>
+ <span class="o">-</span><span class="mf">0.02364456</span> <span class="o">-</span><span class="mf">0.04118039</span>  <span class="mf">0.05710419</span>  <span class="mf">0.02930041</span> <span class="o">-</span><span class="mf">0.06291295</span> <span class="o">-</span><span class="mf">0.05140054</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">08094791</span>  <span class="mf">0.00538437</span> <span class="o">-</span><span class="mf">0.02251217</span>  <span class="mf">0.04344317</span> <span class="o">-</span><span class="mf">0.03581673</span> <span class="o">-</span><span class="mf">0.02479119</span>
+ <span class="o">-</span><span class="mf">0.02364456</span> <span class="o">-</span><span class="mf">0.05780007</span>  <span class="mf">0.00702686</span> <span class="o">-</span><span class="mf">0.00060925</span>  <span class="mf">0.06257518</span>  <span class="mf">0.00371174</span>
+ <span class="o">-</span><span class="mf">0.01090444</span> <span class="o">-</span><span class="mf">0.0611766</span>   <span class="mf">0.0702113</span>  <span class="o">-</span><span class="mf">0.05780007</span> <span class="o">-</span><span class="mf">0.02028875</span>  <span class="mf">0.13237265</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">07419254</span> <span class="o">-</span><span class="mf">0.03324879</span> <span class="o">-</span><span class="mf">0.02832024</span>  <span class="mf">0.04976866</span> <span class="o">-</span><span class="mf">0.08238148</span>  <span class="mf">0.01482271</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">01331597</span> <span class="o">-</span><span class="mf">0.07212845</span>  <span class="mf">0.00371174</span>  <span class="mf">0.01919903</span>  <span class="mf">0.01482271</span>  <span class="mf">0.03119299</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">07102158</span>  <span class="mf">0.03365681</span>  <span class="mf">0.08553312</span> <span class="o">-</span><span class="mf">0.00514531</span> <span class="o">-</span><span class="mf">0.0611766</span>   <span class="mf">0.11934399</span>
+ <span class="o">-</span><span class="mf">0.01090444</span> <span class="o">-</span><span class="mf">0.0425721</span>  <span class="o">-</span><span class="mf">0.00060925</span>  <span class="mf">0.02801651</span>  <span class="mf">0.04613233</span>  <span class="mf">0.00943641</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">02269202</span> <span class="o">-</span><span class="mf">0.04687948</span> <span class="o">-</span><span class="mf">0.05140054</span> <span class="o">-</span><span class="mf">0.01290794</span>  <span class="mf">0.10413761</span> <span class="o">-</span><span class="mf">0.01811827</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">02405258</span> <span class="o">-</span><span class="mf">0.02595242</span> <span class="o">-</span><span class="mf">0.03075121</span> <span class="o">-</span><span class="mf">0.10436482</span>  <span class="mf">0.02671426</span> <span class="o">-</span><span class="mf">0.04118039</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">10329226</span> <span class="o">-</span><span class="mf">0.08913686</span> <span class="o">-</span><span class="mf">0.04118039</span> <span class="o">-</span><span class="mf">0.03980959</span>  <span class="mf">0.13008061</span>  <span class="mf">0.03181522</span>
+ <span class="o">-</span><span class="mf">0.09643322</span>  <span class="mf">0.03605579</span>  <span class="mf">0.04506617</span>  <span class="mf">0.03953988</span> <span class="o">-</span><span class="mf">0.03452372</span> <span class="o">-</span><span class="mf">0.0425721</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">01556684</span>  <span class="mf">0.06168585</span> <span class="o">-</span><span class="mf">0.02712865</span>  <span class="mf">0.0366458</span>  <span class="o">-</span><span class="mf">0.05615757</span> <span class="o">-</span><span class="mf">0.04836172</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">05803913</span>  <span class="mf">0.03056649</span>  <span class="mf">0.06604821</span> <span class="o">-</span><span class="mf">0.05140054</span>  <span class="mf">0.00620932</span> <span class="o">-</span><span class="mf">0.03581673</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">054724</span>    <span class="mf">0.01482271</span> <span class="o">-</span><span class="mf">0.02952762</span> <span class="o">-</span><span class="mf">0.04687948</span> <span class="o">-</span><span class="mf">0.02139368</span> <span class="o">-</span><span class="mf">0.07408887</span>
+ <span class="o">-</span><span class="mf">0.03324879</span>  <span class="mf">0.04976866</span><span class="p">]</span><span class="o">.</span>
+<span class="n">Reshape</span> <span class="n">your</span> <span class="n">data</span> <span class="n">either</span> <span class="n">using</span> <span class="n">array</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">your</span> <span class="n">data</span> <span class="n">has</span> <span class="n">a</span> <span class="n">single</span> <span class="n">feature</span> <span class="ow">or</span> <span class="n">array</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">it</span> <span class="n">contains</span> <span class="n">a</span> <span class="n">single</span> <span class="n">sample</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>we get an error because the training data  (<code class="docutils literal notranslate"><span class="pre">diabetes_X_train</span></code>) is only one dimensional.
+Scikit learn’s <code class="docutils literal notranslate"><span class="pre">fit</span></code> methods require a 2d-array even if fitting with only one feature.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diabetes_X_train</span><span class="o">.</span><span class="n">shape</span>
@@ -311,11 +633,21 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(422, 1)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(422,)
 </pre></div>
 </div>
 </div>
 </div>
+<p>we can use <code class="docutils literal notranslate"><span class="pre">np.newaxis</span></code> to fix this problem.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diabetes_X_train</span> <span class="o">=</span> <span class="n">diabetes_X</span><span class="p">[:</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">diabetes_X_test</span> <span class="o">=</span> <span class="n">diabetes_X</span><span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>and check the shape</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diabetes_X</span><span class="p">[:</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
@@ -328,13 +660,8 @@
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regr</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>It’s the same shape, in a mathematical sense, but in terms of the underlying data structure this one has a second dimension (it’s just only 1 long) in that dimension.  This is tricky, but an important thing to know how to fix.</p>
+<p>Now we can fit our model</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">diabetes_X_train</span><span class="p">,</span><span class="n">diabetes_y_train</span><span class="p">)</span>
@@ -347,6 +674,7 @@
 </div>
 </div>
 </div>
+<p>and examine the coefficient</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regr</span><span class="o">.</span><span class="n">coef_</span>
@@ -359,6 +687,7 @@
 </div>
 </div>
 </div>
+<p>and make predictions with the model</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diabetes_y_pred</span> <span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">diabetes_X_test</span><span class="p">)</span>
@@ -366,6 +695,7 @@
 </div>
 </div>
 </div>
+<p>we can evaluate with <code class="docutils literal notranslate"><span class="pre">mean_squared_error</span></code> (see below for more detail), which is as it’s named. It computes the error in each prediction (<code class="docutils literal notranslate"><span class="pre">y_pred-</span> <span class="pre">y_true</span></code>), squares it, then averages them all together.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">diabetes_y_test</span><span class="p">,</span><span class="n">diabetes_y_pred</span><span class="p">)</span>
@@ -378,6 +708,7 @@
 </div>
 </div>
 </div>
+<p>We can also use the <span class="math notranslate nohighlight">\(r^2\)</span> score, which is more normalized, it’s best value is 1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r2_score</span><span class="p">(</span><span class="n">diabetes_y_test</span><span class="p">,</span><span class="n">diabetes_y_pred</span><span class="p">)</span>
@@ -390,6 +721,7 @@
 </div>
 </div>
 </div>
+<p>To get an even better idea, we can plot.  We’ll use <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to plot, since our data is not in a DataFrame. <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> use <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> under the hood, so it will have a lot of familiar methods, but it takes a lot more work to build complicated figures with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. The alias <code class="docutils literal notranslate"><span class="pre">plt</span></code> is used by convention for the <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> module of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -397,6 +729,7 @@
 </div>
 </div>
 </div>
+<p>Then we can scatter plot the true data and make a line of the predictions in blue.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">diabetes_X_test</span><span class="p">,</span><span class="n">diabetes_y_test</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
@@ -405,19 +738,15 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f4aa995cfd0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f7bd8b88ed0&gt;]
 </pre></div>
 </div>
-<img alt="../_images/2020-10-26_16_1.png" src="../_images/2020-10-26_16_1.png" />
+<img alt="../_images/2020-10-26_33_1.png" src="../_images/2020-10-26_33_1.png" />
 </div>
 </div>
-<p>Repeat with all feature</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load</span> http://drsmb.co/310
-</pre></div>
-</div>
-</div>
+<div class="admonition-try-it-yourself admonition">
+<p class="admonition-title">Try it yourself</p>
+<p>Fit another regression model to this data that uses all of the feautures instead of only one</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -439,6 +768,7 @@
 </div>
 </div>
 </div>
+<p>This does better on <span class="math notranslate nohighlight">\(r^2\)</span>, let’s also check the mse.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">diabetes_y_test2</span><span class="p">,</span><span class="n">diabetes_y_pred2</span><span class="p">)</span>
@@ -451,27 +781,167 @@
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="more-practice">
+<h2>More practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>try out <code class="docutils literal notranslate"><span class="pre">regr2.score</span></code> what does scikite learn use for the score for <code class="docutils literal notranslate"><span class="pre">linear_model.LinearRegression</span></code> models?</p></li>
+<li><p>repeat the above using <code class="docutils literal notranslate"><span class="pre">test_train_split</span></code>, can you make the test size 20 samples again?</p></li>
+<li><p>try another single feature model using a different feature than we did above. Is your new feature a better or worse predictor? Make plots to compare and try to build intuition for the performance metrics geometrically.</p></li>
+</ol>
+</div>
+<div class="section" id="questions-after-class">
+<h2>Questions After class<a class="headerlink" href="#questions-after-class" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-considered-a-good-r2-value">
+<h3>What is considered a good r2 value?<a class="headerlink" href="#what-is-considered-a-good-r2-value" title="Permalink to this headline">¶</a></h3>
+<p>This will depend on context in some sense. You can read about it in the <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">r2_score</span></code> docs</span> and the corresponding <a class="reference external" href="https://en.wikipedia.org/wiki/Coefficient_of_determination">wikipedia page</a></p>
+<p>Here’s a quick visual of what different r2 score values lookl like. I simulated data by ranomly picking 10 points, then made the “predicted” y values by picking a slope of 3 and computing <code class="docutils literal notranslate"><span class="pre">3*x</span></code>.  Then I simulated various levels of noise, by sampling noise and multiplying the same noise vector by different scales and adding all of those to a data frame with the column name the r score for if that column of target values was the truth.</p>
+<p>Then I added some columns of y values that were with different slopes and different functions of x.  These all have the small amount of noise.</p>
+<p>I used the pandas <code class="docutils literal notranslate"><span class="pre">melt</span></code> method to restructure the DataFrame so that I could use <code class="docutils literal notranslate"><span class="pre">FaceGrid</span></code> with <code class="docutils literal notranslate"><span class="pre">col</span></code> and <code class="docutils literal notranslate"><span class="pre">col_wrap</span></code> to show all of the results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diabetes_y_test2</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span>
+<span class="n">ex_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])</span>
+<span class="n">ex_df</span><span class="p">[</span><span class="s1">&#39;y_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_pred</span>
+<span class="n">n_levels</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">-.</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_levels</span><span class="p">:</span>
+    <span class="n">y_true</span> <span class="o">=</span> <span class="n">y_pred</span> <span class="o">+</span> <span class="n">n</span><span class="o">*</span> <span class="n">noise</span>
+    <span class="n">ex_df</span><span class="p">[</span><span class="s1">&#39;r2 = &#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">r2_score</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span><span class="n">y_true</span><span class="p">),</span><span class="mi">3</span><span class="p">))]</span> <span class="o">=</span> <span class="n">y_true</span>
+
+<span class="n">f_x_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="mf">3.5</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">03</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">x</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">fx</span> <span class="ow">in</span> <span class="n">f_x_list</span><span class="p">:</span>
+    <span class="n">y_true</span> <span class="o">=</span> <span class="n">fx</span> <span class="o">+</span> <span class="n">noise</span>
+    <span class="n">ex_df</span><span class="p">[</span><span class="s1">&#39;r2 = &#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">r2_score</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span><span class="n">y_true</span><span class="p">),</span><span class="mi">3</span><span class="p">))]</span> <span class="o">=</span> <span class="n">y_true</span>    
+
+<span class="n">xy_df</span> <span class="o">=</span> <span class="n">ex_df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;y_pred&#39;</span><span class="p">],</span><span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;rscore&#39;</span><span class="p">,</span><span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="c1"># sns.lmplot(x=&#39;x&#39;,y=&#39;y&#39;, data = xy_df,col=&#39;rscore&#39;,col_wrap=3,)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">xy_df</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s1">&#39;rscore&#39;</span><span class="p">,</span><span class="n">col_wrap</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;y_pred&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(20,)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f7bd6ad0fd0&gt;
 </pre></div>
 </div>
+<img alt="../_images/2020-10-26_39_1.png" src="../_images/2020-10-26_39_1.png" />
 </div>
 </div>
+<p>The <code class="docutils literal notranslate"><span class="pre">r2_score</span></code> alone doesn’t tell the whole picture. We’ll also often want to analyze the errors in greater detail.  We’ll look at how to do that to investigate how the model really fits more later this week.</p>
+</div>
+<div class="section" id="can-some-of-the-methods-applied-in-regression-can-be-used-in-the-same-format-in-classification">
+<h3>Can some of the methods applied in regression can be used in the same format in classification?<a class="headerlink" href="#can-some-of-the-methods-applied-in-regression-can-be-used-in-the-same-format-in-classification" title="Permalink to this headline">¶</a></h3>
+<p>the <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> estimator objects all have the same methods, you can see details on the API on the <a class="reference external" href="https://scikit-learn.org/stable/developers/develop.html">sklearn developer page</a>.</p>
+</div>
+<div class="section" id="why-couldn-t-we-use-train-test-split-for-this-classifier">
+<h3>why couldn’t we use train_test_split for this classifier?<a class="headerlink" href="#why-couldn-t-we-use-train-test-split-for-this-classifier" title="Permalink to this headline">¶</a></h3>
+<p>We absolutely can. Splitting this way was to show <em>another</em> way to split the data, and point out under which conditions this way is ok.</p>
+</div>
+<div class="section" id="i-am-still-confused-about-machine-learning">
+<h3>I am still confused about machine learning<a class="headerlink" href="#i-am-still-confused-about-machine-learning" title="Permalink to this headline">¶</a></h3>
+<p>Try reading the notes from the <a class="reference internal" href="2020-10-12.html"><span class="doc std std-doc">introduction class</span></a>.</p>
+<p>The scikit-learn <a class="reference external" href="https://scikit-learn.org/stable/_static/ml_map.png">choose an estimator</a> graph can also be helpful.</p>
+</div>
+<div class="section" id="what-is-the-difference-between-test-and-train-data">
+<h3>What is the difference between test and train data?<a class="headerlink" href="#what-is-the-difference-between-test-and-train-data" title="Permalink to this headline">¶</a></h3>
+<p>We split data, sample-wise, into two pieces, in order to evaluate what we are doing.</p>
+<p>There is nothing inherently different between test data and train data.  In fact, by applying the model we learned with the training data to predict on the test data we are assuming that they are very similar.</p>
+<p>We split our data so that we can see how well we expect our trained model to work on new data, since the goal is to send our learned model into the world and use it for something else.  For example, a model fit on today’s data, about diabetes, might be used to predict which patients are going to have the most severe disease in a year based on their stats today and then enroll them in a program to help them learn to better manage their diabetes.</p>
+<p>The test set is meant to simulate future data that we’ve never seen before, but it’s usually data <em>we</em> have seen, but our learning algorithm did not use to fit the model.</p>
+</div>
+<div class="section" id="what-does-cross-validation-mean">
+<h3>What does cross validation mean?<a class="headerlink" href="#what-does-cross-validation-mean" title="Permalink to this headline">¶</a></h3>
+<p>Cross validation will come up again later, but basically cross validation is a more elaborate evaluation.  It repeatedly splits the data into test and train sets, fits the model, scores the model, and then returns all fo the results.</p>
+</div>
+<div class="section" id="what-does-mean-squared-error-do">
+<h3>What does <code class="docutils literal notranslate"><span class="pre">mean_squared_error</span></code> do?<a class="headerlink" href="#what-does-mean-squared-error-do" title="Permalink to this headline">¶</a></h3>
+<p>It is a popular performance metric for regression.  To understand it, let’s look back at what regression is doing.  Regression is tyring to predict a continuous valued quantity, so unlike in classification where we can just check if it matches or not, to compute performance, it makes sense consider the <em>size</em> of the erorr, beacuse it’s unlikely to get <em>exactly</em> the right value for any prediction.</p>
+<p>So, we might be tempted to compute error like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diabetes_y_pred2</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diabetes_y_test2</span><span class="o">-</span><span class="n">diabetes_y_pred2</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(20,)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 35.38153092, -64.43979328, -61.88665147,  40.46462721,
+       -44.80054784, -64.06954875,  50.87762239,  -6.47935157,
+        65.9398948 , -58.30503555, -45.36632793,  10.80168716,
+       -83.25046751, -56.3332925 ,  -4.54458691, -16.03798088,
+         1.42860298,   8.43395013,   8.9653683 ,   4.39664326])
 </pre></div>
+</div>
+</div>
+</div>
+<p>this, however is a whole vector of quantities, so we would need to take the average.  Taking the average here though, will be very small, because some are positive and some are negative and they will cancel one another out.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">diabetes_y_test2</span><span class="o">-</span><span class="n">diabetes_y_pred2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-13.941182850978748
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this case, it turns out to even be negative.</p>
+<p>Instead, we can square each error, to make them all postive.  We <em>could</em> also take the absolute value, but in a lot of calculations, we want to take the derivative, so suqaring instead of absolute value became more popular.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">diabetes_y_test2</span><span class="o">-</span><span class="n">diabetes_y_pred2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.25185273e+03, 4.15248696e+03, 3.82995763e+03, 1.63738606e+03,
+       2.00708909e+03, 4.10490708e+03, 2.58853246e+03, 4.19819967e+01,
+       4.34806973e+03, 3.39947717e+03, 2.05810371e+03, 1.16676446e+02,
+       6.93064034e+03, 3.17343984e+03, 2.06532702e+01, 2.57216831e+02,
+       2.04090647e+00, 7.11315149e+01, 8.03778287e+01, 1.93304719e+01])
+</pre></div>
+</div>
+</div>
+</div>
+<p>now we can take the mean of these to get a total average error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mse_manual</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">diabetes_y_test2</span><span class="o">-</span><span class="n">diabetes_y_pred2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">mse_manual</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2004.5676026898211
+</pre></div>
+</div>
+</div>
+</div>
+<p>we can confirm this gets the same answer as the sklearn function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mse_sk</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">diabetes_y_test2</span><span class="p">,</span><span class="n">diabetes_y_pred2</span><span class="p">)</span>
+<span class="n">mse_sk</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2004.5676026898211
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can even assert that they’re the same, they’re always going to be exactly the same</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">mse_manual</span> <span class="o">==</span> <span class="n">mse_sk</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -505,6 +975,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="2020-10-23.html" title="previous page">Class 20: Decision Trees and Cross Validation</a>
+    <a class='right-next' id="next-link" href="../assignments/index.html" title="next page">Assignments</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

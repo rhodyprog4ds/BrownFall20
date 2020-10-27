@@ -1,4 +1,4 @@
-# Assignment 6
+# Assignment 6: Naive Bayes
 
 
 __Due: 2020-10-20__
@@ -20,7 +20,7 @@ Create one notebook where you load examine each of the provided datasets for for
 1. How does the actual performance compare to your prediction?  If it performs much better or much worse than you expected, what might you use to figure out why? (_you do not have to figure out why your predictions were not correct, just list tools you've learned in class that might help you figure that out_)
 
 
-This assignment will be easiest if you take advantage of the template via git: 
+This assignment will be easiest if you take advantage of the template via git:
 
 ### Git Workflow
 
