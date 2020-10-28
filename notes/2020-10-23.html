@@ -204,6 +204,11 @@
      Class 21: Regression
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-28.html">
+     Class 22: More Regression, More Evaluation and LASSO
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -500,18 +505,15 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_0 &lt;= 5.88
-|   |--- feature_1 &lt;= 5.38
-|   |   |--- feature_0 &lt;= 4.07
-|   |   |   |--- feature_1 &lt;= 2.61
-|   |   |   |   |--- class: A
-|   |   |   |--- feature_1 &gt;  2.61
-|   |   |   |   |--- class: A
-|   |   |--- feature_0 &gt;  4.07
+|   |--- feature_1 &lt;= 4.00
+|   |   |--- feature_0 &lt;= 4.18
+|   |   |   |--- class: A
+|   |   |--- feature_0 &gt;  4.18
 |   |   |   |--- class: B
-|   |--- feature_1 &gt;  5.38
-|   |   |--- feature_0 &lt;= 4.10
+|   |--- feature_1 &gt;  4.00
+|   |   |--- feature_0 &lt;= 3.80
 |   |   |   |--- class: B
-|   |   |--- feature_0 &gt;  4.10
+|   |   |--- feature_0 &gt;  3.80
 |   |   |   |--- class: A
 |--- feature_0 &gt;  5.88
 |   |--- feature_1 &lt;= 3.89
@@ -543,9 +545,9 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_0 &lt;= 5.88
-|   |--- feature_1 &lt;= 3.98
+|   |--- feature_1 &lt;= 4.00
 |   |   |--- class: A
-|   |--- feature_1 &gt;  3.98
+|   |--- feature_1 &gt;  4.00
 |   |   |--- class: B
 |--- feature_0 &gt;  5.88
 |   |--- class: B
@@ -560,7 +562,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7
 </pre></div>
 </div>
 </div>
@@ -572,7 +574,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.925
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
 </pre></div>
 </div>
 </div>

@@ -21,3 +21,4 @@ Class notes will get posted here day by day
 - [2020-10-21](2020-10-21): Decision Trees
 - [2020-10-23](2020-10-23): Decision Trees & Cross validation
 - [2020-10-26](2020-10-26): Regression
+- [2020-10-28](2020-10-28): More Regression & More Evaluation
