@@ -419,6 +419,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">linear_model</span>
@@ -969,7 +970,7 @@ cross_val_score(estimator, X, y=None, *, groups=None, scoring=None, cv=None, n_j
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object _BaseKFold.split at 0x7fe19ad6b450&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object _BaseKFold.split at 0x7f702f4469d0&gt;
 </pre></div>
 </div>
 </div>
@@ -1048,18 +1049,7 @@ cross_val_score(estimator, X, y=None, *, groups=None, scoring=None, cv=None, n_j
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">35</span><span class="o">-</span><span class="mi">040</span><span class="n">b85a3367f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;tab10&quot;</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">kf_tt_df</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;Test&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Train&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">}),</span><span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">[</span><span class="mi">7</span><span class="p">:</span><span class="mi">9</span><span class="p">],</span><span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;ticks&#39;</span><span class="p">:[</span><span class="o">.</span><span class="mi">25</span><span class="p">,</span><span class="o">.</span><span class="mi">75</span><span class="p">]},</span><span class="n">linewidths</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">linecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">colorbar</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">collections</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">colorbar</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">colorbar</span><span class="o">.</span><span class="n">set_ticklabels</span><span class="p">([</span><span class="s1">&#39;Train&#39;</span><span class="p">,</span><span class="s1">&#39;Test&#39;</span><span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
-</pre></div>
-</div>
+<img alt="../_images/2020-10-28_57_0.png" src="../_images/2020-10-28_57_0.png" />
 </div>
 </div>
 <p>Note that unlike <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html"><code class="docutils literal notranslate"><span class="pre">test_train_split</span></code></a> this does not always randomize and shuffle the data before splitting.</p>
@@ -1169,15 +1159,15 @@ We can do a similar experiment as above to see what <code class="docutils litera
     <tr>
       <th>0</th>
       <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Test</td>
       <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Test</td>
+      <td>Test</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1190,16 +1180,16 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Train</td>
+      <td>Test</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
       <td>Test</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
@@ -1222,10 +1212,10 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <th>4</th>
       <td>Train</td>
       <td>Train</td>
+      <td>Test</td>
+      <td>Test</td>
       <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
+      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
@@ -1247,35 +1237,35 @@ We can do a similar experiment as above to see what <code class="docutils litera
     <tr>
       <th>437</th>
       <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
       <td>Test</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Test</td>
-      <td>Train</td>
       <td>Train</td>
     </tr>
     <tr>
       <th>438</th>
       <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
+      <td>Test</td>
+      <td>Test</td>
       <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
+      <td>Test</td>
     </tr>
     <tr>
       <th>439</th>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Train</td>
+      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
@@ -1285,8 +1275,8 @@ We can do a similar experiment as above to see what <code class="docutils litera
     </tr>
     <tr>
       <th>440</th>
-      <td>Train</td>
-      <td>Train</td>
+      <td>Test</td>
+      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
@@ -1299,7 +1289,7 @@ We can do a similar experiment as above to see what <code class="docutils litera
     <tr>
       <th>441</th>
       <td>Train</td>
-      <td>Train</td>
+      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
@@ -1326,18 +1316,7 @@ We can do a similar experiment as above to see what <code class="docutils litera
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">39</span><span class="o">-</span><span class="mf">384193e0</span><span class="n">e11c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;tab10&quot;</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">ss_tt_df</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;Test&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Train&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">}),</span><span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">[</span><span class="mi">7</span><span class="p">:</span><span class="mi">9</span><span class="p">],</span><span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;ticks&#39;</span><span class="p">:[</span><span class="o">.</span><span class="mi">25</span><span class="p">,</span><span class="o">.</span><span class="mi">75</span><span class="p">]},</span><span class="n">linewidths</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">linecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">colorbar</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">collections</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">colorbar</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">colorbar</span><span class="o">.</span><span class="n">set_ticklabels</span><span class="p">([</span><span class="s1">&#39;Train&#39;</span><span class="p">,</span><span class="s1">&#39;Test&#39;</span><span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
-</pre></div>
-</div>
+<img alt="../_images/2020-10-28_65_0.png" src="../_images/2020-10-28_65_0.png" />
 </div>
 </div>
 <p>Now, we see the samples in each training set (gray along the columns) are a random subset of all of all of the samples.</p>
@@ -1349,7 +1328,7 @@ We can do a similar experiment as above to see what <code class="docutils litera
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>172
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>185
 </pre></div>
 </div>
 </div>
