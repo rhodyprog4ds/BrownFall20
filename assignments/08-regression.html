@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Portfolio" href="../portfolio/index.html" />
+    <link rel="prev" title="Assignment 7: Decision Trees" href="07-decision-tree.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -96,7 +98,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../syllabus/index.html">
    Syllabus
@@ -107,10 +109,52 @@
    Class Notes
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active">
   <a class="reference internal" href="index.html">
    Assignments
   </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-python-syllabus.html">
+     Assignment 1: Portfolio Setup, Data Science, and Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-python-access.html">
+     Assignment 2: Practicing Python and Accessing Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-exploratory.html">
+     Assignment 3: Exploratory Data Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-prepare.html">
+     Assignment 4: Preparing Data for Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-construct.html">
+     Assignment 5: Constructing Datasets and Using Databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-naive-bayes.html">
+     Assignment 6: Naive Bayes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07-decision-tree.html">
+     Assignment 7: Decision Trees
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Assignment 8
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../portfolio/index.html">
@@ -215,13 +259,13 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#for-regression-level-2">
-   For Regression Level 2
+  <a class="reference internal nav-link" href="#linear-regression">
+   Linear Regression
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#for-evaluate-level-2">
-   For evaluate level 2:
+  <a class="reference internal nav-link" href="#grading">
+   Grading
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -250,15 +294,14 @@
   <div class="section" id="assignment-8">
 <h1>Assignment 8<a class="headerlink" href="#assignment-8" title="Permalink to this headline">¶</a></h1>
 <p><strong>Due: 2020-11-03</strong></p>
-<div class="section" id="for-regression-level-2">
-<h2>For Regression Level 2<a class="headerlink" href="#for-regression-level-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="linear-regression">
+<h2>Linear Regression<a class="headerlink" href="#linear-regression" title="Permalink to this headline">¶</a></h2>
 <p>Find a dataset suitable for regression. We recommend a dataset from the UCI repository (see bottom)</p>
 <p>Fit a regression model, measure the fit with two metrics, and make a plot that helps visualize the result.</p>
 <p>Examine the coefficients to try to interpret the results and explain what this regression model is doing.</p>
 <p>Try fitting the model only on one feature. Justify your choice of feature based on the results above.  Plot this result.</p>
-</div>
-<div class="section" id="for-evaluate-level-2">
-<h2>For evaluate level 2:<a class="headerlink" href="#for-evaluate-level-2" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://classroom.github.com/a/RHbMBUNd">Accept the assignment</a> to create your submission repository</p>
+<p><strong>Part 2: Test Train Splits</strong></p>
 <p><em>if you successfully completed this experiment in assignment 7, you don’t need to repeat it, but it might be interesting to try</em></p>
 <p>Do an experiment to compare test set size vs performance:</p>
 <ol class="simple">
@@ -267,6 +310,16 @@
 <li><p>Plot the accuracies vs training percentage.</p></li>
 <li><p>Explain these results. What is the best test/train split. Why?</p></li>
 </ol>
+<p><strong>Part 3: Other models</strong></p>
+<p>Try fitting LASSO and explaining what it does. Does LASSO make better predictions on your data?</p>
+<p>Do you think a model more complex than linear would be better? How could you tell?</p>
+</div>
+<div class="section" id="grading">
+<h2>Grading<a class="headerlink" href="#grading" title="Permalink to this headline">¶</a></h2>
+<p>For regression level 2, complete part 1.</p>
+<p>For evaluate level 2, complete part 2.</p>
+<p>If you’re curious, try a more complex regression model as in part 3.  This will get you an early start on level 3 for regression.</p>
+<p>If you don’t successfully complete the whole assignment, pseudocode or partial answers to the questions could earn you level 1 for either skill.</p>
 </div>
 <div class="section" id="faq">
 <h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
@@ -306,6 +359,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="07-decision-tree.html" title="previous page">Assignment 7: Decision Trees</a>
+    <a class='right-next' id="next-link" href="../portfolio/index.html" title="next page">Portfolio</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
