@@ -3,7 +3,7 @@
 __Due: 2020-11-03__
 
 
-## For Regression Level 2
+## Linear Regression
 
 Find a dataset suitable for regression. We recommend a dataset from the UCI repository (see bottom)
 
@@ -11,10 +11,13 @@ Fit a regression model, measure the fit with two metrics, and make a plot that h
 
 Examine the coefficients to try to interpret the results and explain what this regression model is doing.
 
-Try fitting the model only on one feature. Justify your choice of feature based on the results above.  Plot this result. 
+Try fitting the model only on one feature. Justify your choice of feature based on the results above.  Plot this result.
+
+[Accept the assignment](https://classroom.github.com/a/RHbMBUNd) to create your submission repository
 
 
-## For evaluate level 2:
+
+__Part 2: Test Train Splits__
 
 _if you successfully completed this experiment in assignment 7, you don't need to repeat it, but it might be interesting to try_
 
@@ -23,6 +26,24 @@ Do an experiment to compare test set size vs performance:
 1. Save the results of both test and train accuracy for each size training data in a DataFrame with columns ['train_pct','n_train_samples','n_test_samples','train_acc','test_acc']
 1. Plot the accuracies vs training percentage.  
 1. Explain these results. What is the best test/train split. Why?
+
+
+__Part 3: Other models__
+
+Try fitting LASSO and explaining what it does. Does LASSO make better predictions on your data?
+
+Do you think a model more complex than linear would be better? How could you tell?  
+
+## Grading
+
+For regression level 2, complete part 1.
+
+For evaluate level 2, complete part 2.
+
+If you're curious, try a more complex regression model as in part 3.  This will get you an early start on level 3 for regression.  
+
+
+If you don't successfully complete the whole assignment, pseudocode or partial answers to the questions could earn you level 1 for either skill.
 
 
 

@@ -45,6 +45,7 @@
     - file: assignments/05-construct
     - file: assignments/06-naive-bayes
     - file: assignments/07-decision-tree
+    - file: assignments/08-regression
 
 - file: portfolio/index
   sections:
