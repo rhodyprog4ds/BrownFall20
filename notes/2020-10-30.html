@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Class 23: Interpretting Regression &#8212; Programming for Data Science at URI Fall 2020</title>
+    <title>Class 23: Interpretting Regression Evaluations &#8212; Programming for Data Science at URI Fall 2020</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignments" href="../assignments/index.html" />
+    <link rel="prev" title="Class 22: More Regression, More Evaluation and LASSO" href="2020-10-28.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -96,16 +98,123 @@
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../syllabus/index.html">
    Syllabus
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active">
   <a class="reference internal" href="index.html">
    Class Notes
   </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-11.html">
+     Class 2: intro to notebooks and python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-14.html">
+     Class 3: Welcome to Week 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-16.html">
+     Class 4: Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-18.html">
+     Class 5: Accessing Data, continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-21.html">
+     Class 6: Exploratory Data Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-23.html">
+     Class 7: Visualization for EDA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-25.html">
+     Class 8: Visualization and Starting to Clean Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-28.html">
+     Class 9: Preparing Data For Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-30.html">
+     Class 10: Cleaning review and Ray Summit Keynotes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-02.html">
+     Class 11: Cleaning Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-05.html">
+     Class 12: Constructing Datasets from Multiple Sources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-07.html">
+     Class 13: Data from multiple sources and Databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-12.html">
+     Class 15: Intro to ML &amp; Modeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-14.html">
+     Class 16: Naive Bayes Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-16.html">
+     Class 17: Evaluating Classification and Midsemester Feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-19.html">
+     Class 18: Mid Semester Checkin, Git, &amp; How GNB makes decisions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-21.html">
+     Class 19: Decision Trees
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-23.html">
+     Class 20: Decision Trees and Cross Validation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-26.html">
+     Class 21: Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-28.html">
+     Class 22: More Regression, More Evaluation and LASSO
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Class 23: Interpretting Regression Evaluations
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../assignments/index.html">
@@ -236,8 +345,8 @@
         
               <div>
                 
-  <div class="section" id="class-23-interpretting-regression">
-<h1>Class 23: Interpretting Regression<a class="headerlink" href="#class-23-interpretting-regression" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="class-23-interpretting-regression-evaluations">
+<h1>Class 23: Interpretting Regression Evaluations<a class="headerlink" href="#class-23-interpretting-regression-evaluations" title="Permalink to this headline">¶</a></h1>
 <ol class="simple">
 <li><p>Snow in October. Share your thoughts in the zoom chat</p></li>
 <li><p>Log onto prismia</p></li>
@@ -329,7 +438,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7588388533572321
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6262707727847889
 </pre></div>
 </div>
 </div>
@@ -405,83 +514,83 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.78420</td>
+      <td>1.05393</td>
       <td>0.0</td>
       <td>8.14</td>
       <td>0.0</td>
       <td>0.538</td>
-      <td>5.990</td>
-      <td>81.7</td>
-      <td>4.2579</td>
+      <td>5.935</td>
+      <td>29.3</td>
+      <td>4.4986</td>
       <td>4.0</td>
       <td>307.0</td>
       <td>21.0</td>
-      <td>386.75</td>
-      <td>14.67</td>
+      <td>386.85</td>
+      <td>6.58</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.03961</td>
+      <td>0.09068</td>
+      <td>45.0</td>
+      <td>3.44</td>
       <td>0.0</td>
-      <td>5.19</td>
-      <td>0.0</td>
-      <td>0.515</td>
-      <td>6.037</td>
-      <td>34.5</td>
-      <td>5.9853</td>
+      <td>0.437</td>
+      <td>6.951</td>
+      <td>21.5</td>
+      <td>6.4798</td>
       <td>5.0</td>
-      <td>224.0</td>
-      <td>20.2</td>
-      <td>396.90</td>
-      <td>8.01</td>
+      <td>398.0</td>
+      <td>15.2</td>
+      <td>377.68</td>
+      <td>5.10</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>9.18702</td>
+      <td>0.13960</td>
       <td>0.0</td>
-      <td>18.10</td>
+      <td>8.56</td>
       <td>0.0</td>
-      <td>0.700</td>
-      <td>5.536</td>
-      <td>100.0</td>
-      <td>1.5804</td>
-      <td>24.0</td>
-      <td>666.0</td>
-      <td>20.2</td>
-      <td>396.90</td>
-      <td>23.60</td>
+      <td>0.520</td>
+      <td>6.167</td>
+      <td>90.0</td>
+      <td>2.4210</td>
+      <td>5.0</td>
+      <td>384.0</td>
+      <td>20.9</td>
+      <td>392.69</td>
+      <td>12.33</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.25387</td>
+      <td>8.05579</td>
       <td>0.0</td>
-      <td>6.91</td>
+      <td>18.10</td>
       <td>0.0</td>
-      <td>0.448</td>
-      <td>5.399</td>
-      <td>95.3</td>
-      <td>5.8700</td>
-      <td>3.0</td>
-      <td>233.0</td>
-      <td>17.9</td>
-      <td>396.90</td>
-      <td>30.81</td>
+      <td>0.584</td>
+      <td>5.427</td>
+      <td>95.4</td>
+      <td>2.4298</td>
+      <td>24.0</td>
+      <td>666.0</td>
+      <td>20.2</td>
+      <td>352.58</td>
+      <td>18.14</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.06899</td>
+      <td>0.15086</td>
       <td>0.0</td>
-      <td>25.65</td>
+      <td>27.74</td>
       <td>0.0</td>
-      <td>0.581</td>
-      <td>5.870</td>
-      <td>69.7</td>
-      <td>2.2577</td>
-      <td>2.0</td>
-      <td>188.0</td>
-      <td>19.1</td>
-      <td>389.15</td>
-      <td>14.37</td>
+      <td>0.609</td>
+      <td>5.454</td>
+      <td>92.7</td>
+      <td>1.8209</td>
+      <td>4.0</td>
+      <td>711.0</td>
+      <td>20.1</td>
+      <td>395.09</td>
+      <td>18.06</td>
     </tr>
   </tbody>
 </table>
@@ -557,103 +666,103 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.78420</td>
+      <td>1.05393</td>
       <td>0.0</td>
       <td>8.14</td>
       <td>0.0</td>
       <td>0.538</td>
-      <td>5.990</td>
-      <td>81.7</td>
-      <td>4.2579</td>
+      <td>5.935</td>
+      <td>29.3</td>
+      <td>4.4986</td>
       <td>4.0</td>
       <td>307.0</td>
       <td>21.0</td>
-      <td>386.75</td>
-      <td>14.67</td>
-      <td>17.5</td>
-      <td>16.531362</td>
-      <td>0.968638</td>
-      <td>0.968638</td>
+      <td>386.85</td>
+      <td>6.58</td>
+      <td>23.1</td>
+      <td>21.211158</td>
+      <td>1.888842</td>
+      <td>1.888842</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.03961</td>
+      <td>0.09068</td>
+      <td>45.0</td>
+      <td>3.44</td>
       <td>0.0</td>
-      <td>5.19</td>
-      <td>0.0</td>
-      <td>0.515</td>
-      <td>6.037</td>
-      <td>34.5</td>
-      <td>5.9853</td>
+      <td>0.437</td>
+      <td>6.951</td>
+      <td>21.5</td>
+      <td>6.4798</td>
       <td>5.0</td>
-      <td>224.0</td>
-      <td>20.2</td>
-      <td>396.90</td>
-      <td>8.01</td>
-      <td>21.1</td>
-      <td>20.378338</td>
-      <td>0.721662</td>
-      <td>0.721662</td>
+      <td>398.0</td>
+      <td>15.2</td>
+      <td>377.68</td>
+      <td>5.10</td>
+      <td>37.0</td>
+      <td>30.875204</td>
+      <td>6.124796</td>
+      <td>6.124796</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>9.18702</td>
+      <td>0.13960</td>
       <td>0.0</td>
-      <td>18.10</td>
+      <td>8.56</td>
       <td>0.0</td>
-      <td>0.700</td>
-      <td>5.536</td>
-      <td>100.0</td>
-      <td>1.5804</td>
-      <td>24.0</td>
-      <td>666.0</td>
-      <td>20.2</td>
-      <td>396.90</td>
-      <td>23.60</td>
-      <td>11.3</td>
-      <td>12.993185</td>
-      <td>-1.693185</td>
-      <td>-1.693185</td>
+      <td>0.520</td>
+      <td>6.167</td>
+      <td>90.0</td>
+      <td>2.4210</td>
+      <td>5.0</td>
+      <td>384.0</td>
+      <td>20.9</td>
+      <td>392.69</td>
+      <td>12.33</td>
+      <td>20.1</td>
+      <td>21.236836</td>
+      <td>-1.136836</td>
+      <td>-1.136836</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.25387</td>
+      <td>8.05579</td>
       <td>0.0</td>
-      <td>6.91</td>
+      <td>18.10</td>
       <td>0.0</td>
-      <td>0.448</td>
-      <td>5.399</td>
-      <td>95.3</td>
-      <td>5.8700</td>
-      <td>3.0</td>
-      <td>233.0</td>
-      <td>17.9</td>
-      <td>396.90</td>
-      <td>30.81</td>
-      <td>14.4</td>
-      <td>8.173293</td>
-      <td>6.226707</td>
-      <td>6.226707</td>
+      <td>0.584</td>
+      <td>5.427</td>
+      <td>95.4</td>
+      <td>2.4298</td>
+      <td>24.0</td>
+      <td>666.0</td>
+      <td>20.2</td>
+      <td>352.58</td>
+      <td>18.14</td>
+      <td>13.8</td>
+      <td>15.360492</td>
+      <td>-1.560492</td>
+      <td>-1.560492</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.06899</td>
+      <td>0.15086</td>
       <td>0.0</td>
-      <td>25.65</td>
+      <td>27.74</td>
       <td>0.0</td>
-      <td>0.581</td>
-      <td>5.870</td>
-      <td>69.7</td>
-      <td>2.2577</td>
-      <td>2.0</td>
-      <td>188.0</td>
-      <td>19.1</td>
-      <td>389.15</td>
-      <td>14.37</td>
-      <td>22.0</td>
-      <td>22.258701</td>
-      <td>-0.258701</td>
-      <td>-0.258701</td>
+      <td>0.609</td>
+      <td>5.454</td>
+      <td>92.7</td>
+      <td>1.8209</td>
+      <td>4.0</td>
+      <td>711.0</td>
+      <td>20.1</td>
+      <td>395.09</td>
+      <td>18.06</td>
+      <td>15.2</td>
+      <td>10.454299</td>
+      <td>4.745701</td>
+      <td>4.745701</td>
     </tr>
   </tbody>
 </table>
@@ -666,7 +775,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fe3d5cdfad0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f1b7f99e8d0&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-10-30_15_1.png" src="../_images/2020-10-30_15_1.png" />
@@ -702,6 +811,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="2020-10-28.html" title="previous page">Class 22: More Regression, More Evaluation and LASSO</a>
+    <a class='right-next' id="next-link" href="../assignments/index.html" title="next page">Assignments</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

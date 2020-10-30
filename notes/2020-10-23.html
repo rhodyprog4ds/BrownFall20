@@ -209,6 +209,11 @@
      Class 22: More Regression, More Evaluation and LASSO
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-30.html">
+     Class 23: Interpretting Regression Evaluations
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -505,27 +510,27 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_1 &lt;= 1.64
-|   |--- feature_0 &lt;= 5.72
+|   |--- feature_0 &lt;= 5.76
 |   |   |--- class: A
-|   |--- feature_0 &gt;  5.72
+|   |--- feature_0 &gt;  5.76
 |   |   |--- class: B
 |--- feature_1 &gt;  1.64
-|   |--- feature_0 &lt;= 2.18
-|   |   |--- feature_1 &lt;= 4.00
-|   |   |   |--- class: A
-|   |   |--- feature_1 &gt;  4.00
+|   |--- feature_1 &lt;= 6.18
+|   |   |--- feature_0 &lt;= 5.06
+|   |   |   |--- feature_1 &lt;= 4.07
+|   |   |   |   |--- class: A
+|   |   |   |--- feature_1 &gt;  4.07
+|   |   |   |   |--- class: B
+|   |   |--- feature_0 &gt;  5.06
+|   |   |   |--- feature_1 &lt;= 4.02
+|   |   |   |   |--- class: B
+|   |   |   |--- feature_1 &gt;  4.02
+|   |   |   |   |--- class: A
+|   |--- feature_1 &gt;  6.18
+|   |   |--- feature_0 &lt;= 3.98
 |   |   |   |--- class: B
-|   |--- feature_0 &gt;  2.18
-|   |   |--- feature_1 &lt;= 2.96
-|   |   |   |--- feature_0 &lt;= 4.13
-|   |   |   |   |--- class: A
-|   |   |   |--- feature_0 &gt;  4.13
-|   |   |   |   |--- class: B
-|   |   |--- feature_1 &gt;  2.96
-|   |   |   |--- feature_0 &lt;= 4.09
-|   |   |   |   |--- class: B
-|   |   |   |--- feature_0 &gt;  4.09
-|   |   |   |   |--- class: A
+|   |   |--- feature_0 &gt;  3.98
+|   |   |   |--- class: A
 </pre></div>
 </div>
 </div>
@@ -553,9 +558,9 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_1 &lt;= 2.25
 |   |--- class: B
 |--- feature_1 &gt;  2.25
-|   |--- feature_0 &lt;= 2.70
+|   |--- feature_0 &lt;= 2.75
 |   |   |--- class: B
-|   |--- feature_0 &gt;  2.70
+|   |--- feature_0 &gt;  2.75
 |   |   |--- class: A
 </pre></div>
 </div>
@@ -568,7 +573,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.575
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.55
 </pre></div>
 </div>
 </div>
@@ -580,7 +585,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.975
 </pre></div>
 </div>
 </div>

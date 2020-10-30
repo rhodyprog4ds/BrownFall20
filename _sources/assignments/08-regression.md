@@ -1,19 +1,20 @@
-# Assignment 8
+# Assignment 8: Linear Regression
 
 __Due: 2020-11-03__
 
 
 ## Linear Regression
 
-Find a dataset suitable for regression. We recommend a dataset from the UCI repository (see bottom)
+Find a dataset suitable for regression. We recommend a dataset from the UCI repository (see below)
 
-Fit a regression model, measure the fit with two metrics, and make a plot that helps visualize the result.  
+Fit a linear regression model, measure the fit with two metrics, and make a plot that helps visualize the result.  
 
 Examine the [coefficients](https://rhodyprog4ds.github.io/BrownFall20/notes/2020-10-28.html#digging-in-deeper-to-the-linear-regression-model) or the [residuals](2020-10-30) to try to interpret the results and explain what this regression model is doing.
 
 Try fitting the model only on one feature. Justify your choice of feature based on the results above.  Plot this result.
 
 [Accept the assignment](https://classroom.github.com/a/RHbMBUNd) to create your submission repository
+
 
 
 
@@ -35,6 +36,8 @@ Try fitting LASSO and explaining what it does. Does LASSO make better prediction
 Do you think a model more complex than linear would be better? How could you tell?  
 
 ## Grading
+
+Include description of what you're doing, why you're doing it, and what the results mean at each step of your analysis so that we can tell that you understand. 
 
 For regression level 2, complete part 1.
 
