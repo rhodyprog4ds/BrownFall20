@@ -9,7 +9,7 @@ Find a dataset suitable for regression. We recommend a dataset from the UCI repo
 
 Fit a regression model, measure the fit with two metrics, and make a plot that helps visualize the result.  
 
-Examine the coefficients to try to interpret the results and explain what this regression model is doing.
+Examine the [coefficients](https://rhodyprog4ds.github.io/BrownFall20/notes/2020-10-28.html#digging-in-deeper-to-the-linear-regression-model) or the [residuals](2020-10-30) to try to interpret the results and explain what this regression model is doing.
 
 Try fitting the model only on one feature. Justify your choice of feature based on the results above.  Plot this result.
 
