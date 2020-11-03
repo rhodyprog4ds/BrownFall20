@@ -353,6 +353,11 @@
    How Does Kmeans work?
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kmeans-with-sklearn">
+   KMeans with Sklearn
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -409,7 +414,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f7ad0c79910&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7faff1196310&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-11-02_3_1.png" src="../_images/2020-11-02_3_1.png" />
@@ -450,28 +455,28 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>5.40</td>
-      <td>6.86</td>
+      <td>6.18</td>
+      <td>6.49</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>5.96</td>
-      <td>6.02</td>
+      <td>6.41</td>
+      <td>5.98</td>
     </tr>
     <tr>
       <th>2</th>
+      <td>1.45</td>
       <td>2.10</td>
-      <td>5.23</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>5.32</td>
-      <td>2.38</td>
+      <td>1.53</td>
+      <td>2.05</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>2.92</td>
-      <td>2.87</td>
+      <td>5.69</td>
+      <td>1.98</td>
     </tr>
   </tbody>
 </table>
@@ -535,10 +540,10 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.63, 5.53],
-       [2.49, 5.57],
-       [2.56, 6.53],
-       [1.57, 6.04]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[6.49, 5.68],
+       [6.17, 2.48],
+       [5.82, 5.43],
+       [6.42, 1.87]])
 </pre></div>
 </div>
 </div>
@@ -637,8 +642,6 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <img alt="../_images/2020-11-02_17_2.png" src="../_images/2020-11-02_17_2.png" />
 <img alt="../_images/2020-11-02_17_3.png" src="../_images/2020-11-02_17_3.png" />
 <img alt="../_images/2020-11-02_17_4.png" src="../_images/2020-11-02_17_4.png" />
-<img alt="../_images/2020-11-02_17_5.png" src="../_images/2020-11-02_17_5.png" />
-<img alt="../_images/2020-11-02_17_6.png" src="../_images/2020-11-02_17_6.png" />
 </div>
 </div>
 <p>These plots can be saved and merged into a gif with, for example <a class="reference external" href="https://imagemagick.org/script/download.php">imagemagick</a> to create the gifs above. Since we’ve saved them in a single dataframe, we can also look at that</p>
@@ -673,59 +676,53 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
       <th>1</th>
       <th>2</th>
       <th>3</th>
-      <th>4</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>5.40</td>
-      <td>6.86</td>
-      <td>3</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
+      <td>6.18</td>
+      <td>6.49</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>5.96</td>
-      <td>6.02</td>
+      <td>6.41</td>
+      <td>5.98</td>
       <td>0</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2</th>
+      <td>1.45</td>
       <td>2.10</td>
-      <td>5.23</td>
-      <td>3</td>
       <td>1</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>5.32</td>
-      <td>2.38</td>
-      <td>2</td>
-      <td>1</td>
+      <td>1.53</td>
+      <td>2.05</td>
+      <td>0</td>
       <td>1</td>
       <td>1</td>
       <td>1</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>2.92</td>
-      <td>2.87</td>
+      <td>5.69</td>
+      <td>1.98</td>
       <td>3</td>
       <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <td>3</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
@@ -749,7 +746,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f7aac8fea50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fafed861650&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-11-02_21_1.png" src="../_images/2020-11-02_21_1.png" />
@@ -757,7 +754,13 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 <p>Here are a few different runs of the algorithm on the same dtaset.</p>
 <p><img alt="k means" src="notes/demo_kmeans1.gif" /></p>
+<p><img alt="k means" src="notes/demo_kmeans2.gif" /></p>
+<p><img alt="k means" src="notes/demo_kmeans3.gif" /></p>
+<p><img alt="k means" src="notes/demo_kmeans4.gif" /></p>
 <p><img alt="k means" src="notes/demo_kmeans5.gif" /></p>
+</div>
+<div class="section" id="kmeans-with-sklearn">
+<h2>KMeans with Sklearn<a class="headerlink" href="#kmeans-with-sklearn" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris_X</span><span class="p">,</span> <span class="n">iris_y</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">(</span><span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -786,10 +789,10 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f7aa6acc110&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fafe9218150&gt;
 </pre></div>
 </div>
-<img alt="../_images/2020-11-02_27_1.png" src="../_images/2020-11-02_27_1.png" />
+<img alt="../_images/2020-11-02_28_1.png" src="../_images/2020-11-02_28_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -800,10 +803,10 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f7aa6ac1310&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fafe9156a10&gt;
 </pre></div>
 </div>
-<img alt="../_images/2020-11-02_28_1.png" src="../_images/2020-11-02_28_1.png" />
+<img alt="../_images/2020-11-02_29_1.png" src="../_images/2020-11-02_29_1.png" />
 </div>
 </div>
 </div>
