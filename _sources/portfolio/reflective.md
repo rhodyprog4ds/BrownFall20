@@ -26,8 +26,16 @@ These prompts are more reflective to help demonstrate your understanding of skil
   - Visualize
   - Prepare
   - Construct
+  - Classification
+  - Clustering
+  - Regression
+  - Evaluation
 * - Yes
   - No
+  - Yes
+  - Yes
+  - Yes
+  - Yes
   - Yes
   - Yes
   - Yes
@@ -51,8 +59,12 @@ Choose an assignment that you did not achieve the target level for. Write a blog
   - Visualize
   - Prepare
   - Construct
+  - Classification
+  - Clustering
+  - Regression
+  - Evaluation
 * - No
-  - Yes, L2
+  - Yes
   - No
   - No
   - No
@@ -60,10 +72,48 @@ Choose an assignment that you did not achieve the target level for. Write a blog
   - No
 ```
 
-Like the day 1 activity, find two different sources that describe the data science pipeline or lifecycle. Write a blog style post that discusses their differences and hypothesizes about why they may be different? Are they for different audiences? Is one domain specific.
+Like the day 1 activity, find two different sources that describe the data science pipeline or lifecycle. Write a blog style post that discusses their differences and hypothesizes about why they may be different? Are they for different audiences? Is one domain specific. How do they emphasize different modeling tasks?
 
 
 ## Podcast
+
+```{list-table} Eligible Skills
+:header-rows: 1
+
+* - Python
+  - Process
+  - Access
+  - Summarize
+  - Visualize
+  - Prepare
+  - Construct
+  - Classification
+  - Clustering
+  - Regression
+  - Evaluation
+* - No
+  - Yes, L2
+  - No
+  - No
+  - No
+  - No
+  - No
+  - No
+  - No
+  - No
+  - No
+
+```
+
+Watch an episode of a high quality[^hq] podcast and write a blog style summary and review of the episode. Highlight what you learned and how it relates to topics covered in class.
+
+Approved Podcasts:
+- [Pod of Asclepius, Fall Series: The Philosophy of Data Science](https://www.podofasclepius.com/philosophy-of-data-science)
+
+
+[^hq]: approved by Dr. Brown by creating a pull request to add it to the list on this page that is successfully merged.  To create a PR, use the suggest an edit button at the top of this page.
+
+## What Can Data Science do?
 
 ```{list-table} Eligible Skills
 :header-rows: 1
@@ -82,43 +132,12 @@ Like the day 1 activity, find two different sources that describe the data scien
   - No
   - No
   - No
+  - No
+  - No
+  - No
+  - No
 
 ```
 
-Watch an episode of a high quality[^hq] podcast and write a blog style summary and review of the episode. Highlight what you learned and how it relates to topics covered in class. 
 
-Approved Podcasts:
-- [Pod of Asclepius, Fall Series: The Philosophy of Data Science](https://www.podofasclepius.com/philosophy-of-data-science)
-
-
-[^hq]: approved by Dr. Brown by creating a pull request to add it to the list on this page that is successfully merged.  To create a PR, use the suggest an edit button at the top of this page.
-
-## Annotate Class Notes
-
-```{list-table} Eligible Skills
-:header-rows: 1
-
-* - Python
-    Access
-    Summarize
-    Visualize
-    Prepare
-    Construct
-* - Yes
-    Yes
-    Yes
-    Yes
-    Yes
-    Yes
-
-```
-
-Annotate a whole session of class notes by submitting a PR to this repository. This applies after Dr. Brown's notes are uploaded, but not annotated. Use previously annotated notes as an example of what content should be added.
-In your portfolio, include a 1 paragraph reflection on what you learned by contributing the annotation and a link to your pull request.
-
-
-````{margin}
-```{note}
-It's okay if more than one person contributes annotations on the same day.  If there's a pull request there already, try to add different, additional insights but if it's not there when you start working and appears before you submit, that's ok.
-```
-````
+Write a blog post describing different ways

@@ -53,8 +53,16 @@ Look at all of the different ways pandas can load data. Consider some of the que
   - Visualize
   - Prepare
   - Construct
+  - Classification
+  - Clustering
+  - Regression
+  - Evaluation
 * - No
   - No
+  - Yes
+  - Yes
+  - Yes
+  - Yes
   - Yes
   - Yes
   - Yes
@@ -78,8 +86,16 @@ This [cheatsheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf) is an exampl
   - Visualize
   - Prepare
   - Construct
-* - No
+  - Classification
+  - Clustering
+  - Regression
+  - Evaluation
+* - Yes
   - No
+  - Yes
+  - Yes
+  - Yes
+  - Yes
   - Yes
   - Yes
   - Yes
@@ -89,3 +105,66 @@ This [cheatsheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf) is an exampl
 ```
 
 For one of the assignments, if there was something you were curious about. Try it out and investigate how to answer it.  Vary parameters and document your investigation.  
+
+
+## New Analysis
+
+```{list-table} Eligible Skills
+:header-rows: 1
+
+* - Python
+  - Process
+  - Access
+  - Summarize
+  - Visualize
+  - Prepare
+  - Construct
+  - Classification
+  - Clustering
+  - Regression
+  - Evaluation
+* - Yes
+  - No
+  - Yes
+  - Yes
+  - Yes
+  - Yes
+  - Yes
+  - Yes
+  - Yes
+  - Yes
+  - Yes
+
+```
+
+For one a topic of interest, clean, explore and model the data. Work with messy data or data provided in multiple files to earn prepare and construct achievements or use clean data to earn only EDA and modeling achievements.
+
+## Modeling Experiments
+
+```{list-table} Eligible Skills
+:header-rows: 1
+
+* - Python
+  - Process
+  - Access
+  - Summarize
+  - Visualize
+  - Prepare
+  - Construct
+  - Classification
+  - Clustering
+  - Regression
+  - Evaluation
+* - No
+  - No
+  - Yes
+  - Yes
+  - Yes
+  - Yes
+  - Yes
+  - Yes
+  - Yes
+  - Yes
+  - Yes
+
+```
