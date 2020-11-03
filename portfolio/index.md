@@ -75,14 +75,17 @@ Use the feedback you get on assignments to inspire your portfolio.
 Each submission should include an introduction and a number of 'chapters'.  The grade will be based on both that you demonstrate skills through your chapters that are inspired by the prompts and that your summary demonstrates that you *know* you learned the skills. See the [formatting tips](formatting) for advice on how to structure files.
 
 
-The first submission will be graded on the following criteria and due on October 16:
+The second submission will be graded on the following criteria and due on November 13:
 
 ```{code-cell} ipython3
 :tags: [remove-input]
 
-portfolio_df['Level 3'][portfolio_df['P1']==1].reset_index().set_index('keyword')
+portfolio_df['Level 3'][portfolio_df['P2']==1].reset_index().set_index('keyword')
 ```
 
 On each chapter(for a file) of your portfolio, you should identify which skills by their keyword, you are applying.
 
 You can view a (fake) example [in this repository](https://github.com/rhodyprog4ds/portfolio-brownsarahm) as a [pdf](https://github.com/rhodyprog4ds/portfolio-brownsarahm/blob/gh-pages/portfolio.pdf) or as a [rendered website](https://rhodyprog4ds.github.io/portfolio-brownsarahm/intro.html)
+
+
+For this portfolio check I encourage you to dig in on either data from one domain and think about how clustering, regression, and classification apply in this domain  OR to inspect these more carefully in a performance prospective, taking a more CS-basics approach.  
