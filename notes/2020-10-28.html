@@ -214,6 +214,11 @@
      Class 23: Interpretting Regression Evaluations
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-02.html">
+     Class 24: Clustering
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -975,7 +980,7 @@ cross_val_score(estimator, X, y=None, *, groups=None, scoring=None, cv=None, n_j
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object _BaseKFold.split at 0x7fab2db419d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object _BaseKFold.split at 0x7f4929a2a9d0&gt;
 </pre></div>
 </div>
 </div>
@@ -1164,10 +1169,10 @@ We can do a similar experiment as above to see what <code class="docutils litera
     <tr>
       <th>0</th>
       <td>Train</td>
-      <td>Test</td>
-      <td>Test</td>
       <td>Train</td>
-      <td>Test</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
       <td>Train</td>
       <td>Train</td>
       <td>Test</td>
@@ -1177,8 +1182,8 @@ We can do a similar experiment as above to see what <code class="docutils litera
     <tr>
       <th>1</th>
       <td>Train</td>
-      <td>Test</td>
-      <td>Test</td>
+      <td>Train</td>
+      <td>Train</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
@@ -1194,17 +1199,17 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
       <td>Test</td>
-      <td>Train</td>
-      <td>Train</td>
       <td>Train</td>
       <td>Train</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Train</td>
-      <td>Train</td>
       <td>Test</td>
+      <td>Test</td>
+      <td>Train</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
@@ -1218,12 +1223,12 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Test</td>
+      <td>Train</td>
+      <td>Train</td>
       <td>Train</td>
     </tr>
     <tr>
@@ -1255,11 +1260,11 @@ We can do a similar experiment as above to see what <code class="docutils litera
     <tr>
       <th>438</th>
       <td>Train</td>
+      <td>Test</td>
+      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
+      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
@@ -1273,36 +1278,36 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Test</td>
+      <td>Train</td>
+      <td>Train</td>
     </tr>
     <tr>
       <th>440</th>
       <td>Train</td>
       <td>Train</td>
-      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Test</td>
+      <td>Train</td>
+      <td>Train</td>
     </tr>
     <tr>
       <th>441</th>
       <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
       <td>Test</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
     </tr>
   </tbody>
 </table>
@@ -1333,7 +1338,7 @@ We can do a similar experiment as above to see what <code class="docutils litera
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>180
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>167
 </pre></div>
 </div>
 </div>

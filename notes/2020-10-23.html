@@ -214,6 +214,11 @@
      Class 23: Interpretting Regression Evaluations
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-02.html">
+     Class 24: Clustering
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -509,34 +514,31 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_1 &lt;= 1.63
-|   |--- feature_0 &lt;= 5.76
-|   |   |--- class: B
-|   |--- feature_0 &gt;  5.76
-|   |   |--- class: B
-|--- feature_1 &gt;  1.63
-|   |--- feature_1 &lt;= 1.93
-|   |   |--- class: A
-|   |--- feature_1 &gt;  1.93
-|   |   |--- feature_1 &lt;= 2.25
-|   |   |   |--- feature_0 &lt;= 5.78
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_1 &lt;= 1.64
+|   |--- class: B
+|--- feature_1 &gt;  1.64
+|   |--- feature_0 &lt;= 1.86
+|   |   |--- feature_1 &lt;= 3.98
+|   |   |   |--- class: A
+|   |   |--- feature_1 &gt;  3.98
+|   |   |   |--- class: B
+|   |--- feature_0 &gt;  1.86
+|   |   |--- feature_1 &lt;= 2.73
+|   |   |   |--- feature_0 &lt;= 4.18
 |   |   |   |   |--- class: A
-|   |   |   |--- feature_0 &gt;  5.78
+|   |   |   |--- feature_0 &gt;  4.18
 |   |   |   |   |--- class: B
-|   |   |--- feature_1 &gt;  2.25
-|   |   |   |--- feature_0 &lt;= 2.55
-|   |   |   |   |--- feature_1 &lt;= 4.00
+|   |   |--- feature_1 &gt;  2.73
+|   |   |   |--- feature_0 &lt;= 4.09
+|   |   |   |   |--- feature_1 &lt;= 5.91
+|   |   |   |   |   |--- class: B
+|   |   |   |   |--- feature_1 &gt;  5.91
+|   |   |   |   |   |--- class: B
+|   |   |   |--- feature_0 &gt;  4.09
+|   |   |   |   |--- feature_0 &lt;= 6.35
 |   |   |   |   |   |--- class: A
-|   |   |   |   |--- feature_1 &gt;  4.00
-|   |   |   |   |   |--- class: B
-|   |   |   |--- feature_0 &gt;  2.55
-|   |   |   |   |--- feature_1 &lt;= 3.89
-|   |   |   |   |   |--- class: B
-|   |   |   |   |--- feature_1 &gt;  3.89
-|   |   |   |   |   |--- feature_0 &lt;= 5.56
-|   |   |   |   |   |   |--- class: A
-|   |   |   |   |   |--- feature_0 &gt;  5.56
-|   |   |   |   |   |   |--- class: A
+|   |   |   |   |--- feature_0 &gt;  6.35
+|   |   |   |   |   |--- class: A
 </pre></div>
 </div>
 </div>
@@ -561,13 +563,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_1 &lt;= 2.25
-|   |--- class: B
-|--- feature_1 &gt;  2.25
-|   |--- feature_0 &lt;= 4.09
-|   |   |--- class: B
-|   |--- feature_0 &gt;  4.09
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_0 &lt;= 5.87
+|   |--- feature_1 &lt;= 5.33
 |   |   |--- class: A
+|   |--- feature_1 &gt;  5.33
+|   |   |--- class: B
+|--- feature_0 &gt;  5.87
+|   |--- class: B
 </pre></div>
 </div>
 </div>
@@ -579,7 +581,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.575
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.65
 </pre></div>
 </div>
 </div>
@@ -591,7 +593,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.775
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.85
 </pre></div>
 </div>
 </div>
