@@ -24,3 +24,4 @@ Class notes will get posted here day by day
 - [2020-10-28](2020-10-28): More Regression & More Evaluation
 - [2020-10-30](2020-10-30): Interpretting Regression Metrics
 - [2020-11-02](2020-11-02): Clustering
+- [2020-11-04](2020-11-04): Evaluating Clustering
