@@ -15,7 +15,8 @@ __Due: 2020-11-010__
 
   - describes what the clustering means
   - what the metrics show
-  - Does this clustering work better or worse than expected based on the classificaiton performance (if you didn't complete assignment 7, also apply a classifier)   
+  - Does this clustering work better or worse than expected based on the classification performance (if you didn't complete assignment 7, also apply a classifier)
+
 
 
 ## Evaluation and Grading
@@ -24,4 +25,4 @@ The goal of this is for clustering level 2.
 
 You may also earn evaluation level 2. To do this, use at least two metrics, explain them thoroughly, and use train-test splits.  
 
-You can earn visualize and summarize by adding and interpretting visualizations and summary statistics. 
+You can earn visualize and summarize by adding and interpretting visualizations and summary statistics.
