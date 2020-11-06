@@ -2,7 +2,7 @@
 
 __Due: 2020-11-010__
 
-
+[assignemnt submission](https://classroom.github.com/a/7YcIphj8)
 
 1. Apply Kmeans to the dataset you used for assignment 7.
 1.  Evaluate how well clustering worked on the data:
