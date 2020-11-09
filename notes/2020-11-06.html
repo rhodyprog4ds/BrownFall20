@@ -1,0 +1,1034 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class 26: More Clustering Models &#8212; Programming for Data Science at URI Fall 2020</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Programming for Data Science at URI Fall 2020</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to Programming for Data Science
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../syllabus/index.html">
+   Syllabus
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../syllabus/about-course.html">
+     About
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../syllabus/tools.html">
+     Tools and Resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../syllabus/grading.html">
+     Grading
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../syllabus/course_map.html">
+     Learning Objective, Schedule, and Rubric
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../syllabus/uri_resources.html">
+     Support
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../syllabus/uri_statements.html">
+     Policies
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="index.html">
+   Class Notes
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-11.html">
+     Class 2: intro to notebooks and python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-14.html">
+     Class 3: Welcome to Week 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-16.html">
+     Class 4: Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-18.html">
+     Class 5: Accessing Data, continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-21.html">
+     Class 6: Exploratory Data Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-23.html">
+     Class 7: Visualization for EDA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-25.html">
+     Class 8: Visualization and Starting to Clean Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-28.html">
+     Class 9: Preparing Data For Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-30.html">
+     Class 10: Cleaning review and Ray Summit Keynotes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-02.html">
+     Class 11: Cleaning Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-05.html">
+     Class 12: Constructing Datasets from Multiple Sources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-07.html">
+     Class 13: Data from multiple sources and Databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-12.html">
+     Class 15: Intro to ML &amp; Modeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-14.html">
+     Class 16: Naive Bayes Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-16.html">
+     Class 17: Evaluating Classification and Midsemester Feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-19.html">
+     Class 18: Mid Semester Checkin, Git, &amp; How GNB makes decisions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-21.html">
+     Class 19: Decision Trees
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-23.html">
+     Class 20: Decision Trees and Cross Validation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-26.html">
+     Class 21: Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-28.html">
+     Class 22: More Regression, More Evaluation and LASSO
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-30.html">
+     Class 23: Interpretting Regression Evaluations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-02.html">
+     Class 24: Clustering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-04.html">
+     Class : Evaluating Clustering
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../assignments/index.html">
+   Assignments
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/01-python-syllabus.html">
+     Assignment 1: Portfolio Setup, Data Science, and Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/02-python-access.html">
+     Assignment 2: Practicing Python and Accessing Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/03-exploratory.html">
+     Assignment 3: Exploratory Data Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/04-prepare.html">
+     Assignment 4: Preparing Data for Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/05-construct.html">
+     Assignment 5: Constructing Datasets and Using Databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/06-naive-bayes.html">
+     Assignment 6: Naive Bayes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/07-decision-tree.html">
+     Assignment 7: Decision Trees
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/08-regression.html">
+     Assignment 8: Linear Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/09-clustering.html">
+     Assignment 9
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../portfolio/index.html">
+   Portfolio
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../portfolio/formatting.html">
+     Formatting Tips
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../portfolio/reflective.html">
+     Reflective Prompts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../portfolio/analyses.html">
+     Analysis Prompts
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../faq/index.html">
+   FAQ
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../faq/syllabus.html">
+     Syllabus FAQ
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../faq/github.html">
+     GitHub FAQ
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../faq/debugging.html">
+     Common Debugging Issues
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../resources/index.html">
+   Resources
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/tips.html">
+     General Tips and Resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/python.html">
+     References on Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/datasets.html">
+     Data Sources
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/notes/2020-11-06.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notes/2020-11-06.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        <a class="issues-button"
+            href="https://github.com/rhodyprog4ds/BrownFall20//issues/new?title=Issue%20on%20page%20%2Fnotes/2020-11-06.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/rhodyprog4ds/BrownFall20/edit/main/notes/2020-11-06.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rhodyprog4ds/BrownFall20/main?urlpath=tree/notes/2020-11-06.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="class-26-more-clustering-models">
+<h1>Class 26: More Clustering Models<a class="headerlink" href="#class-26-more-clustering-models" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load http://drsmb.co/310</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cluster</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris_X</span><span class="p">,</span> <span class="n">iris_y</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">(</span><span class="n">return_X_y</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msc</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">MeanShift</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">iris_X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MeanShift()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">iris_X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">iris_X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span> <span class="n">msc</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fe3f2b38090&gt;
+</pre></div>
+</div>
+<img alt="../_images/2020-11-06_5_1.png" src="../_images/2020-11-06_5_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">iris_X</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span> <span class="n">msc</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mf">7e1512556191</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">iris_X</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span> <span class="n">msc</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/seaborn/_decorators.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>             <span class="p">)</span>
+<span class="nn">     45         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
+<span class="ne">---&gt; </span><span class="mi">46</span>         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="k">return</span> <span class="n">inner_f</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/seaborn/axisgrid.py</span> in <span class="ni">pairplot</span><span class="nt">(data, hue, hue_order, palette, vars, x_vars, y_vars, kind, diag_kind, markers, height, aspect, corner, dropna, plot_kws, diag_kws, grid_kws, size)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1915</span>         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1916</span>             <span class="s2">&quot;&#39;data&#39; must be pandas DataFrame object, not: </span><span class="si">{typefound}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="ne">-&gt; </span><span class="mi">1917</span>                 <span class="n">typefound</span><span class="o">=</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">)))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1918</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1919</span>     <span class="n">plot_kws</span> <span class="o">=</span> <span class="p">{}</span> <span class="k">if</span> <span class="n">plot_kws</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">plot_kws</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="ne">TypeError</span>: &#39;data&#39; must be pandas DataFrame object, not: &lt;class &#39;numpy.ndarray&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spc</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">SpectralClustering</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">iris_X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SpectralClustering(n_clusters=3)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">iris_X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">iris_X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">spc</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fe3ee861690&gt;
+</pre></div>
+</div>
+<img alt="../_images/2020-11-06_9_1.png" src="../_images/2020-11-06_9_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">km3</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">km3</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">iris_X</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">iris_X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">iris_X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">km3</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fe3ee7de310&gt;
+</pre></div>
+</div>
+<img alt="../_images/2020-11-06_10_1.png" src="../_images/2020-11-06_10_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">NearestNeighbors</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nbrs</span> <span class="o">=</span> <span class="n">NearestNeighbors</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nbrs</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">iris_X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NearestNeighbors()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dists</span><span class="p">,</span> <span class="n">indx</span> <span class="o">=</span> <span class="n">nbrs</span><span class="o">.</span><span class="n">kneighbors</span><span class="p">(</span><span class="n">iris_X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dists</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.        , 0.1       , 0.14142136, 0.14142136, 0.14142136],
+       [0.        , 0.14142136, 0.14142136, 0.14142136, 0.17320508],
+       [0.        , 0.14142136, 0.24494897, 0.26457513, 0.26457513],
+       [0.        , 0.14142136, 0.17320508, 0.2236068 , 0.24494897],
+       [0.        , 0.14142136, 0.14142136, 0.17320508, 0.17320508],
+       [0.        , 0.33166248, 0.34641016, 0.36055513, 0.37416574],
+       [0.        , 0.2236068 , 0.26457513, 0.3       , 0.31622777],
+       [0.        , 0.1       , 0.14142136, 0.17320508, 0.2       ],
+       [0.        , 0.14142136, 0.3       , 0.31622777, 0.34641016],
+       [0.        , 0.1       , 0.17320508, 0.17320508, 0.17320508],
+       [0.        , 0.1       , 0.28284271, 0.3       , 0.33166248],
+       [0.        , 0.2236068 , 0.2236068 , 0.28284271, 0.3       ],
+       [0.        , 0.14142136, 0.17320508, 0.2       , 0.2       ],
+       [0.        , 0.24494897, 0.31622777, 0.34641016, 0.47958315],
+       [0.        , 0.41231056, 0.46904158, 0.54772256, 0.55677644],
+       [0.        , 0.36055513, 0.54772256, 0.6164414 , 0.6164414 ],
+       [0.        , 0.34641016, 0.36055513, 0.38729833, 0.38729833],
+       [0.        , 0.1       , 0.14142136, 0.17320508, 0.17320508],
+       [0.        , 0.33166248, 0.38729833, 0.46904158, 0.50990195],
+       [0.        , 0.14142136, 0.14142136, 0.24494897, 0.26457513],
+       [0.        , 0.28284271, 0.3       , 0.36055513, 0.36055513],
+       [0.        , 0.14142136, 0.24494897, 0.24494897, 0.26457513],
+       [0.        , 0.45825757, 0.50990195, 0.50990195, 0.51961524],
+       [0.        , 0.2       , 0.26457513, 0.37416574, 0.38729833],
+       [0.        , 0.3       , 0.37416574, 0.41231056, 0.42426407],
+       [0.        , 0.17320508, 0.2       , 0.2236068 , 0.2236068 ],
+       [0.        , 0.2       , 0.2236068 , 0.2236068 , 0.24494897],
+       [0.        , 0.14142136, 0.14142136, 0.14142136, 0.17320508],
+       [0.        , 0.14142136, 0.14142136, 0.14142136, 0.17320508],
+       [0.        , 0.14142136, 0.17320508, 0.2236068 , 0.2236068 ],
+       [0.        , 0.14142136, 0.14142136, 0.17320508, 0.2236068 ],
+       [0.        , 0.28284271, 0.3       , 0.3       , 0.31622777],
+       [0.        , 0.34641016, 0.34641016, 0.37416574, 0.42426407],
+       [0.        , 0.34641016, 0.36055513, 0.38729833, 0.41231056],
+       [0.        , 0.1       , 0.14142136, 0.14142136, 0.17320508],
+       [0.        , 0.2236068 , 0.3       , 0.31622777, 0.33166248],
+       [0.        , 0.3       , 0.31622777, 0.33166248, 0.34641016],
+       [0.        , 0.14142136, 0.24494897, 0.26457513, 0.26457513],
+       [0.        , 0.14142136, 0.2       , 0.24494897, 0.3       ],
+       [0.        , 0.1       , 0.14142136, 0.14142136, 0.14142136],
+       [0.        , 0.14142136, 0.17320508, 0.17320508, 0.24494897],
+       [0.        , 0.6244998 , 0.71414284, 0.76811457, 0.78102497],
+       [0.        , 0.2       , 0.2236068 , 0.3       , 0.3       ],
+       [0.        , 0.2236068 , 0.26457513, 0.31622777, 0.37416574],
+       [0.        , 0.36055513, 0.37416574, 0.41231056, 0.41231056],
+       [0.        , 0.14142136, 0.2       , 0.2       , 0.24494897],
+       [0.        , 0.14142136, 0.24494897, 0.24494897, 0.3       ],
+       [0.        , 0.14142136, 0.14142136, 0.2236068 , 0.2236068 ],
+       [0.        , 0.1       , 0.2236068 , 0.24494897, 0.24494897],
+       [0.        , 0.14142136, 0.17320508, 0.2236068 , 0.2236068 ],
+       [0.        , 0.26457513, 0.33166248, 0.43588989, 0.45825757],
+       [0.        , 0.26457513, 0.31622777, 0.34641016, 0.37416574],
+       [0.        , 0.26457513, 0.28284271, 0.31622777, 0.34641016],
+       [0.        , 0.2       , 0.3       , 0.31622777, 0.43588989],
+       [0.        , 0.24494897, 0.31622777, 0.37416574, 0.37416574],
+       [0.        , 0.3       , 0.31622777, 0.31622777, 0.33166248],
+       [0.        , 0.26457513, 0.37416574, 0.42426407, 0.45825757],
+       [0.        , 0.14142136, 0.38729833, 0.45825757, 0.72111026],
+       [0.        , 0.24494897, 0.24494897, 0.31622777, 0.31622777],
+       [0.        , 0.38729833, 0.50990195, 0.51961524, 0.52915026],
+       [0.        , 0.36055513, 0.45825757, 0.67082039, 0.71414284],
+       [0.        , 0.3       , 0.33166248, 0.36055513, 0.36055513],
+       [0.        , 0.48989795, 0.51961524, 0.54772256, 0.58309519],
+       [0.        , 0.14142136, 0.2236068 , 0.24494897, 0.42426407],
+       [0.        , 0.42426407, 0.4472136 , 0.50990195, 0.51961524],
+       [0.        , 0.14142136, 0.31622777, 0.31622777, 0.34641016],
+       [0.        , 0.2       , 0.3       , 0.38729833, 0.41231056],
+       [0.        , 0.24494897, 0.28284271, 0.33166248, 0.36055513],
+       [0.        , 0.26457513, 0.50990195, 0.53851648, 0.678233  ],
+       [0.        , 0.17320508, 0.24494897, 0.26457513, 0.26457513],
+       [0.        , 0.2236068 , 0.3       , 0.36055513, 0.42426407],
+       [0.        , 0.33166248, 0.34641016, 0.37416574, 0.4       ],
+       [0.        , 0.36055513, 0.36055513, 0.41231056, 0.42426407],
+       [0.        , 0.2236068 , 0.3       , 0.38729833, 0.43588989],
+       [0.        , 0.2       , 0.26457513, 0.36055513, 0.38729833],
+       [0.        , 0.14142136, 0.24494897, 0.26457513, 0.31622777],
+       [0.        , 0.31622777, 0.34641016, 0.34641016, 0.37416574],
+       [0.        , 0.31622777, 0.37416574, 0.41231056, 0.42426407],
+       [0.        , 0.2       , 0.24494897, 0.33166248, 0.34641016],
+       [0.        , 0.34641016, 0.42426407, 0.43588989, 0.4472136 ],
+       [0.        , 0.14142136, 0.17320508, 0.3       , 0.3       ],
+       [0.        , 0.14142136, 0.26457513, 0.34641016, 0.43588989],
+       [0.        , 0.14142136, 0.26457513, 0.28284271, 0.3       ],
+       [0.        , 0.33166248, 0.36055513, 0.36055513, 0.37416574],
+       [0.        , 0.2       , 0.41231056, 0.47958315, 0.48989795],
+       [0.        , 0.37416574, 0.42426407, 0.45825757, 0.46904158],
+       [0.        , 0.28284271, 0.31622777, 0.31622777, 0.33166248],
+       [0.        , 0.26457513, 0.57445626, 0.59160798, 0.60827625],
+       [0.        , 0.17320508, 0.17320508, 0.2236068 , 0.31622777],
+       [0.        , 0.2       , 0.24494897, 0.3       , 0.3       ],
+       [0.        , 0.26457513, 0.31622777, 0.42426407, 0.42426407],
+       [0.        , 0.14142136, 0.2       , 0.3       , 0.34641016],
+       [0.        , 0.14142136, 0.24494897, 0.26457513, 0.26457513],
+       [0.        , 0.14142136, 0.36055513, 0.38729833, 0.64807407],
+       [0.        , 0.17320508, 0.2236068 , 0.26457513, 0.3       ],
+       [0.        , 0.14142136, 0.17320508, 0.24494897, 0.33166248],
+       [0.        , 0.14142136, 0.14142136, 0.17320508, 0.2236068 ],
+       [0.        , 0.2       , 0.33166248, 0.34641016, 0.34641016],
+       [0.        , 0.38729833, 0.38729833, 0.72111026, 0.79372539],
+       [0.        , 0.14142136, 0.17320508, 0.2236068 , 0.24494897],
+       [0.        , 0.42426407, 0.5       , 0.50990195, 0.55677644],
+       [0.        , 0.        , 0.26457513, 0.31622777, 0.33166248],
+       [0.        , 0.38729833, 0.4       , 0.41231056, 0.45825757],
+       [0.        , 0.24494897, 0.24494897, 0.33166248, 0.38729833],
+       [0.        , 0.3       , 0.31622777, 0.36055513, 0.38729833],
+       [0.        , 0.26457513, 0.52915026, 0.54772256, 0.54772256],
+       [0.        , 0.73484692, 0.76157731, 0.79372539, 0.87749644],
+       [0.        , 0.26457513, 0.43588989, 0.52915026, 0.54772256],
+       [0.        , 0.55677644, 0.6       , 0.6164414 , 0.6164414 ],
+       [0.        , 0.63245553, 0.67082039, 0.70710678, 0.75498344],
+       [0.        , 0.2236068 , 0.37416574, 0.42426407, 0.42426407],
+       [0.        , 0.34641016, 0.37416574, 0.37416574, 0.38729833],
+       [0.        , 0.17320508, 0.34641016, 0.36055513, 0.37416574],
+       [0.        , 0.26457513, 0.26457513, 0.33166248, 0.51961524],
+       [0.        , 0.48989795, 0.50990195, 0.50990195, 0.51961524],
+       [0.        , 0.3       , 0.37416574, 0.37416574, 0.38729833],
+       [0.        , 0.14142136, 0.24494897, 0.36055513, 0.38729833],
+       [0.        , 0.41231056, 0.81853528, 0.86023253, 1.00498756],
+       [0.        , 0.41231056, 0.54772256, 0.89442719, 0.92736185],
+       [0.        , 0.43588989, 0.51961524, 0.53851648, 0.58309519],
+       [0.        , 0.2236068 , 0.26457513, 0.3       , 0.3       ],
+       [0.        , 0.31622777, 0.31622777, 0.33166248, 0.45825757],
+       [0.        , 0.26457513, 0.41231056, 0.60827625, 0.678233  ],
+       [0.        , 0.17320508, 0.24494897, 0.36055513, 0.36055513],
+       [0.        , 0.3       , 0.31622777, 0.37416574, 0.37416574],
+       [0.        , 0.34641016, 0.38729833, 0.43588989, 0.46904158],
+       [0.        , 0.17320508, 0.24494897, 0.28284271, 0.38729833],
+       [0.        , 0.14142136, 0.24494897, 0.28284271, 0.3       ],
+       [0.        , 0.1       , 0.31622777, 0.33166248, 0.37416574],
+       [0.        , 0.34641016, 0.50990195, 0.51961524, 0.55677644],
+       [0.        , 0.26457513, 0.45825757, 0.46904158, 0.50990195],
+       [0.        , 0.41231056, 0.88317609, 0.92736185, 0.93273791],
+       [0.        , 0.1       , 0.3       , 0.42426407, 0.43588989],
+       [0.        , 0.33166248, 0.36055513, 0.37416574, 0.43588989],
+       [0.        , 0.53851648, 0.55677644, 0.58309519, 0.66332496],
+       [0.        , 0.53851648, 0.54772256, 0.66332496, 0.678233  ],
+       [0.        , 0.24494897, 0.38729833, 0.42426407, 0.43588989],
+       [0.        , 0.14142136, 0.24494897, 0.38729833, 0.43588989],
+       [0.        , 0.14142136, 0.2236068 , 0.28284271, 0.31622777],
+       [0.        , 0.17320508, 0.36055513, 0.36055513, 0.37416574],
+       [0.        , 0.24494897, 0.26457513, 0.34641016, 0.34641016],
+       [0.        , 0.24494897, 0.36055513, 0.46904158, 0.50990195],
+       [0.        , 0.        , 0.26457513, 0.31622777, 0.33166248],
+       [0.        , 0.2236068 , 0.31622777, 0.31622777, 0.34641016],
+       [0.        , 0.24494897, 0.3       , 0.31622777, 0.4       ],
+       [0.        , 0.24494897, 0.36055513, 0.36055513, 0.37416574],
+       [0.        , 0.24494897, 0.37416574, 0.38729833, 0.41231056],
+       [0.        , 0.2236068 , 0.34641016, 0.36055513, 0.36055513],
+       [0.        , 0.24494897, 0.3       , 0.55677644, 0.6164414 ],
+       [0.        , 0.28284271, 0.31622777, 0.33166248, 0.33166248]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">indx</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[  0,  17,   4,  39,  27],
+       [  1,  34,  45,  12,   9],
+       [  2,  47,   3,  12,   6],
+       [  3,  47,  29,  30,   2],
+       [  4,  37,   0,  17,  40],
+       [  5,  18,  10,  48,  44],
+       [  6,  47,   2,  11,  42],
+       [  7,  39,  49,   0,  17],
+       [  8,  38,   3,  42,  13],
+       [  9,  34,   1,  30,  12],
+       [ 10,  48,  27,  36,  19],
+       [ 11,  29,   7,  26,  24],
+       [ 12,   1,   9,  45,  34],
+       [ 13,  38,  42,   8,  47],
+       [ 14,  33,  16,  15,  18],
+       [ 15,  33,  14,   5,  16],
+       [ 16,  10,  48,  33,  19],
+       [ 17,   0,  40,   4,  39],
+       [ 18,   5,  10,  48,  20],
+       [ 19,  21,  46,  48,   4],
+       [ 20,  31,  27,  28,  10],
+       [ 21,  19,  46,  17,   4],
+       [ 22,   6,   2,  37,  40],
+       [ 23,  26,  43,  39,   7],
+       [ 24,  11,  29,  26,  30],
+       [ 25,  34,   9,   1,  30],
+       [ 26,  23,  43,   7,  39],
+       [ 27,  28,   0,  39,  17],
+       [ 28,  27,   0,  39,  17],
+       [ 29,  30,   3,  11,  47],
+       [ 30,  29,  34,   9,  25],
+       [ 31,  20,  28,  27,  36],
+       [ 32,  46,  33,  19,  48],
+       [ 33,  32,  15,  16,  14],
+       [ 34,   9,   1,  30,  25],
+       [ 35,  49,   1,   2,  40],
+       [ 36,  10,  31,  28,  48],
+       [ 37,   4,   0,  40,   7],
+       [ 38,   8,  42,  13,   3],
+       [ 39,   7,   0,  28,  27],
+       [ 40,  17,   0,   4,   7],
+       [ 41,   8,  38,  45,  13],
+       [ 42,  38,  47,   3,   2],
+       [ 43,  26,  23,  21,  17],
+       [ 44,  46,   5,  21,  19],
+       [ 45,   1,  12,  34,  30],
+       [ 46,  19,  21,  48,   4],
+       [ 47,   3,   2,  42,   6],
+       [ 48,  10,  27,  19,  46],
+       [ 49,   7,  39,  35,   0],
+       [ 50,  52,  86,  65,  76],
+       [ 51,  56,  75,  65,  86],
+       [ 52,  50,  86,  77,  76],
+       [ 53,  89,  80,  69,  81],
+       [ 54,  58,  75,  76,  86],
+       [ 55,  66,  90,  96,  94],
+       [ 56,  51,  85,  91, 127],
+       [ 57,  93,  98,  60,  81],
+       [ 58,  75,  54,  65,  76],
+       [ 59,  89,  94,  53,  80],
+       [ 60,  93,  57,  81,  80],
+       [ 61,  96,  78,  95,  99],
+       [ 62,  92,  69,  67,  80],
+       [ 63,  91,  73,  78,  97],
+       [ 64,  82,  79,  88,  99],
+       [ 65,  75,  58,  86,  51],
+       [ 66,  84,  55,  96,  78],
+       [ 67,  92,  82,  99,  69],
+       [ 68,  87,  72, 119,  54],
+       [ 69,  80,  89,  81,  92],
+       [ 70, 138, 127, 149,  85],
+       [ 71,  97,  82,  92,  61],
+       [ 72, 133, 123, 146,  83],
+       [ 73,  63,  91,  78,  97],
+       [ 74,  97,  75,  58,  54],
+       [ 75,  65,  58,  74,  54],
+       [ 76,  58,  86,  52,  54],
+       [ 77,  52,  86, 147, 110],
+       [ 78,  91,  63,  61,  97],
+       [ 79,  81,  80,  69,  64],
+       [ 80,  81,  69,  89,  53],
+       [ 81,  80,  69,  79,  89],
+       [ 82,  92,  99,  67,  69],
+       [ 83, 133, 101, 142, 149],
+       [ 84,  66,  55,  96,  88],
+       [ 85,  56,  70,  51,  91],
+       [ 86,  52,  65,  58,  50],
+       [ 87,  68,  72,  62,  54],
+       [ 88,  96,  95,  99,  94],
+       [ 89,  53,  69,  80,  94],
+       [ 90,  94,  55,  96,  89],
+       [ 91,  63,  78,  73,  97],
+       [ 92,  82,  67,  99,  69],
+       [ 93,  57,  60,  98,  81],
+       [ 94,  99,  96,  90,  89],
+       [ 95,  96,  88,  99,  94],
+       [ 96,  95,  99,  88,  94],
+       [ 97,  74,  71,  91,  78],
+       [ 98,  57,  93,  60,  79],
+       [ 99,  96,  94,  88,  95],
+       [100, 136, 144, 104, 143],
+       [101, 142, 113, 121, 149],
+       [102, 125, 120, 143, 130],
+       [103, 116, 137, 128, 111],
+       [104, 132, 128, 140, 124],
+       [105, 122, 107, 135, 118],
+       [106,  84,  59,  90,  89],
+       [107, 130, 125, 105, 102],
+       [108, 128, 103, 132, 116],
+       [109, 143, 120, 144, 102],
+       [110, 147, 115,  77, 145],
+       [111, 147, 128, 146, 103],
+       [112, 139, 140, 120, 145],
+       [113, 101, 142, 121, 114],
+       [114, 121, 101, 142, 113],
+       [115, 148, 145, 110, 147],
+       [116, 137, 103, 147, 111],
+       [117, 131, 105, 109, 135],
+       [118, 122, 105, 135, 107],
+       [119,  72,  83,  68, 146],
+       [120, 143, 140, 124, 144],
+       [121, 101, 142, 113, 149],
+       [122, 105, 118, 107, 130],
+       [123, 126, 146, 127,  72],
+       [124, 120, 143, 140, 112],
+       [125, 129, 102, 107, 130],
+       [126, 123, 127, 138, 146],
+       [127, 138, 126, 149,  70],
+       [128, 132, 104, 103, 111],
+       [129, 125, 130, 102, 107],
+       [130, 107, 102, 125, 129],
+       [131, 117, 105, 135, 109],
+       [132, 128, 104, 103, 111],
+       [133,  83,  72, 123, 126],
+       [134, 103,  83, 133, 111],
+       [135, 130, 105, 102, 107],
+       [136, 148, 115, 100, 144],
+       [137, 116, 103, 147, 128],
+       [138, 127,  70, 126, 149],
+       [139, 112, 145, 141, 120],
+       [140, 144, 120, 112, 143],
+       [141, 145, 139, 112, 110],
+       [101, 142, 113, 121, 149],
+       [143, 120, 124, 144, 140],
+       [144, 140, 120, 143, 124],
+       [145, 141, 147, 139, 112],
+       [146, 123, 111, 126,  72],
+       [147, 110, 111, 116, 145],
+       [148, 136, 115, 110, 147],
+       [149, 127, 138, 101, 142]])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Professor Sarah M Brown<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
