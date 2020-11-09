@@ -57,7 +57,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Class : Evaluating Clustering" href="2020-11-04.html" />
+    <link rel="next" title="Class 25: Evaluating Clustering" href="2020-11-04.html" />
     <link rel="prev" title="Class 23: Interpretting Regression Evaluations" href="2020-10-30.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -252,7 +252,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2020-11-04.html">
-     Class : Evaluating Clustering
+     Class 25: Evaluating Clustering
     </a>
    </li>
    <li class="toctree-l2">
@@ -262,7 +262,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2020-11-09.html">
-     Class : Model Optimization- Choosing K
+     Class 27: Model Optimization- Choosing K
     </a>
    </li>
   </ul>
@@ -566,7 +566,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7ff07c219a10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f90edc69e50&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-11-02_3_1.png" src="../_images/2020-11-02_3_1.png" />
@@ -607,28 +607,28 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>2.59</td>
-      <td>1.95</td>
+      <td>6.93</td>
+      <td>2.90</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1.36</td>
-      <td>5.10</td>
+      <td>6.28</td>
+      <td>2.76</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1.17</td>
-      <td>2.75</td>
+      <td>6.20</td>
+      <td>1.86</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1.35</td>
-      <td>6.77</td>
+      <td>6.05</td>
+      <td>1.97</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5.79</td>
-      <td>2.43</td>
+      <td>1.93</td>
+      <td>1.92</td>
     </tr>
   </tbody>
 </table>
@@ -692,10 +692,10 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.88, 1.32],
-       [2.3 , 2.3 ],
-       [6.59, 2.08],
-       [6.4 , 2.16]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2.46, 5.98],
+       [1.87, 2.12],
+       [2.71, 6.24],
+       [5.93, 6.24]])
 </pre></div>
 </div>
 </div>
@@ -796,6 +796,14 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <img alt="../_images/2020-11-02_17_4.png" src="../_images/2020-11-02_17_4.png" />
 <img alt="../_images/2020-11-02_17_5.png" src="../_images/2020-11-02_17_5.png" />
 <img alt="../_images/2020-11-02_17_6.png" src="../_images/2020-11-02_17_6.png" />
+<img alt="../_images/2020-11-02_17_7.png" src="../_images/2020-11-02_17_7.png" />
+<img alt="../_images/2020-11-02_17_8.png" src="../_images/2020-11-02_17_8.png" />
+<img alt="../_images/2020-11-02_17_9.png" src="../_images/2020-11-02_17_9.png" />
+<img alt="../_images/2020-11-02_17_10.png" src="../_images/2020-11-02_17_10.png" />
+<img alt="../_images/2020-11-02_17_11.png" src="../_images/2020-11-02_17_11.png" />
+<img alt="../_images/2020-11-02_17_12.png" src="../_images/2020-11-02_17_12.png" />
+<img alt="../_images/2020-11-02_17_13.png" src="../_images/2020-11-02_17_13.png" />
+<img alt="../_images/2020-11-02_17_14.png" src="../_images/2020-11-02_17_14.png" />
 </div>
 </div>
 <p>These plots can be saved and merged into a gif with, for example <a class="reference external" href="https://imagemagick.org/script/download.php">imagemagick</a> to create the gifs above. Since we’ve saved them in a single dataframe, we can also look at that</p>
@@ -831,44 +839,64 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
       <th>2</th>
       <th>3</th>
       <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>2.59</td>
-      <td>1.95</td>
-      <td>2</td>
+      <td>6.93</td>
+      <td>2.90</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
       <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1.36</td>
-      <td>5.10</td>
+      <td>6.28</td>
+      <td>2.76</td>
       <td>1</td>
-      <td>1</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
       <td>1</td>
       <td>1</td>
       <td>1</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1.17</td>
-      <td>2.75</td>
-      <td>3</td>
+      <td>6.20</td>
+      <td>1.86</td>
+      <td>0</td>
       <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1.35</td>
-      <td>6.77</td>
-      <td>2</td>
+      <td>6.05</td>
+      <td>1.97</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
       <td>1</td>
       <td>1</td>
       <td>1</td>
@@ -876,13 +904,17 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
     </tr>
     <tr>
       <th>4</th>
-      <td>5.79</td>
-      <td>2.43</td>
-      <td>3</td>
-      <td>3</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
+      <td>1.93</td>
+      <td>1.92</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
@@ -906,7 +938,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7ff0395f8150&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f90e817f810&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-11-02_21_1.png" src="../_images/2020-11-02_21_1.png" />
@@ -949,7 +981,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ff0333da810&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f90e2722890&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-11-02_28_1.png" src="../_images/2020-11-02_28_1.png" />
@@ -963,7 +995,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ff0333cea90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f90e2704250&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-11-02_29_1.png" src="../_images/2020-11-02_29_1.png" />
@@ -1001,7 +1033,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="2020-10-30.html" title="previous page">Class 23: Interpretting Regression Evaluations</a>
-    <a class='right-next' id="next-link" href="2020-11-04.html" title="next page">Class : Evaluating Clustering</a>
+    <a class='right-next' id="next-link" href="2020-11-04.html" title="next page">Class 25: Evaluating Clustering</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

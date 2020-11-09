@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Class : Model Optimization- Choosing K &#8212; Programming for Data Science at URI Fall 2020</title>
+    <title>Class 27: Model Optimization- Choosing K &#8212; Programming for Data Science at URI Fall 2020</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -252,7 +252,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2020-11-04.html">
-     Class : Evaluating Clustering
+     Class 25: Evaluating Clustering
     </a>
    </li>
    <li class="toctree-l2">
@@ -262,7 +262,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Class : Model Optimization- Choosing K
+     Class 27: Model Optimization- Choosing K
     </a>
    </li>
   </ul>
@@ -502,8 +502,8 @@
         
               <div>
                 
-  <div class="section" id="class-model-optimization-choosing-k">
-<h1>Class : Model Optimization- Choosing K<a class="headerlink" href="#class-model-optimization-choosing-k" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="class-27-model-optimization-choosing-k">
+<h1>Class 27: Model Optimization- Choosing K<a class="headerlink" href="#class-27-model-optimization-choosing-k" title="Permalink to this headline">¶</a></h1>
 <ol class="simple">
 <li><p>On the zoom chat, say hello</p></li>
 <li><p>Log onto Prismia</p></li>
@@ -546,7 +546,6 @@
     <span class="n">km</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
     <span class="n">km</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
     <span class="n">score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">silhouette_score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
-    
 </pre></div>
 </div>
 </div>
@@ -558,14 +557,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.6151956537579685,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.6152428695158447,
  0.5689398715407455,
- 0.5388658222509434,
- 0.5161135789155987,
- 0.4942858774925342,
- 0.47717401957527783,
- 0.45946917618386834,
- 0.4472191102978724]
+ 0.5385291617893929,
+ 0.5160098177580555,
+ 0.4954892476648668,
+ 0.4797917245143165,
+ 0.4588725916710707,
+ 0.444987563684623]
 </pre></div>
 </div>
 </div>
@@ -577,7 +576,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1a8e5a8410&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8f95a67090&gt;]
 </pre></div>
 </div>
 <img alt="../_images/2020-11-09_6_1.png" src="../_images/2020-11-09_6_1.png" />
@@ -590,7 +589,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f1a8e514910&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f8f95a0cdd0&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-11-09_7_1.png" src="../_images/2020-11-09_7_1.png" />
@@ -611,7 +610,6 @@
     <span class="n">km</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
     <span class="n">km</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">iris_X</span><span class="p">)</span>
     <span class="n">score_iris</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">silhouette_score</span><span class="p">(</span><span class="n">iris_X</span><span class="p">,</span><span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
-    
 </pre></div>
 </div>
 </div>
@@ -623,7 +621,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1a8e3ea690&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8f95850c10&gt;]
 </pre></div>
 </div>
 <img alt="../_images/2020-11-09_10_1.png" src="../_images/2020-11-09_10_1.png" />
@@ -641,8 +639,6 @@
     <span class="n">silohette_iris</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">silhouette_score</span><span class="p">(</span><span class="n">iris_X</span><span class="p">,</span><span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
     <span class="n">ch_iris</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">calinski_harabasz_score</span><span class="p">(</span><span class="n">iris_X</span><span class="p">,</span><span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
     <span class="n">db_iris</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">davies_bouldin_score</span><span class="p">(</span><span class="n">iris_X</span><span class="p">,</span><span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
-    
-    
 </pre></div>
 </div>
 </div>
@@ -657,7 +653,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1a8d971410&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8f94de7390&gt;]
 </pre></div>
 </div>
 <img alt="../_images/2020-11-09_12_1.png" src="../_images/2020-11-09_12_1.png" />
