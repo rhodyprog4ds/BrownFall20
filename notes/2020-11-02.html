@@ -255,6 +255,16 @@
      Class : Evaluating Clustering
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-06.html">
+     Class 26: More Clustering Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-09.html">
+     Class : Model Optimization- Choosing K
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -556,7 +566,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f45c9e123d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7ff07c219a10&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-11-02_3_1.png" src="../_images/2020-11-02_3_1.png" />
@@ -597,28 +607,28 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>1.34</td>
-      <td>3.17</td>
+      <td>2.59</td>
+      <td>1.95</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>5.68</td>
-      <td>6.51</td>
+      <td>1.36</td>
+      <td>5.10</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>5.98</td>
-      <td>1.83</td>
+      <td>1.17</td>
+      <td>2.75</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1.77</td>
-      <td>5.58</td>
+      <td>1.35</td>
+      <td>6.77</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>1.88</td>
-      <td>2.33</td>
+      <td>5.79</td>
+      <td>2.43</td>
     </tr>
   </tbody>
 </table>
@@ -682,10 +692,10 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[6.91, 6.58],
-       [5.68, 6.51],
-       [5.52, 4.38],
-       [5.87, 1.87]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.88, 1.32],
+       [2.3 , 2.3 ],
+       [6.59, 2.08],
+       [6.4 , 2.16]])
 </pre></div>
 </div>
 </div>
@@ -786,18 +796,6 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <img alt="../_images/2020-11-02_17_4.png" src="../_images/2020-11-02_17_4.png" />
 <img alt="../_images/2020-11-02_17_5.png" src="../_images/2020-11-02_17_5.png" />
 <img alt="../_images/2020-11-02_17_6.png" src="../_images/2020-11-02_17_6.png" />
-<img alt="../_images/2020-11-02_17_7.png" src="../_images/2020-11-02_17_7.png" />
-<img alt="../_images/2020-11-02_17_8.png" src="../_images/2020-11-02_17_8.png" />
-<img alt="../_images/2020-11-02_17_9.png" src="../_images/2020-11-02_17_9.png" />
-<img alt="../_images/2020-11-02_17_10.png" src="../_images/2020-11-02_17_10.png" />
-<img alt="../_images/2020-11-02_17_11.png" src="../_images/2020-11-02_17_11.png" />
-<img alt="../_images/2020-11-02_17_12.png" src="../_images/2020-11-02_17_12.png" />
-<img alt="../_images/2020-11-02_17_13.png" src="../_images/2020-11-02_17_13.png" />
-<img alt="../_images/2020-11-02_17_14.png" src="../_images/2020-11-02_17_14.png" />
-<img alt="../_images/2020-11-02_17_15.png" src="../_images/2020-11-02_17_15.png" />
-<img alt="../_images/2020-11-02_17_16.png" src="../_images/2020-11-02_17_16.png" />
-<img alt="../_images/2020-11-02_17_17.png" src="../_images/2020-11-02_17_17.png" />
-<img alt="../_images/2020-11-02_17_18.png" src="../_images/2020-11-02_17_18.png" />
 </div>
 </div>
 <p>These plots can be saved and merged into a gif with, for example <a class="reference external" href="https://imagemagick.org/script/download.php">imagemagick</a> to create the gifs above. Since we’ve saved them in a single dataframe, we can also look at that</p>
@@ -833,73 +831,43 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
       <th>2</th>
       <th>3</th>
       <th>4</th>
-      <th>5</th>
-      <th>6</th>
-      <th>7</th>
-      <th>8</th>
-      <th>9</th>
-      <th>10</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1.34</td>
-      <td>3.17</td>
+      <td>2.59</td>
+      <td>1.95</td>
+      <td>2</td>
       <td>1</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>5.68</td>
-      <td>6.51</td>
+      <td>1.36</td>
+      <td>5.10</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.17</td>
+      <td>2.75</td>
       <td>3</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>5.98</td>
-      <td>1.83</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1.77</td>
-      <td>5.58</td>
-      <td>3</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
+      <td>1.35</td>
+      <td>6.77</td>
       <td>2</td>
       <td>1</td>
       <td>1</td>
@@ -908,16 +876,10 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
     </tr>
     <tr>
       <th>4</th>
-      <td>1.88</td>
-      <td>2.33</td>
-      <td>0</td>
+      <td>5.79</td>
+      <td>2.43</td>
       <td>3</td>
       <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>2</td>
       <td>2</td>
       <td>2</td>
       <td>2</td>
@@ -944,7 +906,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f45c53ed3d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7ff0395f8150&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-11-02_21_1.png" src="../_images/2020-11-02_21_1.png" />
@@ -987,7 +949,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f45befbc210&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ff0333da810&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-11-02_28_1.png" src="../_images/2020-11-02_28_1.png" />
@@ -1001,7 +963,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f45c53f04d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ff0333cea90&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-11-02_29_1.png" src="../_images/2020-11-02_29_1.png" />
