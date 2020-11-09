@@ -26,3 +26,5 @@ The goal of this is for clustering level 2.
 You may also earn evaluation level 2. To do this, use at least two metrics, explain them thoroughly, and use train-test splits.  
 
 You can earn visualize and summarize by adding and interpretting visualizations and summary statistics.
+
+As always, psuedo code or an outline can earn level 1 
