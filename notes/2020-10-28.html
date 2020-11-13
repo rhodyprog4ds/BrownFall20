@@ -319,6 +319,11 @@
      Assignment 9
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/10-optimization.html">
+     Assignment 10: Optimizing Models
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -1132,7 +1137,7 @@ cross_val_score(estimator, X, y=None, *, groups=None, scoring=None, cv=None, n_j
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object _BaseKFold.split at 0x7f332e706ad0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object _BaseKFold.split at 0x7fb712688950&gt;
 </pre></div>
 </div>
 </div>
@@ -1328,21 +1333,21 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Test</td>
+      <td>Train</td>
       <td>Train</td>
     </tr>
     <tr>
       <th>1</th>
+      <td>Test</td>
+      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
+      <td>Test</td>
       <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
+      <td>Test</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1359,11 +1364,11 @@ We can do a similar experiment as above to see what <code class="docutils litera
     </tr>
     <tr>
       <th>3</th>
-      <td>Test</td>
       <td>Train</td>
-      <td>Test</td>
       <td>Train</td>
-      <td>Test</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
@@ -1379,7 +1384,7 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Train</td>
+      <td>Test</td>
       <td>Test</td>
       <td>Train</td>
     </tr>
@@ -1401,8 +1406,8 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Test</td>
-      <td>Test</td>
+      <td>Train</td>
+      <td>Train</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
@@ -1417,10 +1422,10 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
+      <td>Test</td>
+      <td>Test</td>
       <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
+      <td>Test</td>
     </tr>
     <tr>
       <th>439</th>
@@ -1438,13 +1443,13 @@ We can do a similar experiment as above to see what <code class="docutils litera
     <tr>
       <th>440</th>
       <td>Train</td>
+      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
+      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
     </tr>
@@ -1454,7 +1459,7 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Test</td>
+      <td>Train</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
@@ -1490,7 +1495,7 @@ We can do a similar experiment as above to see what <code class="docutils litera
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>167
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>162
 </pre></div>
 </div>
 </div>

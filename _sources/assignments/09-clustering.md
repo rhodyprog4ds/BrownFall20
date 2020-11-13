@@ -1,16 +1,14 @@
 # Assignment 9
 
-__Due: 2020-11-010__
+__Due: 2020-11-10__
 
-[assignemnt submission](https://classroom.github.com/a/7YcIphj8)
+[assignment submission](https://classroom.github.com/a/7YcIphj8)
 
 1. Apply Kmeans to the dataset you used for assignment 7.
 1.  Evaluate how well clustering worked on the data:
-
   - using clustering metrics and
   - using visualization.
   - the ground truth labels
-
 1. Include a discussion of your results that addresses the following:
 
   - describes what the clustering means
@@ -27,4 +25,4 @@ You may also earn evaluation level 2. To do this, use at least two metrics, expl
 
 You can earn visualize and summarize by adding and interpretting visualizations and summary statistics.
 
-As always, psuedo code or an outline can earn level 1 
+As always, psuedo code or an outline can earn level 1
