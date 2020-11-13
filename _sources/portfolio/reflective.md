@@ -92,7 +92,7 @@ Like the day 1 activity, find two different sources that describe the data scien
   - Regression
   - Evaluation
 * - No
-  - Yes, L2
+  - Yes
   - No
   - No
   - No
@@ -125,8 +125,12 @@ Approved Podcasts:
   - Visualize
   - Prepare
   - Construct
+  - Classification
+  - Clustering
+  - Regression
+  - Evaluation
 * - No
-  - Yes, L2
+  - Yes
   - No
   - No
   - No
