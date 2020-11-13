@@ -52,6 +52,7 @@
     - file: assignments/07-decision-tree
     - file: assignments/08-regression
     - file: assignments/09-clustering
+    - file: assignments/10-optimization
 
 - file: portfolio/index
   sections:

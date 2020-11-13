@@ -11,3 +11,5 @@ Assignment TOC:
 - [Assignment 6](06-naive-bayes) Due October 20
 - [Assignment 7](07-decision-tree) Due October 27
 - [Assignment 8](08-regression) Due November 3
+- [Assignment 9](09-clustering) Due November 10
+- [Assignment 10](10-optimization) Due November 17
