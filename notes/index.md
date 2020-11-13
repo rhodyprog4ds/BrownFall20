@@ -25,5 +25,6 @@ Class notes will get posted here day by day
 - [2020-10-30](2020-10-30): Interpretting Regression Metrics
 - [2020-11-02](2020-11-02): Clustering
 - [2020-11-04](2020-11-04): Evaluating Clustering
-- [2020-11-04](2020-11-04): More Clustering Models
-- [2020-11-06](2020-11-06): Optimizing Clustering Models
+- [2020-11-06](2020-11-06): More Clustering Models
+- [2020-11-09](2020-11-09): Optimizing Clustering Models
+- [2020-11-13](2020-11-13): SVM & Grid Search

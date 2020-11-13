@@ -66,7 +66,7 @@
   keyword: regression
   aware: identify what data that can be used for regression looks like
   compentent: can fit linear regression models
-  mastery: can fit and explain nonlinear regression
+  mastery: can fit and explain regrularized or nonlinear regression
   portfolios: [2,3]
   clo: [model]
   assignments: [8,11]
