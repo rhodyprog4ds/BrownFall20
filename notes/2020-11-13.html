@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class 29: Choosing a Model" href="2020-11-16.html" />
+    <link rel="prev" title="Class 27: Model Optimization- Choosing K" href="2020-11-09.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -93,7 +95,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../syllabus/index.html">
    Syllabus
@@ -133,11 +135,11 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="index.html">
    Class Notes
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="2020-09-11.html">
      Class 2: intro to notebooks and python
@@ -261,6 +263,21 @@
    <li class="toctree-l2">
     <a class="reference internal" href="2020-11-09.html">
      Class 27: Model Optimization- Choosing K
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Class 28: SVM &amp; Model Optimization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-16.html">
+     Class 29: Choosing a Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-18.html">
+     Class 30: Learning Curves, Validation Curves
     </a>
    </li>
   </ul>
@@ -567,7 +584,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9210526315789473
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9736842105263158
 </pre></div>
 </div>
 </div>
@@ -624,14 +641,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;mean_fit_time&#39;: array([0.00061765, 0.00072389, 0.00054135, 0.00065832, 0.0005383 ,
-        0.00060668]),
- &#39;std_fit_time&#39;: array([1.15584835e-04, 8.34996191e-06, 1.93419635e-05, 1.26432903e-05,
-        2.37354766e-05, 3.69930378e-05]),
- &#39;mean_score_time&#39;: array([0.0002964 , 0.00032005, 0.00027037, 0.00030918, 0.00026007,
-        0.00028281]),
- &#39;std_score_time&#39;: array([3.07237841e-05, 6.01193142e-06, 1.07283062e-05, 1.34146421e-05,
-        1.68856918e-06, 6.15914150e-06]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;mean_fit_time&#39;: array([0.0007967 , 0.00097404, 0.00074983, 0.00093174, 0.00077257,
+        0.00093174]),
+ &#39;std_fit_time&#39;: array([1.04228750e-04, 2.65930677e-05, 3.23501594e-05, 7.07710523e-05,
+        5.95992277e-05, 1.66967443e-04]),
+ &#39;mean_score_time&#39;: array([0.00042157, 0.00048704, 0.00040421, 0.00044036, 0.00040965,
+        0.00043559]),
+ &#39;std_score_time&#39;: array([1.07022061e-05, 6.11822026e-05, 1.68159313e-05, 5.68816965e-06,
+        4.48288812e-05, 4.29291173e-05]),
  &#39;param_C&#39;: masked_array(data=[0.5, 0.5, 1, 1, 10, 10],
               mask=[False, False, False, False, False, False],
         fill_value=&#39;?&#39;,
@@ -716,10 +733,10 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.000618</td>
-      <td>0.000116</td>
-      <td>0.000296</td>
-      <td>0.000031</td>
+      <td>0.000797</td>
+      <td>0.000104</td>
+      <td>0.000422</td>
+      <td>0.000011</td>
       <td>0.5</td>
       <td>linear</td>
       <td>{'C': 0.5, 'kernel': 'linear'}</td>
@@ -734,10 +751,10 @@
     </tr>
     <tr>
       <th>1</th>
-      <td>0.000724</td>
-      <td>0.000008</td>
-      <td>0.000320</td>
-      <td>0.000006</td>
+      <td>0.000974</td>
+      <td>0.000027</td>
+      <td>0.000487</td>
+      <td>0.000061</td>
       <td>0.5</td>
       <td>rbf</td>
       <td>{'C': 0.5, 'kernel': 'rbf'}</td>
@@ -752,10 +769,10 @@
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000541</td>
-      <td>0.000019</td>
-      <td>0.000270</td>
-      <td>0.000011</td>
+      <td>0.000750</td>
+      <td>0.000032</td>
+      <td>0.000404</td>
+      <td>0.000017</td>
       <td>1</td>
       <td>linear</td>
       <td>{'C': 1, 'kernel': 'linear'}</td>
@@ -770,10 +787,10 @@
     </tr>
     <tr>
       <th>3</th>
-      <td>0.000658</td>
-      <td>0.000013</td>
-      <td>0.000309</td>
-      <td>0.000013</td>
+      <td>0.000932</td>
+      <td>0.000071</td>
+      <td>0.000440</td>
+      <td>0.000006</td>
       <td>1</td>
       <td>rbf</td>
       <td>{'C': 1, 'kernel': 'rbf'}</td>
@@ -788,10 +805,10 @@
     </tr>
     <tr>
       <th>4</th>
-      <td>0.000538</td>
-      <td>0.000024</td>
-      <td>0.000260</td>
-      <td>0.000002</td>
+      <td>0.000773</td>
+      <td>0.000060</td>
+      <td>0.000410</td>
+      <td>0.000045</td>
       <td>10</td>
       <td>linear</td>
       <td>{'C': 10, 'kernel': 'linear'}</td>
@@ -806,10 +823,10 @@
     </tr>
     <tr>
       <th>5</th>
-      <td>0.000607</td>
-      <td>0.000037</td>
-      <td>0.000283</td>
-      <td>0.000006</td>
+      <td>0.000932</td>
+      <td>0.000167</td>
+      <td>0.000436</td>
+      <td>0.000043</td>
       <td>10</td>
       <td>rbf</td>
       <td>{'C': 10, 'kernel': 'rbf'}</td>
@@ -833,8 +850,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 2, 2, 0, 2, 2, 1, 0, 0, 2, 2, 1, 1, 1, 0, 0, 2, 0, 1, 2, 2, 1,
-       2, 2, 1, 0, 0, 0, 1, 2, 1, 0, 2, 1, 1, 0, 2, 0])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 2, 2, 0, 2, 2, 2, 2, 1, 2, 1, 2, 1, 0, 2, 1, 0, 0, 1, 0, 0,
+       2, 1, 0, 0, 0, 0, 0, 0, 2, 2, 1, 2, 1, 2, 1, 0])
 </pre></div>
 </div>
 </div>
@@ -873,7 +890,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;criterion&#39;: &#39;gini&#39;, &#39;max_depth&#39;: 3, &#39;min_samples_leaf&#39;: 4}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;criterion&#39;: &#39;gini&#39;, &#39;max_depth&#39;: 3, &#39;min_samples_leaf&#39;: 2}
 </pre></div>
 </div>
 </div>
@@ -908,6 +925,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="2020-11-09.html" title="previous page">Class 27: Model Optimization- Choosing K</a>
+    <a class='right-next' id="next-link" href="2020-11-16.html" title="next page">Class 29: Choosing a Model</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

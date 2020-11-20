@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignments" href="../assignments/index.html" />
+    <link rel="prev" title="Class 29: Choosing a Model" href="2020-11-16.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -93,7 +95,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../syllabus/index.html">
    Syllabus
@@ -133,11 +135,11 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="index.html">
    Class Notes
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="2020-09-11.html">
      Class 2: intro to notebooks and python
@@ -261,6 +263,21 @@
    <li class="toctree-l2">
     <a class="reference internal" href="2020-11-09.html">
      Class 27: Model Optimization- Choosing K
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-13.html">
+     Class 28: SVM &amp; Model Optimization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-16.html">
+     Class 29: Choosing a Model
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Class 30: Learning Curves, Validation Curves
     </a>
    </li>
   </ul>
@@ -576,14 +593,14 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([38, 48, 57, 76]),
- array([[1.        , 1.        , 1.        , 1.        , 1.        ],
-        [1.        , 1.        , 1.        , 1.        , 1.        ],
-        [1.        , 1.        , 1.        , 1.        , 1.        ],
-        [1.        , 1.        , 0.98684211, 1.        , 1.        ]]),
- array([[1.        , 0.95833333, 0.95833333, 0.95833333, 0.91666667],
-        [1.        , 1.        , 0.95833333, 0.95833333, 0.91666667],
-        [1.        , 1.        , 0.95833333, 0.95833333, 0.91666667],
-        [1.        , 1.        , 1.        , 0.95833333, 0.91666667]]))
+ array([[1.        , 0.97368421, 1.        , 1.        , 1.        ],
+        [1.        , 0.97916667, 1.        , 1.        , 1.        ],
+        [1.        , 0.98245614, 1.        , 1.        , 1.        ],
+        [0.98684211, 1.        , 0.98684211, 1.        , 0.98684211]]),
+ array([[1.        , 0.95833333, 0.95833333, 0.91666667, 0.95833333],
+        [1.        , 0.95833333, 1.        , 0.95833333, 0.91666667],
+        [1.        , 1.        , 1.        , 0.95833333, 0.91666667],
+        [1.        , 1.        , 1.        , 1.        , 0.91666667]]))
 </pre></div>
 </div>
 </div>
@@ -617,7 +634,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fc831af1290&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f22c33bc210&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-11-18_7_1.png" src="../_images/2020-11-18_7_1.png" />
@@ -645,7 +662,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fc83196e250&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f22c3323250&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-11-18_10_1.png" src="../_images/2020-11-18_10_1.png" />
@@ -682,7 +699,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fc831520f90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f22c2ed3f50&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-11-18_14_1.png" src="../_images/2020-11-18_14_1.png" />
@@ -726,6 +743,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="2020-11-16.html" title="previous page">Class 29: Choosing a Model</a>
+    <a class='right-next' id="next-link" href="../assignments/index.html" title="next page">Assignments</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
