@@ -28,3 +28,5 @@ Class notes will get posted here day by day
 - [2020-11-06](2020-11-06): More Clustering Models
 - [2020-11-09](2020-11-09): Optimizing Clustering Models
 - [2020-11-13](2020-11-13): SVM & Grid Search
+- [2020-11-16](2020-11-16): Model Selection
+- [2020-11-18](2020-11-18): Learning and Validation Curves

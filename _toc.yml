@@ -39,6 +39,9 @@
     - file: notes/2020-11-04
     - file: notes/2020-11-06
     - file: notes/2020-11-09
+    - file: notes/2020-11-13
+    - file: notes/2020-11-16
+    - file: notes/2020-11-18
 
 - file: assignments/index
   expand_sections: true
