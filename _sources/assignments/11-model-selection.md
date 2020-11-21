@@ -2,6 +2,7 @@
 
 __Due: 2020-11-22__
 
+[submission](https://classroom.github.com/a/2VK8RStS)
 
 Choose a dataset, it can be appropriate for classification, regression, or clustering. Fit at least two models for the same task and choose the appropriate metrics to compare the fit. Determine which model fits the data better and write a brief report. Summarize your findings with plots and tables as appropriate.
 
