@@ -13,3 +13,4 @@ Assignment TOC:
 - [Assignment 8](08-regression) Due November 3
 - [Assignment 9](09-clustering) Due November 10
 - [Assignment 10](10-optimization) Due November 17
+- [Assignment 11](11-model-selection) Due November 24

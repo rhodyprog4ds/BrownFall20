@@ -280,6 +280,11 @@
      Class 30: Learning Curves, Validation Curves
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-20.html">
+     Class 31: Confidence Intervals
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -337,6 +342,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../assignments/10-optimization.html">
      Assignment 10: Optimizing Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/11-model-selection.html">
+     Assignment 11: Model Comparison
     </a>
    </li>
   </ul>
@@ -553,12 +563,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;seaborn.axisgrid.PairGrid at 0x7f4ef0fee950&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7f4ee3a43090&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7f4ee2cd3c90&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7f4ee20d8b50&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7f4ee1716a90&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7f4ee0d53050&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;seaborn.axisgrid.PairGrid at 0x7f26583274d0&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7f2617e45e50&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7f2617551890&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7f26174a7b10&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7f26161e6ed0&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7f26153e6210&gt;]
 </pre></div>
 </div>
 <img alt="../_images/2020-10-21_3_1.png" src="../_images/2020-10-21_3_1.png" />
@@ -652,18 +662,18 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;,
-       &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;,
-       &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;,
-       &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;,
-       &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;,
-       &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;,
-       &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;,
-       &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;,
-       &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;,
-       &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;,
-       &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;,
-       &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;], dtype=object)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;,
+       &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;,
+       &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;,
+       &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;,
+       &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;,
+       &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;,
+       &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;,
+       &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;,
+       &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;,
+       &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;,
+       &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;,
+       &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;], dtype=object)
 </pre></div>
 </div>
 </div>
@@ -687,17 +697,17 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(197.83636363636364, 190.26, &#39;X[0] &lt;= 5.87\ngini = 0.496\nsamples = 150\nvalue = [82, 68]&#39;),
- Text(121.74545454545455, 135.9, &#39;X[1] &lt;= 3.98\ngini = 0.476\nsamples = 105\nvalue = [64, 41]&#39;),
- Text(60.872727272727275, 81.53999999999999, &#39;X[0] &lt;= 4.07\ngini = 0.379\nsamples = 59\nvalue = [44, 15]&#39;),
- Text(30.436363636363637, 27.180000000000007, &#39;gini = 0.0\nsamples = 44\nvalue = [44, 0]&#39;),
- Text(91.30909090909091, 27.180000000000007, &#39;gini = 0.0\nsamples = 15\nvalue = [0, 15]&#39;),
- Text(182.61818181818182, 81.53999999999999, &#39;X[0] &lt;= 4.085\ngini = 0.491\nsamples = 46\nvalue = [20, 26]&#39;),
- Text(152.1818181818182, 27.180000000000007, &#39;gini = 0.0\nsamples = 26\nvalue = [0, 26]&#39;),
- Text(213.05454545454546, 27.180000000000007, &#39;gini = 0.0\nsamples = 20\nvalue = [20, 0]&#39;),
- Text(273.92727272727274, 135.9, &#39;X[1] &lt;= 3.78\ngini = 0.48\nsamples = 45\nvalue = [18, 27]&#39;),
- Text(243.4909090909091, 81.53999999999999, &#39;gini = 0.0\nsamples = 27\nvalue = [0, 27]&#39;),
- Text(304.3636363636364, 81.53999999999999, &#39;gini = 0.0\nsamples = 18\nvalue = [18, 0]&#39;)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(125.55000000000001, 195.696, &#39;X[1] &lt;= 1.07\ngini = 0.5\nsamples = 150\nvalue = [74, 76]&#39;),
+ Text(83.7, 152.208, &#39;gini = 0.0\nsamples = 4\nvalue = [0, 4]&#39;),
+ Text(167.4, 152.208, &#39;X[0] &lt;= 4.99\ngini = 0.5\nsamples = 146\nvalue = [74, 72]&#39;),
+ Text(83.7, 108.72, &#39;X[1] &lt;= 4.265\ngini = 0.489\nsamples = 73\nvalue = [42, 31]&#39;),
+ Text(41.85, 65.232, &#39;gini = 0.0\nsamples = 41\nvalue = [41, 0]&#39;),
+ Text(125.55000000000001, 65.232, &#39;X[0] &lt;= 3.81\ngini = 0.061\nsamples = 32\nvalue = [1, 31]&#39;),
+ Text(83.7, 21.744, &#39;gini = 0.0\nsamples = 31\nvalue = [0, 31]&#39;),
+ Text(167.4, 21.744, &#39;gini = 0.0\nsamples = 1\nvalue = [1, 0]&#39;),
+ Text(251.10000000000002, 108.72, &#39;X[1] &lt;= 3.895\ngini = 0.492\nsamples = 73\nvalue = [32, 41]&#39;),
+ Text(209.25, 65.232, &#39;gini = 0.0\nsamples = 41\nvalue = [0, 41]&#39;),
+ Text(292.95, 65.232, &#39;gini = 0.0\nsamples = 32\nvalue = [32, 0]&#39;)]
 </pre></div>
 </div>
 <img alt="../_images/2020-10-21_10_1.png" src="../_images/2020-10-21_10_1.png" />
@@ -710,22 +720,22 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_0 &lt;= 5.87
-|   |--- feature_1 &lt;= 3.98
-|   |   |--- feature_0 &lt;= 4.07
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_1 &lt;= 1.07
+|   |--- class: B
+|--- feature_1 &gt;  1.07
+|   |--- feature_0 &lt;= 4.99
+|   |   |--- feature_1 &lt;= 4.27
 |   |   |   |--- class: A
-|   |   |--- feature_0 &gt;  4.07
+|   |   |--- feature_1 &gt;  4.27
+|   |   |   |--- feature_0 &lt;= 3.81
+|   |   |   |   |--- class: B
+|   |   |   |--- feature_0 &gt;  3.81
+|   |   |   |   |--- class: A
+|   |--- feature_0 &gt;  4.99
+|   |   |--- feature_1 &lt;= 3.89
 |   |   |   |--- class: B
-|   |--- feature_1 &gt;  3.98
-|   |   |--- feature_0 &lt;= 4.09
-|   |   |   |--- class: B
-|   |   |--- feature_0 &gt;  4.09
+|   |   |--- feature_1 &gt;  3.89
 |   |   |   |--- class: A
-|--- feature_0 &gt;  5.87
-|   |--- feature_1 &lt;= 3.78
-|   |   |--- class: B
-|   |--- feature_1 &gt;  3.78
-|   |   |--- class: A
 </pre></div>
 </div>
 </div>
@@ -749,7 +759,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -780,7 +790,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.54
 </pre></div>
 </div>
 </div>
@@ -792,16 +802,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_0 &lt;= 5.87
-|   |--- feature_1 &lt;= 3.98
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_1 &lt;= 1.07
+|   |--- class: B
+|--- feature_1 &gt;  1.07
+|   |--- feature_0 &lt;= 4.99
 |   |   |--- class: A
-|   |--- feature_1 &gt;  3.98
+|   |--- feature_0 &gt;  4.99
 |   |   |--- class: B
-|--- feature_0 &gt;  5.87
-|   |--- feature_1 &lt;= 3.78
-|   |   |--- class: B
-|   |--- feature_1 &gt;  3.78
-|   |   |--- class: A
 </pre></div>
 </div>
 </div>
@@ -813,7 +820,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7666666666666667
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.58
 </pre></div>
 </div>
 </div>

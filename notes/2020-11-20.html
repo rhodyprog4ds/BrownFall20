@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Class 31: &#8212; Programming for Data Science at URI Fall 2020</title>
+    <title>Class 31: Confidence Intervals &#8212; Programming for Data Science at URI Fall 2020</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignments" href="../assignments/index.html" />
+    <link rel="prev" title="Class 30: Learning Curves, Validation Curves" href="2020-11-18.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -93,7 +95,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../syllabus/index.html">
    Syllabus
@@ -133,11 +135,11 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="index.html">
    Class Notes
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="2020-09-11.html">
      Class 2: intro to notebooks and python
@@ -278,6 +280,11 @@
      Class 30: Learning Curves, Validation Curves
     </a>
    </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Class 31: Confidence Intervals
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -335,6 +342,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../assignments/10-optimization.html">
      Assignment 10: Optimizing Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/11-model-selection.html">
+     Assignment 11: Model Comparison
     </a>
    </li>
   </ul>
@@ -524,8 +536,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#confidence-interval">
-   COnfidence interval
+  <a class="reference internal nav-link" href="#confidence-intervals">
+   Confidence intervals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#try-it-yourself">
+   Try it yourself
   </a>
  </li>
 </ul>
@@ -539,8 +556,8 @@
         
               <div>
                 
-  <div class="section" id="class-31">
-<h1>Class 31:<a class="headerlink" href="#class-31" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="class-31-confidence-intervals">
+<h1>Class 31: Confidence Intervals<a class="headerlink" href="#class-31-confidence-intervals" title="Permalink to this headline">¶</a></h1>
 <ol class="simple">
 <li><p>respond in zoom chat: iced vs. hot coffee (or tea, or beverages in general). one all year? seasonal?</p></li>
 <li><p>log onto prismia chat</p></li>
@@ -554,8 +571,8 @@
 <div class="section" id="admin">
 <h2>Admin<a class="headerlink" href="#admin" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="confidence-interval">
-<h2>COnfidence interval<a class="headerlink" href="#confidence-interval" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="confidence-intervals">
+<h2>Confidence intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load http://drsmb.co/310</span>
@@ -578,7 +595,7 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris_X</span> <span class="p">,</span> <span class="n">iris_y</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">(</span><span class="n">return_X_y</span><span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">iris_X_train</span><span class="p">,</span> <span class="n">iris_X_test</span><span class="p">,</span> <span class="n">iris_y_train</span><span class="p">,</span> <span class="n">iris_y_test</span> <span class="o">=</span> <span class="n">model_selection</span><span class="o">.</span><span class="n">train_test_split</span><span class="p">(</span>
             <span class="n">iris_X</span> <span class="p">,</span> <span class="n">iris_y</span><span class="p">,</span><span class="n">test_size</span> <span class="o">=.</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-            
+
 <span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;kernel&#39;</span><span class="p">:[</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span><span class="s1">&#39;rbf&#39;</span><span class="p">],</span> <span class="s1">&#39;C&#39;</span><span class="p">:[</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]}</span>
 <span class="n">svm_clf</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
 <span class="n">svm_opt</span> <span class="o">=</span><span class="n">model_selection</span><span class="o">.</span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">svm_clf</span><span class="p">,</span><span class="n">param_grid</span><span class="p">,)</span>
@@ -835,10 +852,10 @@
   <tbody>
     <tr>
       <th>4</th>
-      <td>0.000637</td>
-      <td>0.000028</td>
-      <td>0.000328</td>
-      <td>0.000022</td>
+      <td>0.000605</td>
+      <td>0.000016</td>
+      <td>0.000307</td>
+      <td>0.000009</td>
       <td>10</td>
       <td>linear</td>
       <td>{'C': 10, 'kernel': 'linear'}</td>
@@ -852,29 +869,29 @@
       <td>1</td>
     </tr>
     <tr>
-      <th>0</th>
-      <td>0.000658</td>
-      <td>0.000070</td>
-      <td>0.000351</td>
-      <td>0.000044</td>
-      <td>0.5</td>
-      <td>linear</td>
-      <td>{'C': 0.5, 'kernel': 'linear'}</td>
+      <th>5</th>
+      <td>0.000651</td>
+      <td>0.000032</td>
+      <td>0.000312</td>
+      <td>0.000012</td>
+      <td>10</td>
+      <td>rbf</td>
+      <td>{'C': 10, 'kernel': 'rbf'}</td>
       <td>0.958333</td>
-      <td>0.958333</td>
+      <td>0.916667</td>
       <td>1.000000</td>
       <td>1.0</td>
       <td>0.875</td>
-      <td>0.958333</td>
-      <td>0.045644</td>
-      <td>1</td>
+      <td>0.950000</td>
+      <td>0.048591</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000644</td>
-      <td>0.000037</td>
-      <td>0.000352</td>
-      <td>0.000032</td>
+      <td>0.000602</td>
+      <td>0.000009</td>
+      <td>0.000312</td>
+      <td>0.000007</td>
       <td>1</td>
       <td>linear</td>
       <td>{'C': 1, 'kernel': 'linear'}</td>
@@ -888,29 +905,11 @@
       <td>4</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>0.000790</td>
-      <td>0.000032</td>
-      <td>0.000374</td>
-      <td>0.000030</td>
-      <td>0.5</td>
-      <td>rbf</td>
-      <td>{'C': 0.5, 'kernel': 'rbf'}</td>
-      <td>0.916667</td>
-      <td>0.958333</td>
-      <td>0.958333</td>
-      <td>1.0</td>
-      <td>0.875</td>
-      <td>0.941667</td>
-      <td>0.042492</td>
-      <td>6</td>
-    </tr>
-    <tr>
       <th>3</th>
-      <td>0.000767</td>
-      <td>0.000028</td>
-      <td>0.000383</td>
-      <td>0.000027</td>
+      <td>0.000705</td>
+      <td>0.000032</td>
+      <td>0.000330</td>
+      <td>0.000010</td>
       <td>1</td>
       <td>rbf</td>
       <td>{'C': 1, 'kernel': 'rbf'}</td>
@@ -924,65 +923,60 @@
       <td>1</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>0.000737</td>
-      <td>0.000045</td>
-      <td>0.000386</td>
-      <td>0.000076</td>
-      <td>10</td>
-      <td>rbf</td>
-      <td>{'C': 10, 'kernel': 'rbf'}</td>
+      <th>0</th>
+      <td>0.000658</td>
+      <td>0.000086</td>
+      <td>0.000337</td>
+      <td>0.000031</td>
+      <td>0.5</td>
+      <td>linear</td>
+      <td>{'C': 0.5, 'kernel': 'linear'}</td>
       <td>0.958333</td>
-      <td>0.916667</td>
+      <td>0.958333</td>
       <td>1.000000</td>
       <td>1.0</td>
       <td>0.875</td>
-      <td>0.950000</td>
-      <td>0.048591</td>
-      <td>4</td>
+      <td>0.958333</td>
+      <td>0.045644</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.000779</td>
+      <td>0.000014</td>
+      <td>0.000357</td>
+      <td>0.000012</td>
+      <td>0.5</td>
+      <td>rbf</td>
+      <td>{'C': 0.5, 'kernel': 'rbf'}</td>
+      <td>0.916667</td>
+      <td>0.958333</td>
+      <td>0.958333</td>
+      <td>1.0</td>
+      <td>0.875</td>
+      <td>0.941667</td>
+      <td>0.042492</td>
+      <td>6</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classification_confint</span><span class="p">(</span><span class="o">.</span><span class="mi">95</span><span class="p">,</span><span class="mi">120</span><span class="p">)</span>
-</pre></div>
 </div>
+<div class="section" id="try-it-yourself">
+<h2>Try it yourself<a class="headerlink" href="#try-it-yourself" title="Permalink to this headline">¶</a></h2>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+How many samples would it take for accuracies of 85% and 93% to be statistically significantly different for 95% confidence interval?<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">the result is a tuple, so we can use indexing to select one element</p>
+<p class="card-text">then compare the upper bound for the lower accuracy to the lower bound of the upper to see if there’s overlap</p>
+<p class="card-text">Then we can make that a lambda and use a while loop to find the answer.</p>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.9110047011380431, 0.9889952988619568)
-</pre></div>
-</div>
-</div>
-</div>
-<p>How many samples would it take</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classification_confint</span><span class="p">(</span><span class="o">.</span><span class="mi">85</span><span class="p">,</span><span class="mi">225</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.8033426676001867, 0.8966573323998133)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classification_confint</span><span class="p">(</span><span class="o">.</span><span class="mi">93</span><span class="p">,</span><span class="mi">225</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.8966607898513878, 0.9633392101486123)
-</pre></div>
-</div>
-</div>
-</div>
-</div>
+</details></div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1013,6 +1007,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="2020-11-18.html" title="previous page">Class 30: Learning Curves, Validation Curves</a>
+    <a class='right-next' id="next-link" href="../assignments/index.html" title="next page">Assignments</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
