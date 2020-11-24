@@ -529,16 +529,26 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reviewing-confidence-intervals">
+   Reviewing Confidence Intervals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#natural-language-processing">
    Natural Language Processing
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#represention">
-     represention
+    <a class="reference internal nav-link" href="#representation">
+     Representation
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#try-it-yourself">
+   Try it yourself
+  </a>
  </li>
 </ul>
 
@@ -564,6 +574,8 @@
 </div>
 </div>
 </div>
+<div class="section" id="reviewing-confidence-intervals">
+<h2>Reviewing Confidence Intervals<a class="headerlink" href="#reviewing-confidence-intervals" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load http://drsmb.co/310</span>
@@ -582,6 +594,9 @@
 </div>
 </div>
 </div>
+<p>If you trained to classifiers on the same data and evaluated on 50 test samples,
+to get accuracies of 78% and 90% is the difference significant?</p>
+<p>To check, we compute the confidence interval for each.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classification_confint</span><span class="p">(</span><span class="o">.</span><span class="mi">78</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
@@ -606,6 +621,13 @@
 </div>
 </div>
 </div>
+<p>Then we check to see if the intervals overlap.  They do, so these are not significantly
+different.</p>
+<p>This means that while those seem meaningfully different, with 50 samples, 78% vs 50%
+is not statistically significantly different. This means that we can’t formally
+guarantee that the two classifiers have reliablly different perforamnce.</p>
+<p>If we had more samples, it could be, for example, for 200 samples we see that
+they are different.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span><span class="mi">200</span>
@@ -631,20 +653,22 @@
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="natural-language-processing">
 <h2>Natural Language Processing<a class="headerlink" href="#natural-language-processing" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="represention">
-<h3>represention<a class="headerlink" href="#represention" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>vector</p></li>
-<li><p>bag of words</p></li>
-</ul>
+<p>The first thing we need to do to be able to do to model text is transform to a
+numerical representation.  We can’t use any of the models we’ve seen so far,
+or other models, on non numerical data.</p>
 <p>terms:</p>
 <ul class="simple">
 <li><p>document: unit of text we’re analyzing (one sample)</p></li>
-<li><p>token: word</p></li>
-<li><p>stop words: no meaning, we don’t need them</p></li>
+<li><p>token:  sequence of characters in some particular document that are grouped together as a useful semantic unit for processing (basically a word)</p></li>
+<li><p>stop words: no meaning, we don’t need them (like a, the, an,). Note that this is context dependent. <a class="reference external" href="https://scikit-learn.org/stable/modules/feature_extraction.html#using-stop-words">more info</a></p></li>
 </ul>
+<div class="section" id="representation">
+<h3>Representation<a class="headerlink" href="#representation" title="Permalink to this headline">¶</a></h3>
+<p>vector or bag of words, implemented by the <code class="docutils literal notranslate"><span class="pre">CountVectorizer</span></code></p>
+<p>Some sample text:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load http://drsmb.co/310</span>
@@ -653,7 +677,7 @@
 <span class="s1">&#39;Ryan Booth&#39;</span><span class="p">:</span><span class="s1">&#39;The power is out where I live, might be forced to leave soon&#39;</span><span class="p">,</span>
 <span class="s1">&#39;Brianna MacDonald&#39;</span><span class="p">:</span><span class="s1">&#39;Rainy days&#39;</span><span class="p">,</span>
 <span class="s1">&#39;Jair Delgado&#39;</span><span class="p">:</span><span class="s1">&#39;Can not wait for lunch... hungry&#39;</span><span class="p">,</span>
-<span class="s1">&#39;Shawn Vincent&#39;</span><span class="p">:</span><span class="s1">&#39;I am excited for Thaksgiving&#39;</span><span class="p">,</span>
+<span class="s1">&#39;Shawn Vincent&#39;</span><span class="p">:</span><span class="s1">&#39;I am excited for Thanksgiving&#39;</span><span class="p">,</span>
 <span class="s1">&#39;Jacob Afonso&#39;</span><span class="p">:</span><span class="s1">&#39;Short weeks are the best!&#39;</span><span class="p">,</span>
 <span class="s1">&#39;Ryan Buquicchio&#39;</span><span class="p">:</span><span class="s1">&#39;The sentence is sentence. (Best sentence ever)&#39;</span><span class="p">,</span>
 <span class="s1">&#39;Nick McCaffery&#39;</span><span class="p">:</span><span class="s1">&#39;Very windy today&#39;</span><span class="p">,</span>
@@ -675,28 +699,11 @@
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="p">[</span><span class="s1">&#39;Demeus Alves&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hope everybody is staying safe&#39;
-</pre></div>
-</div>
-</div>
-</div>
+<p>Let’s try it on one:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="s1">&#39;Demeus Alves&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span>
+<span class="n">s1</span>
 </pre></div>
 </div>
 </div>
@@ -706,6 +713,7 @@
 </div>
 </div>
 </div>
+<p>first we initalize the object</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
@@ -713,6 +721,8 @@
 </div>
 </div>
 </div>
+<p>Then we can fit and transform at once, this will build the representation and return
+the input represented that way.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">([</span><span class="n">s1</span><span class="p">])</span>
@@ -726,6 +736,22 @@
 </div>
 </div>
 </div>
+<p>It tells us the size and that it’s a “sparse matrix” but that doesnt’ display much more
+To see more we can cast it to a regular array</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">([</span><span class="n">s1</span><span class="p">])</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 1, 1, 1, 1]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>This doesn’t tell us much because this is all ones.</p>
+<p>Or look at the “vocabulary” also called the “dictionary” for the whole representation</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span><span class="o">.</span><span class="n">vocabulary_</span>
@@ -738,6 +764,7 @@
 </div>
 </div>
 </div>
+<p>We can instead apply to the whole dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
@@ -745,12 +772,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;13x49 sparse matrix of type &#39;&lt;class &#39;numpy.int64&#39;&gt;&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;13x48 sparse matrix of type &#39;&lt;class &#39;numpy.int64&#39;&gt;&#39;
 	with 65 stored elements in Compressed Sparse Row format&gt;
 </pre></div>
 </div>
 </div>
 </div>
+<p>Now there are more rows (samples/documents) and more columns (words in vocabulary)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span><span class="o">.</span><span class="n">vocabulary_</span>
@@ -763,54 +791,54 @@
  &#39;is&#39;: 18,
  &#39;staying&#39;: 34,
  &#39;safe&#39;: 30,
- &#39;the&#39;: 37,
+ &#39;the&#39;: 36,
  &#39;power&#39;: 27,
  &#39;out&#39;: 26,
- &#39;where&#39;: 47,
+ &#39;where&#39;: 46,
  &#39;live&#39;: 22,
  &#39;might&#39;: 24,
  &#39;be&#39;: 3,
  &#39;forced&#39;: 12,
- &#39;to&#39;: 40,
+ &#39;to&#39;: 39,
  &#39;leave&#39;: 21,
  &#39;soon&#39;: 33,
  &#39;rainy&#39;: 28,
  &#39;days&#39;: 7,
  &#39;can&#39;: 5,
  &#39;not&#39;: 25,
- &#39;wait&#39;: 43,
+ &#39;wait&#39;: 42,
  &#39;for&#39;: 11,
  &#39;lunch&#39;: 23,
  &#39;hungry&#39;: 17,
  &#39;am&#39;: 1,
  &#39;excited&#39;: 10,
- &#39;thaksgiving&#39;: 35,
+ &#39;thanksgiving&#39;: 35,
  &#39;short&#39;: 32,
- &#39;weeks&#39;: 45,
+ &#39;weeks&#39;: 44,
  &#39;are&#39;: 2,
  &#39;best&#39;: 4,
  &#39;sentence&#39;: 31,
  &#39;ever&#39;: 8,
- &#39;very&#39;: 42,
- &#39;windy&#39;: 48,
- &#39;today&#39;: 41,
- &#39;this&#39;: 39,
+ &#39;very&#39;: 41,
+ &#39;windy&#39;: 47,
+ &#39;today&#39;: 40,
+ &#39;this&#39;: 38,
  &#39;it&#39;: 19,
  &#39;here&#39;: 15,
- &#39;what&#39;: 46,
+ &#39;what&#39;: 45,
  &#39;about&#39;: 0,
- &#39;there&#39;: 38,
+ &#39;there&#39;: 37,
  &#39;get&#39;: 13,
  &#39;relax&#39;: 29,
  &#39;later&#39;: 20,
- &#39;week&#39;: 44,
+ &#39;week&#39;: 43,
  &#39;cold&#39;: 6,
- &#39;happy&#39;: 14,
- &#39;thanksgiving&#39;: 36}
+ &#39;happy&#39;: 14}
 </pre></div>
 </div>
 </div>
 </div>
+<p>We can save the transformed data to a variable</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mat</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">values</span><span class="p">())</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
@@ -821,47 +849,48 @@
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0],
+        0, 0, 0, 0],
        [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1,
-        1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0,
-        0, 0, 0, 1, 0],
+        1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0,
+        0, 0, 1, 0],
        [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0],
+        0, 0, 0, 0],
        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
-        0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-        0, 0, 0, 0, 0],
+        0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
+        0, 0, 0, 0],
        [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0],
+        0, 0, 0, 0],
        [0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
-        0, 1, 0, 0, 0],
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+        1, 0, 0, 0],
        [0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0],
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0],
        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0,
-        0, 0, 0, 0, 1],
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0,
+        0, 0, 0, 1],
        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
-        0, 0, 0, 0, 0],
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+        0, 0, 0, 0],
        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0,
-        0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
-        0, 0, 1, 0, 0],
+        0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
+        0, 1, 0, 0],
        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0,
-        0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0,
-        1, 0, 0, 0, 0],
+        0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1,
+        0, 0, 0, 0],
        [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0,
-        0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,
-        0, 0, 0, 0, 0],
+        0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+        0, 0, 0, 0],
        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0]])
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0]])
 </pre></div>
 </div>
 </div>
 </div>
+<p>To make it easier to read, we can use a dataFrame</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -869,66 +898,9 @@
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;about&#39;,
- &#39;am&#39;,
- &#39;are&#39;,
- &#39;be&#39;,
- &#39;best&#39;,
- &#39;can&#39;,
- &#39;cold&#39;,
- &#39;days&#39;,
- &#39;ever&#39;,
- &#39;everybody&#39;,
- &#39;excited&#39;,
- &#39;for&#39;,
- &#39;forced&#39;,
- &#39;get&#39;,
- &#39;happy&#39;,
- &#39;here&#39;,
- &#39;hope&#39;,
- &#39;hungry&#39;,
- &#39;is&#39;,
- &#39;it&#39;,
- &#39;later&#39;,
- &#39;leave&#39;,
- &#39;live&#39;,
- &#39;lunch&#39;,
- &#39;might&#39;,
- &#39;not&#39;,
- &#39;out&#39;,
- &#39;power&#39;,
- &#39;rainy&#39;,
- &#39;relax&#39;,
- &#39;safe&#39;,
- &#39;sentence&#39;,
- &#39;short&#39;,
- &#39;soon&#39;,
- &#39;staying&#39;,
- &#39;thaksgiving&#39;,
- &#39;thanksgiving&#39;,
- &#39;the&#39;,
- &#39;there&#39;,
- &#39;this&#39;,
- &#39;to&#39;,
- &#39;today&#39;,
- &#39;very&#39;,
- &#39;wait&#39;,
- &#39;week&#39;,
- &#39;weeks&#39;,
- &#39;what&#39;,
- &#39;where&#39;,
- &#39;windy&#39;]
-</pre></div>
-</div>
-</div>
-</div>
+<p>The index is the keys of the dictionary of the sentences. The columns are the
+words from the vocabulary. The  <code class="docutils literal notranslate"><span class="pre">get_feature_names</span></code> method will return them as a
+sorted list instead of a dictionary with numbers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mat</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="n">counts</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">()</span> <span class="p">)</span>
@@ -1293,62 +1265,14 @@
     </tr>
   </tbody>
 </table>
-<p>13 rows × 49 columns</p>
+<p>13 rows × 48 columns</p>
 </div></div></div>
 </div>
+<p>To compute the distances we use the <code class="docutils literal notranslate"><span class="pre">euclidean_distances</span></code> function.  To make this
+easy to read, we will put this in a dataframe as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">euclidean_distances</span><span class="p">(</span><span class="n">text_df</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.        , 3.87298335, 2.64575131, 3.31662479, 3.        ,
-        3.16227766, 4.        , 2.82842712, 2.44948974, 3.16227766,
-        3.31662479, 2.82842712, 2.64575131],
-       [3.87298335, 0.        , 3.74165739, 4.24264069, 4.        ,
-        3.87298335, 4.58257569, 3.87298335, 3.60555128, 4.12310563,
-        4.        , 3.60555128, 3.74165739],
-       [2.64575131, 3.74165739, 0.        , 2.82842712, 2.44948974,
-        2.64575131, 3.87298335, 2.23606798, 2.23606798, 2.64575131,
-        2.82842712, 2.64575131, 2.        ],
-       [3.31662479, 4.24264069, 2.82842712, 0.        , 2.82842712,
-        3.31662479, 4.35889894, 3.        , 3.        , 3.60555128,
-        3.46410162, 3.31662479, 2.82842712],
-       [3.        , 4.        , 2.44948974, 2.82842712, 0.        ,
-        3.        , 4.12310563, 2.64575131, 2.64575131, 3.31662479,
-        3.16227766, 3.        , 2.44948974],
-       [3.16227766, 3.87298335, 2.64575131, 3.31662479, 3.        ,
-        0.        , 3.74165739, 2.82842712, 2.82842712, 3.46410162,
-        3.31662479, 3.16227766, 2.64575131],
-       [4.        , 4.58257569, 3.87298335, 4.35889894, 4.12310563,
-        3.74165739, 0.        , 4.        , 2.82842712, 4.24264069,
-        4.35889894, 4.        , 3.87298335],
-       [2.82842712, 3.87298335, 2.23606798, 3.        , 2.64575131,
-        2.82842712, 4.        , 0.        , 2.44948974, 3.16227766,
-        3.        , 2.44948974, 2.23606798],
-       [2.44948974, 3.60555128, 2.23606798, 3.        , 2.64575131,
-        2.82842712, 2.82842712, 2.44948974, 0.        , 2.82842712,
-        2.64575131, 2.44948974, 2.23606798],
-       [3.16227766, 4.12310563, 2.64575131, 3.60555128, 3.31662479,
-        3.46410162, 4.24264069, 3.16227766, 2.82842712, 0.        ,
-        3.60555128, 2.82842712, 3.        ],
-       [3.31662479, 4.        , 2.82842712, 3.46410162, 3.16227766,
-        3.31662479, 4.35889894, 3.        , 2.64575131, 3.60555128,
-        0.        , 3.31662479, 2.82842712],
-       [2.82842712, 3.60555128, 2.64575131, 3.31662479, 3.        ,
-        3.16227766, 4.        , 2.44948974, 2.44948974, 2.82842712,
-        3.31662479, 0.        , 2.64575131],
-       [2.64575131, 3.74165739, 2.        , 2.82842712, 2.44948974,
-        2.64575131, 3.87298335, 2.23606798, 2.23606798, 3.        ,
-        2.82842712, 2.64575131, 0.        ]])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dist_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">euclidean_distances</span><span class="p">(</span><span class="n">text_df</span><span class="p">),</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dist_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">euclidean_distances</span><span class="p">(</span><span class="n">text_df</span><span class="p">),</span>
                        <span class="n">index</span><span class="o">=</span>  <span class="n">text</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 <span class="n">dist_df</span>
 </pre></div>
@@ -1467,7 +1391,7 @@
       <td>3.316625</td>
       <td>3.162278</td>
       <td>3.000000</td>
-      <td>2.449490</td>
+      <td>2.000000</td>
     </tr>
     <tr>
       <th>Jacob Afonso</th>
@@ -1587,7 +1511,7 @@
       <td>3.741657</td>
       <td>2.000000</td>
       <td>2.828427</td>
-      <td>2.449490</td>
+      <td>2.000000</td>
       <td>2.645751</td>
       <td>3.872983</td>
       <td>2.236068</td>
@@ -1601,6 +1525,8 @@
 </table>
 </div></div></div>
 </div>
+<p>How can we find who’s sentence was most similar to Masoud’s?</p>
+<p>We can select his column and take the min.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dist_df</span><span class="p">[</span><span class="s1">&#39;Masoud&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
@@ -1613,6 +1539,8 @@
 </div>
 </div>
 </div>
+<p>But this will return zero, because it’s the distance to the same sentence, so
+we can drop that row of the column</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dist_df</span><span class="p">[</span><span class="s1">&#39;Masoud&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Masoud&#39;</span><span class="p">)</span>
@@ -1637,6 +1565,7 @@ Name: Masoud, dtype: float64
 </div>
 </div>
 </div>
+<p>Then min gives us the the value that’s the minumum.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dist_df</span><span class="p">[</span><span class="s1">&#39;Masoud&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Masoud&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
@@ -1649,6 +1578,7 @@ Name: Masoud, dtype: float64
 </div>
 </div>
 </div>
+<p>We can use idx min instead.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dist_df</span><span class="p">[</span><span class="s1">&#39;Masoud&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Masoud&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span>
@@ -1662,6 +1592,21 @@ Name: Masoud, dtype: float64
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="try-it-yourself">
+<h2>Try it yourself<a class="headerlink" href="#try-it-yourself" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Which two people wrote the most similar sentences?</p></li>
+<li><p>Using the feature space defined by the text above, what would the following
+sentence be as a vector?</p></li>
+</ol>
+<ul class="simple">
+<li><p>“Thanksgiving is a short week”?</p></li>
+<li><p>“Rainy, windy days are cold”</p></li>
+</ul>
+<ol class="simple">
+<li><p>What word was used the most in the whole set of sentences?</p></li>
+</ol>
 </div>
 </div>
 

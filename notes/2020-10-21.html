@@ -563,12 +563,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;seaborn.axisgrid.PairGrid at 0x7ff1a732e090&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7ff1671549d0&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7ff164166450&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7ff163137e10&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7ff162be4fd0&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7ff16222c950&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;seaborn.axisgrid.PairGrid at 0x7f370121eb90&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7f36faf43790&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7f36fa38df90&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7f36f93a9090&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7f36f8f35390&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7f36f84710d0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/2020-10-21_3_1.png" src="../_images/2020-10-21_3_1.png" />
@@ -587,6 +587,64 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x0</th>
+      <th>x1</th>
+      <th>char</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6.14</td>
+      <td>2.10</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.22</td>
+      <td>2.39</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2.27</td>
+      <td>5.44</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.03</td>
+      <td>3.19</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2.25</td>
+      <td>1.71</td>
+      <td>A</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>This one Naive Bayes does poorly on, even though the classes are separable because each class is not defined by a single region.  Since each class has two noncontinuous resions.</p>
 <div class="cell docutils container">
@@ -603,10 +661,31 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;,
+       &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;,
+       &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;,
+       &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;,
+       &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;,
+       &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;,
+       &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;,
+       &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;,
+       &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;,
+       &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;,
+       &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;,
+       &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier()
 </pre></div>
 </div>
 </div>
@@ -617,10 +696,56 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(221.20714285714286, 195.696, &#39;X[0] &lt;= 5.88\ngini = 0.499\nsamples = 150\nvalue = [71, 79]&#39;),
+ Text(155.44285714285715, 152.208, &#39;X[1] &lt;= 5.25\ngini = 0.498\nsamples = 103\nvalue = [55, 48]&#39;),
+ Text(95.65714285714286, 108.72, &#39;X[0] &lt;= 4.07\ngini = 0.419\nsamples = 57\nvalue = [40, 17]&#39;),
+ Text(47.82857142857143, 65.232, &#39;X[1] &lt;= 4.0\ngini = 0.05\nsamples = 39\nvalue = [38, 1]&#39;),
+ Text(23.914285714285715, 21.744, &#39;gini = 0.0\nsamples = 38\nvalue = [38, 0]&#39;),
+ Text(71.74285714285715, 21.744, &#39;gini = 0.0\nsamples = 1\nvalue = [0, 1]&#39;),
+ Text(143.4857142857143, 65.232, &#39;X[1] &lt;= 3.94\ngini = 0.198\nsamples = 18\nvalue = [2, 16]&#39;),
+ Text(119.57142857142857, 21.744, &#39;gini = 0.0\nsamples = 16\nvalue = [0, 16]&#39;),
+ Text(167.4, 21.744, &#39;gini = 0.0\nsamples = 2\nvalue = [2, 0]&#39;),
+ Text(215.22857142857143, 108.72, &#39;X[0] &lt;= 4.095\ngini = 0.44\nsamples = 46\nvalue = [15, 31]&#39;),
+ Text(191.31428571428572, 65.232, &#39;gini = 0.0\nsamples = 31\nvalue = [0, 31]&#39;),
+ Text(239.14285714285714, 65.232, &#39;gini = 0.0\nsamples = 15\nvalue = [15, 0]&#39;),
+ Text(286.9714285714286, 152.208, &#39;X[1] &lt;= 3.895\ngini = 0.449\nsamples = 47\nvalue = [16, 31]&#39;),
+ Text(263.0571428571429, 108.72, &#39;gini = 0.0\nsamples = 31\nvalue = [0, 31]&#39;),
+ Text(310.8857142857143, 108.72, &#39;gini = 0.0\nsamples = 16\nvalue = [16, 0]&#39;)]
+</pre></div>
+</div>
+<img alt="../_images/2020-10-21_10_1.png" src="../_images/2020-10-21_10_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">export_text</span><span class="p">(</span><span class="n">dt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_0 &lt;= 5.88
+|   |--- feature_1 &lt;= 5.25
+|   |   |--- feature_0 &lt;= 4.07
+|   |   |   |--- feature_1 &lt;= 4.00
+|   |   |   |   |--- class: A
+|   |   |   |--- feature_1 &gt;  4.00
+|   |   |   |   |--- class: B
+|   |   |--- feature_0 &gt;  4.07
+|   |   |   |--- feature_1 &lt;= 3.94
+|   |   |   |   |--- class: B
+|   |   |   |--- feature_1 &gt;  3.94
+|   |   |   |   |--- class: A
+|   |--- feature_1 &gt;  5.25
+|   |   |--- feature_0 &lt;= 4.10
+|   |   |   |--- class: B
+|   |   |--- feature_0 &gt;  4.10
+|   |   |   |--- class: A
+|--- feature_0 &gt;  5.88
+|   |--- feature_1 &lt;= 3.89
+|   |   |--- class: B
+|   |--- feature_1 &gt;  3.89
+|   |   |--- class: A
 </pre></div>
 </div>
 </div>
@@ -631,10 +756,20 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span><span class="o">.</span><span class="n">get_depth</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -652,10 +787,20 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier(max_depth=2)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt2</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.74
 </pre></div>
 </div>
 </div>
@@ -666,10 +811,29 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_0 &lt;= 5.88
+|   |--- feature_1 &lt;= 5.25
+|   |   |--- class: A
+|   |--- feature_1 &gt;  5.25
+|   |   |--- class: B
+|--- feature_0 &gt;  5.88
+|   |--- feature_1 &lt;= 3.89
+|   |   |--- class: B
+|   |--- feature_1 &gt;  3.89
+|   |   |--- class: A
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt2</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7866666666666666
 </pre></div>
 </div>
 </div>
