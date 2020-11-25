@@ -30,3 +30,5 @@ Class notes will get posted here day by day
 - [2020-11-13](2020-11-13): SVM & Grid Search
 - [2020-11-16](2020-11-16): Model Selection
 - [2020-11-18](2020-11-18): Learning and Validation Curves
+- [2020-11-20](2020-11-20): Confidence Intervals
+- [2020-11-23](2020-11-23): Intro to NLP

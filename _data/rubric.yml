@@ -111,10 +111,10 @@
   clo: [model]
   assignments: [12,13]
 - skill: use industry standard data science tools and workflows to solve data science problems
-  keyword: tools
+  keyword: workflow
   aware: Solve well strucutred problems with a single tool pipeline
-  compentent: Solve semi-strucutred, completely specified problems with multiple tools
-  mastery: Scope, choose an appropriate tool pipeline and solve data science problems
+  compentent: Solve semi-strucutred, completely specified problems, apply common structure to learn new features of standard tools
+  mastery: Scope, choose an appropriate tool pipeline and solve data science problems, describe strengths and weakensses of common tools
   portfolios: [3,4]
   clo: [process, communicate]
   assignments: [10,11,12,13]

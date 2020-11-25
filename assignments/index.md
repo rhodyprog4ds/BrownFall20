@@ -14,3 +14,4 @@ Assignment TOC:
 - [Assignment 9](09-clustering) Due November 10
 - [Assignment 10](10-optimization) Due November 17
 - [Assignment 11](11-model-selection) Due November 24
+- [Assignment 12](12-fake-news) Due December 1

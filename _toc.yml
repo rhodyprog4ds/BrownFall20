@@ -43,6 +43,7 @@
     - file: notes/2020-11-16
     - file: notes/2020-11-18
     - file: notes/2020-11-20
+    - file: notes/2020-11-23
 
 - file: assignments/index
   expand_sections: true
@@ -58,6 +59,7 @@
     - file: assignments/09-clustering
     - file: assignments/10-optimization
     - file: assignments/11-model-selection
+    - file: assignments/12-fake-news
 
 - file: portfolio/index
   sections:
