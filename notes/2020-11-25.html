@@ -1,0 +1,731 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class 33: Tools, Workflow &amp; more NLP &#8212; Programming for Data Science at URI Fall 2020</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Programming for Data Science at URI Fall 2020</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to Programming for Data Science
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../syllabus/index.html">
+   Syllabus
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../syllabus/about-course.html">
+     About
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../syllabus/tools.html">
+     Tools and Resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../syllabus/grading.html">
+     Grading
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../syllabus/course_map.html">
+     Learning Objective, Schedule, and Rubric
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../syllabus/uri_resources.html">
+     Support
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../syllabus/uri_statements.html">
+     Policies
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="index.html">
+   Class Notes
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-11.html">
+     Class 2: intro to notebooks and python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-14.html">
+     Class 3: Welcome to Week 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-16.html">
+     Class 4: Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-18.html">
+     Class 5: Accessing Data, continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-21.html">
+     Class 6: Exploratory Data Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-23.html">
+     Class 7: Visualization for EDA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-25.html">
+     Class 8: Visualization and Starting to Clean Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-28.html">
+     Class 9: Preparing Data For Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-09-30.html">
+     Class 10: Cleaning review and Ray Summit Keynotes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-02.html">
+     Class 11: Cleaning Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-05.html">
+     Class 12: Constructing Datasets from Multiple Sources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-07.html">
+     Class 13: Data from multiple sources and Databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-12.html">
+     Class 15: Intro to ML &amp; Modeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-14.html">
+     Class 16: Naive Bayes Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-16.html">
+     Class 17: Evaluating Classification and Midsemester Feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-19.html">
+     Class 18: Mid Semester Checkin, Git, &amp; How GNB makes decisions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-21.html">
+     Class 19: Decision Trees
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-23.html">
+     Class 20: Decision Trees and Cross Validation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-26.html">
+     Class 21: Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-28.html">
+     Class 22: More Regression, More Evaluation and LASSO
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-10-30.html">
+     Class 23: Interpretting Regression Evaluations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-02.html">
+     Class 24: Clustering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-04.html">
+     Class 25: Evaluating Clustering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-06.html">
+     Class 26: More Clustering Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-09.html">
+     Class 27: Model Optimization- Choosing K
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-13.html">
+     Class 28: SVM &amp; Model Optimization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-16.html">
+     Class 29: Choosing a Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-18.html">
+     Class 30: Learning Curves, Validation Curves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-20.html">
+     Class 31: Confidence Intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-23.html">
+     Class 31: Intro to NLP
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../assignments/index.html">
+   Assignments
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/01-python-syllabus.html">
+     Assignment 1: Portfolio Setup, Data Science, and Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/02-python-access.html">
+     Assignment 2: Practicing Python and Accessing Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/03-exploratory.html">
+     Assignment 3: Exploratory Data Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/04-prepare.html">
+     Assignment 4: Preparing Data for Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/05-construct.html">
+     Assignment 5: Constructing Datasets and Using Databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/06-naive-bayes.html">
+     Assignment 6: Naive Bayes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/07-decision-tree.html">
+     Assignment 7: Decision Trees
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/08-regression.html">
+     Assignment 8: Linear Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/09-clustering.html">
+     Assignment 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/10-optimization.html">
+     Assignment 10: Optimizing Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/11-model-selection.html">
+     Assignment 11: Model Comparison
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/12-fake-news.html">
+     Assignment 12: Fake News
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../portfolio/index.html">
+   Portfolio
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../portfolio/formatting.html">
+     Formatting Tips
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../portfolio/reflective.html">
+     Reflective Prompts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../portfolio/analyses.html">
+     Analysis Prompts
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../faq/index.html">
+   FAQ
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../faq/syllabus.html">
+     Syllabus FAQ
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../faq/github.html">
+     GitHub FAQ
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../faq/debugging.html">
+     Common Debugging Issues
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../resources/index.html">
+   Resources
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/tips.html">
+     General Tips and Resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/python.html">
+     References on Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/datasets.html">
+     Data Sources
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/notes/2020-11-25.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notes/2020-11-25.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        <a class="issues-button"
+            href="https://github.com/rhodyprog4ds/BrownFall20//issues/new?title=Issue%20on%20page%20%2Fnotes/2020-11-25.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/rhodyprog4ds/BrownFall20/edit/main/notes/2020-11-25.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rhodyprog4ds/BrownFall20/main?urlpath=tree/notes/2020-11-25.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review">
+   Review
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="class-33-tools-workflow-more-nlp">
+<h1>Class 33: Tools, Workflow &amp; more NLP<a class="headerlink" href="#class-33-tools-workflow-more-nlp" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="review">
+<h2>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>sklearn estimators have fit, predict and score methods</p></li>
+<li><p>matplotlib vs seaborn:</p></li>
+</ul>
+<p>Class Response Summary:</p>
+<p>• seaborn works better when the data is in a dataframe while matplotlib can work better with data in array form</p>
+<p>• Matplotlib is more basic plotting, whereas seaborn has less syntax but more plotting customization</p>
+<p>and themes</p>
+<p>• Seaborn uses fewer syntax  and easier to make complex intuitive plots with short commands</p>
+<p>• seaborn is a higher level library that uses matplotlib “under the hood”.  It’s basically an easier way to graph, but directly using matplotlib might give us more freedom - if we know how to use it</p>
+<p>• when dealing with classifying or predicting data</p>
+<p>• and it uses fewer syntax</p>
+<p>• when you want to see statistics in the data</p>
+<p>• for example: to use hue feature, more easy to distinguish</p>
+<p>• fewer syntax</p>
+<p>• seaborn provides a variety while matplotlib doesn’t. and uses basic plotting so probably when you want to get creative</p>
+<p>Vocabulary:</p>
+<p>[‘and’, ‘are’, ‘cat’, ‘cats’, ‘dogs’, ‘pets’, ‘popular’, ‘videos’]</p>
+<p>represent: Cats and dogs are pets
+[1,1,0,1,1,1,0,0]</p>
+<p>build the vocabulary and transform with “Cats and dogs are pets”
+[ 1,1,1,1,1]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load http://drsmb.co/310</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">euclidean_distances</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">MultinomialNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ng_X</span><span class="p">,</span><span class="n">ng_y</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_20newsgroups</span><span class="p">(</span><span class="n">categories</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;comp.graphics&#39;</span><span class="p">,</span><span class="s1">&#39;sci.crypt&#39;</span><span class="p">],</span>
+                                       <span class="n">return_X_y</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ng_X</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ng_y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&quot;From: robert@cpuserver.acsc.com (Robert Grant)\nSubject: Virtual Reality for X on the CHEAP!\nOrganization: USCACSC, Los Angeles\nLines: 187\nDistribution: world\nReply-To: robert@cpuserver.acsc.com (Robert Grant)\nNNTP-Posting-Host: cpuserver.acsc.com\n\nHi everyone,\n\nI thought that some people may be interested in my VR\nsoftware on these groups:\n\n*******Announcing the release of Multiverse-1.0.2*******\n\nMultiverse is a multi-user, non-immersive, X-Windows based Virtual Reality\nsystem, primarily focused on entertainment/research.\n\nFeatures:\n\n   Client-Server based model, using Berkeley Sockets.\n   No limit to the number of users (apart from performance).\n   Generic clients.\n   Customizable servers.\n   Hierachical Objects (allowing attachment of cameras and light sources).\n   Multiple light sources (ambient, point and spot).\n   Objects can have extension code, to handle unique functionality, easily\n        attached.\n\nFunctionality:\n\n  Client:\n   The client is built around a &#39;fast&#39; render loop. Basically it changes things\n   when told to by the server and then renders an image from the user&#39;s\n   viewpoint. It also provides the server with information about the user&#39;s\n   actions - which can then be communicated to other clients and therefore to\n   other users.\n\n   The client is designed to be generic - in other words you don&#39;t need to\n   develop a new client when you want to enter a new world. This means that\n   resources can be spent on enhancing the client software rather than adapting\n   it. The adaptations, as will be explained in a moment, occur in the servers.\n\n   This release of the client software supports the following functionality:\n\n    o Hierarchical Objects (with associated addressing)\n\n    o Multiple Light Sources and Types (Ambient, Point and Spot)\n\n    o User Interface Panels\n\n    o Colour Polygonal Rendering with Phong Shading (optional wireframe for\n\tfaster frame rates)\n\n    o Mouse and Keyboard Input\n\n   (Some people may be disappointed that this software doesn&#39;t support the\n   PowerGlove as an input device - this is not because it can&#39;t, but because\n   I don&#39;t have one! This will, however, be one of the first enhancements!)\n\n  Server(s):\n   This is where customization can take place. The following basic support is\n   provided in this release for potential world server developers:\n\n    o Transparent Client Management\n\n    o Client Message Handling\n\n   This may not sound like much, but it takes away the headache of\naccepting and\n   terminating clients and receiving messages from them - the\napplication writer\n   can work with the assumption that things are happening locally.\n\n   Things get more interesting in the object extension functionality. This is\n   what is provided to allow you to animate your objects:\n\n    o Server Selectable Extension Installation:\n        What this means is that you can decide which objects have extended\n        functionality in your world. Basically you call the extension\n        initialisers you want.\n\n    o Event Handler Registration:\n        When you develop extensions for an object you basically write callback\n        functions for the events that you want the object to respond to.\n        (Current events supported: INIT, MOVE, CHANGE, COLLIDE &amp; TERMINATE)\n\n    o Collision Detection Registration:\n        If you want your object to respond to collision events just provide\n        some basic information to the collision detection management software.\n        Your callback will be activated when a collision occurs.\n\n    This software is kept separate from the worldServer applications because\n    the application developer wants to build a library of extended objects\n    from which to choose.\n\n    The following is all you need to make a World Server application:\n\n    o Provide an initWorld function:\n        This is where you choose what object extensions will be supported, plus\n        any initialization you want to do.\n\n    o Provide a positionObject function:\n        This is where you determine where to place a new client.\n\n    o Provide an installWorldObjects function:\n        This is where you load the world (.wld) file for a new client.\n\n    o Provide a getWorldType function:\n        This is where you tell a new client what persona they should have.\n\n    o Provide an animateWorld function:\n        This is where you can go wild! At a minimum you should let the objects\n        move (by calling a move function) and let the server sleep for a bit\n        (to avoid outrunning the clients).\n\n    That&#39;s all there is to it! And to prove it here are the line counts for the\n    three world servers I&#39;ve provided:\n\n        generic - 81 lines\n        dactyl - 270 lines (more complicated collision detection due to the\n                           stairs! Will probably be improved with future\n                           versions)\n        dogfight - 72 lines\n\nLocation:\n\n   This software is located at the following site:\n   ftp.u.washington.edu\n\n   Directory:\n   pub/virtual-worlds\n\n   File:\n   multiverse-1.0.2.tar.Z\n\nFutures:\n\n   Client:\n\n    o Texture mapping.\n\n    o More realistic rendering: i.e. Z-Buffering (or similar), Gouraud shading\n\n    o HMD support.\n\n    o Etc, etc....\n\n   Server:\n\n    o Physical Modelling (gravity, friction etc).\n\n    o Enhanced Object Management/Interaction\n\n    o Etc, etc....\n\n   Both:\n\n    o Improved Comms!!!\n\nI hope this provides people with a good understanding of the Multiverse\nsoftware,\nunfortunately it comes with practically zero documentation, and I&#39;m not sure\nwhether that will ever be able to be rectified! :-(\n\nI hope people enjoy this software and that it is useful in our explorations of\nthe Virtual Universe - I&#39;ve certainly found fascinating developing it, and I\nwould *LOVE* to add support for the PowerGlove...and an HMD :-)!!\n\nFinally one major disclaimer:\n\nThis is totally amateur code. By that I mean there is no support for this code\nother than what I, out the kindness of my heart, or you, out of pure\ndesperation, provide. I cannot be held responsible for anything good or bad\nthat may happen through the use of this code - USE IT AT YOUR OWN RISK!\n\nDisclaimer over!\n\nOf course if you love it, I would like to here from you. And anyone with\nPOSITIVE contributions/criticisms is also encouraged to contact me. Anyone who\nhates it: &gt; /dev/null!\n\n************************************************************************\n*********\nAnd if anyone wants to let me do this for a living: you know where to\nwrite :-)!\n************************************************************************\n*********\n\nThanks,\n\nRobert.\n\nrobert@acsc.com\n^^^^^^^^^^^^^^^\n&quot;,
+ 0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
+<span class="n">ng_vec</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">ng_X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ng_vec</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;1179x24257 sparse matrix of type &#39;&lt;class &#39;numpy.int64&#39;&gt;&#39;
+	with 188291 stored elements in Compressed Sparse Row format&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ng_vec</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 0, 0, ..., 0, 0, 0]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">MultinomialNB</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ng_vec_train</span><span class="p">,</span> <span class="n">ng_vec_test</span><span class="p">,</span> <span class="n">ng_y_train</span><span class="p">,</span> <span class="n">ng_y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">ng_vec</span><span class="p">,</span><span class="n">ng_y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">ng_vec_train</span><span class="p">,</span><span class="n">ng_y_train</span><span class="p">)</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">ng_vec_test</span><span class="p">,</span><span class="n">ng_y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9796610169491525
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Professor Sarah M Brown<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
