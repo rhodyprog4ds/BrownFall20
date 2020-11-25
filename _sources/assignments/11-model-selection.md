@@ -1,6 +1,6 @@
 # Assignment 11: Model Comparison
 
-__Due: 2020-11-22__
+__Due: 2020-11-24__
 
 [submission](https://classroom.github.com/a/2VK8RStS)
 

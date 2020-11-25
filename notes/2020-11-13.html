@@ -285,6 +285,11 @@
      Class 31: Confidence Intervals
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-23.html">
+     Class 31: Intro to NLP
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -347,6 +352,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../assignments/11-model-selection.html">
      Assignment 11: Model Comparison
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/12-fake-news.html">
+     Assignment 12: Fake News
     </a>
    </li>
   </ul>
@@ -594,7 +604,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9210526315789473
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
 </pre></div>
 </div>
 </div>
@@ -651,14 +661,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;mean_fit_time&#39;: array([0.00067215, 0.00086164, 0.00062857, 0.00079207, 0.00062647,
-        0.00095291]),
- &#39;std_fit_time&#39;: array([7.37257790e-05, 5.40563853e-05, 2.94994606e-05, 3.33245385e-05,
-        3.38663836e-05, 4.93171108e-04]),
- &#39;mean_score_time&#39;: array([0.0003202 , 0.00048923, 0.00030737, 0.00035973, 0.00031013,
-        0.0003377 ]),
- &#39;std_score_time&#39;: array([1.20178101e-05, 2.50672528e-04, 3.57596078e-06, 1.02950457e-05,
-        1.13316817e-05, 2.36967439e-05]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;mean_fit_time&#39;: array([0.00075226, 0.00081058, 0.00062919, 0.00078731, 0.00069833,
+        0.0006856 ]),
+ &#39;std_fit_time&#39;: array([1.38129067e-04, 3.47899685e-05, 1.37077206e-05, 3.89950769e-05,
+        8.95102223e-05, 3.06664501e-05]),
+ &#39;mean_score_time&#39;: array([0.00035343, 0.00038562, 0.00035238, 0.00037398, 0.00037813,
+        0.00033078]),
+ &#39;std_score_time&#39;: array([2.99363366e-05, 2.24359864e-05, 5.76742378e-05, 2.24283844e-05,
+        6.28920917e-05, 2.96440116e-05]),
  &#39;param_C&#39;: masked_array(data=[0.5, 0.5, 1, 1, 10, 10],
               mask=[False, False, False, False, False, False],
         fill_value=&#39;?&#39;,
@@ -743,10 +753,10 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.000672</td>
-      <td>0.000074</td>
-      <td>0.000320</td>
-      <td>0.000012</td>
+      <td>0.000752</td>
+      <td>0.000138</td>
+      <td>0.000353</td>
+      <td>0.000030</td>
       <td>0.5</td>
       <td>linear</td>
       <td>{'C': 0.5, 'kernel': 'linear'}</td>
@@ -761,10 +771,10 @@
     </tr>
     <tr>
       <th>1</th>
-      <td>0.000862</td>
-      <td>0.000054</td>
-      <td>0.000489</td>
-      <td>0.000251</td>
+      <td>0.000811</td>
+      <td>0.000035</td>
+      <td>0.000386</td>
+      <td>0.000022</td>
       <td>0.5</td>
       <td>rbf</td>
       <td>{'C': 0.5, 'kernel': 'rbf'}</td>
@@ -780,9 +790,9 @@
     <tr>
       <th>2</th>
       <td>0.000629</td>
-      <td>0.000029</td>
-      <td>0.000307</td>
-      <td>0.000004</td>
+      <td>0.000014</td>
+      <td>0.000352</td>
+      <td>0.000058</td>
       <td>1</td>
       <td>linear</td>
       <td>{'C': 1, 'kernel': 'linear'}</td>
@@ -797,10 +807,10 @@
     </tr>
     <tr>
       <th>3</th>
-      <td>0.000792</td>
-      <td>0.000033</td>
-      <td>0.000360</td>
-      <td>0.000010</td>
+      <td>0.000787</td>
+      <td>0.000039</td>
+      <td>0.000374</td>
+      <td>0.000022</td>
       <td>1</td>
       <td>rbf</td>
       <td>{'C': 1, 'kernel': 'rbf'}</td>
@@ -815,10 +825,10 @@
     </tr>
     <tr>
       <th>4</th>
-      <td>0.000626</td>
-      <td>0.000034</td>
-      <td>0.000310</td>
-      <td>0.000011</td>
+      <td>0.000698</td>
+      <td>0.000090</td>
+      <td>0.000378</td>
+      <td>0.000063</td>
       <td>10</td>
       <td>linear</td>
       <td>{'C': 10, 'kernel': 'linear'}</td>
@@ -833,10 +843,10 @@
     </tr>
     <tr>
       <th>5</th>
-      <td>0.000953</td>
-      <td>0.000493</td>
-      <td>0.000338</td>
-      <td>0.000024</td>
+      <td>0.000686</td>
+      <td>0.000031</td>
+      <td>0.000331</td>
+      <td>0.000030</td>
       <td>10</td>
       <td>rbf</td>
       <td>{'C': 10, 'kernel': 'rbf'}</td>
@@ -860,8 +870,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 0, 1, 2, 0, 1, 1, 1, 1, 0, 0, 2, 2, 0, 1, 1, 0, 0, 2, 2, 1, 0,
-       2, 2, 2, 1, 2, 1, 0, 2, 0, 1, 2, 0, 2, 1, 2, 2])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2, 1, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 0, 1, 2, 0, 1, 0, 2, 0, 2, 1,
+       0, 0, 2, 1, 2, 2, 0, 2, 2, 0, 0, 2, 0, 1, 1, 0])
 </pre></div>
 </div>
 </div>

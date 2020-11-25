@@ -285,6 +285,11 @@
      Class 31: Confidence Intervals
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-23.html">
+     Class 31: Intro to NLP
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -347,6 +352,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../assignments/11-model-selection.html">
      Assignment 11: Model Comparison
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assignments/12-fake-news.html">
+     Assignment 12: Fake News
     </a>
    </li>
   </ul>
@@ -788,7 +798,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-2.84217094e-14,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
         0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
         0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
-        1.42108547e-14,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        1.42108547e-14,  0.00000000e+00,  0.00000000e+00, -1.42108547e-14,
         0.00000000e+00, -1.42108547e-14, -2.84217094e-14,  0.00000000e+00])
 </pre></div>
 </div>
@@ -966,7 +976,7 @@ The standard deviation is a measure of <em>spread</em> of the scores.  For intui
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.461962361958337, 0.14698789185375888)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.461962361958337, 0.14698789185375885)
 </pre></div>
 </div>
 </div>
@@ -1162,7 +1172,7 @@ cross_val_score(estimator, X, y=None, *, groups=None, scoring=None, cv=None, n_j
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object _BaseKFold.split at 0x7f8794e595d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object _BaseKFold.split at 0x7f01f4b055d0&gt;
 </pre></div>
 </div>
 </div>
@@ -1351,13 +1361,13 @@ We can do a similar experiment as above to see what <code class="docutils litera
     <tr>
       <th>0</th>
       <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
+      <td>Test</td>
       <td>Train</td>
       <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
+      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
     </tr>
@@ -1379,13 +1389,13 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
       <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Test</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1407,7 +1417,7 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Train</td>
+      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
@@ -1456,13 +1466,13 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <th>439</th>
       <td>Train</td>
       <td>Train</td>
+      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
+      <td>Test</td>
       <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
+      <td>Test</td>
       <td>Train</td>
     </tr>
     <tr>
@@ -1470,7 +1480,7 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Train</td>
+      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
@@ -1485,11 +1495,11 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Test</td>
-      <td>Train</td>
+      <td>Test</td>
+      <td>Test</td>
     </tr>
   </tbody>
 </table>
@@ -1520,7 +1530,7 @@ We can do a similar experiment as above to see what <code class="docutils litera
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>195
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>178
 </pre></div>
 </div>
 </div>
