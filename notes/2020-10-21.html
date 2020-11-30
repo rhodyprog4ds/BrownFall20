@@ -287,7 +287,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2020-11-23.html">
-     Class 31: Intro to NLP
+     Class 32: Intro to NLP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-25.html">
+     Class 33: Tools, Workflow &amp; more NLP
     </a>
    </li>
   </ul>
@@ -573,12 +578,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;seaborn.axisgrid.PairGrid at 0x7f3fc413d2d0&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7f3f8447da90&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7f3f83b686d0&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7f3f827ee610&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7f3f827af3d0&gt;,
- &lt;seaborn.axisgrid.PairGrid at 0x7f3f818f2d90&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;seaborn.axisgrid.PairGrid at 0x7f61e8cbeb90&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7f61cbcafa50&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7f61cbce1f10&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7f61ca50d390&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7f61c9cc4b10&gt;,
+ &lt;seaborn.axisgrid.PairGrid at 0x7f61c9ccd850&gt;]
 </pre></div>
 </div>
 <img alt="../_images/2020-10-21_3_1.png" src="../_images/2020-10-21_3_1.png" />
@@ -672,18 +677,18 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;,
-       &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;,
-       &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;,
-       &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;,
-       &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;,
-       &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;,
-       &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;,
-       &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;,
-       &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;,
-       &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;,
-       &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;,
-       &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;], dtype=object)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;,
+       &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;,
+       &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;,
+       &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;,
+       &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;,
+       &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;,
+       &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;,
+       &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;,
+       &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;,
+       &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;,
+       &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;,
+       &#39;B&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;], dtype=object)
 </pre></div>
 </div>
 </div>
@@ -707,23 +712,21 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(221.20714285714286, 199.32, &#39;X[0] &lt;= 5.51\ngini = 0.499\nsamples = 150\nvalue = [71, 79]&#39;),
- Text(155.44285714285715, 163.07999999999998, &#39;X[1] &lt;= 5.325\ngini = 0.486\nsamples = 84\nvalue = [49, 35]&#39;),
- Text(95.65714285714286, 126.83999999999999, &#39;X[0] &lt;= 5.06\ngini = 0.237\nsamples = 51\nvalue = [44, 7]&#39;),
- Text(47.82857142857143, 90.6, &#39;X[1] &lt;= 4.0\ngini = 0.087\nsamples = 44\nvalue = [42, 2]&#39;),
- Text(23.914285714285715, 54.359999999999985, &#39;gini = 0.0\nsamples = 41\nvalue = [41, 0]&#39;),
- Text(71.74285714285715, 54.359999999999985, &#39;X[1] &lt;= 5.03\ngini = 0.444\nsamples = 3\nvalue = [1, 2]&#39;),
- Text(47.82857142857143, 18.119999999999976, &#39;gini = 0.0\nsamples = 2\nvalue = [0, 2]&#39;),
- Text(95.65714285714286, 18.119999999999976, &#39;gini = 0.0\nsamples = 1\nvalue = [1, 0]&#39;),
- Text(143.4857142857143, 90.6, &#39;X[1] &lt;= 3.92\ngini = 0.408\nsamples = 7\nvalue = [2, 5]&#39;),
- Text(119.57142857142857, 54.359999999999985, &#39;gini = 0.0\nsamples = 5\nvalue = [0, 5]&#39;),
- Text(167.4, 54.359999999999985, &#39;gini = 0.0\nsamples = 2\nvalue = [2, 0]&#39;),
- Text(215.22857142857143, 126.83999999999999, &#39;X[0] &lt;= 4.095\ngini = 0.257\nsamples = 33\nvalue = [5, 28]&#39;),
- Text(191.31428571428572, 90.6, &#39;gini = 0.0\nsamples = 28\nvalue = [0, 28]&#39;),
- Text(239.14285714285714, 90.6, &#39;gini = 0.0\nsamples = 5\nvalue = [5, 0]&#39;),
- Text(286.9714285714286, 163.07999999999998, &#39;X[1] &lt;= 3.855\ngini = 0.444\nsamples = 66\nvalue = [22, 44]&#39;),
- Text(263.0571428571429, 126.83999999999999, &#39;gini = 0.0\nsamples = 44\nvalue = [0, 44]&#39;),
- Text(310.8857142857143, 126.83999999999999, &#39;gini = 0.0\nsamples = 22\nvalue = [22, 0]&#39;)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(113.59285714285714, 195.696, &#39;X[1] &lt;= 2.335\ngini = 0.5\nsamples = 150\nvalue = [76, 74]&#39;),
+ Text(47.82857142857143, 152.208, &#39;X[0] &lt;= 4.085\ngini = 0.473\nsamples = 52\nvalue = [20, 32]&#39;),
+ Text(23.914285714285715, 108.72, &#39;gini = 0.0\nsamples = 20\nvalue = [20, 0]&#39;),
+ Text(71.74285714285715, 108.72, &#39;gini = 0.0\nsamples = 32\nvalue = [0, 32]&#39;),
+ Text(179.35714285714286, 152.208, &#39;X[0] &lt;= 2.695\ngini = 0.49\nsamples = 98\nvalue = [56, 42]&#39;),
+ Text(119.57142857142857, 108.72, &#39;X[1] &lt;= 4.0\ngini = 0.462\nsamples = 47\nvalue = [17, 30]&#39;),
+ Text(95.65714285714286, 65.232, &#39;gini = 0.0\nsamples = 17\nvalue = [17, 0]&#39;),
+ Text(143.4857142857143, 65.232, &#39;gini = 0.0\nsamples = 30\nvalue = [0, 30]&#39;),
+ Text(239.14285714285714, 108.72, &#39;X[1] &lt;= 3.895\ngini = 0.36\nsamples = 51\nvalue = [39, 12]&#39;),
+ Text(191.31428571428572, 65.232, &#39;X[0] &lt;= 4.1\ngini = 0.337\nsamples = 14\nvalue = [3, 11]&#39;),
+ Text(167.4, 21.744, &#39;gini = 0.0\nsamples = 3\nvalue = [3, 0]&#39;),
+ Text(215.22857142857143, 21.744, &#39;gini = 0.0\nsamples = 11\nvalue = [0, 11]&#39;),
+ Text(286.9714285714286, 65.232, &#39;X[0] &lt;= 4.085\ngini = 0.053\nsamples = 37\nvalue = [36, 1]&#39;),
+ Text(263.0571428571429, 21.744, &#39;gini = 0.0\nsamples = 1\nvalue = [0, 1]&#39;),
+ Text(310.8857142857143, 21.744, &#39;gini = 0.0\nsamples = 36\nvalue = [36, 0]&#39;)]
 </pre></div>
 </div>
 <img alt="../_images/2020-10-21_10_1.png" src="../_images/2020-10-21_10_1.png" />
@@ -736,31 +739,28 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_0 &lt;= 5.51
-|   |--- feature_1 &lt;= 5.33
-|   |   |--- feature_0 &lt;= 5.06
-|   |   |   |--- feature_1 &lt;= 4.00
-|   |   |   |   |--- class: A
-|   |   |   |--- feature_1 &gt;  4.00
-|   |   |   |   |--- feature_1 &lt;= 5.03
-|   |   |   |   |   |--- class: B
-|   |   |   |   |--- feature_1 &gt;  5.03
-|   |   |   |   |   |--- class: A
-|   |   |--- feature_0 &gt;  5.06
-|   |   |   |--- feature_1 &lt;= 3.92
-|   |   |   |   |--- class: B
-|   |   |   |--- feature_1 &gt;  3.92
-|   |   |   |   |--- class: A
-|   |--- feature_1 &gt;  5.33
-|   |   |--- feature_0 &lt;= 4.10
-|   |   |   |--- class: B
-|   |   |--- feature_0 &gt;  4.10
-|   |   |   |--- class: A
-|--- feature_0 &gt;  5.51
-|   |--- feature_1 &lt;= 3.85
-|   |   |--- class: B
-|   |--- feature_1 &gt;  3.85
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_1 &lt;= 2.33
+|   |--- feature_0 &lt;= 4.09
 |   |   |--- class: A
+|   |--- feature_0 &gt;  4.09
+|   |   |--- class: B
+|--- feature_1 &gt;  2.33
+|   |--- feature_0 &lt;= 2.70
+|   |   |--- feature_1 &lt;= 4.00
+|   |   |   |--- class: A
+|   |   |--- feature_1 &gt;  4.00
+|   |   |   |--- class: B
+|   |--- feature_0 &gt;  2.70
+|   |   |--- feature_1 &lt;= 3.89
+|   |   |   |--- feature_0 &lt;= 4.10
+|   |   |   |   |--- class: A
+|   |   |   |--- feature_0 &gt;  4.10
+|   |   |   |   |--- class: B
+|   |   |--- feature_1 &gt;  3.89
+|   |   |   |--- feature_0 &lt;= 4.09
+|   |   |   |   |--- class: B
+|   |   |   |--- feature_0 &gt;  4.09
+|   |   |   |   |--- class: A
 </pre></div>
 </div>
 </div>
@@ -772,7 +772,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.98
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
 </pre></div>
 </div>
 </div>
@@ -784,7 +784,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -815,7 +815,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.92
 </pre></div>
 </div>
 </div>
@@ -827,15 +827,15 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_0 &lt;= 5.51
-|   |--- feature_1 &lt;= 5.33
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_1 &lt;= 2.33
+|   |--- feature_0 &lt;= 4.09
 |   |   |--- class: A
-|   |--- feature_1 &gt;  5.33
+|   |--- feature_0 &gt;  4.09
 |   |   |--- class: B
-|--- feature_0 &gt;  5.51
-|   |--- feature_1 &lt;= 3.85
+|--- feature_1 &gt;  2.33
+|   |--- feature_0 &lt;= 2.70
 |   |   |--- class: B
-|   |--- feature_1 &gt;  3.85
+|   |--- feature_0 &gt;  2.70
 |   |   |--- class: A
 </pre></div>
 </div>
@@ -848,7 +848,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.92
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8066666666666666
 </pre></div>
 </div>
 </div>

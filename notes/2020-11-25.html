@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignments" href="../assignments/index.html" />
+    <link rel="prev" title="Class 32: Intro to NLP" href="2020-11-23.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -93,7 +95,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../syllabus/index.html">
    Syllabus
@@ -133,11 +135,11 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="index.html">
    Class Notes
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="2020-09-11.html">
      Class 2: intro to notebooks and python
@@ -285,7 +287,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2020-11-23.html">
-     Class 31: Intro to NLP
+     Class 32: Intro to NLP
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Class 33: Tools, Workflow &amp; more NLP
     </a>
    </li>
   </ul>
@@ -542,6 +549,23 @@
   <a class="reference internal nav-link" href="#review">
    Review
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matplotlib-vs-seaborn">
+     matplotlib vs seaborn:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vector-representation-review">
+   Vector representation review
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classification-with-text">
+   Classification with text
+  </a>
  </li>
 </ul>
 
@@ -558,28 +582,35 @@
 <h1>Class 33: Tools, Workflow &amp; more NLP<a class="headerlink" href="#class-33-tools-workflow-more-nlp" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="review">
 <h2>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<p>sklearn estimators have:
+fit, predict and score methods</p>
+<p>split, train and test are the <em>steps</em> we do, but not the names of methods of objects in <code class="docutils literal notranslate"><span class="pre">sklearn</span></code></p>
+<div class="section" id="matplotlib-vs-seaborn">
+<h3>matplotlib vs seaborn:<a class="headerlink" href="#matplotlib-vs-seaborn" title="Permalink to this headline">¶</a></h3>
+<p>We’ve learned two plotting libraries. Why would you use seaborn over matplotlib?</p>
 <ul class="simple">
-<li><p>sklearn estimators have fit, predict and score methods</p></li>
-<li><p>matplotlib vs seaborn:</p></li>
+<li><p>seaborn works better when the data is in a dataframe while matplotlib can work better with data in array form</p></li>
+<li><p>Matplotlib is more basic plotting, whereas seaborn has less syntax but more plotting customization and themes</p></li>
+<li><p>Seaborn uses simpler syntax  and easier to make complex intuitive plots with short commands</p></li>
+<li><p>seaborn is a higher level library that uses matplotlib “under the hood”.  It’s basically an easier way to graph, but directly using matplotlib can give us more freedom, but forces you to make all of the decisions.</p></li>
+<li><p>seaborn helps make “good” types of plots, both common and easy for people, on average, to read. Matplotlib, lets you do anything you want, even things that are likely to be confusing</p></li>
+<li><p>seaborn can show some statistical calculations while plotting</p></li>
+<li><p>seaborn makes categories easier to show, with for example the <code class="docutils literal notranslate"><span class="pre">hue</span></code>, <code class="docutils literal notranslate"><span class="pre">row</span></code>, and <code class="docutils literal notranslate"><span class="pre">column</span></code> parameters</p></li>
 </ul>
-<p>Class Response Summary:</p>
-<p>• seaborn works better when the data is in a dataframe while matplotlib can work better with data in array form</p>
-<p>• Matplotlib is more basic plotting, whereas seaborn has less syntax but more plotting customization</p>
-<p>and themes</p>
-<p>• Seaborn uses fewer syntax  and easier to make complex intuitive plots with short commands</p>
-<p>• seaborn is a higher level library that uses matplotlib “under the hood”.  It’s basically an easier way to graph, but directly using matplotlib might give us more freedom - if we know how to use it</p>
-<p>• when dealing with classifying or predicting data</p>
-<p>• and it uses fewer syntax</p>
-<p>• when you want to see statistics in the data</p>
-<p>• for example: to use hue feature, more easy to distinguish</p>
-<p>• fewer syntax</p>
-<p>• seaborn provides a variety while matplotlib doesn’t. and uses basic plotting so probably when you want to get creative</p>
-<p>Vocabulary:</p>
+</div>
+</div>
+<div class="section" id="vector-representation-review">
+<h2>Vector representation review<a class="headerlink" href="#vector-representation-review" title="Permalink to this headline">¶</a></h2>
+<p>Given this Vocabulary:</p>
 <p>[‘and’, ‘are’, ‘cat’, ‘cats’, ‘dogs’, ‘pets’, ‘popular’, ‘videos’]</p>
-<p>represent: Cats and dogs are pets
+<p>represent: Cats and dogs are pets</p>
+<p>Since we have the vocabulary, we can go word by word in the vocabulary and
 [1,1,0,1,1,1,0,0]</p>
 <p>build the vocabulary and transform with “Cats and dogs are pets”
 [ 1,1,1,1,1]</p>
+</div>
+<div class="section" id="classification-with-text">
+<h2>Classification with text<a class="headerlink" href="#classification-with-text" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load http://drsmb.co/310</span>
@@ -668,7 +699,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9898305084745763
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9932203389830508
 </pre></div>
 </div>
 </div>
@@ -704,6 +735,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="2020-11-23.html" title="previous page">Class 32: Intro to NLP</a>
+    <a class='right-next' id="next-link" href="../assignments/index.html" title="next page">Assignments</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

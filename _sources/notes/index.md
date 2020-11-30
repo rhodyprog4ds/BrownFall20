@@ -32,3 +32,4 @@ Class notes will get posted here day by day
 - [2020-11-18](2020-11-18): Learning and Validation Curves
 - [2020-11-20](2020-11-20): Confidence Intervals
 - [2020-11-23](2020-11-23): Intro to NLP
+- [2020-11-25](2020-11-25): More NLP
