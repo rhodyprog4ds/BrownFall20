@@ -106,7 +106,7 @@
   keyword: unstructured
   aware: Identify options for representing text data and use them once data is tranformed
   compentent: Apply at least one representation to transform unstructured data for model fitting or summarizing
-  mastery: apply mulitple representations and compare and contrast them for different end results
+  mastery: apply multiple representations and compare and contrast them for different end results
   portfolios: [3,4]
   clo: [model]
   assignments: [12,13]
