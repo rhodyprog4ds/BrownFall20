@@ -803,7 +803,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-2.84217094e-14,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
         0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
         0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
-        1.42108547e-14,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        1.42108547e-14,  0.00000000e+00,  0.00000000e+00, -1.42108547e-14,
         0.00000000e+00, -1.42108547e-14, -2.84217094e-14,  0.00000000e+00])
 </pre></div>
 </div>
@@ -981,7 +981,7 @@ The standard deviation is a measure of <em>spread</em> of the scores.  For intui
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.461962361958337, 0.14698789185375888)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.461962361958337, 0.14698789185375885)
 </pre></div>
 </div>
 </div>
@@ -1177,7 +1177,7 @@ cross_val_score(estimator, X, y=None, *, groups=None, scoring=None, cv=None, n_j
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object _BaseKFold.split at 0x7f47ec6dc5d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object _BaseKFold.split at 0x7f0be6aef5d0&gt;
 </pre></div>
 </div>
 </div>
@@ -1365,25 +1365,25 @@ We can do a similar experiment as above to see what <code class="docutils litera
   <tbody>
     <tr>
       <th>0</th>
-      <td>Test</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
       <td>Train</td>
       <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Test</td>
+      <td>Train</td>
+      <td>Test</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
     </tr>
     <tr>
       <th>1</th>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
       <td>Test</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
@@ -1394,26 +1394,26 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
+      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Test</td>
+      <td>Train</td>
+      <td>Test</td>
+      <td>Train</td>
     </tr>
     <tr>
       <th>3</th>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
+      <td>Train</td>
       <td>Test</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
-      <td>Test</td>
-      <td>Train</td>
-      <td>Train</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1422,10 +1422,10 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
       <td>Test</td>
       <td>Test</td>
+      <td>Train</td>
+      <td>Train</td>
       <td>Train</td>
     </tr>
     <tr>
@@ -1450,7 +1450,7 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Train</td>
+      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
     </tr>
@@ -1458,10 +1458,10 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <th>438</th>
       <td>Train</td>
       <td>Train</td>
+      <td>Train</td>
       <td>Test</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
@@ -1472,10 +1472,10 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
+      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Train</td>
-      <td>Train</td>
+      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
@@ -1487,10 +1487,10 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Test</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Test</td>
+      <td>Train</td>
+      <td>Train</td>
       <td>Train</td>
     </tr>
     <tr>
@@ -1501,7 +1501,7 @@ We can do a similar experiment as above to see what <code class="docutils litera
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
-      <td>Test</td>
+      <td>Train</td>
       <td>Train</td>
       <td>Train</td>
       <td>Train</td>
@@ -1535,7 +1535,7 @@ We can do a similar experiment as above to see what <code class="docutils litera
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>167
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>166
 </pre></div>
 </div>
 </div>
