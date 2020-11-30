@@ -75,6 +75,48 @@ Use the feedback you get on assignments to inspire your portfolio.
 Each submission should include an introduction and a number of 'chapters'.  The grade will be based on both that you demonstrate skills through your chapters that are inspired by the prompts and that your summary demonstrates that you *know* you learned the skills. See the [formatting tips](formatting) for advice on how to structure files.
 
 
+
+
+The third submission will be graded on the following criteria and due on December 4:
+
+```{code-cell} ipython3
+:tags: [remove-input]
+
+portfolio_df['Level 3'][portfolio_df['P3']==1].reset_index().set_index('keyword')
+```
+
+On each chapter(for a file) of your portfolio, you should identify which skills by their keyword, you are applying.
+
+You can view a (fake) example [in this repository](https://github.com/rhodyprog4ds/portfolio-brownsarahm) as a [pdf](https://github.com/rhodyprog4ds/portfolio-brownsarahm/blob/gh-pages/portfolio.pdf) or as a [rendered website](https://rhodyprog4ds.github.io/portfolio-brownsarahm/intro.html)
+
+## Upcoming Checks
+
+### Portfolio 4
+
+For the fourth submission, due December 19, you may earn level 1 for *any skill* an unlimited number, as long as your submission is clear and concise.  I recommend that you make a plan early (by updating your `subimssion_4_intro.md` file or making an issue on your repo) and ask for feedback in office hours.
+
+It will be graded primarily on the following criteria:
+```{code-cell} ipython3
+:tags: [remove-input]
+
+portfolio_df['Level 3'][portfolio_df['P4']==1].reset_index().set_index('keyword')
+```
+
+You may also earn level 2 for any of those skills and *one additional skill*.  For a single skill of your choice that you have attempted at least twice (assignments and portfolios) you may get an additional attempt in check 4. For this case, you must link to your two previous attempts and describe how you approached working on understanding this skill.
+
+Linking in markdown uses `[]` for display text and `()` for the url like:
+
+```
+[previous attempt here](https://github.com/rhodyprog4ds/portfolio-brownsarahm/blob/main/check1/loading_data.md)
+```
+that would render like: [previous attempt here](https://github.com/rhodyprog4ds/portfolio-brownsarahm/blob/main/check1/loading_data.md)
+
+You can also use relative paths as in the [example intro file](https://raw.githubusercontent.com/rhodyprog4ds/portfolio-brownsarahm/main/submission_1_intro.md). 
+
+## Past Checks
+
+### Portfolio 2
+
 The second submission will be graded on the following criteria and due on November 13:
 
 ```{code-cell} ipython3
@@ -82,10 +124,6 @@ The second submission will be graded on the following criteria and due on Novemb
 
 portfolio_df['Level 3'][portfolio_df['P2']==1].reset_index().set_index('keyword')
 ```
-
-On each chapter(for a file) of your portfolio, you should identify which skills by their keyword, you are applying.
-
-You can view a (fake) example [in this repository](https://github.com/rhodyprog4ds/portfolio-brownsarahm) as a [pdf](https://github.com/rhodyprog4ds/portfolio-brownsarahm/blob/gh-pages/portfolio.pdf) or as a [rendered website](https://rhodyprog4ds.github.io/portfolio-brownsarahm/intro.html)
 
 
 For this portfolio check I encourage you to dig in on either data from one domain and think about how clustering, regression, and classification apply in this domain  OR to inspect these more carefully in a performance prospective, taking a more CS-basics approach.  
