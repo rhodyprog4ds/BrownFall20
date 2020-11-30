@@ -295,6 +295,11 @@
      Class 33: Tools, Workflow &amp; more NLP
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020-11-30.html">
+     Class : More Representations of Text
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -609,7 +614,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9473684210526315
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9736842105263158
 </pre></div>
 </div>
 </div>
@@ -666,14 +671,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;mean_fit_time&#39;: array([0.00068402, 0.00083175, 0.00056205, 0.0007381 , 0.00057993,
-        0.00064435]),
- &#39;std_fit_time&#39;: array([1.28510755e-04, 1.63719801e-05, 6.22270847e-05, 3.59091624e-05,
-        4.08534531e-05, 2.58653283e-05]),
- &#39;mean_score_time&#39;: array([0.00032859, 0.00034728, 0.00028796, 0.00035033, 0.00028372,
-        0.0002975 ]),
- &#39;std_score_time&#39;: array([9.37976386e-06, 2.09062508e-05, 3.21532537e-05, 1.31503355e-05,
-        1.79350366e-05, 2.02812247e-05]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;mean_fit_time&#39;: array([0.00066204, 0.00072851, 0.00058832, 0.00066895, 0.00059581,
+        0.00060072]),
+ &#39;std_fit_time&#39;: array([1.92065864e-04, 2.32340587e-05, 6.60397257e-05, 1.68812477e-05,
+        9.97475636e-05, 1.77102482e-05]),
+ &#39;mean_score_time&#39;: array([0.00031176, 0.00033808, 0.00030847, 0.00032525, 0.00030646,
+        0.00031404]),
+ &#39;std_score_time&#39;: array([2.19467378e-05, 7.78866462e-06, 3.06912043e-05, 1.02552143e-05,
+        2.49534858e-05, 1.30364175e-05]),
  &#39;param_C&#39;: masked_array(data=[0.5, 0.5, 1, 1, 10, 10],
               mask=[False, False, False, False, False, False],
         fill_value=&#39;?&#39;,
@@ -758,10 +763,10 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.000684</td>
-      <td>0.000129</td>
-      <td>0.000329</td>
-      <td>0.000009</td>
+      <td>0.000662</td>
+      <td>0.000192</td>
+      <td>0.000312</td>
+      <td>0.000022</td>
       <td>0.5</td>
       <td>linear</td>
       <td>{'C': 0.5, 'kernel': 'linear'}</td>
@@ -776,10 +781,10 @@
     </tr>
     <tr>
       <th>1</th>
-      <td>0.000832</td>
-      <td>0.000016</td>
-      <td>0.000347</td>
-      <td>0.000021</td>
+      <td>0.000729</td>
+      <td>0.000023</td>
+      <td>0.000338</td>
+      <td>0.000008</td>
       <td>0.5</td>
       <td>rbf</td>
       <td>{'C': 0.5, 'kernel': 'rbf'}</td>
@@ -794,10 +799,10 @@
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000562</td>
-      <td>0.000062</td>
-      <td>0.000288</td>
-      <td>0.000032</td>
+      <td>0.000588</td>
+      <td>0.000066</td>
+      <td>0.000308</td>
+      <td>0.000031</td>
       <td>1</td>
       <td>linear</td>
       <td>{'C': 1, 'kernel': 'linear'}</td>
@@ -812,10 +817,10 @@
     </tr>
     <tr>
       <th>3</th>
-      <td>0.000738</td>
-      <td>0.000036</td>
-      <td>0.000350</td>
-      <td>0.000013</td>
+      <td>0.000669</td>
+      <td>0.000017</td>
+      <td>0.000325</td>
+      <td>0.000010</td>
       <td>1</td>
       <td>rbf</td>
       <td>{'C': 1, 'kernel': 'rbf'}</td>
@@ -830,10 +835,10 @@
     </tr>
     <tr>
       <th>4</th>
-      <td>0.000580</td>
-      <td>0.000041</td>
-      <td>0.000284</td>
-      <td>0.000018</td>
+      <td>0.000596</td>
+      <td>0.000100</td>
+      <td>0.000306</td>
+      <td>0.000025</td>
       <td>10</td>
       <td>linear</td>
       <td>{'C': 10, 'kernel': 'linear'}</td>
@@ -848,10 +853,10 @@
     </tr>
     <tr>
       <th>5</th>
-      <td>0.000644</td>
-      <td>0.000026</td>
-      <td>0.000297</td>
-      <td>0.000020</td>
+      <td>0.000601</td>
+      <td>0.000018</td>
+      <td>0.000314</td>
+      <td>0.000013</td>
       <td>10</td>
       <td>rbf</td>
       <td>{'C': 10, 'kernel': 'rbf'}</td>
@@ -875,8 +880,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 0, 2, 0, 2, 0, 0, 0, 1, 0, 1, 2, 2, 1, 2, 1, 0, 2, 1, 1, 0, 0,
-       0, 0, 1, 1, 1, 2, 1, 2, 2, 1, 0, 1, 2, 0, 0, 0])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 2, 2, 0, 2, 0, 1, 1, 0, 1, 0, 1, 1, 2, 0, 2, 0, 1, 1, 1, 1, 0,
+       0, 1, 2, 2, 1, 0, 1, 2, 2, 1, 0, 2, 2, 0, 1, 2])
 </pre></div>
 </div>
 </div>
@@ -915,7 +920,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;criterion&#39;: &#39;gini&#39;, &#39;max_depth&#39;: 4, &#39;min_samples_leaf&#39;: 2}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;criterion&#39;: &#39;gini&#39;, &#39;max_depth&#39;: 3, &#39;min_samples_leaf&#39;: 4}
 </pre></div>
 </div>
 </div>
