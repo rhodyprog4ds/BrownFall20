@@ -75,4 +75,4 @@ sections:
   - file: resources/python
   - file: resources/cheatsheet
   - file: resources/datasets
-- file: lessons/index
+  - file: lessons/index
