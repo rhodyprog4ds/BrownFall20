@@ -1,85 +1,78 @@
-- file: intro
-
+format: jb-article
+root: intro
+sections:
 - file: syllabus/index
   title: Syllabus
   sections:
-    - file: syllabus/about-course
-    - file: syllabus/tools
-    - file: syllabus/grading
-    - file: syllabus/course_map
-    - file: syllabus/uri_resources
-    - file: syllabus/uri_statements
-
+  - file: syllabus/about-course
+  - file: syllabus/tools
+  - file: syllabus/grading
+  - file: syllabus/course_map
+  - file: syllabus/uri_resources
+  - file: syllabus/uri_statements
 - file: notes/index
-  expand_sections: true
   sections:
-    - file: notes/2020-09-11
-    - file: notes/2020-09-14
-    - file: notes/2020-09-16
-    - file: notes/2020-09-18
-    - file: notes/2020-09-21
-    - file: notes/2020-09-23
-    - file: notes/2020-09-25
-    - file: notes/2020-09-28
-    - file: notes/2020-09-30
-    - file: notes/2020-10-02
-    - file: notes/2020-10-05
-    - file: notes/2020-10-07
-    - file: notes/2020-10-09
-    - file: notes/2020-10-12
-    - file: notes/2020-10-14
-    - file: notes/2020-10-16
-    - file: notes/2020-10-19
-    - file: notes/2020-10-21
-    - file: notes/2020-10-23
-    - file: notes/2020-10-26
-    - file: notes/2020-10-28
-    - file: notes/2020-10-30
-    - file: notes/2020-11-02
-    - file: notes/2020-11-04
-    - file: notes/2020-11-06
-    - file: notes/2020-11-09
-    - file: notes/2020-11-13
-    - file: notes/2020-11-16
-    - file: notes/2020-11-18
-    - file: notes/2020-11-20
-    - file: notes/2020-11-23
-    - file: notes/2020-11-25
-    - file: notes/2020-11-30
-
+  - file: notes/2020-09-11
+  - file: notes/2020-09-14
+  - file: notes/2020-09-16
+  - file: notes/2020-09-18
+  - file: notes/2020-09-21
+  - file: notes/2020-09-23
+  - file: notes/2020-09-25
+  - file: notes/2020-09-28
+  - file: notes/2020-09-30
+  - file: notes/2020-10-02
+  - file: notes/2020-10-05
+  - file: notes/2020-10-07
+  - file: notes/2020-10-09
+  - file: notes/2020-10-12
+  - file: notes/2020-10-14
+  - file: notes/2020-10-16
+  - file: notes/2020-10-19
+  - file: notes/2020-10-21
+  - file: notes/2020-10-23
+  - file: notes/2020-10-26
+  - file: notes/2020-10-28
+  - file: notes/2020-10-30
+  - file: notes/2020-11-02
+  - file: notes/2020-11-04
+  - file: notes/2020-11-06
+  - file: notes/2020-11-09
+  - file: notes/2020-11-13
+  - file: notes/2020-11-16
+  - file: notes/2020-11-18
+  - file: notes/2020-11-20
+  - file: notes/2020-11-23
+  - file: notes/2020-11-25
+  - file: notes/2020-11-30
 - file: assignments/index
-  expand_sections: true
   sections:
-    - file: assignments/01-python-syllabus
-    - file: assignments/02-python-access
-    - file: assignments/03-exploratory
-    - file: assignments/04-prepare
-    - file: assignments/05-construct
-    - file: assignments/06-naive-bayes
-    - file: assignments/07-decision-tree
-    - file: assignments/08-regression
-    - file: assignments/09-clustering
-    - file: assignments/10-optimization
-    - file: assignments/11-model-selection
-    - file: assignments/12-fake-news
-
+  - file: assignments/01-python-syllabus
+  - file: assignments/02-python-access
+  - file: assignments/03-exploratory
+  - file: assignments/04-prepare
+  - file: assignments/05-construct
+  - file: assignments/06-naive-bayes
+  - file: assignments/07-decision-tree
+  - file: assignments/08-regression
+  - file: assignments/09-clustering
+  - file: assignments/10-optimization
+  - file: assignments/11-model-selection
+  - file: assignments/12-fake-news
 - file: portfolio/index
   sections:
-    - file: portfolio/formatting
-    - file: portfolio/reflective
-    - file: portfolio/analyses
-
+  - file: portfolio/formatting
+  - file: portfolio/reflective
+  - file: portfolio/analyses
 - file: faq/index
   sections:
-    - file: faq/syllabus
-    - file: faq/github
-    - file: faq/debugging
-
+  - file: faq/syllabus
+  - file: faq/github
+  - file: faq/debugging
 - file: resources/index
   sections:
-    - file: resources/tips
-    - file: resources/python
-    - file: resources/cheatsheet
-    - file: resources/datasets
-
+  - file: resources/tips
+  - file: resources/python
+  - file: resources/cheatsheet
+  - file: resources/datasets
 - file: lessons/index
