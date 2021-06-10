@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Class 10: Cleaning review and Ray Summit Keynotes &#8212; Programming for Data Science at URI Fall 2020</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,20 +31,17 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -59,14 +53,14 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Class 11: Cleaning Data" href="2020-10-02.html" />
     <link rel="prev" title="Class 9: Preparing Data For Analysis" href="2020-09-28.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -75,32 +69,37 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Programming for Data Science at URI Fall 2020</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming for Data Science at URI Fall 2020</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    Welcome to Programming for Data Science
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../syllabus/index.html">
    Syllabus
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../syllabus/about-course.html">
      About
@@ -132,14 +131,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="index.html">
    Class Notes
   </a>
-  <ul class="current collapse-ul">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="2020-09-11.html">
      Class 2: intro to notebooks and python
@@ -301,14 +303,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../assignments/index.html">
    Assignments
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../assignments/01-python-syllabus.html">
      Assignment 1: Portfolio Setup, Data Science, and Python
@@ -370,14 +375,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../portfolio/index.html">
    Portfolio
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../portfolio/formatting.html">
      Formatting Tips
@@ -394,14 +402,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../faq/index.html">
    FAQ
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../faq/syllabus.html">
      Syllabus FAQ
@@ -418,14 +429,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../resources/index.html">
    Resources
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../resources/tips.html">
      General Tips and Resources
@@ -442,11 +456,10 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -462,21 +475,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -497,7 +510,7 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -514,14 +527,14 @@
     </div>
 </div>
 
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -540,16 +553,16 @@
     </div>
 </div>
 
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ray-summit-notes">
    Ray Summit Notes
@@ -569,8 +582,8 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -608,227 +621,36 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">cb7bb7f4d96e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">data_url</span><span class="p">)</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span>                 <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span>                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">299</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span> 
+<span class="g g-Whitespace">    </span><span class="mi">301</span>         <span class="k">return</span> <span class="n">wrapper</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Ethnicity</th>
-      <th>Asian</th>
-      <th>Unnamed: 2</th>
-      <th>Unnamed: 3</th>
-      <th>Unnamed: 4</th>
-      <th>Black</th>
-      <th>Unnamed: 6</th>
-      <th>Unnamed: 7</th>
-      <th>Unnamed: 8</th>
-      <th>Hispanic</th>
-      <th>Unnamed: 10</th>
-      <th>Unnamed: 11</th>
-      <th>Unnamed: 12</th>
-      <th>White not Hispanic</th>
-      <th>Unnamed: 14</th>
-      <th>Unnamed: 15</th>
-      <th>Unnamed: 16</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Gender</td>
-      <td>Female</td>
-      <td>NaN</td>
-      <td>Male</td>
-      <td>NaN</td>
-      <td>Female</td>
-      <td>NaN</td>
-      <td>Male</td>
-      <td>NaN</td>
-      <td>Female</td>
-      <td>NaN</td>
-      <td>Male</td>
-      <td>NaN</td>
-      <td>Female</td>
-      <td>NaN</td>
-      <td>Male</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>NaN</td>
-      <td>count</td>
-      <td>mean</td>
-      <td>count</td>
-      <td>mean</td>
-      <td>count</td>
-      <td>mean</td>
-      <td>count</td>
-      <td>mean</td>
-      <td>count</td>
-      <td>mean</td>
-      <td>count</td>
-      <td>mean</td>
-      <td>count</td>
-      <td>mean</td>
-      <td>count</td>
-      <td>mean</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Age Cohort</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0 - 5</td>
-      <td>6</td>
-      <td>1544.33</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>18</td>
-      <td>1431.33</td>
-      <td>26</td>
-      <td>1366.81</td>
-      <td>11</td>
-      <td>1316.82</td>
-      <td>9</td>
-      <td>1428.11</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>51 +</td>
-      <td>9</td>
-      <td>56577.7</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>12</td>
-      <td>53019</td>
-      <td>37</td>
-      <td>53449.5</td>
-      <td>29</td>
-      <td>51676.4</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>13-17</td>
-      <td>10</td>
-      <td>3385.7</td>
-      <td>10</td>
-      <td>3632.5</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>8</td>
-      <td>4367.25</td>
-      <td>50</td>
-      <td>4043.72</td>
-      <td>53</td>
-      <td>3871.85</td>
-      <td>37</td>
-      <td>3818.81</td>
-      <td>30</td>
-      <td>4009.87</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>18-21</td>
-      <td>18</td>
-      <td>10083.3</td>
-      <td>23</td>
-      <td>9218.52</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>7</td>
-      <td>9119.43</td>
-      <td>41</td>
-      <td>10199.4</td>
-      <td>37</td>
-      <td>9694.41</td>
-      <td>36</td>
-      <td>10452.9</td>
-      <td>33</td>
-      <td>9784.09</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>22-50</td>
-      <td>12</td>
-      <td>39470.9</td>
-      <td>17</td>
-      <td>39657.9</td>
-      <td>8</td>
-      <td>41284.1</td>
-      <td>9</td>
-      <td>39941</td>
-      <td>24</td>
-      <td>41005.5</td>
-      <td>19</td>
-      <td>40821.3</td>
-      <td>60</td>
-      <td>42113.8</td>
-      <td>73</td>
-      <td>38604.5</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>6-12</td>
-      <td>6</td>
-      <td>2165.33</td>
-      <td>12</td>
-      <td>2164.17</td>
-      <td>7</td>
-      <td>2566.57</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>54</td>
-      <td>2443.78</td>
-      <td>37</td>
-      <td>2120.14</td>
-      <td>24</td>
-      <td>2112.75</td>
-      <td>22</td>
-      <td>1986.27</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/pandas/io/excel/_base.py</span> in <span class="ni">read_excel</span><span class="nt">(io, sheet_name, header, names, index_col, usecols, squeeze, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, thousands, comment, skipfooter, convert_float, mangle_dupe_cols, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">334</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">ExcelFile</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">335</span>         <span class="n">should_close</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="ne">--&gt; </span><span class="mi">336</span>         <span class="n">io</span> <span class="o">=</span> <span class="n">ExcelFile</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span>     <span class="k">elif</span> <span class="n">engine</span> <span class="ow">and</span> <span class="n">engine</span> <span class="o">!=</span> <span class="n">io</span><span class="o">.</span><span class="n">engine</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">338</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/pandas/io/excel/_base.py</span> in <span class="ni">__init__</span><span class="nt">(self, path_or_buffer, engine, storage_options)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1101</span>             <span class="k">if</span> <span class="n">ext</span> <span class="o">!=</span> <span class="s2">&quot;xls&quot;</span> <span class="ow">and</span> <span class="n">xlrd_version</span> <span class="o">&gt;=</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1102</span>                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="ne">-&gt; </span><span class="mi">1103</span>                     <span class="sa">f</span><span class="s2">&quot;Your version of xlrd is </span><span class="si">{</span><span class="n">xlrd_version</span><span class="si">}</span><span class="s2">. In xlrd &gt;= 2.0, &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1104</span>                     <span class="sa">f</span><span class="s2">&quot;only the xls format is supported. Install openpyxl instead.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1105</span>                 <span class="p">)</span>
+
+<span class="ne">ValueError</span>: Your version of xlrd is 2.0.1. In xlrd &gt;= 2.0, only the xls format is supported. Install openpyxl instead.
+</pre></div>
+</div>
+</div>
 </div>
 <p>We can read multiple rows in as the header</p>
 <div class="cell docutils container">
@@ -838,212 +660,72 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">aeb280e6386d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)))</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span>                 <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span>                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">299</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span> 
+<span class="g g-Whitespace">    </span><span class="mi">301</span>         <span class="k">return</span> <span class="n">wrapper</span>
 
-    .dataframe thead tr th {
-        text-align: left;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Ethnicity</th>
-      <th colspan="4" halign="left">Asian</th>
-      <th colspan="4" halign="left">Black</th>
-      <th colspan="4" halign="left">Hispanic</th>
-      <th colspan="4" halign="left">White not Hispanic</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>Gender</th>
-      <th colspan="2" halign="left">Female</th>
-      <th colspan="2" halign="left">Male</th>
-      <th colspan="2" halign="left">Female</th>
-      <th colspan="2" halign="left">Male</th>
-      <th colspan="2" halign="left">Female</th>
-      <th colspan="2" halign="left">Male</th>
-      <th colspan="2" halign="left">Female</th>
-      <th colspan="2" halign="left">Male</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>Unnamed: 0_level_2</th>
-      <th>count</th>
-      <th>mean</th>
-      <th>count</th>
-      <th>mean</th>
-      <th>count</th>
-      <th>mean</th>
-      <th>count</th>
-      <th>mean</th>
-      <th>count</th>
-      <th>mean</th>
-      <th>count</th>
-      <th>mean</th>
-      <th>count</th>
-      <th>mean</th>
-      <th>count</th>
-      <th>mean</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>Age Cohort</th>
-      <th>Unnamed: 1_level_3</th>
-      <th>Unnamed: 2_level_3</th>
-      <th>Unnamed: 3_level_3</th>
-      <th>Unnamed: 4_level_3</th>
-      <th>Unnamed: 5_level_3</th>
-      <th>Unnamed: 6_level_3</th>
-      <th>Unnamed: 7_level_3</th>
-      <th>Unnamed: 8_level_3</th>
-      <th>Unnamed: 9_level_3</th>
-      <th>Unnamed: 10_level_3</th>
-      <th>Unnamed: 11_level_3</th>
-      <th>Unnamed: 12_level_3</th>
-      <th>Unnamed: 13_level_3</th>
-      <th>Unnamed: 14_level_3</th>
-      <th>Unnamed: 15_level_3</th>
-      <th>Unnamed: 16_level_3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0 - 5</td>
-      <td>6</td>
-      <td>1544.333333</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>18.0</td>
-      <td>1431.333333</td>
-      <td>26</td>
-      <td>1366.807692</td>
-      <td>11</td>
-      <td>1316.818182</td>
-      <td>9</td>
-      <td>1428.111111</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>51 +</td>
-      <td>9</td>
-      <td>56577.666667</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>12</td>
-      <td>53019.000000</td>
-      <td>37</td>
-      <td>53449.486486</td>
-      <td>29</td>
-      <td>51676.448276</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>13-17</td>
-      <td>10</td>
-      <td>3385.700000</td>
-      <td>10.0</td>
-      <td>3632.500000</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>8.0</td>
-      <td>4367.250000</td>
-      <td>50.0</td>
-      <td>4043.720000</td>
-      <td>53</td>
-      <td>3871.849057</td>
-      <td>37</td>
-      <td>3818.810811</td>
-      <td>30</td>
-      <td>4009.866667</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>18-21</td>
-      <td>18</td>
-      <td>10083.277778</td>
-      <td>23.0</td>
-      <td>9218.521739</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>7.0</td>
-      <td>9119.428571</td>
-      <td>41.0</td>
-      <td>10199.390244</td>
-      <td>37</td>
-      <td>9694.405405</td>
-      <td>36</td>
-      <td>10452.944444</td>
-      <td>33</td>
-      <td>9784.090909</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>22-50</td>
-      <td>12</td>
-      <td>39470.916667</td>
-      <td>17.0</td>
-      <td>39657.882353</td>
-      <td>8.0</td>
-      <td>41284.125000</td>
-      <td>9.0</td>
-      <td>39941.000000</td>
-      <td>24.0</td>
-      <td>41005.541667</td>
-      <td>19</td>
-      <td>40821.263158</td>
-      <td>60</td>
-      <td>42113.816667</td>
-      <td>73</td>
-      <td>38604.452055</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>6-12</td>
-      <td>6</td>
-      <td>2165.333333</td>
-      <td>12.0</td>
-      <td>2164.166667</td>
-      <td>7.0</td>
-      <td>2566.571429</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>54.0</td>
-      <td>2443.777778</td>
-      <td>37</td>
-      <td>2120.135135</td>
-      <td>24</td>
-      <td>2112.750000</td>
-      <td>22</td>
-      <td>1986.272727</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/pandas/io/excel/_base.py</span> in <span class="ni">read_excel</span><span class="nt">(io, sheet_name, header, names, index_col, usecols, squeeze, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, thousands, comment, skipfooter, convert_float, mangle_dupe_cols, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">334</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">ExcelFile</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">335</span>         <span class="n">should_close</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="ne">--&gt; </span><span class="mi">336</span>         <span class="n">io</span> <span class="o">=</span> <span class="n">ExcelFile</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span>     <span class="k">elif</span> <span class="n">engine</span> <span class="ow">and</span> <span class="n">engine</span> <span class="o">!=</span> <span class="n">io</span><span class="o">.</span><span class="n">engine</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">338</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/pandas/io/excel/_base.py</span> in <span class="ni">__init__</span><span class="nt">(self, path_or_buffer, engine, storage_options)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1101</span>             <span class="k">if</span> <span class="n">ext</span> <span class="o">!=</span> <span class="s2">&quot;xls&quot;</span> <span class="ow">and</span> <span class="n">xlrd_version</span> <span class="o">&gt;=</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1102</span>                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="ne">-&gt; </span><span class="mi">1103</span>                     <span class="sa">f</span><span class="s2">&quot;Your version of xlrd is </span><span class="si">{</span><span class="n">xlrd_version</span><span class="si">}</span><span class="s2">. In xlrd &gt;= 2.0, &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1104</span>                     <span class="sa">f</span><span class="s2">&quot;only the xls format is supported. Install openpyxl instead.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1105</span>                 <span class="p">)</span>
+
+<span class="ne">ValueError</span>: Your version of xlrd is 2.0.1. In xlrd &gt;= 2.0, only the xls format is supported. Install openpyxl instead.
+</pre></div>
+</div>
+</div>
 </div>
 <p>Looks good, let’s save this to a DataFrame</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_dds_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">627</span><span class="n">b4cbdff1b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ca_dds_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)))</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span>                 <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span>                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">299</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span> 
+<span class="g g-Whitespace">    </span><span class="mi">301</span>         <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/pandas/io/excel/_base.py</span> in <span class="ni">read_excel</span><span class="nt">(io, sheet_name, header, names, index_col, usecols, squeeze, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, thousands, comment, skipfooter, convert_float, mangle_dupe_cols, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">334</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">ExcelFile</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">335</span>         <span class="n">should_close</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="ne">--&gt; </span><span class="mi">336</span>         <span class="n">io</span> <span class="o">=</span> <span class="n">ExcelFile</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span>     <span class="k">elif</span> <span class="n">engine</span> <span class="ow">and</span> <span class="n">engine</span> <span class="o">!=</span> <span class="n">io</span><span class="o">.</span><span class="n">engine</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">338</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/pandas/io/excel/_base.py</span> in <span class="ni">__init__</span><span class="nt">(self, path_or_buffer, engine, storage_options)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1101</span>             <span class="k">if</span> <span class="n">ext</span> <span class="o">!=</span> <span class="s2">&quot;xls&quot;</span> <span class="ow">and</span> <span class="n">xlrd_version</span> <span class="o">&gt;=</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1102</span>                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="ne">-&gt; </span><span class="mi">1103</span>                     <span class="sa">f</span><span class="s2">&quot;Your version of xlrd is </span><span class="si">{</span><span class="n">xlrd_version</span><span class="si">}</span><span class="s2">. In xlrd &gt;= 2.0, &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1104</span>                     <span class="sa">f</span><span class="s2">&quot;only the xls format is supported. Install openpyxl instead.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1105</span>                 <span class="p">)</span>
+
+<span class="ne">ValueError</span>: Your version of xlrd is 2.0.1. In xlrd &gt;= 2.0, only the xls format is supported. Install openpyxl instead.
 </pre></div>
 </div>
 </div>
@@ -1055,187 +737,15 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">8</span><span class="n">d811b295c4b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ca_dds_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Ethnicity</th>
-      <th colspan="4" halign="left">Asian</th>
-      <th colspan="4" halign="left">Black</th>
-      <th colspan="4" halign="left">Hispanic</th>
-      <th colspan="4" halign="left">White not Hispanic</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>Gender</th>
-      <th colspan="2" halign="left">Female</th>
-      <th colspan="2" halign="left">Male</th>
-      <th colspan="2" halign="left">Female</th>
-      <th colspan="2" halign="left">Male</th>
-      <th colspan="2" halign="left">Female</th>
-      <th colspan="2" halign="left">Male</th>
-      <th colspan="2" halign="left">Female</th>
-      <th colspan="2" halign="left">Male</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>Unnamed: 0_level_2</th>
-      <th>count</th>
-      <th>mean</th>
-      <th>count</th>
-      <th>mean</th>
-      <th>count</th>
-      <th>mean</th>
-      <th>count</th>
-      <th>mean</th>
-      <th>count</th>
-      <th>mean</th>
-      <th>count</th>
-      <th>mean</th>
-      <th>count</th>
-      <th>mean</th>
-      <th>count</th>
-      <th>mean</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>Age Cohort</th>
-      <th>Unnamed: 1_level_3</th>
-      <th>Unnamed: 2_level_3</th>
-      <th>Unnamed: 3_level_3</th>
-      <th>Unnamed: 4_level_3</th>
-      <th>Unnamed: 5_level_3</th>
-      <th>Unnamed: 6_level_3</th>
-      <th>Unnamed: 7_level_3</th>
-      <th>Unnamed: 8_level_3</th>
-      <th>Unnamed: 9_level_3</th>
-      <th>Unnamed: 10_level_3</th>
-      <th>Unnamed: 11_level_3</th>
-      <th>Unnamed: 12_level_3</th>
-      <th>Unnamed: 13_level_3</th>
-      <th>Unnamed: 14_level_3</th>
-      <th>Unnamed: 15_level_3</th>
-      <th>Unnamed: 16_level_3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0 - 5</td>
-      <td>6</td>
-      <td>1544.333333</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>18.0</td>
-      <td>1431.333333</td>
-      <td>26</td>
-      <td>1366.807692</td>
-      <td>11</td>
-      <td>1316.818182</td>
-      <td>9</td>
-      <td>1428.111111</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>51 +</td>
-      <td>9</td>
-      <td>56577.666667</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>12</td>
-      <td>53019.000000</td>
-      <td>37</td>
-      <td>53449.486486</td>
-      <td>29</td>
-      <td>51676.448276</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>13-17</td>
-      <td>10</td>
-      <td>3385.700000</td>
-      <td>10.0</td>
-      <td>3632.500000</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>8.0</td>
-      <td>4367.250000</td>
-      <td>50.0</td>
-      <td>4043.720000</td>
-      <td>53</td>
-      <td>3871.849057</td>
-      <td>37</td>
-      <td>3818.810811</td>
-      <td>30</td>
-      <td>4009.866667</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>18-21</td>
-      <td>18</td>
-      <td>10083.277778</td>
-      <td>23.0</td>
-      <td>9218.521739</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>7.0</td>
-      <td>9119.428571</td>
-      <td>41.0</td>
-      <td>10199.390244</td>
-      <td>37</td>
-      <td>9694.405405</td>
-      <td>36</td>
-      <td>10452.944444</td>
-      <td>33</td>
-      <td>9784.090909</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>22-50</td>
-      <td>12</td>
-      <td>39470.916667</td>
-      <td>17.0</td>
-      <td>39657.882353</td>
-      <td>8.0</td>
-      <td>41284.125</td>
-      <td>9.0</td>
-      <td>39941.000000</td>
-      <td>24.0</td>
-      <td>41005.541667</td>
-      <td>19</td>
-      <td>40821.263158</td>
-      <td>60</td>
-      <td>42113.816667</td>
-      <td>73</td>
-      <td>38604.452055</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;ca_dds_df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1244,24 +754,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndex([(         &#39;Ethnicity&#39;, &#39;Gender&#39;, &#39;Unnamed: 0_level_2&#39;, ...),
-            (             &#39;Asian&#39;, &#39;Female&#39;,              &#39;count&#39;, ...),
-            (             &#39;Asian&#39;, &#39;Female&#39;,               &#39;mean&#39;, ...),
-            (             &#39;Asian&#39;,   &#39;Male&#39;,              &#39;count&#39;, ...),
-            (             &#39;Asian&#39;,   &#39;Male&#39;,               &#39;mean&#39;, ...),
-            (             &#39;Black&#39;, &#39;Female&#39;,              &#39;count&#39;, ...),
-            (             &#39;Black&#39;, &#39;Female&#39;,               &#39;mean&#39;, ...),
-            (             &#39;Black&#39;,   &#39;Male&#39;,              &#39;count&#39;, ...),
-            (             &#39;Black&#39;,   &#39;Male&#39;,               &#39;mean&#39;, ...),
-            (          &#39;Hispanic&#39;, &#39;Female&#39;,              &#39;count&#39;, ...),
-            (          &#39;Hispanic&#39;, &#39;Female&#39;,               &#39;mean&#39;, ...),
-            (          &#39;Hispanic&#39;,   &#39;Male&#39;,              &#39;count&#39;, ...),
-            (          &#39;Hispanic&#39;,   &#39;Male&#39;,               &#39;mean&#39;, ...),
-            (&#39;White not Hispanic&#39;, &#39;Female&#39;,              &#39;count&#39;, ...),
-            (&#39;White not Hispanic&#39;, &#39;Female&#39;,               &#39;mean&#39;, ...),
-            (&#39;White not Hispanic&#39;,   &#39;Male&#39;,              &#39;count&#39;, ...),
-            (&#39;White not Hispanic&#39;,   &#39;Male&#39;,               &#39;mean&#39;, ...)],
-           )
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">2</span><span class="n">f51e10b6c51</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ca_dds_df</span><span class="o">.</span><span class="n">columns</span>
+
+<span class="ne">NameError</span>: name &#39;ca_dds_df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1309,15 +807,15 @@
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="2020-09-28.html" title="previous page">Class 9: Preparing Data For Analysis</a>
     <a class='right-next' id="next-link" href="2020-10-02.html" title="next page">Class 11: Cleaning Data</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -1325,7 +823,7 @@
         
           By Professor Sarah M Brown<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -1334,11 +832,9 @@
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
-
-
-    
+  
   </body>
 </html>

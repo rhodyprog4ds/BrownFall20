@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Class 21: Regression &#8212; Programming for Data Science at URI Fall 2020</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,20 +31,17 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -55,18 +49,20 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Class 22: More Regression, More Evaluation and LASSO" href="2020-10-28.html" />
     <link rel="prev" title="Class 20: Decision Trees and Cross Validation" href="2020-10-23.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -75,32 +71,37 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Programming for Data Science at URI Fall 2020</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming for Data Science at URI Fall 2020</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    Welcome to Programming for Data Science
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../syllabus/index.html">
    Syllabus
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../syllabus/about-course.html">
      About
@@ -132,14 +133,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="index.html">
    Class Notes
   </a>
-  <ul class="current collapse-ul">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="2020-09-11.html">
      Class 2: intro to notebooks and python
@@ -301,14 +305,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../assignments/index.html">
    Assignments
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../assignments/01-python-syllabus.html">
      Assignment 1: Portfolio Setup, Data Science, and Python
@@ -370,14 +377,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../portfolio/index.html">
    Portfolio
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../portfolio/formatting.html">
      Formatting Tips
@@ -394,14 +404,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../faq/index.html">
    FAQ
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../faq/syllabus.html">
      Syllabus FAQ
@@ -418,14 +431,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../resources/index.html">
    Resources
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../resources/tips.html">
      General Tips and Resources
@@ -442,11 +458,10 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -462,21 +477,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -497,7 +512,7 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -514,14 +529,14 @@
     </div>
 </div>
 
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -540,16 +555,16 @@
     </div>
 </div>
 
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#regression-introduction">
    Regression Introduction
@@ -616,8 +631,8 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -728,47 +743,47 @@
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">7563</span><span class="n">ebc7151a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">regr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">diabetes_X_train</span><span class="p">,</span><span class="n">diabetes_y_train</span><span class="p">)</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/linear_model/_base.py</span> in <span class="ni">fit</span><span class="nt">(self, X, y, sample_weight)</span>
-<span class="g g-Whitespace">    </span><span class="mi">504</span>         <span class="n">n_jobs_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_jobs</span>
-<span class="g g-Whitespace">    </span><span class="mi">505</span>         <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;csr&#39;</span><span class="p">,</span> <span class="s1">&#39;csc&#39;</span><span class="p">,</span> <span class="s1">&#39;coo&#39;</span><span class="p">],</span>
-<span class="ne">--&gt; </span><span class="mi">506</span>                                    <span class="n">y_numeric</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">multi_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">507</span> 
-<span class="g g-Whitespace">    </span><span class="mi">508</span>         <span class="k">if</span> <span class="n">sample_weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/sklearn/linear_model/_base.py</span> in <span class="ni">fit</span><span class="nt">(self, X, y, sample_weight)</span>
+<span class="g g-Whitespace">    </span><span class="mi">517</span> 
+<span class="g g-Whitespace">    </span><span class="mi">518</span>         <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="n">accept_sparse</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">519</span>                                    <span class="n">y_numeric</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">multi_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">520</span> 
+<span class="g g-Whitespace">    </span><span class="mi">521</span>         <span class="k">if</span> <span class="n">sample_weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/base.py</span> in <span class="ni">_validate_data</span><span class="nt">(self, X, y, reset, validate_separately, **check_params)</span>
-<span class="g g-Whitespace">    </span><span class="mi">430</span>                 <span class="n">y</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">check_y_params</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">431</span>             <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">432</span>                 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">check_X_y</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">check_params</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">433</span>             <span class="n">out</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span>
-<span class="g g-Whitespace">    </span><span class="mi">434</span> 
+<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/sklearn/base.py</span> in <span class="ni">_validate_data</span><span class="nt">(self, X, y, reset, validate_separately, **check_params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">431</span>                 <span class="n">y</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">check_y_params</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">432</span>             <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">433</span>                 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">check_X_y</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">check_params</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">434</span>             <span class="n">out</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span>
+<span class="g g-Whitespace">    </span><span class="mi">435</span> 
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span>                           <span class="ne">FutureWarning</span><span class="p">)</span>
-<span class="nn">     71         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
-<span class="ne">---&gt; </span><span class="mi">72</span>         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">return</span> <span class="n">inner_f</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span> 
+<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span>             <span class="n">extra_args</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_args</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span>             <span class="k">if</span> <span class="n">extra_args</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">63</span>                 <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">64</span> 
+<span class="g g-Whitespace">     </span><span class="mi">65</span>             <span class="c1"># extra_args &gt; 0</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">check_X_y</span><span class="nt">(X, y, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, multi_output, ensure_min_samples, ensure_min_features, y_numeric, estimator)</span>
-<span class="g g-Whitespace">    </span><span class="mi">800</span>                     <span class="n">ensure_min_samples</span><span class="o">=</span><span class="n">ensure_min_samples</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">801</span>                     <span class="n">ensure_min_features</span><span class="o">=</span><span class="n">ensure_min_features</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">802</span>                     <span class="n">estimator</span><span class="o">=</span><span class="n">estimator</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">803</span>     <span class="k">if</span> <span class="n">multi_output</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">804</span>         <span class="n">y</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="s1">&#39;csr&#39;</span><span class="p">,</span> <span class="n">force_all_finite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">check_X_y</span><span class="nt">(X, y, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, multi_output, ensure_min_samples, ensure_min_features, y_numeric, estimator)</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span>                     <span class="n">ensure_min_samples</span><span class="o">=</span><span class="n">ensure_min_samples</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span>                     <span class="n">ensure_min_features</span><span class="o">=</span><span class="n">ensure_min_features</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">878</span>                     <span class="n">estimator</span><span class="o">=</span><span class="n">estimator</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span>     <span class="k">if</span> <span class="n">multi_output</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>         <span class="n">y</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="s1">&#39;csr&#39;</span><span class="p">,</span> <span class="n">force_all_finite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span>                           <span class="ne">FutureWarning</span><span class="p">)</span>
-<span class="nn">     71         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
-<span class="ne">---&gt; </span><span class="mi">72</span>         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">return</span> <span class="n">inner_f</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span> 
+<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span>             <span class="n">extra_args</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_args</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span>             <span class="k">if</span> <span class="n">extra_args</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">63</span>                 <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">64</span> 
+<span class="g g-Whitespace">     </span><span class="mi">65</span>             <span class="c1"># extra_args &gt; 0</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">check_array</span><span class="nt">(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator)</span>
-<span class="g g-Whitespace">    </span><span class="mi">621</span>                     <span class="s2">&quot;Reshape your data either using array.reshape(-1, 1) if &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">622</span>                     <span class="s2">&quot;your data has a single feature or array.reshape(1, -1) &quot;</span>
-<span class="ne">--&gt; </span><span class="mi">623</span>                     <span class="s2">&quot;if it contains a single sample.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">array</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">624</span> 
-<span class="g g-Whitespace">    </span><span class="mi">625</span>         <span class="c1"># in the future np.flexible dtypes will be handled like object dtypes</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ni">check_array</span><span class="nt">(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator)</span>
+<span class="g g-Whitespace">    </span><span class="mi">696</span>                     <span class="s2">&quot;Reshape your data either using array.reshape(-1, 1) if &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">697</span>                     <span class="s2">&quot;your data has a single feature or array.reshape(1, -1) &quot;</span>
+<span class="ne">--&gt; </span><span class="mi">698</span>                     <span class="s2">&quot;if it contains a single sample.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">array</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">699</span> 
+<span class="g g-Whitespace">    </span><span class="mi">700</span>         <span class="c1"># make sure we actually converted to numeric:</span>
 
 <span class="ne">ValueError</span>: Expected 2D array, got 1D array instead:
 <span class="n">array</span><span class="o">=</span><span class="p">[</span> <span class="mf">0.01990842</span> <span class="o">-</span><span class="mf">0.06832974</span>  <span class="mf">0.00286377</span>  <span class="mf">0.02269202</span> <span class="o">-</span><span class="mf">0.03199144</span> <span class="o">-</span><span class="mf">0.04118039</span>
@@ -777,70 +792,70 @@
  <span class="o">-</span><span class="mf">0.01811827</span> <span class="o">-</span><span class="mf">0.00894402</span> <span class="o">-</span><span class="mf">0.01190068</span> <span class="o">-</span><span class="mf">0.07212845</span> <span class="o">-</span><span class="mf">0.0611766</span>   <span class="mf">0.13359898</span>
  <span class="o">-</span><span class="mf">0.02595242</span>  <span class="mf">0.01919903</span> <span class="o">-</span><span class="mf">0.0425721</span>  <span class="o">-</span><span class="mf">0.01599827</span> <span class="o">-</span><span class="mf">0.00060925</span>  <span class="mf">0.0594238</span>
  <span class="o">-</span><span class="mf">0.02712865</span> <span class="o">-</span><span class="mf">0.03712835</span>  <span class="mf">0.00027149</span> <span class="o">-</span><span class="mf">0.01811827</span> <span class="o">-</span><span class="mf">0.0594727</span>   <span class="mf">0.02131085</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">054724</span>    <span class="mf">0.01703713</span>  <span class="mf">0.07142403</span>  <span class="mf">0.01919903</span>  <span class="mf">0.01255315</span> <span class="o">-</span><span class="mf">0.04986847</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.054724</span>    <span class="mf">0.01703713</span>  <span class="mf">0.07142403</span>  <span class="mf">0.01919903</span>  <span class="mf">0.01255315</span> <span class="o">-</span><span class="mf">0.04986847</span>
  <span class="o">-</span><span class="mf">0.00991896</span> <span class="o">-</span><span class="mf">0.0425721</span>   <span class="mf">0.03243323</span> <span class="o">-</span><span class="mf">0.01495648</span> <span class="o">-</span><span class="mf">0.0079794</span>  <span class="o">-</span><span class="mf">0.01811827</span>
  <span class="o">-</span><span class="mf">0.0594727</span>   <span class="mf">0.03546194</span> <span class="o">-</span><span class="mf">0.02139368</span> <span class="o">-</span><span class="mf">0.00239668</span> <span class="o">-</span><span class="mf">0.01811827</span> <span class="o">-</span><span class="mf">0.03324879</span>
  <span class="o">-</span><span class="mf">0.04118039</span> <span class="o">-</span><span class="mf">0.06648815</span>  <span class="mf">0.03365681</span> <span class="o">-</span><span class="mf">0.05615757</span> <span class="o">-</span><span class="mf">0.00060925</span>  <span class="mf">0.03839325</span>
  <span class="o">-</span><span class="mf">0.05140054</span>  <span class="mf">0.0366458</span>  <span class="o">-</span><span class="mf">0.08238148</span> <span class="o">-</span><span class="mf">0.03075121</span> <span class="o">-</span><span class="mf">0.01919705</span>  <span class="mf">0.0423449</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">00027149</span> <span class="o">-</span><span class="mf">0.01190068</span> <span class="o">-</span><span class="mf">0.01290794</span> <span class="o">-</span><span class="mf">0.05140054</span> <span class="o">-</span><span class="mf">0.06291295</span>  <span class="mf">0.02671426</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">08449528</span> <span class="o">-</span><span class="mf">0.00514531</span>  <span class="mf">0.00371174</span>  <span class="mf">0.00620932</span> <span class="o">-</span><span class="mf">0.03075121</span> <span class="o">-</span><span class="mf">0.07408887</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">04289569</span> <span class="o">-</span><span class="mf">0.06832974</span>  <span class="mf">0.02539313</span> <span class="o">-</span><span class="mf">0.00608025</span> <span class="o">-</span><span class="mf">0.07020931</span> <span class="o">-</span><span class="mf">0.01599827</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.00027149</span> <span class="o">-</span><span class="mf">0.01190068</span> <span class="o">-</span><span class="mf">0.01290794</span> <span class="o">-</span><span class="mf">0.05140054</span> <span class="o">-</span><span class="mf">0.06291295</span>  <span class="mf">0.02671426</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.08449528</span> <span class="o">-</span><span class="mf">0.00514531</span>  <span class="mf">0.00371174</span>  <span class="mf">0.00620932</span> <span class="o">-</span><span class="mf">0.03075121</span> <span class="o">-</span><span class="mf">0.07408887</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.04289569</span> <span class="o">-</span><span class="mf">0.06832974</span>  <span class="mf">0.02539313</span> <span class="o">-</span><span class="mf">0.00608025</span> <span class="o">-</span><span class="mf">0.07020931</span> <span class="o">-</span><span class="mf">0.01599827</span>
  <span class="o">-</span><span class="mf">0.06832974</span> <span class="o">-</span><span class="mf">0.04118039</span> <span class="o">-</span><span class="mf">0.09643322</span>  <span class="mf">0.04289569</span> <span class="o">-</span><span class="mf">0.03452372</span> <span class="o">-</span><span class="mf">0.02479119</span>
  <span class="o">-</span><span class="mf">0.07212845</span>  <span class="mf">0.03723201</span>  <span class="mf">0.01255315</span> <span class="o">-</span><span class="mf">0.03324879</span> <span class="o">-</span><span class="mf">0.04118039</span>  <span class="mf">0.0011438</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">06078775</span>  <span class="mf">0.00286377</span> <span class="o">-</span><span class="mf">0.00608025</span>  <span class="mf">0.0117839</span>   <span class="mf">0.03723201</span> <span class="o">-</span><span class="mf">0.03075121</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.06078775</span>  <span class="mf">0.00286377</span> <span class="o">-</span><span class="mf">0.00608025</span>  <span class="mf">0.0117839</span>   <span class="mf">0.03723201</span> <span class="o">-</span><span class="mf">0.03075121</span>
  <span class="o">-</span><span class="mf">0.00514531</span> <span class="o">-</span><span class="mf">0.01090444</span> <span class="o">-</span><span class="mf">0.0611766</span>  <span class="o">-</span><span class="mf">0.01090444</span> <span class="o">-</span><span class="mf">0.0594727</span>  <span class="o">-</span><span class="mf">0.05295879</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">04560081</span> <span class="o">-</span><span class="mf">0.02595242</span> <span class="o">-</span><span class="mf">0.12609739</span> <span class="o">-</span><span class="mf">0.02364456</span> <span class="o">-</span><span class="mf">0.02364456</span>  <span class="mf">0.04666077</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">09924023</span>  <span class="mf">0.08379677</span>  <span class="mf">0.02200405</span>  <span class="mf">0.07912108</span>  <span class="mf">0.02061233</span>  <span class="mf">0.02736771</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.04560081</span> <span class="o">-</span><span class="mf">0.02595242</span> <span class="o">-</span><span class="mf">0.12609739</span> <span class="o">-</span><span class="mf">0.02364456</span> <span class="o">-</span><span class="mf">0.02364456</span>  <span class="mf">0.04666077</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.09924023</span>  <span class="mf">0.08379677</span>  <span class="mf">0.02200405</span>  <span class="mf">0.07912108</span>  <span class="mf">0.02061233</span>  <span class="mf">0.02736771</span>
  <span class="o">-</span><span class="mf">0.03980959</span>  <span class="mf">0.01990842</span>  <span class="mf">0.03243323</span>  <span class="mf">0.01556684</span> <span class="o">-</span><span class="mf">0.01599827</span>  <span class="mf">0.08058546</span>
  <span class="o">-</span><span class="mf">0.09393565</span>  <span class="mf">0.00455189</span> <span class="o">-</span><span class="mf">0.03075121</span>  <span class="mf">0.03896837</span>  <span class="mf">0.02269202</span> <span class="o">-</span><span class="mf">0.04687948</span>
  <span class="o">-</span><span class="mf">0.01290794</span> <span class="o">-</span><span class="mf">0.07212845</span> <span class="o">-</span><span class="mf">0.02712865</span>  <span class="mf">0.05078151</span> <span class="o">-</span><span class="mf">0.06648815</span>  <span class="mf">0.01703713</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">02801651</span>  <span class="mf">0.054724</span>   <span class="o">-</span><span class="mf">0.03324879</span>  <span class="mf">0.04506617</span>  <span class="mf">0.04560081</span> <span class="o">-</span><span class="mf">0.04118039</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">00620932</span> <span class="o">-</span><span class="mf">0.01599827</span>  <span class="mf">0.01482271</span>  <span class="mf">0.02605609</span> <span class="o">-</span><span class="mf">0.03075121</span>  <span class="mf">0.06123791</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.02801651</span>  <span class="mf">0.054724</span>   <span class="o">-</span><span class="mf">0.03324879</span>  <span class="mf">0.04506617</span>  <span class="mf">0.04560081</span> <span class="o">-</span><span class="mf">0.04118039</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.00620932</span> <span class="o">-</span><span class="mf">0.01599827</span>  <span class="mf">0.01482271</span>  <span class="mf">0.02605609</span> <span class="o">-</span><span class="mf">0.03075121</span>  <span class="mf">0.06123791</span>
  <span class="o">-</span><span class="mf">0.01919705</span> <span class="o">-</span><span class="mf">0.00894402</span>  <span class="mf">0.02671426</span> <span class="o">-</span><span class="mf">0.03452372</span>  <span class="mf">0.00864028</span>  <span class="mf">0.03781448</span>
  <span class="o">-</span><span class="mf">0.02139368</span>  <span class="mf">0.01022564</span> <span class="o">-</span><span class="mf">0.03075121</span>  <span class="mf">0.0423449</span>  <span class="o">-</span><span class="mf">0.03581673</span>  <span class="mf">0.07573759</span>
  <span class="o">-</span><span class="mf">0.03075121</span> <span class="o">-</span><span class="mf">0.02364456</span>  <span class="mf">0.01776348</span> <span class="o">-</span><span class="mf">0.05615757</span> <span class="o">-</span><span class="mf">0.07814091</span>  <span class="mf">0.07763279</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">06898221</span>  <span class="mf">0.13359898</span> <span class="o">-</span><span class="mf">0.09643322</span> <span class="o">-</span><span class="mf">0.05140054</span>  <span class="mf">0.07341008</span> <span class="o">-</span><span class="mf">0.01811827</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">01703713</span> <span class="o">-</span><span class="mf">0.02712865</span> <span class="o">-</span><span class="mf">0.00330371</span>  <span class="mf">0.07222365</span> <span class="o">-</span><span class="mf">0.04836172</span>  <span class="mf">0.01407245</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">01630495</span> <span class="o">-</span><span class="mf">0.02595242</span>  <span class="mf">0.01556684</span>  <span class="mf">0.01556684</span>  <span class="mf">0.03723201</span>  <span class="mf">0.06731722</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">04718617</span> <span class="o">-</span><span class="mf">0.08682899</span> <span class="o">-</span><span class="mf">0.00149859</span> <span class="o">-</span><span class="mf">0.02028875</span>  <span class="mf">0.02337484</span>  <span class="mf">0.01022564</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.06898221</span>  <span class="mf">0.13359898</span> <span class="o">-</span><span class="mf">0.09643322</span> <span class="o">-</span><span class="mf">0.05140054</span>  <span class="mf">0.07341008</span> <span class="o">-</span><span class="mf">0.01811827</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.01703713</span> <span class="o">-</span><span class="mf">0.02712865</span> <span class="o">-</span><span class="mf">0.00330371</span>  <span class="mf">0.07222365</span> <span class="o">-</span><span class="mf">0.04836172</span>  <span class="mf">0.01407245</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.01630495</span> <span class="o">-</span><span class="mf">0.02595242</span>  <span class="mf">0.01556684</span>  <span class="mf">0.01556684</span>  <span class="mf">0.03723201</span>  <span class="mf">0.06731722</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.04718617</span> <span class="o">-</span><span class="mf">0.08682899</span> <span class="o">-</span><span class="mf">0.00149859</span> <span class="o">-</span><span class="mf">0.02028875</span>  <span class="mf">0.02337484</span>  <span class="mf">0.01022564</span>
  <span class="o">-</span><span class="mf">0.02952762</span>  <span class="mf">0.03953988</span>  <span class="mf">0.00200784</span>  <span class="mf">0.00783714</span> <span class="o">-</span><span class="mf">0.03324879</span>  <span class="mf">0.01331597</span>
  <span class="o">-</span><span class="mf">0.07408887</span>  <span class="mf">0.08989869</span> <span class="o">-</span><span class="mf">0.02832024</span> <span class="o">-</span><span class="mf">0.05295879</span>  <span class="mf">0.08449528</span>  <span class="mf">0.02539313</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">00200784</span>  <span class="mf">0.06345592</span>  <span class="mf">0.00943641</span>  <span class="mf">0.04613233</span> <span class="o">-</span><span class="mf">0.00149859</span> <span class="o">-</span><span class="mf">0.01190068</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.00200784</span>  <span class="mf">0.06345592</span>  <span class="mf">0.00943641</span>  <span class="mf">0.04613233</span> <span class="o">-</span><span class="mf">0.00149859</span> <span class="o">-</span><span class="mf">0.01190068</span>
  <span class="o">-</span><span class="mf">0.03324879</span> <span class="o">-</span><span class="mf">0.02251217</span> <span class="o">-</span><span class="mf">0.00060925</span> <span class="o">-</span><span class="mf">0.02251217</span> <span class="o">-</span><span class="mf">0.03980959</span>  <span class="mf">0.0366458</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">04560081</span>  <span class="mf">0.03365681</span>  <span class="mf">0.00702686</span>  <span class="mf">0.0011438</span>  <span class="o">-</span><span class="mf">0.10164355</span>  <span class="mf">0.0011438</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">0011438</span>  <span class="o">-</span><span class="mf">0.01811827</span> <span class="o">-</span><span class="mf">0.03581673</span>  <span class="mf">0.06301662</span> <span class="o">-</span><span class="mf">0.03980959</span> <span class="o">-</span><span class="mf">0.03845911</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.04560081</span>  <span class="mf">0.03365681</span>  <span class="mf">0.00702686</span>  <span class="mf">0.0011438</span>  <span class="o">-</span><span class="mf">0.10164355</span>  <span class="mf">0.0011438</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.0011438</span>  <span class="o">-</span><span class="mf">0.01811827</span> <span class="o">-</span><span class="mf">0.03581673</span>  <span class="mf">0.06301662</span> <span class="o">-</span><span class="mf">0.03980959</span> <span class="o">-</span><span class="mf">0.03845911</span>
  <span class="o">-</span><span class="mf">0.02712865</span> <span class="o">-</span><span class="mf">0.02364456</span>  <span class="mf">0.05027649</span>  <span class="mf">0.00943641</span>  <span class="mf">0.02405258</span> <span class="o">-</span><span class="mf">0.02595242</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">06432823</span> <span class="o">-</span><span class="mf">0.00514531</span>  <span class="mf">0.04067226</span> <span class="o">-</span><span class="mf">0.04836172</span>  <span class="mf">0.0110081</span>   <span class="mf">0.06604821</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">03365681</span> <span class="o">-</span><span class="mf">0.02952762</span> <span class="o">-</span><span class="mf">0.07814091</span> <span class="o">-</span><span class="mf">0.0439854</span>  <span class="o">-</span><span class="mf">0.0439854</span>  <span class="o">-</span><span class="mf">0.04986847</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">04506617</span> <span class="o">-</span><span class="mf">0.01090444</span>  <span class="mf">0.06389312</span>  <span class="mf">0.0702113</span>   <span class="mf">0.07573759</span>  <span class="mf">0.08449528</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.06432823</span> <span class="o">-</span><span class="mf">0.00514531</span>  <span class="mf">0.04067226</span> <span class="o">-</span><span class="mf">0.04836172</span>  <span class="mf">0.0110081</span>   <span class="mf">0.06604821</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.03365681</span> <span class="o">-</span><span class="mf">0.02952762</span> <span class="o">-</span><span class="mf">0.07814091</span> <span class="o">-</span><span class="mf">0.0439854</span>  <span class="o">-</span><span class="mf">0.0439854</span>  <span class="o">-</span><span class="mf">0.04986847</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.04506617</span> <span class="o">-</span><span class="mf">0.01090444</span>  <span class="mf">0.06389312</span>  <span class="mf">0.0702113</span>   <span class="mf">0.07573759</span>  <span class="mf">0.08449528</span>
  <span class="o">-</span><span class="mf">0.00421986</span>  <span class="mf">0.03486419</span>  <span class="mf">0.12005338</span> <span class="o">-</span><span class="mf">0.00330371</span>  <span class="mf">0.02801651</span> <span class="o">-</span><span class="mf">0.00514531</span>
  <span class="o">-</span><span class="mf">0.03712835</span> <span class="o">-</span><span class="mf">0.0439854</span>  <span class="o">-</span><span class="mf">0.08023654</span> <span class="o">-</span><span class="mf">0.01290794</span>  <span class="mf">0.03486419</span> <span class="o">-</span><span class="mf">0.07212845</span>
  <span class="o">-</span><span class="mf">0.0594727</span>   <span class="mf">0.01482271</span> <span class="o">-</span><span class="mf">0.08682899</span>  <span class="mf">0.02337484</span>  <span class="mf">0.02930041</span> <span class="o">-</span><span class="mf">0.01190068</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">00864028</span> <span class="o">-</span><span class="mf">0.01811827</span> <span class="o">-</span><span class="mf">0.01811827</span>  <span class="mf">0.10635428</span>  <span class="mf">0.01556684</span>  <span class="mf">0.0110081</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">05757286</span> <span class="o">-</span><span class="mf">0.02139368</span>  <span class="mf">0.0011438</span>  <span class="o">-</span><span class="mf">0.01599827</span>  <span class="mf">0.01630495</span>  <span class="mf">0.02405258</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.00864028</span> <span class="o">-</span><span class="mf">0.01811827</span> <span class="o">-</span><span class="mf">0.01811827</span>  <span class="mf">0.10635428</span>  <span class="mf">0.01556684</span>  <span class="mf">0.0110081</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.05757286</span> <span class="o">-</span><span class="mf">0.02139368</span>  <span class="mf">0.0011438</span>  <span class="o">-</span><span class="mf">0.01599827</span>  <span class="mf">0.01630495</span>  <span class="mf">0.02405258</span>
  <span class="o">-</span><span class="mf">0.00894402</span> <span class="o">-</span><span class="mf">0.06832974</span>  <span class="mf">0.00286377</span>  <span class="mf">0.05988072</span> <span class="o">-</span><span class="mf">0.01919705</span>  <span class="mf">0.03243323</span>
  <span class="o">-</span><span class="mf">0.07020931</span>  <span class="mf">0.06123791</span>  <span class="mf">0.02993565</span>  <span class="mf">0.05803913</span> <span class="o">-</span><span class="mf">0.06291295</span> <span class="o">-</span><span class="mf">0.05454415</span>
  <span class="o">-</span><span class="mf">0.07408887</span>  <span class="mf">0.01630495</span> <span class="o">-</span><span class="mf">0.05615757</span> <span class="o">-</span><span class="mf">0.06468302</span> <span class="o">-</span><span class="mf">0.03075121</span> <span class="o">-</span><span class="mf">0.02595242</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">04289569</span> <span class="o">-</span><span class="mf">0.02139368</span>  <span class="mf">0.03119299</span>  <span class="mf">0.07380215</span> <span class="o">-</span><span class="mf">0.02251217</span>  <span class="mf">0.01776348</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.04289569</span> <span class="o">-</span><span class="mf">0.02139368</span>  <span class="mf">0.03119299</span>  <span class="mf">0.07380215</span> <span class="o">-</span><span class="mf">0.02251217</span>  <span class="mf">0.01776348</span>
  <span class="o">-</span><span class="mf">0.03980959</span>  <span class="mf">0.02337484</span> <span class="o">-</span><span class="mf">0.0611766</span>   <span class="mf">0.02671426</span> <span class="o">-</span><span class="mf">0.01811827</span>  <span class="mf">0.01255315</span>
  <span class="o">-</span><span class="mf">0.03845911</span>  <span class="mf">0.05520504</span> <span class="o">-</span><span class="mf">0.01190068</span> <span class="o">-</span><span class="mf">0.01090444</span>  <span class="mf">0.07496834</span>  <span class="mf">0.02472532</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">00943641</span>  <span class="mf">0.02866072</span>  <span class="mf">0.03304707</span>  <span class="mf">0.09864637</span>  <span class="mf">0.13339573</span>  <span class="mf">0.12901941</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">06604821</span>  <span class="mf">0.08449528</span>  <span class="mf">0.02993565</span> <span class="o">-</span><span class="mf">0.00060925</span> <span class="o">-</span><span class="mf">0.00149859</span> <span class="o">-</span><span class="mf">0.0170521</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.00943641</span>  <span class="mf">0.02866072</span>  <span class="mf">0.03304707</span>  <span class="mf">0.09864637</span>  <span class="mf">0.13339573</span>  <span class="mf">0.12901941</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.06604821</span>  <span class="mf">0.08449528</span>  <span class="mf">0.02993565</span> <span class="o">-</span><span class="mf">0.00060925</span> <span class="o">-</span><span class="mf">0.00149859</span> <span class="o">-</span><span class="mf">0.0170521</span>
  <span class="o">-</span><span class="mf">0.02364456</span> <span class="o">-</span><span class="mf">0.04118039</span>  <span class="mf">0.05710419</span>  <span class="mf">0.02930041</span> <span class="o">-</span><span class="mf">0.06291295</span> <span class="o">-</span><span class="mf">0.05140054</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">08094791</span>  <span class="mf">0.00538437</span> <span class="o">-</span><span class="mf">0.02251217</span>  <span class="mf">0.04344317</span> <span class="o">-</span><span class="mf">0.03581673</span> <span class="o">-</span><span class="mf">0.02479119</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.08094791</span>  <span class="mf">0.00538437</span> <span class="o">-</span><span class="mf">0.02251217</span>  <span class="mf">0.04344317</span> <span class="o">-</span><span class="mf">0.03581673</span> <span class="o">-</span><span class="mf">0.02479119</span>
  <span class="o">-</span><span class="mf">0.02364456</span> <span class="o">-</span><span class="mf">0.05780007</span>  <span class="mf">0.00702686</span> <span class="o">-</span><span class="mf">0.00060925</span>  <span class="mf">0.06257518</span>  <span class="mf">0.00371174</span>
  <span class="o">-</span><span class="mf">0.01090444</span> <span class="o">-</span><span class="mf">0.0611766</span>   <span class="mf">0.0702113</span>  <span class="o">-</span><span class="mf">0.05780007</span> <span class="o">-</span><span class="mf">0.02028875</span>  <span class="mf">0.13237265</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">07419254</span> <span class="o">-</span><span class="mf">0.03324879</span> <span class="o">-</span><span class="mf">0.02832024</span>  <span class="mf">0.04976866</span> <span class="o">-</span><span class="mf">0.08238148</span>  <span class="mf">0.01482271</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">01331597</span> <span class="o">-</span><span class="mf">0.07212845</span>  <span class="mf">0.00371174</span>  <span class="mf">0.01919903</span>  <span class="mf">0.01482271</span>  <span class="mf">0.03119299</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">07102158</span>  <span class="mf">0.03365681</span>  <span class="mf">0.08553312</span> <span class="o">-</span><span class="mf">0.00514531</span> <span class="o">-</span><span class="mf">0.0611766</span>   <span class="mf">0.11934399</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.07419254</span> <span class="o">-</span><span class="mf">0.03324879</span> <span class="o">-</span><span class="mf">0.02832024</span>  <span class="mf">0.04976866</span> <span class="o">-</span><span class="mf">0.08238148</span>  <span class="mf">0.01482271</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.01331597</span> <span class="o">-</span><span class="mf">0.07212845</span>  <span class="mf">0.00371174</span>  <span class="mf">0.01919903</span>  <span class="mf">0.01482271</span>  <span class="mf">0.03119299</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.07102158</span>  <span class="mf">0.03365681</span>  <span class="mf">0.08553312</span> <span class="o">-</span><span class="mf">0.00514531</span> <span class="o">-</span><span class="mf">0.0611766</span>   <span class="mf">0.11934399</span>
  <span class="o">-</span><span class="mf">0.01090444</span> <span class="o">-</span><span class="mf">0.0425721</span>  <span class="o">-</span><span class="mf">0.00060925</span>  <span class="mf">0.02801651</span>  <span class="mf">0.04613233</span>  <span class="mf">0.00943641</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">02269202</span> <span class="o">-</span><span class="mf">0.04687948</span> <span class="o">-</span><span class="mf">0.05140054</span> <span class="o">-</span><span class="mf">0.01290794</span>  <span class="mf">0.10413761</span> <span class="o">-</span><span class="mf">0.01811827</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">02405258</span> <span class="o">-</span><span class="mf">0.02595242</span> <span class="o">-</span><span class="mf">0.03075121</span> <span class="o">-</span><span class="mf">0.10436482</span>  <span class="mf">0.02671426</span> <span class="o">-</span><span class="mf">0.04118039</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">10329226</span> <span class="o">-</span><span class="mf">0.08913686</span> <span class="o">-</span><span class="mf">0.04118039</span> <span class="o">-</span><span class="mf">0.03980959</span>  <span class="mf">0.13008061</span>  <span class="mf">0.03181522</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.02269202</span> <span class="o">-</span><span class="mf">0.04687948</span> <span class="o">-</span><span class="mf">0.05140054</span> <span class="o">-</span><span class="mf">0.01290794</span>  <span class="mf">0.10413761</span> <span class="o">-</span><span class="mf">0.01811827</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.02405258</span> <span class="o">-</span><span class="mf">0.02595242</span> <span class="o">-</span><span class="mf">0.03075121</span> <span class="o">-</span><span class="mf">0.10436482</span>  <span class="mf">0.02671426</span> <span class="o">-</span><span class="mf">0.04118039</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.10329226</span> <span class="o">-</span><span class="mf">0.08913686</span> <span class="o">-</span><span class="mf">0.04118039</span> <span class="o">-</span><span class="mf">0.03980959</span>  <span class="mf">0.13008061</span>  <span class="mf">0.03181522</span>
  <span class="o">-</span><span class="mf">0.09643322</span>  <span class="mf">0.03605579</span>  <span class="mf">0.04506617</span>  <span class="mf">0.03953988</span> <span class="o">-</span><span class="mf">0.03452372</span> <span class="o">-</span><span class="mf">0.0425721</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">01556684</span>  <span class="mf">0.06168585</span> <span class="o">-</span><span class="mf">0.02712865</span>  <span class="mf">0.0366458</span>  <span class="o">-</span><span class="mf">0.05615757</span> <span class="o">-</span><span class="mf">0.04836172</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">05803913</span>  <span class="mf">0.03056649</span>  <span class="mf">0.06604821</span> <span class="o">-</span><span class="mf">0.05140054</span>  <span class="mf">0.00620932</span> <span class="o">-</span><span class="mf">0.03581673</span>
-<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="o">.</span><span class="mi">054724</span>    <span class="mf">0.01482271</span> <span class="o">-</span><span class="mf">0.02952762</span> <span class="o">-</span><span class="mf">0.04687948</span> <span class="o">-</span><span class="mf">0.02139368</span> <span class="o">-</span><span class="mf">0.07408887</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.01556684</span>  <span class="mf">0.06168585</span> <span class="o">-</span><span class="mf">0.02712865</span>  <span class="mf">0.0366458</span>  <span class="o">-</span><span class="mf">0.05615757</span> <span class="o">-</span><span class="mf">0.04836172</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.05803913</span>  <span class="mf">0.03056649</span>  <span class="mf">0.06604821</span> <span class="o">-</span><span class="mf">0.05140054</span>  <span class="mf">0.00620932</span> <span class="o">-</span><span class="mf">0.03581673</span>
+<span class="g g-Whitespace">  </span><span class="mi">0</span><span class="mf">.054724</span>    <span class="mf">0.01482271</span> <span class="o">-</span><span class="mf">0.02952762</span> <span class="o">-</span><span class="mf">0.04687948</span> <span class="o">-</span><span class="mf">0.02139368</span> <span class="o">-</span><span class="mf">0.07408887</span>
  <span class="o">-</span><span class="mf">0.03324879</span>  <span class="mf">0.04976866</span><span class="p">]</span><span class="o">.</span>
 <span class="n">Reshape</span> <span class="n">your</span> <span class="n">data</span> <span class="n">either</span> <span class="n">using</span> <span class="n">array</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">your</span> <span class="n">data</span> <span class="n">has</span> <span class="n">a</span> <span class="n">single</span> <span class="n">feature</span> <span class="ow">or</span> <span class="n">array</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">it</span> <span class="n">contains</span> <span class="n">a</span> <span class="n">single</span> <span class="n">sample</span><span class="o">.</span>
 </pre></div>
@@ -961,7 +976,7 @@ Scikit learn’s <code class="docutils literal notranslate"><span class="pre">fi
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f51063600d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fce4d8b76d0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/2020-10-26_33_1.png" src="../_images/2020-10-26_33_1.png" />
@@ -1008,7 +1023,7 @@ Scikit learn’s <code class="docutils literal notranslate"><span class="pre">fi
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5850753022690575
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5850753022690574
 </pre></div>
 </div>
 </div>
@@ -1021,7 +1036,7 @@ Scikit learn’s <code class="docutils literal notranslate"><span class="pre">fi
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2004.5676026898207
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2004.5676026898211
 </pre></div>
 </div>
 </div>
@@ -1050,12 +1065,12 @@ Scikit learn’s <code class="docutils literal notranslate"><span class="pre">fi
 <span class="n">ex_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])</span>
 <span class="n">ex_df</span><span class="p">[</span><span class="s1">&#39;y_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_pred</span>
 <span class="n">n_levels</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">noise</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">-.</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">-</span><span class="mf">.5</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_levels</span><span class="p">:</span>
     <span class="n">y_true</span> <span class="o">=</span> <span class="n">y_pred</span> <span class="o">+</span> <span class="n">n</span><span class="o">*</span> <span class="n">noise</span>
     <span class="n">ex_df</span><span class="p">[</span><span class="s1">&#39;r2 = &#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">r2_score</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span><span class="n">y_true</span><span class="p">),</span><span class="mi">3</span><span class="p">))]</span> <span class="o">=</span> <span class="n">y_true</span>
 
-<span class="n">f_x_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="mf">3.5</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">03</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">x</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)]</span>
+<span class="n">f_x_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="mf">3.5</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="mf">.5</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mf">.03</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">x</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)]</span>
 <span class="k">for</span> <span class="n">fx</span> <span class="ow">in</span> <span class="n">f_x_list</span><span class="p">:</span>
     <span class="n">y_true</span> <span class="o">=</span> <span class="n">fx</span> <span class="o">+</span> <span class="n">noise</span>
     <span class="n">ex_df</span><span class="p">[</span><span class="s1">&#39;r2 = &#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">r2_score</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span><span class="n">y_true</span><span class="p">),</span><span class="mi">3</span><span class="p">))]</span> <span class="o">=</span> <span class="n">y_true</span>    
@@ -1069,7 +1084,7 @@ Scikit learn’s <code class="docutils literal notranslate"><span class="pre">fi
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f5109542d90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fce4d82ba90&gt;
 </pre></div>
 </div>
 <img alt="../_images/2020-10-26_41_1.png" src="../_images/2020-10-26_41_1.png" />
@@ -1161,7 +1176,7 @@ Scikit learn’s <code class="docutils literal notranslate"><span class="pre">fi
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2004.5676026898207
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2004.5676026898211
 </pre></div>
 </div>
 </div>
@@ -1175,7 +1190,7 @@ Scikit learn’s <code class="docutils literal notranslate"><span class="pre">fi
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2004.5676026898207
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2004.5676026898211
 </pre></div>
 </div>
 </div>
@@ -1214,15 +1229,15 @@ Scikit learn’s <code class="docutils literal notranslate"><span class="pre">fi
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="2020-10-23.html" title="previous page">Class 20: Decision Trees and Cross Validation</a>
     <a class='right-next' id="next-link" href="2020-10-28.html" title="next page">Class 22: More Regression, More Evaluation and LASSO</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -1230,7 +1245,7 @@ Scikit learn’s <code class="docutils literal notranslate"><span class="pre">fi
         
           By Professor Sarah M Brown<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -1239,11 +1254,9 @@ Scikit learn’s <code class="docutils literal notranslate"><span class="pre">fi
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
-
-
-    
+  
   </body>
 </html>
