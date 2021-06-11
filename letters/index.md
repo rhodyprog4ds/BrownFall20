@@ -17,7 +17,8 @@ information about what courses you had before this or not-->
 Especially when it comes to the difficult topics make sure you go back through the notes and try and add to them yourself. Actively using the new topics will help you learn a lot better than just copying the notes.
 
 ### Attend Office Hours
-Attending office hours will help you better understand course material, complete homework assignments, and even learn new things that might not normally come up in class.
+Attending office hours will help you better understand course material, complete homework assignments, and learn new things that might not normally come up in class.
+- David
 
 
 ## To contribute
