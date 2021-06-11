@@ -13,6 +13,9 @@ The websites for future sections will link back here for them to read.
 <!-- it won't be anonymous because of the commit history, but you can choose to sign it or not and include 
 information about what courses you had before this or not-->
 
+### Reviewing notes
+Especially when it comes to the difficult topics make sure you go back through the notes and try and add to them yourself. Actively using the new topics will help you learn a lot better than just copying the notes.
+
 
 ## To contribute
 
